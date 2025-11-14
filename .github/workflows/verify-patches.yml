@@ -278,7 +278,7 @@ jobs:
           fi
 
       - name: Compare test results
-        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
+        if: env.SO_FAR_OK == '1'
         id: compare
         continue-on-error: true
         run: |
@@ -328,108 +328,108 @@ jobs:
           echo "before_status=$BEFORE_STATUS" >> $GITHUB_OUTPUT
           echo "after_status=$AFTER_STATUS" >> $GITHUB_OUTPUT
 
-  #     - name: Create result summary
-  #       id: summary
-  #       continue-on-error: true
-  #       run: |
-  #         SUMMARY_FILE="result-summary.json"
+      #     - name: Create result summary
+      #       id: summary
+      #       continue-on-error: true
+      #       run: |
+      #         SUMMARY_FILE="result-summary.json"
 
-  #         # Check if we have test results
-  #         if [ -f test-output-before-status.txt ]; then
-  #           BEFORE_STATUS=$(cat test-output-before-status.txt)
-  #         else
-  #           BEFORE_STATUS="skipped"
-  #         fi
+      #         # Check if we have test results
+      #         if [ -f test-output-before-status.txt ]; then
+      #           BEFORE_STATUS=$(cat test-output-before-status.txt)
+      #         else
+      #           BEFORE_STATUS="skipped"
+      #         fi
 
-  #         if [ "${{ steps.check-patch.outputs.applies }}" = "true" ]; then
-  #           # Get after status if available
-  #           if [ -f test-output-after-status.txt ]; then
-  #             AFTER_STATUS=$(cat test-output-after-status.txt)
-  #           else
-  #             AFTER_STATUS="skipped"
-  #           fi
+      #         if [ "${{ steps.check-patch.outputs.applies }}" = "true" ]; then
+      #           # Get after status if available
+      #           if [ -f test-output-after-status.txt ]; then
+      #             AFTER_STATUS=$(cat test-output-after-status.txt)
+      #           else
+      #             AFTER_STATUS="skipped"
+      #           fi
 
-  #           # Get result from compare step if available, otherwise set as skipped
-  #           RESULT="${{ steps.compare.outputs.result }}"
-  #           if [ -z "$RESULT" ]; then
-  #             RESULT="skipped"
-  #           fi
+      #           # Get result from compare step if available, otherwise set as skipped
+      #           RESULT="${{ steps.compare.outputs.result }}"
+      #           if [ -z "$RESULT" ]; then
+      #             RESULT="skipped"
+      #           fi
 
-  #           cat > $SUMMARY_FILE << EOF
-  #         {
-  #           "package": "${{ matrix.package }}",
-  #           "has_patch": true,
-  #           "patch_applies": true,
-  #           "before_status": "$BEFORE_STATUS",
-  #           "after_status": "$AFTER_STATUS",
-  #           "result": "$RESULT",
-  #           "patched_packages": "${{ steps.check-patch.outputs.patched_packages }}"
-  #         }
-  #         EOF
-  #         else
-  #           # Determine reason - could be no patch or skipped steps
-  #           REASON="${{ steps.check-patch.outputs.reason }}"
-  #           if [ -z "$REASON" ]; then
-  #             REASON="step-skipped"
-  #           fi
+      #           cat > $SUMMARY_FILE << EOF
+      #         {
+      #           "package": "${{ matrix.package }}",
+      #           "has_patch": true,
+      #           "patch_applies": true,
+      #           "before_status": "$BEFORE_STATUS",
+      #           "after_status": "$AFTER_STATUS",
+      #           "result": "$RESULT",
+      #           "patched_packages": "${{ steps.check-patch.outputs.patched_packages }}"
+      #         }
+      #         EOF
+      #         else
+      #           # Determine reason - could be no patch or skipped steps
+      #           REASON="${{ steps.check-patch.outputs.reason }}"
+      #           if [ -z "$REASON" ]; then
+      #             REASON="step-skipped"
+      #           fi
 
-  #           HAS_PATCH="${{ steps.load-patches.outputs.has_patch }}"
-  #           if [ -z "$HAS_PATCH" ]; then
-  #             HAS_PATCH="false"
-  #           fi
+      #           HAS_PATCH="${{ steps.load-patches.outputs.has_patch }}"
+      #           if [ -z "$HAS_PATCH" ]; then
+      #             HAS_PATCH="false"
+      #           fi
 
-  #           cat > $SUMMARY_FILE << EOF
-  #         {
-  #           "package": "${{ matrix.package }}",
-  #           "has_patch": $HAS_PATCH,
-  #           "patch_applies": false,
-  #           "reason": "$REASON",
-  #           "before_status": "$BEFORE_STATUS"
-  #         }
-  #         EOF
-  #         fi
+      #           cat > $SUMMARY_FILE << EOF
+      #         {
+      #           "package": "${{ matrix.package }}",
+      #           "has_patch": $HAS_PATCH,
+      #           "patch_applies": false,
+      #           "reason": "$REASON",
+      #           "before_status": "$BEFORE_STATUS"
+      #         }
+      #         EOF
+      #         fi
 
-  #         cat $SUMMARY_FILE
+      #         cat $SUMMARY_FILE
 
-  #     - name: Upload test artifacts
-  #       uses: actions/upload-artifact@v4
-  #       if: always()
-  #       with:
-  #         name: test-results-${{ matrix.package }}
-  #         path: |
-  #           test-output-before.txt
-  #           test-output-after.txt
-  #           test-output-before-status.txt
-  #           test-output-after-status.txt
-  #           test-diff.txt
-  #           result-summary.json
-  #         retention-days: 30
+      #     - name: Upload test artifacts
+      #       uses: actions/upload-artifact@v4
+      #       if: always()
+      #       with:
+      #         name: test-results-${{ matrix.package }}
+      #         path: |
+      #           test-output-before.txt
+      #           test-output-after.txt
+      #           test-output-before-status.txt
+      #           test-output-after-status.txt
+      #           test-diff.txt
+      #           result-summary.json
+      #         retention-days: 30
 
-  #     - name: Fail job if run-tests.sh failed
-  #       if: always()
-  #       run: |
-  #         # Only fail if the test execution step itself failed (not test failures, but script execution failures)
-  #         # Since we use continue-on-error on test steps, we check if run-tests.sh could not be executed
-  #         if [ ! -f test-output-before-status.txt ]; then
-  #           echo "Error: Tests could not be executed"
-  #           exit 1
-  #         fi
+      - name: Fail job if run-tests.sh failed
+        if: always()
+        run: |
+          # Only fail if the test execution step itself failed (not test failures, but script execution failures)
+          # Since we use continue-on-error on test steps, we check if run-tests.sh could not be executed
+          if [ ! -f test-output-before-status.txt ]; then
+            echo "Error: Tests could not be executed"
+            exit 1
+          fi
 
-  #         # Fail if tests actually failed (as opposed to passing or being skipped)
-  #         BEFORE_STATUS=$(cat test-output-before-status.txt 2>/dev/null || echo "missing")
-  #         if [ "$BEFORE_STATUS" = "failed" ]; then
-  #           echo "Error: Tests failed before applying patches"
-  #           exit 1
-  #         fi
+          # Fail if tests actually failed (as opposed to passing or being skipped)
+          BEFORE_STATUS=$(cat test-output-before-status.txt 2>/dev/null || echo "missing")
+          if [ "$BEFORE_STATUS" = "failed" ]; then
+            echo "Error: Tests failed before applying patches"
+            exit 1
+          fi
 
-  #         # If patches were applied, also check after status
-  #         if [ -f test-output-after-status.txt ]; then
-  #           AFTER_STATUS=$(cat test-output-after-status.txt)
-  #           if [ "$AFTER_STATUS" = "failed" ]; then
-  #             echo "Error: Tests failed after applying patches"
-  #             exit 1
-  #           fi
-  #         fi
+          # If patches were applied, also check after status
+          if [ -f test-output-after-status.txt ]; then
+            AFTER_STATUS=$(cat test-output-after-status.txt)
+            if [ "$AFTER_STATUS" = "failed" ]; then
+              echo "Error: Tests failed after applying patches"
+              exit 1
+            fi
+          fi
 
   # generate-report:
   #   name: Generate Summary Report
