@@ -164,148 +164,169 @@ jobs:
           echo "✓ Virtual environment created and dependencies installed"
           echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
-  #     - name: Run tests without patches
-  #       id: test-without-patch
-  #       continue-on-error: true
-  #       if: env.SO_FAR_OK == '1'
-  #       run: |
-  #         echo "SO_FAR_OK=0" >> $GITHUB_ENV
-  #         cd package-repo
-  #         source .venv/bin/activate
+      - name: Run tests without patches
+        id: test-without-patch
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1'
+        run: |
+          echo "SO_FAR_OK=0" >> $GITHUB_ENV
+          cd package-repo
+          source .venv/bin/activate
 
-  #         echo "🧪 Running tests without patches"
-  #         echo "::group::Test execution (before patches)"
-  #         set +e
-  #         bash run-tests.sh 2>&1 | tee ../test-output-before.txt
-  #         TEST_EXIT_CODE=${PIPESTATUS[0]}
-  #         set -e
-  #         echo "::endgroup::"
+          echo "🧪 Running tests without patches"
+          echo "::group::Test execution (before patches)"
+          set +e
+          bash run-tests.sh 2>&1 | tee ../test-output-before.txt
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+          set -e
+          echo "::endgroup::"
 
-  #         if [ $TEST_EXIT_CODE -ne 0 ]; then
-  #           echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
-  #           echo "failed" > ../test-output-before-status.txt
-  #         else
-  #           echo "✓ Tests passed without patches"
-  #           echo "success" > ../test-output-before-status.txt
-  #         fi
-  #         echo "SO_FAR_OK=1" >> $GITHUB_ENV
+          if [ $TEST_EXIT_CODE -ne 0 ]; then
+            echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
+            echo "failed" > ../test-output-before-status.txt
+          else
+            echo "✓ Tests passed without patches"
+            echo "success" > ../test-output-before-status.txt
+          fi
+          echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
-  #     - name: Check if patch applies to this package
-  #       id: check-patch
-  #       continue-on-error: true
-  #       if: env.SO_FAR_OK == '1'
-  #       run: |
-  #         cd verification-repo
+      - name: Check if patch applies to this package
+        id: check-patch
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'false'
+        run: |
+          cd verification-repo
 
-  #         # Check if any package in patches.json is installed in the venv
-  #         APPLIES=false
-  #         PATCHED_PACKAGES=""
+          # Check if any package in patches.json is installed in the venv
+          APPLIES=false
+          PATCHED_PACKAGES=""
 
-  #         cd ../package-repo
-  #         source .venv/bin/activate
+          cd ../package-repo
+          source .venv/bin/activate
 
-  #         # Get all packages from patches.json
-  #         cd ../verification-repo
-  #         PATCH_PACKAGES=$(jq -r 'keys[]' patches.json)
+          # Get all packages from patches.json
+          cd ../verification-repo
+          PATCH_PACKAGES=$(jq -r 'keys[]' patches.json)
 
-  #         cd ../package-repo
-  #         echo "::group::Checking for applicable patches"
-  #         for pkg in $PATCH_PACKAGES; do
-  #           if pip show "$pkg" > /dev/null 2>&1; then
-  #             APPLIES=true
-  #             PATCHED_PACKAGES="$PATCHED_PACKAGES $pkg"
-  #             echo "Found: $pkg is installed and will be patched"
-  #           fi
-  #         done
-  #         echo "::endgroup::"
+          cd ../package-repo
+          echo "::group::Checking for applicable patches"
+          for pkg in $PATCH_PACKAGES; do
+            if pip show "$pkg" > /dev/null 2>&1; then
+              APPLIES=true
+              PATCHED_PACKAGES="$PATCHED_PACKAGES $pkg"
+              echo "Found: $pkg is installed and will be patched"
+            fi
+          done
+          echo "::endgroup::"
 
-  #         if [ "$APPLIES" = "true" ]; then
-  #           echo "🔄 Patches will be applied to:$PATCHED_PACKAGES"
-  #           echo "applies=true" >> $GITHUB_OUTPUT
-  #           echo "patched_packages=$PATCHED_PACKAGES" >> $GITHUB_OUTPUT
-  #         else
-  #           echo "ℹ️  No applicable patches found for this package"
-  #           echo "applies=false" >> $GITHUB_OUTPUT
-  #           echo "reason=no-patch-packages-installed" >> $GITHUB_OUTPUT
-  #         fi
+          if [ "$APPLIES" = "true" ]; then
+            echo "🔄 Patches will be applied to:$PATCHED_PACKAGES"
+            echo "applies=true" >> $GITHUB_OUTPUT
+            echo "patched_packages=$PATCHED_PACKAGES" >> $GITHUB_OUTPUT
+          else
+            echo "ℹ️  No applicable patches found for this package"
+            echo "applies=false" >> $GITHUB_OUTPUT
+            echo "reason=no-patch-packages-installed" >> $GITHUB_OUTPUT
+          fi
 
-  #     - name: Apply patches
-  #       if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
-  #       continue-on-error: true
-  #       run: |
-  #         # For each package in patches.json that's installed in the venv
-  #         for pkg in ${{ steps.check-patch.outputs.patched_packages }}; do
-  #           PATCH_URL=$(jq -r ".\"$pkg\".url" verification-repo/patches.json)
-  #           PATCH_BRANCH=$(jq -r ".\"$pkg\".branch" verification-repo/patches.json)
+      - name: Apply patches
+        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'false'
+        continue-on-error: true
+        run: |
+          # For each package in patches.json that's installed in the venv
+          for pkg in ${{ steps.check-patch.outputs.patched_packages }}; do
+            PATCH_URL=$(jq -r ".\"$pkg\".url" verification-repo/patches.json)
+            PATCH_BRANCH=$(jq -r ".\"$pkg\".branch" verification-repo/patches.json)
 
-  #           echo "📥 Applying patch for $pkg from $PATCH_URL @ $PATCH_BRANCH"
+            echo "📥 Applying patch for $pkg from $PATCH_URL @ $PATCH_BRANCH"
 
-  #           # Clone the patched version to a temporary directory
-  #           echo "::group::Cloning and installing patched $pkg"
-  #           git clone --depth 1 --branch "$PATCH_BRANCH" "$PATCH_URL" "patched-$pkg"
+            # Clone the patched version to a temporary directory
+            echo "::group::Cloning and installing patched $pkg"
+            git clone --depth 1 --branch "$PATCH_BRANCH" "$PATCH_URL" "patched-$pkg"
 
-  #           # Install it in the venv
-  #           cd package-repo
-  #           source .venv/bin/activate
-  #           uv pip install "../patched-$pkg" --force-reinstall --no-deps
-  #           cd ..
-  #           echo "::endgroup::"
-  #           echo "✓ Patch applied for $pkg"
-  #         done
+            # Install it in the venv
+            cd package-repo
+            source .venv/bin/activate
+            uv pip install "../patched-$pkg" --force-reinstall --no-deps
+            cd ..
+            echo "::endgroup::"
+            echo "✓ Patch applied for $pkg"
+          done
 
-  #     - name: Run tests with patches
-  #       if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
-  #       id: test-with-patch
-  #       continue-on-error: true
-  #       run: |
-  #         cd package-repo
-  #         source .venv/bin/activate
+      - name: Run tests with patches
+        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
+        id: test-with-patch
+        continue-on-error: true
+        run: |
+          cd package-repo
+          source .venv/bin/activate
 
-  #         echo "🧪 Running tests with patches applied"
-  #         echo "::group::Test execution (after patches)"
-  #         set +e
-  #         bash run-tests.sh 2>&1 | tee ../test-output-after.txt
-  #         TEST_EXIT_CODE=${PIPESTATUS[0]}
-  #         set -e
-  #         echo "::endgroup::"
+          echo "🧪 Running tests with patches applied"
+          echo "::group::Test execution (after patches)"
+          set +e
+          bash run-tests.sh 2>&1 | tee ../test-output-after.txt
+          TEST_EXIT_CODE=${PIPESTATUS[0]}
+          set -e
+          echo "::endgroup::"
 
-  #         if [ $TEST_EXIT_CODE -ne 0 ]; then
-  #           echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
-  #           echo "failed" > ../test-output-after-status.txt
-  #         else
-  #           echo "✓ Tests passed with patches"
-  #           echo "success" > ../test-output-after-status.txt
-  #         fi
+          if [ $TEST_EXIT_CODE -ne 0 ]; then
+            echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
+            echo "failed" > ../test-output-after-status.txt
+          else
+            echo "✓ Tests passed with patches"
+            echo "success" > ../test-output-after-status.txt
+          fi
 
-  #     - name: Compare test results
-  #       if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
-  #       id: compare
-  #       continue-on-error: true
-  #       run: |
-  #         # Create a diff of the test outputs
-  #         diff -u test-output-before.txt test-output-after.txt > test-diff.txt || true
+      - name: Compare test results
+        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
+        id: compare
+        continue-on-error: true
+        run: |
+          # Create a diff of the test outputs
+          diff -u test-output-before.txt test-output-after.txt > test-diff.txt || true
 
-  #         # Analyze the results using status files
-  #         BEFORE_STATUS=$(cat test-output-before-status.txt)
-  #         AFTER_STATUS=$(cat test-output-after-status.txt)
+          # Analyze the results using status files
+          BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
+          AFTER_STATUS=$(cat test-output-after-status.txt || echo "skipped")
 
-  #         if [ "$BEFORE_STATUS" = "failed" ] && [ "$AFTER_STATUS" = "success" ]; then
-  #           RESULT="fixed"
-  #           echo "✅ Patch fixed failing tests"
-  #         elif [ "$BEFORE_STATUS" = "success" ] && [ "$AFTER_STATUS" = "failed" ]; then
-  #           RESULT="regression"
-  #           echo "❌ Patch introduced test failures"
-  #         elif [ "$BEFORE_STATUS" = "failed" ] && [ "$AFTER_STATUS" = "failed" ]; then
-  #           RESULT="still-failing"
-  #           echo "⚠️  Tests still failing after patch"
-  #         else
-  #           RESULT="no-change"
-  #           echo "ℹ️  No change in test results"
-  #         fi
+          if [ "$BEFORE_STATUS" == "failed" ] ; then
+            if [ "$AFTER_STATUS" == "failed" ] ; then
+              RESULT="still-failing"
+              echo "⚠️  Tests still failing after patch"
+            elif [ "$AFTER_STATUS" == "success" ] ; then
+              RESULT="fixed"
+              echo "✅ Patch fixed failing tests"
+            elif [ "$AFTER_STATUS" == "skipped" ] ; then
+              RESULT="still-failing-skipped"
+              echo "⚠️ Tests still failing after patch (after tests skipped)"
+            fi
+          elif [ "$BEFORE_STATUS" == "success" ] ; then
+            if [ "$AFTER_STATUS" == "failed" ] ; then
+              RESULT="regression"
+              echo "❌ Patch introduced test failures"
+            elif [ "$AFTER_STATUS" == "success" ] ; then
+              RESULT="ok"
+              echo "✅ Tests passed before and after patch"
+            elif [ "$AFTER_STATUS" == "skipped" ] ; then
+              RESULT="no-change-skipped"
+              echo "✅ Tests passed before patch, after tests skipped"
+            fi
+          elif [ "$BEFORE_STATUS" == "skipped" ] ; then
+            if [ "$AFTER_STATUS" == "failed" ] ; then
+              RESULT="regression-skipped"
+              echo "❌ Patch introduced test failures (before tests skipped)"
+            elif [ "$AFTER_STATUS" == "success" ] ; then
+              RESULT="fixed-skipped"
+              echo "✅ Patch fixed failing tests (before tests skipped)"
+            elif [ "$AFTER_STATUS" == "skipped" ] ; then
+              RESULT="no-change-both-skipped"
+              echo "ℹ️  Tests skipped before and after patch"
+            fi
+          fi
 
-  #         echo "result=$RESULT" >> $GITHUB_OUTPUT
-  #         echo "before_status=$BEFORE_STATUS" >> $GITHUB_OUTPUT
-  #         echo "after_status=$AFTER_STATUS" >> $GITHUB_OUTPUT
+          echo "result=$RESULT" >> $GITHUB_OUTPUT
+          echo "before_status=$BEFORE_STATUS" >> $GITHUB_OUTPUT
+          echo "after_status=$AFTER_STATUS" >> $GITHUB_OUTPUT
 
   #     - name: Create result summary
   #       id: summary
