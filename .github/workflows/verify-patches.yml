@@ -26,12 +26,26 @@ jobs:
 
       - name: Install uv
         run: |
+          echo "::group::Installing uv"
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          echo "::endgroup::"
+          echo "✓ uv installed successfully"
+
+      - name: Install libxml2-dev
+        run: |
+          echo "::group::Installing system dependencies"
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libxslt-dev
+          echo "::endgroup::"
+          echo "✓ System dependencies installed"
 
       - name: Clone Zenodo RDM repository
         run: |
+          echo "::group::Cloning zenodo-rdm repository"
           git clone --depth 1 https://github.com/zenodo/zenodo-rdm.git
+          echo "::endgroup::"
+          echo "✓ zenodo-rdm repository cloned"
 
       - name: Extract Invenio packages from uv.lock
         id: extract
@@ -47,6 +61,16 @@ jobs:
           else
             echo "Error: uv.lock not found, using fallback list"
             exit 1
+          fi
+
+          # Filter out packages from not_tested.json
+          cd ..
+          if [ -f "not_tested.json" ]; then
+            echo "Filtering out packages from not_tested.json"
+            NOT_TESTED=$(cat not_tested.json)
+            SKIPPED=$(echo "$PACKAGES" | jq --argjson not_tested "$NOT_TESTED" '. as $all | $not_tested | map(select(. as $item | $all | index($item) != null))')
+            echo "Skipped packages: $SKIPPED"
+            PACKAGES=$(echo "$PACKAGES" | jq --argjson not_tested "$NOT_TESTED" '. - $not_tested')
           fi
 
           echo "Found packages: $PACKAGES"
@@ -76,8 +100,19 @@ jobs:
 
       - name: Install uv
         run: |
+          echo "::group::Installing uv"
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          echo "::endgroup::"
+          echo "✓ uv installed successfully"
+
+      - name: Install libxml2-dev
+        run: |
+          echo "::group::Installing system dependencies"
+          sudo apt-get update
+          sudo apt-get install -y libxml2-dev libxslt-dev
+          echo "::endgroup::"
+          echo "✓ System dependencies installed"
 
       - name: Load patches configuration
         id: load-patches
@@ -107,15 +142,22 @@ jobs:
         run: |
           echo "SO_FAR_OK=0" >> $GITHUB_ENV
           if [ "${{ steps.load-patches.outputs.has_patch }}" = "true" ]; then
-            echo "Cloning from patch repository: ${{ steps.load-patches.outputs.patch_url }}"
+            echo "📦 Cloning from patch repository: ${{ steps.load-patches.outputs.patch_url }} @ ${{ steps.load-patches.outputs.patch_branch }}"
+            echo "::group::Cloning package repository"
             git clone --depth 1 --branch ${{ steps.load-patches.outputs.patch_branch }} \
               ${{ steps.load-patches.outputs.patch_url }} package-repo
+            echo "::endgroup::"
+            echo "✓ Package cloned from patch repository"
           else
-            echo "Cloning from inveniosoftware: ${{ matrix.package }}"
+            echo "📦 Cloning from inveniosoftware: ${{ matrix.package }}"
+            echo "::group::Cloning package repository"
             git clone --depth 1 https://github.com/inveniosoftware/${{ matrix.package }}.git package-repo || {
-              echo "Failed to clone from inveniosoftware, package may not exist"
+              echo "::endgroup::"
+              echo "❌ Failed to clone from inveniosoftware, package may not exist"
               exit 0
             }
+            echo "::endgroup::"
+            echo "✓ Package cloned from inveniosoftware"
           fi
           echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
@@ -125,11 +167,17 @@ jobs:
         run: |
           echo "SO_FAR_OK=0" >> $GITHUB_ENV
           cd package-repo
+          echo "🔧 Setting up virtual environment and installing dependencies"
+          echo "::group::Creating virtual environment"
           uv venv --seed
+          echo "::endgroup::"
           source .venv/bin/activate
 
           # Install the package with test dependencies
+          echo "::group::Installing package with dependencies"
           uv pip install -e ".[tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin]"
+          echo "::endgroup::"
+          echo "✓ Virtual environment created and dependencies installed"
           echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
       - name: Run tests without patches
@@ -141,12 +189,17 @@ jobs:
           cd package-repo
           source .venv/bin/activate
 
+          echo "🧪 Running tests without patches"
+          echo "::group::Test execution (before patches)"
           bash run-tests.sh 2>&1 | tee ../test-output-before.txt || {
-            echo "Tests failed (exit code: $?)"
+            echo "::endgroup::"
+            echo "❌ Tests failed (exit code: $?)"
             echo "failed" > ../test-output-before-status.txt
           }
 
           if [ ! -f ../test-output-before-status.txt ]; then
+            echo "::endgroup::"
+            echo "✓ Tests passed without patches"
             echo "success" >> ../test-output-before-status.txt
           fi
           echo "SO_FAR_OK=1" >> $GITHUB_ENV
@@ -170,18 +223,22 @@ jobs:
           PATCH_PACKAGES=$(jq -r 'keys[]' patches.json)
 
           cd ../package-repo
+          echo "::group::Checking for applicable patches"
           for pkg in $PATCH_PACKAGES; do
             if pip show "$pkg" > /dev/null 2>&1; then
               APPLIES=true
               PATCHED_PACKAGES="$PATCHED_PACKAGES $pkg"
-              echo "Package $pkg is installed and will be patched"
+              echo "Found: $pkg is installed and will be patched"
             fi
           done
+          echo "::endgroup::"
 
           if [ "$APPLIES" = "true" ]; then
+            echo "🔄 Patches will be applied to:$PATCHED_PACKAGES"
             echo "applies=true" >> $GITHUB_OUTPUT
             echo "patched_packages=$PATCHED_PACKAGES" >> $GITHUB_OUTPUT
           else
+            echo "ℹ️  No applicable patches found for this package"
             echo "applies=false" >> $GITHUB_OUTPUT
             echo "reason=no-patch-packages-installed" >> $GITHUB_OUTPUT
           fi
@@ -195,9 +252,10 @@ jobs:
             PATCH_URL=$(jq -r ".\"$pkg\".url" verification-repo/patches.json)
             PATCH_BRANCH=$(jq -r ".\"$pkg\".branch" verification-repo/patches.json)
             
-            echo "Installing patched version of $pkg from $PATCH_URL @ $PATCH_BRANCH"
+            echo "📥 Applying patch for $pkg from $PATCH_URL @ $PATCH_BRANCH"
             
             # Clone the patched version to a temporary directory
+            echo "::group::Cloning and installing patched $pkg"
             git clone --depth 1 --branch "$PATCH_BRANCH" "$PATCH_URL" "patched-$pkg"
             
             # Install it in the venv
@@ -205,6 +263,8 @@ jobs:
             source .venv/bin/activate
             uv pip install "../patched-$pkg" --force-reinstall --no-deps
             cd ..
+            echo "::endgroup::"
+            echo "✓ Patch applied for $pkg"
           done
 
       - name: Run tests with patches
@@ -215,12 +275,17 @@ jobs:
           cd package-repo
           source .venv/bin/activate
 
+          echo "🧪 Running tests with patches applied"
+          echo "::group::Test execution (after patches)"
           bash run-tests.sh 2>&1 | tee ../test-output-after.txt || {
-            echo "Tests failed (exit code: $?)"
+            echo "::endgroup::"
+            echo "❌ Tests failed (exit code: $?)"
             echo "failed" > ../test-output-after-status.txt
           }
 
           if [ ! -f ../test-output-after-status.txt ]; then
+            echo "::endgroup::"
+            echo "✓ Tests passed with patches"
             echo "success" >> ../test-output-after-status.txt
           fi
 
@@ -339,6 +404,22 @@ jobs:
           if [ ! -f test-output-before-status.txt ]; then
             echo "Error: Tests could not be executed"
             exit 1
+          fi
+
+          # Fail if tests actually failed (as opposed to passing or being skipped)
+          BEFORE_STATUS=$(cat test-output-before-status.txt 2>/dev/null || echo "missing")
+          if [ "$BEFORE_STATUS" = "failed" ]; then
+            echo "Error: Tests failed before applying patches"
+            exit 1
+          fi
+
+          # If patches were applied, also check after status
+          if [ -f test-output-after-status.txt ]; then
+            AFTER_STATUS=$(cat test-output-after-status.txt)
+            if [ "$AFTER_STATUS" = "failed" ]; then
+              echo "Error: Tests failed after applying patches"
+              exit 1
+            fi
           fi
 
   generate-report:
