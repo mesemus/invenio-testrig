@@ -185,6 +185,7 @@ jobs:
         if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
         run: |
           echo "SO_FAR_OK=0" >> $GITHUB_ENV
+          rm -rf package-repo
           echo "📦 Cloning from patch repository: ${{ steps.load-patches.outputs.patch_url }} @ ${{ steps.load-patches.outputs.patch_branch }}"
           echo "::group::Cloning package repository"
           git clone --depth 1 --branch ${{ steps.load-patches.outputs.patch_branch }} \
