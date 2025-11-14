@@ -167,7 +167,7 @@ jobs:
           echo "🧪 Running tests without patches"
           echo "::group::Test execution (before patches)"
           set +e
-          echo bash run-tests.sh 2>&1 | tee ../test-output-before.txt
+          bash run-tests.sh 2>&1 | tee ../test-output-before.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
           set -e
           echo "::endgroup::"
@@ -287,7 +287,7 @@ jobs:
           echo "🧪 Running tests with patches applied"
           echo "::group::Test execution (after patches)"
           set +e
-          echo bash run-tests.sh 2>&1 | tee ../test-output-after.txt
+          bash run-tests.sh 2>&1 | tee ../test-output-after.txt
           TEST_EXIT_CODE=${PIPESTATUS[0]}
           set -e
           echo "::endgroup::"
@@ -306,7 +306,7 @@ jobs:
         continue-on-error: true
         run: |
           # Create a diff of the test outputs
-          diff -u test-output-before.txt test-output-after.txt > test-diff.txt || true
+          diff -buN test-output-before.txt test-output-after.txt > test-diff.txt || true
 
           # Analyze the results using status files
           BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
@@ -616,7 +616,7 @@ jobs:
           echo "" >> report/README.md
 
           # Packages that do not depend on patched packages
-          echo "## 📦 Unpatched Packages" >> report/README.md
+          echo "## 📦 Packages that do not depend on patched packages" >> report/README.md
           echo "" >> report/README.md
           echo "| Package | Build Status |" >> report/README.md
           echo "|---------|--------------|" >> report/README.md
@@ -656,7 +656,7 @@ jobs:
           echo "" >> report/README.md
 
           # Packages that depend on patched packages
-          echo "## 🔄 Patched Packages" >> report/README.md
+          echo "## 🔄 Packages that depend on patched packages" >> report/README.md
           echo "" >> report/README.md
           echo "| Package | Patches Applied | Before | After | Result |" >> report/README.md
           echo "|---------|----------------|--------|-------|--------|" >> report/README.md
