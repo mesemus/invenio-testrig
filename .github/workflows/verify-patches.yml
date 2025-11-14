@@ -745,7 +745,7 @@ jobs:
           files: |-
             report/README.md
 
-      - run: cp report/* ./dist/
+      - run: cp -rf report/* ./dist/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
