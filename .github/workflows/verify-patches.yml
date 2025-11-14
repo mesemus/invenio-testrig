@@ -56,6 +56,8 @@ jobs:
     name: Test ${{ matrix.package }}
     needs: extract-packages
     runs-on: ubuntu-latest
+    env:
+      SO_FAR_OK: 1
     strategy:
       fail-fast: false
       matrix:
@@ -82,6 +84,8 @@ jobs:
         run: |
           cd verification-repo
 
+          echo "SO_FAR_OK=0" >> $GITHUB_ENV
+
           PATCH_URL=$(jq -r '.["${{ matrix.package }}"].url // empty' patches.json)
           PATCH_BRANCH=$(jq -r '.["${{ matrix.package }}"].branch // empty' patches.json)
             
@@ -95,9 +99,13 @@ jobs:
             echo "has_patch=false" >> $GITHUB_OUTPUT
             echo "No patch configured for ${{ matrix.package }}"
           fi
+          echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
       - name: Clone package repository
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1'
         run: |
+          echo "SO_FAR_OK=0" >> $GITHUB_ENV
           if [ "${{ steps.load-patches.outputs.has_patch }}" = "true" ]; then
             echo "Cloning from patch repository: ${{ steps.load-patches.outputs.patch_url }}"
             git clone --depth 1 --branch ${{ steps.load-patches.outputs.patch_branch }} \
@@ -109,20 +117,27 @@ jobs:
               exit 0
             }
           fi
+          echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
       - name: Create virtual environment
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1'
         run: |
+          echo "SO_FAR_OK=0" >> $GITHUB_ENV
           cd package-repo
           uv venv --seed
           source .venv/bin/activate
 
           # Install the package with test dependencies
           uv pip install -e ".[tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin]"
+          echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
       - name: Run tests without patches
         id: test-without-patch
         continue-on-error: true
+        if: env.SO_FAR_OK == '1'
         run: |
+          echo "SO_FAR_OK=0" >> $GITHUB_ENV
           cd package-repo
           source .venv/bin/activate
 
@@ -134,9 +149,12 @@ jobs:
           if [ ! -f ../test-output-before-status.txt ]; then
             echo "success" >> ../test-output-before-status.txt
           fi
+          echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
       - name: Check if patch applies to this package
         id: check-patch
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1'
         run: |
           cd verification-repo
 
@@ -169,12 +187,13 @@ jobs:
           fi
 
       - name: Apply patches
-        if: steps.check-patch.outputs.applies == 'true'
+        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
+        continue-on-error: true
         run: |
           # For each package in patches.json that's installed in the venv
           for pkg in ${{ steps.check-patch.outputs.patched_packages }}; do
-            PATCH_URL=$(jq -r ".\"$pkg\".url" patches.json)
-            PATCH_BRANCH=$(jq -r ".\"$pkg\".branch" patches.json)
+            PATCH_URL=$(jq -r ".\"$pkg\".url" verification-repo/patches.json)
+            PATCH_BRANCH=$(jq -r ".\"$pkg\".branch" verification-repo/patches.json)
             
             echo "Installing patched version of $pkg from $PATCH_URL @ $PATCH_BRANCH"
             
@@ -189,7 +208,7 @@ jobs:
           done
 
       - name: Run tests with patches
-        if: steps.check-patch.outputs.applies == 'true'
+        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
         id: test-with-patch
         continue-on-error: true
         run: |
@@ -206,8 +225,9 @@ jobs:
           fi
 
       - name: Compare test results
-        if: steps.check-patch.outputs.applies == 'true'
+        if: steps.check-patch.outputs.applies == 'true' && env.SO_FAR_OK == '1'
         id: compare
+        continue-on-error: true
         run: |
           # Create a diff of the test outputs
           diff -u test-output-before.txt test-output-after.txt > test-diff.txt || true
@@ -236,29 +256,60 @@ jobs:
 
       - name: Create result summary
         id: summary
+        continue-on-error: true
         run: |
           SUMMARY_FILE="result-summary.json"
 
+          # Check if we have test results
+          if [ -f test-output-before-status.txt ]; then
+            BEFORE_STATUS=$(cat test-output-before-status.txt)
+          else
+            BEFORE_STATUS="skipped"
+          fi
+
           if [ "${{ steps.check-patch.outputs.applies }}" = "true" ]; then
+            # Get after status if available
+            if [ -f test-output-after-status.txt ]; then
+              AFTER_STATUS=$(cat test-output-after-status.txt)
+            else
+              AFTER_STATUS="skipped"
+            fi
+            
+            # Get result from compare step if available, otherwise set as skipped
+            RESULT="${{ steps.compare.outputs.result }}"
+            if [ -z "$RESULT" ]; then
+              RESULT="skipped"
+            fi
+            
             cat > $SUMMARY_FILE << EOF
           {
             "package": "${{ matrix.package }}",
             "has_patch": true,
             "patch_applies": true,
-            "before_status": "${{ steps.compare.outputs.before_status }}",
-            "after_status": "${{ steps.compare.outputs.after_status }}",
-            "result": "${{ steps.compare.outputs.result }}",
+            "before_status": "$BEFORE_STATUS",
+            "after_status": "$AFTER_STATUS",
+            "result": "$RESULT",
             "patched_packages": "${{ steps.check-patch.outputs.patched_packages }}"
           }
           EOF
           else
-            BEFORE_STATUS=$(cat test-output-before-status.txt)
+            # Determine reason - could be no patch or skipped steps
+            REASON="${{ steps.check-patch.outputs.reason }}"
+            if [ -z "$REASON" ]; then
+              REASON="step-skipped"
+            fi
+            
+            HAS_PATCH="${{ steps.load-patches.outputs.has_patch }}"
+            if [ -z "$HAS_PATCH" ]; then
+              HAS_PATCH="false"
+            fi
+            
             cat > $SUMMARY_FILE << EOF
           {
             "package": "${{ matrix.package }}",
-            "has_patch": ${{ steps.load-patches.outputs.has_patch }},
+            "has_patch": $HAS_PATCH,
             "patch_applies": false,
-            "reason": "${{ steps.check-patch.outputs.reason }}",
+            "reason": "$REASON",
             "before_status": "$BEFORE_STATUS"
           }
           EOF
@@ -279,6 +330,16 @@ jobs:
             test-diff.txt
             result-summary.json
           retention-days: 30
+
+      - name: Fail job if run-tests.sh failed
+        if: always()
+        run: |
+          # Only fail if the test execution step itself failed (not test failures, but script execution failures)
+          # Since we use continue-on-error on test steps, we check if run-tests.sh could not be executed
+          if [ ! -f test-output-before-status.txt ]; then
+            echo "Error: Tests could not be executed"
+            exit 1
+          fi
 
   generate-report:
     name: Generate Summary Report
@@ -547,7 +608,7 @@ jobs:
               # Create package directory
               mkdir -p "gh-pages/packages/$PACKAGE"
               
-              # Copy test outputs
+              # Copy test outputs only if they exist
               if [ -f "$dir/test-output-before.txt" ]; then
                 cp "$dir/test-output-before.txt" "gh-pages/packages/$PACKAGE/"
               fi
@@ -566,15 +627,29 @@ jobs:
                 RESULT=$(jq -r '.result' "$dir/result-summary.json")
                 echo "<p><strong>Result:</strong> $RESULT</p>" >> gh-pages/index.html
                 echo "<div class='test-output'>" >> gh-pages/index.html
-                echo "<a href='packages/$PACKAGE/test-output-before.txt'>Test Output (Before Patch)</a>" >> gh-pages/index.html
-                echo "<a href='packages/$PACKAGE/test-output-after.txt'>Test Output (After Patch)</a>" >> gh-pages/index.html
-                echo "<a href='packages/$PACKAGE/test-diff.txt'>Diff</a>" >> gh-pages/index.html
+                
+                # Only add links for files that exist
+                if [ -f "gh-pages/packages/$PACKAGE/test-output-before.txt" ]; then
+                  echo "<a href='packages/$PACKAGE/test-output-before.txt'>Test Output (Before Patch)</a>" >> gh-pages/index.html
+                fi
+                if [ -f "gh-pages/packages/$PACKAGE/test-output-after.txt" ]; then
+                  echo "<a href='packages/$PACKAGE/test-output-after.txt'>Test Output (After Patch)</a>" >> gh-pages/index.html
+                fi
+                if [ -f "gh-pages/packages/$PACKAGE/test-diff.txt" ]; then
+                  echo "<a href='packages/$PACKAGE/test-diff.txt'>Diff</a>" >> gh-pages/index.html
+                fi
+                
                 echo "</div>" >> gh-pages/index.html
               else
                 REASON=$(jq -r '.reason // "N/A"' "$dir/result-summary.json")
                 echo "<p><strong>Status:</strong> No patch applied ($REASON)</p>" >> gh-pages/index.html
                 echo "<div class='test-output'>" >> gh-pages/index.html
-                echo "<a href='packages/$PACKAGE/test-output-before.txt'>Test Output</a>" >> gh-pages/index.html
+                
+                # Only add link if file exists
+                if [ -f "gh-pages/packages/$PACKAGE/test-output-before.txt" ]; then
+                  echo "<a href='packages/$PACKAGE/test-output-before.txt'>Test Output</a>" >> gh-pages/index.html
+                fi
+                
                 echo "</div>" >> gh-pages/index.html
               fi
               
