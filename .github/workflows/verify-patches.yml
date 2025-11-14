@@ -332,8 +332,6 @@ jobs:
         id: summary
         continue-on-error: true
         run: |
-          SUMMARY_FILE="result-summary.json"
-
           BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
           AFTER_STATUS=$(cat test-output-after-status.txt || echo "skipped")
 
@@ -343,7 +341,7 @@ jobs:
             RESULT="skipped"
           fi
 
-          cat > $SUMMARY_FILE << EOF
+          cat > result-summary.json << EOF
           {
             "package": "${{ matrix.package }}",
             "has_patch": ${{ steps.load-patches.outputs.has_patch }},
@@ -353,8 +351,9 @@ jobs:
             "result": "$RESULT",
             "patched_packages": "${{ steps.check-patch.outputs.patched_packages }}"
           }
+          EOF
 
-          cat $SUMMARY_FILE
+          cat result-summary.json
 
       - name: Upload test artifacts
         uses: actions/upload-artifact@v4
