@@ -53,7 +53,7 @@ jobs:
           done
 
           # convert packages to JSON array
-          PACKAGES=$(printf '%s\n' "${FILTERED_PACKAGES[@]}")
+          PACKAGES=$(printf '%s\n' "${FILTERED_PACKAGES[@]}" | jq -R -s -c 'split("\n") | map(select(length > 0))')
           echo "Found packages: $PACKAGES"
           echo "packages=$PACKAGES" >> $GITHUB_OUTPUT
 
