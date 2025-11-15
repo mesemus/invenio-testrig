@@ -10,7 +10,7 @@ env:
   EXTRAS: "tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin,docs"
 
 jobs:
-  extract-packages:
+  extract-tested-packages:
     name: Extract Invenio Packages
     runs-on: ubuntu-latest
     outputs:
@@ -42,24 +42,18 @@ jobs:
 
   test-packages:
     name: Test ${{ matrix.package }}
-    needs: extract-packages
+    needs: extract-tested-packages
     runs-on: ubuntu-latest
     env:
       SO_FAR_OK: 1
     strategy:
       fail-fast: false
       matrix:
-        package: ${{ fromJson(needs.extract-packages.outputs.packages) }}
+        package: ${{ fromJson(needs.extract-tested-packages.outputs.packages) }}
 
     steps:
       - name: Checkout verification repository
         uses: actions/checkout@v4
-        with:
-          path: verification-repo
-
-      - name: Store verification repository path
-        run: |
-          echo "VERIFICATION_REPO_PATH=$PWD/verification-repo" >> $GITHUB_ENV
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -84,7 +78,6 @@ jobs:
         #   patched_repository_branch (equal to original_repository_branch if not patched, otherwise the patch branch)
         id: load-patches
         run: |
-          cd ${VERIFICATION_REPO_PATH}
 
           # Use lookup_package.py to get repository information
           eval $(python3 scripts/lookup_package.py config.json patches.json ${{ matrix.package }})
@@ -126,7 +119,6 @@ jobs:
         continue-on-error: true
         if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'false'
         run: |
-          cd ${VERIFICATION_REPO_PATH}
 
           # Use apply_patches.py to check and apply patches
           python3 scripts/apply_patches.py ${{ matrix.package }} ../package-repo/.venv patches.json ../patch-variables.sh
