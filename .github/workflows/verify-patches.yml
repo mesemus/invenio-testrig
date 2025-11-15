@@ -116,6 +116,7 @@ jobs:
           package-path: package-repo
           extras: ${{ env.EXTRAS }}
           python-version: ${{ env.PYTHON_VERSION }}
+          requirement-type: patched
 
       - name: Apply patches if applicable
         id: check-patch
@@ -140,188 +141,183 @@ jobs:
             echo "reason=no-patch-packages-installed" >> $GITHUB_OUTPUT
           fi
 
-  #     - name: Run tests without patches
-  #       id: test-without-patch
-  #       continue-on-error: true
-  #       if: env.SO_FAR_OK == '1'
-  #       run: |
-  #         echo "SO_FAR_OK=0" >> $GITHUB_ENV
-  #         cd package-repo
-  #         source .venv/bin/activate
+      #     - name: Run tests without patches
+      #       id: test-without-patch
+      #       continue-on-error: true
+      #       if: env.SO_FAR_OK == '1'
+      #       run: |
+      #         echo "SO_FAR_OK=0" >> $GITHUB_ENV
+      #         cd package-repo
+      #         source .venv/bin/activate
 
-  #         echo "🧪 Running tests without patches"
-  #         echo "::group::Test execution (before patches)"
-  #         set +e
-  #         bash run-tests.sh 2>&1 | tee ../test-output-before.txt
-  #         TEST_EXIT_CODE=${PIPESTATUS[0]}
-  #         set -e
-  #         echo "::endgroup::"
+      #         echo "🧪 Running tests without patches"
+      #         echo "::group::Test execution (before patches)"
+      #         set +e
+      #         bash run-tests.sh 2>&1 | tee ../test-output-before.txt
+      #         TEST_EXIT_CODE=${PIPESTATUS[0]}
+      #         set -e
+      #         echo "::endgroup::"
 
-  #         if [ $TEST_EXIT_CODE -ne 0 ]; then
-  #           echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
-  #           echo "failed" > ../test-output-before-status.txt
-  #         else
-  #           echo "✓ Tests passed without patches"
-  #           echo "success" > ../test-output-before-status.txt
-  #         fi
-  #         echo "SO_FAR_OK=1" >> $GITHUB_ENV
+      #         if [ $TEST_EXIT_CODE -ne 0 ]; then
+      #           echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
+      #           echo "failed" > ../test-output-before-status.txt
+      #         else
+      #           echo "✓ Tests passed without patches"
+      #           echo "success" > ../test-output-before-status.txt
+      #         fi
+      #         echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
-  #     - name: Clone package repository if it is patched
-  #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
-  #       uses: ./.github/actions/clone-package
-  #       with:
-  #         repository-url: ${{ steps.load-patches.outputs.patched_repository_url }}
-  #         repository-branch: ${{ steps.load-patches.outputs.patched_repository_branch }}
-  #         destination: package-repo
+      #     - name: Clone package repository if it is patched
+      #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
+      #       uses: ./.github/actions/clone-package
+      #       with:
+      #         repository-url: ${{ steps.load-patches.outputs.patched_repository_url }}
+      #         repository-branch: ${{ steps.load-patches.outputs.patched_repository_branch }}
+      #         destination: package-repo
 
-  #     - name: Create virtual environment for patched package
-  #       continue-on-error: true
-  #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
-  #       run: |
-  #         echo "SO_FAR_OK=0" >> $GITHUB_ENV
+      #     - name: Create virtual environment for patched package
+      #       continue-on-error: true
+      #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
+      #       run: |
+      #         echo "SO_FAR_OK=0" >> $GITHUB_ENV
 
-  #     - name: Setup virtual environment for patched package
-  #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
-  #       uses: ./.github/actions/setup-venv
-  #       with:
-  #         package-path: package-repo
-  #         extras: tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin
+      #     - name: Setup virtual environment for patched package
+      #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
+      #       uses: ./.github/actions/setup-venv
+      #       with:
+      #         package-path: package-repo
+      #         extras: tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin
 
-  #     - name: Mark patched environment setup complete
-  #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
-  #       run: |
-  #         echo "SO_FAR_OK=1" >> $GITHUB_ENV
+      #     - name: Mark patched environment setup complete
+      #       if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'true'
+      #       run: |
+      #         echo "SO_FAR_OK=1" >> $GITHUB_ENV
 
-  #     - name: Run tests with patches
-  #       if: ( steps.check-patch.outputs.applies == 'true' || steps.load-patches.outputs.has_patch == 'true' ) && env.SO_FAR_OK == '1'
-  #       id: test-with-patch
-  #       continue-on-error: true
-  #       run: |
-  #         cd package-repo
-  #         source .venv/bin/activate
+      #     - name: Run tests with patches
+      #       if: ( steps.check-patch.outputs.applies == 'true' || steps.load-patches.outputs.has_patch == 'true' ) && env.SO_FAR_OK == '1'
+      #       id: test-with-patch
+      #       continue-on-error: true
+      #       run: |
+      #         cd package-repo
+      #         source .venv/bin/activate
 
-  #         echo "🧪 Running tests with patches applied"
-  #         echo "::group::Test execution (after patches)"
-  #         set +e
-  #         bash run-tests.sh 2>&1 | tee ../test-output-after.txt
-  #         TEST_EXIT_CODE=${PIPESTATUS[0]}
-  #         set -e
-  #         echo "::endgroup::"
+      #         echo "🧪 Running tests with patches applied"
+      #         echo "::group::Test execution (after patches)"
+      #         set +e
+      #         bash run-tests.sh 2>&1 | tee ../test-output-after.txt
+      #         TEST_EXIT_CODE=${PIPESTATUS[0]}
+      #         set -e
+      #         echo "::endgroup::"
 
-  #         if [ $TEST_EXIT_CODE -ne 0 ]; then
-  #           echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
-  #           echo "failed" > ../test-output-after-status.txt
-  #         else
-  #           echo "✓ Tests passed with patches"
-  #           echo "success" > ../test-output-after-status.txt
-  #         fi
+      #         if [ $TEST_EXIT_CODE -ne 0 ]; then
+      #           echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
+      #           echo "failed" > ../test-output-after-status.txt
+      #         else
+      #           echo "✓ Tests passed with patches"
+      #           echo "success" > ../test-output-after-status.txt
+      #         fi
 
-  #     - name: Compare test results
-  #       if: env.SO_FAR_OK == '1'
-  #       id: compare
-  #       continue-on-error: true
-  #       run: |
-  #         # Create a diff of the test outputs
-  #         diff -buN test-output-before.txt test-output-after.txt > test-diff.txt || true
+      #     - name: Compare test results
+      #       if: env.SO_FAR_OK == '1'
+      #       id: compare
+      #       continue-on-error: true
+      #       run: |
+      #         # Create a diff of the test outputs
+      #         diff -buN test-output-before.txt test-output-after.txt > test-diff.txt || true
 
-  #         # Analyze the results using status files
-  #         BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
-  #         AFTER_STATUS=$(cat test-output-after-status.txt || echo "skipped")
+      #         # Analyze the results using status files
+      #         BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
+      #         AFTER_STATUS=$(cat test-output-after-status.txt || echo "skipped")
 
-  #         if [ "$BEFORE_STATUS" == "failed" ] ; then
-  #           if [ "$AFTER_STATUS" == "failed" ] ; then
-  #             RESULT="still-failing"
-  #             RESULT_ICON="⚠️"
-  #             RESULT_TEXT="Tests still failing after patch"
-  #           elif [ "$AFTER_STATUS" == "success" ] ; then
-  #             RESULT="fixed"
-  #             RESULT_ICON="✅"
-  #             RESULT_TEXT="Patch fixed failing tests"
-  #           elif [ "$AFTER_STATUS" == "skipped" ] ; then
-  #             RESULT="still-failing-skipped"
-  #             RESULT_ICON="⚠️"
-  #             RESULT_TEXT="Tests still failing after patch (after tests skipped)"
-  #           fi
-  #         elif [ "$BEFORE_STATUS" == "success" ] ; then
-  #           if [ "$AFTER_STATUS" == "failed" ] ; then
-  #             RESULT="regression"
-  #             RESULT_ICON="❌"
-  #             RESULT_TEXT="Patch introduced test failures"
-  #           elif [ "$AFTER_STATUS" == "success" ] ; then
-  #             RESULT="ok"
-  #             RESULT_ICON="✅"
-  #             RESULT_TEXT="Tests passed before and after patch"
-  #           elif [ "$AFTER_STATUS" == "skipped" ] ; then
-  #             RESULT="no-change-skipped"
-  #             RESULT_ICON="✅"
-  #             RESULT_TEXT="Tests passed before patch, after tests skipped"
-  #           fi
-  #         elif [ "$BEFORE_STATUS" == "skipped" ] ; then
-  #           if [ "$AFTER_STATUS" == "failed" ] ; then
-  #             RESULT="regression-skipped"
-  #             RESULT_ICON="❌"
-  #             RESULT_TEXT="Patch introduced test failures (before tests skipped)"
-  #           elif [ "$AFTER_STATUS" == "success" ] ; then
-  #             RESULT="fixed-skipped"
-  #             RESULT_ICON="✅"
-  #             RESULT_TEXT="Patch fixed failing tests (before tests skipped)"
-  #           elif [ "$AFTER_STATUS" == "skipped" ] ; then
-  #             RESULT="no-change-both-skipped"
-  #             RESULT_ICON="ℹ️"
-  #             RESULT_TEXT="Tests skipped before and after patch"
-  #           fi
-  #         fi
+      #         if [ "$BEFORE_STATUS" == "failed" ] ; then
+      #           if [ "$AFTER_STATUS" == "failed" ] ; then
+      #             RESULT="still-failing"
+      #             RESULT_ICON="⚠️"
+      #             RESULT_TEXT="Tests still failing after patch"
+      #           elif [ "$AFTER_STATUS" == "success" ] ; then
+      #             RESULT="fixed"
+      #             RESULT_ICON="✅"
+      #             RESULT_TEXT="Patch fixed failing tests"
+      #           elif [ "$AFTER_STATUS" == "skipped" ] ; then
+      #             RESULT="still-failing-skipped"
+      #             RESULT_ICON="⚠️"
+      #             RESULT_TEXT="Tests still failing after patch (after tests skipped)"
+      #           fi
+      #         elif [ "$BEFORE_STATUS" == "success" ] ; then
+      #           if [ "$AFTER_STATUS" == "failed" ] ; then
+      #             RESULT="regression"
+      #             RESULT_ICON="❌"
+      #             RESULT_TEXT="Patch introduced test failures"
+      #           elif [ "$AFTER_STATUS" == "success" ] ; then
+      #             RESULT="ok"
+      #             RESULT_ICON="✅"
+      #             RESULT_TEXT="Tests passed before and after patch"
+      #           elif [ "$AFTER_STATUS" == "skipped" ] ; then
+      #             RESULT="no-change-skipped"
+      #             RESULT_ICON="✅"
+      #             RESULT_TEXT="Tests passed before patch, after tests skipped"
+      #           fi
+      #         elif [ "$BEFORE_STATUS" == "skipped" ] ; then
+      #           if [ "$AFTER_STATUS" == "failed" ] ; then
+      #             RESULT="regression-skipped"
+      #             RESULT_ICON="❌"
+      #             RESULT_TEXT="Patch introduced test failures (before tests skipped)"
+      #           elif [ "$AFTER_STATUS" == "success" ] ; then
+      #             RESULT="fixed-skipped"
+      #             RESULT_ICON="✅"
+      #             RESULT_TEXT="Patch fixed failing tests (before tests skipped)"
+      #           elif [ "$AFTER_STATUS" == "skipped" ] ; then
+      #             RESULT="no-change-both-skipped"
+      #             RESULT_ICON="ℹ️"
+      #             RESULT_TEXT="Tests skipped before and after patch"
+      #           fi
+      #         fi
 
-  #         echo "$RESULT_ICON $RESULT_TEXT"
+      #         echo "$RESULT_ICON $RESULT_TEXT"
 
-  #         echo "result=$RESULT" >> $GITHUB_OUTPUT
-  #         echo "result_icon=$RESULT_ICON" >> $GITHUB_OUTPUT
-  #         echo "result_text=$RESULT_TEXT" >> $GITHUB_OUTPUT
-  #         echo "before_status=$BEFORE_STATUS" >> $GITHUB_OUTPUT
-  #         echo "after_status=$AFTER_STATUS" >> $GITHUB_OUTPUT
+      #         echo "result=$RESULT" >> $GITHUB_OUTPUT
+      #         echo "result_icon=$RESULT_ICON" >> $GITHUB_OUTPUT
+      #         echo "result_text=$RESULT_TEXT" >> $GITHUB_OUTPUT
+      #         echo "before_status=$BEFORE_STATUS" >> $GITHUB_OUTPUT
+      #         echo "after_status=$AFTER_STATUS" >> $GITHUB_OUTPUT
 
-  #     - name: Create result summary
-  #       id: summary
-  #       continue-on-error: true
-  #       run: |
-  #         BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
-  #         AFTER_STATUS=$(cat test-output-after-status.txt || echo "skipped")
+      #     - name: Create result summary
+      #       id: summary
+      #       continue-on-error: true
+      #       run: |
+      #         BEFORE_STATUS=$(cat test-output-before-status.txt || echo "skipped")
+      #         AFTER_STATUS=$(cat test-output-after-status.txt || echo "skipped")
 
-  #         if [ -z "${{ steps.check-patch.outputs.applies }}" ] ; then
-  #           APPLIES="false"
-  #         else
-  #           APPLIES="${{ steps.check-patch.outputs.applies }}"
-  #         fi
+      #         if [ -z "${{ steps.check-patch.outputs.applies }}" ] ; then
+      #           APPLIES="false"
+      #         else
+      #           APPLIES="${{ steps.check-patch.outputs.applies }}"
+      #         fi
 
-  #         cat > result-summary.json << EOF
-  #         {
-  #           "package": "${{ matrix.package }}",
-  #           "has_patch": ${{ steps.load-patches.outputs.has_patch }},
-  #           "patch_applies": $APPLIES,
-  #           "before_status": "$BEFORE_STATUS",
-  #           "after_status": "$AFTER_STATUS",
-  #           "result": "${{ steps.compare.outputs.result }}",
-  #           "result_icon": "${{ steps.compare.outputs.result_icon }}",
-  #           "result_text": "${{ steps.compare.outputs.result_text }}",
-  #           "patched_packages": "${{ steps.check-patch.outputs.patched_packages }}"
-  #         }
-  #         EOF
+      #         cat > result-summary.json << EOF
+      #         {
+      #           "package": "${{ matrix.package }}",
+      #           "has_patch": ${{ steps.load-patches.outputs.has_patch }},
+      #           "patch_applies": $APPLIES,
+      #           "before_status": "$BEFORE_STATUS",
+      #           "after_status": "$AFTER_STATUS",
+      #           "result": "${{ steps.compare.outputs.result }}",
+      #           "result_icon": "${{ steps.compare.outputs.result_icon }}",
+      #           "result_text": "${{ steps.compare.outputs.result_text }}",
+      #           "patched_packages": "${{ steps.check-patch.outputs.patched_packages }}"
+      #         }
+      #         EOF
 
-  #         cat result-summary.json
+      #         cat result-summary.json
 
-  #     - name: Upload test artifacts
-  #       uses: actions/upload-artifact@v4
-  #       if: always()
-  #       with:
-  #         name: test-results-${{ matrix.package }}
-  #         path: |
-  #           test-output-before.txt
-  #           test-output-after.txt
-  #           test-output-before-status.txt
-  #           test-output-after-status.txt
-  #           test-diff.txt
-  #           result-summary.json
-  #         retention-days: 30
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.package }}
+          path: |
+            artifacts/
+          retention-days: 30
 
   #     - name: Fail job if run-tests.sh failed
   #       if: always()

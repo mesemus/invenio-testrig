@@ -4,6 +4,12 @@ inputs:
   package-path:
     description: 'Path to the package directory'
     required: true
+  package-name:
+    description: 'Name of the package being tested'
+    required: true
+  requirement-type:
+    description: 'Type of requirements (original or patched)'
+    required: true
   extras:
     description: 'Comma-separated list of package extras to install'
     required: false
@@ -31,3 +37,18 @@ runs:
         echo "::endgroup::"
         echo "✓ Virtual environment created and dependencies installed"
         echo "SO_FAR_OK=1" >> $GITHUB_ENV
+    
+    - name: Dump requirements
+      shell: bash
+      run: |
+        artifacts_dir="$PWD/artifacts"
+        cd ${{ inputs.package-path }}
+        source .venv/bin/activate
+        
+        # Create artifacts directory
+        mkdir -p $artifacts_dir
+        
+        # Dump requirements to file
+        echo "📝 Dumping requirements to $artifacts_dir/requirements-${{ inputs.requirement-type }}.txt"
+        uv pip freeze > $artifacts_dir/requirements-${{ inputs.requirement-type }}.txt
+        echo "✓ Requirements dumped"
