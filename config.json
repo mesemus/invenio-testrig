@@ -3,8 +3,13 @@
         {
             "base_url": "https://github.com/inveniosoftware",
             "branch": "",
-            "package-regex": "^invenio-",
-            "exclude-package-regex": ""
+            "package-regexes": [
+                "invenio-.*"
+            ],
+            "exclude-package-regexes": [
+                "invenio-xrootd",
+                "invenio-swh"
+            ]
         }
     ]
 }

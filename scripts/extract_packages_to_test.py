@@ -14,6 +14,16 @@ import sys
 from pathlib import Path
 
 
+def package_matches(package_name: str, regexes: list[str]) -> bool:
+    """Check if package name matches any of the given regex patterns."""
+    for pattern in regexes:
+        # Add anchors to ensure full string match
+        full_pattern = f"^{pattern}$"
+        if re.fullmatch(full_pattern, package_name):
+            return True
+    return False
+
+
 def extract_packages_from_uv_lock(uv_lock_path: Path) -> list[str]:
     """Extract all package names from uv.lock file."""
     packages: list[str] = []
@@ -43,21 +53,21 @@ def filter_packages(packages: list[str], config_path: Path) -> list[str]:
 
         # Check each repository configuration
         for repo in config.get("repositories", []):
-            package_regex = repo.get("package-regex", "")
-            exclude_package_regex = repo.get("exclude-package-regex", "")
+            package_regexes = repo.get("package-regexes", [])
+            exclude_package_regexes = repo.get("exclude-package-regexes", [])
 
-            # Check if package matches the include regex
-            if package_regex and re.match(package_regex, package_name):
-                # Check if package matches the exclude regex
-                if exclude_package_regex and re.match(
-                    exclude_package_regex, package_name
-                ):
-                    print(f"⏭️  Excluding {package_name} (matches exclude pattern)")
-                    matched = False
-                    break
+            # Check if package matches any include regex
+            if not package_matches(package_name, package_regexes):
+                continue
 
-                matched = True
+            # Check if package matches any exclude regex
+            if package_matches(package_name, exclude_package_regexes):
+                print(f"⏭️  Excluding {package_name} (matches exclude pattern)")
+                matched = False
                 break
+
+            matched = True
+            break
 
         if matched:
             filtered_packages.append(package_name)

@@ -17,6 +17,16 @@ import sys
 from pathlib import Path
 
 
+def package_matches(package_name: str, regexes: list[str]) -> bool:
+    """Check if package name matches any of the given regex patterns."""
+    for pattern in regexes:
+        # Add anchors to ensure full string match
+        full_pattern = f"^{pattern}$"
+        if re.fullmatch(full_pattern, package_name):
+            return True
+    return False
+
+
 def lookup_package(config_path: Path, patches_path: Path, package_name: str) -> None:
     """Look up package information and return repository URLs and branches."""
 
@@ -35,17 +45,20 @@ def lookup_package(config_path: Path, patches_path: Path, package_name: str) -> 
     for repo in config.get("repositories", []):
         base_url = repo.get("base_url", "")
         branch = repo.get("branch", "")
-        package_regex = repo.get("package-regex", "")
-        exclude_package_regex = repo.get("exclude-package-regex", "")
+        package_regexes = repo.get("package-regexes", [])
+        exclude_package_regexes = repo.get("exclude-package-regexes", [])
 
-        # Check if package matches regex and is not excluded
-        if package_regex and re.match(package_regex, package_name):
-            # Check if package matches exclude regex
-            if exclude_package_regex and re.match(exclude_package_regex, package_name):
-                continue
-            original_url = f"{base_url}/{package_name}"
-            original_branch = branch
-            break
+        # Check if package matches any include regex
+        if not package_matches(package_name, package_regexes):
+            continue
+
+        # Check if package matches any exclude regex
+        if package_matches(package_name, exclude_package_regexes):
+            continue
+
+        original_url = f"{base_url}/{package_name}"
+        original_branch = branch
+        break
 
     # Default to inveniosoftware if no match found
     if not original_url:
