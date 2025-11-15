@@ -85,15 +85,17 @@ jobs:
           # Set outputs
           echo "original_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
           echo "original_repository_branch=$original_repository_branch" >> $GITHUB_OUTPUT
-          echo "patched_repository_url=$patched_repository_url" >> $GITHUB_OUTPUT
-          echo "patched_repository_branch=$patched_repository_branch" >> $GITHUB_OUTPUT
 
           # Determine if patch exists
           if [ -n "$patched_repository_url" ]; then
             echo "has_patch=true" >> $GITHUB_OUTPUT
+            echo "patched_repository_url=$patched_repository_url" >> $GITHUB_OUTPUT
+            echo "patched_repository_branch=$patched_repository_branch" >> $GITHUB_OUTPUT
             echo "Found patch for ${{ matrix.package }}: $patched_repository_url @ $patched_repository_branch"
           else
             echo "has_patch=false" >> $GITHUB_OUTPUT
+            echo "patched_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
+            echo "patched_repository_branch=$original_repository_branch" >> $GITHUB_OUTPUT
             echo "No patch configured for ${{ matrix.package }}"
           fi
 
@@ -117,7 +119,7 @@ jobs:
       - name: Apply patches if applicable
         id: check-patch
         continue-on-error: true
-        if: env.SO_FAR_OK == '1' && steps.load-patches.outputs.has_patch == 'false'
+        if: env.SO_FAR_OK == '1'
         run: |
 
           # Use apply_patches.py to check and apply patches
