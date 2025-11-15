@@ -501,6 +501,12 @@ jobs:
                 if [ -f "$dir/test-diff.txt" ]; then
                   cp "$dir/test-diff.txt" "${REPORT_DIR}/packages/$PACKAGE/"
                 fi
+                if [ -f "$dir/warnings-original.md" ]; then
+                  cp "$dir/warnings-original.md" "${REPORT_DIR}/packages/$PACKAGE/"
+                fi
+                if [ -f "$dir/warnings-patched.md" ]; then
+                  cp "$dir/warnings-patched.md" "${REPORT_DIR}/packages/$PACKAGE/"
+                fi
 
                 # Format status
                 case $ORIGINAL_TESTS_OUTCOME in
@@ -537,6 +543,14 @@ jobs:
                   [ -n "$LINKS" ] && LINKS="$LINKS "
                   LINKS="$LINKS [diff](packages/$PACKAGE/test-diff.txt)"
                 fi
+                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-original.md" ]; then
+                  [ -n "$LINKS" ] && LINKS="$LINKS "
+                  LINKS="$LINKS [warnings-original](packages/$PACKAGE/warnings-original.md)"
+                fi
+                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-patched.md" ]; then
+                  [ -n "$LINKS" ] && LINKS="$LINKS "
+                  LINKS="$LINKS [warnings-patched](packages/$PACKAGE/warnings-patched.md)"
+                fi
 
                 if [ -n "$LINKS" ]; then
                   PACKAGE_DISPLAY="\`$PACKAGE\` <br/> $LINKS"
@@ -569,6 +583,9 @@ jobs:
                 if [ -f "$dir/test-output-original.txt" ]; then
                   cp "$dir/test-output-original.txt" "${REPORT_DIR}/packages/$PACKAGE/"
                 fi
+                if [ -f "$dir/warnings-original.md" ]; then
+                  cp "$dir/warnings-original.md" "${REPORT_DIR}/packages/$PACKAGE/"
+                fi
 
                 case $ORIGINAL_TESTS_OUTCOME in
                   success) STATUS="✅ Success" ;;
@@ -578,8 +595,17 @@ jobs:
                 esac
 
                 # Create link for test output if it exists
+                LINKS=""
                 if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-output-original.txt" ]; then
-                  PACKAGE_DISPLAY="\`$PACKAGE\` <br/> [output](packages/$PACKAGE/test-output-original.txt)"
+                  LINKS="[output](packages/$PACKAGE/test-output-original.txt)"
+                fi
+                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-original.md" ]; then
+                  [ -n "$LINKS" ] && LINKS="$LINKS "
+                  LINKS="$LINKS[warnings](packages/$PACKAGE/warnings-original.md)"
+                fi
+                
+                if [ -n "$LINKS" ]; then
+                  PACKAGE_DISPLAY="\`$PACKAGE\` <br/> $LINKS"
                 else
                   PACKAGE_DISPLAY="\`$PACKAGE\`"
                 fi
@@ -619,6 +645,12 @@ jobs:
                 if [ -f "$dir/test-diff.txt" ]; then
                   cp "$dir/test-diff.txt" "${REPORT_DIR}/packages/$PACKAGE/"
                 fi
+                if [ -f "$dir/warnings-original.md" ]; then
+                  cp "$dir/warnings-original.md" "${REPORT_DIR}/packages/$PACKAGE/"
+                fi
+                if [ -f "$dir/warnings-patched.md" ]; then
+                  cp "$dir/warnings-patched.md" "${REPORT_DIR}/packages/$PACKAGE/"
+                fi
 
                 # Format status
                 case $ORIGINAL_TESTS_OUTCOME in
@@ -655,6 +687,14 @@ jobs:
                   [ -n "$LINKS" ] && LINKS="$LINKS "
                   LINKS="$LINKS [diff](packages/$PACKAGE/test-diff.txt)"
                 fi
+                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-original.md" ]; then
+                  [ -n "$LINKS" ] && LINKS="$LINKS "
+                  LINKS="$LINKS [warnings-original](packages/$PACKAGE/warnings-original.md)"
+                fi
+                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-patched.md" ]; then
+                  [ -n "$LINKS" ] && LINKS="$LINKS "
+                  LINKS="$LINKS [warnings-patched](packages/$PACKAGE/warnings-patched.md)"
+                fi
 
                 if [ -n "$LINKS" ]; then
                   PACKAGE_DISPLAY="\`$PACKAGE\` <br/> $LINKS"
@@ -667,6 +707,13 @@ jobs:
             fi
           done
           echo "" >> ${REPORT_FILE}
+
+          # Add a global table of warnings
+          python3 scripts/collect_warnings.py artifacts ${REPORT_DIR}/collected-warnings.md
+          if [ -f "${REPORT_DIR}/collected-warnings.md" ]; then
+            cat ${REPORT_DIR}/collected-warnings.md >> ${REPORT_FILE}
+          fi
+
 
           echo "---" >> ${REPORT_FILE}
           echo "" >> ${REPORT_FILE}
