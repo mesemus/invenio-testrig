@@ -6,5 +6,9 @@
     "pytest-invenio": {
         "url": "https://github.com/oarepo/pytest-invenio.git",
         "branch": "nested-db-session-rollback"
+    },
+    "invenio-files-rest": {
+        "url": "https://github.com/fenekku/invenio-files-rest.git",
+        "branch": "support_3.14"
     }
 }
