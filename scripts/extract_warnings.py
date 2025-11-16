@@ -4,8 +4,10 @@ Extract warnings from test logs and add them to result-summary.json.
 
 Usage: extract_warnings.py <log_path> <log_type> <result_summary_path> <warnings_file>
 
-Extracts warnings matching the pattern '^\\s+Warning: (.*)$' from test logs,
-deduplicates them with counts, and adds them to result-summary.json.
+Extracts Python warnings (e.g., DeprecationWarning, RuntimeWarning, etc.) from test logs
+by matching lines containing '*Warning:' patterns. The extracted warnings include only
+the warning type and message, with file paths and line numbers removed.
+Warnings are deduplicated with counts and added to result-summary.json.
 Also generates a markdown file with warnings sorted by occurrence count.
 """
 
@@ -19,14 +21,16 @@ from pathlib import Path
 def extract_warnings(log_path: Path) -> dict[str, int]:
     """Extract and count warnings from a log file."""
     warnings: dict[str, int] = defaultdict(int)
-    warning_pattern = re.compile(r"^\s+Warning: (.*)$")
+    # Match lines containing "Warning:" and extract from the warning type onwards
+    # Pattern captures the warning type (e.g., DeprecationWarning) and the message
+    warning_pattern = re.compile(r"(\w+Warning:.*?)$")
 
     if not log_path.exists():
         return {}
 
     with log_path.open("r", encoding="utf-8", errors="ignore") as f:
         for line in f:
-            match = warning_pattern.match(line)
+            match = warning_pattern.search(line)
             if match:
                 warning_text = match.group(1).strip()
                 warnings[warning_text] += 1
