@@ -1,0 +1,53 @@
+# Invenio Bugfix Verification Results
+
+_Last updated: {{ timestamp }}_
+
+## 📊 Overall Status
+
+| Metric | Count |
+|--------|-------|
+| **Total Packages** | {{ stats.total }} |
+| **Patched Packages** | {{ stats.patched }} |
+| **Unpatched Packages** | {{ stats.unpatched }} |
+
+### Patch Results
+| Result | Count |
+|--------|-------|
+| ✅ Fixed | {{ stats.fixed }} |
+| ❌ Regressions | {{ stats.regression }} |
+| ⚠️  Still Failing | {{ stats.still_failing }} |
+| ℹ️  No Change | {{ stats.no_change }} |
+
+## 🔧 Configured Patches
+
+## 🔄 Patched Packages
+
+| Package | Patches Applied | Original | Patched | Result |
+|---------|----------------|--------|-------|--------|
+{% for package in patched_packages -%}
+| {{ package.display }} | {{ package.patched_pkgs }} | {{ package.original_status }} | {{ package.patched_status }} | {{ package.result_status }} |
+{% endfor %}
+
+## 📦 Packages that do not depend on patched packages
+
+| Package | Build Status |
+|---------|--------------|
+{% for package in unpatched_packages -%}
+| {{ package.display }} | {{ package.status }} |
+{% endfor %}
+
+## 🔄 Packages that depend on patched packages
+
+| Package | Patches Applied | Original | Patched | Result |
+|---------|----------------|--------|-------|--------|
+{% for package in dependency_packages -%}
+| {{ package.display }} | {{ package.patched_pkgs }} | {{ package.original_status }} | {{ package.patched_status }} | {{ package.result_status }} |
+{% endfor %}
+
+{% if warnings_content -%}
+{{ warnings_content }}
+{% endif %}
+
+---
+
+_For detailed test outputs and diffs, see the [full report](https://mesemus.github.io/invenio-bug-verification/)._

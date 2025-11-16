@@ -2,10 +2,11 @@
 """
 Add a new summary line to reports.md after the table header.
 
-Usage: add_summary_line.py <reports_md_path> <report_dir> <status>
+Usage: add_summary_line.py <reports_md_path> <test_name> <report_dir> <status>
 
 Inserts a new row into the reports table after the separator line.
 The report_dir should be the directory name (e.g., "2025-11-15_20-49-34").
+The test_name is an optional description of the test run.
 """
 
 import re
@@ -13,7 +14,9 @@ import sys
 from pathlib import Path
 
 
-def add_summary_line(reports_md_path: Path, report_dir: str, status: str) -> None:
+def add_summary_line(
+    reports_md_path: Path, test_name: str, report_dir: str, status: str
+) -> None:
     """Add a new summary line to reports.md."""
 
     if not reports_md_path.exists():
@@ -41,10 +44,13 @@ def add_summary_line(reports_md_path: Path, report_dir: str, status: str) -> Non
     # Create markdown link from report directory name
     # Convert underscores to spaces for display
     display_name = report_dir.replace("_", " ")
-    report_link = f"[{display_name}](./results/{report_dir}/)"
+    report_link = f"[{display_name}](./results/{report_dir}/report.md)"
 
-    # Create new row
-    new_row = f"| {report_link} | {status} |\n"
+    # Use test_name if provided, otherwise use empty string
+    test_name_display = test_name if test_name else ""
+
+    # Create new row with test name as first column
+    new_row = f"| {test_name_display} | {report_link} | {status} |\n"
 
     # Insert after separator
     lines.insert(separator_index + 1, new_row)
@@ -56,19 +62,20 @@ def add_summary_line(reports_md_path: Path, report_dir: str, status: str) -> Non
 
 def main() -> None:
     """Main entry point."""
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print(
-            "Usage: add_summary_line.py <reports_md_path> <report_dir> <status>",
+            "Usage: add_summary_line.py <reports_md_path> <test_name> <report_dir> <status>",
             file=sys.stderr,
         )
         sys.exit(1)
 
     reports_md_path = Path(sys.argv[1])
-    report_dir = sys.argv[2]
-    status = sys.argv[3]
+    test_name = sys.argv[2]
+    report_dir = sys.argv[3]
+    status = sys.argv[4]
 
     try:
-        add_summary_line(reports_md_path, report_dir, status)
+        add_summary_line(reports_md_path, test_name, report_dir, status)
         print(f"✓ Updated {reports_md_path}")
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

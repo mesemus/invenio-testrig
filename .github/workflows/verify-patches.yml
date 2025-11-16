@@ -3,6 +3,10 @@ name: Verify Invenio Patches
 on:
   workflow_dispatch:
     inputs:
+      test_name:
+        description: "Name of the verification run"
+        required: false
+        default: ""
       continue_from_previous:
         description: "Continue from previous run"
         required: false
@@ -424,309 +428,25 @@ jobs:
           echo "REPORT_DIR=$REPORT_DIR" >> $GITHUB_ENV
           echo "REPORT_FILE=$REPORT_FILE" >> $GITHUB_ENV
 
+      - name: Copy artifacts to report directory
+        run: |
+          for dir in artifacts/test-results-*/; do
+            if [ -f "$dir/result-summary.json" ]; then
+              PACKAGE=$(jq -r '.package' "$dir/result-summary.json")
+              if [ -n "$PACKAGE" ] && [ "$PACKAGE" != "null" ]; then
+                mkdir -p "${REPORT_DIR}/packages/$PACKAGE"
+                cp -r "$dir"* "${REPORT_DIR}/packages/$PACKAGE/" 2>/dev/null || true
+              fi
+            fi
+          done
+
+      - name: Collect warnings
+        run: |
+          python3 scripts/collect_warnings.py artifacts ${REPORT_DIR}/collected-warnings.md
+
       - name: Generate summary report
         run: |
-          # Generate README.md with summary
-          echo "# Invenio Bugfix Verification Results" > ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "_Last updated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")_" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-
-          # Calculate overall statistics
-          TOTAL=0
-          PATCHED=0
-          UNPATCHED=0
-          FIXED=0
-          REGRESSION=0
-          NO_CHANGE=0
-          STILL_FAILING=0
-          SUCCESS_ORIGINAL=0
-          FAILED_ORIGINAL=0
-          SUCCESS_PATCHED=0
-          FAILED_PATCHED=0
-
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              TOTAL=$((TOTAL + 1))
-              APPLIES=$(jq -r '.patch_applies' "$dir/result-summary.json")
-
-              if [ "$APPLIES" = "true" ]; then
-                PATCHED=$((PATCHED + 1))
-                RESULT=$(jq -r '.result' "$dir/result-summary.json")
-                case $RESULT in
-                  fixed) FIXED=$((FIXED + 1)) ;;
-                  regression) REGRESSION=$((REGRESSION + 1)) ;;
-                  still-failing) STILL_FAILING=$((STILL_FAILING + 1)) ;;
-                  *) NO_CHANGE=$((NO_CHANGE + 1)) ;;
-                esac
-
-                ORIGINAL_TESTS_OUTCOME=$(jq -r '.original_tests_outcome' "$dir/result-summary.json")
-                PATCHED_TESTS_OUTCOME=$(jq -r '.patched_tests_outcome' "$dir/result-summary.json")
-                [ "$ORIGINAL_TESTS_OUTCOME" = "success" ] && SUCCESS_ORIGINAL=$((SUCCESS_ORIGINAL + 1))
-                [ "$ORIGINAL_TESTS_OUTCOME" = "failed" ] && FAILED_ORIGINAL=$((FAILED_ORIGINAL + 1))
-                [ "$PATCHED_TESTS_OUTCOME" = "success" ] && SUCCESS_PATCHED=$((SUCCESS_PATCHED + 1))
-                [ "$PATCHED_TESTS_OUTCOME" = "failed" ] && FAILED_PATCHED=$((FAILED_PATCHED + 1))
-              else
-                UNPATCHED=$((UNPATCHED + 1))
-                ORIGINAL_TESTS_OUTCOME=$(jq -r '.original_tests_outcome' "$dir/result-summary.json")
-                [ "$ORIGINAL_TESTS_OUTCOME" = "success" ] && SUCCESS_ORIGINAL=$((SUCCESS_ORIGINAL + 1))
-                [ "$ORIGINAL_TESTS_OUTCOME" = "failed" ] && FAILED_ORIGINAL=$((FAILED_ORIGINAL + 1))
-              fi
-            fi
-          done
-
-          # Overall Status
-          echo "## 📊 Overall Status" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "| Metric | Count |" >> ${REPORT_FILE}
-          echo "|--------|-------|" >> ${REPORT_FILE}
-          echo "| **Total Packages** | $TOTAL |" >> ${REPORT_FILE}
-          echo "| **Patched Packages** | $PATCHED |" >> ${REPORT_FILE}
-          echo "| **Unpatched Packages** | $UNPATCHED |" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "### Patch Results" >> ${REPORT_FILE}
-          echo "| Result | Count |" >> ${REPORT_FILE}
-          echo "|--------|-------|" >> ${REPORT_FILE}
-          echo "| ✅ Fixed | $FIXED |" >> ${REPORT_FILE}
-          echo "| ❌ Regressions | $REGRESSION |" >> ${REPORT_FILE}
-          echo "| ⚠️  Still Failing | $STILL_FAILING |" >> ${REPORT_FILE}
-          echo "| ℹ️  No Change | $NO_CHANGE |" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-
-          # List of patches
-          echo "## 🔧 Configured Patches" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-
-          # Extract unique patches from all result files
-          PATCHES_FOUND=false
-          declare -A PATCH_LIST
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              APPLIES=$(jq -r '.patch_applies' "$dir/result-summary.json")
-              if [ "$APPLIES" = "true" ]; then
-                PATCHED_PKGS=$(jq -r '.patched_packages' "$dir/result-summary.json")
-                if [ -n "$PATCHED_PKGS" ] && [ "$PATCHED_PKGS" != "null" ]; then
-                  PATCHES_FOUND=true
-                  for pkg in $PATCHED_PKGS; do
-                    PATCH_LIST[$pkg]=1
-                  done
-                fi
-              fi
-            fi
-          done
-
-          # Patches from patches.json
-          echo "## 🔄 Patched Packages" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "| Package | Patches Applied | Original | Patched | Result |" >> ${REPORT_FILE}
-          echo "|---------|----------------|--------|-------|--------|" >> ${REPORT_FILE}
-
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              HAS_PATCH=$(jq -r '.has_patch' "$dir/result-summary.json")
-              if [ "$HAS_PATCH" = "true" ]; then
-                PACKAGE=$(jq -r '.package' "$dir/result-summary.json")
-                PATCHED_PKGS=$(jq -r '.patched_packages' "$dir/result-summary.json" | tr '\n' ' ')
-                ORIGINAL_TESTS_OUTCOME=$(jq -r '.original_tests_outcome' "$dir/result-summary.json")
-                PATCHED_TESTS_OUTCOME=$(jq -r '.patched_tests_outcome' "$dir/result-summary.json")
-                RESULT_ICON=$(jq -r '.result_icon' "$dir/result-summary.json")
-                RESULT_TEXT=$(jq -r '.result_text' "$dir/result-summary.json")
-
-                # Create package directory and copy all files from artifact
-                mkdir -p "${REPORT_DIR}/packages/$PACKAGE"
-                cp -r "$dir"* "${REPORT_DIR}/packages/$PACKAGE/" 2>/dev/null || true
-
-                # Format status
-                case $ORIGINAL_TESTS_OUTCOME in
-                  success) ORIGINAL_STATUS="✅ Pass" ;;
-                  failed) ORIGINAL_STATUS="❌ Fail" ;;
-                  skipped) ORIGINAL_STATUS="⏭️  Skip" ;;
-                  *) ORIGINAL_STATUS="❓ Unknown" ;;
-                esac
-
-                case $PATCHED_TESTS_OUTCOME in
-                  success) PATCHED_STATUS="✅ Pass" ;;
-                  failed) PATCHED_STATUS="❌ Fail" ;;
-                  skipped) PATCHED_STATUS="⏭️  Skip" ;;
-                  *) PATCHED_STATUS="❓ Unknown" ;;
-                esac
-
-                # Use result_icon and result_text from artifacts
-                if [ -n "$RESULT_ICON" ] && [ "$RESULT_ICON" != "null" ]; then
-                  RESULT_STATUS="$RESULT_ICON $RESULT_TEXT"
-                else
-                  RESULT_STATUS="❓ Unknown"
-                fi
-
-                # Create links for test outputs
-                LINKS=""
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-output-original.txt" ]; then
-                  LINKS="$LINKS [original](packages/$PACKAGE/test-output-original.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-output-patched.txt" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [patched](packages/$PACKAGE/test-output-patched.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-diff.txt" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [diff](packages/$PACKAGE/test-diff.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-original.md" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [warnings-original](packages/$PACKAGE/warnings-original.md)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-patched.md" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [warnings-patched](packages/$PACKAGE/warnings-patched.md)"
-                fi
-
-                if [ -n "$LINKS" ]; then
-                  PACKAGE_DISPLAY="\`$PACKAGE\` <br/> $LINKS"
-                else
-                  PACKAGE_DISPLAY="\`$PACKAGE\`"
-                fi
-
-                echo "| $PACKAGE_DISPLAY | $PATCHED_PKGS | $ORIGINAL_STATUS | $PATCHED_STATUS | $RESULT_STATUS |" >> ${REPORT_FILE}
-              fi
-            fi
-          done
-          echo "" >> ${REPORT_FILE}
-
-          # Packages that do not depend on patched packages
-          echo "## 📦 Packages that do not depend on patched packages" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "| Package | Build Status |" >> ${REPORT_FILE}
-          echo "|---------|--------------|" >> ${REPORT_FILE}
-
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              APPLIES=$(jq -r '.patch_applies' "$dir/result-summary.json")
-              HAS_PATCH=$(jq -r '.has_patch' "$dir/result-summary.json")
-              if [ "$APPLIES" != "true" ] && [ "$HAS_PATCH" != "true" ]; then
-                PACKAGE=$(jq -r '.package' "$dir/result-summary.json")
-                ORIGINAL_TESTS_OUTCOME=$(jq -r '.original_tests_outcome' "$dir/result-summary.json")
-
-                # Create package directory and copy all files from artifact
-                mkdir -p "${REPORT_DIR}/packages/$PACKAGE"
-                cp -r "$dir"* "${REPORT_DIR}/packages/$PACKAGE/" 2>/dev/null || true
-
-                case $ORIGINAL_TESTS_OUTCOME in
-                  success) STATUS="✅ Success" ;;
-                  failed) STATUS="❌ Failed" ;;
-                  skipped) STATUS="⏭️  Skipped" ;;
-                  *) STATUS="❓ Unknown" ;;
-                esac
-
-                # Create link for test output if it exists
-                LINKS=""
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-output-original.txt" ]; then
-                  LINKS="[output](packages/$PACKAGE/test-output-original.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-original.md" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS[warnings](packages/$PACKAGE/warnings-original.md)"
-                fi
-                
-                if [ -n "$LINKS" ]; then
-                  PACKAGE_DISPLAY="\`$PACKAGE\` <br/> $LINKS"
-                else
-                  PACKAGE_DISPLAY="\`$PACKAGE\`"
-                fi
-
-                echo "| $PACKAGE_DISPLAY | $STATUS |" >> ${REPORT_FILE}
-              fi
-            fi
-          done
-          echo "" >> ${REPORT_FILE}
-
-          # Packages that depend on patched packages
-          echo "## 🔄 Packages that depend on patched packages" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "| Package | Patches Applied | Original | Patched | Result |" >> ${REPORT_FILE}
-          echo "|---------|----------------|--------|-------|--------|" >> ${REPORT_FILE}
-
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              APPLIES=$(jq -r '.patch_applies' "$dir/result-summary.json")
-              if [ "$APPLIES" = "true" ]; then
-                PACKAGE=$(jq -r '.package' "$dir/result-summary.json")
-                PATCHED_PKGS=$(jq -r '.patched_packages' "$dir/result-summary.json" | tr '\n' ' ')
-                ORIGINAL_TESTS_OUTCOME=$(jq -r '.original_tests_outcome' "$dir/result-summary.json")
-                PATCHED_TESTS_OUTCOME=$(jq -r '.patched_tests_outcome' "$dir/result-summary.json")
-                RESULT_ICON=$(jq -r '.result_icon' "$dir/result-summary.json")
-                RESULT_TEXT=$(jq -r '.result_text' "$dir/result-summary.json")
-
-                # Create package directory and copy all files from artifact
-                mkdir -p "${REPORT_DIR}/packages/$PACKAGE"
-                cp -r "$dir"* "${REPORT_DIR}/packages/$PACKAGE/" 2>/dev/null || true
-
-                # Format status
-                case $ORIGINAL_TESTS_OUTCOME in
-                  success) ORIGINAL_STATUS="✅ Pass" ;;
-                  failed) ORIGINAL_STATUS="❌ Fail" ;;
-                  skipped) ORIGINAL_STATUS="⏭️  Skip" ;;
-                  *) ORIGINAL_STATUS="❓ Unknown" ;;
-                esac
-
-                case $PATCHED_TESTS_OUTCOME in
-                  success) PATCHED_STATUS="✅ Pass" ;;
-                  failed) PATCHED_STATUS="❌ Fail" ;;
-                  skipped) PATCHED_STATUS="⏭️  Skip" ;;
-                  *) PATCHED_STATUS="❓ Unknown" ;;
-                esac
-
-                # Use result_icon and result_text from artifacts
-                if [ -n "$RESULT_ICON" ] && [ "$RESULT_ICON" != "null" ]; then
-                  RESULT_STATUS="$RESULT_ICON $RESULT_TEXT"
-                else
-                  RESULT_STATUS="❓ Unknown"
-                fi
-
-                # Create links for test outputs
-                LINKS=""
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-output-original.txt" ]; then
-                  LINKS="$LINKS [original](packages/$PACKAGE/test-output-original.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-output-patched.txt" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [patched](packages/$PACKAGE/test-output-patched.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/test-diff.txt" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [diff](packages/$PACKAGE/test-diff.txt)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-original.md" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [warnings-original](packages/$PACKAGE/warnings-original.md)"
-                fi
-                if [ -f "${REPORT_DIR}/packages/$PACKAGE/warnings-patched.md" ]; then
-                  [ -n "$LINKS" ] && LINKS="$LINKS "
-                  LINKS="$LINKS [warnings-patched](packages/$PACKAGE/warnings-patched.md)"
-                fi
-
-                if [ -n "$LINKS" ]; then
-                  PACKAGE_DISPLAY="\`$PACKAGE\` <br/> $LINKS"
-                else
-                  PACKAGE_DISPLAY="\`$PACKAGE\`"
-                fi
-
-                echo "| $PACKAGE_DISPLAY | $PATCHED_PKGS | $ORIGINAL_STATUS | $PATCHED_STATUS | $RESULT_STATUS |" >> ${REPORT_FILE}
-              fi
-            fi
-          done
-          echo "" >> ${REPORT_FILE}
-
-          # Add a global table of warnings
-          python3 scripts/collect_warnings.py artifacts ${REPORT_DIR}/collected-warnings.md
-          if [ -f "${REPORT_DIR}/collected-warnings.md" ]; then
-            cat ${REPORT_DIR}/collected-warnings.md >> ${REPORT_FILE}
-          fi
-
-
-          echo "---" >> ${REPORT_FILE}
-          echo "" >> ${REPORT_FILE}
-          echo "_For detailed test outputs and diffs, see the [full report](https://mesemus.github.io/invenio-bug-verification/)._" >> ${REPORT_FILE}
-
+          python3 scripts/generate_report.py artifacts ${REPORT_DIR} ${REPORT_FILE}
           cat ${REPORT_FILE}
 
       - name: Update reports index
@@ -764,8 +484,11 @@ jobs:
           # Create status string
           STATUS="${TOTAL_PASSED} ✅ passed, ${TOTAL_FAILED} ❌ failed, ${TOTAL_WARNINGS} warnings"
 
+          # Get test name from input
+          TEST_NAME="${{ inputs.test_name }}"
+
           # Add new entry to reports.md using Python script
-          python3 scripts/add_summary_line.py reports/reports.md "$REPORT_TIMESTAMP" "$STATUS"
+          python3 scripts/add_summary_line.py reports/reports.md "$TEST_NAME" "$REPORT_TIMESTAMP" "$STATUS"
           cat reports/reports.md
 
       - name: Commit and push reports index
