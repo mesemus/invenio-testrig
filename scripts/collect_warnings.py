@@ -29,7 +29,7 @@ def collect_warnings_by_log_type(
     )
 
     # Find all result-summary.json files
-    for result_file in artifacts_dir.glob("test-results-*/result-summary.json"):
+    for result_file in artifacts_dir.glob("*/result-summary.json"):
         try:
             with result_file.open("r") as f:
                 data = json.load(f)
@@ -69,7 +69,7 @@ def generate_warnings_report(
         f.write("## Collected Warnings\n\n")
 
         # Process each log type (original, patched)
-        for log_type in sorted(warnings_by_type.keys()):
+        for log_type in sorted(warnings_by_type.keys(), reverse=True):
             warnings_data = warnings_by_type[log_type]
 
             if not warnings_data:

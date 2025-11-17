@@ -17,6 +17,16 @@ from typing import Any
 from jinja2 import Environment, FileSystemLoader
 
 
+def artefact_iterator(artefact_dir: Path):
+    """Iterate over artifact directories containing result-summary.json."""
+    for d in artefact_dir.glob("*"):
+        if not d.is_dir():
+            continue
+        if not (d / "result-summary.json").exists():
+            continue
+        yield d
+
+
 def get_status_emoji(outcome: str) -> str:
     """Get status emoji and text for test outcome."""
     status_map = {
@@ -102,7 +112,7 @@ def calculate_statistics(artifacts_dir: Path) -> dict[str, int]:
         "still_failing": 0,
     }
 
-    for result_dir in artifacts_dir.glob("test-results-*/"):
+    for result_dir in artefact_iterator(artifacts_dir):
         summary_file = result_dir / "result-summary.json"
         if not summary_file.exists():
             continue
@@ -176,7 +186,7 @@ def generate_report(artifacts_dir: Path, report_dir: Path, report_file: Path) ->
     unpatched_packages: list[dict[str, Any]] = []
     dependency_packages: list[dict[str, Any]] = []
 
-    for result_dir in artifacts_dir.glob("test-results-*/"):
+    for result_dir in artefact_iterator(artifacts_dir):
         summary_file = result_dir / "result-summary.json"
         if not summary_file.exists():
             continue
