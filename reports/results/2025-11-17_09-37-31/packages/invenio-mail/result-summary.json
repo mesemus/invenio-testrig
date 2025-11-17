@@ -1,0 +1,27 @@
+{
+  "package": "invenio-mail",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {
+      "SyntaxWarning: invalid escape sequence '\\_'": 4,
+      "SyntaxWarning: invalid escape sequence '\\*'": 3,
+      "SyntaxWarning: \"is\" with 'str' literal. Did you mean \"==\"?": 1,
+      "SyntaxWarning: invalid escape sequence '\\ '": 1,
+      "DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead": 8,
+      "DeprecationWarning: Attribute s is deprecated and will be removed in Python 3.14; use value instead": 1,
+      "DeprecationWarning: ast.NameConstant is deprecated and will be removed in Python 3.14; use ast.Constant instead": 1,
+      "DeprecationWarning: 'pkgutil.get_loader' is deprecated and slated for removal in Python 3.14; use importlib.util.find_spec() instead": 2,
+      "DeprecationWarning: 'pkgutil.find_loader' is deprecated and slated for removal in Python 3.14; use importlib.util.find_spec() instead": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 22
+  }
+}

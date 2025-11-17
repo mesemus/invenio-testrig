@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="263" time="75.830" timestamp="2025-11-17T09:27:24.720508+00:00" hostname="runnervmg1sw1"><testcase classname="docs.conf" name="PYDOCSTYLE" time="0.011" /><testcase classname="docs.conf" name="ISORT" time="0.150" /><testcase classname="docs.conf" name="black" time="0.319" /><testcase classname="tests.conftest" name="PYDOCSTYLE" time="0.013" /><testcase classname="tests.conftest" name="ISORT" time="0.026" /><testcase classname="tests.conftest" name="black" time="0.191" /><testcase classname="tests.mock_module.__init__" name="PYDOCSTYLE" time="0.005" /><testcase classname="tests.mock_module.__init__" name="ISORT" time="0.010" /><testcase classname="tests.mock_module.__init__" name="black" time="0.173" /><testcase classname="tests.mock_module.api" name="PYDOCSTYLE" time="0.011" /><testcase classname="tests.mock_module.api" name="ISORT" time="0.035" /><testcase classname="tests.mock_module.api" name="black" time="0.195" /><testcase classname="tests.mock_module.jsonschemas.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.jsonschemas.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.jsonschemas.__init__" name="black" time="0.168" /><testcase classname="tests.mock_module.mappings.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.__init__" name="ISORT" time="0.005" /><testcase classname="tests.mock_module.mappings.__init__" name="black" time="0.172" /><testcase classname="tests.mock_module.mappings.os-v1.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.os-v1.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.mappings.os-v1.__init__" name="black" time="0.175" /><testcase classname="tests.mock_module.mappings.os-v1.draftsresources.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.os-v1.draftsresources.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.mappings.os-v1.draftsresources.__init__" name="black" time="0.167" /><testcase classname="tests.mock_module.mappings.os-v2.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.os-v2.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.mappings.os-v2.__init__" name="black" time="0.169" /><testcase classname="tests.mock_module.mappings.os-v2.draftsresources.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.os-v2.draftsresources.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.mappings.os-v2.draftsresources.__init__" name="black" time="0.166" /><testcase classname="tests.mock_module.mappings.v7.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.v7.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.mappings.v7.__init__" name="black" time="0.166" /><testcase classname="tests.mock_module.mappings.v7.draftsresources.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="tests.mock_module.mappings.v7.draftsresources.__init__" name="ISORT" time="0.004" /><testcase classname="tests.mock_module.mappings.v7.draftsresources.__init__" name="black" time="0.169" /><testcase classname="tests.mock_module.models" name="PYDOCSTYLE" time="0.008" /><testcase classname="tests.mock_module.models" name="ISORT" time="0.018" /><testcase classname="tests.mock_module.models" name="black" time="0.176" /><testcase classname="tests.mock_module.permissions" name="PYDOCSTYLE" time="0.006" /><testcase classname="tests.mock_module.permissions" name="ISORT" time="0.015" /><testcase classname="tests.mock_module.permissions" name="black" time="0.182" /><testcase classname="tests.mock_module.resource" name="PYDOCSTYLE" time="0.004" /><testcase classname="tests.mock_module.resource" name="ISORT" time="0.014" /><testcase classname="tests.mock_module.resource" name="black" time="0.177" /><testcase classname="tests.mock_module.schemas" name="PYDOCSTYLE" time="0.007" /><testcase classname="tests.mock_module.schemas" name="ISORT" time="0.016" /><testcase classname="tests.mock_module.schemas" name="black" time="0.176" /><testcase classname="tests.mock_module.service" name="PYDOCSTYLE" time="0.008" /><testcase classname="tests.mock_module.service" name="ISORT" time="0.027" /><testcase classname="tests.mock_module.service" name="black" time="0.181" /><testcase classname="tests.records.conftest" name="PYDOCSTYLE" time="0.004" /><testcase classname="tests.records.conftest" name="ISORT" time="0.011" /><testcase classname="tests.records.conftest" name="black" time="0.171" /><testcase classname="tests.records.test_api" name="ISORT" time="0.068" /><testcase classname="tests.records.test_api" name="black" time="0.262" /><testcase classname="tests.records.test_api" name="test_draft_create_empty" time="2.982" /><testcase classname="tests.records.test_api" name="test_draft_create_parent" time="0.265" /><testcase classname="tests.records.test_api" name="test_draft_create_parent_state" time="0.430" /><testcase classname="tests.records.test_api" name="test_record_create_parent_state" time="0.283" /><testcase classname="tests.records.test_api" name="test_draft_create_new_version" time="0.299" /><testcase classname="tests.records.test_api" name="test_draft_parent_state_hard_delete" time="0.276" /><testcase classname="tests.records.test_api" name="test_new_draft_of_published_record_doesnt_override_next_draft_id" time="0.535" /><testcase classname="tests.records.test_api" name="test_draft_parent_state_hard_delete_with_parent" time="0.285" /><testcase classname="tests.records.test_api" name="test_draft_parent_state_soft_delete" time="0.278" /><testcase classname="tests.records.test_api" name="test_create_record_from_draft" time="0.271" /><testcase classname="tests.records.test_api" name="test_draft_get_record" time="0.271" /><testcase classname="tests.records.test_api" name="test_draft_force_delete" time="0.517" /><testcase classname="tests.records.test_api" name="test_draft_soft_delete" time="0.274" /><testcase classname="tests.records.test_api" name="test_draft_undelete" time="0.276" /><testcase classname="tests.records.test_api" name="test_draft_dump_load_idempotence" time="0.294" /><testcase classname="tests.records.test_api" name="test_draft_indexing" time="0.347" /><testcase classname="tests.records.test_api" name="test_draft_delete_reindex" time="0.341" /><testcase classname="tests.records.test_api" name="test_get_records_by_parent" time="0.571" /><testcase classname="tests.records.test_api" name="test_get_latest_by_parent" time="0.624" /><testcase classname="tests.resources.conftest" name="PYDOCSTYLE" time="0.008" /><testcase classname="tests.resources.conftest" name="ISORT" time="0.008" /><testcase classname="tests.resources.conftest" name="black" time="0.170" /><testcase classname="tests.resources.test_files_resource" name="ISORT" time="0.038" /><testcase classname="tests.resources.test_files_resource" name="black" time="0.226" /><testcase classname="tests.resources.test_files_resource" name="test_files_publish_flow" time="3.423" /><testcase classname="tests.resources.test_files_resource" name="test_metadata_only_record" time="1.177"><failure message="AttributeError: 'NoneType' object has no attribute 'sync'">client = &lt;FlaskClient &lt;Flask 'invenio'&gt;&gt;
+search_clear = &lt;OpenSearch([{'host': 'localhost', 'port': 9200}])&gt;
+location = pytest-location
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+
+    def test_metadata_only_record(client, search_clear, location, headers):
+        """Test record with files disabled."""
+        h = headers
+        # Create a draft
+        res = client.post(
+            "/mocks",
+            headers=h,
+            json={"metadata": {"title": "Test"}, "files": {"enabled": False}},
+        )
+        assert res.status_code == 201
+        id_ = res.json["id"]
+    
+        # Publish the record
+        res = client.post(f"/mocks/{id_}/draft/actions/publish", headers=h)
+        assert res.status_code == 202
+    
+        # Check published files
+        res = client.get(f"/mocks/{id_}/files", headers=h)
+        assert res.status_code == 200
+        assert res.json["enabled"] is False
+        assert "entries" not in res.json
+    
+        # Edit the record
+        res = client.post(f"/mocks/{id_}/draft", headers=h)
+        assert res.status_code == 201
+    
+        # Publish again
+&gt;       res = client.post(f"/mocks/{id_}/draft/actions/publish", headers=h)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+client     = &lt;FlaskClient &lt;Flask 'invenio'&gt;&gt;
+h          = {'accept': 'application/json', 'content-type': 'application/json'}
+headers    = {'accept': 'application/json', 'content-type': 'application/json'}
+id_        = 'c1ep3-3pv88'
+location   = pytest-location
+res        = &lt;WrapperTestResponse streamed [201 CREATED]&gt;
+search_clear = &lt;OpenSearch([{'host': 'localhost', 'port': 9200}])&gt;
+
+tests/resources/test_files_resource.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+        args       = ('/mocks/c1ep3-3pv88/draft/actions/publish',)
+        kw         = {'headers': {'accept': 'application/json', 'content-type': 'application/json'},
+ 'method': 'POST'}
+        self       = &lt;FlaskClient &lt;Flask 'invenio'&gt;&gt;
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+        __class__  = &lt;class 'flask.testing.FlaskClient'&gt;
+        args       = ('/mocks/c1ep3-3pv88/draft/actions/publish',)
+        buffered   = False
+        follow_redirects = False
+        kwargs     = {'environ_base': {'HTTP_USER_AGENT': 'Werkzeug/3.1.3',
+                  'REMOTE_ADDR': '127.0.0.1',
+                  'werkzeug.debug.preserve_context': &lt;built-in method append of list object at 0x7f4c26ef8880&gt;},
+ 'headers': {'accept': 'application/json', 'content-type': 'application/json'},
+ 'method': 'POST'}
+        request    = &lt;Request 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST]&gt;
+        self       = &lt;FlaskClient &lt;Flask 'invenio'&gt;&gt;
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arg        = &lt;Request 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST]&gt;
+        args       = (&lt;Request 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST]&gt;,)
+        buffered   = False
+        follow_redirects = False
+        kwargs     = {}
+        request    = &lt;Request 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST]&gt;
+        self       = &lt;FlaskClient &lt;Flask 'invenio'&gt;&gt;
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        buffered   = False
+        environ    = {'CONTENT_TYPE': 'application/json',
+ 'HTTP_ACCEPT': 'application/json',
+ 'HTTP_HOST': 'localhost',
+ 'HTTP_USER_AGENT': 'Werkzeug/3.1.3',
+ 'PATH_INFO': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'QUERY_STRING': '',
+ 'RAW_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REQUEST_METHOD': 'POST',
+ 'REQUEST_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'SCRIPT_NAME': '',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '80',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'werkzeug.debug.preserve_context': &lt;built-in method append of list object at 0x7f4c26ef8880&gt;,
+ 'werkzeug.request': &lt;Request 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST]&gt;,
+ 'wsgi.errors': &lt;_io.TextIOWrapper name='&lt;stderr&gt;' mode='w' encoding='utf-8'&gt;,
+ 'wsgi.input': &lt;_io.BytesIO object at 0x7f4c26624ea0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': False,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}
+        self       = &lt;FlaskClient &lt;Flask 'invenio'&gt;&gt;
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        app        = &lt;Flask 'invenio'&gt;
+        buffer     = []
+        buffered   = False
+        environ    = {'CONTENT_TYPE': 'application/json',
+ 'HTTP_ACCEPT': 'application/json',
+ 'HTTP_HOST': 'localhost',
+ 'HTTP_USER_AGENT': 'Werkzeug/3.1.3',
+ 'PATH_INFO': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'QUERY_STRING': '',
+ 'RAW_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REQUEST_METHOD': 'POST',
+ 'REQUEST_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'SCRIPT_NAME': '',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '80',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'werkzeug.debug.preserve_context': &lt;built-in method append of list object at 0x7f4c26ef8880&gt;,
+ 'werkzeug.request': None,
+ 'wsgi.errors': &lt;_io.TextIOWrapper name='&lt;stderr&gt;' mode='w' encoding='utf-8'&gt;,
+ 'wsgi.input': &lt;_io.BytesIO object at 0x7f4c26624ea0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': False,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}
+        response   = None
+        start_response = &lt;function run_wsgi_app.&lt;locals&gt;.start_response at 0x7f4c265be480&gt;
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        environ    = {'CONTENT_TYPE': 'application/json',
+ 'HTTP_ACCEPT': 'application/json',
+ 'HTTP_HOST': 'localhost',
+ 'HTTP_USER_AGENT': 'Werkzeug/3.1.3',
+ 'PATH_INFO': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'QUERY_STRING': '',
+ 'RAW_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REQUEST_METHOD': 'POST',
+ 'REQUEST_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'SCRIPT_NAME': '',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '80',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'werkzeug.debug.preserve_context': &lt;built-in method append of list object at 0x7f4c26ef8880&gt;,
+ 'werkzeug.request': None,
+ 'wsgi.errors': &lt;_io.TextIOWrapper name='&lt;stderr&gt;' mode='w' encoding='utf-8'&gt;,
+ 'wsgi.input': &lt;_io.BytesIO object at 0x7f4c26624ea0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': False,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}
+        self       = &lt;Flask 'invenio'&gt;
+        start_response = &lt;function run_wsgi_app.&lt;locals&gt;.start_response at 0x7f4c265be480&gt;
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+        ctx        = &lt;RequestContext 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST] of invenio&gt;
+        environ    = {'CONTENT_TYPE': 'application/json',
+ 'HTTP_ACCEPT': 'application/json',
+ 'HTTP_HOST': 'localhost',
+ 'HTTP_USER_AGENT': 'Werkzeug/3.1.3',
+ 'PATH_INFO': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'QUERY_STRING': '',
+ 'RAW_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REQUEST_METHOD': 'POST',
+ 'REQUEST_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'SCRIPT_NAME': '',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '80',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'werkzeug.debug.preserve_context': &lt;built-in method append of list object at 0x7f4c26ef8880&gt;,
+ 'werkzeug.request': None,
+ 'wsgi.errors': &lt;_io.TextIOWrapper name='&lt;stderr&gt;' mode='w' encoding='utf-8'&gt;,
+ 'wsgi.input': &lt;_io.BytesIO object at 0x7f4c26624ea0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': False,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}
+        error      = AttributeError("'NoneType' object has no attribute 'sync'")
+        self       = &lt;Flask 'invenio'&gt;
+        start_response = &lt;function run_wsgi_app.&lt;locals&gt;.start_response at 0x7f4c265be480&gt;
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ctx        = &lt;RequestContext 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST] of invenio&gt;
+        environ    = {'CONTENT_TYPE': 'application/json',
+ 'HTTP_ACCEPT': 'application/json',
+ 'HTTP_HOST': 'localhost',
+ 'HTTP_USER_AGENT': 'Werkzeug/3.1.3',
+ 'PATH_INFO': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'QUERY_STRING': '',
+ 'RAW_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'REMOTE_ADDR': '127.0.0.1',
+ 'REQUEST_METHOD': 'POST',
+ 'REQUEST_URI': '/mocks/c1ep3-3pv88/draft/actions/publish',
+ 'SCRIPT_NAME': '',
+ 'SERVER_NAME': 'localhost',
+ 'SERVER_PORT': '80',
+ 'SERVER_PROTOCOL': 'HTTP/1.1',
+ 'werkzeug.debug.preserve_context': &lt;built-in method append of list object at 0x7f4c26ef8880&gt;,
+ 'werkzeug.request': None,
+ 'wsgi.errors': &lt;_io.TextIOWrapper name='&lt;stderr&gt;' mode='w' encoding='utf-8'&gt;,
+ 'wsgi.input': &lt;_io.BytesIO object at 0x7f4c26624ea0&gt;,
+ 'wsgi.multiprocess': False,
+ 'wsgi.multithread': False,
+ 'wsgi.run_once': False,
+ 'wsgi.url_scheme': 'http',
+ 'wsgi.version': (1, 0)}
+        error      = AttributeError("'NoneType' object has no attribute 'sync'")
+        self       = &lt;Flask 'invenio'&gt;
+        start_response = &lt;function run_wsgi_app.&lt;locals&gt;.start_response at 0x7f4c265be480&gt;
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        rv         = None
+        self       = &lt;Flask 'invenio'&gt;
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+        rv         = None
+        self       = &lt;Flask 'invenio'&gt;
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req        = &lt;Request 'http://localhost/mocks/c1ep3-3pv88/draft/actions/publish' [POST]&gt;
+        rule       = &lt;Rule '/mocks/&lt;pid_value&gt;/draft/actions/publish' (OPTIONS, POST) -&gt; mocks.publish&gt;
+        self       = &lt;Flask 'invenio'&gt;
+        view_args  = {'pid_value': 'c1ep3-3pv88'}
+.venv/lib/python3.12/site-packages/flask_resources/resources.py:65: in view
+    return view_meth()
+           ^^^^^^^^^^^
+        args       = ()
+        config     = &lt;class 'mock_module.resource.RecordResourceConfig'&gt;
+        kwargs     = {'pid_value': 'c1ep3-3pv88'}
+        view_meth  = &lt;function RecordResource.publish at 0x7f4c27d92d40&gt;
+.venv/lib/python3.12/site-packages/flask_resources/content_negotiation.py:116: in inner_content_negotiation
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+        accept_mimetype = 'application/json'
+        args       = ()
+        default_accept_mimetype = &lt;flask_resources.config.ConfigAttrValue object at 0x7f4c31509ac0&gt;
+        default_mimetype = 'application/json'
+        f          = &lt;bound method RecordResource.publish of &lt;invenio_drafts_resources.resources.records.resource.RecordResource object at 0x7f4c2c9b69c0&gt;&gt;
+        handlers   = {'application/json': &lt;flask_resources.responses.ResponseHandler object at 0x7f4c2cde9790&gt;}
+        kwargs     = {}
+        response_handlers = &lt;flask_resources.config.ConfigAttrValue object at 0x7f4c31509a90&gt;
+.venv/lib/python3.12/site-packages/flask_resources/parsers/decorators.py:51: in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+        args       = ()
+        ctx_attr   = None
+        f          = &lt;function RecordResource.publish at 0x7f4c2cc8f600&gt;
+        kwargs     = {}
+        location   = 'args'
+        options    = {}
+        parser     = &lt;flask_resources.parsers.base.RequestParser object at 0x7f4c26ecc230&gt;
+        s          = {'expand': &lt;fields.Boolean(dump_default=&lt;marshmallow.missing&gt;, attribute=None, validate=None, required=False, load_only=False, dump_only=False, load_default=&lt;marshmallow.missing&gt;, allow_none=False, error_messages={'required': 'Missing data for required field.', 'null': 'Field may not be null.', 'validator_failed': 'Invalid value.', 'invalid': 'Not a valid boolean.'})&gt;,
+ 'refresh': &lt;fields.Boolean(dump_default=&lt;marshmallow.missing&gt;, attribute=None, validate=None, required=False, load_only=False, dump_only=False, load_default=&lt;marshmallow.missing&gt;, allow_none=False, error_messages={'required': 'Missing data for required field.', 'null': 'Field may not be null.', 'validator_failed': 'Invalid value.', 'invalid': 'Not a valid boolean.'})&gt;}
+        schema_or_parser = &lt;flask_resources.config.ConfigAttrValue object at 0x7f4c2cde9f40&gt;
+        self       = &lt;invenio_drafts_resources.resources.records.resource.RecordResource object at 0x7f4c2c9b69c0&gt;
+.venv/lib/python3.12/site-packages/flask_resources/parsers/decorators.py:51: in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+        args       = ()
+        ctx_attr   = None
+        f          = &lt;function RecordResource.publish at 0x7f4c2cc8f740&gt;
+        kwargs     = {}
+        location   = 'view_args'
+        options    = {}
+        parser     = &lt;flask_resources.parsers.base.RequestParser object at 0x7f4c269175f0&gt;
+        s          = {'pid_value': &lt;fields.String(dump_default=&lt;marshmallow.missing&gt;, attribute=None, validate=None, required=False, load_only=False, dump_only=False, load_default=&lt;marshmallow.missing&gt;, allow_none=False, error_messages={'required': 'Missing data for required field.', 'null': 'Field may not be null.', 'validator_failed': 'Invalid value.', 'invalid': 'Not a valid string.', 'invalid_utf8': 'Not a valid utf-8 string.'})&gt;}
+        schema_or_parser = &lt;flask_resources.config.ConfigAttrValue object at 0x7f4c2cde9df0&gt;
+        self       = &lt;invenio_drafts_resources.resources.records.resource.RecordResource object at 0x7f4c2c9b69c0&gt;
+.venv/lib/python3.12/site-packages/flask_resources/responses.py:39: in inner
+    res = f(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^
+        args       = (&lt;invenio_drafts_resources.resources.records.resource.RecordResource object at 0x7f4c2c9b69c0&gt;,)
+        f          = &lt;function RecordResource.publish at 0x7f4c2cc8f6a0&gt;
+        kwargs     = {}
+        many       = False
+invenio_drafts_resources/resources/records/resource.py:162: in publish
+    item = self.service.publish(
+        self       = &lt;invenio_drafts_resources.resources.records.resource.RecordResource object at 0x7f4c2c9b69c0&gt;
+.venv/lib/python3.12/site-packages/invenio_db/uow.py:251: in inner
+    res = f(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+        args       = (&lt;AnonymousIdentity id="None" auth_type="None" provides={Need(method='system_role', value='any_user')}&gt;,
+ 'c1ep3-3pv88')
+        f          = &lt;function RecordService.publish at 0x7f4c2ca691c0&gt;
+        kwargs     = {'expand': False, 'uow': &lt;invenio_db.uow.UnitOfWork object at 0x7f4c27616420&gt;}
+        self       = &lt;invenio_drafts_resources.services.records.service.RecordService object at 0x7f4c2c9b6ab0&gt;
+        uow        = &lt;invenio_db.uow.UnitOfWork object at 0x7f4c27616420&gt;
+invenio_drafts_resources/services/records/service.py:418: in publish
+    self.run_components("publish", identity, draft=draft, record=record, uow=uow)
+        draft      = {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+ 'files': {'enabled': False},
+ 'id': 'c1ep3-3pv88',
+ 'media_files': {'enabled': False},
+ 'metadata': {'title': 'Test'},
+ 'pid': {'obj_type': 'rec', 'pid_type': 'recid', 'pk': 4, 'status': 'R'}}
+        expand     = False
+        id_        = 'c1ep3-3pv88'
+        identity   = &lt;AnonymousIdentity id="None" auth_type="None" provides={Need(method='system_role', value='any_user')}&gt;
+        latest_id  = UUID('85bafe5a-fc4b-4872-9ce4-aa98b86abf56')
+        record     = {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+ 'files': {'enabled': False},
+ 'id': 'c1ep3-3pv88',
+ 'media_files': {'enabled': False},
+ 'metadata': {'title': 'Test'},
+ 'pid': {'obj_type': 'rec', 'pid_type': 'recid', 'pk': 4, 'status': 'R'}}
+        self       = &lt;invenio_drafts_resources.services.records.service.RecordService object at 0x7f4c2c9b6ab0&gt;
+        uow        = &lt;invenio_db.uow.UnitOfWork object at 0x7f4c27616420&gt;
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/service.py:72: in run_components
+    getattr(component, action)(*args, **kwargs)
+        action     = 'publish'
+        args       = (&lt;AnonymousIdentity id="None" auth_type="None" provides={Need(method='system_role', value='any_user')}&gt;,)
+        component  = &lt;invenio_records_resources.services.base.config.Custom_DraftMediaFilesComponent object at 0x7f4c27315b80&gt;
+        kwargs     = {'draft': {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+           'files': {'enabled': False},
+           'id': 'c1ep3-3pv88',
+           'media_files': {'enabled': False},
+           'metadata': {'title': 'Test'},
+           'pid': {'obj_type': 'rec',
+                   'pid_type': 'recid',
+                   'pk': 4,
+                   'status': 'R'}},
+ 'record': {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+            'files': {'enabled': False},
+            'id': 'c1ep3-3pv88',
+            'media_files': {'enabled': False},
+            'metadata': {'title': 'Test'},
+            'pid': {'obj_type': 'rec',
+                    'pid_type': 'recid',
+                    'pk': 4,
+                    'status': 'R'}}}
+        self       = &lt;invenio_drafts_resources.services.records.service.RecordService object at 0x7f4c2c9b6ab0&gt;
+        uow        = &lt;invenio_db.uow.UnitOfWork object at 0x7f4c27616420&gt;
+invenio_drafts_resources/services/records/components/base.py:269: in publish
+    self._publish_edit(identity, draft, record)
+        draft      = {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+ 'files': {'enabled': False},
+ 'id': 'c1ep3-3pv88',
+ 'media_files': {'enabled': False},
+ 'metadata': {'title': 'Test'},
+ 'pid': {'obj_type': 'rec', 'pid_type': 'recid', 'pk': 4, 'status': 'R'}}
+        draft_files = &lt;FilesManager (enabled=False)
+        identity   = &lt;AnonymousIdentity id="None" auth_type="None" provides={Need(method='system_role', value='any_user')}&gt;
+        record     = {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+ 'files': {'enabled': False},
+ 'id': 'c1ep3-3pv88',
+ 'media_files': {'enabled': False},
+ 'metadata': {'title': 'Test'},
+ 'pid': {'obj_type': 'rec', 'pid_type': 'recid', 'pk': 4, 'status': 'R'}}
+        record_bucket_id = a4149937-5d62-4555-9c3b-1b9e6c73dc44
+        self       = &lt;invenio_records_resources.services.base.config.Custom_DraftMediaFilesComponent object at 0x7f4c27315b80&gt;
+invenio_drafts_resources/services/records/components/media_files.py:126: in _publish_edit
+    record_files.sync(draft_files, delete_extras=True)
+        draft      = {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+ 'files': {'enabled': False},
+ 'id': 'c1ep3-3pv88',
+ 'media_files': {'enabled': False},
+ 'metadata': {'title': 'Test'},
+ 'pid': {'obj_type': 'rec', 'pid_type': 'recid', 'pk': 4, 'status': 'R'}}
+        draft_files = &lt;FilesManager (enabled=False)
+        identity   = &lt;AnonymousIdentity id="None" auth_type="None" provides={Need(method='system_role', value='any_user')}&gt;
+        record     = {'$schema': 'http://localhost/schemas/records/record-v1.0.0.json',
+ 'files': {'enabled': False},
+ 'id': 'c1ep3-3pv88',
+ 'media_files': {'enabled': False},
+ 'metadata': {'title': 'Test'},
+ 'pid': {'obj_type': 'rec', 'pid_type': 'recid', 'pk': 4, 'status': 'R'}}
+        record_files = &lt;FilesManager (enabled=False)
+        self       = &lt;invenio_records_resources.services.base.config.Custom_DraftMediaFilesComponent object at 0x7f4c27315b80&gt;
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;FilesManager (enabled=False), src_files = &lt;FilesManager (enabled=False)
+delete_extras = True
+
+    def sync(self, src_files, delete_extras=True):
+        """Sync changes from source files to this manager.
+    
+        The source files are fully mirrored with the destination files following the
+        logic:
+    
+         * same ObjectVersions are not touched
+         * new ObjectVersions are added to destination
+         * deleted ObjectVersions are deleted in destination
+         * extra ObjectVersions in dest are deleted if `delete_extras` param is
+           True
+        Logic follows the bucket sync logic
+        """
+        # TODO record file data is not synced
+        self.default_preview = src_files.default_preview
+        self.order = src_files.order
+    
+        # Sync file additions/removals/changes
+        if self.bucket.locked:
+            raise BucketLockedError()
+    
+&gt;       _, changed_ovs = src_files.bucket.sync(self.bucket, delete_extras=delete_extras)
+                         ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'sync'
+
+delete_extras = True
+self       = &lt;FilesManager (enabled=False)
+src_files  = &lt;FilesManager (enabled=False)
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/records/systemfields/files/manager.py:368: AttributeError</failure></testcase><testcase classname="tests.resources.test_files_resource" name="test_import_files" time="1.229" /><testcase classname="tests.resources.test_files_resource" name="test_import_files_metadata_only" time="1.104" /><testcase classname="tests.resources.test_files_resource" name="test_import_files_no_version" time="1.171" /><testcase classname="tests.resources.test_record_resource" name="ISORT" time="0.040" /><testcase classname="tests.resources.test_record_resource" name="black" time="0.220" /><testcase classname="tests.resources.test_record_resource" name="test_create_draft" time="2.529" /><testcase classname="tests.resources.test_record_resource" name="test_read_draft" time="0.844" /><testcase classname="tests.resources.test_record_resource" name="test_update_draft" time="0.897" /><testcase classname="tests.resources.test_record_resource" name="test_delete_draft" time="0.824" /><testcase classname="tests.resources.test_record_resource" name="test_publish_draft" time="0.892" /><testcase classname="tests.resources.test_record_resource" name="test_search_versions" time="0.945" /><testcase classname="tests.resources.test_record_resource" name="test_create_publish_new_revision" time="1.427" /><testcase classname="tests.resources.test_record_resource" name="test_multiple_edit" time="1.088" /><testcase classname="tests.resources.test_record_resource" name="test_redirect_to_latest_version" time="0.655" /><testcase classname="tests.resources.test_resource_links" name="ISORT" time="0.023" /><testcase classname="tests.resources.test_resource_links" name="black" time="0.179" /><testcase classname="tests.resources.test_resource_links" name="test_create_draft" time="1.533" /><testcase classname="tests.resources.test_resource_links" name="test_read_draft" time="0.104" /><testcase classname="tests.resources.test_resource_links" name="test_update_draft" time="0.124" /><testcase classname="tests.resources.test_resource_links" name="test_publish_draft" time="0.392" /><testcase classname="tests.services.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="tests.services.__init__" name="ISORT" time="0.004" /><testcase classname="tests.services.__init__" name="black" time="0.166" /><testcase classname="tests.services.conftest" name="PYDOCSTYLE" time="0.006" /><testcase classname="tests.services.conftest" name="ISORT" time="0.014" /><testcase classname="tests.services.conftest" name="black" time="0.172" /><testcase classname="tests.services.test_record_service" name="ISORT" time="0.052" /><testcase classname="tests.services.test_record_service" name="black" time="0.235" /><testcase classname="tests.services.test_record_service" name="test_create_draft" time="1.532" /><testcase classname="tests.services.test_record_service" name="test_create_empty_draft" time="0.066" /><testcase classname="tests.services.test_record_service" name="test_read_draft" time="0.089" /><testcase classname="tests.services.test_record_service" name="test_update_draft" time="0.134" /><testcase classname="tests.services.test_record_service" name="test_update_draft_invalid_field" time="0.118" /><testcase classname="tests.services.test_record_service" name="test_delete_draft" time="0.146" /><testcase classname="tests.services.test_record_service" name="test_publish_draft" time="0.193" /><testcase classname="tests.services.test_record_service" name="test_fail_to_publish_invalid_draft" time="0.104" /><testcase classname="tests.services.test_record_service" name="test_create_publish_new_revision" time="0.377" /><testcase classname="tests.services.test_record_service" name="test_multiple_edit" time="0.348" /><testcase classname="tests.services.test_record_service" name="test_create_publish_new_version" time="0.579" /><testcase classname="tests.services.test_record_service" name="test_multi_version_delete_draft" time="0.987" /><testcase classname="tests.services.test_record_service" name="test_read_latest_version" time="0.598" /><testcase classname="tests.services.test_record_service_files" name="ISORT" time="0.114" /><testcase classname="tests.services.test_record_service_files" name="black" time="0.337" /><testcase classname="tests.services.test_record_service_files" name="test_create_delete_draft" time="2.019" /><testcase classname="tests.services.test_record_service_files" name="test_create_publish" time="0.521" /><testcase classname="tests.services.test_record_service_files" name="test_edit_delete" time="0.764" /><testcase classname="tests.services.test_record_service_files" name="test_edit_delete_media_files" time="0.826" /><testcase classname="tests.services.test_record_service_files" name="test_edit_publish" time="1.056" /><testcase classname="tests.services.test_record_service_files" name="test_edit_draft_files" time="0.763" /><testcase classname="tests.services.test_record_service_files" name="test_publish_draft_media_files_no_bucket" time="0.393" /><testcase classname="tests.services.test_record_service_files" name="test_new_version" time="0.736" /><testcase classname="tests.services.test_record_service_files" name="test_new_version_with_media_files" time="0.965" /><testcase classname="tests.services.test_record_service_files" name="test_new_version_delete" time="0.747" /><testcase classname="tests.services.test_record_service_files" name="test_new_version_with_media_files_delete" time="1.015" /><testcase classname="tests.services.test_record_service_files" name="test_import_files" time="0.611" /><testcase classname="tests.services.test_record_service_files" name="test_import_files_disabled" time="0.849" /><testcase classname="tests.services.test_record_service_files" name="test_edit_publish_default_preview" time="0.525" /><testcase classname="tests.services.test_record_service_files" name="test_update_draft_set_default_file_preview" time="0.204" /><testcase classname="tests.services.test_record_service_files" name="test_update_draft_set_default_file_preview_reports_error" time="0.203" /><testcase classname="tests.services.test_record_service_files" name="test_publish_with_fetch_files" time="0.150" /><testcase classname="tests.services.test_record_service_files" name="test_missing_files" time="0.120" /><testcase classname="tests.services.test_record_service_files" name="test_disable_files_error" time="0.202" /><testcase classname="tests.services.test_record_service_files" name="test_fail_to_publish_draft_with_no_files" time="0.101" /><testcase classname="tests.services.test_record_service_files" name="test_fail_to_add_files_to_draft_with_files_disabled" time="0.095" /><testcase classname="tests.services.test_record_service_files" name="test_manage_files_permissions" time="0.132" /><testcase classname="tests.services.test_record_service_files" name="test_publish_with_remote_files" time="0.517" /><testcase classname="tests.services.test_record_service_files" name="test_enable_files_after_publish" time="1.171" /><testcase classname="tests.services.test_record_service_search" name="ISORT" time="0.010" /><testcase classname="tests.services.test_record_service_search" name="black" time="0.183" /><testcase classname="tests.services.test_record_service_search" name="test_search_versions" time="1.929" /><testcase classname="tests.services.test_record_service_search" name="test_search_versions_for_record" time="0.586" /><testcase classname="tests.services.test_record_service_tasks" name="ISORT" time="0.013" /><testcase classname="tests.services.test_record_service_tasks" name="black" time="0.183" /><testcase classname="tests.services.test_record_service_tasks" name="test_hard_delete_soft_deleted_task" time="1.786" /><testcase classname="tests.services.test_records_uow" name="ISORT" time="0.022" /><testcase classname="tests.services.test_records_uow" name="black" time="0.188" /><testcase classname="tests.services.test_records_uow" name="test_parent_record_uow_params" time="1.679" /><testcase classname="tests.services.test_records_uow" name="test_parent_record_commit" time="0.876" /><testcase classname="tests.services.test_services" name="ISORT" time="0.024" /><testcase classname="tests.services.test_services" name="black" time="0.179" /><testcase classname="tests.services.test_services" name="test_hard_delete_soft_deleted" time="1.660" /><testcase classname="tests.services.test_services" name="test_hard_delete_soft_deleted_not_enough_time" time="0.349" /><testcase classname="tests.services.utils" name="PYDOCSTYLE" time="0.004" /><testcase classname="tests.services.utils" name="ISORT" time="0.005" /><testcase classname="tests.services.utils" name="black" time="0.176" /><testcase classname="invenio_drafts_resources.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.__init__" name="ISORT" time="0.005" /><testcase classname="invenio_drafts_resources.__init__" name="black" time="0.169" /><testcase classname="invenio_drafts_resources.auditlog.__init__" name="PYDOCSTYLE" time="0.002" /><testcase classname="invenio_drafts_resources.auditlog.__init__" name="ISORT" time="0.004" /><testcase classname="invenio_drafts_resources.auditlog.__init__" name="black" time="0.166" /><testcase classname="invenio_drafts_resources.auditlog.actions" name="PYDOCSTYLE" time="0.007" /><testcase classname="invenio_drafts_resources.auditlog.actions" name="ISORT" time="0.014" /><testcase classname="invenio_drafts_resources.auditlog.actions" name="black" time="0.173" /><testcase classname="invenio_drafts_resources.auditlog.context" name="PYDOCSTYLE" time="0.008" /><testcase classname="invenio_drafts_resources.auditlog.context" name="ISORT" time="0.015" /><testcase classname="invenio_drafts_resources.auditlog.context" name="black" time="0.183" /><testcase classname="invenio_drafts_resources.records.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.records.__init__" name="ISORT" time="0.008" /><testcase classname="invenio_drafts_resources.records.__init__" name="black" time="0.170" /><testcase classname="invenio_drafts_resources.records.api" name="PYDOCSTYLE" time="0.020" /><testcase classname="invenio_drafts_resources.records.api" name="ISORT" time="0.045" /><testcase classname="invenio_drafts_resources.records.api" name="black" time="0.210" /><testcase classname="invenio_drafts_resources.records.models" name="PYDOCSTYLE" time="0.011" /><testcase classname="invenio_drafts_resources.records.models" name="ISORT" time="0.024" /><testcase classname="invenio_drafts_resources.records.models" name="black" time="0.186" /><testcase classname="invenio_drafts_resources.records.systemfields.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.records.systemfields.__init__" name="ISORT" time="0.007" /><testcase classname="invenio_drafts_resources.records.systemfields.__init__" name="black" time="0.169" /><testcase classname="invenio_drafts_resources.records.systemfields.parent" name="PYDOCSTYLE" time="0.012" /><testcase classname="invenio_drafts_resources.records.systemfields.parent" name="ISORT" time="0.021" /><testcase classname="invenio_drafts_resources.records.systemfields.parent" name="black" time="0.186" /><testcase classname="invenio_drafts_resources.records.systemfields.versions" name="PYDOCSTYLE" time="0.029" /><testcase classname="invenio_drafts_resources.records.systemfields.versions" name="ISORT" time="0.044" /><testcase classname="invenio_drafts_resources.records.systemfields.versions" name="black" time="0.219" /><testcase classname="invenio_drafts_resources.resources.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.resources.__init__" name="ISORT" time="0.006" /><testcase classname="invenio_drafts_resources.resources.__init__" name="black" time="0.174" /><testcase classname="invenio_drafts_resources.resources.records.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.resources.records.__init__" name="ISORT" time="0.007" /><testcase classname="invenio_drafts_resources.resources.records.__init__" name="black" time="0.167" /><testcase classname="invenio_drafts_resources.resources.records.args" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.resources.records.args" name="ISORT" time="0.009" /><testcase classname="invenio_drafts_resources.resources.records.args" name="black" time="0.167" /><testcase classname="invenio_drafts_resources.resources.records.config" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.resources.records.config" name="ISORT" time="0.010" /><testcase classname="invenio_drafts_resources.resources.records.config" name="black" time="0.174" /><testcase classname="invenio_drafts_resources.resources.records.errors" name="PYDOCSTYLE" time="0.006" /><testcase classname="invenio_drafts_resources.resources.records.errors" name="ISORT" time="0.013" /><testcase classname="invenio_drafts_resources.resources.records.errors" name="black" time="0.174" /><testcase classname="invenio_drafts_resources.resources.records.resource" name="PYDOCSTYLE" time="0.023" /><testcase classname="invenio_drafts_resources.resources.records.resource" name="ISORT" time="0.043" /><testcase classname="invenio_drafts_resources.resources.records.resource" name="black" time="0.220" /><testcase classname="invenio_drafts_resources.services.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.services.__init__" name="ISORT" time="0.006" /><testcase classname="invenio_drafts_resources.services.__init__" name="black" time="0.167" /><testcase classname="invenio_drafts_resources.services.records.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.services.records.__init__" name="ISORT" time="0.006" /><testcase classname="invenio_drafts_resources.services.records.__init__" name="black" time="0.172" /><testcase classname="invenio_drafts_resources.services.records.components.__init__" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.services.records.components.__init__" name="ISORT" time="0.009" /><testcase classname="invenio_drafts_resources.services.records.components.__init__" name="black" time="0.177" /><testcase classname="invenio_drafts_resources.services.records.components.base" name="PYDOCSTYLE" time="0.026" /><testcase classname="invenio_drafts_resources.services.records.components.base" name="ISORT" time="0.050" /><testcase classname="invenio_drafts_resources.services.records.components.base" name="black" time="0.228" /><testcase classname="invenio_drafts_resources.services.records.components.files" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_drafts_resources.services.records.components.files" name="ISORT" time="0.009" /><testcase classname="invenio_drafts_resources.services.records.components.files" name="black" time="0.169" /><testcase classname="invenio_drafts_resources.services.records.components.media_files" name="PYDOCSTYLE" time="0.014" /><testcase classname="invenio_drafts_resources.services.records.components.media_files" name="ISORT" time="0.028" /><testcase classname="invenio_drafts_resources.services.records.components.media_files" name="black" time="0.204" /><testcase classname="invenio_drafts_resources.services.records.components.metadata" name="PYDOCSTYLE" time="0.006" /><testcase classname="invenio_drafts_resources.services.records.components.metadata" name="ISORT" time="0.010" /><testcase classname="invenio_drafts_resources.services.records.components.metadata" name="black" time="0.175" /><testcase classname="invenio_drafts_resources.services.records.components.pid" name="PYDOCSTYLE" time="0.005" /><testcase classname="invenio_drafts_resources.services.records.components.pid" name="ISORT" time="0.010" /><testcase classname="invenio_drafts_resources.services.records.components.pid" name="black" time="0.174" /><testcase classname="invenio_drafts_resources.services.records.components.relations" name="PYDOCSTYLE" time="0.004" /><testcase classname="invenio_drafts_resources.services.records.components.relations" name="ISORT" time="0.008" /><testcase classname="invenio_drafts_resources.services.records.components.relations" name="black" time="0.170" /><testcase classname="invenio_drafts_resources.services.records.config" name="PYDOCSTYLE" time="0.013" /><testcase classname="invenio_drafts_resources.services.records.config" name="ISORT" time="0.036" /><testcase classname="invenio_drafts_resources.services.records.config" name="black" time="0.199" /><testcase classname="invenio_drafts_resources.services.records.permissions" name="PYDOCSTYLE" time="0.004" /><testcase classname="invenio_drafts_resources.services.records.permissions" name="ISORT" time="0.009" /><testcase classname="invenio_drafts_resources.services.records.permissions" name="black" time="0.174" /><testcase classname="invenio_drafts_resources.services.records.schema" name="PYDOCSTYLE" time="0.005" /><testcase classname="invenio_drafts_resources.services.records.schema" name="ISORT" time="0.012" /><testcase classname="invenio_drafts_resources.services.records.schema" name="black" time="0.179" /><testcase classname="invenio_drafts_resources.services.records.search_params" name="PYDOCSTYLE" time="0.005" /><testcase classname="invenio_drafts_resources.services.records.search_params" name="ISORT" time="0.010" /><testcase classname="invenio_drafts_resources.services.records.search_params" name="black" time="0.178" /><testcase classname="invenio_drafts_resources.services.records.service" name="PYDOCSTYLE" time="0.053" /><testcase classname="invenio_drafts_resources.services.records.service" name="ISORT" time="0.107" /><testcase classname="invenio_drafts_resources.services.records.service" name="black" time="0.302" /><testcase classname="invenio_drafts_resources.services.records.tasks" name="PYDOCSTYLE" time="0.004" /><testcase classname="invenio_drafts_resources.services.records.tasks" name="ISORT" time="0.010" /><testcase classname="invenio_drafts_resources.services.records.tasks" name="black" time="0.176" /><testcase classname="invenio_drafts_resources.services.records.uow" name="PYDOCSTYLE" time="0.009" /><testcase classname="invenio_drafts_resources.services.records.uow" name="ISORT" time="0.016" /><testcase classname="invenio_drafts_resources.services.records.uow" name="black" time="0.196" /></testsuite></testsuites>
