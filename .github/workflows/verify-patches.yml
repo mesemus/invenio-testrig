@@ -22,6 +22,11 @@ on:
         required: false
         type: number
         default: 3600
+      verbose_pytest:
+        description: "Run pytest with verbose output (-vv -s)"
+        required: false
+        type: boolean
+        default: false
 
 env:
   PYTHONUNBUFFERED: 1
@@ -201,6 +206,7 @@ jobs:
           package-name: ${{ matrix.package }}
           test-type: patched
           timeout: ${{ inputs.test_timeout }}
+          verbose-pytest: ${{ inputs.verbose_pytest }}
 
       # if the previous step failed, we will try to run the tests without patches
       - name: Clone package repository for tests without patches
@@ -231,6 +237,7 @@ jobs:
           package-name: ${{ matrix.package }}
           test-type: original
           timeout: ${{ inputs.test_timeout }}
+          verbose-pytest: ${{ inputs.verbose_pytest }}
 
       - name: Compare test results
         if: env.SO_FAR_OK == '1'
