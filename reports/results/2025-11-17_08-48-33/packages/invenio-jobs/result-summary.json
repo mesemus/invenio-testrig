@@ -1,0 +1,41 @@
+{
+  "package": "invenio-jobs",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio invenio-files-rest",
+  "warnings": {
+    "patched": {
+      "UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.": 3,
+      "DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13": 1,
+      "DeprecationWarning: The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version(\"marshmallow\")).release' instead.": 1,
+      "DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.": 2,
+      "DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.": 1,
+      "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.": 1,
+      "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('fs')`.": 2,
+      "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('fs.opener')`.": 1,
+      "RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.": 2,
+      "DeprecationWarning: Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.": 1,
+      "ChangedInMarshmallow4Warning: `Field` should not be instantiated. Use `fields.Raw` or  another field subclass instead.": 1,
+      "RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.": 4,
+      "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).": 7,
+      "LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)": 1,
+      "FutureWarning: CSRF validation will be enabled by default in the version 1.3.x": 1,
+      "DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('7dab6f98-e661-473b-a29e-afc9e8362462'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('5381baf6-2af0-4b7d-8a72-aa2886d12346'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('ddb7d1f6-61fa-495f-9ba0-f9aac66ea054'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('2a4ceef3-afbb-451f-83d9-f8ab13eff191'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('7dfb4873-7db4-4e3b-b2ac-0f6d397c4197'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('24f1d34f-99c5-4f0a-9481-e40bddace872'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('cd10f053-11d9-40dd-99c2-31599581a988'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 37
+  }
+}
