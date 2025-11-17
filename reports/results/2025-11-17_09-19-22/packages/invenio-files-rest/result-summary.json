@@ -1,0 +1,11 @@
+{
+  "package": "invenio-files-rest",
+  "has_patch": true,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "skipped",
+  "result": "",
+  "result_icon": "",
+  "result_text": "",
+  "patched_packages": "pytest-invenio"
+}
