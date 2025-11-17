@@ -1,0 +1,23 @@
+{
+  "package": "invenio-stats",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "failed",
+  "patched_tests_outcome": "failed",
+  "result": "still-failing",
+  "result_icon": "\u26a0\ufe0f",
+  "result_text": "Tests still failing after patch",
+  "patched_packages": "pytest-invenio invenio-files-rest",
+  "warnings": {
+    "original": {
+      "FutureWarning: CSRF validation will be enabled by default in the version 1.3.x": 1
+    },
+    "patched": {
+      "FutureWarning: CSRF validation will be enabled by default in the version 1.3.x": 1
+    }
+  },
+  "warnings_count": {
+    "original": 1,
+    "patched": 1
+  }
+}

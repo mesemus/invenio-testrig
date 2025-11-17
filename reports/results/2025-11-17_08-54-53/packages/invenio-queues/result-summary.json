@@ -1,0 +1,17 @@
+{
+  "package": "invenio-queues",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {}
+  },
+  "warnings_count": {
+    "patched": 0
+  }
+}
