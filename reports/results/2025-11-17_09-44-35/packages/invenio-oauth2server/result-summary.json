@@ -1,0 +1,27 @@
+{
+  "package": "invenio-oauth2server",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {
+      "DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13": 1,
+      "RuntimeWarning: You are overriding the default OAuthlib \"URL encoded\" set of valid characters. Make sure that the characters defined in oauthlib.common.urlencoded are indeed limitting your needs.": 1,
+      "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).": 10,
+      "DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).": 1,
+      "SAWarning: Object of type <Client> not in session, add operation along 'User.oauth2clients' will not proceed": 1,
+      "SAWarning: Object of type <Client> not in session, add operation along 'User.oauth2clients' will not proceed (This warning originated from the Session 'autoflush' process, which was invoked automatically in response to a user-initiated operation. Consider using ``no_autoflush`` context manager if this warning happened while initializing objects.)": 2,
+      "SAWarning: Object of type <Token> not in session, add operation along 'User.oauth2tokens' will not proceed": 1,
+      "DeprecationWarning: get_user method is deprecated, user get_user_by_email/get_user_by_id": 1,
+      "DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 19
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "package": "invenio-logging",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {
+      "DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead": 1,
+      "PendingDeprecationWarning: This feature is deprecated.": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 2
+  }
+}
