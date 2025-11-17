@@ -10,6 +10,10 @@ inputs:
   test-type:
     description: 'Type of test run (original or patched)'
     required: true
+  timeout:
+    description: 'Timeout in seconds for test execution (0 = no timeout)'
+    required: false
+    default: '3600'
 outputs:
   conclusion:
     description: 'Test conclusion (success or failure)'
@@ -28,6 +32,26 @@ runs:
         # Create artifacts directory
         mkdir -p ../artifacts
 
+        TIMEOUT=${{ inputs.timeout }}
+        TIMEOUT_TRIGGERED=0
+
+        # Start timeout watchdog in background if timeout is set
+        if [ "$TIMEOUT" -gt 0 ]; then
+          (
+            sleep "$TIMEOUT"
+            echo ""
+            echo "⏱️  Test execution exceeded timeout of ${TIMEOUT} seconds"
+            echo "🔴 Killing all Python processes..."
+            # Kill all python processes
+            killall -9 python || true
+            killall -9 python3 || true
+            # Create a marker file to indicate timeout
+            touch ../artifacts/timeout-triggered-${{ inputs.test-type }}.marker
+          ) &
+          WATCHDOG_PID=$!
+          echo "Started timeout watchdog (PID: $WATCHDOG_PID) with ${TIMEOUT}s timeout"
+        fi
+
         echo "🧪 Running tests on ${{ inputs.test-type }} package"
         echo "::group::Test execution (${{ inputs.test-type }})"
         set +e
@@ -36,8 +60,30 @@ runs:
         set -e
         echo "::endgroup::"
 
-        if [ $TEST_EXIT_CODE -ne 0 ]; then
-          echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
+        # Kill the watchdog if it's still running
+        if [ "$TIMEOUT" -gt 0 ] && [ -n "$WATCHDOG_PID" ]; then
+          if kill -0 "$WATCHDOG_PID" 2>/dev/null; then
+            kill "$WATCHDOG_PID" 2>/dev/null || true
+            echo "✓ Stopped timeout watchdog"
+          fi
+        fi
+
+        # Check if timeout was triggered
+        if [ -f ../artifacts/timeout-triggered-${{ inputs.test-type }}.marker ]; then
+          TIMEOUT_TRIGGERED=1
+          echo "" >> ../artifacts/test-output-${{ inputs.test-type }}.txt
+          echo "========================================" >> ../artifacts/test-output-${{ inputs.test-type }}.txt
+          echo "⏱️  TIMEOUT: Test execution exceeded ${TIMEOUT} seconds" >> ../artifacts/test-output-${{ inputs.test-type }}.txt
+          echo "🔴 All Python processes were terminated" >> ../artifacts/test-output-${{ inputs.test-type }}.txt
+          echo "========================================" >> ../artifacts/test-output-${{ inputs.test-type }}.txt
+        fi
+
+        if [ $TEST_EXIT_CODE -ne 0 ] || [ $TIMEOUT_TRIGGERED -eq 1 ]; then
+          if [ $TIMEOUT_TRIGGERED -eq 1 ]; then
+            echo "❌ Tests failed due to timeout (${TIMEOUT}s)"
+          else
+            echo "❌ Tests failed (exit code: $TEST_EXIT_CODE)"
+          fi
           echo "failed" > ../artifacts/test-status-${{ inputs.test-type }}.txt
           echo "conclusion=failure" >> $GITHUB_OUTPUT
         else

@@ -17,6 +17,11 @@ on:
         required: false
         type: boolean
         default: true
+      test_timeout:
+        description: "Timeout in seconds for each test run (0 = no timeout)"
+        required: false
+        type: number
+        default: 3600
 
 env:
   PYTHONUNBUFFERED: 1
@@ -195,6 +200,7 @@ jobs:
           package-path: package-repo
           package-name: ${{ matrix.package }}
           test-type: patched
+          timeout: ${{ inputs.test_timeout }}
 
       # if the previous step failed, we will try to run the tests without patches
       - name: Clone package repository for tests without patches
@@ -224,6 +230,7 @@ jobs:
           package-path: package-repo
           package-name: ${{ matrix.package }}
           test-type: original
+          timeout: ${{ inputs.test_timeout }}
 
       - name: Compare test results
         if: env.SO_FAR_OK == '1'
