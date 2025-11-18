@@ -1,13 +1,13 @@
 # Invenio Bugfix Verification Results
 
-_Last updated: 2025-11-18 18:31:49 UTC_
+_Last updated: 2025-11-18 18:31:57 UTC_
 
 ## 📊 Overall Status
 
 | Metric | Count |
 |--------|-------|
-| **Total Packages** | 8 |
-| **Patched Packages** | 8 |
+| **Total Packages** | 7 |
+| **Patched Packages** | 7 |
 | **Unpatched Packages** | 0 |
 
 ### Patch Results
@@ -16,7 +16,7 @@ _Last updated: 2025-11-18 18:31:49 UTC_
 | ✅ Fixed | 0 |
 | ❌ Regressions | 0 |
 | ⚠️  Still Failing | 0 |
-| ℹ️  No Change | 8 |
+| ℹ️  No Change | 7 |
 
 ## 🔧 Configured Patches
 
@@ -38,7 +38,6 @@ _Last updated: 2025-11-18 18:31:49 UTC_
 
 | Package | Patches Applied | Original | Patched | Result |
 |---------|----------------|--------|-------|--------|
-| `invenio-queues` | pytest-invenio | ⏭️  Skip | ✅ Pass<br>[output](packages/invenio-queues/test-output-patched.txt)<br>[output-no-warnings](packages/invenio-queues/test-output-no-warnings-patched.txt)<br>[xml](packages/invenio-queues/test-report-patched.xml) | ✅ Patch applied successfully, tests passed |
 | `invenio-base` | pytest-invenio | ⏭️  Skip | ✅ Pass<br>[output](packages/invenio-base/test-output-patched.txt)<br>[output-no-warnings](packages/invenio-base/test-output-no-warnings-patched.txt)<br>[xml](packages/invenio-base/test-report-patched.xml)<br>[warnings](packages/invenio-base/warnings-patched.md) | ✅ Patch applied successfully, tests passed |
 | `invenio-app` | pytest-invenio | ⏭️  Skip | ✅ Pass<br>[output](packages/invenio-app/test-output-patched.txt)<br>[output-no-warnings](packages/invenio-app/test-output-no-warnings-patched.txt)<br>[xml](packages/invenio-app/test-report-patched.xml)<br>[warnings](packages/invenio-app/warnings-patched.md) | ✅ Patch applied successfully, tests passed |
 | `invenio-theme` | pytest-invenio | ⏭️  Skip | ✅ Pass<br>[output](packages/invenio-theme/test-output-patched.txt)<br>[output-no-warnings](packages/invenio-theme/test-output-no-warnings-patched.txt)<br>[xml](packages/invenio-theme/test-report-patched.xml) | ✅ Patch applied successfully, tests passed |
