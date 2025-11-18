@@ -1,0 +1,430 @@
+running extract_messages
+extracting messages from invenio_pidstore/__init__.py (encoding="utf-8")
+extracting messages from invenio_pidstore/admin.py (encoding="utf-8")
+extracting messages from invenio_pidstore/cli.py (encoding="utf-8")
+extracting messages from invenio_pidstore/config.py (encoding="utf-8")
+extracting messages from invenio_pidstore/errors.py (encoding="utf-8")
+extracting messages from invenio_pidstore/ext.py (encoding="utf-8")
+extracting messages from invenio_pidstore/fetchers.py (encoding="utf-8")
+extracting messages from invenio_pidstore/minters.py (encoding="utf-8")
+extracting messages from invenio_pidstore/models.py (encoding="utf-8")
+extracting messages from invenio_pidstore/proxies.py (encoding="utf-8")
+extracting messages from invenio_pidstore/resolver.py (encoding="utf-8")
+extracting messages from invenio_pidstore/alembic/999c62899c20_create_pidstore_tables.py (encoding="utf-8")
+extracting messages from invenio_pidstore/alembic/f615cee99600_create_pidstore_branch.py (encoding="utf-8")
+extracting messages from invenio_pidstore/providers/__init__.py (encoding="utf-8")
+extracting messages from invenio_pidstore/providers/base.py (encoding="utf-8")
+extracting messages from invenio_pidstore/providers/datacite.py (encoding="utf-8")
+extracting messages from invenio_pidstore/providers/recordid.py (encoding="utf-8")
+extracting messages from invenio_pidstore/providers/recordid_v2.py (encoding="utf-8")
+writing PO template file to /dev/null
+ postgresql Pulling 
+ redis Pulling 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ 186a03b51bfa Waiting 
+ 4f4fb700ef54 Waiting 
+ fe77c85f37cb Waiting 
+ a43f12641297 Waiting 
+ 517b08eaf3cc Waiting 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ 9739ced65621 Pulling fs layer 
+ b0a0cf830b12 Waiting 
+ ae3bb1b347a4 Pulling fs layer 
+ dda3d8fbd5ed Waiting 
+ f8406d9c00ea Pulling fs layer 
+ 283a477db7bb Waiting 
+ c199bff16b05 Pulling fs layer 
+ 91d2729fa4d5 Waiting 
+ e0d55fdb4d15 Pulling fs layer 
+ 9739ced65621 Waiting 
+ c1cb13b19080 Pulling fs layer 
+ ae3bb1b347a4 Waiting 
+ 873532e5f8c7 Pulling fs layer 
+ 050d9f8c3b1c Pulling fs layer 
+ f8406d9c00ea Waiting 
+ 710e142705f8 Pulling fs layer 
+ c199bff16b05 Waiting 
+ cb628c265f09 Pulling fs layer 
+ e0d55fdb4d15 Waiting 
+ c1cb13b19080 Waiting 
+ 710e142705f8 Waiting 
+ 873532e5f8c7 Waiting 
+ 050d9f8c3b1c Waiting 
+ cb628c265f09 Waiting 
+ 44fc29a25beb Downloading [==========================================>        ]     935B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 8e44f01296e3 Downloading [>                                                  ]    294kB/28.23MB
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Verifying Checksum 
+ 39af693970c0 Download complete 
+ 8e44f01296e3 Downloading [==============>                                    ]  8.128MB/28.23MB
+ 8e44f01296e3 Downloading [=================>                                 ]  10.16MB/28.23MB
+ 517b08eaf3cc Downloading [>                                                  ]  15.12kB/1.438MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 186a03b51bfa Downloading [>                                                  ]    156kB/15.35MB
+ 8e44f01296e3 Downloading [=======================>                           ]  13.05MB/28.23MB
+ 186a03b51bfa Downloading [===================>                               ]  5.836MB/15.35MB
+ 8e44f01296e3 Downloading [============================>                      ]  15.95MB/28.23MB
+ 8e44f01296e3 Downloading [======================================>            ]  21.74MB/28.23MB
+ 186a03b51bfa Downloading [==================================>                ]  10.53MB/15.35MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ 8e44f01296e3 Downloading [==========================================>        ]  24.09MB/28.23MB
+ 186a03b51bfa Downloading [==============================================>    ]  14.29MB/15.35MB
+ 8e44f01296e3 Verifying Checksum 
+ 8e44f01296e3 Download complete 
+ 186a03b51bfa Verifying Checksum 
+ 186a03b51bfa Download complete 
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Download complete 
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Verifying Checksum 
+ a43f12641297 Download complete 
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ b0a0cf830b12 Downloading [>                                                  ]  299.1kB/29.15MB
+ 8e44f01296e3 Extracting [========>                                          ]  5.014MB/28.23MB
+ b0a0cf830b12 Downloading [======>                                            ]  3.627MB/29.15MB
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Verifying Checksum 
+ dda3d8fbd5ed Download complete 
+ 283a477db7bb Downloading [>                                                  ]   45.9kB/4.533MB
+ 8e44f01296e3 Extracting [================>                                  ]  9.142MB/28.23MB
+ b0a0cf830b12 Downloading [===========>                                       ]  6.627MB/29.15MB
+ 283a477db7bb Downloading [=========================================>         ]  3.739MB/4.533MB
+ 8e44f01296e3 Extracting [=================>                                 ]  10.03MB/28.23MB
+ 283a477db7bb Downloading [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ b0a0cf830b12 Downloading [=======================>                           ]  13.88MB/29.15MB
+ 91d2729fa4d5 Downloading [>                                                  ]  14.62kB/1.45MB
+ 8e44f01296e3 Extracting [===================>                               ]  11.21MB/28.23MB
+ b0a0cf830b12 Downloading [===================================>               ]  20.47MB/29.15MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ 8e44f01296e3 Extracting [=================================>                 ]  18.87MB/28.23MB
+ b0a0cf830b12 Downloading [=========================================>         ]  24.36MB/29.15MB
+ 9739ced65621 Downloading [>                                                  ]  84.45kB/8.069MB
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ 8e44f01296e3 Extracting [=========================================>         ]   23.3MB/28.23MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ f8406d9c00ea Download complete 
+ c199bff16b05 Downloading [==============>                                    ]     933B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ b0a0cf830b12 Extracting [===>                                               ]  2.064MB/29.15MB
+ e0d55fdb4d15 Downloading [>                                                  ]  528.5kB/109MB
+ e0d55fdb4d15 Downloading [==>                                                ]  6.371MB/109MB
+ b0a0cf830b12 Extracting [=====>                                             ]  2.949MB/29.15MB
+ c1cb13b19080 Downloading [====>                                              ]     933B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ e0d55fdb4d15 Downloading [====>                                              ]  9.037MB/109MB
+ b0a0cf830b12 Extracting [=============>                                     ]  7.668MB/29.15MB
+ e0d55fdb4d15 Downloading [=========>                                         ]  20.25MB/109MB
+ 710e142705f8 Downloading [========>                                          ]     933B/5.421kB
+ 710e142705f8 Download complete 
+ 050d9f8c3b1c Downloading [==================================================>]     169B/169B
+ 050d9f8c3b1c Verifying Checksum 
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [==============>                                    ]  31.47MB/109MB
+ b0a0cf830b12 Extracting [================>                                  ]  9.437MB/29.15MB
+ 8e44f01296e3 Extracting [==============================================>    ]  26.25MB/28.23MB
+ e0d55fdb4d15 Downloading [===================>                               ]  42.11MB/109MB
+ b0a0cf830b12 Extracting [===================>                               ]   11.5MB/29.15MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.13MB/28.23MB
+ e0d55fdb4d15 Downloading [====================>                              ]   43.7MB/109MB
+ b0a0cf830b12 Extracting [================================>                  ]  19.17MB/29.15MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ e0d55fdb4d15 Downloading [======================>                            ]  47.97MB/109MB
+ b0a0cf830b12 Extracting [=========================================>         ]  24.18MB/29.15MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ e0d55fdb4d15 Downloading [============================>                      ]  61.82MB/109MB
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ e0d55fdb4d15 Downloading [============================>                      ]  62.89MB/109MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ e0d55fdb4d15 Downloading [===============================>                   ]  67.68MB/109MB
+ e0d55fdb4d15 Downloading [=================================>                 ]  73.54MB/109MB
+ e0d55fdb4d15 Downloading [=======================================>           ]  86.31MB/109MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ e0d55fdb4d15 Downloading [=========================================>         ]  91.12MB/109MB
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ e0d55fdb4d15 Downloading [============================================>      ]  96.98MB/109MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ e0d55fdb4d15 Downloading [==============================================>    ]  100.7MB/109MB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ 44fc29a25beb Pull complete 
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ dda3d8fbd5ed Pull complete 
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 39af693970c0 Pull complete 
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 186a03b51bfa Extracting [========================>                          ]  7.373MB/15.35MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ 186a03b51bfa Extracting [================================================>  ]  14.75MB/15.35MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ 186a03b51bfa Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ 9739ced65621 Extracting [====================>                              ]  3.342MB/8.069MB
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ redis Pulled 
+ 9739ced65621 Extracting [===================================>               ]    5.8MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.242MB/109MB
+ e0d55fdb4d15 Extracting [=====>                                             ]  11.14MB/109MB
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.71MB/109MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  22.28MB/109MB
+ e0d55fdb4d15 Extracting [=============>                                     ]  28.41MB/109MB
+ e0d55fdb4d15 Extracting [=================>                                 ]  37.88MB/109MB
+ e0d55fdb4d15 Extracting [=====================>                             ]  47.35MB/109MB
+ e0d55fdb4d15 Extracting [========================>                          ]  53.48MB/109MB
+ e0d55fdb4d15 Extracting [===========================>                       ]   59.6MB/109MB
+ e0d55fdb4d15 Extracting [================================>                  ]  70.75MB/109MB
+ e0d55fdb4d15 Extracting [====================================>              ]  79.66MB/109MB
+ e0d55fdb4d15 Extracting [========================================>          ]  89.13MB/109MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.03MB/109MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.8MB/109MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.6MB/109MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.3MB/109MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-postgresql-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_pidstore
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 124 items
+
+docs/conf.py ...                                                         [  2%]
+tests/conftest.py ...                                                    [  4%]
+tests/test_admin.py .... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                                [  8%]
+tests/test_cli.py ... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                                  [ 12%]
+tests/test_ext.py ....... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                                [ 18%]
+tests/test_fetchers.py ... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.                                             [ 22%]
+tests/test_invenio_pidstore.py ... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+s.. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                          [ 35%]
+tests/test_minters.py ... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.                                              [ 39%]
+tests/test_providers.py ... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.                                     [ 49%]
+tests/test_recordidentifier.py ...                                       [ 51%]
+tests/test_resolver.py ... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+. is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                             [ 55%]
+invenio_pidstore/__init__.py .... is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                        [ 58%]
+invenio_pidstore/admin.py ...                                            [ 61%]
+invenio_pidstore/alembic/999c62899c20_create_pidstore_tables.py ...      [ 63%]
+invenio_pidstore/alembic/f615cee99600_create_pidstore_branch.py ...      [ 66%]
+invenio_pidstore/cli.py ...                                              [ 68%]
+invenio_pidstore/config.py ...                                           [ 70%]
+invenio_pidstore/errors.py ...                                           [ 73%]
+invenio_pidstore/ext.py ...                                              [ 75%]
+invenio_pidstore/fetchers.py ...                                         [ 78%]
+invenio_pidstore/minters.py ...                                          [ 80%]
+invenio_pidstore/models.py ...                                           [ 83%]
+invenio_pidstore/providers/__init__.py ...                               [ 85%]
+invenio_pidstore/providers/base.py ...                                   [ 87%]
+invenio_pidstore/providers/datacite.py ...                               [ 90%]
+invenio_pidstore/providers/recordid.py ...                               [ 92%]
+invenio_pidstore/providers/recordid_v2.py ...                            [ 95%]
+invenio_pidstore/proxies.py ...                                          [ 97%]
+invenio_pidstore/resolver.py ...                                         [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+tests/conftest.py:26
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/conftest.py:26: PytestDeprecationWarning: @pytest.yield_fixture is deprecated.
+  Use @pytest.fixture instead; they are the same.
+    @pytest.yield_fixture()
+
+tests/conftest.py:50
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/conftest.py:50: PytestDeprecationWarning: @pytest.yield_fixture is deprecated.
+  Use @pytest.fixture instead; they are the same.
+    @pytest.yield_fixture()
+
+.venv/lib/python3.12/site-packages/datacite/rest_client.py:23
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/datacite/rest_client.py:23: DeprecationWarning: Implicit imports (e.g., 'import idutils; idutils.function;') might be removed in the next major version. Please use explicit imports (e.g., 'from idutils import function;') instead.
+    from idutils import normalize_doi
+
+tests/test_admin.py: 6 warnings
+tests/test_cli.py: 10 warnings
+tests/test_ext.py: 2 warnings
+tests/test_fetchers.py: 4 warnings
+tests/test_invenio_pidstore.py: 86 warnings
+tests/test_minters.py: 4 warnings
+tests/test_providers.py: 30 warnings
+tests/test_resolver.py: 38 warnings
+invenio_pidstore/__init__.py: 16 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/test_cli.py: 5 warnings
+tests/test_invenio_pidstore.py: 27 warnings
+tests/test_providers.py: 17 warnings
+tests/test_resolver.py: 5 warnings
+invenio_pidstore/__init__.py: 8 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py:33: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    target.updated = datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                              Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------
+invenio_pidstore/__init__.py                                          4      0   100%
+invenio_pidstore/admin.py                                            30      0   100%
+invenio_pidstore/alembic/999c62899c20_create_pidstore_tables.py      21     12    43%   24-49, 64-69
+invenio_pidstore/alembic/f615cee99600_create_pidstore_branch.py       8      0   100%
+invenio_pidstore/cli.py                                              73      0   100%
+invenio_pidstore/config.py                                            5      0   100%
+invenio_pidstore/errors.py                                           25      0   100%
+invenio_pidstore/ext.py                                              60      1    98%   145
+invenio_pidstore/fetchers.py                                         13      0   100%
+invenio_pidstore/minters.py                                          16      0   100%
+invenio_pidstore/models.py                                          247      0   100%
+invenio_pidstore/providers/__init__.py                                0      0   100%
+invenio_pidstore/providers/base.py                                   31      0   100%
+invenio_pidstore/providers/datacite.py                               94      0   100%
+invenio_pidstore/providers/recordid.py                               18      0   100%
+invenio_pidstore/providers/recordid_v2.py                            32      0   100%
+invenio_pidstore/proxies.py                                           4      0   100%
+invenio_pidstore/resolver.py                                         29      2    93%   64-65
+-----------------------------------------------------------------------------------------------
+TOTAL                                                               710     15    98%
+================ 123 passed, 1 skipped, 262 warnings in 22.41s =================
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

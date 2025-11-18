@@ -1,0 +1,20 @@
+{
+  "package": "invenio-jsonschemas",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {
+      "PytestConfigWarning: Unknown config option: pep8ignore": 1,
+      "DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 2
+  }
+}
