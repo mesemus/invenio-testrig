@@ -2,13 +2,14 @@
 
 ### Patched
 
-#### Warning 1 - 6 occurrences
+#### Warning 1 - 8 occurrences
 
 DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
 
 | Package | Count |
 |---------|-------|
 | `invenio-webhooks` | 5 |
+| `invenio-pidstore` | 2 |
 | `invenio-cache` | 1 |
 
 #### Warning 2 - 4 occurrences
@@ -21,6 +22,15 @@ PytestMockWarning: Mocks returned by pytest-mock do not need to be used as conte
 
 #### Warning 3 - 2 occurrences
 
+DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+
+| Package | Count |
+|---------|-------|
+| `invenio-pidstore` | 1 |
+| `invenio-webhooks` | 1 |
+
+#### Warning 4 - 2 occurrences
+
 DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
 
 | Package | Count |
@@ -28,7 +38,7 @@ DeprecationWarning: Using the initialization functions in flask_caching.backend 
 | `invenio-app` | 1 |
 | `invenio-cache` | 1 |
 
-#### Warning 4 - 2 occurrences
+#### Warning 5 - 2 occurrences
 
 LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
 
@@ -36,15 +46,23 @@ LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x seri
 |---------|-------|
 | `invenio-webhooks` | 2 |
 
-#### Warning 5 - 1 occurrence
+#### Warning 6 - 2 occurrences
 
-DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+PytestDeprecationWarning: @pytest.yield_fixture is deprecated.
 
 | Package | Count |
 |---------|-------|
-| `invenio-webhooks` | 1 |
+| `invenio-pidstore` | 2 |
 
-#### Warning 6 - 1 occurrence
+#### Warning 7 - 1 occurrence
+
+DeprecationWarning: Implicit imports (e.g., 'import idutils; idutils.function;') might be removed in the next major version. Please use explicit imports (e.g., 'from idutils import function;') instead.
+
+| Package | Count |
+|---------|-------|
+| `invenio-pidstore` | 1 |
+
+#### Warning 8 - 1 occurrence
 
 DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces/commas for version_locations.  Consider adding path_separator=os to Alembic config.
 
@@ -52,7 +70,7 @@ DeprecationWarning: No path_separator found in configuration; falling back to le
 |---------|-------|
 | `invenio-db` | 1 |
 
-#### Warning 7 - 1 occurrence
+#### Warning 9 - 1 occurrence
 
 DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
 
@@ -60,7 +78,7 @@ DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
 |---------|-------|
 | `invenio-logging` | 1 |
 
-#### Warning 8 - 1 occurrence
+#### Warning 10 - 1 occurrence
 
 DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
 
@@ -68,7 +86,7 @@ DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and sched
 |---------|-------|
 | `invenio-webhooks` | 1 |
 
-#### Warning 9 - 1 occurrence
+#### Warning 11 - 1 occurrence
 
 DeprecationWarning: get_user method is deprecated, user get_user_by_email/get_user_by_id
 
@@ -76,7 +94,7 @@ DeprecationWarning: get_user method is deprecated, user get_user_by_email/get_us
 |---------|-------|
 | `invenio-webhooks` | 1 |
 
-#### Warning 10 - 1 occurrence
+#### Warning 12 - 1 occurrence
 
 PendingDeprecationWarning: The WSGI_PROXIES configuration is deprecated and it will be removed, use PROXYFIX_CONFIG instead
 
@@ -84,7 +102,7 @@ PendingDeprecationWarning: The WSGI_PROXIES configuration is deprecated and it w
 |---------|-------|
 | `invenio-base` | 1 |
 
-#### Warning 11 - 1 occurrence
+#### Warning 13 - 1 occurrence
 
 PendingDeprecationWarning: This feature is deprecated.
 
@@ -92,7 +110,7 @@ PendingDeprecationWarning: This feature is deprecated.
 |---------|-------|
 | `invenio-logging` | 1 |
 
-#### Warning 12 - 1 occurrence
+#### Warning 14 - 1 occurrence
 
 RuntimeWarning: Results are not stored in backend and should not be retrieved when task_always_eager is enabled, unless task_store_eager_result is enabled.
 
@@ -100,7 +118,7 @@ RuntimeWarning: Results are not stored in backend and should not be retrieved wh
 |---------|-------|
 | `invenio-webhooks` | 1 |
 
-#### Warning 13 - 1 occurrence
+#### Warning 15 - 1 occurrence
 
 RuntimeWarning: You are overriding the default OAuthlib "URL encoded" set of valid characters. Make sure that the characters defined in oauthlib.common.urlencoded are indeed limitting your needs.
 
@@ -108,7 +126,7 @@ RuntimeWarning: You are overriding the default OAuthlib "URL encoded" set of val
 |---------|-------|
 | `invenio-webhooks` | 1 |
 
-#### Warning 14 - 1 occurrence
+#### Warning 16 - 1 occurrence
 
 UserWarning: Set configuration variable SECRET_KEY with random string
 
@@ -116,7 +134,7 @@ UserWarning: Set configuration variable SECRET_KEY with random string
 |---------|-------|
 | `invenio-app` | 1 |
 
-#### Warning 15 - 1 occurrence
+#### Warning 17 - 1 occurrence
 
 UserWarning: Test
 
@@ -124,7 +142,7 @@ UserWarning: Test
 |---------|-------|
 | `invenio-base` | 1 |
 
-#### Warning 16 - 1 occurrence
+#### Warning 18 - 1 occurrence
 
 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
 
