@@ -571,6 +571,9 @@ jobs:
       contents: write
 
     steps:
+      - name: Checkout verification repository
+        uses: actions/checkout@v4
+
       - name: Generate and push report
         uses: ./.github/actions/generate-report
         with:
