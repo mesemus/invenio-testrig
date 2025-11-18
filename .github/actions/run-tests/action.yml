@@ -168,12 +168,37 @@ runs:
         fi
 
         # create $OUTPUT_FILE_NO_WARNINGS by removing warning lines from OUTPUT_FILE
-        # Remove strings with "::warning file=". If the line is only a warning, remove the entire line.
         if [ -f "$OUTPUT_FILE" ]; then
-          # Remove lines that only contain "::warning file=" annotations
-          # Also remove "::warning file=" strings from lines that contain other content
-          grep -v '^::warning file=' "$OUTPUT_FILE" | sed 's/::warning file=[^ ]*//g' > "$OUTPUT_FILE_NO_WARNINGS"
-          echo "✓ Created filtered output without GitHub warning annotations"
+          echo "Creating filtered output without warnings..."
+          
+          # Start with the original file
+          cp "$OUTPUT_FILE" "$OUTPUT_FILE_NO_WARNINGS"
+          
+          # Remove GitHub Actions warning annotations
+          sed -i '/^::warning file=/d' "$OUTPUT_FILE_NO_WARNINGS"
+          
+          # Remove Python deprecation and warning messages
+          # Match various warning patterns:
+          # - DeprecationWarning, PendingDeprecationWarning, FutureWarning, etc.
+          # - Lines that show where warnings come from (file paths with line numbers)
+          sed -i -E '/DeprecationWarning|PendingDeprecationWarning|ResourceWarning|UserWarning|FutureWarning|ImportWarning|RuntimeWarning/d' "$OUTPUT_FILE_NO_WARNINGS"
+          
+          # Remove pytest warning summary lines like:
+          # "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html"
+          # "warnings summary"
+          # ".venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:928: 30 warnings"
+          sed -i -E '/^[[:space:]]*warnings summary/d' "$OUTPUT_FILE_NO_WARNINGS"
+          sed -i -E '/^[[:space:]]*--.*warnings/d' "$OUTPUT_FILE_NO_WARNINGS"
+          sed -i -E '/[0-9]+ warnings?$/d' "$OUTPUT_FILE_NO_WARNINGS"
+          
+          # Remove warning separator lines
+          sed -i -E '/^[=\-]{10,}$/d' "$OUTPUT_FILE_NO_WARNINGS"
+          
+          # Remove empty lines that might be left after warning removal
+          # But keep at least single empty lines for readability
+          sed -i '/^$/N;/^\n$/D' "$OUTPUT_FILE_NO_WARNINGS"
+          
+          echo "✓ Created filtered output without warnings"
         fi
 
         if [ $TEST_EXIT_CODE -ne 0 ] || [ $TIMEOUT_TRIGGERED -eq 1 ] || [ $STALL_TRIGGERED -eq 1 ]; then

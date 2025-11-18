@@ -151,7 +151,9 @@ while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
   }
   
   # 3. Generate the report
+  echo "::group::Generating report"
   generate_report
+  echo "::endgroup::"
   
   # 4. Try to commit and push it
   echo "Committing changes..."
