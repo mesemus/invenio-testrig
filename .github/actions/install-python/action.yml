@@ -26,6 +26,7 @@ runs:
       run: |
         echo "::group::Creating tools virtualenv"
         uv venv .tools-venv
+        source .tools-venv/bin/activate
         uv pip install --python .tools-venv/bin/python jinja2 json5
         echo "::endgroup::"
         echo "✓ Tools virtualenv created with jinja2 and json5"
