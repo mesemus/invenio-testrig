@@ -1,0 +1,237 @@
+running extract_messages
+extracting messages from invenio_previewer/__init__.py (encoding="utf-8")
+extracting messages from invenio_previewer/api.py (encoding="utf-8")
+extracting messages from invenio_previewer/config.py (encoding="utf-8")
+extracting messages from invenio_previewer/ext.py (encoding="utf-8")
+extracting messages from invenio_previewer/proxies.py (encoding="utf-8")
+extracting messages from invenio_previewer/utils.py (encoding="utf-8")
+extracting messages from invenio_previewer/views.py (encoding="utf-8")
+extracting messages from invenio_previewer/webpack.py (encoding="utf-8")
+extracting messages from invenio_previewer/assets/bootstrap3/js/invenio_previewer/previewer_theme.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/assets/bootstrap3/js/invenio_previewer/prismjs.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/assets/bootstrap3/js/invenio_previewer/csv_previewer/init.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/assets/semantic-ui/js/invenio_previewer/bottom.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/assets/semantic-ui/js/invenio_previewer/previewer_theme.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/assets/semantic-ui/js/invenio_previewer/prismjs.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/assets/semantic-ui/js/invenio_previewer/csv_previewer/init.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/extensions/__init__.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/audio_videojs.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/csv_papaparsejs.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/default.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/ipynb.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/json_prismjs.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/mistune.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/pdfjs.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/simple_image.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/txt.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/video_videojs.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/web_archive.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/xml_prismjs.py (encoding="utf-8")
+extracting messages from invenio_previewer/extensions/zip.py (encoding="utf-8")
+extracting messages from invenio_previewer/static/js/fullscreen.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/static/js/open_pdf.js (encoding="utf-8", extract_messages="$._, jQuery._")
+extracting messages from invenio_previewer/templates/invenio_previewer/abstract_previewer.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/base.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/bottom.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/csv_bar.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/default.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/ipynb.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/json_prismjs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/macros.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/mistune.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/pdfjs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/simple_image.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/top.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/txt.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/web_archive.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/xml_prismjs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/invenio_previewer/zip.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/abstract_previewer.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/audio_videojs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/base.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/bottom.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/csv_bar.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/default.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/ipynb.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/json_prismjs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/macros.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/mistune.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/simple_image.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/top.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/txt.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/videojs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/web_archive.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/xml_prismjs.html (encoding="utf-8")
+extracting messages from invenio_previewer/templates/semantic-ui/invenio_previewer/zip.html (encoding="utf-8")
+writing PO template file to /dev/null
+ postgresql Pulling 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ f8406d9c00ea Pulling fs layer 
+ c199bff16b05 Pulling fs layer 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ 050d9f8c3b1c Pulling fs layer 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ c199bff16b05 Waiting 
+ e0d55fdb4d15 Waiting 
+ c1cb13b19080 Waiting 
+ 873532e5f8c7 Waiting 
+ 050d9f8c3b1c Waiting 
+ 710e142705f8 Waiting 
+ cb628c265f09 Waiting 
+ 91d2729fa4d5 Waiting 
+ 9739ced65621 Waiting 
+ f8406d9c00ea Waiting 
+ ae3bb1b347a4 Waiting 
+ 283a477db7bb Downloading [>                                                  ]  46.57kB/4.533MB
+ b0a0cf830b12 Downloading [>                                                  ]  298.4kB/29.15MB
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Verifying Checksum 
+ dda3d8fbd5ed Download complete 
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ 91d2729fa4d5 Downloading [>                                                  ]  15.13kB/1.45MB
+ b0a0cf830b12 Downloading [==========================>                        ]  15.27MB/29.15MB
+ 91d2729fa4d5 Download complete 
+ 9739ced65621 Downloading [>                                                  ]   84.3kB/8.069MB
+ b0a0cf830b12 Downloading [======================================>            ]  22.47MB/29.15MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ ae3bb1b347a4 Downloading [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Download complete 
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ c199bff16b05 Downloading [==============>                                    ]     933B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ e0d55fdb4d15 Downloading [>                                                  ]  527.8kB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ b0a0cf830b12 Extracting [==========>                                        ]  6.193MB/29.15MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Download complete 
+ e0d55fdb4d15 Downloading [========>                                          ]  18.67MB/109MB
+ 050d9f8c3b1c Download complete 
+ 710e142705f8 Downloading [========>                                          ]     934B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Verifying Checksum 
+ 710e142705f8 Download complete 
+ b0a0cf830b12 Extracting [================>                                  ]  9.732MB/29.15MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ e0d55fdb4d15 Downloading [===============>                                   ]  34.14MB/109MB
+ b0a0cf830b12 Extracting [=======================>                           ]  13.57MB/29.15MB
+ e0d55fdb4d15 Downloading [========================>                          ]  54.43MB/109MB
+ b0a0cf830b12 Extracting [====================================>              ]  21.53MB/29.15MB
+ e0d55fdb4d15 Downloading [==================================>                ]  74.21MB/109MB
+ e0d55fdb4d15 Downloading [==============================================>    ]  100.9MB/109MB
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Pull complete 
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ 9739ced65621 Extracting [========================>                          ]  3.932MB/8.069MB
+ 9739ced65621 Extracting [======================================>            ]  6.193MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.799MB/109MB
+ e0d55fdb4d15 Extracting [=====>                                             ]   11.7MB/109MB
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.71MB/109MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  22.28MB/109MB
+ e0d55fdb4d15 Extracting [=============>                                     ]  28.97MB/109MB
+ e0d55fdb4d15 Extracting [=================>                                 ]  38.44MB/109MB
+ e0d55fdb4d15 Extracting [=====================>                             ]  47.91MB/109MB
+ e0d55fdb4d15 Extracting [========================>                          ]  53.48MB/109MB
+ e0d55fdb4d15 Extracting [===========================>                       ]   59.6MB/109MB
+ e0d55fdb4d15 Extracting [================================>                  ]  70.75MB/109MB
+ e0d55fdb4d15 Extracting [====================================>              ]  79.66MB/109MB
+ e0d55fdb4d15 Extracting [========================================>          ]  89.13MB/109MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.03MB/109MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.3MB/109MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.6MB/109MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.3MB/109MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ImportError while loading conftest '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/conftest.py'.
+tests/conftest.py:32: in <module>
+    from invenio_records_files.api import Record
+.venv/lib/python3.12/site-packages/invenio_records_files/api.py:21: in <module>
+    from .utils import sorted_files_from_bucket
+.venv/lib/python3.12/site-packages/invenio_records_files/utils.py:15: in <module>
+    from invenio_files_rest.views import ObjectResource
+.venv/lib/python3.12/site-packages/invenio_files_rest/views.py:34: in <module>
+    from .serializer import json_serializer
+.venv/lib/python3.12/site-packages/invenio_files_rest/serializer.py:16: in <module>
+    from invenio_rest.serializer import BaseSchema as InvenioRestBaseSchema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in <module>
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

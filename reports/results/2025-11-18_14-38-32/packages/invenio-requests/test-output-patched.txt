@@ -1,0 +1,948 @@
+ postgresql Pulling 
+ opensearch Pulling 
+ redis Pulling 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ fe77c85f37cb Waiting 
+ 517b08eaf3cc Waiting 
+ 4f4fb700ef54 Waiting 
+ a43f12641297 Waiting 
+ 186a03b51bfa Waiting 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ b0a0cf830b12 Waiting 
+ 9739ced65621 Pulling fs layer 
+ dda3d8fbd5ed Waiting 
+ ae3bb1b347a4 Pulling fs layer 
+ 283a477db7bb Waiting 
+ f8406d9c00ea Pulling fs layer 
+ 91d2729fa4d5 Waiting 
+ 9739ced65621 Waiting 
+ c199bff16b05 Pulling fs layer 
+ ae3bb1b347a4 Waiting 
+ e0d55fdb4d15 Pulling fs layer 
+ f8406d9c00ea Waiting 
+ c199bff16b05 Waiting 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ e0d55fdb4d15 Waiting 
+ 050d9f8c3b1c Pulling fs layer 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ 873532e5f8c7 Waiting 
+ c1cb13b19080 Waiting 
+ 050d9f8c3b1c Waiting 
+ cb628c265f09 Waiting 
+ 710e142705f8 Waiting 
+ f9dd052e142d Pulling fs layer 
+ e8c6d4883897 Pulling fs layer 
+ 648eb81b3252 Pulling fs layer 
+ eb77aa907276 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 0ffa8f8aba1e Pulling fs layer 
+ 2e81b9cb93cd Pulling fs layer 
+ f9dd052e142d Waiting 
+ e8c6d4883897 Waiting 
+ 4f4fb700ef54 Waiting 
+ 648eb81b3252 Waiting 
+ 0ffa8f8aba1e Waiting 
+ 2e81b9cb93cd Waiting 
+ eb77aa907276 Waiting 
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Verifying Checksum 
+ 39af693970c0 Download complete 
+ 44fc29a25beb Downloading [==========================================>        ]     935B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 8e44f01296e3 Downloading [>                                                  ]  284.6kB/28.23MB
+ 8e44f01296e3 Downloading [==========>                                        ]  6.088MB/28.23MB
+ 8e44f01296e3 Downloading [==============================================>    ]  26.08MB/28.23MB
+ 8e44f01296e3 Verifying Checksum 
+ 8e44f01296e3 Download complete 
+ 517b08eaf3cc Downloading [>                                                  ]  14.62kB/1.438MB
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 186a03b51bfa Downloading [>                                                  ]  155.9kB/15.35MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 8e44f01296e3 Extracting [============>                                      ]  7.078MB/28.23MB
+ 186a03b51bfa Downloading [==============================>                    ]  9.421MB/15.35MB
+ 186a03b51bfa Verifying Checksum 
+ 186a03b51bfa Download complete 
+ 8e44f01296e3 Extracting [===================>                               ]  11.21MB/28.23MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 8e44f01296e3 Extracting [====================================>              ]  20.35MB/28.23MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Verifying Checksum 
+ a43f12641297 Download complete 
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ b0a0cf830b12 Downloading [>                                                  ]  299.1kB/29.15MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.13MB/28.23MB
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Verifying Checksum 
+ dda3d8fbd5ed Download complete 
+ b0a0cf830b12 Downloading [===================>                               ]  11.58MB/29.15MB
+ 283a477db7bb Downloading [>                                                  ]  46.59kB/4.533MB
+ b0a0cf830b12 Downloading [=============================================>     ]  26.28MB/29.15MB
+ b0a0cf830b12 Download complete 
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ 283a477db7bb Downloading [=========================================>         ]  3.763MB/4.533MB
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ 91d2729fa4d5 Downloading [>                                                  ]  14.62kB/1.45MB
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ b0a0cf830b12 Extracting [===========>                                       ]  6.783MB/29.15MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ b0a0cf830b12 Extracting [==================>                                ]  10.91MB/29.15MB
+ 9739ced65621 Downloading [>                                                  ]   84.3kB/8.069MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ b0a0cf830b12 Extracting [================================>                  ]  19.17MB/29.15MB
+ 9739ced65621 Downloading [===========================================>       ]  7.065MB/8.069MB
+ 9739ced65621 Downloading [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ ae3bb1b347a4 Download complete 
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ c199bff16b05 Downloading [==============>                                    ]     935B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ e0d55fdb4d15 Downloading [>                                                  ]    536kB/109MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.02MB/29.15MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ e0d55fdb4d15 Downloading [======>                                            ]  14.44MB/109MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ e0d55fdb4d15 Downloading [================>                                  ]  35.26MB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ 050d9f8c3b1c Downloading [==================================================>]     169B/169B
+ 050d9f8c3b1c Verifying Checksum 
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [======================>                            ]  49.15MB/109MB
+ e0d55fdb4d15 Downloading [=========================>                         ]  56.07MB/109MB
+ 710e142705f8 Downloading [========>                                          ]     933B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Verifying Checksum 
+ 710e142705f8 Download complete 
+ e0d55fdb4d15 Downloading [=================================>                 ]  73.17MB/109MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ e0d55fdb4d15 Downloading [==========================================>        ]  92.42MB/109MB
+ e0d55fdb4d15 Downloading [==================================================>]    109MB/109MB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ e8c6d4883897 Downloading [>                                                  ]  44.74kB/4.398MB
+ f9dd052e142d Downloading [>                                                  ]  532.5kB/52.33MB
+ e8c6d4883897 Downloading [=====================>                             ]  1.917MB/4.398MB
+ e8c6d4883897 Verifying Checksum 
+ e8c6d4883897 Download complete 
+ f9dd052e142d Downloading [======>                                            ]  6.904MB/52.33MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ 44fc29a25beb Pull complete 
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Pull complete 
+ 648eb81b3252 Downloading [=============================>                     ]     934B/1.561kB
+ 648eb81b3252 Download complete 
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ f9dd052e142d Downloading [================>                                  ]  17.49MB/52.33MB
+ f9dd052e142d Downloading [================================>                  ]  33.89MB/52.33MB
+ eb77aa907276 Downloading [>                                                  ]  528.5kB/907.7MB
+ f9dd052e142d Downloading [============================================>      ]  47.08MB/52.33MB
+ 517b08eaf3cc Extracting [=========>                                         ]  262.1kB/1.438MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ f9dd052e142d Downloading [=================================================> ]  51.85MB/52.33MB
+ eb77aa907276 Downloading [>                                                  ]   4.83MB/907.7MB
+ 517b08eaf3cc Extracting [====================================>              ]  1.049MB/1.438MB
+ f9dd052e142d Verifying Checksum 
+ f9dd052e142d Download complete 
+ dda3d8fbd5ed Pull complete 
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ f9dd052e142d Extracting [>                                                  ]  524.3kB/52.33MB
+ 517b08eaf3cc Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ eb77aa907276 Downloading [=>                                                 ]  25.66MB/907.7MB
+ 283a477db7bb Extracting [=========================================>         ]  3.801MB/4.533MB
+ f9dd052e142d Extracting [=>                                                 ]  1.049MB/52.33MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 186a03b51bfa Extracting [===================>                               ]  5.898MB/15.35MB
+ eb77aa907276 Downloading [==>                                                ]  44.92MB/907.7MB
+ 2e81b9cb93cd Downloading [=========================>                         ]     935B/1.859kB
+ 2e81b9cb93cd Downloading [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Verifying Checksum 
+ 2e81b9cb93cd Download complete 
+ 0ffa8f8aba1e Downloading [==================================================>]     226B/226B
+ 0ffa8f8aba1e Verifying Checksum 
+ 0ffa8f8aba1e Download complete 
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 186a03b51bfa Extracting [====================================>              ]   11.3MB/15.35MB
+ eb77aa907276 Downloading [===>                                               ]   64.2MB/907.7MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ f9dd052e142d Extracting [====>                                              ]  4.719MB/52.33MB
+ eb77aa907276 Downloading [====>                                              ]  82.28MB/907.7MB
+ 186a03b51bfa Pull complete 
+ 9739ced65621 Extracting [===================>                               ]  3.146MB/8.069MB
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ eb77aa907276 Downloading [=====>                                             ]  101.5MB/907.7MB
+ redis Pulled 
+ f9dd052e142d Extracting [=====>                                             ]  5.243MB/52.33MB
+ 9739ced65621 Extracting [===============================>                   ]  5.014MB/8.069MB
+ eb77aa907276 Downloading [======>                                            ]  121.2MB/907.7MB
+ f9dd052e142d Extracting [==========>                                        ]  11.01MB/52.33MB
+ 9739ced65621 Extracting [================================================>  ]  7.766MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ f9dd052e142d Extracting [================>                                  ]   17.3MB/52.33MB
+ eb77aa907276 Downloading [=======>                                           ]  141.5MB/907.7MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ eb77aa907276 Downloading [========>                                          ]  149.6MB/907.7MB
+ f9dd052e142d Extracting [=======================>                           ]  24.64MB/52.33MB
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ eb77aa907276 Downloading [=========>                                         ]  166.6MB/907.7MB
+ f9dd052e142d Extracting [==========================>                        ]  27.79MB/52.33MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.242MB/109MB
+ eb77aa907276 Downloading [==========>                                        ]  182.2MB/907.7MB
+ f9dd052e142d Extracting [============================>                      ]  29.36MB/52.33MB
+ e0d55fdb4d15 Extracting [=====>                                             ]  11.14MB/109MB
+ eb77aa907276 Downloading [===========>                                       ]  200.4MB/907.7MB
+ f9dd052e142d Extracting [=============================>                     ]  30.41MB/52.33MB
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.71MB/109MB
+ eb77aa907276 Downloading [===========>                                       ]  217.5MB/907.7MB
+ f9dd052e142d Extracting [===============================>                   ]  33.03MB/52.33MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  22.28MB/109MB
+ eb77aa907276 Downloading [============>                                      ]  235.2MB/907.7MB
+ e0d55fdb4d15 Extracting [============>                                      ]   27.3MB/109MB
+ f9dd052e142d Extracting [==================================>                ]  35.65MB/52.33MB
+ eb77aa907276 Downloading [=============>                                     ]  241.6MB/907.7MB
+ e0d55fdb4d15 Extracting [================>                                  ]  35.65MB/109MB
+ f9dd052e142d Extracting [====================================>              ]  37.75MB/52.33MB
+ eb77aa907276 Downloading [=============>                                     ]  245.9MB/907.7MB
+ e0d55fdb4d15 Extracting [===================>                               ]  43.45MB/109MB
+ f9dd052e142d Extracting [======================================>            ]  40.37MB/52.33MB
+ eb77aa907276 Downloading [==============>                                    ]  258.2MB/907.7MB
+ e0d55fdb4d15 Extracting [=======================>                           ]  50.69MB/109MB
+ f9dd052e142d Extracting [==========================================>        ]  44.56MB/52.33MB
+ eb77aa907276 Downloading [==============>                                    ]    270MB/907.7MB
+ e0d55fdb4d15 Extracting [========================>                          ]  54.03MB/109MB
+ f9dd052e142d Extracting [=============================================>     ]  47.71MB/52.33MB
+ eb77aa907276 Downloading [===============>                                   ]  281.8MB/907.7MB
+ e0d55fdb4d15 Extracting [===========================>                       ]  59.05MB/109MB
+ eb77aa907276 Downloading [================>                                  ]  292.4MB/907.7MB
+ e0d55fdb4d15 Extracting [==============================>                    ]   67.4MB/109MB
+ eb77aa907276 Downloading [================>                                  ]  306.4MB/907.7MB
+ e0d55fdb4d15 Extracting [===================================>               ]  76.32MB/109MB
+ f9dd052e142d Extracting [=================================================> ]  51.38MB/52.33MB
+ eb77aa907276 Downloading [=================>                                 ]  319.8MB/907.7MB
+ e0d55fdb4d15 Extracting [======================================>            ]  84.67MB/109MB
+ f9dd052e142d Extracting [==================================================>]  52.33MB/52.33MB
+ f9dd052e142d Pull complete 
+ e8c6d4883897 Extracting [>                                                  ]  65.54kB/4.398MB
+ eb77aa907276 Downloading [==================>                                ]  328.4MB/907.7MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  91.91MB/109MB
+ e8c6d4883897 Extracting [==============================>                    ]  2.687MB/4.398MB
+ eb77aa907276 Downloading [==================>                                ]  333.7MB/907.7MB
+ e0d55fdb4d15 Extracting [===========================================>       ]  95.81MB/109MB
+ e8c6d4883897 Extracting [==========================================>        ]  3.736MB/4.398MB
+ e8c6d4883897 Extracting [==================================================>]  4.398MB/4.398MB
+ eb77aa907276 Downloading [==================>                                ]  336.4MB/907.7MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ eb77aa907276 Downloading [==================>                                ]  342.3MB/907.7MB
+ e0d55fdb4d15 Extracting [============================================>      ]  97.48MB/109MB
+ eb77aa907276 Downloading [===================>                               ]  348.2MB/907.7MB
+ eb77aa907276 Downloading [===================>                               ]  354.1MB/907.7MB
+ e0d55fdb4d15 Extracting [============================================>      ]  98.04MB/109MB
+ eb77aa907276 Downloading [===================>                               ]  358.4MB/907.7MB
+ e0d55fdb4d15 Extracting [=============================================>     ]   98.6MB/109MB
+ eb77aa907276 Downloading [====================>                              ]  367.5MB/907.7MB
+ eb77aa907276 Downloading [====================>                              ]    368MB/907.7MB
+ e0d55fdb4d15 Extracting [=============================================>     ]  99.16MB/109MB
+ eb77aa907276 Downloading [====================>                              ]  374.4MB/907.7MB
+ eb77aa907276 Downloading [=====================>                             ]  384.7MB/907.7MB
+ e8c6d4883897 Pull complete 
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.8MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  392.2MB/907.7MB
+ 648eb81b3252 Pull complete 
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.6MB/109MB
+ eb77aa907276 Downloading [======================>                            ]  401.9MB/907.7MB
+ eb77aa907276 Downloading [=======================>                           ]  419.1MB/907.7MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.8MB/109MB
+ eb77aa907276 Downloading [========================>                          ]  437.3MB/907.7MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ eb77aa907276 Downloading [========================>                          ]  452.3MB/907.7MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ eb77aa907276 Downloading [=========================>                         ]  467.3MB/907.7MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ eb77aa907276 Downloading [===========================>                       ]  490.8MB/907.7MB
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ eb77aa907276 Downloading [===========================>                       ]  505.8MB/907.7MB
+ eb77aa907276 Downloading [============================>                      ]  515.4MB/907.7MB
+ eb77aa907276 Downloading [=============================>                     ]  536.3MB/907.7MB
+ eb77aa907276 Downloading [==============================>                    ]  549.7MB/907.7MB
+ eb77aa907276 Downloading [===============================>                   ]  566.3MB/907.7MB
+ eb77aa907276 Downloading [================================>                  ]  582.9MB/907.7MB
+ eb77aa907276 Downloading [================================>                  ]  590.9MB/907.7MB
+ eb77aa907276 Downloading [=================================>                 ]  602.2MB/907.7MB
+ eb77aa907276 Downloading [==================================>                ]  618.8MB/907.7MB
+ eb77aa907276 Downloading [===================================>               ]  638.5MB/907.7MB
+ eb77aa907276 Downloading [====================================>              ]  656.2MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]  677.6MB/907.7MB
+ eb77aa907276 Downloading [======================================>            ]  695.7MB/907.7MB
+ eb77aa907276 Downloading [=======================================>           ]  716.6MB/907.7MB
+ eb77aa907276 Downloading [========================================>          ]  733.7MB/907.7MB
+ eb77aa907276 Downloading [=========================================>         ]  751.3MB/907.7MB
+ eb77aa907276 Downloading [==========================================>        ]  772.7MB/907.7MB
+ eb77aa907276 Downloading [===========================================>       ]  791.5MB/907.7MB
+ eb77aa907276 Downloading [============================================>      ]  805.9MB/907.7MB
+ eb77aa907276 Downloading [=============================================>     ]  820.9MB/907.7MB
+ eb77aa907276 Downloading [=============================================>     ]  834.3MB/907.7MB
+ eb77aa907276 Downloading [===============================================>   ]  853.6MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  876.1MB/907.7MB
+ eb77aa907276 Downloading [=================================================> ]  895.4MB/907.7MB
+ eb77aa907276 Verifying Checksum 
+ eb77aa907276 Download complete 
+ eb77aa907276 Extracting [>                                                  ]  557.1kB/907.7MB
+ eb77aa907276 Extracting [=>                                                 ]  26.74MB/907.7MB
+ eb77aa907276 Extracting [==>                                                ]  52.92MB/907.7MB
+ eb77aa907276 Extracting [====>                                              ]  78.54MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]   90.8MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]  99.71MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  109.2MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  118.7MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  127.6MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  136.5MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  144.3MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  152.6MB/907.7MB
+ eb77aa907276 Extracting [=========>                                         ]  164.9MB/907.7MB
+ eb77aa907276 Extracting [==========>                                        ]  188.3MB/907.7MB
+ eb77aa907276 Extracting [===========>                                       ]    210MB/907.7MB
+ eb77aa907276 Extracting [============>                                      ]  221.2MB/907.7MB
+ eb77aa907276 Extracting [============>                                      ]  231.7MB/907.7MB
+ eb77aa907276 Extracting [=============>                                     ]  241.8MB/907.7MB
+ eb77aa907276 Extracting [==============>                                    ]  261.3MB/907.7MB
+ eb77aa907276 Extracting [===============>                                   ]  284.1MB/907.7MB
+ eb77aa907276 Extracting [=================>                                 ]    312MB/907.7MB
+ eb77aa907276 Extracting [==================>                                ]  335.9MB/907.7MB
+ eb77aa907276 Extracting [===================>                               ]  358.7MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  366.5MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  374.9MB/907.7MB
+ eb77aa907276 Extracting [=====================>                             ]  398.3MB/907.7MB
+ eb77aa907276 Extracting [=======================>                           ]  427.3MB/907.7MB
+ eb77aa907276 Extracting [=========================>                         ]    459MB/907.7MB
+ eb77aa907276 Extracting [===========================>                       ]  490.8MB/907.7MB
+ eb77aa907276 Extracting [============================>                      ]  523.1MB/907.7MB
+ eb77aa907276 Extracting [==============================>                    ]  554.3MB/907.7MB
+ eb77aa907276 Extracting [================================>                  ]  584.4MB/907.7MB
+ eb77aa907276 Extracting [=================================>                 ]  614.4MB/907.7MB
+ eb77aa907276 Extracting [===================================>               ]  646.2MB/907.7MB
+ eb77aa907276 Extracting [=====================================>             ]  676.8MB/907.7MB
+ eb77aa907276 Extracting [=======================================>           ]  708.6MB/907.7MB
+ eb77aa907276 Extracting [========================================>          ]  737.5MB/907.7MB
+ eb77aa907276 Extracting [=========================================>         ]  760.9MB/907.7MB
+ eb77aa907276 Extracting [===========================================>       ]  784.9MB/907.7MB
+ eb77aa907276 Extracting [============================================>      ]  808.3MB/907.7MB
+ eb77aa907276 Extracting [=============================================>     ]  832.2MB/907.7MB
+ eb77aa907276 Extracting [===============================================>   ]  855.1MB/907.7MB
+ eb77aa907276 Extracting [================================================>  ]  877.9MB/907.7MB
+ eb77aa907276 Extracting [=================================================> ]  902.4MB/907.7MB
+ eb77aa907276 Extracting [==================================================>]  907.7MB/907.7MB
+ eb77aa907276 Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Pull complete 
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Pull complete 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-opensearch-1  Started
+ Container docker_services_cli-postgresql-1  Started
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py,line=854::'crypt' is deprecated and slated for removal in Python 3.13
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py,line=12::The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py,line=12::The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py,line=154::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_requests
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, time-machine-2.19.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 418 items
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/customizations/test_request_types.py,line=33::cannot collect test class 'TestAction' because it has a __init__ constructor (from: tests/customizations/test_request_types.py)
+
+docs/conf.py ...                                                         [  0%]
+tests/conftest.py ...                                                    [  1%]
+tests/customizations/test_request_types.py ....::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.                         [  2%]
+tests/records/events/test_api.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                     [  3%]
+tests/records/systemfields/conftest.py ...                               [  4%]
+tests/records/systemfields/helpers.py ...                                [  4%]
+tests/records/systemfields/test_calculated_systemfield.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.           [  5%]
+tests/records/systemfields/test_last_activity_field.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+..             [  6%]
+tests/records/systemfields/test_last_reply_field.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+...               [  8%]
+tests/records/test_request_api.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                    [  9%]
+tests/records/test_request_numberseq.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+                              [  9%]
+tests/records/test_systemfield_relatedrecord.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+                  [ 11%]
+tests/resources/events/conftest.py ...                                   [ 12%]
+tests/resources/events/test_request_events_resources.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+            [ 13%]
+tests/resources/requests/conftest.py ...                                 [ 14%]
+tests/resources/requests/test_requests_resources.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+               [ 15%]
+tests/resources/user_moderation/test_user_moderation_resources.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+. [ 16%]
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=77::Remember me support has been removed.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                                                  [ 18%]
+tests/services/components/test_request_reviewers_component.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+....... [ 21%]
+.........                                                                [ 23%]
+tests/services/conftest.py ...                                           [ 23%]
+tests/services/events/conftest.py ...                                    [ 24%]
+tests/services/events/test_event_permissions.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+....                  [ 26%]
+tests/services/events/test_request_events_service.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.....::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+...        [ 29%]
+tests/services/events/test_request_events_service_config.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+.         [ 30%]
+tests/services/requests/test_request_permissions.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+...........       [ 33%]
+tests/services/requests/test_request_search_permissions.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+           [ 34%]
+tests/services/requests/test_requests_schemas.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.                    [ 35%]
+tests/services/requests/test_requests_service.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+......               [ 37%]
+tests/services/requests/test_requests_service_config.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+.             [ 38%]
+tests/services/requests/test_requests_tasks.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                       [ 38%]
+tests/services/user_moderation/test_user_moderation_service.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+.::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+. [ 41%]
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py,line=482::`es_clear` fixture is deprecated, use `search_clear` instead.
+                                                                         [ 41%]
+tests/test_alembic.py ...::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/alembic/config.py,line=566::No path_separator found in configuration; falling back to legacy splitting on spaces/commas for version_locations.  Consider adding path_separator=os to Alembic config.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_oauthclient/alembic/bff1f190b9bd_add_timestamp_oauthclient.py,line=27::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_oauthclient/alembic/97bbc733896c_create_oauthclient_tables.py,line=76::The from_engine() method on Inspector is deprecated and will be removed in a future release.  Please use the sqlalchemy.inspect() function on an Engine or Connection in order to acquire an Inspector. (deprecated since: 1.4)
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/alembic/ddl/postgresql.py,line=192::autoincrement and existing_autoincrement only make sense for MySQL
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_accounts/alembic/9848d0149abd_create_accounts_tables.py,line=99::The from_engine() method on Inspector is deprecated and will be removed in a future release.  Please use the sqlalchemy.inspect() function on an Engine or Connection in order to acquire an Inspector. (deprecated since: 1.4)
+                                                [ 41%]
+tests/test_invenio_requests.py ....                                      [ 42%]
+tests/test_type_registry.py .....                                        [ 44%]
+invenio_requests/__init__.py ...                                         [ 44%]
+invenio_requests/alembic/1759321170_add_index_to_request_events_request_id_.py . [ 44%]
+..                                                                       [ 45%]
+invenio_requests/alembic/5cd30a3503c9_create_requests_branch.py ...      [ 46%]
+invenio_requests/alembic/a14fa442680f_create_tables.py ...               [ 46%]
+invenio_requests/config.py ...                                           [ 47%]
+invenio_requests/customizations/__init__.py ...                          [ 48%]
+invenio_requests/customizations/actions.py ...                           [ 49%]
+invenio_requests/customizations/event_types.py ...                       [ 49%]
+invenio_requests/customizations/request_types.py ...                     [ 50%]
+invenio_requests/customizations/states.py ...                            [ 51%]
+invenio_requests/customizations/user_moderation/__init__.py ...          [ 51%]
+invenio_requests/customizations/user_moderation/user_moderation.py ...   [ 52%]
+invenio_requests/errors.py ...                                           [ 53%]
+invenio_requests/ext.py ...                                              [ 54%]
+invenio_requests/notifications/__init__.py ...                           [ 54%]
+invenio_requests/notifications/builders.py ...                           [ 55%]
+invenio_requests/notifications/filters.py ...                            [ 56%]
+invenio_requests/notifications/generators.py ...                         [ 56%]
+invenio_requests/proxies.py ...                                          [ 57%]
+invenio_requests/records/__init__.py ...                                 [ 58%]
+invenio_requests/records/api.py ...                                      [ 59%]
+invenio_requests/records/dumpers/__init__.py ...                         [ 59%]
+invenio_requests/records/dumpers/calculated.py ...                       [ 60%]
+invenio_requests/records/dumpers/granttokens.py ...                      [ 61%]
+invenio_requests/records/jsonschemas/__init__.py ...                     [ 61%]
+invenio_requests/records/mappings/__init__.py ...                        [ 62%]
+invenio_requests/records/mappings/os-v1/__init__.py ...                  [ 63%]
+invenio_requests/records/mappings/os-v2/__init__.py ...                  [ 64%]
+invenio_requests/records/mappings/v7/__init__.py ...                     [ 64%]
+invenio_requests/records/models.py ...                                   [ 65%]
+invenio_requests/records/systemfields/__init__.py ...                    [ 66%]
+invenio_requests/records/systemfields/computed.py ...                    [ 66%]
+invenio_requests/records/systemfields/entity_reference.py ...            [ 67%]
+invenio_requests/records/systemfields/event_type.py ...                  [ 68%]
+invenio_requests/records/systemfields/expired_state.py ...               [ 69%]
+invenio_requests/records/systemfields/identity.py ...                    [ 69%]
+invenio_requests/records/systemfields/relatedrecord.py ...               [ 70%]
+invenio_requests/records/systemfields/request_state.py ...               [ 71%]
+invenio_requests/records/systemfields/request_type.py ...                [ 72%]
+invenio_requests/records/systemfields/status.py ...                      [ 72%]
+invenio_requests/registry.py ...                                         [ 73%]
+invenio_requests/resolvers/__init__.py ...                               [ 74%]
+invenio_requests/resolvers/registry.py ...                               [ 74%]
+invenio_requests/resolvers/requests.py ...                               [ 75%]
+invenio_requests/resources/__init__.py ...                               [ 76%]
+invenio_requests/resources/events/__init__.py ...                        [ 77%]
+invenio_requests/resources/events/config.py ...                          [ 77%]
+invenio_requests/resources/events/resource.py ...                        [ 78%]
+invenio_requests/resources/requests/__init__.py ...                      [ 79%]
+invenio_requests/resources/requests/config.py ...                        [ 79%]
+invenio_requests/resources/requests/fields.py ...                        [ 80%]
+invenio_requests/resources/requests/resource.py ...                      [ 81%]
+invenio_requests/services/__init__.py ...                                [ 82%]
+invenio_requests/services/events/__init__.py ...                         [ 82%]
+invenio_requests/services/events/config.py ...                           [ 83%]
+invenio_requests/services/events/service.py ...                          [ 84%]
+invenio_requests/services/generators.py ...                              [ 84%]
+invenio_requests/services/permissions.py ...                             [ 85%]
+invenio_requests/services/requests/__init__.py ...                       [ 86%]
+invenio_requests/services/requests/components.py ...                     [ 87%]
+invenio_requests/services/requests/config.py ...                         [ 87%]
+invenio_requests/services/requests/facets.py ...                         [ 88%]
+invenio_requests/services/requests/links.py ...                          [ 89%]
+invenio_requests/services/requests/params.py ...                         [ 89%]
+invenio_requests/services/requests/results.py ...                        [ 90%]
+invenio_requests/services/requests/service.py ...                        [ 91%]
+invenio_requests/services/results.py ...                                 [ 92%]
+invenio_requests/services/schemas.py ...                                 [ 92%]
+invenio_requests/services/user_moderation/__init__.py ...                [ 93%]
+invenio_requests/services/user_moderation/errors.py ...                  [ 94%]
+invenio_requests/services/user_moderation/service.py ...                 [ 94%]
+invenio_requests/tasks.py ...                                            [ 95%]
+invenio_requests/views/__init__.py ...                                   [ 96%]
+invenio_requests/views/api.py ...                                        [ 97%]
+invenio_requests/views/decorators.py ...                                 [ 97%]
+invenio_requests/views/requests.py ...                                   [ 98%]
+invenio_requests/views/ui.py ...                                         [ 99%]
+invenio_requests/webpack.py ...                                          [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12: DeprecationWarning: The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+    from marshmallow import __version_info__ as marshmallow_version
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    storage_class = Str(default="L", dump_only=False)
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py:140: 35 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py:140: DeprecationWarning: Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+    warnings.warn(
+
+tests/customizations/test_request_types.py:33
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/customizations/test_request_types.py:33: PytestCollectionWarning: cannot collect test class 'TestAction' because it has a __init__ constructor (from: tests/customizations/test_request_types.py)
+    class TestAction(RequestAction):
+
+tests/customizations/test_request_types.py: 4 warnings
+tests/records/events/test_api.py: 1 warning
+tests/records/systemfields/test_calculated_systemfield.py: 1 warning
+tests/records/systemfields/test_last_activity_field.py: 1 warning
+tests/records/systemfields/test_last_reply_field.py: 1 warning
+tests/records/test_request_api.py: 1 warning
+tests/records/test_systemfield_relatedrecord.py: 1 warning
+tests/resources/events/test_request_events_resources.py: 1 warning
+tests/resources/requests/test_requests_resources.py: 1 warning
+tests/resources/user_moderation/test_user_moderation_resources.py: 1 warning
+tests/services/components/test_request_reviewers_component.py: 1 warning
+tests/services/events/test_event_permissions.py: 1 warning
+tests/services/events/test_request_events_service.py: 3 warnings
+tests/services/requests/test_request_permissions.py: 1 warning
+tests/services/requests/test_request_search_permissions.py: 1 warning
+tests/services/requests/test_requests_schemas.py: 1 warning
+tests/services/requests/test_requests_service.py: 1 warning
+tests/services/requests/test_requests_tasks.py: 1 warning
+tests/services/user_moderation/test_user_moderation_service.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py:36: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    self._confirmed = datetime.utcnow() if confirmed else None
+
+tests/records/events/test_api.py: 1 warning
+tests/records/systemfields/test_calculated_systemfield.py: 1 warning
+tests/records/systemfields/test_last_activity_field.py: 1 warning
+tests/records/systemfields/test_last_reply_field.py: 1 warning
+tests/records/test_request_api.py: 1 warning
+tests/records/test_request_numberseq.py: 1 warning
+tests/records/test_systemfield_relatedrecord.py: 1 warning
+tests/resources/events/test_request_events_resources.py: 1 warning
+tests/resources/requests/test_requests_resources.py: 1 warning
+tests/resources/user_moderation/test_user_moderation_resources.py: 1 warning
+tests/services/components/test_request_reviewers_component.py: 1 warning
+tests/services/events/test_event_permissions.py: 1 warning
+tests/services/events/test_request_events_service.py: 1 warning
+tests/services/events/test_request_events_service_config.py: 1 warning
+tests/services/requests/test_request_permissions.py: 1 warning
+tests/services/requests/test_request_search_permissions.py: 1 warning
+tests/services/requests/test_requests_schemas.py: 1 warning
+tests/services/requests/test_requests_service.py: 1 warning
+tests/services/requests/test_requests_service_config.py: 1 warning
+tests/services/requests/test_requests_tasks.py: 1 warning
+tests/services/user_moderation/test_user_moderation_service.py: 1 warning
+tests/test_alembic.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py:145: DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+    self._set_cache(app, config)
+
+tests/records/test_systemfield_relatedrecord.py::test_no_assignment
+tests/records/test_systemfield_relatedrecord.py::test_record_assignment
+tests/records/test_systemfield_relatedrecord.py::test_id_assignment
+tests/records/test_systemfield_relatedrecord.py::test_remove_assignment
+tests/records/test_systemfield_relatedrecord.py::test_dump_created_by
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:335: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/resources/events/test_request_events_resources.py: 3 warnings
+tests/resources/requests/test_requests_resources.py: 4 warnings
+tests/resources/user_moderation/test_user_moderation_resources.py: 11 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py:77: DeprecationWarning: Remember me support has been removed.
+    warnings.warn("Remember me support has been removed.", DeprecationWarning)
+
+tests/resources/user_moderation/test_user_moderation_resources.py: 11 warnings
+tests/services/user_moderation/test_user_moderation_service.py: 7 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py:482: DeprecationWarning: `es_clear` fixture is deprecated, use `search_clear` instead.
+    warn(
+
+tests/resources/user_moderation/test_user_moderation_resources.py::test_moderate
+tests/resources/user_moderation/test_user_moderation_resources.py::test_links
+tests/resources/user_moderation/test_user_moderation_resources.py::test_links
+tests/services/user_moderation/test_user_moderation_service.py::test_moderation_accept
+tests/services/user_moderation/test_user_moderation_service.py::test_moderation_accept
+tests/services/user_moderation/test_user_moderation_service.py::test_moderation_decline
+tests/services/user_moderation/test_user_moderation_service.py::test_moderation_decline
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py:55: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    self._created = datetime.utcnow()
+
+tests/test_alembic.py::test_alembic
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/alembic/config.py:566: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces/commas for version_locations.  Consider adding path_separator=os to Alembic config.
+    util.warn_deprecated(
+
+tests/test_alembic.py::test_alembic
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_oauthclient/alembic/bff1f190b9bd_add_timestamp_oauthclient.py:27: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    current_date = datetime.utcnow()
+
+tests/test_alembic.py::test_alembic
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_oauthclient/alembic/97bbc733896c_create_oauthclient_tables.py:76: SADeprecationWarning: The from_engine() method on Inspector is deprecated and will be removed in a future release.  Please use the sqlalchemy.inspect() function on an Engine or Connection in order to acquire an Inspector. (deprecated since: 1.4)
+    insp = Inspector.from_engine(ctx.connection.engine)
+
+tests/test_alembic.py::test_alembic
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/alembic/ddl/postgresql.py:192: UserWarning: autoincrement and existing_autoincrement only make sense for MySQL
+    super().alter_column(
+
+tests/test_alembic.py::test_alembic
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_accounts/alembic/9848d0149abd_create_accounts_tables.py:99: SADeprecationWarning: The from_engine() method on Inspector is deprecated and will be removed in a future release.  Please use the sqlalchemy.inspect() function on an Engine or Connection in order to acquire an Inspector. (deprecated since: 1.4)
+    insp = Inspector.from_engine(ctx.connection.engine)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------------------------------------------------------
+invenio_requests/__init__.py                                                         5      0   100%
+invenio_requests/alembic/5cd30a3503c9_create_requests_branch.py                      8      0   100%
+invenio_requests/alembic/1759321170_add_index_to_request_events_request_id_.py       9      0   100%
+invenio_requests/alembic/a14fa442680f_create_tables.py                              18      0   100%
+invenio_requests/config.py                                                          35      0   100%
+invenio_requests/customizations/__init__.py                                          5      0   100%
+invenio_requests/customizations/actions.py                                          64      1    98%   89
+invenio_requests/customizations/event_types.py                                      65      5    92%   60-62, 67, 71
+invenio_requests/customizations/request_types.py                                    84      9    89%   125, 171-176, 212-213, 256, 260
+invenio_requests/customizations/states.py                                            5      0   100%
+invenio_requests/customizations/user_moderation/__init__.py                          2      0   100%
+invenio_requests/customizations/user_moderation/user_moderation.py                  29      0   100%
+invenio_requests/errors.py                                                          14      0   100%
+invenio_requests/ext.py                                                             66      2    97%   124, 133
+invenio_requests/notifications/__init__.py                                           0      0   100%
+invenio_requests/notifications/builders.py                                          18      0   100%
+invenio_requests/notifications/filters.py                                           14      1    93%   28
+invenio_requests/notifications/generators.py                                        33      1    97%   31
+invenio_requests/proxies.py                                                         16      0   100%
+invenio_requests/records/__init__.py                                                 3      0   100%
+invenio_requests/records/api.py                                                     70      0   100%
+invenio_requests/records/dumpers/__init__.py                                         3      0   100%
+invenio_requests/records/dumpers/calculated.py                                      10      0   100%
+invenio_requests/records/dumpers/granttokens.py                                     20      2    90%   36-37
+invenio_requests/records/jsonschemas/__init__.py                                     0      0   100%
+invenio_requests/records/mappings/__init__.py                                        0      0   100%
+invenio_requests/records/mappings/os-v1/__init__.py                                  0      0   100%
+invenio_requests/records/mappings/os-v2/__init__.py                                  0      0   100%
+invenio_requests/records/mappings/v7/__init__.py                                     0      0   100%
+invenio_requests/records/models.py                                                  45      0   100%
+invenio_requests/records/systemfields/__init__.py                                    9      0   100%
+invenio_requests/records/systemfields/computed.py                                   63      1    98%   120
+invenio_requests/records/systemfields/entity_reference.py                           15      0   100%
+invenio_requests/records/systemfields/event_type.py                                 48      2    96%   32, 62
+invenio_requests/records/systemfields/expired_state.py                              13      0   100%
+invenio_requests/records/systemfields/identity.py                                   11      2    82%   20-21
+invenio_requests/records/systemfields/relatedrecord.py                              94     19    80%   32-34, 42-44, 52-53, 60-62, 131-132, 151-154, 165-166, 178
+invenio_requests/records/systemfields/request_state.py                              10      0   100%
+invenio_requests/records/systemfields/request_type.py                               30      1    97%   41
+invenio_requests/records/systemfields/status.py                                     11      0   100%
+invenio_requests/registry.py                                                        17      0   100%
+invenio_requests/resolvers/__init__.py                                               1      0   100%
+invenio_requests/resolvers/registry.py                                               6      0   100%
+invenio_requests/resolvers/requests.py                                              15      4    73%   28, 37, 47, 56
+invenio_requests/resources/__init__.py                                               3      0   100%
+invenio_requests/resources/events/__init__.py                                        3      0   100%
+invenio_requests/resources/events/config.py                                          9      0   100%
+invenio_requests/resources/events/resource.py                                       49      0   100%
+invenio_requests/resources/requests/__init__.py                                      3      0   100%
+invenio_requests/resources/requests/config.py                                       22      0   100%
+invenio_requests/resources/requests/fields.py                                       16      6    62%   30, 32, 41-46
+invenio_requests/resources/requests/resource.py                                     57      6    89%   85-91, 113-119, 125-129
+invenio_requests/services/__init__.py                                                4      0   100%
+invenio_requests/services/events/__init__.py                                         3      0   100%
+invenio_requests/services/events/config.py                                          37      0   100%
+invenio_requests/services/events/service.py                                         99      3    97%   153, 287, 300
+invenio_requests/services/generators.py                                             85      9    89%   48, 73, 111, 140, 171, 177, 184, 194, 198
+invenio_requests/services/permissions.py                                            20      0   100%
+invenio_requests/services/requests/__init__.py                                       6      0   100%
+invenio_requests/services/requests/components.py                                    85      5    94%   171-180
+invenio_requests/services/requests/config.py                                        39      0   100%
+invenio_requests/services/requests/facets.py                                         5      0   100%
+invenio_requests/services/requests/links.py                                         28      0   100%
+invenio_requests/services/requests/params.py                                        57     11    81%   33, 59, 80, 82, 109-123, 136-137
+invenio_requests/services/requests/results.py                                       84      9    89%   53, 63, 74, 88-90, 97, 103, 118
+invenio_requests/services/requests/service.py                                       88      1    99%   49
+invenio_requests/services/results.py                                                50     20    60%   32, 62-63, 67, 80-83, 88-90, 95-101, 105-107
+invenio_requests/services/schemas.py                                                41      0   100%
+invenio_requests/services/user_moderation/__init__.py                                2      0   100%
+invenio_requests/services/user_moderation/errors.py                                  5      0   100%
+invenio_requests/services/user_moderation/service.py                                36      1    97%   98
+invenio_requests/tasks.py                                                           25      7    72%   47-49, 61-66
+invenio_requests/views/__init__.py                                                   5      0   100%
+invenio_requests/views/api.py                                                        6      0   100%
+invenio_requests/views/decorators.py                                                13      9    31%   21-34
+invenio_requests/views/requests.py                                                   0      0   100%
+invenio_requests/views/ui.py                                                        19      5    74%   23, 28, 33-36
+invenio_requests/webpack.py                                                          2      0   100%
+--------------------------------------------------------------------------------------------------------------
+TOTAL                                                                             1990    142    93%
+================= 418 passed, 145 warnings in 97.63s (0:01:37) =================
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
