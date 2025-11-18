@@ -6,13 +6,5 @@
     "invenio-files-rest": {
         "url": "https://github.com/fenekku/invenio-files-rest.git",
         "branch": "support_3.14"
-    },
-    "pytest": {
-        "url": "https://github.com/mesemus/pytest",
-        "branch": "debug-fixture-call"
-    },
-    "invenio-pages": {
-        "url": "https://github.com/mesemus/invenio-pages",
-        "branch": "debug-deadlock"
     }
 }
