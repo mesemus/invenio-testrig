@@ -4,7 +4,7 @@ This directory contains reports generated during the bug verification process. T
 
 | Test name | Report date and time | Status | Patches tested |
 |-------------|---------------------|--------|-------------|
-| pytest rollback patch | [2025-11-18 18-59-31](./results/2025-11-18_18-59-31/report.md) | 17 ✅ passed, 1 ❌ failed, 116 warnings | pytest-invenio |
+| pytest rollback patch | [2025-11-18 18-59-31](./results/2025-11-18_18-59-31/report.md) | 18 ✅ passed, 1 ❌ failed, 138 warnings | pytest-invenio |
 | pytest rollback patch | [2025-11-18 18-42-28](./results/2025-11-18_18-42-28/report.md) | 46 ✅ passed, 5 ❌ failed, 967 warnings | pytest-invenio |
 | pytest rollback patch | [2025-11-18 18-30-16](./results/2025-11-18_18-30-16/report.md) | 44 ✅ passed, 2 ❌ failed, 802 warnings | pytest-invenio |
 | pytest rollback patch | [2025-11-18 18-18-16](./results/2025-11-18_18-18-16/report.md) | 19 ✅ passed, 1 ❌ failed, 304 warnings | pytest-invenio |
