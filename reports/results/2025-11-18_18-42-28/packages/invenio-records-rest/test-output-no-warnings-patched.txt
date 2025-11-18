@@ -1,0 +1,1238 @@
+ opensearch Pulling 
+ rabbitmq Pulling 
+ redis Pulling 
+ postgresql Pulling 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ 517b08eaf3cc Waiting 
+ 4f4fb700ef54 Waiting 
+ a43f12641297 Waiting 
+ fe77c85f37cb Waiting 
+ 186a03b51bfa Waiting 
+ f9dd052e142d Pulling fs layer 
+ e8c6d4883897 Pulling fs layer 
+ 648eb81b3252 Pulling fs layer 
+ eb77aa907276 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ f9dd052e142d Waiting 
+ 0ffa8f8aba1e Pulling fs layer 
+ e8c6d4883897 Waiting 
+ 2e81b9cb93cd Pulling fs layer 
+ 648eb81b3252 Waiting 
+ eb77aa907276 Waiting 
+ 0ffa8f8aba1e Waiting 
+ 4f4fb700ef54 Waiting 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ b0a0cf830b12 Waiting 
+ dda3d8fbd5ed Waiting 
+ 283a477db7bb Waiting 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ f8406d9c00ea Pulling fs layer 
+ c199bff16b05 Pulling fs layer 
+ 91d2729fa4d5 Waiting 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 9739ced65621 Waiting 
+ 873532e5f8c7 Pulling fs layer 
+ 050d9f8c3b1c Pulling fs layer 
+ ae3bb1b347a4 Waiting 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ f8406d9c00ea Waiting 
+ c199bff16b05 Waiting 
+ 050d9f8c3b1c Waiting 
+ e0d55fdb4d15 Waiting 
+ 710e142705f8 Waiting 
+ c1cb13b19080 Waiting 
+ 873532e5f8c7 Waiting 
+ cb628c265f09 Waiting 
+ 20043066d3d5 Pulling fs layer 
+ fbda4a386d13 Pulling fs layer 
+ 257b1af0856e Pulling fs layer 
+ e5fbc57eeafe Pulling fs layer 
+ f19b7ac6489f Pulling fs layer 
+ 0f9a1c409bb2 Pulling fs layer 
+ d5d9860a5545 Pulling fs layer 
+ fc030d7bf8ba Pulling fs layer 
+ c5ec72a0a4d4 Pulling fs layer 
+ 20043066d3d5 Waiting 
+ a51622689fc8 Pulling fs layer 
+ fbda4a386d13 Waiting 
+ 257b1af0856e Waiting 
+ e5fbc57eeafe Waiting 
+ fc030d7bf8ba Waiting 
+ f19b7ac6489f Waiting 
+ c5ec72a0a4d4 Waiting 
+ 0f9a1c409bb2 Waiting 
+ d5d9860a5545 Waiting 
+ a51622689fc8 Waiting 
+ 8e44f01296e3 Downloading [>                                                  ]    288kB/28.23MB
+ 44fc29a25beb Downloading [==========================================>        ]     935B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Verifying Checksum 
+ 39af693970c0 Download complete 
+ 8e44f01296e3 Downloading [===========>                                       ]  6.654MB/28.23MB
+ 517b08eaf3cc Downloading [>                                                  ]  14.62kB/1.438MB
+ 8e44f01296e3 Downloading [====================>                              ]  11.84MB/28.23MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 8e44f01296e3 Downloading [==========================>                        ]  15.03MB/28.23MB
+ 186a03b51bfa Downloading [>                                                  ]  155.9kB/15.35MB
+ 8e44f01296e3 Downloading [===============================>                   ]  17.66MB/28.23MB
+ 186a03b51bfa Downloading [===>                                               ]  1.122MB/15.35MB
+ 8e44f01296e3 Downloading [============================================>      ]  25.19MB/28.23MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 186a03b51bfa Downloading [========>                                          ]  2.736MB/15.35MB
+ 8e44f01296e3 Downloading [===============================================>   ]  26.65MB/28.23MB
+ 8e44f01296e3 Verifying Checksum 
+ 8e44f01296e3 Download complete 
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 186a03b51bfa Downloading [===========>                                       ]  3.386MB/15.35MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 8e44f01296e3 Extracting [===========>                                       ]  6.488MB/28.23MB
+ 186a03b51bfa Downloading [=============>                                     ]  4.198MB/15.35MB
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Verifying Checksum 
+ a43f12641297 Download complete 
+ 8e44f01296e3 Extracting [=================>                                 ]  10.03MB/28.23MB
+ 186a03b51bfa Downloading [================>                                  ]  5.014MB/15.35MB
+ 8e44f01296e3 Extracting [============================>                      ]  15.93MB/28.23MB
+ f9dd052e142d Downloading [>                                                  ]  528.5kB/52.33MB
+ 186a03b51bfa Downloading [=================>                                 ]   5.48MB/15.35MB
+ e8c6d4883897 Downloading [>                                                  ]  44.74kB/4.398MB
+ 8e44f01296e3 Extracting [=========================================>         ]   23.3MB/28.23MB
+ f9dd052e142d Downloading [=============>                                     ]  13.77MB/52.33MB
+ 186a03b51bfa Downloading [===================>                               ]   5.98MB/15.35MB
+ e8c6d4883897 Downloading [=================================================> ]   4.38MB/4.398MB
+ e8c6d4883897 Verifying Checksum 
+ e8c6d4883897 Download complete 
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ 186a03b51bfa Downloading [=========================>                         ]  7.925MB/15.35MB
+ 8e44f01296e3 Extracting [===============================================>   ]  26.84MB/28.23MB
+ f9dd052e142d Downloading [=====================>                             ]  22.79MB/52.33MB
+ 186a03b51bfa Downloading [===========================>                       ]  8.429MB/15.35MB
+ 648eb81b3252 Downloading [=============================>                     ]     934B/1.561kB
+ 648eb81b3252 Downloading [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Verifying Checksum 
+ 648eb81b3252 Download complete 
+ f9dd052e142d Downloading [===============================>                   ]  33.38MB/52.33MB
+ 186a03b51bfa Downloading [=========================================>         ]  12.75MB/15.35MB
+ 186a03b51bfa Verifying Checksum 
+ 186a03b51bfa Download complete 
+ f9dd052e142d Downloading [========================================>          ]  41.88MB/52.33MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ eb77aa907276 Downloading [>                                                  ]  530.9kB/907.7MB
+ f9dd052e142d Downloading [================================================>  ]  50.37MB/52.33MB
+ f9dd052e142d Verifying Checksum 
+ f9dd052e142d Download complete 
+ f9dd052e142d Extracting [>                                                  ]  524.3kB/52.33MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ eb77aa907276 Downloading [>                                                  ]  6.928MB/907.7MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ f9dd052e142d Extracting [=>                                                 ]  1.573MB/52.33MB
+ eb77aa907276 Downloading [>                                                  ]  16.02MB/907.7MB
+ 0ffa8f8aba1e Downloading [==================================================>]     226B/226B
+ 0ffa8f8aba1e Verifying Checksum 
+ 0ffa8f8aba1e Download complete 
+ 2e81b9cb93cd Downloading [=========================>                         ]     933B/1.859kB
+ 2e81b9cb93cd Downloading [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Verifying Checksum 
+ 2e81b9cb93cd Download complete 
+ eb77aa907276 Downloading [=>                                                 ]  19.74MB/907.7MB
+ f9dd052e142d Extracting [====>                                              ]  4.719MB/52.33MB
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ eb77aa907276 Downloading [=>                                                 ]  29.85MB/907.7MB
+ dda3d8fbd5ed Download complete 
+ f9dd052e142d Extracting [=====>                                             ]  5.767MB/52.33MB
+ b0a0cf830b12 Downloading [>                                                  ]  299.1kB/29.15MB
+ eb77aa907276 Downloading [==>                                                ]  43.73MB/907.7MB
+ f9dd052e142d Extracting [============>                                      ]  12.58MB/52.33MB
+ b0a0cf830b12 Downloading [=================>                                 ]  10.17MB/29.15MB
+ eb77aa907276 Downloading [===>                                               ]  62.41MB/907.7MB
+ f9dd052e142d Extracting [==================>                                ]   19.4MB/52.33MB
+ b0a0cf830b12 Downloading [====================================>              ]  21.51MB/29.15MB
+ 283a477db7bb Downloading [>                                                  ]  46.52kB/4.533MB
+ eb77aa907276 Downloading [===>                                               ]  70.94MB/907.7MB
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ f9dd052e142d Extracting [=========================>                         ]  26.21MB/52.33MB
+ 283a477db7bb Downloading [=================================================> ]  4.505MB/4.533MB
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ eb77aa907276 Downloading [====>                                              ]  78.92MB/907.7MB
+ 91d2729fa4d5 Downloading [>                                                  ]  15.06kB/1.45MB
+ eb77aa907276 Downloading [====>                                              ]   81.6MB/907.7MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ 9739ced65621 Downloading [>                                                  ]  81.06kB/8.069MB
+ eb77aa907276 Downloading [=====>                                             ]  98.13MB/907.7MB
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ f9dd052e142d Extracting [==========================>                        ]  27.26MB/52.33MB
+ eb77aa907276 Downloading [======>                                            ]  114.1MB/907.7MB
+ 9739ced65621 Downloading [=================>                                 ]  2.851MB/8.069MB
+ b0a0cf830b12 Extracting [========>                                          ]  5.014MB/29.15MB
+ f9dd052e142d Extracting [===========================>                       ]  28.84MB/52.33MB
+ eb77aa907276 Downloading [=======>                                           ]  135.5MB/907.7MB
+ 9739ced65621 Downloading [=================================>                 ]  5.463MB/8.069MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ b0a0cf830b12 Extracting [================>                                  ]  9.437MB/29.15MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ f9dd052e142d Extracting [============================>                      ]  29.88MB/52.33MB
+ eb77aa907276 Downloading [========>                                          ]  152.6MB/907.7MB
+ b0a0cf830b12 Extracting [==================>                                ]  10.91MB/29.15MB
+ eb77aa907276 Downloading [=========>                                         ]  168.5MB/907.7MB
+ f9dd052e142d Extracting [=============================>                     ]  30.41MB/52.33MB
+ b0a0cf830b12 Extracting [==========================>                        ]  15.63MB/29.15MB
+ c199bff16b05 Downloading [==============>                                    ]     935B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Download complete 
+ eb77aa907276 Downloading [==========>                                        ]  184.6MB/907.7MB
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ b0a0cf830b12 Extracting [=====================================>             ]  21.82MB/29.15MB
+ f9dd052e142d Extracting [===============================>                   ]  33.03MB/52.33MB
+ eb77aa907276 Downloading [==========>                                        ]  195.7MB/907.7MB
+ eb77aa907276 Downloading [===========>                                       ]  204.8MB/907.7MB
+ e0d55fdb4d15 Downloading [>                                                  ]  528.5kB/109MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ eb77aa907276 Downloading [===========>                                       ]  210.1MB/907.7MB
+ e0d55fdb4d15 Downloading [==>                                                ]  6.392MB/109MB
+ f9dd052e142d Extracting [=================================>                 ]   34.6MB/52.33MB
+ eb77aa907276 Downloading [============>                                      ]  219.7MB/907.7MB
+ e0d55fdb4d15 Downloading [====>                                              ]  9.599MB/109MB
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ f9dd052e142d Extracting [===================================>               ]   36.7MB/52.33MB
+ eb77aa907276 Downloading [============>                                      ]  225.5MB/907.7MB
+ e0d55fdb4d15 Downloading [=======>                                           ]  15.96MB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ f9dd052e142d Extracting [====================================>              ]  37.75MB/52.33MB
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ eb77aa907276 Downloading [============>                                      ]  230.9MB/907.7MB
+ e0d55fdb4d15 Downloading [============>                                      ]  26.65MB/109MB
+ f9dd052e142d Extracting [======================================>            ]  39.85MB/52.33MB
+ 050d9f8c3b1c Downloading [==================================================>]     169B/169B
+ 050d9f8c3b1c Verifying Checksum 
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [=================>                                 ]  38.35MB/109MB
+ eb77aa907276 Downloading [=============>                                     ]  242.6MB/907.7MB
+ f9dd052e142d Extracting [=======================================>           ]  40.89MB/52.33MB
+ eb77aa907276 Downloading [=============>                                     ]  253.3MB/907.7MB
+ e0d55fdb4d15 Downloading [====================>                              ]  43.68MB/109MB
+ 710e142705f8 Downloading [========>                                          ]     933B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Verifying Checksum 
+ 710e142705f8 Download complete 
+ e0d55fdb4d15 Downloading [=====================>                             ]  47.93MB/109MB
+ eb77aa907276 Downloading [==============>                                    ]  255.5MB/907.7MB
+ f9dd052e142d Extracting [========================================>          ]  42.47MB/52.33MB
+ eb77aa907276 Downloading [==============>                                    ]  268.3MB/907.7MB
+ e0d55fdb4d15 Downloading [==========================>                        ]  58.58MB/109MB
+ f9dd052e142d Extracting [===========================================>       ]  45.09MB/52.33MB
+ eb77aa907276 Downloading [===============>                                   ]  278.4MB/907.7MB
+ e0d55fdb4d15 Downloading [=============================>                     ]  63.37MB/109MB
+ f9dd052e142d Extracting [=============================================>     ]  47.19MB/52.33MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ eb77aa907276 Downloading [===============>                                   ]  285.8MB/907.7MB
+ 44fc29a25beb Pull complete 
+ f9dd052e142d Extracting [==============================================>    ]  48.76MB/52.33MB
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ e0d55fdb4d15 Downloading [================================>                  ]  71.89MB/109MB
+ eb77aa907276 Downloading [================>                                  ]  292.2MB/907.7MB
+ e0d55fdb4d15 Downloading [=====================================>             ]   82.6MB/109MB
+ 20043066d3d5 Downloading [>                                                  ]  299.1kB/29.72MB
+ e0d55fdb4d15 Downloading [============================================>      ]  95.91MB/109MB
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ 20043066d3d5 Downloading [============>                                      ]  7.664MB/29.72MB
+ eb77aa907276 Downloading [================>                                  ]  300.7MB/907.7MB
+ e0d55fdb4d15 Downloading [===============================================>   ]  102.8MB/109MB
+ eb77aa907276 Downloading [================>                                  ]  301.8MB/907.7MB
+ e0d55fdb4d15 Downloading [=================================================> ]  107.7MB/109MB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ 20043066d3d5 Downloading [=================>                                 ]  10.11MB/29.72MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ 20043066d3d5 Downloading [================================>                  ]   19.6MB/29.72MB
+ eb77aa907276 Downloading [=================>                                 ]  313.5MB/907.7MB
+ 20043066d3d5 Downloading [==========================================>        ]   25.1MB/29.72MB
+ 20043066d3d5 Verifying Checksum 
+ 20043066d3d5 Download complete 
+ fbda4a386d13 Downloading [>                                                  ]  446.6kB/43.48MB
+ eb77aa907276 Downloading [=================>                                 ]  324.7MB/907.7MB
+ fbda4a386d13 Downloading [==========>                                        ]   9.29MB/43.48MB
+ f9dd052e142d Extracting [=================================================> ]  51.38MB/52.33MB
+ 20043066d3d5 Extracting [>                                                  ]  327.7kB/29.72MB
+ 257b1af0856e Downloading [>                                                  ]     76kB/7.468MB
+ eb77aa907276 Downloading [==================>                                ]  326.8MB/907.7MB
+ fbda4a386d13 Downloading [==================>                                ]  16.35MB/43.48MB
+ 257b1af0856e Downloading [=========>                                         ]  1.473MB/7.468MB
+ dda3d8fbd5ed Pull complete 
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 20043066d3d5 Extracting [====>                                              ]  2.621MB/29.72MB
+ 257b1af0856e Downloading [==================================>                ]  5.097MB/7.468MB
+ fbda4a386d13 Downloading [=============================>                     ]  25.22MB/43.48MB
+ eb77aa907276 Downloading [==================>                                ]  335.4MB/907.7MB
+ 283a477db7bb Extracting [=========================>                         ]  2.294MB/4.533MB
+ 20043066d3d5 Extracting [=======>                                           ]   4.26MB/29.72MB
+ 257b1af0856e Verifying Checksum 
+ 257b1af0856e Download complete 
+ fbda4a386d13 Downloading [=====================================>             ]   32.8MB/43.48MB
+ eb77aa907276 Downloading [==================>                                ]  340.2MB/907.7MB
+ 20043066d3d5 Extracting [========>                                          ]  5.243MB/29.72MB
+ fbda4a386d13 Downloading [============================================>      ]  38.57MB/43.48MB
+ fbda4a386d13 Verifying Checksum 
+ fbda4a386d13 Download complete 
+ 283a477db7bb Extracting [=================================>                 ]   3.08MB/4.533MB
+ eb77aa907276 Downloading [===================>                               ]    345MB/907.7MB
+ e5fbc57eeafe Downloading [====>                                              ]     934B/9.472kB
+ e5fbc57eeafe Downloading [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Verifying Checksum 
+ e5fbc57eeafe Download complete 
+ 20043066d3d5 Extracting [=========>                                         ]  5.571MB/29.72MB
+ f9dd052e142d Extracting [=================================================> ]   51.9MB/52.33MB
+ f9dd052e142d Extracting [==================================================>]  52.33MB/52.33MB
+ eb77aa907276 Downloading [===================>                               ]  353.6MB/907.7MB
+ 20043066d3d5 Extracting [===========>                                       ]  6.881MB/29.72MB
+ f19b7ac6489f Downloading [>                                                  ]  216.2kB/21.31MB
+ 283a477db7bb Extracting [=================================================> ]  4.522MB/4.533MB
+ eb77aa907276 Downloading [===================>                               ]    360MB/907.7MB
+ 0f9a1c409bb2 Downloading [==================================================>]     188B/188B
+ 0f9a1c409bb2 Verifying Checksum 
+ 0f9a1c409bb2 Download complete 
+ 39af693970c0 Pull complete 
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 20043066d3d5 Extracting [=============>                                     ]  7.864MB/29.72MB
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ f9dd052e142d Pull complete 
+ e8c6d4883897 Extracting [>                                                  ]  65.54kB/4.398MB
+ f19b7ac6489f Downloading [=======>                                           ]  3.113MB/21.31MB
+ eb77aa907276 Downloading [====================>                              ]  372.9MB/907.7MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 20043066d3d5 Extracting [==============>                                    ]  8.847MB/29.72MB
+ 517b08eaf3cc Pull complete 
+ e8c6d4883897 Extracting [==========>                                        ]  917.5kB/4.398MB
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ f19b7ac6489f Downloading [================>                                  ]   7.13MB/21.31MB
+ eb77aa907276 Downloading [=====================>                             ]  383.6MB/907.7MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ d5d9860a5545 Downloading [==================================================>]     109B/109B
+ d5d9860a5545 Download complete 
+ 186a03b51bfa Extracting [=========>                                         ]  2.785MB/15.35MB
+ e8c6d4883897 Extracting [=======================>                           ]  2.032MB/4.398MB
+ 91d2729fa4d5 Pull complete 
+ 20043066d3d5 Extracting [=================>                                 ]  10.16MB/29.72MB
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ f19b7ac6489f Downloading [=======================>                           ]  10.03MB/21.31MB
+ eb77aa907276 Downloading [=====================>                             ]  396.4MB/907.7MB
+ 186a03b51bfa Extracting [======================>                            ]  7.045MB/15.35MB
+ e8c6d4883897 Extracting [===============================>                   ]  2.753MB/4.398MB
+ 9739ced65621 Extracting [=============>                                     ]  2.163MB/8.069MB
+ 20043066d3d5 Extracting [======================>                            ]  13.43MB/29.72MB
+ eb77aa907276 Downloading [======================>                            ]    406MB/907.7MB
+ f19b7ac6489f Downloading [==============================>                    ]  12.92MB/21.31MB
+ fc030d7bf8ba Downloading [==================================================>]     617B/617B
+ fc030d7bf8ba Verifying Checksum 
+ fc030d7bf8ba Download complete 
+ 186a03b51bfa Extracting [====================================>              ]  11.14MB/15.35MB
+ e8c6d4883897 Extracting [=====================================>             ]  3.277MB/4.398MB
+ 20043066d3d5 Extracting [=============================>                     ]  17.37MB/29.72MB
+ 9739ced65621 Extracting [=====================>                             ]  3.441MB/8.069MB
+ eb77aa907276 Downloading [=======================>                           ]  418.9MB/907.7MB
+ f19b7ac6489f Downloading [====================================>              ]  15.35MB/21.31MB
+ 186a03b51bfa Extracting [=================================================> ]  15.07MB/15.35MB
+ 20043066d3d5 Extracting [==================================>                ]  20.64MB/29.72MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ e8c6d4883897 Extracting [========================================>          ]  3.539MB/4.398MB
+ eb77aa907276 Downloading [=======================>                           ]  432.2MB/907.7MB
+ 9739ced65621 Extracting [=============================>                     ]  4.719MB/8.069MB
+ f19b7ac6489f Downloading [=============================================>     ]  19.39MB/21.31MB
+ e8c6d4883897 Extracting [==================================================>]  4.398MB/4.398MB
+ f19b7ac6489f Verifying Checksum 
+ f19b7ac6489f Download complete 
+ c5ec72a0a4d4 Download complete 
+ 20043066d3d5 Extracting [======================================>            ]  22.61MB/29.72MB
+ 186a03b51bfa Pull complete 
+ e8c6d4883897 Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ eb77aa907276 Downloading [========================>                          ]  440.8MB/907.7MB
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 9739ced65621 Extracting [===================================>               ]    5.8MB/8.069MB
+ 4f4fb700ef54 Pull complete 
+ 648eb81b3252 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ redis Pulled 
+ 20043066d3d5 Extracting [==========================================>        ]  25.23MB/29.72MB
+ eb77aa907276 Downloading [========================>                          ]    445MB/907.7MB
+ 9739ced65621 Extracting [============================================>      ]  7.176MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ a51622689fc8 Downloading [>                                                  ]  127.4kB/12.47MB
+ eb77aa907276 Downloading [========================>                          ]  453.6MB/907.7MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ 20043066d3d5 Extracting [==========================================>        ]  25.56MB/29.72MB
+ a51622689fc8 Downloading [========================>                          ]  6.078MB/12.47MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ eb77aa907276 Downloading [=========================>                         ]  468.5MB/907.7MB
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ a51622689fc8 Downloading [===========================================>       ]  10.94MB/12.47MB
+ 20043066d3d5 Extracting [==============================================>    ]  27.85MB/29.72MB
+ eb77aa907276 Downloading [==========================>                        ]  482.9MB/907.7MB
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ a51622689fc8 Verifying Checksum 
+ a51622689fc8 Download complete 
+ 20043066d3d5 Extracting [=================================================> ]  29.16MB/29.72MB
+ eb77aa907276 Downloading [==========================>                        ]  487.7MB/907.7MB
+ e0d55fdb4d15 Extracting [===>                                               ]  6.685MB/109MB
+ 20043066d3d5 Extracting [=================================================> ]  29.49MB/29.72MB
+ eb77aa907276 Downloading [===========================>                       ]  499.5MB/907.7MB
+ e0d55fdb4d15 Extracting [====>                                              ]  8.913MB/109MB
+ 20043066d3d5 Extracting [==================================================>]  29.72MB/29.72MB
+ eb77aa907276 Downloading [============================>                      ]  519.8MB/907.7MB
+ e0d55fdb4d15 Extracting [=====>                                             ]  12.81MB/109MB
+ 20043066d3d5 Pull complete 
+ fbda4a386d13 Extracting [>                                                  ]  458.8kB/43.48MB
+ eb77aa907276 Downloading [=============================>                     ]  531.5MB/907.7MB
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.71MB/109MB
+ fbda4a386d13 Extracting [========>                                          ]   7.34MB/43.48MB
+ eb77aa907276 Downloading [==============================>                    ]  549.1MB/907.7MB
+ e0d55fdb4d15 Extracting [=========>                                         ]  20.05MB/109MB
+ fbda4a386d13 Extracting [================>                                  ]  14.22MB/43.48MB
+ eb77aa907276 Downloading [==============================>                    ]  560.9MB/907.7MB
+ e0d55fdb4d15 Extracting [===========>                                       ]  24.51MB/109MB
+ fbda4a386d13 Extracting [========================>                          ]   21.1MB/43.48MB
+ eb77aa907276 Downloading [===============================>                   ]  576.9MB/907.7MB
+ e0d55fdb4d15 Extracting [=============>                                     ]  28.97MB/109MB
+ fbda4a386d13 Extracting [===============================>                   ]  27.53MB/43.48MB
+ eb77aa907276 Downloading [================================>                  ]  590.8MB/907.7MB
+ e0d55fdb4d15 Extracting [================>                                  ]  36.21MB/109MB
+ fbda4a386d13 Extracting [====================================>              ]  31.65MB/43.48MB
+ eb77aa907276 Downloading [=================================>                 ]  611.6MB/907.7MB
+ e0d55fdb4d15 Extracting [===================>                               ]  42.89MB/109MB
+ fbda4a386d13 Extracting [==========================================>        ]  37.16MB/43.48MB
+ eb77aa907276 Downloading [==================================>                ]  634.6MB/907.7MB
+ e0d55fdb4d15 Extracting [======================>                            ]  49.58MB/109MB
+ fbda4a386d13 Extracting [==================================================>]  43.48MB/43.48MB
+ eb77aa907276 Downloading [===================================>               ]  643.7MB/907.7MB
+ e0d55fdb4d15 Extracting [========================>                          ]  52.92MB/109MB
+ eb77aa907276 Downloading [====================================>              ]  654.3MB/907.7MB
+ e0d55fdb4d15 Extracting [==========================>                        ]  57.93MB/109MB
+ eb77aa907276 Downloading [====================================>              ]    658MB/907.7MB
+ e0d55fdb4d15 Extracting [============================>                      ]  61.83MB/109MB
+ eb77aa907276 Downloading [====================================>              ]  663.4MB/907.7MB
+ e0d55fdb4d15 Extracting [================================>                  ]  71.86MB/109MB
+ e0d55fdb4d15 Extracting [=====================================>             ]  80.77MB/109MB
+ eb77aa907276 Downloading [====================================>              ]  665.5MB/907.7MB
+ e0d55fdb4d15 Extracting [=========================================>         ]  89.69MB/109MB
+ eb77aa907276 Downloading [====================================>              ]  668.8MB/907.7MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.03MB/109MB
+ eb77aa907276 Downloading [=====================================>             ]  675.2MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]  682.2MB/907.7MB
+ eb77aa907276 Downloading [======================================>            ]  692.9MB/907.7MB
+ fbda4a386d13 Pull complete 
+ 257b1af0856e Extracting [>                                                  ]   98.3kB/7.468MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ eb77aa907276 Downloading [======================================>            ]  707.4MB/907.7MB
+ 257b1af0856e Extracting [================>                                  ]  2.458MB/7.468MB
+ e0d55fdb4d15 Extracting [=============================================>     ]  99.71MB/109MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ eb77aa907276 Downloading [=======================================>           ]  720.2MB/907.7MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  102.5MB/109MB
+ eb77aa907276 Downloading [========================================>          ]  737.3MB/907.7MB
+ 257b1af0856e Pull complete 
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ eb77aa907276 Downloading [=========================================>         ]    748MB/907.7MB
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.1MB/109MB
+ e5fbc57eeafe Pull complete 
+ f19b7ac6489f Extracting [>                                                  ]  229.4kB/21.31MB
+ eb77aa907276 Downloading [==========================================>        ]  767.8MB/907.7MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  104.2MB/109MB
+ f19b7ac6489f Extracting [=========>                                         ]  4.129MB/21.31MB
+ eb77aa907276 Downloading [===========================================>       ]  785.4MB/907.7MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.8MB/109MB
+ f19b7ac6489f Extracting [====================>                              ]  8.716MB/21.31MB
+ eb77aa907276 Downloading [===========================================>       ]  791.7MB/907.7MB
+ f19b7ac6489f Extracting [==========================>                        ]  11.47MB/21.31MB
+ eb77aa907276 Downloading [============================================>      ]  812.5MB/907.7MB
+ eb77aa907276 Downloading [=============================================>     ]  823.7MB/907.7MB
+ f19b7ac6489f Extracting [==================================>                ]  14.68MB/21.31MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ eb77aa907276 Downloading [=============================================>     ]  834.9MB/907.7MB
+ f19b7ac6489f Extracting [======================================>            ]  16.52MB/21.31MB
+ eb77aa907276 Downloading [==============================================>    ]    852MB/907.7MB
+ f19b7ac6489f Extracting [==========================================>        ]  18.12MB/21.31MB
+ e0d55fdb4d15 Extracting [=================================================> ]  108.6MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ f19b7ac6489f Extracting [================================================>  ]  20.64MB/21.31MB
+ eb77aa907276 Downloading [===============================================>   ]  860.6MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  879.8MB/907.7MB
+ f19b7ac6489f Extracting [================================================>  ]  20.87MB/21.31MB
+ eb77aa907276 Downloading [================================================>  ]  888.8MB/907.7MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ f19b7ac6489f Extracting [==================================================>]  21.31MB/21.31MB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ f19b7ac6489f Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 050d9f8c3b1c Pull complete 
+ 0f9a1c409bb2 Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ eb77aa907276 Downloading [=================================================> ]  896.9MB/907.7MB
+ d5d9860a5545 Pull complete 
+ 710e142705f8 Pull complete 
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ fc030d7bf8ba Pull complete 
+ cb628c265f09 Pull complete 
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ postgresql Pulled 
+ c5ec72a0a4d4 Pull complete 
+ a51622689fc8 Extracting [>                                                  ]  131.1kB/12.47MB
+ eb77aa907276 Verifying Checksum 
+ eb77aa907276 Download complete 
+ eb77aa907276 Extracting [>                                                  ]  557.1kB/907.7MB
+ a51622689fc8 Extracting [==================>                                ]  4.719MB/12.47MB
+ eb77aa907276 Extracting [=>                                                 ]  21.73MB/907.7MB
+ a51622689fc8 Extracting [==========================>                        ]  6.554MB/12.47MB
+ eb77aa907276 Extracting [==>                                                ]  42.34MB/907.7MB
+ a51622689fc8 Extracting [=============================>                     ]  7.471MB/12.47MB
+ eb77aa907276 Extracting [===>                                               ]   63.5MB/907.7MB
+ a51622689fc8 Extracting [========================================>          ]  10.09MB/12.47MB
+ eb77aa907276 Extracting [====>                                              ]  81.89MB/907.7MB
+ a51622689fc8 Extracting [================================================>  ]  12.06MB/12.47MB
+ a51622689fc8 Extracting [==================================================>]  12.47MB/12.47MB
+ eb77aa907276 Extracting [=====>                                             ]  93.03MB/907.7MB
+ a51622689fc8 Pull complete 
+ eb77aa907276 Extracting [=====>                                             ]  98.04MB/907.7MB
+ rabbitmq Pulled 
+ eb77aa907276 Extracting [=====>                                             ]    107MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  116.4MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  125.3MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  134.3MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]    142MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  150.4MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  158.8MB/907.7MB
+ eb77aa907276 Extracting [==========>                                        ]  181.6MB/907.7MB
+ eb77aa907276 Extracting [===========>                                       ]  204.4MB/907.7MB
+ eb77aa907276 Extracting [===========>                                       ]  216.1MB/907.7MB
+ eb77aa907276 Extracting [============>                                      ]  227.8MB/907.7MB
+ eb77aa907276 Extracting [=============>                                     ]  237.9MB/907.7MB
+ eb77aa907276 Extracting [=============>                                     ]  251.2MB/907.7MB
+ eb77aa907276 Extracting [==============>                                    ]  271.3MB/907.7MB
+ eb77aa907276 Extracting [================>                                  ]  296.9MB/907.7MB
+ eb77aa907276 Extracting [=================>                                 ]  318.6MB/907.7MB
+ eb77aa907276 Extracting [==================>                                ]  340.4MB/907.7MB
+ eb77aa907276 Extracting [===================>                               ]  359.9MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  367.1MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  375.5MB/907.7MB
+ eb77aa907276 Extracting [=====================>                             ]  397.2MB/907.7MB
+ eb77aa907276 Extracting [=======================>                           ]  423.4MB/907.7MB
+ eb77aa907276 Extracting [========================>                          ]  452.3MB/907.7MB
+ eb77aa907276 Extracting [==========================>                        ]  481.3MB/907.7MB
+ eb77aa907276 Extracting [============================>                      ]  510.3MB/907.7MB
+ eb77aa907276 Extracting [=============================>                     ]  538.7MB/907.7MB
+ eb77aa907276 Extracting [===============================>                   ]  569.3MB/907.7MB
+ eb77aa907276 Extracting [================================>                  ]  596.6MB/907.7MB
+ eb77aa907276 Extracting [==================================>                ]  623.3MB/907.7MB
+ eb77aa907276 Extracting [===================================>               ]  653.4MB/907.7MB
+ eb77aa907276 Extracting [=====================================>             ]  681.8MB/907.7MB
+ eb77aa907276 Extracting [=======================================>           ]  710.2MB/907.7MB
+ eb77aa907276 Extracting [========================================>          ]    737MB/907.7MB
+ eb77aa907276 Extracting [=========================================>         ]  758.7MB/907.7MB
+ eb77aa907276 Extracting [===========================================>       ]  781.5MB/907.7MB
+ eb77aa907276 Extracting [============================================>      ]  802.2MB/907.7MB
+ eb77aa907276 Extracting [=============================================>     ]  824.4MB/907.7MB
+ eb77aa907276 Extracting [==============================================>    ]  845.6MB/907.7MB
+ eb77aa907276 Extracting [===============================================>   ]  866.8MB/907.7MB
+ eb77aa907276 Extracting [=================================================> ]  890.2MB/907.7MB
+ eb77aa907276 Extracting [==================================================>]  907.7MB/907.7MB
+ eb77aa907276 Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Pull complete 
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Pull complete 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-opensearch-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_records_rest
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 319 items
+
+docs/conf.py ...                                                         [  0%]
+tests/conftest.py ...                                                    [  1%]
+tests/helpers.py ...                                                     [  2%]
+tests/mock_module/__init__.py ...                                        [  3%]
+tests/mock_module/mappings/__init__.py ...                               [  4%]
+tests/mock_module/mappings/os-v1/__init__.py ...                         [  5%]
+tests/mock_module/mappings/os-v2/__init__.py ...                         [  6%]
+tests/mock_module/mappings/v7/__init__.py ...                            [  7%]
+tests/test_custom_endpoints.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                      [  8%]
+tests/test_custom_fields.py ... validation will be enabled by default in the version 1.3.x
+. 'missing' argument to fields is deprecated. Use 'load_default' instead.
+                                         [ 10%]
+tests/test_error_handlers.py ... validation will be enabled by default in the version 1.3.x
+                                         [ 10%]
+tests/test_ext.py ....                                                   [ 12%]
+tests/test_facets.py ...... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                       [ 16%]
+tests/test_index_prefixing.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                       [ 17%]
+tests/test_links.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                                 [ 18%]
+tests/test_marshmallow_contrib.py .....                                  [ 20%]
+tests/test_marshmallow_loader.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+.. validation will be enabled by default in the version 1.3.x
+                                [ 22%]
+tests/test_permissions.py ... validation will be enabled by default in the version 1.3.x
+                                            [ 23%]
+tests/test_pid_resolver.py ... validation will be enabled by default in the version 1.3.x
+                                           [ 24%]
+tests/test_serializer_base.py ... validation will be enabled by default in the version 1.3.x
+.                                       [ 26%]
+tests/test_serializer_citeproc.py ...... validation will be enabled by default in the version 1.3.x
+                                 [ 27%]
+tests/test_serializer_csv.py ... `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+                                       [ 29%]
+tests/test_serializer_datacite.py ... `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+                                 [ 31%]
+tests/test_serializer_dc.py ... `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+                                         [ 32%]
+tests/test_serializer_json.py ... `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. validation will be enabled by default in the version 1.3.x
+                                      [ 34%]
+tests/test_serializer_jsonld.py ... `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+                                     [ 35%]
+tests/test_serializer_marshmallow.py ... `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+                               [ 36%]
+tests/test_serializer_response.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                   [ 38%]
+tests/test_sorter.py ........ validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                           [ 41%]
+tests/test_utils.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                             [ 43%]
+tests/test_views_item_delete.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                   [ 45%]
+tests/test_views_item_get.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                      [ 47%]
+tests/test_views_item_patch.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                [ 50%]
+tests/test_views_item_put.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                [ 54%]
+tests/test_views_list_post.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                 [ 57%]
+tests/test_views_options.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                         [ 58%]
+tests/test_views_search.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                        [ 65%]
+tests/test_views_serializers.py ... validation will be enabled by default in the version 1.3.x
+. validation will be enabled by default in the version 1.3.x
+                                     [ 66%]
+tests/test_views_suggesters.py ... validation will be enabled by default in the version 1.3.x
+                                       [ 67%]
+invenio_records_rest/__init__.py .... validation will be enabled by default in the version 1.3.x
+                                    [ 68%]
+invenio_records_rest/_compat.py ...                                      [ 69%]
+invenio_records_rest/config.py ...                                       [ 70%]
+invenio_records_rest/errors.py ...                                       [ 71%]
+invenio_records_rest/ext.py ...                                          [ 72%]
+invenio_records_rest/facets.py ...                                       [ 73%]
+invenio_records_rest/links.py ...                                        [ 74%]
+invenio_records_rest/loaders/__init__.py ...                             [ 75%]
+invenio_records_rest/loaders/marshmallow.py ...                          [ 76%]
+invenio_records_rest/proxies.py ...                                      [ 77%]
+invenio_records_rest/query.py ...                                        [ 78%]
+invenio_records_rest/schemas/__init__.py ...                             [ 79%]
+invenio_records_rest/schemas/fields/__init__.py ...                      [ 80%]
+invenio_records_rest/schemas/fields/datetime.py ...                      [ 81%]
+invenio_records_rest/schemas/fields/generated.py ...                     [ 82%]
+invenio_records_rest/schemas/fields/marshmallow_contrib.py ...           [ 83%]
+invenio_records_rest/schemas/fields/persistentidentifier.py ...          [ 84%]
+invenio_records_rest/schemas/fields/sanitizedhtml.py ...                 [ 84%]
+invenio_records_rest/schemas/fields/sanitizedunicode.py ...              [ 85%]
+invenio_records_rest/schemas/fields/trimmedstring.py ...                 [ 86%]
+invenio_records_rest/schemas/json.py ...                                 [ 87%]
+invenio_records_rest/serializers/__init__.py ...                         [ 88%]
+invenio_records_rest/serializers/base.py ...                             [ 89%]
+invenio_records_rest/serializers/citeproc.py ...                         [ 90%]
+invenio_records_rest/serializers/csv.py ...                              [ 91%]
+invenio_records_rest/serializers/datacite.py ...                         [ 92%]
+invenio_records_rest/serializers/dc.py ...                               [ 93%]
+invenio_records_rest/serializers/json.py ...                             [ 94%]
+invenio_records_rest/serializers/jsonld.py ...                           [ 95%]
+invenio_records_rest/serializers/marshmallow.py ...                      [ 96%]
+invenio_records_rest/serializers/response.py ...                         [ 97%]
+invenio_records_rest/sorter.py ...                                       [ 98%]
+invenio_records_rest/utils.py ...                                        [ 99%]
+invenio_records_rest/views.py ...                                        [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/webargs/compat.py:8
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/webargs/compat.py:8: DeprecationWarning: The '__version__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'importlib.metadata.version("marshmallow")' instead.
+    MARSHMALLOW_VERSION_INFO = tuple(LooseVersion(ma.__version__).version)  # type: tuple
+
+.venv/lib/python3.12/site-packages/webargs/compat.py:8
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/webargs/compat.py:8: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    MARSHMALLOW_VERSION_INFO = tuple(LooseVersion(ma.__version__).version)  # type: tuple
+
+.venv/lib/python3.12/site-packages/webargs/__init__.py:13
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/webargs/__init__.py:13: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(__version__).version)
+
+invenio_records_rest/serializers/citeproc.py:57
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/citeproc.py:57: RemovedInMarshmallow4Warning: The 'missing' argument to fields is deprecated. Use 'load_default' instead.
+    "style": fields.Str(missing=_default_style),
+
+invenio_records_rest/serializers/citeproc.py:58
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/citeproc.py:58: RemovedInMarshmallow4Warning: The 'missing' argument to fields is deprecated. Use 'load_default' instead.
+    "locale": fields.Str(missing=_default_locale),
+
+.venv/lib/python3.12/site-packages/datacite/rest_client.py:23
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/datacite/rest_client.py:23: DeprecationWarning: Implicit imports (e.g., 'import idutils; idutils.function;') might be removed in the next major version. Please use explicit imports (e.g., 'from idutils import function;') instead.
+    from idutils import normalize_doi
+
+.venv/lib/python3.12/site-packages/datacite/jsonutils.py:15
+.venv/lib/python3.12/site-packages/datacite/jsonutils.py:15
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/datacite/jsonutils.py:15: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolver, validate
+
+.venv/lib/python3.12/site-packages/pyld/jsonld.py:4413
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pyld/jsonld.py:4413: SyntaxWarning: invalid escape sequence '\?'
+    and re.match('.*[:/\?#\[\]@]$', id_)
+
+.venv/lib/python3.12/site-packages/pyld/jsonld.py:577
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pyld/jsonld.py:577: SyntaxWarning: "is" with 'int' literal. Did you mean "=="?
+    if len(output) is 1 and output[0] == '':
+
+tests/test_custom_endpoints.py: 2 warnings
+tests/test_custom_fields.py: 1 warning
+tests/test_error_handlers.py: 1 warning
+tests/test_facets.py: 8 warnings
+tests/test_index_prefixing.py: 2 warnings
+tests/test_links.py: 2 warnings
+tests/test_marshmallow_loader.py: 5 warnings
+tests/test_permissions.py: 1 warning
+tests/test_pid_resolver.py: 1 warning
+tests/test_serializer_base.py: 1 warning
+tests/test_serializer_citeproc.py: 1 warning
+tests/test_serializer_json.py: 1 warning
+tests/test_serializer_response.py: 2 warnings
+tests/test_sorter.py: 2 warnings
+tests/test_utils.py: 6 warnings
+tests/test_views_item_delete.py: 4 warnings
+tests/test_views_item_get.py: 4 warnings
+tests/test_views_item_patch.py: 8 warnings
+tests/test_views_item_put.py: 10 warnings
+tests/test_views_list_post.py: 8 warnings
+tests/test_views_options.py: 2 warnings
+tests/test_views_search.py: 20 warnings
+tests/test_views_serializers.py: 2 warnings
+tests/test_views_suggesters.py: 1 warning
+invenio_records_rest/__init__.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py:29: FutureWarning: CSRF validation will be enabled by default in the version 1.3.x
+    self.init_app(app)
+
+tests/test_custom_endpoints.py: 2 warnings
+tests/test_custom_fields.py: 1 warning
+tests/test_error_handlers.py: 1 warning
+tests/test_facets.py: 8 warnings
+tests/test_index_prefixing.py: 2 warnings
+tests/test_links.py: 2 warnings
+tests/test_marshmallow_loader.py: 5 warnings
+tests/test_permissions.py: 1 warning
+tests/test_pid_resolver.py: 1 warning
+tests/test_serializer_base.py: 1 warning
+tests/test_serializer_citeproc.py: 1 warning
+tests/test_serializer_json.py: 1 warning
+tests/test_serializer_response.py: 2 warnings
+tests/test_sorter.py: 2 warnings
+tests/test_utils.py: 6 warnings
+tests/test_views_item_delete.py: 4 warnings
+tests/test_views_item_get.py: 4 warnings
+tests/test_views_item_patch.py: 8 warnings
+tests/test_views_item_put.py: 10 warnings
+tests/test_views_list_post.py: 8 warnings
+tests/test_views_options.py: 2 warnings
+tests/test_views_search.py: 20 warnings
+tests/test_views_serializers.py: 2 warnings
+tests/test_views_suggesters.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_config/default.py:76: UserWarning: Set configuration variable SECRET_KEY with random string
+    warnings.warn(
+
+tests/test_custom_endpoints.py: 32 warnings
+tests/test_index_prefixing.py: 4 warnings
+tests/test_links.py: 20 warnings
+tests/test_marshmallow_loader.py: 8 warnings
+tests/test_permissions.py: 16 warnings
+tests/test_pid_resolver.py: 20 warnings
+tests/test_serializer_base.py: 4 warnings
+tests/test_views_item_delete.py: 64 warnings
+tests/test_views_item_get.py: 64 warnings
+tests/test_views_item_patch.py: 104 warnings
+tests/test_views_item_put.py: 136 warnings
+tests/test_views_list_post.py: 36 warnings
+tests/test_views_search.py: 320 warnings
+tests/test_views_serializers.py: 32 warnings
+tests/test_views_suggesters.py: 16 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/test_custom_endpoints.py: 2 warnings
+tests/test_index_prefixing.py: 1 warning
+tests/test_links.py: 2 warnings
+tests/test_marshmallow_loader.py: 2 warnings
+tests/test_permissions.py: 1 warning
+tests/test_pid_resolver.py: 1 warning
+tests/test_serializer_base.py: 1 warning
+tests/test_views_item_delete.py: 4 warnings
+tests/test_views_item_get.py: 4 warnings
+tests/test_views_item_patch.py: 8 warnings
+tests/test_views_item_put.py: 10 warnings
+tests/test_views_list_post.py: 4 warnings
+tests/test_views_search.py: 20 warnings
+tests/test_views_serializers.py: 2 warnings
+tests/test_views_suggesters.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:335: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_custom_endpoints.py: 2 warnings
+tests/test_links.py: 2 warnings
+tests/test_permissions.py: 1 warning
+tests/test_pid_resolver.py: 1 warning
+tests/test_serializer_base.py: 1 warning
+tests/test_views_item_delete.py: 4 warnings
+tests/test_views_item_get.py: 4 warnings
+tests/test_views_item_patch.py: 6 warnings
+tests/test_views_item_put.py: 8 warnings
+tests/test_views_search.py: 20 warnings
+tests/test_views_serializers.py: 2 warnings
+tests/test_views_suggesters.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/helpers.py:30: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_custom_endpoints.py: 2 warnings
+tests/test_index_prefixing.py: 3 warnings
+tests/test_links.py: 1 warning
+tests/test_marshmallow_loader.py: 3 warnings
+tests/test_permissions.py: 5 warnings
+tests/test_serializer_csv.py: 8 warnings
+tests/test_serializer_datacite.py: 14 warnings
+tests/test_serializer_dc.py: 5 warnings
+tests/test_serializer_json.py: 5 warnings
+tests/test_serializer_jsonld.py: 4 warnings
+tests/test_serializer_marshmallow.py: 3 warnings
+tests/test_views_item_delete.py: 1 warning
+tests/test_views_item_get.py: 3 warnings
+tests/test_views_item_patch.py: 12 warnings
+tests/test_views_item_put.py: 14 warnings
+tests/test_views_list_post.py: 6 warnings
+tests/test_views_search.py: 50 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/marshmallow.py:26: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    return self.schema_class(context=context).dump(obj).data
+
+tests/test_custom_endpoints.py: 2 warnings
+tests/test_index_prefixing.py: 3 warnings
+tests/test_links.py: 1 warning
+tests/test_marshmallow_loader.py: 3 warnings
+tests/test_permissions.py: 5 warnings
+tests/test_serializer_csv.py: 8 warnings
+tests/test_serializer_datacite.py: 14 warnings
+tests/test_serializer_dc.py: 5 warnings
+tests/test_serializer_json.py: 5 warnings
+tests/test_serializer_jsonld.py: 4 warnings
+tests/test_serializer_marshmallow.py: 3 warnings
+tests/test_views_item_delete.py: 1 warning
+tests/test_views_item_get.py: 3 warnings
+tests/test_views_item_patch.py: 12 warnings
+tests/test_views_item_put.py: 14 warnings
+tests/test_views_list_post.py: 6 warnings
+tests/test_views_search.py: 50 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/marshmallow.py:26: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    return self.schema_class(context=context).dump(obj).data
+
+tests/test_custom_endpoints.py: 1 warning
+tests/test_index_prefixing.py: 2 warnings
+tests/test_permissions.py: 1 warning
+tests/test_views_item_patch.py: 6 warnings
+tests/test_views_item_put.py: 8 warnings
+tests/test_views_list_post.py: 10 warnings
+tests/test_views_search.py: 38 warnings
+tests/test_views_serializers.py: 5 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:986: RemovedInMarshmallow4Warning: Passing field metadata as keyword arguments is deprecated. Use the explicit `metadata=...` argument instead. Additional metadata: {'load_from': 'from'}
+    super().__init__(**kwargs)
+
+tests/test_custom_endpoints.py: 1 warning
+tests/test_index_prefixing.py: 2 warnings
+tests/test_permissions.py: 1 warning
+tests/test_views_item_patch.py: 6 warnings
+tests/test_views_item_put.py: 8 warnings
+tests/test_views_list_post.py: 10 warnings
+tests/test_views_search.py: 38 warnings
+tests/test_views_serializers.py: 5 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:986: RemovedInMarshmallow4Warning: The 'missing' argument to fields is deprecated. Use 'load_default' instead.
+    super().__init__(**kwargs)
+
+tests/test_custom_fields.py::test_load_custom_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:80: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    loaded_data = CustomFieldSchema(context={"pid": recid}).load(rec).data
+
+tests/test_custom_fields.py::test_load_custom_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:80: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    loaded_data = CustomFieldSchema(context={"pid": recid}).load(rec).data
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:2005: RemovedInMarshmallow4Warning: The 'missing' argument to fields is deprecated. Use 'load_default' instead.
+    super().__init__(**kwargs)
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:148: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema().load({}).data == {}
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:149: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema().dump({}).data == {}
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:152: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    assert GeneratedFieldsSchema(context=ctx).load({}).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:152: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema(context=ctx).load({}).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:156: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    assert GeneratedFieldsSchema(context=ctx).dump({}).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:156: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema(context=ctx).dump({}).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:162: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema().load(data).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:166: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema().dump(data).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:172: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    assert GeneratedFieldsSchema(context=ctx).load(data).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:172: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema(context=ctx).load(data).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:176: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    assert GeneratedFieldsSchema(context=ctx).dump(data).data == {
+
+tests/test_custom_fields.py::test_custom_generated_fields
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py:176: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    assert GeneratedFieldsSchema(context=ctx).dump(data).data == {
+
+tests/test_index_prefixing.py: 1 warning
+tests/test_marshmallow_loader.py: 1 warning
+tests/test_serializer_base.py: 1 warning
+tests/test_views_item_delete.py: 4 warnings
+tests/test_views_item_patch.py: 6 warnings
+tests/test_views_item_put.py: 8 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/models.py:44: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    target.updated = datetime.utcnow()
+
+tests/test_index_prefixing.py::test_api_views
+tests/test_views_item_delete.py::test_valid_delete
+tests/test_views_item_delete.py::test_delete_deleted
+tests/test_views_item_delete.py::test_delete_with_sqldatabase_error
+tests/test_views_item_patch.py::test_patch_deleted[application/json-patch+json]
+tests/test_views_item_patch.py::test_patch_deleted[application/json-patch+json;charset=utf-8]
+tests/test_views_item_put.py::test_put_on_deleted[application/json]
+tests/test_views_item_put.py::test_put_on_deleted[application/json;charset=utf-8]
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:496: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_index_prefixing.py: 1 warning
+tests/test_pid_resolver.py: 5 warnings
+tests/test_views_item_delete.py: 3 warnings
+tests/test_views_item_patch.py: 2 warnings
+tests/test_views_item_put.py: 2 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py:33: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    target.updated = datetime.utcnow()
+
+tests/test_marshmallow_loader.py::test_marshmallow_load
+tests/test_marshmallow_loader.py::test_marshmallow_load
+tests/test_marshmallow_loader.py::test_json_pid_checker_loader
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/loaders/marshmallow.py:98: PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
+    return result.data
+
+tests/test_marshmallow_loader.py::test_marshmallow_load
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/loaders/marshmallow.py:94: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    result = schema_class(context=context).load(request_json)
+
+tests/test_marshmallow_loader.py: 1 warning
+tests/test_views_item_patch.py: 4 warnings
+tests/test_views_item_put.py: 6 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:443: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_marshmallow_loader.py::test_marshmallow_load_nested_errors
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/json.py:57: RemovedInMarshmallow4Warning: `Field.fail` is deprecated. Use `raise self.make_error("required", ...)` instead.
+    self.fail("required")
+
+tests/test_serializer_datacite.py: 14 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:631: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    self._schema = schema_class(
+
+tests/test_views_item_patch.py: 12 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:408: DeprecationWarning: The patch() method is deprecated and will be removed.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                          Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------
+invenio_records_rest/__init__.py                                  4      0   100%
+invenio_records_rest/_compat.py                                  11      5    55%   22-28
+invenio_records_rest/config.py                                   29      0   100%
+invenio_records_rest/errors.py                                  105     10    90%   51, 104-106, 187-189, 255-259
+invenio_records_rest/ext.py                                      52      1    98%   112
+invenio_records_rest/facets.py                                  103     22    79%   31-55, 121, 167-170, 189-192, 240
+invenio_records_rest/links.py                                    13      0   100%
+invenio_records_rest/loaders/__init__.py                          8      0   100%
+invenio_records_rest/loaders/marshmallow.py                      45      5    89%   56, 86-88, 105
+invenio_records_rest/proxies.py                                   4      0   100%
+invenio_records_rest/query.py                                    25      3    88%   39-44
+invenio_records_rest/schemas/__init__.py                          2      0   100%
+invenio_records_rest/schemas/fields/__init__.py                   8      0   100%
+invenio_records_rest/schemas/fields/datetime.py                  11      4    64%   21-24
+invenio_records_rest/schemas/fields/generated.py                 23      7    70%   31-54
+invenio_records_rest/schemas/fields/marshmallow_contrib.py       38      7    82%   19-20, 26, 76, 135-137
+invenio_records_rest/schemas/fields/persistentidentifier.py       8      0   100%
+invenio_records_rest/schemas/fields/sanitizedhtml.py             11      0   100%
+invenio_records_rest/schemas/fields/sanitizedunicode.py          14      0   100%
+invenio_records_rest/schemas/fields/trimmedstring.py              5      0   100%
+invenio_records_rest/schemas/json.py                             61     27    56%   26-34, 67-74, 79-96, 113, 121-122
+invenio_records_rest/serializers/__init__.py                      9      0   100%
+invenio_records_rest/serializers/base.py                         37      7    81%   38, 53, 63, 85, 98, 117, 127
+invenio_records_rest/serializers/citeproc.py                     62      5    92%   32-35, 109-110
+invenio_records_rest/serializers/csv.py                          66      3    95%   54, 135, 139
+invenio_records_rest/serializers/datacite.py                     43      0   100%
+invenio_records_rest/serializers/dc.py                           15      0   100%
+invenio_records_rest/serializers/json.py                         15      0   100%
+invenio_records_rest/serializers/jsonld.py                       32      4    88%   45-48
+invenio_records_rest/serializers/marshmallow.py                  20      0   100%
+invenio_records_rest/serializers/response.py                     27      0   100%
+invenio_records_rest/sorter.py                                   49      0   100%
+invenio_records_rest/utils.py                                   100      1    99%   168
+invenio_records_rest/views.py                                   339     13    96%   114-116, 127, 291, 296, 299, 440, 718, 723, 881, 924, 961
+-------------------------------------------------------------------------------------------
+TOTAL                                                          1394    124    91%
+================ 319 passed, 1717 warnings in 62.03s (0:01:02) =================
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
