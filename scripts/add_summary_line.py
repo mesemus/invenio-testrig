@@ -40,7 +40,7 @@ def add_summary_line(
     report_dir: str,
     status: str,
 ) -> None:
-    """Add a new summary line to reports.md."""
+    """Add a new summary line to reports.md or update existing one."""
 
     if not reports_md_path.exists():
         print(f"Error: {reports_md_path} does not exist", file=sys.stderr)
@@ -49,20 +49,6 @@ def add_summary_line(
     # Read the file
     with reports_md_path.open("r", encoding="utf-8") as f:
         lines = f.readlines()
-
-    # Find the table separator line using regex
-    # Matches lines like |---|---| or |-----|------|
-    separator_pattern = re.compile(r"^\|[\|\-]+\|$")
-    separator_index = None
-
-    for i, line in enumerate(lines):
-        if separator_pattern.match(line):
-            separator_index = i
-            break
-
-    if separator_index is None:
-        print("Error: Could not find table separator line", file=sys.stderr)
-        sys.exit(1)
 
     # Create markdown link from report directory name
     # Convert underscores to spaces for display
@@ -78,8 +64,35 @@ def add_summary_line(
     # Create new row with test name, report link, status, and patches tested
     new_row = f"| {test_name_display} | {report_link} | {status} | {patches_tested} |\n"
 
-    # Insert after separator
-    lines.insert(separator_index + 1, new_row)
+    # Check if report_dir already exists in the file and replace it
+    report_dir_pattern = f"./results/{report_dir}/report.md"
+    found = False
+    for i, line in enumerate(lines):
+        if report_dir_pattern in line:
+            print(f"ℹ️  Updating existing entry for {report_dir} in {reports_md_path}")
+            lines[i] = new_row
+            found = True
+            break
+
+    # If not found, insert after separator
+    if not found:
+        # Find the table separator line using regex
+        # Matches lines like |---|---| or |-----|------|
+        separator_pattern = re.compile(r"^\|[\|\-]+\|$")
+        separator_index = None
+
+        for i, line in enumerate(lines):
+            if separator_pattern.match(line):
+                separator_index = i
+                break
+
+        if separator_index is None:
+            print("Error: Could not find table separator line", file=sys.stderr)
+            sys.exit(1)
+
+        # Insert after separator
+        lines.insert(separator_index + 1, new_row)
+        print(f"✓ Added new entry for {report_dir}")
 
     # Write back
     with reports_md_path.open("w", encoding="utf-8") as f:

@@ -38,6 +38,43 @@ env:
   EXTRAS: "tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin,docs"
 
 jobs:
+  create-report-directory:
+    name: Create Report Directory
+    runs-on: ubuntu-latest
+    outputs:
+      report_dir: ${{ steps.create-dir.outputs.report_dir }}
+      report_file: ${{ steps.create-dir.outputs.report_file }}
+      report_timestamp: ${{ steps.create-dir.outputs.report_timestamp }}
+
+    steps:
+      - name: Checkout verification repository
+        uses: actions/checkout@v4
+
+      - name: Create report directory
+        id: create-dir
+        run: |
+          REPORT_TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+          REPORT_DIR=reports/results/$REPORT_TIMESTAMP
+          REPORT_FILE=$REPORT_DIR/report.md
+          echo "Report directory: $REPORT_DIR"
+          echo "Report file: $REPORT_FILE"
+          echo "report_dir=$REPORT_DIR" >> $GITHUB_OUTPUT
+          echo "report_file=$REPORT_FILE" >> $GITHUB_OUTPUT
+          echo "report_timestamp=$REPORT_TIMESTAMP" >> $GITHUB_OUTPUT
+          echo "REPORT_DIR=$REPORT_DIR" >> $GITHUB_ENV
+          echo "REPORT_FILE=$REPORT_FILE" >> $GITHUB_ENV
+          echo "REPORT_TIMESTAMP=$REPORT_TIMESTAMP" >> $GITHUB_ENV
+
+      - name: Commit initial report directory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mkdir -p ${{ steps.create-dir.outputs.report_dir }}
+          touch ${{ steps.create-dir.outputs.report_file }}
+          git add reports/
+          git commit -m "[skip ci] Create report directory ${{ steps.create-dir.outputs.report_dir }}"
+          git push
+
   extract-tested-packages:
     name: Extract Invenio Packages
     runs-on: ubuntu-latest
@@ -95,6 +132,7 @@ jobs:
     name: Test ${{ matrix.package }}
     needs:
       - extract-tested-packages
+      - create-report-directory
     runs-on: ubuntu-latest
     env:
       SO_FAR_OK: 1
@@ -365,6 +403,17 @@ jobs:
             artifacts/
           retention-days: 30
 
+      # needs to be after uploading artifacts
+      # as the action downloads all actual artifacts
+      - name: Push individual package report
+        if: always()
+        uses: ./.github/actions/generate-report
+        with:
+          report-dir: ${{ needs.create-report-directory.outputs.report_dir }}
+          report-file: ${{ needs.create-report-directory.outputs.report_file }}
+          report-timestamp: ${{ needs.create-report-directory.outputs.report_timestamp }}
+          test-name: ${{ inputs.test_name }}
+
       - name: Fail job if any tests failed
         if: always()
         run: |
@@ -381,7 +430,9 @@ jobs:
 
   copy-previous-artifacts:
     name: Copy Previous Artifacts
-    needs: extract-tested-packages
+    needs:
+      - extract-tested-packages
+      - create-report-directory
     runs-on: ubuntu-latest
     if: needs.extract-tested-packages.outputs.done_packages != '[]'
     strategy:
@@ -419,9 +470,21 @@ jobs:
             artifacts/
           retention-days: 30
 
+      # needs to be after uploading artifacts
+      # as the action downloads all actual artifacts
+      - name: Push individual package report
+        if: always()
+        uses: ./.github/actions/generate-report
+        with:
+          report-dir: ${{ needs.create-report-directory.outputs.report_dir }}
+          report-file: ${{ needs.create-report-directory.outputs.report_file }}
+          report-timestamp: ${{ needs.create-report-directory.outputs.report_timestamp }}
+          test-name: ${{ inputs.test_name }}
+
   generate-report:
     name: Generate Summary Report
     needs:
+      - create-report-directory
       - test-packages
       - copy-previous-artifacts
     runs-on: ubuntu-latest
@@ -430,101 +493,10 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout verification repository
-        uses: actions/checkout@v4
-
-      - name: Pull the latest changes
-        run: |
-          git pull -f
-
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
+      - name: Generate and push report
+        uses: ./.github/actions/generate-report
         with:
-          path: artifacts
-
-      - name: Create report directory
-        run: |
-          REPORT_DIR=reports/results/$(date +%Y-%m-%d_%H-%M-%S)
-          REPORT_FILE=$REPORT_DIR/report.md
-          mkdir -p "$REPORT_DIR"
-          echo "Report directory created at $REPORT_DIR"
-          echo "REPORT_DIR=$REPORT_DIR" >> $GITHUB_ENV
-          echo "REPORT_FILE=$REPORT_FILE" >> $GITHUB_ENV
-
-      - name: Copy artifacts to report directory
-        run: |
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              PACKAGE=$(jq -r '.package' "$dir/result-summary.json")
-              if [ -n "$PACKAGE" ] && [ "$PACKAGE" != "null" ]; then
-                mkdir -p "${REPORT_DIR}/packages/$PACKAGE"
-                cp -r "$dir"* "${REPORT_DIR}/packages/$PACKAGE/" 2>/dev/null || true
-              fi
-            fi
-          done
-
-      - name: Collect warnings
-        run: |
-          python3 scripts/collect_warnings.py artifacts ${REPORT_DIR}/collected-warnings.md
-
-      - name: Generate summary report
-        run: |
-          python3 scripts/generate_report.py artifacts ${REPORT_DIR} ${REPORT_FILE}
-          cat ${REPORT_FILE}
-
-      - name: Update reports index
-        run: |
-          # Calculate totals for summary
-          TOTAL_PASSED=0
-          TOTAL_FAILED=0
-          TOTAL_WARNINGS=0
-
-          for dir in artifacts/test-results-*/; do
-            if [ -f "$dir/result-summary.json" ]; then
-              # Count passed/failed tests
-              ORIGINAL=$(jq -r '.original_tests_outcome' "$dir/result-summary.json")
-              PATCHED=$(jq -r '.patched_tests_outcome' "$dir/result-summary.json")
-              
-              # Use patched result if available, otherwise original
-              if [ "$PATCHED" != "null" ] && [ "$PATCHED" != "skipped" ]; then
-                [ "$PATCHED" = "success" ] && TOTAL_PASSED=$((TOTAL_PASSED + 1))
-                [ "$PATCHED" = "failed" ] && TOTAL_FAILED=$((TOTAL_FAILED + 1))
-              elif [ "$ORIGINAL" != "null" ] && [ "$ORIGINAL" != "skipped" ]; then
-                [ "$ORIGINAL" = "success" ] && TOTAL_PASSED=$((TOTAL_PASSED + 1))
-                [ "$ORIGINAL" = "failed" ] && TOTAL_FAILED=$((TOTAL_FAILED + 1))
-              fi
-
-              # Count warnings
-              ORIGINAL_WARNINGS=$(jq -r '.warnings_count.original // 0' "$dir/result-summary.json")
-              PATCHED_WARNINGS=$(jq -r '.warnings_count.patched // 0' "$dir/result-summary.json")
-              TOTAL_WARNINGS=$((TOTAL_WARNINGS + ORIGINAL_WARNINGS + PATCHED_WARNINGS))
-            fi
-          done
-
-          # Get report timestamp from REPORT_DIR
-          REPORT_TIMESTAMP=$(basename ${REPORT_DIR})
-
-          # Create status string
-          STATUS="${TOTAL_PASSED} ✅ passed, ${TOTAL_FAILED} ❌ failed, ${TOTAL_WARNINGS} warnings"
-
-          # Get test name from input
-          TEST_NAME="${{ inputs.test_name }}"
-
-          # Add new entry to reports.md using Python script
-          python3 scripts/add_summary_line.py reports/reports.md patches.json "$TEST_NAME" "$REPORT_TIMESTAMP" "$STATUS"
-          cat reports/reports.md
-
-      - name: Commit and push reports index
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reports/
-          git commit -m "[skip ci] Add report for $(basename ${REPORT_DIR})"
-          git push
-
-      - name: Upload the report dir as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: verification-report
-          path: ${{ env.REPORT_DIR }}
-          retention-days: 90
+          report-dir: ${{ needs.create-report-directory.outputs.report_dir }}
+          report-file: ${{ needs.create-report-directory.outputs.report_file }}
+          report-timestamp: ${{ needs.create-report-directory.outputs.report_timestamp }}
+          test-name: ${{ inputs.test_name }}

@@ -1,0 +1,46 @@
+name: 'Generate Report'
+description: 'Generate summary report from test artifacts'
+inputs:
+  report-dir:
+    description: 'Report directory path (e.g., reports/results/2025-11-18_12-34-56)'
+    required: true
+  report-file:
+    description: 'Report file path (e.g., reports/results/2025-11-18_12-34-56/report.md)'
+    required: true
+  report-timestamp:
+    description: 'Report timestamp (e.g., 2025-11-18_12-34-56)'
+    required: true
+  test-name:
+    description: 'Name of the test run'
+    required: false
+    default: ''
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup directories
+      shell: bash
+      run: |
+        mkdir -p _repo
+
+    - name: Checkout verification repository
+      uses: actions/checkout@v4
+      with:
+        path: _repo/repo
+
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: _repo/artifacts
+
+    - name: Generate report
+      shell: bash
+      run: |
+        cd _repo/repo
+        bash scripts/generate_and_push_report.sh "${{ inputs.report-dir }}" "${{ inputs.report-file }}" "${{ inputs.report-timestamp }}" "${{ inputs.test-name }}" "../artifacts"
+
+    - name: Upload report directory as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: verification-report
+        path: _repo/repo/${{ inputs.report-dir }}
+        retention-days: 90
