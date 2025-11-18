@@ -1,0 +1,16 @@
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ImportError while loading conftest '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/conftest.py'.
+tests/conftest.py:14: in <module>
+    import imp
+E   ModuleNotFoundError: No module named 'imp'
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
