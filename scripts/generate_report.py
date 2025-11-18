@@ -47,26 +47,41 @@ def get_build_status_emoji(outcome: str) -> str:
     return status_map.get(outcome, "❓ Unknown")
 
 
-def create_package_links(report_dir: Path, package: str) -> str:
-    """Create links for package test outputs."""
-    package_dir = report_dir / "packages" / package
-    links = []
+def create_package_links(report_dir: Path, package: str) -> tuple[str, str]:
+    """Create links for package test outputs.
 
-    link_files = [
-        ("test-output-original.txt", "original"),
-        ("test-output-patched.txt", "patched"),
-        ("test-diff.txt", "diff"),
-        ("test-report-original.xml", "xml-original"),
-        ("test-report-patched.xml", "xml-patched"),
-        ("warnings-original.md", "warnings-original"),
-        ("warnings-patched.md", "warnings-patched"),
+    Returns:
+        tuple: (original_links, patched_links)
+    """
+    package_dir = report_dir / "packages" / package
+    original_links = []
+    patched_links = []
+
+    original_files = [
+        ("test-output-original.txt", "output"),
+        ("test-report-original.xml", "xml"),
+        ("warnings-original.md", "warnings"),
     ]
 
-    for filename, link_text in link_files:
-        if (package_dir / filename).exists():
-            links.append(f"[{link_text}](packages/{package}/{filename})")
+    patched_files = [
+        ("test-output-patched.txt", "output"),
+        ("test-report-patched.xml", "xml"),
+        ("warnings-patched.md", "warnings"),
+        ("test-diff.txt", "diff"),
+    ]
 
-    return " ".join(links) if links else ""
+    for filename, link_text in original_files:
+        if (package_dir / filename).exists():
+            original_links.append(f"[{link_text}](packages/{package}/{filename})")
+
+    for filename, link_text in patched_files:
+        if (package_dir / filename).exists():
+            patched_links.append(f"[{link_text}](packages/{package}/{filename})")
+
+    return (
+        "<br>".join(original_links) if original_links else "",
+        "<br>".join(patched_links) if patched_links else "",
+    )
 
 
 def process_package(
@@ -88,15 +103,23 @@ def process_package(
         else "❓ Unknown"
     )
 
-    links = create_package_links(report_dir, package)
-    display = f"`{package}` <br/> {links}" if links else f"`{package}`"
+    original_links, patched_links = create_package_links(report_dir, package)
+
+    # Combine status emoji with links
+    original_display = get_status_emoji(original_outcome)
+    if original_links:
+        original_display += f"<br>{original_links}"
+
+    patched_display = get_status_emoji(patched_outcome)
+    if patched_links:
+        patched_display += f"<br>{patched_links}"
 
     return {
         "name": package,
-        "display": display,
+        "display": f"`{package}`",
         "patched_pkgs": patched_pkgs,
-        "original_status": get_status_emoji(original_outcome),
-        "patched_status": get_status_emoji(patched_outcome),
+        "original_status": original_display,
+        "patched_status": patched_display,
         "result_status": result_status,
         "status": get_build_status_emoji(original_outcome),
     }
