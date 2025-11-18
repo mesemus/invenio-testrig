@@ -1,0 +1,21 @@
+{
+  "package": "invenio-db",
+  "has_patch": true,
+  "patch_applies": false,
+  "original_tests_outcome": "success",
+  "patched_tests_outcome": "failed",
+  "result": "regression",
+  "result_icon": "\u274c",
+  "result_text": "Patch introduced test failures",
+  "patched_packages": "",
+  "warnings": {
+    "original": {
+      "DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces/commas for version_locations.  Consider adding path_separator=os to Alembic config.": 1
+    },
+    "patched": {}
+  },
+  "warnings_count": {
+    "original": 1,
+    "patched": 0
+  }
+}

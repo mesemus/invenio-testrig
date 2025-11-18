@@ -1,0 +1,1418 @@
+lists of files in version control and sdist match
+ redis Pulling 
+ opensearch Pulling 
+ rabbitmq Pulling 
+ 20043066d3d5 Pulling fs layer 
+ fbda4a386d13 Pulling fs layer 
+ 257b1af0856e Pulling fs layer 
+ e5fbc57eeafe Pulling fs layer 
+ f19b7ac6489f Pulling fs layer 
+ 0f9a1c409bb2 Pulling fs layer 
+ d5d9860a5545 Pulling fs layer 
+ fc030d7bf8ba Pulling fs layer 
+ c5ec72a0a4d4 Pulling fs layer 
+ a51622689fc8 Pulling fs layer 
+ e5fbc57eeafe Waiting 
+ f19b7ac6489f Waiting 
+ 0f9a1c409bb2 Waiting 
+ d5d9860a5545 Waiting 
+ fc030d7bf8ba Waiting 
+ c5ec72a0a4d4 Waiting 
+ a51622689fc8 Waiting 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ 44fc29a25beb Waiting 
+ 39af693970c0 Waiting 
+ 517b08eaf3cc Waiting 
+ 186a03b51bfa Waiting 
+ fe77c85f37cb Waiting 
+ 4f4fb700ef54 Waiting 
+ a43f12641297 Waiting 
+ 8e44f01296e3 Waiting 
+ f9dd052e142d Pulling fs layer 
+ e8c6d4883897 Pulling fs layer 
+ 648eb81b3252 Pulling fs layer 
+ eb77aa907276 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 0ffa8f8aba1e Pulling fs layer 
+ 2e81b9cb93cd Pulling fs layer 
+ f9dd052e142d Waiting 
+ e8c6d4883897 Waiting 
+ 648eb81b3252 Waiting 
+ eb77aa907276 Waiting 
+ 4f4fb700ef54 Waiting 
+ 0ffa8f8aba1e Waiting 
+ 2e81b9cb93cd Waiting 
+ 257b1af0856e Downloading [>                                                  ]  75.97kB/7.468MB
+ 20043066d3d5 Downloading [>                                                  ]  306.6kB/29.72MB
+ fbda4a386d13 Downloading [>                                                  ]  450.6kB/43.48MB
+ 257b1af0856e Verifying Checksum 
+ 257b1af0856e Download complete 
+ 20043066d3d5 Downloading [===============>                                   ]  8.972MB/29.72MB
+ fbda4a386d13 Downloading [============>                                      ]  11.08MB/43.48MB
+ 20043066d3d5 Downloading [=========================>                         ]  15.42MB/29.72MB
+ fbda4a386d13 Downloading [=====================>                             ]  19.04MB/43.48MB
+ fbda4a386d13 Downloading [==================================>                ]  30.11MB/43.48MB
+ 20043066d3d5 Downloading [======================================>            ]  23.13MB/29.72MB
+ e5fbc57eeafe Downloading [====>                                              ]     934B/9.472kB
+ e5fbc57eeafe Downloading [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Verifying Checksum 
+ e5fbc57eeafe Download complete 
+ 20043066d3d5 Verifying Checksum 
+ 20043066d3d5 Download complete 
+ fbda4a386d13 Downloading [=================================================> ]  43.41MB/43.48MB
+ fbda4a386d13 Verifying Checksum 
+ fbda4a386d13 Download complete 
+ 20043066d3d5 Extracting [>                                                  ]  327.7kB/29.72MB
+ 20043066d3d5 Extracting [=========>                                         ]  5.898MB/29.72MB
+ f19b7ac6489f Downloading [>                                                  ]  215.1kB/21.31MB
+ 20043066d3d5 Extracting [==============>                                    ]  8.847MB/29.72MB
+ 0f9a1c409bb2 Downloading [==================================================>]     188B/188B
+ 0f9a1c409bb2 Verifying Checksum 
+ 0f9a1c409bb2 Download complete 
+ d5d9860a5545 Downloading [==================================================>]     109B/109B
+ d5d9860a5545 Verifying Checksum 
+ d5d9860a5545 Download complete 
+ f19b7ac6489f Downloading [=========================>                         ]  11.03MB/21.31MB
+ 20043066d3d5 Extracting [=====================>                             ]  12.78MB/29.72MB
+ f19b7ac6489f Verifying Checksum 
+ f19b7ac6489f Download complete 
+ 20043066d3d5 Extracting [===================================>               ]  20.97MB/29.72MB
+ fc030d7bf8ba Downloading [==================================================>]     617B/617B
+ fc030d7bf8ba Verifying Checksum 
+ fc030d7bf8ba Download complete 
+ c5ec72a0a4d4 Downloading [==================================================>]     831B/831B
+ c5ec72a0a4d4 Verifying Checksum 
+ c5ec72a0a4d4 Download complete 
+ a51622689fc8 Downloading [>                                                  ]    125kB/12.47MB
+ a51622689fc8 Verifying Checksum 
+ a51622689fc8 Download complete 
+ 8e44f01296e3 Downloading [>                                                  ]  282.7kB/28.23MB
+ 44fc29a25beb Downloading [==========================================>        ]     935B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 20043066d3d5 Extracting [==========================================>        ]  25.56MB/29.72MB
+ 8e44f01296e3 Downloading [====================================>              ]  20.72MB/28.23MB
+ 20043066d3d5 Extracting [===============================================>   ]  28.18MB/29.72MB
+ 8e44f01296e3 Verifying Checksum 
+ 8e44f01296e3 Download complete 
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Verifying Checksum 
+ 39af693970c0 Download complete 
+ 517b08eaf3cc Downloading [>                                                  ]  14.62kB/1.438MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 8e44f01296e3 Extracting [==========>                                        ]  5.898MB/28.23MB
+ 20043066d3d5 Extracting [=================================================> ]  29.49MB/29.72MB
+ 20043066d3d5 Extracting [==================================================>]  29.72MB/29.72MB
+ 8e44f01296e3 Extracting [================>                                  ]  9.437MB/28.23MB
+ 186a03b51bfa Downloading [>                                                  ]  156.7kB/15.35MB
+ 20043066d3d5 Pull complete 
+ fbda4a386d13 Extracting [>                                                  ]  458.8kB/43.48MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 8e44f01296e3 Extracting [=====================>                             ]  12.09MB/28.23MB
+ 186a03b51bfa Download complete 
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ fbda4a386d13 Extracting [========>                                          ]  7.799MB/43.48MB
+ 8e44f01296e3 Extracting [=================================>                 ]  18.87MB/28.23MB
+ fbda4a386d13 Extracting [=================>                                 ]  15.14MB/43.48MB
+ 8e44f01296e3 Extracting [=========================================>         ]  23.59MB/28.23MB
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Verifying Checksum 
+ a43f12641297 Download complete 
+ fbda4a386d13 Extracting [==========================>                        ]   23.4MB/43.48MB
+ f9dd052e142d Downloading [>                                                  ]  539.1kB/52.33MB
+ e8c6d4883897 Downloading [>                                                  ]  44.74kB/4.398MB
+ e8c6d4883897 Verifying Checksum 
+ e8c6d4883897 Download complete 
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ f9dd052e142d Downloading [============>                                      ]  12.74MB/52.33MB
+ fbda4a386d13 Extracting [=================================>                 ]   28.9MB/43.48MB
+ f9dd052e142d Downloading [=======================>                           ]  24.91MB/52.33MB
+ fbda4a386d13 Extracting [======================================>            ]  33.49MB/43.48MB
+ 648eb81b3252 Downloading [=============================>                     ]     933B/1.561kB
+ 648eb81b3252 Downloading [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Verifying Checksum 
+ 648eb81b3252 Download complete 
+ 8e44f01296e3 Extracting [===============================================>   ]  26.84MB/28.23MB
+ eb77aa907276 Downloading [>                                                  ]  530.9kB/907.7MB
+ f9dd052e142d Downloading [===================================>               ]   37.1MB/52.33MB
+ fbda4a386d13 Extracting [==============================================>    ]  40.37MB/43.48MB
+ fbda4a386d13 Extracting [==================================================>]  43.48MB/43.48MB
+ eb77aa907276 Downloading [>                                                  ]  12.77MB/907.7MB
+ f9dd052e142d Verifying Checksum 
+ f9dd052e142d Download complete 
+ f9dd052e142d Extracting [>                                                  ]  524.3kB/52.33MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ eb77aa907276 Downloading [=>                                                 ]  32.63MB/907.7MB
+ eb77aa907276 Downloading [==>                                                ]  47.62MB/907.7MB
+ 0ffa8f8aba1e Downloading [==================================================>]     226B/226B
+ 0ffa8f8aba1e Verifying Checksum 
+ 0ffa8f8aba1e Download complete 
+ f9dd052e142d Extracting [=>                                                 ]  1.049MB/52.33MB
+ eb77aa907276 Downloading [===>                                               ]   66.9MB/907.7MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ 2e81b9cb93cd Downloading [=========================>                         ]     933B/1.859kB
+ 2e81b9cb93cd Downloading [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Verifying Checksum 
+ 2e81b9cb93cd Download complete 
+ eb77aa907276 Downloading [====>                                              ]  81.77MB/907.7MB
+ f9dd052e142d Extracting [====>                                              ]  4.194MB/52.33MB
+ eb77aa907276 Downloading [=====>                                             ]  99.93MB/907.7MB
+ 8e44f01296e3 Extracting [=================================================> ]  27.72MB/28.23MB
+ eb77aa907276 Downloading [======>                                            ]  120.7MB/907.7MB
+ eb77aa907276 Downloading [=======>                                           ]  136.3MB/907.7MB
+ 8e44f01296e3 Extracting [=================================================> ]  28.02MB/28.23MB
+ eb77aa907276 Downloading [========>                                          ]  150.2MB/907.7MB
+ f9dd052e142d Extracting [====>                                              ]  4.719MB/52.33MB
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ eb77aa907276 Downloading [=========>                                         ]  165.1MB/907.7MB
+ f9dd052e142d Extracting [=====>                                             ]  5.767MB/52.33MB
+ eb77aa907276 Downloading [==========>                                        ]  184.9MB/907.7MB
+ f9dd052e142d Extracting [==========>                                        ]  10.49MB/52.33MB
+ eb77aa907276 Downloading [==========>                                        ]  193.5MB/907.7MB
+ 8e44f01296e3 Pull complete 
+ eb77aa907276 Downloading [===========>                                       ]  203.6MB/907.7MB
+ f9dd052e142d Extracting [==============>                                    ]  14.68MB/52.33MB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ eb77aa907276 Downloading [===========>                                       ]    217MB/907.7MB
+ f9dd052e142d Extracting [==================>                                ]   19.4MB/52.33MB
+ eb77aa907276 Downloading [============>                                      ]  233.5MB/907.7MB
+ 44fc29a25beb Pull complete 
+ f9dd052e142d Extracting [======================>                            ]  23.07MB/52.33MB
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ eb77aa907276 Downloading [=============>                                     ]  250.6MB/907.7MB
+ f9dd052e142d Extracting [==========================>                        ]  27.26MB/52.33MB
+ eb77aa907276 Downloading [==============>                                    ]  268.3MB/907.7MB
+ eb77aa907276 Downloading [===============>                                   ]  274.7MB/907.7MB
+ f9dd052e142d Extracting [============================>                      ]  29.36MB/52.33MB
+ fbda4a386d13 Pull complete 
+ 39af693970c0 Pull complete 
+ eb77aa907276 Downloading [===============>                                   ]  289.1MB/907.7MB
+ 257b1af0856e Extracting [>                                                  ]   98.3kB/7.468MB
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ f9dd052e142d Extracting [============================>                      ]  29.88MB/52.33MB
+ eb77aa907276 Downloading [================>                                  ]  303.5MB/907.7MB
+ f9dd052e142d Extracting [=============================>                     ]  30.41MB/52.33MB
+ eb77aa907276 Downloading [=================>                                 ]  319.5MB/907.7MB
+ 257b1af0856e Extracting [=>                                                 ]  294.9kB/7.468MB
+ 517b08eaf3cc Extracting [=========>                                         ]  262.1kB/1.438MB
+ eb77aa907276 Downloading [=================>                                 ]  325.4MB/907.7MB
+ 257b1af0856e Extracting [====>                                              ]  688.1kB/7.468MB
+ f9dd052e142d Extracting [=============================>                     ]  30.93MB/52.33MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ eb77aa907276 Downloading [==================>                                ]  342.5MB/907.7MB
+ 517b08eaf3cc Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ 257b1af0856e Extracting [=======>                                           ]  1.081MB/7.468MB
+ eb77aa907276 Downloading [===================>                               ]  361.8MB/907.7MB
+ 186a03b51bfa Extracting [===============>                                   ]  4.751MB/15.35MB
+ 257b1af0856e Extracting [================================>                  ]  4.817MB/7.468MB
+ f9dd052e142d Extracting [===============================>                   ]  33.03MB/52.33MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ eb77aa907276 Downloading [====================>                              ]  373.5MB/907.7MB
+ 186a03b51bfa Extracting [==============================>                    ]  9.339MB/15.35MB
+ 257b1af0856e Pull complete 
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Pull complete 
+ f9dd052e142d Extracting [=================================>                 ]   34.6MB/52.33MB
+ f19b7ac6489f Extracting [>                                                  ]  229.4kB/21.31MB
+ eb77aa907276 Downloading [=====================>                             ]  391.7MB/907.7MB
+ 186a03b51bfa Extracting [==============================================>    ]  14.42MB/15.35MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ 186a03b51bfa Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ eb77aa907276 Downloading [======================>                            ]  407.8MB/907.7MB
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ f19b7ac6489f Extracting [=======>                                           ]  3.211MB/21.31MB
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ redis Pulled 
+ f9dd052e142d Extracting [===================================>               ]   36.7MB/52.33MB
+ eb77aa907276 Downloading [=======================>                           ]  429.1MB/907.7MB
+ f19b7ac6489f Extracting [==================>                                ]  7.799MB/21.31MB
+ f9dd052e142d Extracting [====================================>              ]  38.27MB/52.33MB
+ eb77aa907276 Downloading [========================>                          ]    443MB/907.7MB
+ f19b7ac6489f Extracting [=========================>                         ]  10.78MB/21.31MB
+ f9dd052e142d Extracting [======================================>            ]  40.37MB/52.33MB
+ eb77aa907276 Downloading [=========================>                         ]  463.8MB/907.7MB
+ f19b7ac6489f Extracting [=================================>                 ]  14.45MB/21.31MB
+ f9dd052e142d Extracting [=========================================>         ]  43.52MB/52.33MB
+ eb77aa907276 Downloading [==========================>                        ]  478.8MB/907.7MB
+ f19b7ac6489f Extracting [=====================================>             ]  16.06MB/21.31MB
+ f9dd052e142d Extracting [============================================>      ]  46.14MB/52.33MB
+ eb77aa907276 Downloading [==========================>                        ]    490MB/907.7MB
+ f19b7ac6489f Extracting [=========================================>         ]  17.66MB/21.31MB
+ f9dd052e142d Extracting [==============================================>    ]  48.76MB/52.33MB
+ eb77aa907276 Downloading [===========================>                       ]  506.6MB/907.7MB
+ f19b7ac6489f Extracting [=============================================>     ]   19.5MB/21.31MB
+ eb77aa907276 Downloading [============================>                      ]  515.1MB/907.7MB
+ f19b7ac6489f Extracting [================================================>  ]  20.87MB/21.31MB
+ eb77aa907276 Downloading [=============================>                     ]  530.6MB/907.7MB
+ f19b7ac6489f Extracting [==================================================>]  21.31MB/21.31MB
+ f9dd052e142d Extracting [=================================================> ]  51.38MB/52.33MB
+ eb77aa907276 Downloading [==============================>                    ]  548.8MB/907.7MB
+ eb77aa907276 Downloading [==============================>                    ]  557.3MB/907.7MB
+ f9dd052e142d Extracting [=================================================> ]   51.9MB/52.33MB
+ f9dd052e142d Extracting [==================================================>]  52.33MB/52.33MB
+ f9dd052e142d Pull complete 
+ e8c6d4883897 Extracting [>                                                  ]  65.54kB/4.398MB
+ eb77aa907276 Downloading [===============================>                   ]  567.5MB/907.7MB
+ f19b7ac6489f Pull complete 
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Pull complete 
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ e8c6d4883897 Extracting [========>                                          ]  720.9kB/4.398MB
+ d5d9860a5545 Pull complete 
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Pull complete 
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ eb77aa907276 Downloading [===============================>                   ]    576MB/907.7MB
+ c5ec72a0a4d4 Pull complete 
+ a51622689fc8 Extracting [>                                                  ]  131.1kB/12.47MB
+ e8c6d4883897 Extracting [===========================>                       ]  2.425MB/4.398MB
+ eb77aa907276 Downloading [================================>                  ]  581.4MB/907.7MB
+ a51622689fc8 Extracting [==================>                                ]  4.588MB/12.47MB
+ e8c6d4883897 Extracting [======================================>            ]  3.408MB/4.398MB
+ eb77aa907276 Downloading [================================>                  ]  594.2MB/907.7MB
+ e8c6d4883897 Extracting [==================================================>]  4.398MB/4.398MB
+ a51622689fc8 Extracting [==========================>                        ]  6.554MB/12.47MB
+ e8c6d4883897 Pull complete 
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Pull complete 
+ eb77aa907276 Downloading [================================>                  ]    598MB/907.7MB
+ a51622689fc8 Extracting [=============================>                     ]  7.471MB/12.47MB
+ eb77aa907276 Downloading [=================================>                 ]    607MB/907.7MB
+ a51622689fc8 Extracting [=========================================>         ]  10.35MB/12.47MB
+ eb77aa907276 Downloading [==================================>                ]  624.2MB/907.7MB
+ a51622689fc8 Extracting [==================================================>]  12.47MB/12.47MB
+ a51622689fc8 Pull complete 
+ rabbitmq Pulled 
+ eb77aa907276 Downloading [===================================>               ]  642.3MB/907.7MB
+ eb77aa907276 Downloading [====================================>              ]  658.3MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]  673.8MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]  688.8MB/907.7MB
+ eb77aa907276 Downloading [======================================>            ]  702.1MB/907.7MB
+ eb77aa907276 Downloading [=======================================>           ]  722.4MB/907.7MB
+ eb77aa907276 Downloading [========================================>          ]  742.8MB/907.7MB
+ eb77aa907276 Downloading [=========================================>         ]  759.3MB/907.7MB
+ eb77aa907276 Downloading [==========================================>        ]  778.6MB/907.7MB
+ eb77aa907276 Downloading [===========================================>       ]  793.5MB/907.7MB
+ eb77aa907276 Downloading [============================================>      ]    809MB/907.7MB
+ eb77aa907276 Downloading [=============================================>     ]  827.2MB/907.7MB
+ eb77aa907276 Downloading [==============================================>    ]  842.7MB/907.7MB
+ eb77aa907276 Downloading [===============================================>   ]  855.5MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  871.5MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  884.9MB/907.7MB
+ eb77aa907276 Downloading [=================================================> ]  896.1MB/907.7MB
+ eb77aa907276 Verifying Checksum 
+ eb77aa907276 Download complete 
+ eb77aa907276 Extracting [>                                                  ]  557.1kB/907.7MB
+ eb77aa907276 Extracting [=>                                                 ]  25.07MB/907.7MB
+ eb77aa907276 Extracting [==>                                                ]  49.02MB/907.7MB
+ eb77aa907276 Extracting [====>                                              ]  74.09MB/907.7MB
+ eb77aa907276 Extracting [====>                                              ]  85.23MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]  95.81MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]  104.7MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  114.2MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  123.1MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]    132MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  140.4MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  147.6MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  157.1MB/907.7MB
+ eb77aa907276 Extracting [=========>                                         ]  174.4MB/907.7MB
+ eb77aa907276 Extracting [==========>                                        ]  196.6MB/907.7MB
+ eb77aa907276 Extracting [===========>                                       ]  213.4MB/907.7MB
+ eb77aa907276 Extracting [============>                                      ]  225.1MB/907.7MB
+ eb77aa907276 Extracting [============>                                      ]  235.1MB/907.7MB
+ eb77aa907276 Extracting [=============>                                     ]  246.2MB/907.7MB
+ eb77aa907276 Extracting [==============>                                    ]  265.2MB/907.7MB
+ eb77aa907276 Extracting [===============>                                   ]  289.1MB/907.7MB
+ eb77aa907276 Extracting [=================>                                 ]  313.1MB/907.7MB
+ eb77aa907276 Extracting [==================>                                ]  335.3MB/907.7MB
+ eb77aa907276 Extracting [===================>                               ]    356MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  365.4MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  373.2MB/907.7MB
+ eb77aa907276 Extracting [=====================>                             ]  392.7MB/907.7MB
+ eb77aa907276 Extracting [======================>                            ]  416.1MB/907.7MB
+ eb77aa907276 Extracting [========================>                          ]  445.1MB/907.7MB
+ eb77aa907276 Extracting [==========================>                        ]  475.2MB/907.7MB
+ eb77aa907276 Extracting [===========================>                       ]  504.7MB/907.7MB
+ eb77aa907276 Extracting [=============================>                     ]  534.2MB/907.7MB
+ eb77aa907276 Extracting [===============================>                   ]  563.2MB/907.7MB
+ eb77aa907276 Extracting [================================>                  ]  589.9MB/907.7MB
+ eb77aa907276 Extracting [==================================>                ]  617.8MB/907.7MB
+ eb77aa907276 Extracting [===================================>               ]  647.3MB/907.7MB
+ eb77aa907276 Extracting [=====================================>             ]  675.7MB/907.7MB
+ eb77aa907276 Extracting [======================================>            ]  704.7MB/907.7MB
+ eb77aa907276 Extracting [========================================>          ]  730.3MB/907.7MB
+ eb77aa907276 Extracting [=========================================>         ]  752.6MB/907.7MB
+ eb77aa907276 Extracting [==========================================>        ]  774.9MB/907.7MB
+ eb77aa907276 Extracting [===========================================>       ]  796.6MB/907.7MB
+ eb77aa907276 Extracting [=============================================>     ]  818.9MB/907.7MB
+ eb77aa907276 Extracting [==============================================>    ]  840.6MB/907.7MB
+ eb77aa907276 Extracting [===============================================>   ]  861.8MB/907.7MB
+ eb77aa907276 Extracting [================================================>  ]  884.6MB/907.7MB
+ eb77aa907276 Extracting [=================================================> ]  906.3MB/907.7MB
+ eb77aa907276 Extracting [==================================================>]  907.7MB/907.7MB
+ eb77aa907276 Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Pull complete 
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Pull complete 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+ Container docker_services_cli-opensearch-1  Started
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0 -- /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_indexer
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collecting ... collected 100 items
+
+docs/conf.py::PYDOCSTYLE PASSED
+docs/conf.py::ISORT PASSED
+docs/conf.py::black PASSED
+tests/conftest.py::PYDOCSTYLE PASSED
+tests/conftest.py::ISORT PASSED
+tests/conftest.py::black PASSED
+tests/data/__init__.py::PYDOCSTYLE PASSED
+tests/data/__init__.py::ISORT PASSED
+tests/data/__init__.py::black PASSED
+tests/data/os-v1/__init__.py::PYDOCSTYLE PASSED
+tests/data/os-v1/__init__.py::ISORT PASSED
+tests/data/os-v1/__init__.py::black PASSED
+tests/data/os-v2/__init__.py::PYDOCSTYLE PASSED
+tests/data/os-v2/__init__.py::ISORT PASSED
+tests/data/os-v2/__init__.py::black PASSED
+tests/data/v7/__init__.py::PYDOCSTYLE PASSED
+tests/data/v7/__init__.py::ISORT PASSED
+tests/data/v7/__init__.py::black PASSED
+tests/demo/__init__.py::PYDOCSTYLE PASSED
+tests/demo/__init__.py::ISORT PASSED
+tests/demo/__init__.py::black PASSED
+tests/demo/json_resolver.py::PYDOCSTYLE PASSED
+tests/demo/json_resolver.py::ISORT PASSED
+tests/demo/json_resolver.py::black PASSED
+tests/test_api.py::ISORT PASSED
+tests/test_api.py::black PASSED
+tests/test_api.py::test_indexer_bulk_index PASSED
+tests/test_api.py::test_delete_action PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=496::nested transaction already deassociated from connection
+
+tests/test_api.py::test_index_action ::error file=package-repo/tests/test_api.py,line=107::test_index_action%0A%0AValueError: Not naive datetime (tzinfo is already set)
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_process_bulk_queue ::error file=package-repo/tests/test_api.py,line=142::test_process_bulk_queue%0A%0Aassert 1 == 2%0A +  where 1 = process_bulk_queue()%0A +    where process_bulk_queue = <invenio_indexer.api.RecordIndexer object at 0x7f9c32ea9340>.process_bulk_queue%0A +      where <invenio_indexer.api.RecordIndexer object at 0x7f9c32ea9340> = RecordIndexer()
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_process_bulk_queue_errors ::error file=package-repo/tests/test_api.py,line=168::test_process_bulk_queue_errors%0A%0Aassert 0 == 1%0A +  where 0 = process_bulk_queue()%0A +    where process_bulk_queue = <invenio_indexer.api.RecordIndexer object at 0x7f9c32eabad0>.process_bulk_queue%0A +      where <invenio_indexer.api.RecordIndexer object at 0x7f9c32eabad0> = RecordIndexer()
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_index ::error file=package-repo/tests/test_api.py,line=181::test_index%0A%0AValueError: Not naive datetime (tzinfo is already set)
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_refresh_with_indexer PASSED
+tests/test_api.py::test_refresh_with_indexer_and_prefix PASSED
+tests/test_api.py::test_refresh_with_index_name PASSED
+tests/test_api.py::test_refresh_with_index_obj PASSED
+tests/test_api.py::test_delete PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_replace_refs PASSED
+tests/test_api.py::test_bulkrecordindexer_index_delete_by_record_id PASSED
+tests/test_api.py::test_bulkrecordindexer_index_delete_by_record PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_before_record_index_dynamic_connect ::error file=package-repo/tests/test_api.py,line=393::test_before_record_index_dynamic_connect%0A%0AValueError: Not naive datetime (tzinfo is already set)
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_api.py::test_indexer_record_class PASSED
+tests/test_cli.py::ISORT PASSED
+tests/test_cli.py::black PASSED
+tests/test_cli.py::test_run PASSED
+tests/test_cli.py::test_reindex ::error file=package-repo/tests/test_cli.py,line=79::test_reindex%0A%0Aopensearchpy.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [records-default-v1.0.0]', records-default-v1.0.0, index_or_alias)
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/cli.py,line=118::Query.values() is deprecated and will be removed in a future release.  Please use Query.with_entities() (deprecated since: 1.4)
+
+tests/test_cli.py::test_queues_options PASSED
+tests/test_invenio_indexer.py::ISORT PASSED
+tests/test_invenio_indexer.py::black PASSED
+tests/test_invenio_indexer.py::test_version PASSED
+tests/test_invenio_indexer.py::test_init PASSED
+tests/test_invenio_indexer.py::test_hook_initialization ::error file=package-repo/tests/test_invenio_indexer.py,line=64::test_hook_initialization%0A%0AValueError: Not naive datetime (tzinfo is already set)
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_invenio_indexer.py::test_index_prefixing ::error file=package-repo/tests/test_invenio_indexer.py,line=117::test_index_prefixing%0A%0AValueError: Not naive datetime (tzinfo is already set)
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+tests/test_registry.py::ISORT PASSED
+tests/test_registry.py::black PASSED
+tests/test_registry.py::test_indexer_registry PASSED
+tests/test_tasks.py::ISORT PASSED
+tests/test_tasks.py::black PASSED
+tests/test_tasks.py::test_process_bulk_queue PASSED
+tests/test_tasks.py::test_index_record PASSED
+tests/test_tasks.py::test_delete_record PASSED
+tests/test_utils.py::ISORT PASSED
+tests/test_utils.py::black PASSED
+tests/test_utils.py::test_schema_to_index_with_names PASSED
+tests/test_utils.py::test_schema_to_index[records/record-v1.0.0.json-records-record-v1.0.0-None] PASSED
+tests/test_utils.py::test_schema_to_index[/records/record-v1.0.0.json-records-record-v1.0.0-None] PASSED
+tests/test_utils.py::test_schema_to_index[default-v1.0.0.json-default-v1.0.0-None] PASSED
+tests/test_utils.py::test_schema_to_index[default-v1.0.0.json-None-index_names3] PASSED
+tests/test_utils.py::test_schema_to_index[invalidextension-None-None] PASSED
+invenio_indexer/__init__.py::PYDOCSTYLE PASSED
+invenio_indexer/__init__.py::ISORT PASSED
+invenio_indexer/__init__.py::black PASSED
+invenio_indexer/__init__.py::invenio_indexer ::error file=package-repo/invenio_indexer/__init__.py,line=10::[doctest] invenio_indexer
+FAILED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py,line=335::nested transaction already deassociated from connection
+
+invenio_indexer/api.py::PYDOCSTYLE PASSED
+invenio_indexer/api.py::ISORT PASSED
+invenio_indexer/api.py::black PASSED
+invenio_indexer/cli.py::PYDOCSTYLE PASSED
+invenio_indexer/cli.py::ISORT PASSED
+invenio_indexer/cli.py::black PASSED
+invenio_indexer/config.py::PYDOCSTYLE PASSED
+invenio_indexer/config.py::ISORT PASSED
+invenio_indexer/config.py::black PASSED
+invenio_indexer/ext.py::PYDOCSTYLE PASSED
+invenio_indexer/ext.py::ISORT PASSED
+invenio_indexer/ext.py::black PASSED
+invenio_indexer/proxies.py::PYDOCSTYLE PASSED
+invenio_indexer/proxies.py::ISORT PASSED
+invenio_indexer/proxies.py::black PASSED
+invenio_indexer/registry.py::PYDOCSTYLE PASSED
+invenio_indexer/registry.py::ISORT PASSED
+invenio_indexer/registry.py::black PASSED
+invenio_indexer/signals.py::PYDOCSTYLE PASSED
+invenio_indexer/signals.py::ISORT PASSED
+invenio_indexer/signals.py::black PASSED
+invenio_indexer/tasks.py::PYDOCSTYLE PASSED
+invenio_indexer/tasks.py::ISORT PASSED
+invenio_indexer/tasks.py::black PASSED
+invenio_indexer/utils.py::PYDOCSTYLE PASSED
+invenio_indexer/utils.py::ISORT PASSED
+invenio_indexer/utils.py::black PASSED
+
+=================================== FAILURES ===================================
+______________________________ test_index_action _______________________________
+
+app = <Flask 'testapp'>
+
+    def test_index_action(app):
+        """Test index action."""
+        with app.app_context():
+            record = Record.create({"title": "Test"})
+            db.session.commit()
+    
+            def receiver(sender, json=None, record=None, arguments=None, **kwargs):
+                json["extra"] = "extra"
+                arguments["pipeline"] = "foobar"
+    
+            with before_record_index.connected_to(receiver):
+>               action = RecordIndexer()._index_action(
+                    dict(
+                        id=str(record.id),
+                        op="index",
+                    )
+                )
+
+app        = <Flask 'testapp'>
+receiver   = <function test_index_action.<locals>.receiver at 0x7f9c32e8b1a0>
+record     = {'title': 'Test'}
+
+tests/test_api.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+invenio_indexer/api.py:419: in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        index      = 'records-default-v1.0.0'
+        payload    = {'id': 'f0e8cc4d-a29c-4792-a7a1-be95dc70f716', 'op': 'index'}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c32fcbd70>
+invenio_indexer/api.py:472: in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        data       = {'title': 'Test'}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c32fcbd70>
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <UTC>
+dt = datetime.datetime(2025, 11, 18, 11, 38, 35, 671944, tzinfo=datetime.timezone.utc)
+is_dst = False
+
+    def localize(self, dt, is_dst=False):
+        '''Convert naive time to local time'''
+        if dt.tzinfo is not None:
+>           raise ValueError('Not naive datetime (tzinfo is already set)')
+E           ValueError: Not naive datetime (tzinfo is already set)
+
+dt         = datetime.datetime(2025, 11, 18, 11, 38, 35, 671944, tzinfo=datetime.timezone.utc)
+is_dst     = False
+self       = <UTC>
+
+.venv/lib/python3.12/site-packages/pytz/__init__.py:245: ValueError
+___________________________ test_process_bulk_queue ____________________________
+
+app = <Flask 'testapp'>
+queue = <unbound Queue indexer -> <unbound Exchange indexer(direct)> -> indexer>
+
+    def test_process_bulk_queue(app, queue):
+        """Test process indexing."""
+        with app.app_context():
+            # Create a test record
+            r = Record.create({"title": "test"})
+            db.session.commit()
+            invalid_id2 = uuid.uuid4()
+    
+            RecordIndexer().bulk_index([r.id, invalid_id2])
+            RecordIndexer().bulk_delete([r.id, invalid_id2])
+    
+            ret = {}
+    
+            def _mock_bulk(client, actions_iterator, **kwargs):
+                ret["actions"] = list(actions_iterator)
+                return len(ret["actions"])
+    
+            with patch("invenio_indexer.api.bulk", _mock_bulk):
+                # Invalid actions are rejected
+>               assert RecordIndexer().process_bulk_queue() == 2
+E               assert 1 == 2
+E                +  where 1 = process_bulk_queue()
+E                +    where process_bulk_queue = <invenio_indexer.api.RecordIndexer object at 0x7f9c32ea9340>.process_bulk_queue
+E                +      where <invenio_indexer.api.RecordIndexer object at 0x7f9c32ea9340> = RecordIndexer()
+
+_mock_bulk = <function test_process_bulk_queue.<locals>._mock_bulk at 0x7f9c32fe7920>
+app        = <Flask 'testapp'>
+invalid_id2 = UUID('a9d9337b-e7f3-430b-9c73-167c085a9a54')
+queue      = <unbound Queue indexer -> <unbound Exchange indexer(direct)> -> indexer>
+r          = {'title': 'test'}
+ret        = {'actions': [{'_id': '9412c3ee-d2f9-4ce7-9a17-71e630ba7d1b',
+              '_index': 'records-default-v1.0.0',
+              '_op_type': 'delete',
+              '_version': 0,
+              '_version_type': 'external_gte'}]}
+
+tests/test_api.py:142: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    testapp:api.py:376 Failed to index record 9412c3ee-d2f9-4ce7-9a17-71e630ba7d1b
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 419, in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 472, in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytz/__init__.py", line 245, in localize
+    raise ValueError('Not naive datetime (tzinfo is already set)')
+ValueError: Not naive datetime (tzinfo is already set)
+________________________ test_process_bulk_queue_errors ________________________
+
+app = <Flask 'testapp'>
+queue = <unbound Queue indexer -> <unbound Exchange indexer(direct)> -> indexer>
+
+    def test_process_bulk_queue_errors(app, queue):
+        """Test error handling during indexing."""
+        with app.app_context():
+            # Create a test record
+            r1 = Record.create({"title": "invalid", "reffail": {"$ref": "#/invalid"}})
+            r2 = Record.create(
+                {
+                    "title": "valid",
+                }
+            )
+            db.session.commit()
+    
+            RecordIndexer().bulk_index([r1.id, r2.id])
+    
+            ret = {}
+    
+            def _mock_bulk(client, actions_iterator, **kwargs):
+                ret["actions"] = list(actions_iterator)
+                return len(ret["actions"])
+    
+            with patch("invenio_indexer.api.bulk", _mock_bulk):
+                # Exceptions are caught
+>               assert RecordIndexer().process_bulk_queue() == 1
+E               assert 0 == 1
+E                +  where 0 = process_bulk_queue()
+E                +    where process_bulk_queue = <invenio_indexer.api.RecordIndexer object at 0x7f9c32eabad0>.process_bulk_queue
+E                +      where <invenio_indexer.api.RecordIndexer object at 0x7f9c32eabad0> = RecordIndexer()
+
+_mock_bulk = <function test_process_bulk_queue_errors.<locals>._mock_bulk at 0x7f9c32df5d00>
+app        = <Flask 'testapp'>
+queue      = <unbound Queue indexer -> <unbound Exchange indexer(direct)> -> indexer>
+r1         = {'reffail': {'$ref': '#/invalid'}, 'title': 'invalid'}
+r2         = {'title': 'valid'}
+ret        = {'actions': []}
+
+tests/test_api.py:168: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    testapp:api.py:376 Failed to index record d6dd6fe6-a586-4dcb-87f9-f52b406b5c3d
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonref.py", line 179, in resolve_pointer
+    document = document[part]
+               ~~~~~~~~^^^^^^
+KeyError: 'invalid'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 419, in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 467, in _prepare_record
+    data = copy.deepcopy(record.replace_refs())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/copy.py", line 136, in deepcopy
+    y = copier(x, memo)
+        ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/copy.py", line 221, in _deepcopy_dict
+    y[deepcopy(key, memo)] = deepcopy(value, memo)
+                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/copy.py", line 141, in deepcopy
+    copier = getattr(x, "__deepcopy__", None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 162, in __getattribute__
+    return getattr(self.__subject__, attr)
+                   ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 163, in __getattribute__
+    return _oga(self, attr)
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 121, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 243, in __subject__
+    self.cache = super(LazyProxy, self).__subject__
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 121, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 227, in __subject__
+    return self.callback()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 121, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonref.py", line 140, in callback
+    result = self.resolve_pointer(base_doc, fragment)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/proxytypes.py", line 121, in wrapper
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonref.py", line 181, in resolve_pointer
+    raise self._error(
+jsonref.JsonRefError: Error while resolving `#/invalid`: Unresolvable JSON pointer: '/invalid'
+ERROR    testapp:api.py:376 Failed to index record 26b255d4-19b7-448b-9bce-ff0482b5e112
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 419, in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 472, in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytz/__init__.py", line 245, in localize
+    raise ValueError('Not naive datetime (tzinfo is already set)')
+ValueError: Not naive datetime (tzinfo is already set)
+__________________________________ test_index __________________________________
+
+app = <Flask 'testapp'>
+
+    def test_index(app):
+        """Test record indexing."""
+        with app.app_context():
+            recid = uuid.uuid4()
+            record = Record.create({"title": "Test"}, id_=recid)
+            db.session.commit()
+    
+            client_mock = MagicMock()
+>           RecordIndexer(search_client=client_mock, version_type="force").index(
+                record, arguments={"pipeline": "foobar"}
+            )
+
+app        = <Flask 'testapp'>
+client_mock = <MagicMock id='140308844967408'>
+recid      = UUID('91bd28e1-05f6-4507-bfb0-c07e796e0a96')
+record     = {'title': 'Test'}
+
+tests/test_api.py:181: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+invenio_indexer/api.py:178: in index
+    body = self._prepare_record(record, index, arguments, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {'pipeline': 'foobar'}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c32d51880>
+invenio_indexer/api.py:472: in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {'pipeline': 'foobar'}
+        data       = {'title': 'Test'}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c32d51880>
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <UTC>
+dt = datetime.datetime(2025, 11, 18, 11, 38, 36, 265222, tzinfo=datetime.timezone.utc)
+is_dst = False
+
+    def localize(self, dt, is_dst=False):
+        '''Convert naive time to local time'''
+        if dt.tzinfo is not None:
+>           raise ValueError('Not naive datetime (tzinfo is already set)')
+E           ValueError: Not naive datetime (tzinfo is already set)
+
+dt         = datetime.datetime(2025, 11, 18, 11, 38, 36, 265222, tzinfo=datetime.timezone.utc)
+is_dst     = False
+self       = <UTC>
+
+.venv/lib/python3.12/site-packages/pytz/__init__.py:245: ValueError
+___________________ test_before_record_index_dynamic_connect ___________________
+
+app = <Flask 'testapp'>
+
+    def test_before_record_index_dynamic_connect(app):
+        """Test before_record_index.dynamic_connect."""
+        with app.app_context():
+            with patch("invenio_records.api._records_state.validate"):
+                auth_record = Record.create(
+                    {
+                        "$schema": "/records/authorities/authority-v1.0.0.json",
+                        "title": "Test",
+                    }
+                )
+                bib_record = Record.create(
+                    {
+                        "$schema": "/records/bibliographic/bibliographic-v1.0.0.json",
+                        "title": "Test",
+                    }
+                )
+                db.session.commit()
+    
+            def _simple(sender, json=None, **kwargs):
+                json["simple"] = "simple"
+    
+            def _custom(sender, json=None, **kwargs):
+                json["custom"] = "custom"
+    
+            def _cond(sender, connect_kwargs, index=None, **kwargs):
+                return "bibliographic" in index
+    
+            _receiver1 = before_record_index.dynamic_connect(
+                _simple, index="records-authorities-authority-v1.0.0"
+            )
+            _receiver2 = before_record_index.dynamic_connect(_custom, condition_func=_cond)
+    
+>           action = RecordIndexer()._index_action(dict(id=str(auth_record.id), op="index"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+_cond      = <function test_before_record_index_dynamic_connect.<locals>._cond at 0x7f9c32db9d00>
+_custom    = <function test_before_record_index_dynamic_connect.<locals>._custom at 0x7f9c33449760>
+_receiver1 = <function _with_dynamic_connect.<locals>._dynamic_connect.<locals>._conditional_receiver at 0x7f9c32db9bc0>
+_receiver2 = <function _with_dynamic_connect.<locals>._dynamic_connect.<locals>._conditional_receiver at 0x7f9c32de0fe0>
+_simple    = <function test_before_record_index_dynamic_connect.<locals>._simple at 0x7f9c32e8aac0>
+app        = <Flask 'testapp'>
+auth_record = {'$schema': '/records/authorities/authority-v1.0.0.json', 'title': 'Test'}
+bib_record = {'$schema': '/records/bibliographic/bibliographic-v1.0.0.json', 'title': 'Test'}
+
+tests/test_api.py:393: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+invenio_indexer/api.py:419: in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        index      = 'records-authorities-authority-v1.0.0'
+        payload    = {'id': 'b69b0381-a28c-4b1a-8cf2-98b48840e1e7', 'op': 'index'}
+        record     = {'$schema': '/records/authorities/authority-v1.0.0.json', 'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c337b7110>
+invenio_indexer/api.py:472: in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        data       = {'$schema': '/records/authorities/authority-v1.0.0.json', 'title': 'Test'}
+        index      = 'records-authorities-authority-v1.0.0'
+        kwargs     = {}
+        record     = {'$schema': '/records/authorities/authority-v1.0.0.json', 'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c337b7110>
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <UTC>
+dt = datetime.datetime(2025, 11, 18, 11, 38, 37, 323170, tzinfo=datetime.timezone.utc)
+is_dst = False
+
+    def localize(self, dt, is_dst=False):
+        '''Convert naive time to local time'''
+        if dt.tzinfo is not None:
+>           raise ValueError('Not naive datetime (tzinfo is already set)')
+E           ValueError: Not naive datetime (tzinfo is already set)
+
+dt         = datetime.datetime(2025, 11, 18, 11, 38, 37, 323170, tzinfo=datetime.timezone.utc)
+is_dst     = False
+self       = <UTC>
+
+.venv/lib/python3.12/site-packages/pytz/__init__.py:245: ValueError
+_________________________________ test_reindex _________________________________
+
+app = <Flask 'testapp'>
+
+    def test_reindex(app):
+        """Test reindex."""
+        # load records
+        with app.test_request_context():
+            runner = app.test_cli_runner()
+    
+            id1 = uuid.uuid4()
+            id2 = uuid.uuid4()
+            record1 = Record.create(dict(title="Test 1", recid=1), id_=id1)
+            record2 = Record.create(dict(title="Test 2", recid=2), id_=id2)
+            PersistentIdentifier.create(
+                pid_type="recid",
+                pid_value=1,
+                object_type="rec",
+                object_uuid=id1,
+                status=PIDStatus.REGISTERED,
+            )
+            PersistentIdentifier.create(
+                pid_type="recid",
+                pid_value=2,
+                object_type="rec",
+                object_uuid=id2,
+                status=PIDStatus.REGISTERED,
+            )
+            db.session.commit()
+            indexer = RecordIndexer()
+            index = indexer.record_to_index(record1)
+    
+            # Make sure the index doesn't exist at the beginning (it was not
+            # preserved by accident from some other tests)
+            assert current_search_client.indices.exists(index) is False
+    
+            # Initialize queue
+            res = runner.invoke(cli.queue, ["init", "purge"])
+            assert 0 == res.exit_code
+    
+            res = runner.invoke(cli.reindex, ["--yes-i-know", "-t", "recid"])
+            assert 0 == res.exit_code
+            res = runner.invoke(cli.run, [])
+            assert 0 == res.exit_code
+>           current_search.flush_and_refresh(index)
+
+app        = <Flask 'testapp'>
+id1        = UUID('b2a2d5bf-d267-490f-9fce-13f18418a0eb')
+id2        = UUID('f8a28d4f-ac37-485c-bb2a-cc5efb37757e')
+index      = 'records-default-v1.0.0'
+indexer    = <invenio_indexer.api.RecordIndexer object at 0x7f9c32d27860>
+record1    = {'recid': 1, 'title': 'Test 1'}
+record2    = {'recid': 2, 'title': 'Test 2'}
+res        = <Result okay>
+runner     = <flask.testing.FlaskCliRunner object at 0x7f9c32da5c10>
+
+tests/test_cli.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/invenio_search/ext.py:249: in flush_and_refresh
+    self.client.indices.flush(wait_if_ongoing=True, index=prefixed_index)
+        index      = 'records-default-v1.0.0'
+        prefixed_index = 'records-default-v1.0.0'
+        self       = <invenio_search.ext._SearchState object at 0x7f9c32d50980>
+.venv/lib/python3.12/site-packages/opensearchpy/client/utils.py:176: in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        api_key    = None
+        args       = (<opensearchpy.client.indices.IndicesClient object at 0x7f9c32cd80e0>,)
+        func       = <function IndicesClient.flush at 0x7f9c33daac00>
+        headers    = {}
+        http_auth  = None
+        kwargs     = {'index': 'records-default-v1.0.0'}
+        opensearch_query_params = ('allow_no_indices',
+ 'error_trace',
+ 'expand_wildcards',
+ 'filter_path',
+ 'force',
+ 'human',
+ 'ignore_unavailable',
+ 'pretty',
+ 'source',
+ 'wait_if_ongoing')
+        p          = 'filter_path'
+        params     = {'wait_if_ongoing': b'true'}
+        v          = True
+.venv/lib/python3.12/site-packages/opensearchpy/client/indices.py:186: in flush
+    return self.transport.perform_request(
+        headers    = {}
+        index      = 'records-default-v1.0.0'
+        params     = {'wait_if_ongoing': b'true'}
+        self       = <opensearchpy.client.indices.IndicesClient object at 0x7f9c32cd80e0>
+.venv/lib/python3.12/site-packages/opensearchpy/transport.py:457: in perform_request
+    raise e
+        attempt    = 0
+        body       = None
+        connection = <Urllib3HttpConnection: http://localhost:9200>
+        headers    = {}
+        ignore     = ()
+        method     = 'POST'
+        params     = {'wait_if_ongoing': b'true'}
+        retry      = False
+        self       = <opensearchpy.transport.Transport object at 0x7f9c32cd83b0>
+        timeout    = None
+        url        = '/records-default-v1.0.0/_flush'
+.venv/lib/python3.12/site-packages/opensearchpy/transport.py:418: in perform_request
+    status, headers_response, data = connection.perform_request(
+        attempt    = 0
+        body       = None
+        connection = <Urllib3HttpConnection: http://localhost:9200>
+        headers    = {}
+        ignore     = ()
+        method     = 'POST'
+        params     = {'wait_if_ongoing': b'true'}
+        retry      = False
+        self       = <opensearchpy.transport.Transport object at 0x7f9c32cd83b0>
+        timeout    = None
+        url        = '/records-default-v1.0.0/_flush'
+.venv/lib/python3.12/site-packages/opensearchpy/connection/http_urllib3.py:308: in perform_request
+    self._raise_error(
+        body       = None
+        duration   = 0.0026280879974365234
+        full_url   = 'http://localhost:9200/records-default-v1.0.0/_flush?wait_if_ongoing=true'
+        headers    = {}
+        ignore     = ()
+        kw         = {}
+        method     = 'POST'
+        orig_body  = None
+        params     = {'wait_if_ongoing': b'true'}
+        raw_data   = ('{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no '
+ 'such index '
+ '[records-default-v1.0.0]","index":"records-default-v1.0.0","resource.id":"records-default-v1.0.0","resource.type":"index_or_alias","index_uuid":"_na_"}],"type":"index_not_found_exception","reason":"no '
+ 'such index '
+ '[records-default-v1.0.0]","index":"records-default-v1.0.0","resource.id":"records-default-v1.0.0","resource.type":"index_or_alias","index_uuid":"_na_"},"status":404}')
+        request_headers = {'connection': 'keep-alive',
+ 'content-type': 'application/json',
+ 'user-agent': 'opensearch-py/2.8.0 (Python 3.12.12)'}
+        response   = <urllib3.response.HTTPResponse object at 0x7f9c32cd9b70>
+        self       = <Urllib3HttpConnection: http://localhost:9200>
+        start      = 1763465918.0050776
+        timeout    = None
+        url        = '/records-default-v1.0.0/_flush?wait_if_ongoing=true'
+        warning_headers = ()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Urllib3HttpConnection: http://localhost:9200>, status_code = 404
+raw_data = '{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index [records-default-v1.0.0]","index"...ult-v1.0.0","resource.id":"records-default-v1.0.0","resource.type":"index_or_alias","index_uuid":"_na_"},"status":404}'
+content_type = 'application/json'
+
+    def _raise_error(
+        self,
+        status_code: int,
+        raw_data: Union[str, bytes],
+        content_type: Optional[str] = None,
+    ) -> None:
+        """Locate appropriate exception and raise it."""
+        error_message = raw_data
+        additional_info = None
+        try:
+            content_type = (
+                "text/plain"
+                if content_type is None
+                else content_type.split(";")[0].strip()
+            )
+            if raw_data and content_type == "application/json":
+                additional_info = json.loads(raw_data)
+                error_message = additional_info.get("error", error_message)
+                if isinstance(error_message, dict) and "type" in error_message:
+                    error_message = error_message["type"]
+        except (ValueError, TypeError) as err:
+            logger.warning("Undecodable raw error response from server: %s", err)
+    
+>       raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+            status_code, error_message, additional_info
+        )
+E       opensearchpy.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [records-default-v1.0.0]', records-default-v1.0.0, index_or_alias)
+
+additional_info = {'error': {'index': 'records-default-v1.0.0',
+           'index_uuid': '_na_',
+           'reason': 'no such index [records-default-v1.0.0]',
+           'resource.id': 'records-default-v1.0.0',
+           'resource.type': 'index_or_alias',
+           'root_cause': [{'index': 'records-default-v1.0.0',
+                           'index_uuid': '_na_',
+                           'reason': 'no such index [records-default-v1.0.0]',
+                           'resource.id': 'records-default-v1.0.0',
+                           'resource.type': 'index_or_alias',
+                           'type': 'index_not_found_exception'}],
+           'type': 'index_not_found_exception'},
+ 'status': 404}
+content_type = 'application/json'
+error_message = 'index_not_found_exception'
+raw_data   = ('{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no '
+ 'such index '
+ '[records-default-v1.0.0]","index":"records-default-v1.0.0","resource.id":"records-default-v1.0.0","resource.type":"index_or_alias","index_uuid":"_na_"}],"type":"index_not_found_exception","reason":"no '
+ 'such index '
+ '[records-default-v1.0.0]","index":"records-default-v1.0.0","resource.id":"records-default-v1.0.0","resource.type":"index_or_alias","index_uuid":"_na_"},"status":404}')
+self       = <Urllib3HttpConnection: http://localhost:9200>
+status_code = 404
+
+.venv/lib/python3.12/site-packages/opensearchpy/connection/base.py:315: NotFoundError
+------------------------------ Captured log call -------------------------------
+ERROR    testapp:api.py:376 Failed to index record b2a2d5bf-d267-490f-9fce-13f18418a0eb
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 419, in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 472, in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytz/__init__.py", line 245, in localize
+    raise ValueError('Not naive datetime (tzinfo is already set)')
+ValueError: Not naive datetime (tzinfo is already set)
+ERROR    testapp:api.py:376 Failed to index record f8a28d4f-ac37-485c-bb2a-cc5efb37757e
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 419, in _index_action
+    body = self._prepare_record(record, index, arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 472, in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytz/__init__.py", line 245, in localize
+    raise ValueError('Not naive datetime (tzinfo is already set)')
+ValueError: Not naive datetime (tzinfo is already set)
+WARNING  opensearch:base.py:280 POST http://localhost:9200/records-default-v1.0.0/_flush?wait_if_ongoing=true [status:404 request:0.003s]
+___________________________ test_hook_initialization ___________________________
+
+base_app = <Flask 'testapp'>
+
+    def test_hook_initialization(base_app):
+        """Test hook initialization."""
+        app = base_app
+        magic_hook = MagicMock()
+        app.config["INDEXER_BEFORE_INDEX_HOOKS"] = [
+            magic_hook,
+            "test_invenio_indexer:_global_magic_hook",
+        ]
+        ext = InvenioIndexer(app)
+    
+        with app.app_context():
+            recid = uuid.uuid4()
+            record = Record.create({"title": "Test"}, id_=recid)
+            db.session.commit()
+    
+            client_mock = MagicMock()
+>           RecordIndexer(search_client=client_mock, version_type="force").index(record)
+
+app        = <Flask 'testapp'>
+base_app   = <Flask 'testapp'>
+client_mock = <MagicMock id='140308843927920'>
+ext        = <invenio_indexer.ext.InvenioIndexer object at 0x7f9c32aca150>
+magic_hook = <MagicMock id='140308843928880'>
+recid      = UUID('d9b5cc65-4c49-4210-9496-0db30f0c8307')
+record     = {'title': 'Test'}
+
+tests/test_invenio_indexer.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+invenio_indexer/api.py:178: in index
+    body = self._prepare_record(record, index, arguments, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c32a99010>
+invenio_indexer/api.py:472: in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        data       = {'title': 'Test'}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c32a99010>
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <UTC>
+dt = datetime.datetime(2025, 11, 18, 11, 38, 38, 634699, tzinfo=datetime.timezone.utc)
+is_dst = False
+
+    def localize(self, dt, is_dst=False):
+        '''Convert naive time to local time'''
+        if dt.tzinfo is not None:
+>           raise ValueError('Not naive datetime (tzinfo is already set)')
+E           ValueError: Not naive datetime (tzinfo is already set)
+
+dt         = datetime.datetime(2025, 11, 18, 11, 38, 38, 634699, tzinfo=datetime.timezone.utc)
+is_dst     = False
+self       = <UTC>
+
+.venv/lib/python3.12/site-packages/pytz/__init__.py:245: ValueError
+_____________________________ test_index_prefixing _____________________________
+
+base_app = <Flask 'testapp'>
+
+    def test_index_prefixing(base_app):
+        """Test index prefixing."""
+        app = base_app
+        app.config["INDEXER_REPLACE_REFS"] = False
+        app.config["SEARCH_INDEX_PREFIX"] = "test-"
+        ext = InvenioIndexer(app)
+    
+        default_index = app.config["INDEXER_DEFAULT_INDEX"]
+    
+        with app.app_context():
+            with patch("invenio_records.api._records_state.validate"):
+                record = Record.create({"title": "Test"})
+                record2 = Record.create(
+                    {
+                        "$schema": "/records/authorities/authority-v1.0.0.json",
+                        "title": "Test with schema",
+                    }
+                )
+                record3 = Record.create({"title": "Test"})
+                record3.delete()
+            db.session.commit()
+    
+            with patch(
+                "invenio_indexer.signals.before_record_index.send"
+            ) as before_record_index_send:
+                client_mock = MagicMock()
+>               RecordIndexer(search_client=client_mock).index(record)
+
+app        = <Flask 'testapp'>
+base_app   = <Flask 'testapp'>
+before_record_index_send = <MagicMock name='send' id='140308855372496'>
+client_mock = <MagicMock id='140308841480064'>
+default_index = 'records-default-v1.0.0'
+ext        = <invenio_indexer.ext.InvenioIndexer object at 0x7f9c32cd0530>
+record     = {'title': 'Test'}
+record2    = {'$schema': '/records/authorities/authority-v1.0.0.json',
+ 'title': 'Test with schema'}
+record3    = {'title': 'Test'}
+
+tests/test_invenio_indexer.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+invenio_indexer/api.py:178: in index
+    body = self._prepare_record(record, index, arguments, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c337cd100>
+invenio_indexer/api.py:472: in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        arguments  = {}
+        data       = {'title': 'Test'}
+        index      = 'records-default-v1.0.0'
+        kwargs     = {}
+        record     = {'title': 'Test'}
+        self       = <invenio_indexer.api.RecordIndexer object at 0x7f9c337cd100>
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <UTC>
+dt = datetime.datetime(2025, 11, 18, 11, 38, 38, 811069, tzinfo=datetime.timezone.utc)
+is_dst = False
+
+    def localize(self, dt, is_dst=False):
+        '''Convert naive time to local time'''
+        if dt.tzinfo is not None:
+>           raise ValueError('Not naive datetime (tzinfo is already set)')
+E           ValueError: Not naive datetime (tzinfo is already set)
+
+dt         = datetime.datetime(2025, 11, 18, 11, 38, 38, 811069, tzinfo=datetime.timezone.utc)
+is_dst     = False
+self       = <UTC>
+
+.venv/lib/python3.12/site-packages/pytz/__init__.py:245: ValueError
+__________________________ [doctest] invenio_indexer ___________________________
+068 Now, let's index the record. By default, records are sent to the search engine
+069 index defined by the configuration variable ``INDEXER_DEFAULT_INDEX``. This
+070 is set to ``None`` by default, to enforce that you always have to specify the
+071 index when indexing a record. For now let's set it to a default value and index
+072 the record:
+073 
+074 >>> app.config['INDEXER_DEFAULT_INDEX'] = "records-record-v1.0.0"
+075 >>> from invenio_indexer.api import RecordIndexer
+076 >>> indexer = RecordIndexer()
+077 >>> res = indexer.index(record)
+UNEXPECTED EXCEPTION: ValueError('Not naive datetime (tzinfo is already set)')
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/doctest.py", line 1368, in __run
+    exec(compile(example.source, filename, "single",
+  File "<doctest invenio_indexer[22]>", line 1, in <module>
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 178, in index
+    body = self._prepare_record(record, index, arguments, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/api.py", line 472, in _prepare_record
+    pytz.utc.localize(record.created).isoformat() if record.created else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytz/__init__.py", line 245, in localize
+    raise ValueError('Not naive datetime (tzinfo is already set)')
+ValueError: Not naive datetime (tzinfo is already set)
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/__init__.py:77: UnexpectedException
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolutionError, RefResolver
+
+tests/test_api.py: 8 warnings
+tests/test_cli.py: 1 warning
+tests/test_invenio_indexer.py: 2 warnings
+invenio_indexer/__init__.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:335: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_api.py::test_delete_action
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:496: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_cli.py::test_reindex
+tests/test_cli.py::test_reindex
+tests/test_cli.py::test_reindex
+tests/test_cli.py::test_reindex
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/test_cli.py::test_reindex
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_indexer/cli.py:118: SADeprecationWarning: Query.values() is deprecated and will be removed in a future release.  Please use Query.with_entities() (deprecated since: 1.4)
+    .values(PersistentIdentifier.object_uuid)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+invenio_indexer/__init__.py       4      0   100%
+invenio_indexer/api.py          179     29    84%   106, 116, 118-127, 159, 179-181, 195-200, 213, 238-247, 261-262, 398-399, 420-432, 459
+invenio_indexer/cli.py           82      3    96%   26, 35, 82
+invenio_indexer/config.py        21      0   100%
+invenio_indexer/ext.py           26      0   100%
+invenio_indexer/proxies.py        7      0   100%
+invenio_indexer/registry.py      16      0   100%
+invenio_indexer/signals.py       16      3    81%   25, 30-31
+invenio_indexer/tasks.py         21      3    86%   29, 44, 59
+invenio_indexer/utils.py         26      0   100%
+-----------------------------------------------------------
+TOTAL                           398     38    90%
+=========================== short test summary info ============================
+FAILED tests/test_api.py::test_index_action - ValueError: Not naive datetime (tzinfo is already set)
+FAILED tests/test_api.py::test_process_bulk_queue - assert 1 == 2
+ +  where 1 = process_bulk_queue()
+ +    where process_bulk_queue = <invenio_indexer.api.RecordIndexer object at 0x7f9c32ea9340>.process_bulk_queue
+ +      where <invenio_indexer.api.RecordIndexer object at 0x7f9c32ea9340> = RecordIndexer()
+FAILED tests/test_api.py::test_process_bulk_queue_errors - assert 0 == 1
+ +  where 0 = process_bulk_queue()
+ +    where process_bulk_queue = <invenio_indexer.api.RecordIndexer object at 0x7f9c32eabad0>.process_bulk_queue
+ +      where <invenio_indexer.api.RecordIndexer object at 0x7f9c32eabad0> = RecordIndexer()
+FAILED tests/test_api.py::test_index - ValueError: Not naive datetime (tzinfo is already set)
+FAILED tests/test_api.py::test_before_record_index_dynamic_connect - ValueError: Not naive datetime (tzinfo is already set)
+FAILED tests/test_cli.py::test_reindex - opensearchpy.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [records-default-v1.0.0]', records-default-v1.0.0, index_or_alias)
+FAILED tests/test_invenio_indexer.py::test_hook_initialization - ValueError: Not naive datetime (tzinfo is already set)
+FAILED tests/test_invenio_indexer.py::test_index_prefixing - ValueError: Not naive datetime (tzinfo is already set)
+FAILED invenio_indexer/__init__.py::invenio_indexer
+================== 9 failed, 91 passed, 24 warnings in 10.46s ==================
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

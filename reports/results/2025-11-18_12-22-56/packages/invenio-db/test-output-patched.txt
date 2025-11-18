@@ -1,0 +1,4 @@
+lists of files in version control and sdist match
+WARNING: failed to reach any of the inventories with the following issues:
+intersphinx inventory 'https://docs.sqlalchemy.org/en/latest/objects.inv' not fetchable due to <class 'requests.exceptions.HTTPError'>: 500 Server Error: Internal Server Error for url: https://docs.sqlalchemy.org/en/latest/objects.inv
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/docstring of invenio_db.shared.UTCDateTime.cache_ok:129: WARNING: undefined label: 'sql_caching' [ref.ref]

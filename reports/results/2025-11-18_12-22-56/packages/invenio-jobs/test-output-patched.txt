@@ -1,0 +1,1444 @@
+lists of files in version control and sdist match
+ elasticsearch Pulling 
+ rabbitmq Pulling 
+ postgresql Pulling 
+ redis Pulling 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ fe77c85f37cb Waiting 
+ a43f12641297 Waiting 
+ 4f4fb700ef54 Waiting 
+ 517b08eaf3cc Waiting 
+ 186a03b51bfa Waiting 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ b0a0cf830b12 Waiting 
+ dda3d8fbd5ed Waiting 
+ 91d2729fa4d5 Pulling fs layer 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ f8406d9c00ea Pulling fs layer 
+ c199bff16b05 Pulling fs layer 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ 050d9f8c3b1c Pulling fs layer 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ 283a477db7bb Waiting 
+ 91d2729fa4d5 Waiting 
+ 9739ced65621 Waiting 
+ ae3bb1b347a4 Waiting 
+ f8406d9c00ea Waiting 
+ c1cb13b19080 Waiting 
+ c199bff16b05 Waiting 
+ e0d55fdb4d15 Waiting 
+ 710e142705f8 Waiting 
+ 873532e5f8c7 Waiting 
+ 050d9f8c3b1c Waiting 
+ cb628c265f09 Waiting 
+ 20043066d3d5 Pulling fs layer 
+ fbda4a386d13 Pulling fs layer 
+ 257b1af0856e Pulling fs layer 
+ e5fbc57eeafe Pulling fs layer 
+ f19b7ac6489f Pulling fs layer 
+ 0f9a1c409bb2 Pulling fs layer 
+ d5d9860a5545 Pulling fs layer 
+ fc030d7bf8ba Pulling fs layer 
+ fbda4a386d13 Waiting 
+ c5ec72a0a4d4 Pulling fs layer 
+ a51622689fc8 Pulling fs layer 
+ 257b1af0856e Waiting 
+ f19b7ac6489f Waiting 
+ e5fbc57eeafe Waiting 
+ 0f9a1c409bb2 Waiting 
+ d5d9860a5545 Waiting 
+ a51622689fc8 Waiting 
+ fc030d7bf8ba Waiting 
+ c5ec72a0a4d4 Waiting 
+ 20043066d3d5 Waiting 
+ ddf49b9115d7 Pulling fs layer 
+ a752d85b289a Pulling fs layer 
+ 57c9a166c575 Pulling fs layer 
+ 44fabf20c8a1 Pulling fs layer 
+ 45ea1d560ab5 Pulling fs layer 
+ 0dc15e54b214 Pulling fs layer 
+ cf11b2a25e23 Pulling fs layer 
+ 3a66822889ec Pulling fs layer 
+ be7444f2e9d6 Pulling fs layer 
+ a752d85b289a Waiting 
+ 57c9a166c575 Waiting 
+ 44fabf20c8a1 Waiting 
+ 45ea1d560ab5 Waiting 
+ ddf49b9115d7 Waiting 
+ 0dc15e54b214 Waiting 
+ 3a66822889ec Waiting 
+ be7444f2e9d6 Waiting 
+ cf11b2a25e23 Waiting 
+ 44fc29a25beb Downloading [==========================================>        ]     935B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Download complete 
+ 8e44f01296e3 Downloading [>                                                  ]  286.7kB/28.23MB
+ 8e44f01296e3 Downloading [===================>                               ]  10.85MB/28.23MB
+ 8e44f01296e3 Verifying Checksum 
+ 8e44f01296e3 Download complete 
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 517b08eaf3cc Downloading [>                                                  ]  15.03kB/1.438MB
+ 186a03b51bfa Downloading [>                                                  ]  155.6kB/15.35MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 8e44f01296e3 Extracting [=========>                                         ]  5.603MB/28.23MB
+ 186a03b51bfa Downloading [==================================>                ]  10.61MB/15.35MB
+ 186a03b51bfa Downloading [==================================================>]  15.35MB/15.35MB
+ 186a03b51bfa Verifying Checksum 
+ 186a03b51bfa Download complete 
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 8e44f01296e3 Extracting [================>                                  ]  9.437MB/28.23MB
+ 8e44f01296e3 Extracting [=======================>                           ]  13.27MB/28.23MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Verifying Checksum 
+ a43f12641297 Download complete 
+ 8e44f01296e3 Extracting [=====================================>             ]  21.23MB/28.23MB
+ b0a0cf830b12 Downloading [>                                                  ]  303.1kB/29.15MB
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ dda3d8fbd5ed Download complete 
+ b0a0cf830b12 Downloading [==============>                                    ]  8.298MB/29.15MB
+ 283a477db7bb Downloading [>                                                  ]  46.48kB/4.533MB
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ b0a0cf830b12 Downloading [=================================================> ]  28.62MB/29.15MB
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ 283a477db7bb Downloading [===================>                               ]  1.771MB/4.533MB
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ 8e44f01296e3 Extracting [===============================================>   ]  26.54MB/28.23MB
+ b0a0cf830b12 Extracting [=========>                                         ]  5.308MB/29.15MB
+ 91d2729fa4d5 Downloading [>                                                  ]  15.83kB/1.45MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.13MB/28.23MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ b0a0cf830b12 Extracting [================>                                  ]  9.732MB/29.15MB
+ 9739ced65621 Downloading [>                                                  ]   84.3kB/8.069MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ b0a0cf830b12 Extracting [======================>                            ]  13.27MB/29.15MB
+ 9739ced65621 Downloading [====================>                              ]  3.243MB/8.069MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ b0a0cf830b12 Extracting [===================================>               ]  20.64MB/29.15MB
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ c199bff16b05 Downloading [==============>                                    ]     935B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ e0d55fdb4d15 Downloading [>                                                  ]  526.8kB/109MB
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ e0d55fdb4d15 Downloading [======>                                            ]  15.01MB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ e0d55fdb4d15 Downloading [================>                                  ]  35.31MB/109MB
+ 050d9f8c3b1c Downloading [==================================================>]     169B/169B
+ 050d9f8c3b1c Verifying Checksum 
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [========================>                          ]   52.9MB/109MB
+ e0d55fdb4d15 Downloading [================================>                  ]  70.54MB/109MB
+ 710e142705f8 Downloading [========>                                          ]     933B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Download complete 
+ e0d55fdb4d15 Downloading [======================================>            ]  84.43MB/109MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ e0d55fdb4d15 Downloading [==============================================>    ]    102MB/109MB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ 20043066d3d5 Downloading [>                                                  ]  303.1kB/29.72MB
+ 20043066d3d5 Downloading [====================>                              ]  12.03MB/29.72MB
+ fbda4a386d13 Downloading [>                                                  ]  450.6kB/43.48MB
+ 20043066d3d5 Verifying Checksum 
+ 20043066d3d5 Download complete 
+ 257b1af0856e Downloading [>                                                  ]  76.63kB/7.468MB
+ fbda4a386d13 Downloading [========>                                          ]  7.523MB/43.48MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ 44fc29a25beb Pull complete 
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 257b1af0856e Downloading [==========================================>        ]  6.382MB/7.468MB
+ 257b1af0856e Verifying Checksum 
+ 257b1af0856e Download complete 
+ e5fbc57eeafe Downloading [====>                                              ]     935B/9.472kB
+ e5fbc57eeafe Downloading [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Verifying Checksum 
+ e5fbc57eeafe Download complete 
+ fbda4a386d13 Downloading [=========================>                         ]  21.77MB/43.48MB
+ 20043066d3d5 Extracting [>                                                  ]  327.7kB/29.72MB
+ 39af693970c0 Pull complete 
+ dda3d8fbd5ed Pull complete 
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ fbda4a386d13 Downloading [===============================================>   ]  40.87MB/43.48MB
+ 517b08eaf3cc Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ fbda4a386d13 Verifying Checksum 
+ fbda4a386d13 Download complete 
+ 20043066d3d5 Extracting [=====>                                             ]  3.277MB/29.72MB
+ 283a477db7bb Extracting [=================================>                 ]   3.08MB/4.533MB
+ f19b7ac6489f Downloading [>                                                  ]  214.7kB/21.31MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 186a03b51bfa Extracting [=================>                                 ]  5.243MB/15.35MB
+ 20043066d3d5 Extracting [==========>                                        ]  6.226MB/29.72MB
+ f19b7ac6489f Downloading [=======================>                           ]  10.19MB/21.31MB
+ 0f9a1c409bb2 Downloading [==================================================>]     188B/188B
+ 0f9a1c409bb2 Verifying Checksum 
+ 0f9a1c409bb2 Download complete 
+ f19b7ac6489f Verifying Checksum 
+ f19b7ac6489f Download complete 
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 186a03b51bfa Extracting [=============================>                     ]  9.175MB/15.35MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 20043066d3d5 Extracting [=============>                                     ]  8.192MB/29.72MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ d5d9860a5545 Downloading [==================================================>]     109B/109B
+ d5d9860a5545 Verifying Checksum 
+ d5d9860a5545 Download complete 
+ 186a03b51bfa Extracting [================================================>  ]  14.91MB/15.35MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ 20043066d3d5 Extracting [=================>                                 ]  10.16MB/29.72MB
+ 186a03b51bfa Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ 9739ced65621 Extracting [==================>                                ]  2.949MB/8.069MB
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ fc030d7bf8ba Downloading [==================================================>]     617B/617B
+ fc030d7bf8ba Verifying Checksum 
+ fc030d7bf8ba Download complete 
+ redis Pulled 
+ 20043066d3d5 Extracting [==========================>                        ]  15.73MB/29.72MB
+ c5ec72a0a4d4 Downloading [==================================================>]     831B/831B
+ c5ec72a0a4d4 Verifying Checksum 
+ c5ec72a0a4d4 Download complete 
+ 9739ced65621 Extracting [=============================>                     ]  4.719MB/8.069MB
+ a51622689fc8 Downloading [>                                                  ]  127.4kB/12.47MB
+ 20043066d3d5 Extracting [=====================================>             ]  22.28MB/29.72MB
+ 9739ced65621 Extracting [=======================================>           ]   6.39MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ a51622689fc8 Downloading [============>                                      ]   3.17MB/12.47MB
+ a51622689fc8 Verifying Checksum 
+ a51622689fc8 Download complete 
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ a752d85b289a Downloading [>                                                  ]  261.6kB/25.12MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ddf49b9115d7 Downloading [>                                                  ]  530.8kB/84.72MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ a752d85b289a Downloading [=====================>                             ]  11.01MB/25.12MB
+ c199bff16b05 Pull complete 
+ 20043066d3d5 Extracting [==========================================>        ]  25.56MB/29.72MB
+ 57c9a166c575 Downloading [==================================================>]  2.538kB/2.538kB
+ 57c9a166c575 Verifying Checksum 
+ 57c9a166c575 Download complete 
+ ddf49b9115d7 Downloading [========>                                          ]  15.07MB/84.72MB
+ a752d85b289a Verifying Checksum 
+ a752d85b289a Download complete 
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ ddf49b9115d7 Downloading [======================>                            ]  38.76MB/84.72MB
+ 20043066d3d5 Extracting [==============================================>    ]  27.85MB/29.72MB
+ e0d55fdb4d15 Extracting [==>                                                ]  5.014MB/109MB
+ ddf49b9115d7 Downloading [====================================>              ]  62.46MB/84.72MB
+ 45ea1d560ab5 Downloading [=================>                                 ]  3.584kB/10.09kB
+ 45ea1d560ab5 Downloading [==================================================>]  10.09kB/10.09kB
+ 45ea1d560ab5 Verifying Checksum 
+ 45ea1d560ab5 Download complete 
+ 20043066d3d5 Extracting [=================================================> ]  29.16MB/29.72MB
+ e0d55fdb4d15 Extracting [===>                                               ]  8.356MB/109MB
+ 44fabf20c8a1 Downloading [>                                                  ]  526.3kB/252.2MB
+ ddf49b9115d7 Verifying Checksum 
+ ddf49b9115d7 Download complete 
+ ddf49b9115d7 Extracting [>                                                  ]  557.1kB/84.72MB
+ 20043066d3d5 Extracting [=================================================> ]  29.49MB/29.72MB
+ 44fabf20c8a1 Downloading [=>                                                 ]  8.994MB/252.2MB
+ e0d55fdb4d15 Extracting [====>                                              ]  10.58MB/109MB
+ 0dc15e54b214 Downloading [==================================================>]     298B/298B
+ 0dc15e54b214 Verifying Checksum 
+ 0dc15e54b214 Download complete 
+ ddf49b9115d7 Extracting [=>                                                 ]  2.228MB/84.72MB
+ cf11b2a25e23 Downloading [==================================================>]  1.883kB/1.883kB
+ cf11b2a25e23 Verifying Checksum 
+ cf11b2a25e23 Download complete 
+ 44fabf20c8a1 Downloading [=====>                                             ]  25.62MB/252.2MB
+ e0d55fdb4d15 Extracting [======>                                            ]  13.37MB/109MB
+ 20043066d3d5 Extracting [==================================================>]  29.72MB/29.72MB
+ ddf49b9115d7 Extracting [===>                                               ]  6.128MB/84.72MB
+ 44fabf20c8a1 Downloading [=========>                                         ]  49.91MB/252.2MB
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.15MB/109MB
+ 20043066d3d5 Pull complete 
+ fbda4a386d13 Extracting [>                                                  ]  458.8kB/43.48MB
+ be7444f2e9d6 Downloading [>                                                  ]  3.584kB/211.5kB
+ ddf49b9115d7 Extracting [=====>                                             ]  10.03MB/84.72MB
+ 44fabf20c8a1 Downloading [==============>                                    ]  74.17MB/252.2MB
+ be7444f2e9d6 Downloading [==================================================>]  211.5kB/211.5kB
+ e0d55fdb4d15 Extracting [========>                                          ]  18.38MB/109MB
+ be7444f2e9d6 Verifying Checksum 
+ be7444f2e9d6 Download complete 
+ 3a66822889ec Downloading [=============================================>     ]  3.585kB/3.958kB
+ 3a66822889ec Downloading [==================================================>]  3.958kB/3.958kB
+ 3a66822889ec Verifying Checksum 
+ 3a66822889ec Download complete 
+ fbda4a386d13 Extracting [=====>                                             ]  4.588MB/43.48MB
+ 44fabf20c8a1 Downloading [===================>                               ]  98.38MB/252.2MB
+ ddf49b9115d7 Extracting [=======>                                           ]  12.26MB/84.72MB
+ e0d55fdb4d15 Extracting [=========>                                         ]  21.73MB/109MB
+ fbda4a386d13 Extracting [==========>                                        ]  9.175MB/43.48MB
+ 44fabf20c8a1 Downloading [========================>                          ]  122.1MB/252.2MB
+ fbda4a386d13 Extracting [===============>                                   ]  13.76MB/43.48MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  23.95MB/109MB
+ 44fabf20c8a1 Downloading [============================>                      ]  145.8MB/252.2MB
+ fbda4a386d13 Extracting [====================>                              ]  17.43MB/43.48MB
+ e0d55fdb4d15 Extracting [============>                                      ]  26.74MB/109MB
+ 44fabf20c8a1 Downloading [=================================>                 ]  170.1MB/252.2MB
+ fbda4a386d13 Extracting [=========================>                         ]  22.02MB/43.48MB
+ e0d55fdb4d15 Extracting [==============>                                    ]  31.75MB/109MB
+ 44fabf20c8a1 Downloading [======================================>            ]  194.4MB/252.2MB
+ fbda4a386d13 Extracting [===============================>                   ]  27.53MB/43.48MB
+ e0d55fdb4d15 Extracting [================>                                  ]  36.77MB/109MB
+ 44fabf20c8a1 Downloading [===========================================>       ]  217.1MB/252.2MB
+ ddf49b9115d7 Extracting [========>                                          ]  15.04MB/84.72MB
+ fbda4a386d13 Extracting [==================================>                ]  30.28MB/43.48MB
+ e0d55fdb4d15 Extracting [==================>                                ]  41.22MB/109MB
+ 44fabf20c8a1 Downloading [===============================================>   ]  240.8MB/252.2MB
+ 44fabf20c8a1 Verifying Checksum 
+ 44fabf20c8a1 Download complete 
+ ddf49b9115d7 Extracting [===========>                                       ]  18.94MB/84.72MB
+ fbda4a386d13 Extracting [=======================================>           ]  34.41MB/43.48MB
+ e0d55fdb4d15 Extracting [=====================>                             ]  46.79MB/109MB
+ ddf49b9115d7 Extracting [===========>                                       ]  20.05MB/84.72MB
+ e0d55fdb4d15 Extracting [=======================>                           ]  51.81MB/109MB
+ fbda4a386d13 Extracting [==============================================>    ]  40.83MB/43.48MB
+ fbda4a386d13 Extracting [==================================================>]  43.48MB/43.48MB
+ ddf49b9115d7 Extracting [============>                                      ]  21.17MB/84.72MB
+ e0d55fdb4d15 Extracting [========================>                          ]  54.03MB/109MB
+ ddf49b9115d7 Extracting [=============>                                     ]  22.84MB/84.72MB
+ e0d55fdb4d15 Extracting [===========================>                       ]  59.05MB/109MB
+ e0d55fdb4d15 Extracting [==============================>                    ]  65.73MB/109MB
+ ddf49b9115d7 Extracting [===============>                                   ]  26.18MB/84.72MB
+ e0d55fdb4d15 Extracting [=================================>                 ]  74.09MB/109MB
+ ddf49b9115d7 Extracting [==================>                                ]   31.2MB/84.72MB
+ e0d55fdb4d15 Extracting [=====================================>             ]  80.77MB/109MB
+ ddf49b9115d7 Extracting [======================>                            ]  38.44MB/84.72MB
+ e0d55fdb4d15 Extracting [========================================>          ]  88.57MB/109MB
+ ddf49b9115d7 Extracting [==========================>                        ]  45.12MB/84.72MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  92.47MB/109MB
+ ddf49b9115d7 Extracting [==============================>                    ]  51.25MB/84.72MB
+ e0d55fdb4d15 Extracting [===========================================>       ]  95.26MB/109MB
+ ddf49b9115d7 Extracting [=================================>                 ]  57.38MB/84.72MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ ddf49b9115d7 Extracting [==================================>                ]  59.05MB/84.72MB
+ e0d55fdb4d15 Extracting [============================================>      ]  98.04MB/109MB
+ ddf49b9115d7 Extracting [===================================>               ]   59.6MB/84.72MB
+ e0d55fdb4d15 Extracting [=============================================>     ]   98.6MB/109MB
+ fbda4a386d13 Pull complete 
+ 257b1af0856e Extracting [>                                                  ]   98.3kB/7.468MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.8MB/109MB
+ 257b1af0856e Extracting [===========>                                       ]  1.671MB/7.468MB
+ ddf49b9115d7 Extracting [===================================>               ]  60.72MB/84.72MB
+ 257b1af0856e Extracting [=================================================> ]  7.373MB/7.468MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.1MB/109MB
+ 257b1af0856e Pull complete 
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Pull complete 
+ e0d55fdb4d15 Extracting [===============================================>   ]  104.2MB/109MB
+ f19b7ac6489f Extracting [>                                                  ]  229.4kB/21.31MB
+ ddf49b9115d7 Extracting [====================================>              ]  61.83MB/84.72MB
+ f19b7ac6489f Extracting [=======>                                           ]  3.211MB/21.31MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.3MB/109MB
+ f19b7ac6489f Extracting [==================>                                ]  8.028MB/21.31MB
+ ddf49b9115d7 Extracting [======================================>            ]  65.18MB/84.72MB
+ e0d55fdb4d15 Extracting [=================================================> ]    107MB/109MB
+ f19b7ac6489f Extracting [=========================>                         ]  10.78MB/21.31MB
+ ddf49b9115d7 Extracting [=======================================>           ]  66.85MB/84.72MB
+ f19b7ac6489f Extracting [=================================>                 ]  14.22MB/21.31MB
+ ddf49b9115d7 Extracting [=========================================>         ]  69.63MB/84.72MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ f19b7ac6489f Extracting [=====================================>             ]  15.83MB/21.31MB
+ ddf49b9115d7 Extracting [===========================================>       ]  73.53MB/84.72MB
+ f19b7ac6489f Extracting [========================================>          ]  17.43MB/21.31MB
+ e0d55fdb4d15 Extracting [=================================================> ]  108.6MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ ddf49b9115d7 Extracting [=============================================>     ]  76.32MB/84.72MB
+ f19b7ac6489f Extracting [============================================>      ]  19.04MB/21.31MB
+ ddf49b9115d7 Extracting [=============================================>     ]  77.43MB/84.72MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ f19b7ac6489f Extracting [================================================>  ]  20.87MB/21.31MB
+ f19b7ac6489f Extracting [==================================================>]  21.31MB/21.31MB
+ ddf49b9115d7 Extracting [===============================================>   ]  80.22MB/84.72MB
+ f19b7ac6489f Pull complete 
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Pull complete 
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ d5d9860a5545 Pull complete 
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Pull complete 
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ c5ec72a0a4d4 Pull complete 
+ a51622689fc8 Extracting [>                                                  ]  131.1kB/12.47MB
+ a51622689fc8 Extracting [==================>                                ]  4.719MB/12.47MB
+ a51622689fc8 Extracting [==========================>                        ]  6.554MB/12.47MB
+ ddf49b9115d7 Extracting [===============================================>   ]  80.77MB/84.72MB
+ a51622689fc8 Extracting [=============================>                     ]   7.34MB/12.47MB
+ ddf49b9115d7 Extracting [================================================>  ]  82.44MB/84.72MB
+ ddf49b9115d7 Extracting [==================================================>]  84.72MB/84.72MB
+ a51622689fc8 Extracting [=======================================>           ]  9.961MB/12.47MB
+ ddf49b9115d7 Pull complete 
+ a752d85b289a Extracting [>                                                  ]  262.1kB/25.12MB
+ a51622689fc8 Extracting [============================================>      ]  11.14MB/12.47MB
+ a51622689fc8 Extracting [==================================================>]  12.47MB/12.47MB
+ a752d85b289a Extracting [=========>                                         ]  4.981MB/25.12MB
+ a51622689fc8 Pull complete 
+ rabbitmq Pulled 
+ a752d85b289a Extracting [==========>                                        ]  5.243MB/25.12MB
+ a752d85b289a Extracting [============>                                      ]  6.029MB/25.12MB
+ a752d85b289a Extracting [===============>                                   ]  7.602MB/25.12MB
+ a752d85b289a Extracting [===================>                               ]  9.961MB/25.12MB
+ a752d85b289a Extracting [==============================>                    ]  15.47MB/25.12MB
+ a752d85b289a Extracting [=======================================>           ]  19.66MB/25.12MB
+ a752d85b289a Extracting [=======================================>           ]  19.92MB/25.12MB
+ a752d85b289a Extracting [========================================>          ]  20.19MB/25.12MB
+ a752d85b289a Extracting [========================================>          ]  20.45MB/25.12MB
+ a752d85b289a Extracting [==================================================>]  25.12MB/25.12MB
+ a752d85b289a Pull complete 
+ 57c9a166c575 Extracting [==================================================>]  2.538kB/2.538kB
+ 57c9a166c575 Extracting [==================================================>]  2.538kB/2.538kB
+ 57c9a166c575 Pull complete 
+ 44fabf20c8a1 Extracting [>                                                  ]  557.1kB/252.2MB
+ 44fabf20c8a1 Extracting [=====>                                             ]  28.41MB/252.2MB
+ 44fabf20c8a1 Extracting [==========>                                        ]  54.03MB/252.2MB
+ 44fabf20c8a1 Extracting [===============>                                   ]  79.66MB/252.2MB
+ 44fabf20c8a1 Extracting [=================>                                 ]  90.24MB/252.2MB
+ 44fabf20c8a1 Extracting [===================>                               ]  99.16MB/252.2MB
+ 44fabf20c8a1 Extracting [=====================>                             ]  108.1MB/252.2MB
+ 44fabf20c8a1 Extracting [=======================>                           ]    117MB/252.2MB
+ 44fabf20c8a1 Extracting [========================>                          ]  125.9MB/252.2MB
+ 44fabf20c8a1 Extracting [==========================>                        ]  134.8MB/252.2MB
+ 44fabf20c8a1 Extracting [============================>                      ]  142.6MB/252.2MB
+ 44fabf20c8a1 Extracting [=============================>                     ]  150.4MB/252.2MB
+ 44fabf20c8a1 Extracting [===============================>                   ]  158.2MB/252.2MB
+ 44fabf20c8a1 Extracting [=================================>                 ]  167.1MB/252.2MB
+ 44fabf20c8a1 Extracting [=====================================>             ]  188.3MB/252.2MB
+ 44fabf20c8a1 Extracting [========================================>          ]  205.6MB/252.2MB
+ 44fabf20c8a1 Extracting [===========================================>       ]  218.9MB/252.2MB
+ 44fabf20c8a1 Extracting [=============================================>     ]    229MB/252.2MB
+ 44fabf20c8a1 Extracting [===============================================>   ]  238.4MB/252.2MB
+ 44fabf20c8a1 Extracting [==================================================>]  252.2MB/252.2MB
+ 44fabf20c8a1 Pull complete 
+ 45ea1d560ab5 Extracting [==================================================>]  10.09kB/10.09kB
+ 45ea1d560ab5 Extracting [==================================================>]  10.09kB/10.09kB
+ 45ea1d560ab5 Pull complete 
+ 0dc15e54b214 Extracting [==================================================>]     298B/298B
+ 0dc15e54b214 Extracting [==================================================>]     298B/298B
+ 0dc15e54b214 Pull complete 
+ cf11b2a25e23 Extracting [==================================================>]  1.883kB/1.883kB
+ cf11b2a25e23 Extracting [==================================================>]  1.883kB/1.883kB
+ cf11b2a25e23 Pull complete 
+ 3a66822889ec Extracting [==================================================>]  3.958kB/3.958kB
+ 3a66822889ec Extracting [==================================================>]  3.958kB/3.958kB
+ 3a66822889ec Pull complete 
+ be7444f2e9d6 Extracting [=======>                                           ]  32.77kB/211.5kB
+ be7444f2e9d6 Extracting [==================================================>]  211.5kB/211.5kB
+ be7444f2e9d6 Extracting [==================================================>]  211.5kB/211.5kB
+ be7444f2e9d6 Pull complete 
+ elasticsearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-elasticsearch-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-elasticsearch-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-elasticsearch-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+ Container docker_services_cli-elasticsearch-1  Started
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py,line=854::'crypt' is deprecated and slated for removal in Python 3.13
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py,line=12::The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py,line=12::The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py,line=154::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py,line=986::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py,line=986::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py,line=986::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py,line=986::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py,line=986::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/utils.py,line=361::`Field` should not be instantiated. Use `fields.Raw` or  another field subclass instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0 -- /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_jobs
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collecting ... collected 174 items
+
+docs/conf.py::PYDOCSTYLE PASSED
+docs/conf.py::ISORT PASSED
+docs/conf.py::black PASSED
+tests/conftest.py::PYDOCSTYLE PASSED
+tests/conftest.py::ISORT PASSED
+tests/conftest.py::black PASSED
+tests/mock_module/__init__.py::PYDOCSTYLE PASSED
+tests/mock_module/__init__.py::ISORT PASSED
+tests/mock_module/__init__.py::black PASSED
+tests/mock_module/jobs.py::PYDOCSTYLE PASSED
+tests/mock_module/jobs.py::ISORT PASSED
+tests/mock_module/jobs.py::black PASSED
+tests/mock_module/tasks.py::PYDOCSTYLE PASSED
+tests/mock_module/tasks.py::ISORT PASSED
+tests/mock_module/tasks.py::black PASSED
+tests/resources/test_resources.py::ISORT PASSED
+tests/resources/test_resources.py::black PASSED
+tests/resources/test_resources.py::test_simple_flow JSONSCHEMAS_HOST is set to localhost
+Flask-DebugToolbar extension not installed.
+A resource error handler caught the following exception:
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/resources.py", line 65, in view
+    return view_meth()
+           ^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/content_negotiation.py", line 116, in inner_content_negotiation
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/parsers/decorators.py", line 90, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/parsers/decorators.py", line 51, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/responses.py", line 39, in inner
+    res = f(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/resources/resources.py", line 188, in create
+    item = self.service.create(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/logging/jobs.py", line 82, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py", line 251, in inner
+    res = f(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py", line 259, in create
+    valid_data, errors = self.schema.load(
+                         ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py", line 97, in load
+    valid_data = self.schema(**schema_args).load(data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/schema.py", line 792, in load
+    return self._do_load(
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/schema.py", line 999, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'args': {'since': ['Not a valid datetime.']}}
+[2025-11-18 11:39:10,101] DEBUG in errors: A resource error handler caught the following exception:
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/resources.py", line 65, in view
+    return view_meth()
+           ^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/content_negotiation.py", line 116, in inner_content_negotiation
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/parsers/decorators.py", line 90, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/parsers/decorators.py", line 51, in inner
+    return f(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_resources/responses.py", line 39, in inner
+    res = f(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/resources/resources.py", line 188, in create
+    item = self.service.create(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/logging/jobs.py", line 82, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py", line 251, in inner
+    res = f(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py", line 259, in create
+    valid_data, errors = self.schema.load(
+                         ^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py", line 97, in load
+    valid_data = self.schema(**schema_args).load(data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/schema.py", line 792, in load
+    return self._do_load(
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/schema.py", line 999, in _do_load
+    raise exc
+marshmallow.exceptions.ValidationError: {'args': {'since': ['Not a valid datetime.']}}
+Run created
+[2025-11-18 11:39:10,134] DEBUG in services: Run created
+Run created
+[2025-11-18 11:39:10,269] DEBUG in services: Run created
+Test log message
+[2025-11-18 11:39:10,585] INFO in test_resources: Test log message
+PASSED
+tests/resources/test_resources.py::test_tasks_search SKIPPED (Tasks
+search not needed.)
+tests/resources/test_resources.py::test_jobs_create PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/resources/test_resources.py::test_jobs_update PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/resources/test_resources.py::test_jobs_search PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/resources/test_resources.py::test_jobs_delete PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/resources/test_resources.py::test_job_template_args SKIPPED
+tests/test_alembic.py::ISORT PASSED
+tests/test_alembic.py::black PASSED
+tests/test_alembic.py::test_alembic SKIPPED (endles loop)
+tests/test_deprecated.py::ISORT PASSED
+tests/test_deprecated.py::black PASSED
+tests/test_deprecated.py::test_task_execution_error_deprecated PASSED
+tests/test_invenio_jobs.py::ISORT PASSED
+tests/test_invenio_jobs.py::black PASSED
+tests/test_invenio_jobs.py::test_version PASSED
+tests/test_invenio_jobs.py::test_init PASSED
+tests/test_services_job_logs.py::ISORT PASSED
+tests/test_services_job_logs.py::black PASSED
+tests/test_services_job_logs.py::test_job_logs_search_limits_to_max_docs JSONSCHEMAS_HOST is set to localhost
+[2025-11-18 11:39:13,795] WARNING in ext: JSONSCHEMAS_HOST is set to localhost
+JSONSCHEMAS_HOST is set to localhost
+Flask-DebugToolbar extension not installed.
+[2025-11-18 11:39:13,935] DEBUG in ext: Flask-DebugToolbar extension not installed.
+Flask-DebugToolbar extension not installed.
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_job_logs.py::test_job_logs_search_returns_all_when_under_limit PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::ISORT PASSED
+tests/test_services_subtasks.py::black PASSED
+tests/test_services_subtasks.py::test_create_subtask_run JSONSCHEMAS_HOST is set to localhost
+[2025-11-18 11:39:15,864] WARNING in ext: JSONSCHEMAS_HOST is set to localhost
+JSONSCHEMAS_HOST is set to localhost
+JSONSCHEMAS_HOST is set to localhost
+Flask-DebugToolbar extension not installed.
+[2025-11-18 11:39:16,003] DEBUG in ext: Flask-DebugToolbar extension not installed.
+Flask-DebugToolbar extension not installed.
+Flask-DebugToolbar extension not installed.
+Run created
+[2025-11-18 11:39:16,966] DEBUG in services: Run created
+Run created
+Run created
+Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:16,984] INFO in tasks: Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run c90e346e-9974-4f38-913c-e915d96c6db9 with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:16,999] DEBUG in tasks: Executing run c90e346e-9974-4f38-913c-e915d96c6db9 with task mock_module.tasks.mock_task and args None
+Executing run c90e346e-9974-4f38-913c-e915d96c6db9 with task mock_module.tasks.mock_task and args None
+Executing run c90e346e-9974-4f38-913c-e915d96c6db9 with task mock_module.tasks.mock_task and args None
+Run c90e346e-9974-4f38-913c-e915d96c6db9 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:17,008] ERROR in tasks: Run c90e346e-9974-4f38-913c-e915d96c6db9 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run c90e346e-9974-4f38-913c-e915d96c6db9 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run c90e346e-9974-4f38-913c-e915d96c6db9 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:17,011] INFO in tasks: Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run c90e346e-9974-4f38-913c-e915d96c6db9 with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('c90e346e-9974-4f38-913c-e915d96c6db9'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+
+tests/test_services_subtasks.py::test_create_subtask_run_invalid_parent PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_start_processing_subtask Run created
+[2025-11-18 11:39:17,337] DEBUG in services: Run created
+Run created
+Run created
+Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:17,345] INFO in tasks: Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:17,354] DEBUG in tasks: Executing run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with task mock_module.tasks.mock_task and args None
+Executing run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with task mock_module.tasks.mock_task and args None
+Executing run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with task mock_module.tasks.mock_task and args None
+Run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:17,361] ERROR in tasks: Run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:17,363] INFO in tasks: Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run b6252ebd-3a2c-4f13-b42f-6f7538ae8b25 with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('b6252ebd-3a2c-4f13-b42f-6f7538ae8b25'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=354::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_start_processing_subtask_invalid_status Run created
+[2025-11-18 11:39:17,590] DEBUG in services: Run created
+Run created
+Run created
+Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:17,597] INFO in tasks: Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:17,607] DEBUG in tasks: Executing run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with task mock_module.tasks.mock_task and args None
+Executing run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with task mock_module.tasks.mock_task and args None
+Executing run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with task mock_module.tasks.mock_task and args None
+Run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:17,614] ERROR in tasks: Run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:17,616] INFO in tasks: Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run 92261e34-9aa2-4ecf-96c8-8a5e12e39415 with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('92261e34-9aa2-4ecf-96c8-8a5e12e39415'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_finalize_subtask_success Run created
+[2025-11-18 11:39:17,756] DEBUG in services: Run created
+Run created
+Run created
+Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:17,763] INFO in tasks: Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:17,774] DEBUG in tasks: Executing run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with task mock_module.tasks.mock_task and args None
+Executing run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with task mock_module.tasks.mock_task and args None
+Executing run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with task mock_module.tasks.mock_task and args None
+Run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:17,782] ERROR in tasks: Run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:17,785] INFO in tasks: Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run be0099f0-11dd-4f26-a2b4-3cefbbbe60e2 with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('be0099f0-11dd-4f26-a2b4-3cefbbbe60e2'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=354::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=451::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_finalize_subtask_failure Run created
+[2025-11-18 11:39:18,057] DEBUG in services: Run created
+Run created
+Run created
+Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:18,065] INFO in tasks: Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run b3b94820-586e-48e6-8746-f724bfe90da6 with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:18,075] DEBUG in tasks: Executing run b3b94820-586e-48e6-8746-f724bfe90da6 with task mock_module.tasks.mock_task and args None
+Executing run b3b94820-586e-48e6-8746-f724bfe90da6 with task mock_module.tasks.mock_task and args None
+Executing run b3b94820-586e-48e6-8746-f724bfe90da6 with task mock_module.tasks.mock_task and args None
+Run b3b94820-586e-48e6-8746-f724bfe90da6 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:18,084] ERROR in tasks: Run b3b94820-586e-48e6-8746-f724bfe90da6 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run b3b94820-586e-48e6-8746-f724bfe90da6 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run b3b94820-586e-48e6-8746-f724bfe90da6 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:18,088] INFO in tasks: Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run b3b94820-586e-48e6-8746-f724bfe90da6 with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('b3b94820-586e-48e6-8746-f724bfe90da6'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=354::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=451::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_finalize_subtask_partial_success Run created
+[2025-11-18 11:39:18,357] DEBUG in services: Run created
+Run created
+Run created
+Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:18,365] INFO in tasks: Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:18,375] DEBUG in tasks: Executing run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with task mock_module.tasks.mock_task and args None
+Executing run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with task mock_module.tasks.mock_task and args None
+Executing run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with task mock_module.tasks.mock_task and args None
+Run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:18,383] ERROR in tasks: Run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:18,387] INFO in tasks: Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run 22266f35-3c94-46a4-8b4b-0fb1bce15d2b with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('22266f35-3c94-46a4-8b4b-0fb1bce15d2b'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=354::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=354::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=451::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_add_total_entries Run created
+[2025-11-18 11:39:18,623] DEBUG in services: Run created
+Run created
+Run created
+Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:18,630] INFO in tasks: Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run b595f4fb-0771-4c3b-875d-cc257aa95f8f with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:18,640] DEBUG in tasks: Executing run b595f4fb-0771-4c3b-875d-cc257aa95f8f with task mock_module.tasks.mock_task and args None
+Executing run b595f4fb-0771-4c3b-875d-cc257aa95f8f with task mock_module.tasks.mock_task and args None
+Executing run b595f4fb-0771-4c3b-875d-cc257aa95f8f with task mock_module.tasks.mock_task and args None
+Run b595f4fb-0771-4c3b-875d-cc257aa95f8f encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:18,648] ERROR in tasks: Run b595f4fb-0771-4c3b-875d-cc257aa95f8f encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run b595f4fb-0771-4c3b-875d-cc257aa95f8f encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run b595f4fb-0771-4c3b-875d-cc257aa95f8f encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:18,652] INFO in tasks: Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run b595f4fb-0771-4c3b-875d-cc257aa95f8f with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_add_total_entries_invalid_values Run created
+[2025-11-18 11:39:18,861] DEBUG in services: Run created
+Run created
+Run created
+Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:18,868] INFO in tasks: Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:18,878] DEBUG in tasks: Executing run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with task mock_module.tasks.mock_task and args None
+Executing run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with task mock_module.tasks.mock_task and args None
+Executing run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with task mock_module.tasks.mock_task and args None
+Run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:18,889] ERROR in tasks: Run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:18,892] INFO in tasks: Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run 2ce0137c-e5b4-4a73-9b96-a29aa0cdc0cb with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_finalize_subtask_with_errored_entries_message Run created
+[2025-11-18 11:39:19,017] DEBUG in services: Run created
+Run created
+Run created
+Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.QUEUED and active subtasks: False
+[2025-11-18 11:39:19,024] INFO in tasks: Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.QUEUED and active subtasks: False
+Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.QUEUED and active subtasks: False
+Executing run f6271fef-1198-4d29-8bc0-4cc671ee0447 with task mock_module.tasks.mock_task and args None
+[2025-11-18 11:39:19,034] DEBUG in tasks: Executing run f6271fef-1198-4d29-8bc0-4cc671ee0447 with task mock_module.tasks.mock_task and args None
+Executing run f6271fef-1198-4d29-8bc0-4cc671ee0447 with task mock_module.tasks.mock_task and args None
+Executing run f6271fef-1198-4d29-8bc0-4cc671ee0447 with task mock_module.tasks.mock_task and args None
+Run f6271fef-1198-4d29-8bc0-4cc671ee0447 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+[2025-11-18 11:39:19,041] ERROR in tasks: Run f6271fef-1198-4d29-8bc0-4cc671ee0447 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run f6271fef-1198-4d29-8bc0-4cc671ee0447 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Run f6271fef-1198-4d29-8bc0-4cc671ee0447 encountered an unexpected error: mock_task() got an unexpected keyword argument 'since'
+Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.RUNNING and active subtasks: False
+[2025-11-18 11:39:19,044] INFO in tasks: Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.RUNNING and active subtasks: False
+Updating run f6271fef-1198-4d29-8bc0-4cc671ee0447 with status RunStatusEnum.RUNNING and active subtasks: False
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py,line=193::Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('f6271fef-1198-4d29-8bc0-4cc671ee0447'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=354::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py,line=451::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_services_subtasks.py::test_finalize_subtask_nonexistent_run PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_utils.py::ISORT PASSED
+tests/test_utils.py::black PASSED
+tests/test_utils.py::test_job_arg_json_dumper PASSED
+invenio_jobs/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/__init__.py::ISORT PASSED
+invenio_jobs/__init__.py::black PASSED
+invenio_jobs/administration/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/administration/__init__.py::ISORT PASSED
+invenio_jobs/administration/__init__.py::black PASSED
+invenio_jobs/administration/jobs.py::PYDOCSTYLE PASSED
+invenio_jobs/administration/jobs.py::ISORT PASSED
+invenio_jobs/administration/jobs.py::black PASSED
+invenio_jobs/administration/runs.py::PYDOCSTYLE PASSED
+invenio_jobs/administration/runs.py::ISORT PASSED
+invenio_jobs/administration/runs.py::black PASSED
+invenio_jobs/alembic/1753948224_add_subtasks_columns_to_jobs_run.py::PYDOCSTYLE PASSED
+invenio_jobs/alembic/1753948224_add_subtasks_columns_to_jobs_run.py::ISORT PASSED
+invenio_jobs/alembic/1753948224_add_subtasks_columns_to_jobs_run.py::black PASSED
+invenio_jobs/alembic/1f896f6990b8_update_jobs_module_table_names.py::PYDOCSTYLE PASSED
+invenio_jobs/alembic/1f896f6990b8_update_jobs_module_table_names.py::ISORT PASSED
+invenio_jobs/alembic/1f896f6990b8_update_jobs_module_table_names.py::black PASSED
+invenio_jobs/alembic/356496a01197_create_invenio_jobs_tables.py::PYDOCSTYLE PASSED
+invenio_jobs/alembic/356496a01197_create_invenio_jobs_tables.py::ISORT PASSED
+invenio_jobs/alembic/356496a01197_create_invenio_jobs_tables.py::black PASSED
+invenio_jobs/alembic/371f4cbcb73d_create_invenio_jobs_branch.py::PYDOCSTYLE PASSED
+invenio_jobs/alembic/371f4cbcb73d_create_invenio_jobs_branch.py::ISORT PASSED
+invenio_jobs/alembic/371f4cbcb73d_create_invenio_jobs_branch.py::black PASSED
+invenio_jobs/api.py::PYDOCSTYLE PASSED
+invenio_jobs/api.py::ISORT PASSED
+invenio_jobs/api.py::black PASSED
+invenio_jobs/config.py::PYDOCSTYLE PASSED
+invenio_jobs/config.py::ISORT PASSED
+invenio_jobs/config.py::black PASSED
+invenio_jobs/errors.py::PYDOCSTYLE PASSED
+invenio_jobs/errors.py::ISORT PASSED
+invenio_jobs/errors.py::black PASSED
+invenio_jobs/ext.py::PYDOCSTYLE PASSED
+invenio_jobs/ext.py::ISORT PASSED
+invenio_jobs/ext.py::black PASSED
+invenio_jobs/jobs.py::PYDOCSTYLE PASSED
+invenio_jobs/jobs.py::ISORT PASSED
+invenio_jobs/jobs.py::black PASSED
+invenio_jobs/logging/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/__init__.py::ISORT PASSED
+invenio_jobs/logging/__init__.py::black PASSED
+invenio_jobs/logging/celery_signals.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/celery_signals.py::ISORT PASSED
+invenio_jobs/logging/celery_signals.py::black PASSED
+invenio_jobs/logging/index_templates/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/index_templates/__init__.py::ISORT PASSED
+invenio_jobs/logging/index_templates/__init__.py::black PASSED
+invenio_jobs/logging/index_templates/os-v1/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/index_templates/os-v1/__init__.py::ISORT PASSED
+invenio_jobs/logging/index_templates/os-v1/__init__.py::black PASSED
+invenio_jobs/logging/index_templates/os-v2/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/index_templates/os-v2/__init__.py::ISORT PASSED
+invenio_jobs/logging/index_templates/os-v2/__init__.py::black PASSED
+invenio_jobs/logging/jobs.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/jobs.py::ISORT PASSED
+invenio_jobs/logging/jobs.py::black PASSED
+invenio_jobs/logging/tasks.py::PYDOCSTYLE PASSED
+invenio_jobs/logging/tasks.py::ISORT PASSED
+invenio_jobs/logging/tasks.py::black PASSED
+invenio_jobs/models.py::PYDOCSTYLE PASSED
+invenio_jobs/models.py::ISORT PASSED
+invenio_jobs/models.py::black PASSED
+invenio_jobs/proxies.py::PYDOCSTYLE PASSED
+invenio_jobs/proxies.py::ISORT PASSED
+invenio_jobs/proxies.py::black PASSED
+invenio_jobs/registry.py::PYDOCSTYLE PASSED
+invenio_jobs/registry.py::ISORT PASSED
+invenio_jobs/registry.py::black PASSED
+invenio_jobs/resources/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/resources/__init__.py::ISORT PASSED
+invenio_jobs/resources/__init__.py::black PASSED
+invenio_jobs/resources/config.py::PYDOCSTYLE PASSED
+invenio_jobs/resources/config.py::ISORT PASSED
+invenio_jobs/resources/config.py::black PASSED
+invenio_jobs/resources/resources.py::PYDOCSTYLE PASSED
+invenio_jobs/resources/resources.py::ISORT PASSED
+invenio_jobs/resources/resources.py::black PASSED
+invenio_jobs/services/__init__.py::PYDOCSTYLE PASSED
+invenio_jobs/services/__init__.py::ISORT PASSED
+invenio_jobs/services/__init__.py::black PASSED
+invenio_jobs/services/config.py::PYDOCSTYLE PASSED
+invenio_jobs/services/config.py::ISORT PASSED
+invenio_jobs/services/config.py::black PASSED
+invenio_jobs/services/errors.py::PYDOCSTYLE PASSED
+invenio_jobs/services/errors.py::ISORT PASSED
+invenio_jobs/services/errors.py::black PASSED
+invenio_jobs/services/links.py::PYDOCSTYLE PASSED
+invenio_jobs/services/links.py::ISORT PASSED
+invenio_jobs/services/links.py::black PASSED
+invenio_jobs/services/permissions.py::PYDOCSTYLE PASSED
+invenio_jobs/services/permissions.py::ISORT PASSED
+invenio_jobs/services/permissions.py::black PASSED
+invenio_jobs/services/results.py::PYDOCSTYLE PASSED
+invenio_jobs/services/results.py::ISORT PASSED
+invenio_jobs/services/results.py::black PASSED
+invenio_jobs/services/scheduler.py::PYDOCSTYLE PASSED
+invenio_jobs/services/scheduler.py::ISORT PASSED
+invenio_jobs/services/scheduler.py::black PASSED
+invenio_jobs/services/schema.py::PYDOCSTYLE PASSED
+invenio_jobs/services/schema.py::ISORT PASSED
+invenio_jobs/services/schema.py::black PASSED
+invenio_jobs/services/services.py::PYDOCSTYLE PASSED
+invenio_jobs/services/services.py::ISORT PASSED
+invenio_jobs/services/services.py::black PASSED
+invenio_jobs/services/ui_schema.py::PYDOCSTYLE PASSED
+invenio_jobs/services/ui_schema.py::ISORT PASSED
+invenio_jobs/services/ui_schema.py::black PASSED
+invenio_jobs/tasks.py::PYDOCSTYLE PASSED
+invenio_jobs/tasks.py::ISORT PASSED
+invenio_jobs/tasks.py::black PASSED
+invenio_jobs/utils.py::PYDOCSTYLE PASSED
+invenio_jobs/utils.py::ISORT PASSED
+invenio_jobs/utils.py::black PASSED
+invenio_jobs/views.py::PYDOCSTYLE PASSED
+invenio_jobs/views.py::ISORT PASSED
+invenio_jobs/views.py::black PASSED
+invenio_jobs/webpack.py::PYDOCSTYLE PASSED
+invenio_jobs/webpack.py::ISORT PASSED
+invenio_jobs/webpack.py::black PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12: DeprecationWarning: The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+    from marshmallow import __version_info__ as marshmallow_version
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    storage_class = Str(default="L", dump_only=False)
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py:140: 35 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py:140: DeprecationWarning: Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+    warnings.warn(
+
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:986: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    super().__init__(**kwargs)
+
+.venv/lib/python3.12/site-packages/marshmallow/utils.py:361
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow/utils.py:361: ChangedInMarshmallow4Warning: `Field` should not be instantiated. Use `fields.Raw` or  another field subclass instead.
+    return cls_or_instance()
+
+tests/resources/test_resources.py: 22 warnings
+tests/test_services_subtasks.py: 91 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/resources/test_resources.py: 3 warnings
+tests/test_services_job_logs.py: 2 warnings
+tests/test_services_subtasks.py: 11 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py:36: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    self._confirmed = datetime.utcnow() if confirmed else None
+
+tests/resources/test_resources.py: 1 warning
+tests/test_services_subtasks.py: 51 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py:33: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    target.updated = datetime.utcnow()
+
+tests/test_services_job_logs.py::test_job_logs_search_limits_to_max_docs
+tests/test_services_subtasks.py::test_create_subtask_run
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py:145: DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+    self._set_cache(app, config)
+
+tests/test_services_subtasks.py::test_create_subtask_run
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('c90e346e-9974-4f38-913c-e915d96c6db9'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+tests/test_services_subtasks.py::test_start_processing_subtask
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('b6252ebd-3a2c-4f13-b42f-6f7538ae8b25'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+tests/test_services_subtasks.py::test_start_processing_subtask
+tests/test_services_subtasks.py::test_finalize_subtask_success
+tests/test_services_subtasks.py::test_finalize_subtask_failure
+tests/test_services_subtasks.py::test_finalize_subtask_partial_success
+tests/test_services_subtasks.py::test_finalize_subtask_partial_success
+tests/test_services_subtasks.py::test_finalize_subtask_with_errored_entries_message
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py:354: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    run.started_at = datetime.utcnow()
+
+tests/test_services_subtasks.py::test_start_processing_subtask_invalid_status
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('92261e34-9aa2-4ecf-96c8-8a5e12e39415'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+tests/test_services_subtasks.py::test_finalize_subtask_success
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('be0099f0-11dd-4f26-a2b4-3cefbbbe60e2'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+tests/test_services_subtasks.py::test_finalize_subtask_success
+tests/test_services_subtasks.py::test_finalize_subtask_failure
+tests/test_services_subtasks.py::test_finalize_subtask_partial_success
+tests/test_services_subtasks.py::test_finalize_subtask_with_errored_entries_message
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_jobs/services/services.py:451: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    finished_at_value = datetime.utcnow()
+
+tests/test_services_subtasks.py::test_finalize_subtask_failure
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('b3b94820-586e-48e6-8746-f724bfe90da6'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+tests/test_services_subtasks.py::test_finalize_subtask_partial_success
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('22266f35-3c94-46a4-8b4b-0fb1bce15d2b'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+tests/test_services_subtasks.py::test_finalize_subtask_with_errored_entries_message
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('f6271fef-1198-4d29-8bc0-4cc671ee0447'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?
+    self.session.commit()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                                  Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------------------------------------
+invenio_jobs/__init__.py                                                  3      0   100%
+invenio_jobs/administration/__init__.py                                   0      0   100%
+invenio_jobs/administration/jobs.py                                      73     15    79%   105, 109-115, 119-124, 133-138
+invenio_jobs/administration/runs.py                                      46     25    46%   39-54, 58-65, 69-70, 74-75
+invenio_jobs/alembic/1f896f6990b8_update_jobs_module_table_names.py      20     10    50%   25-32, 40-45
+invenio_jobs/alembic/371f4cbcb73d_create_invenio_jobs_branch.py          10      2    80%   22, 27
+invenio_jobs/alembic/356496a01197_create_invenio_jobs_tables.py          17      4    76%   30-62, 105-106
+invenio_jobs/alembic/1753948224_add_subtasks_columns_to_jobs_run.py      31     22    29%   23-91, 102-114
+invenio_jobs/api.py                                                       4      0   100%
+invenio_jobs/config.py                                                   32      0   100%
+invenio_jobs/errors.py                                                   11      3    73%   20-22
+invenio_jobs/ext.py                                                      57      1    98%   106
+invenio_jobs/jobs.py                                                     32      7    78%   65-67, 89, 102, 105-113
+invenio_jobs/logging/__init__.py                                          0      0   100%
+invenio_jobs/logging/celery_signals.py                                   19      5    74%   23-26, 38-40, 49
+invenio_jobs/logging/index_templates/__init__.py                          0      0   100%
+invenio_jobs/logging/index_templates/os-v1/__init__.py                    0      0   100%
+invenio_jobs/logging/index_templates/os-v2/__init__.py                    0      0   100%
+invenio_jobs/logging/jobs.py                                             63      5    92%   98, 119-121, 125-126
+invenio_jobs/logging/tasks.py                                             8      2    75%   20-21
+invenio_jobs/models.py                                                  130     11    92%   80-88, 215-217
+invenio_jobs/proxies.py                                                  12      0   100%
+invenio_jobs/registry.py                                                 26      5    81%   23, 32-35
+invenio_jobs/resources/__init__.py                                        3      0   100%
+invenio_jobs/resources/config.py                                         57      0   100%
+invenio_jobs/resources/resources.py                                     126     14    89%   48-53, 58-63, 210-217, 237-243, 249-255
+invenio_jobs/services/__init__.py                                         4      0   100%
+invenio_jobs/services/config.py                                          79      0   100%
+invenio_jobs/services/errors.py                                          22      1    95%   63
+invenio_jobs/services/links.py                                           11      1    91%   38
+invenio_jobs/services/permissions.py                                     25      0   100%
+invenio_jobs/services/results.py                                        100     13    87%   53-54, 83, 92-95, 120-121, 148-149, 167, 169-170
+invenio_jobs/services/scheduler.py                                       55     31    44%   31-32, 37-39, 59, 66, 70-71, 75-94, 99-106, 113-117
+invenio_jobs/services/schema.py                                         149     10    93%   51-56, 132, 185, 288, 321-322
+invenio_jobs/services/services.py                                       246     31    87%   52, 60-64, 91-93, 192-194, 212, 309, 418, 438, 474-488, 493-499, 508, 544, 555, 561-562
+invenio_jobs/services/ui_schema.py                                       19      0   100%
+invenio_jobs/tasks.py                                                    63     23    63%   29, 41-44, 71, 75-90, 92-111, 116, 121, 134
+invenio_jobs/utils.py                                                    28     19    32%   20-31, 36-47, 55
+invenio_jobs/views.py                                                    14      0   100%
+invenio_jobs/webpack.py                                                   2      0   100%
+---------------------------------------------------------------------------------------------------
+TOTAL                                                                  1597    260    84%
+================ 171 passed, 3 skipped, 251 warnings in 24.26s =================
+ Container docker_services_cli-elasticsearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-elasticsearch-1  Stopped
+ Container docker_services_cli-elasticsearch-1  Removing
+ Container docker_services_cli-elasticsearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
