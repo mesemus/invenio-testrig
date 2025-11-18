@@ -1,0 +1,408 @@
+lists of files in version control and sdist match
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/models.py:docstring of invenio_webhooks.models.Event.query:1: WARNING: py:class reference target not found: t.ClassVar [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/models.py:docstring of invenio_webhooks.models.Event.query:1: WARNING: py:class reference target not found: Query [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/docstring of invenio_webhooks.models.Event.query:1: WARNING: py:attr reference target not found: query_class [ref.attr]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.ReceiverEventListResource.methods:1: WARNING: py:class reference target not found: t.ClassVar [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.ReceiverEventListResource.methods:1: WARNING: py:class reference target not found: t.Collection [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.ReceiverEventResource.methods:1: WARNING: py:class reference target not found: t.ClassVar [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.ReceiverEventResource.methods:1: WARNING: py:class reference target not found: t.Collection [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.View.as_view.<locals>.view:1: WARNING: py:class reference target not found: t.Any [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.View.as_view.<locals>.view:1: WARNING: py:class reference target not found: ft.ResponseReturnValue [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.View.as_view.<locals>.view:1: WARNING: py:class reference target not found: t.Any [ref.class]
+/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/views.py:docstring of invenio_webhooks.views.View.as_view.<locals>.view:1: WARNING: py:class reference target not found: ft.ResponseReturnValue [ref.class]
+ redis Pulling 
+ postgresql Pulling 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ fe77c85f37cb Waiting 
+ 4f4fb700ef54 Waiting 
+ 517b08eaf3cc Waiting 
+ 186a03b51bfa Waiting 
+ a43f12641297 Waiting 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ b0a0cf830b12 Waiting 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ dda3d8fbd5ed Waiting 
+ 283a477db7bb Waiting 
+ f8406d9c00ea Pulling fs layer 
+ 91d2729fa4d5 Waiting 
+ c199bff16b05 Pulling fs layer 
+ 9739ced65621 Waiting 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ ae3bb1b347a4 Waiting 
+ 050d9f8c3b1c Pulling fs layer 
+ f8406d9c00ea Waiting 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ c199bff16b05 Waiting 
+ 873532e5f8c7 Waiting 
+ e0d55fdb4d15 Waiting 
+ 050d9f8c3b1c Waiting 
+ c1cb13b19080 Waiting 
+ 710e142705f8 Waiting 
+ cb628c265f09 Waiting 
+ 8e44f01296e3 Downloading [>                                                  ]  282.7kB/28.23MB
+ 44fc29a25beb Downloading [==========================================>        ]     936B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Verifying Checksum 
+ 39af693970c0 Download complete 
+ 8e44f01296e3 Downloading [====================================>              ]  20.56MB/28.23MB
+ 8e44f01296e3 Verifying Checksum 
+ 8e44f01296e3 Download complete 
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 517b08eaf3cc Downloading [>                                                  ]  14.62kB/1.438MB
+ 186a03b51bfa Downloading [>                                                  ]  155.9kB/15.35MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 8e44f01296e3 Extracting [===========>                                       ]  6.488MB/28.23MB
+ 186a03b51bfa Verifying Checksum 
+ 8e44f01296e3 Extracting [=================>                                 ]  10.03MB/28.23MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 8e44f01296e3 Extracting [============================>                      ]  15.93MB/28.23MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ a43f12641297 Download complete 
+ 8e44f01296e3 Extracting [=========================================>         ]  23.59MB/28.23MB
+ b0a0cf830b12 Downloading [>                                                  ]  299.1kB/29.15MB
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Verifying Checksum 
+ dda3d8fbd5ed Download complete 
+ b0a0cf830b12 Downloading [==================================>                ]  20.39MB/29.15MB
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ 283a477db7bb Downloading [>                                                  ]  46.48kB/4.533MB
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ 8e44f01296e3 Extracting [===============================================>   ]  26.84MB/28.23MB
+ b0a0cf830b12 Extracting [==========>                                        ]  6.193MB/29.15MB
+ 91d2729fa4d5 Downloading [>                                                  ]  14.62kB/1.45MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ 9739ced65621 Downloading [>                                                  ]  84.41kB/8.069MB
+ b0a0cf830b12 Extracting [================>                                  ]  9.732MB/29.15MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ ae3bb1b347a4 Downloading [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ b0a0cf830b12 Extracting [=====================>                             ]  12.39MB/29.15MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ b0a0cf830b12 Extracting [===================================>               ]  20.64MB/29.15MB
+ c199bff16b05 Downloading [==============>                                    ]     933B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ e0d55fdb4d15 Downloading [>                                                  ]    530kB/109MB
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ e0d55fdb4d15 Downloading [=========>                                         ]  19.76MB/109MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ e0d55fdb4d15 Downloading [=================>                                 ]  38.42MB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ e0d55fdb4d15 Downloading [======================>                            ]  49.59MB/109MB
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ e0d55fdb4d15 Downloading [==============================>                    ]   65.6MB/109MB
+ 710e142705f8 Downloading [========>                                          ]     933B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Verifying Checksum 
+ 710e142705f8 Download complete 
+ e0d55fdb4d15 Downloading [===================================>               ]  77.92MB/109MB
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [===============================================>   ]  103.1MB/109MB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Pull complete 
+ 44fc29a25beb Pull complete 
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Pull complete 
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 186a03b51bfa Extracting [=========================>                         ]  7.864MB/15.35MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ 186a03b51bfa Extracting [================================================>  ]  14.75MB/15.35MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ 186a03b51bfa Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ 9739ced65621 Extracting [====================>                              ]  3.342MB/8.069MB
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ redis Pulled 
+ 9739ced65621 Extracting [===================================>               ]    5.8MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.799MB/109MB
+ e0d55fdb4d15 Extracting [=====>                                             ]   11.7MB/109MB
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.71MB/109MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  22.28MB/109MB
+ e0d55fdb4d15 Extracting [=============>                                     ]  28.97MB/109MB
+ e0d55fdb4d15 Extracting [=================>                                 ]  38.44MB/109MB
+ e0d55fdb4d15 Extracting [=====================>                             ]  47.91MB/109MB
+ e0d55fdb4d15 Extracting [========================>                          ]  53.48MB/109MB
+ e0d55fdb4d15 Extracting [===========================>                       ]   59.6MB/109MB
+ e0d55fdb4d15 Extracting [================================>                  ]  70.19MB/109MB
+ e0d55fdb4d15 Extracting [====================================>              ]   79.1MB/109MB
+ e0d55fdb4d15 Extracting [========================================>          ]  88.57MB/109MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.03MB/109MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.3MB/109MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.6MB/109MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.3MB/109MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-postgresql-1  Started
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py,line=854::'crypt' is deprecated and slated for removal in Python 3.13
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0 -- /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_webhooks
+plugins: github-actions-annotate-failures-0.3.0, black-0.6.0, pycodestyle-2.5.0, flask-1.3.0, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collecting ... collected 63 items
+
+docs/conf.py::PYDOCSTYLE PASSED
+docs/conf.py::ISORT PASSED
+docs/conf.py::black PASSED
+tests/conftest.py::PYDOCSTYLE PASSED
+tests/conftest.py::ISORT PASSED
+tests/conftest.py::black PASSED
+tests/test_api.py::ISORT PASSED
+tests/test_api.py::black PASSED
+tests/test_api.py::test_405_methods PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_oauth2server/ext.py,line=332::You are overriding the default OAuthlib "URL encoded" set of valid characters. Make sure that the characters defined in oauthlib.common.urlencoded are indeed limitting your needs.
+
+tests/test_api.py::test_webhook_post_unregistered PASSED
+tests/test_api.py::test_webhook_post PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_api.py::test_webhook_post_no_token PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_api.py::test_405_methods_no_scope PASSED
+tests/test_api.py::test_webhook_post_no_scope PASSED
+tests/test_api.py::test_event_api PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_invenio_webhooks.py::ISORT PASSED
+tests/test_invenio_webhooks.py::black PASSED
+tests/test_invenio_webhooks.py::test_version PASSED
+tests/test_invenio_webhooks.py::test_init PASSED
+tests/test_invenio_webhooks.py::test_alembic SKIPPED (caused by missing
+key)
+tests/test_invenio_webhooks.py::test_view PASSED
+tests/test_receivers.py::ISORT PASSED
+tests/test_receivers.py::black PASSED
+tests/test_receivers.py::test_run_must_be_implemeted PASSED
+tests/test_receivers.py::test_receiver_registration PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/models.py,line=146::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_receivers.py::test_unknown_receiver PASSED
+tests/test_receivers.py::test_hookurl PASSED
+tests/test_receivers.py::test_signature_checking PASSED
+tests/test_receivers.py::test_event_deletion PASSED
+tests/test_receivers.py::test_event_status PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/celery/backends/base.py,line=577::Results are not stored in backend and should not be retrieved when task_always_eager is enabled, unless task_store_eager_result is enabled.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/models.py,line=146::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_receivers.py,line=221::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+
+invenio_webhooks/__init__.py::PYDOCSTYLE PASSED
+invenio_webhooks/__init__.py::ISORT PASSED
+invenio_webhooks/__init__.py::black PASSED
+invenio_webhooks/_compat.py::PYDOCSTYLE PASSED
+invenio_webhooks/_compat.py::ISORT PASSED
+invenio_webhooks/_compat.py::black PASSED
+invenio_webhooks/alembic/469925575192_create_webhooks_branch.py::PYDOCSTYLE PASSED
+invenio_webhooks/alembic/469925575192_create_webhooks_branch.py::ISORT PASSED
+invenio_webhooks/alembic/469925575192_create_webhooks_branch.py::black PASSED
+invenio_webhooks/alembic/a095bd179f5c_create_webhooks_tables.py::PYDOCSTYLE PASSED
+invenio_webhooks/alembic/a095bd179f5c_create_webhooks_tables.py::ISORT PASSED
+invenio_webhooks/alembic/a095bd179f5c_create_webhooks_tables.py::black PASSED
+invenio_webhooks/config.py::PYDOCSTYLE PASSED
+invenio_webhooks/config.py::ISORT PASSED
+invenio_webhooks/config.py::black PASSED
+invenio_webhooks/errors.py::PYDOCSTYLE PASSED
+invenio_webhooks/errors.py::ISORT PASSED
+invenio_webhooks/errors.py::black PASSED
+invenio_webhooks/ext.py::PYDOCSTYLE PASSED
+invenio_webhooks/ext.py::ISORT PASSED
+invenio_webhooks/ext.py::black PASSED
+invenio_webhooks/models.py::PYDOCSTYLE PASSED
+invenio_webhooks/models.py::ISORT PASSED
+invenio_webhooks/models.py::black PASSED
+invenio_webhooks/proxies.py::PYDOCSTYLE PASSED
+invenio_webhooks/proxies.py::ISORT PASSED
+invenio_webhooks/proxies.py::black PASSED
+invenio_webhooks/signatures.py::PYDOCSTYLE PASSED
+invenio_webhooks/signatures.py::ISORT PASSED
+invenio_webhooks/signatures.py::black PASSED
+invenio_webhooks/views.py::PYDOCSTYLE PASSED
+invenio_webhooks/views.py::ISORT PASSED
+invenio_webhooks/views.py::black PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+tests/test_api.py::test_405_methods
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_oauth2server/ext.py:332: RuntimeWarning: You are overriding the default OAuthlib "URL encoded" set of valid characters. Make sure that the characters defined in oauthlib.common.urlencoded are indeed limitting your needs.
+    warnings.warn(
+
+tests/test_api.py: 6 warnings
+tests/test_receivers.py: 4 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/test_api.py::test_webhook_post_no_token
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py:207: DeprecationWarning: get_user method is deprecated, user get_user_by_email/get_user_by_id
+    warnings.warn(
+
+tests/test_api.py::test_event_api
+tests/test_receivers.py::test_receiver_registration
+tests/test_receivers.py::test_event_status
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py:33: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    target.updated = datetime.utcnow()
+
+tests/test_receivers.py::test_receiver_registration
+tests/test_receivers.py::test_event_status
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_webhooks/models.py:146: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    event = Event.query.get(event_id)
+
+tests/test_receivers.py::test_event_status
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/celery/backends/base.py:577: RuntimeWarning: Results are not stored in backend and should not be retrieved when task_always_eager is enabled, unless task_store_eager_result is enabled.
+    warnings.warn(
+
+tests/test_receivers.py::test_event_status
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_receivers.py:221: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    event = Event.query.get(event_id)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                              Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------
+invenio_webhooks/__init__.py                                          5      0   100%
+invenio_webhooks/_compat.py                                           8      2    75%   46-47
+invenio_webhooks/alembic/469925575192_create_webhooks_branch.py      10      2    80%   38, 43
+invenio_webhooks/alembic/a095bd179f5c_create_webhooks_tables.py      16      6    62%   41-70, 80-81
+invenio_webhooks/config.py                                            3      0   100%
+invenio_webhooks/errors.py                                            4      0   100%
+invenio_webhooks/ext.py                                              29      1    97%   56
+invenio_webhooks/models.py                                          130      9    93%   195-196, 269-270, 275-276, 282-284
+invenio_webhooks/proxies.py                                           3      0   100%
+invenio_webhooks/signatures.py                                       12      0   100%
+invenio_webhooks/views.py                                            88      7    92%   114, 141-145, 169
+-----------------------------------------------------------------------------------------------
+TOTAL                                                               308     27    91%
+================= 62 passed, 1 skipped, 20 warnings in 10.09s ==================
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

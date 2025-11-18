@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="48" failures="0" skipped="0" tests="48" time="7.138" timestamp="2025-11-18T09:25:05.622453+00:00" hostname="runnervmg1sw1"><testcase classname="" name="tests.test_custom_endpoints" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_endpoints.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_custom_endpoints.py:25: in &lt;module&gt;
+    from invenio_records_rest.schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_endpoints.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_custom_endpoints.py:25: in &lt;module&gt;
+    from invenio_records_rest.schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_custom_fields" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_custom_fields.py:14: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_custom_fields.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_custom_fields.py:14: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_marshmallow_contrib" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_marshmallow_contrib.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_marshmallow_contrib.py:10: in &lt;module&gt;
+    from invenio_records_rest.schemas.fields.marshmallow_contrib import _get_func_args
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_marshmallow_contrib.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_marshmallow_contrib.py:10: in &lt;module&gt;
+    from invenio_records_rest.schemas.fields.marshmallow_contrib import _get_func_args
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_marshmallow_loader" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_marshmallow_loader.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_marshmallow_loader.py:16: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_marshmallow_loader.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_marshmallow_loader.py:16: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_base" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_base.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_base.py:17: in &lt;module&gt;
+    from invenio_records_rest.serializers.base import PreprocessorMixin
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_base.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_base.py:17: in &lt;module&gt;
+    from invenio_records_rest.serializers.base import PreprocessorMixin
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_citeproc" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_citeproc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_citeproc.py:19: in &lt;module&gt;
+    from invenio_records_rest.serializers.citeproc import (
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_citeproc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_citeproc.py:19: in &lt;module&gt;
+    from invenio_records_rest.serializers.citeproc import (
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_csv" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_csv.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_csv.py:13: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_csv.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_csv.py:13: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_datacite" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_datacite.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_datacite.py:15: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_datacite.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_datacite.py:15: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_dc" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_dc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_dc.py:13: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_dc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_dc.py:13: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_json" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_json.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_json.py:15: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_json.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_json.py:15: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_jsonld" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_jsonld.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_jsonld.py:16: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_jsonld.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_jsonld.py:16: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_marshmallow" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_marshmallow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_marshmallow.py:13: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_marshmallow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_marshmallow.py:13: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="tests.test_serializer_response" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_response.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_response.py:14: in &lt;module&gt;
+    from invenio_records_rest.serializers.response import (
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/tests/test_serializer_response.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+.venv/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:186: in exec_module
+    exec(co, module.__dict__)
+tests/test_serializer_response.py:14: in &lt;module&gt;
+    from invenio_records_rest.serializers.response import (
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.loaders.__init__" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/loaders/__init__.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/loaders/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordMetadataSchemaJSONV1, RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.loaders.marshmallow" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/loaders/marshmallow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/loaders/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordMetadataSchemaJSONV1, RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.__init__" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/__init__.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.__init__" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/__init__.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.datetime" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/datetime.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.generated" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/generated.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.marshmallow_contrib" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/marshmallow_contrib.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.persistentidentifier" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/persistentidentifier.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.sanitizedhtml" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/sanitizedhtml.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.sanitizedunicode" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/sanitizedunicode.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.fields.trimmedstring" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/fields/trimmedstring.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.schemas.json" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/schemas/json.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.__init__" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/__init__.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.base" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/base.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.citeproc" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/citeproc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.csv" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/csv.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.datacite" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/datacite.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.dc" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/dc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.json" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/json.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.jsonld" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/jsonld.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.marshmallow" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/marshmallow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase><testcase classname="" name="invenio_records_rest.serializers.response" time="0.000"><error message="collection failure">ImportError while importing test module '/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_records_rest/serializers/response.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+.venv/lib/python3.12/site-packages/_pytest/python.py:498: in importtestmodule
+    mod = import_path(
+.venv/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1310: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+invenio_records_rest/serializers/__init__.py:11: in &lt;module&gt;
+    from ..schemas import RecordSchemaJSONV1
+invenio_records_rest/schemas/__init__.py:11: in &lt;module&gt;
+    from .json import (
+invenio_records_rest/schemas/json.py:12: in &lt;module&gt;
+    from invenio_rest.serializer import BaseSchema as Schema
+.venv/lib/python3.12/site-packages/invenio_rest/serializer.py:15: in &lt;module&gt;
+    from marshmallow_utils.context import context_schema
+E   ModuleNotFoundError: No module named 'marshmallow_utils'</error></testcase></testsuite></testsuites>

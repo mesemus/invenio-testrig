@@ -1,0 +1,1582 @@
+lists of files in version control and sdist match
+running extract_messages
+extracting messages from invenio_users_resources/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/entity_resolvers.py (encoding="utf-8")
+extracting messages from invenio_users_resources/ext.py (encoding="utf-8")
+extracting messages from invenio_users_resources/forms.py (encoding="utf-8")
+extracting messages from invenio_users_resources/models.py (encoding="utf-8")
+extracting messages from invenio_users_resources/permissions.py (encoding="utf-8")
+extracting messages from invenio_users_resources/proxies.py (encoding="utf-8")
+extracting messages from invenio_users_resources/views.py (encoding="utf-8")
+extracting messages from invenio_users_resources/notifications/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/notifications/filters.py (encoding="utf-8")
+extracting messages from invenio_users_resources/notifications/generators.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/api.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/hooks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/models.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/dumpers/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/dumpers/email.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/os-v1/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/os-v2/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/v7/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/systemfields/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/domains/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/domains/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/domains/resource.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/groups/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/groups/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/groups/resource.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/errors.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/resource.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/common.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/generators.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/params.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/permissions.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/results.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/schemas.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/components.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/facets.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/service.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/tasks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/results.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/service.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/tasks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/facets.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/lock.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/results.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/search_params.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/service.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/tasks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/templates/security/email/new_user_via_admin.html (encoding="utf-8")
+extracting messages from invenio_users_resources/templates/semantic-ui/invenio_users_resources/settings/notifications.html (encoding="utf-8")
+writing PO template file to /dev/null
+ redis Pulling 
+ opensearch Pulling 
+ rabbitmq Pulling 
+ postgresql Pulling 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ f8406d9c00ea Pulling fs layer 
+ c199bff16b05 Pulling fs layer 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ 050d9f8c3b1c Pulling fs layer 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ e0d55fdb4d15 Waiting 
+ c1cb13b19080 Waiting 
+ 873532e5f8c7 Waiting 
+ 050d9f8c3b1c Waiting 
+ 710e142705f8 Waiting 
+ cb628c265f09 Waiting 
+ 91d2729fa4d5 Waiting 
+ 9739ced65621 Waiting 
+ ae3bb1b347a4 Waiting 
+ f8406d9c00ea Waiting 
+ c199bff16b05 Waiting 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ 8e44f01296e3 Waiting 
+ 517b08eaf3cc Waiting 
+ 44fc29a25beb Waiting 
+ 39af693970c0 Waiting 
+ 186a03b51bfa Waiting 
+ a43f12641297 Waiting 
+ fe77c85f37cb Waiting 
+ 4f4fb700ef54 Waiting 
+ f9dd052e142d Pulling fs layer 
+ e8c6d4883897 Pulling fs layer 
+ 648eb81b3252 Pulling fs layer 
+ eb77aa907276 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 0ffa8f8aba1e Pulling fs layer 
+ 2e81b9cb93cd Pulling fs layer 
+ e8c6d4883897 Waiting 
+ 648eb81b3252 Waiting 
+ eb77aa907276 Waiting 
+ 0ffa8f8aba1e Waiting 
+ 4f4fb700ef54 Waiting 
+ 2e81b9cb93cd Waiting 
+ f9dd052e142d Waiting 
+ 20043066d3d5 Pulling fs layer 
+ fbda4a386d13 Pulling fs layer 
+ 257b1af0856e Pulling fs layer 
+ e5fbc57eeafe Pulling fs layer 
+ f19b7ac6489f Pulling fs layer 
+ 0f9a1c409bb2 Pulling fs layer 
+ d5d9860a5545 Pulling fs layer 
+ fc030d7bf8ba Pulling fs layer 
+ fbda4a386d13 Waiting 
+ c5ec72a0a4d4 Pulling fs layer 
+ 257b1af0856e Waiting 
+ 20043066d3d5 Waiting 
+ a51622689fc8 Pulling fs layer 
+ e5fbc57eeafe Waiting 
+ f19b7ac6489f Waiting 
+ d5d9860a5545 Waiting 
+ 0f9a1c409bb2 Waiting 
+ fc030d7bf8ba Waiting 
+ a51622689fc8 Waiting 
+ c5ec72a0a4d4 Waiting 
+ dda3d8fbd5ed Downloading [========================================>          ]     934B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Download complete 
+ 283a477db7bb Downloading [>                                                  ]  46.61kB/4.533MB
+ b0a0cf830b12 Downloading [>                                                  ]  299.1kB/29.15MB
+ 283a477db7bb Downloading [================================>                  ]  2.962MB/4.533MB
+ 283a477db7bb Downloading [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Download complete 
+ b0a0cf830b12 Downloading [===================>                               ]  11.55MB/29.15MB
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ 91d2729fa4d5 Downloading [>                                                  ]  14.62kB/1.45MB
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ 9739ced65621 Downloading [>                                                  ]   84.3kB/8.069MB
+ b0a0cf830b12 Extracting [===========>                                       ]  6.488MB/29.15MB
+ 9739ced65621 Downloading [====>                                              ]  761.9kB/8.069MB
+ b0a0cf830b12 Extracting [=================>                                 ]  10.03MB/29.15MB
+ ae3bb1b347a4 Downloading [>                                                  ]  13.25kB/1.196MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Download complete 
+ b0a0cf830b12 Extracting [========================>                          ]  14.16MB/29.15MB
+ 9739ced65621 Downloading [=============>                                     ]  2.167MB/8.069MB
+ 9739ced65621 Downloading [==============================>                    ]  4.898MB/8.069MB
+ b0a0cf830b12 Extracting [======================================>            ]  22.71MB/29.15MB
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ c199bff16b05 Downloading [==============>                                    ]     935B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ e0d55fdb4d15 Downloading [>                                                  ]  530.2kB/109MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ e0d55fdb4d15 Downloading [=====>                                             ]  12.29MB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ e0d55fdb4d15 Downloading [===============>                                   ]  33.12MB/109MB
+ e0d55fdb4d15 Downloading [=========================>                         ]  55.04MB/109MB
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [===================================>               ]  76.42MB/109MB
+ 710e142705f8 Downloading [========>                                          ]     933B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Download complete 
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ e0d55fdb4d15 Downloading [=============================================>     ]   98.9MB/109MB
+ e0d55fdb4d15 Verifying Checksum 
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ 8e44f01296e3 Downloading [>                                                  ]  294.4kB/28.23MB
+ 44fc29a25beb Downloading [==========================================>        ]     936B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ 8e44f01296e3 Downloading [===================>                               ]  10.86MB/28.23MB
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Download complete 
+ 8e44f01296e3 Download complete 
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 8e44f01296e3 Extracting [==========>                                        ]  6.193MB/28.23MB
+ 517b08eaf3cc Downloading [>                                                  ]  14.62kB/1.438MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 8e44f01296e3 Extracting [================>                                  ]  9.437MB/28.23MB
+ 186a03b51bfa Downloading [>                                                  ]  155.6kB/15.35MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 8e44f01296e3 Extracting [======================>                            ]  12.98MB/28.23MB
+ 186a03b51bfa Downloading [=====>                                             ]  1.777MB/15.35MB
+ 8e44f01296e3 Extracting [=============================>                     ]  16.81MB/28.23MB
+ dda3d8fbd5ed Pull complete 
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 186a03b51bfa Verifying Checksum 
+ 186a03b51bfa Download complete 
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 8e44f01296e3 Extracting [========================================>          ]  22.71MB/28.23MB
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Download complete 
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ e8c6d4883897 Downloading [>                                                  ]  44.53kB/4.398MB
+ f9dd052e142d Downloading [>                                                  ]  523.4kB/52.33MB
+ 648eb81b3252 Downloading [=============================>                     ]     934B/1.561kB
+ 648eb81b3252 Downloading [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Verifying Checksum 
+ 648eb81b3252 Download complete 
+ 9739ced65621 Extracting [====================>                              ]  3.342MB/8.069MB
+ e8c6d4883897 Downloading [=================================>                 ]  2.956MB/4.398MB
+ f9dd052e142d Downloading [==============>                                    ]   15.3MB/52.33MB
+ e8c6d4883897 Verifying Checksum 
+ e8c6d4883897 Download complete 
+ 8e44f01296e3 Extracting [===============================================>   ]  26.84MB/28.23MB
+ 9739ced65621 Extracting [=============================>                     ]  4.817MB/8.069MB
+ f9dd052e142d Downloading [===================================>               ]  37.03MB/52.33MB
+ 9739ced65621 Extracting [=======================================>           ]   6.39MB/8.069MB
+ f9dd052e142d Verifying Checksum 
+ f9dd052e142d Download complete 
+ f9dd052e142d Extracting [>                                                  ]  524.3kB/52.33MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ eb77aa907276 Downloading [>                                                  ]  528.5kB/907.7MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ f9dd052e142d Extracting [=>                                                 ]  1.049MB/52.33MB
+ eb77aa907276 Downloading [>                                                  ]   13.9MB/907.7MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ f9dd052e142d Extracting [====>                                              ]  4.194MB/52.33MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ eb77aa907276 Downloading [=>                                                 ]  35.26MB/907.7MB
+ 0ffa8f8aba1e Downloading [==================================================>]     226B/226B
+ 0ffa8f8aba1e Verifying Checksum 
+ 0ffa8f8aba1e Download complete 
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ 2e81b9cb93cd Downloading [=========================>                         ]     935B/1.859kB
+ 2e81b9cb93cd Downloading [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Verifying Checksum 
+ 2e81b9cb93cd Download complete 
+ eb77aa907276 Downloading [==>                                                ]   53.4MB/907.7MB
+ 8e44f01296e3 Extracting [=================================================> ]  28.02MB/28.23MB
+ f9dd052e142d Extracting [====>                                              ]  4.719MB/52.33MB
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ eb77aa907276 Downloading [===>                                               ]  69.41MB/907.7MB
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ e0d55fdb4d15 Extracting [==>                                                ]  4.456MB/109MB
+ 44fc29a25beb Pull complete 
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ f9dd052e142d Extracting [=====>                                             ]  5.243MB/52.33MB
+ eb77aa907276 Downloading [====>                                              ]  85.96MB/907.7MB
+ 39af693970c0 Pull complete 
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ 20043066d3d5 Downloading [>                                                  ]  303.1kB/29.72MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.242MB/109MB
+ fbda4a386d13 Downloading [>                                                  ]  446.1kB/43.48MB
+ eb77aa907276 Downloading [=====>                                             ]  107.9MB/907.7MB
+ 20043066d3d5 Downloading [================>                                  ]  9.845MB/29.72MB
+ f9dd052e142d Extracting [======>                                            ]  6.816MB/52.33MB
+ 517b08eaf3cc Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ e0d55fdb4d15 Extracting [===>                                               ]  8.356MB/109MB
+ fbda4a386d13 Downloading [==============>                                    ]  12.39MB/43.48MB
+ eb77aa907276 Downloading [======>                                            ]  122.3MB/907.7MB
+ 20043066d3d5 Downloading [================================================>  ]  28.86MB/29.72MB
+ 20043066d3d5 Verifying Checksum 
+ 20043066d3d5 Download complete 
+ f9dd052e142d Extracting [========>                                          ]  8.913MB/52.33MB
+ 186a03b51bfa Extracting [=======>                                           ]  2.294MB/15.35MB
+ fbda4a386d13 Downloading [======================================>            ]  33.24MB/43.48MB
+ e0d55fdb4d15 Extracting [====>                                              ]   9.47MB/109MB
+ eb77aa907276 Downloading [=======>                                           ]  139.9MB/907.7MB
+ 20043066d3d5 Extracting [>                                                  ]  327.7kB/29.72MB
+ fbda4a386d13 Verifying Checksum 
+ fbda4a386d13 Download complete 
+ f9dd052e142d Extracting [==========>                                        ]  11.01MB/52.33MB
+ 186a03b51bfa Extracting [=============>                                     ]   4.26MB/15.35MB
+ e0d55fdb4d15 Extracting [=====>                                             ]   11.7MB/109MB
+ eb77aa907276 Downloading [========>                                          ]  159.6MB/907.7MB
+ 20043066d3d5 Extracting [===>                                               ]  2.294MB/29.72MB
+ 186a03b51bfa Extracting [========================>                          ]  7.373MB/15.35MB
+ f9dd052e142d Extracting [=============>                                     ]  14.16MB/52.33MB
+ 257b1af0856e Downloading [>                                                  ]  76.67kB/7.468MB
+ eb77aa907276 Downloading [=========>                                         ]  176.1MB/907.7MB
+ e0d55fdb4d15 Extracting [======>                                            ]  13.93MB/109MB
+ 20043066d3d5 Extracting [=======>                                           ]  4.588MB/29.72MB
+ 186a03b51bfa Extracting [===================================>               ]  10.81MB/15.35MB
+ f9dd052e142d Extracting [================>                                  ]   17.3MB/52.33MB
+ e5fbc57eeafe Downloading [====>                                              ]     935B/9.472kB
+ e5fbc57eeafe Downloading [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Verifying Checksum 
+ e5fbc57eeafe Download complete 
+ eb77aa907276 Downloading [==========>                                        ]  197.5MB/907.7MB
+ 257b1af0856e Downloading [======================================>            ]  5.725MB/7.468MB
+ 257b1af0856e Verifying Checksum 
+ 257b1af0856e Download complete 
+ e0d55fdb4d15 Extracting [=======>                                           ]  16.15MB/109MB
+ 20043066d3d5 Extracting [==========>                                        ]  6.226MB/29.72MB
+ 186a03b51bfa Extracting [============================================>      ]  13.76MB/15.35MB
+ f9dd052e142d Extracting [===================>                               ]  19.92MB/52.33MB
+ eb77aa907276 Downloading [===========>                                       ]  217.7MB/907.7MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ e0d55fdb4d15 Extracting [========>                                          ]  17.83MB/109MB
+ 20043066d3d5 Extracting [=============>                                     ]  7.864MB/29.72MB
+ f9dd052e142d Extracting [======================>                            ]  23.59MB/52.33MB
+ eb77aa907276 Downloading [============>                                      ]  234.3MB/907.7MB
+ 20043066d3d5 Extracting [==============>                                    ]  8.847MB/29.72MB
+ e0d55fdb4d15 Extracting [=========>                                         ]  20.05MB/109MB
+ 0f9a1c409bb2 Downloading [==================================================>]     188B/188B
+ 0f9a1c409bb2 Verifying Checksum 
+ 0f9a1c409bb2 Download complete 
+ f19b7ac6489f Downloading [>                                                  ]  215.1kB/21.31MB
+ eb77aa907276 Downloading [==============>                                    ]  256.2MB/907.7MB
+ f19b7ac6489f Downloading [=================>                                 ]   7.47MB/21.31MB
+ 20043066d3d5 Extracting [===============>                                   ]  9.503MB/29.72MB
+ e0d55fdb4d15 Extracting [=========>                                         ]  21.73MB/109MB
+ eb77aa907276 Downloading [===============>                                   ]  277.6MB/907.7MB
+ f19b7ac6489f Verifying Checksum 
+ f19b7ac6489f Download complete 
+ 20043066d3d5 Extracting [================>                                  ]   9.83MB/29.72MB
+ d5d9860a5545 Downloading [==================================================>]     109B/109B
+ eb77aa907276 Downloading [===============>                                   ]  290.4MB/907.7MB
+ d5d9860a5545 Verifying Checksum 
+ d5d9860a5545 Download complete 
+ f9dd052e142d Extracting [=========================>                         ]  26.74MB/52.33MB
+ eb77aa907276 Downloading [=================>                                 ]  311.8MB/907.7MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  22.28MB/109MB
+ 20043066d3d5 Extracting [=================>                                 ]  10.16MB/29.72MB
+ f9dd052e142d Extracting [==========================>                        ]  27.26MB/52.33MB
+ eb77aa907276 Downloading [==================>                                ]    330MB/907.7MB
+ fc030d7bf8ba Downloading [==================================================>]     617B/617B
+ fc030d7bf8ba Verifying Checksum 
+ fc030d7bf8ba Download complete 
+ 20043066d3d5 Extracting [====================>                              ]  12.45MB/29.72MB
+ e0d55fdb4d15 Extracting [==========>                                        ]  23.95MB/109MB
+ f9dd052e142d Extracting [==========================>                        ]  27.79MB/52.33MB
+ c5ec72a0a4d4 Downloading [==================================================>]     831B/831B
+ c5ec72a0a4d4 Verifying Checksum 
+ c5ec72a0a4d4 Download complete 
+ eb77aa907276 Downloading [==================>                                ]  343.3MB/907.7MB
+ 20043066d3d5 Extracting [===========================>                       ]  16.38MB/29.72MB
+ e0d55fdb4d15 Extracting [============>                                      ]  26.74MB/109MB
+ 186a03b51bfa Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ f9dd052e142d Extracting [===========================>                       ]  28.84MB/52.33MB
+ eb77aa907276 Downloading [===================>                               ]  360.9MB/907.7MB
+ 20043066d3d5 Extracting [================================>                  ]  19.33MB/29.72MB
+ e0d55fdb4d15 Extracting [==============>                                    ]  31.75MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  381.8MB/907.7MB
+ a51622689fc8 Downloading [>                                                  ]  127.1kB/12.47MB
+ 20043066d3d5 Extracting [=======================================>           ]  23.59MB/29.72MB
+ e0d55fdb4d15 Extracting [================>                                  ]  36.77MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  395.1MB/907.7MB
+ a51622689fc8 Downloading [============================>                      ]  7.204MB/12.47MB
+ a51622689fc8 Verifying Checksum 
+ a51622689fc8 Download complete 
+ f9dd052e142d Extracting [============================>                      ]  29.36MB/52.33MB
+ 20043066d3d5 Extracting [==========================================>        ]  25.23MB/29.72MB
+ e0d55fdb4d15 Extracting [===================>                               ]  41.78MB/109MB
+ eb77aa907276 Downloading [======================>                            ]    416MB/907.7MB
+ e0d55fdb4d15 Extracting [======================>                            ]  49.58MB/109MB
+ eb77aa907276 Downloading [========================>                          ]  437.4MB/907.7MB
+ e0d55fdb4d15 Extracting [========================>                          ]  53.48MB/109MB
+ eb77aa907276 Downloading [=========================>                         ]  458.3MB/907.7MB
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ f9dd052e142d Extracting [============================>                      ]  29.88MB/52.33MB
+ e0d55fdb4d15 Extracting [=========================>                         ]  56.26MB/109MB
+ eb77aa907276 Downloading [==========================>                        ]  476.5MB/907.7MB
+ e0d55fdb4d15 Extracting [============================>                      ]  61.83MB/109MB
+ eb77aa907276 Downloading [===========================>                       ]  493.6MB/907.7MB
+ f9dd052e142d Extracting [=============================>                     ]  30.41MB/52.33MB
+ 20043066d3d5 Extracting [==========================================>        ]  25.56MB/29.72MB
+ e0d55fdb4d15 Extracting [=============================>                     ]  65.18MB/109MB
+ eb77aa907276 Downloading [===========================>                       ]    508MB/907.7MB
+ f9dd052e142d Extracting [==============================>                    ]  31.98MB/52.33MB
+ 20043066d3d5 Extracting [==============================================>    ]  27.53MB/29.72MB
+ e0d55fdb4d15 Extracting [================================>                  ]  70.75MB/109MB
+ eb77aa907276 Downloading [============================>                      ]  525.7MB/907.7MB
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ e0d55fdb4d15 Extracting [==================================>                ]  74.65MB/109MB
+ 20043066d3d5 Extracting [===============================================>   ]  28.18MB/29.72MB
+ f9dd052e142d Extracting [===============================>                   ]  33.03MB/52.33MB
+ eb77aa907276 Downloading [==============================>                    ]  548.2MB/907.7MB
+ e0d55fdb4d15 Extracting [=====================================>             ]  80.77MB/109MB
+ eb77aa907276 Downloading [===============================>                   ]  570.2MB/907.7MB
+ e0d55fdb4d15 Extracting [========================================>          ]  87.46MB/109MB
+ eb77aa907276 Downloading [================================>                  ]  583.5MB/907.7MB
+ 20043066d3d5 Extracting [================================================>  ]  28.84MB/29.72MB
+ f9dd052e142d Extracting [================================>                  ]  33.55MB/52.33MB
+ eb77aa907276 Downloading [=================================>                 ]  603.3MB/907.7MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  91.91MB/109MB
+ f9dd052e142d Extracting [=================================>                 ]   34.6MB/52.33MB
+ a43f12641297 Pull complete 
+ redis Pulled 
+ eb77aa907276 Downloading [=================================>                 ]    614MB/907.7MB
+ 20043066d3d5 Extracting [=================================================> ]  29.49MB/29.72MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.59MB/109MB
+ f9dd052e142d Extracting [===================================>               ]   36.7MB/52.33MB
+ eb77aa907276 Downloading [===================================>               ]  635.4MB/907.7MB
+ 20043066d3d5 Extracting [==================================================>]  29.72MB/29.72MB
+ 20043066d3d5 Pull complete 
+ eb77aa907276 Downloading [===================================>               ]  651.5MB/907.7MB
+ f9dd052e142d Extracting [====================================>              ]  38.27MB/52.33MB
+ fbda4a386d13 Extracting [>                                                  ]  458.8kB/43.48MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ eb77aa907276 Downloading [=====================================>             ]  672.9MB/907.7MB
+ fbda4a386d13 Extracting [=====>                                             ]  5.046MB/43.48MB
+ e0d55fdb4d15 Extracting [=============================================>     ]   98.6MB/109MB
+ f9dd052e142d Extracting [======================================>            ]  39.85MB/52.33MB
+ eb77aa907276 Downloading [=====================================>             ]  684.1MB/907.7MB
+ fbda4a386d13 Extracting [=============>                                     ]  11.47MB/43.48MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.8MB/109MB
+ f9dd052e142d Extracting [========================================>          ]  41.94MB/52.33MB
+ eb77aa907276 Downloading [======================================>            ]  696.9MB/907.7MB
+ fbda4a386d13 Extracting [==================>                                ]  16.52MB/43.48MB
+ f9dd052e142d Extracting [==========================================>        ]  44.04MB/52.33MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.1MB/109MB
+ eb77aa907276 Downloading [=======================================>           ]  709.7MB/907.7MB
+ fbda4a386d13 Extracting [=========================>                         ]  22.02MB/43.48MB
+ f9dd052e142d Extracting [============================================>      ]  46.14MB/52.33MB
+ eb77aa907276 Downloading [========================================>          ]  726.8MB/907.7MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  104.2MB/109MB
+ fbda4a386d13 Extracting [================================>                  ]  27.98MB/43.48MB
+ f9dd052e142d Extracting [=============================================>     ]  47.71MB/52.33MB
+ eb77aa907276 Downloading [========================================>          ]  741.8MB/907.7MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.3MB/109MB
+ fbda4a386d13 Extracting [=====================================>             ]  32.57MB/43.48MB
+ eb77aa907276 Downloading [=========================================>         ]  756.7MB/907.7MB
+ e0d55fdb4d15 Extracting [================================================>  ]  106.4MB/109MB
+ fbda4a386d13 Extracting [===========================================>       ]  37.62MB/43.48MB
+ eb77aa907276 Downloading [==========================================>        ]  778.2MB/907.7MB
+ fbda4a386d13 Extracting [================================================>  ]  42.21MB/43.48MB
+ fbda4a386d13 Extracting [==================================================>]  43.48MB/43.48MB
+ eb77aa907276 Downloading [===========================================>       ]  797.9MB/907.7MB
+ eb77aa907276 Downloading [============================================>      ]  814.5MB/907.7MB
+ f9dd052e142d Extracting [=================================================> ]  51.38MB/52.33MB
+ eb77aa907276 Downloading [==============================================>    ]  835.3MB/907.7MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ eb77aa907276 Downloading [===============================================>   ]  857.7MB/907.7MB
+ f9dd052e142d Extracting [=================================================> ]   51.9MB/52.33MB
+ f9dd052e142d Extracting [==================================================>]  52.33MB/52.33MB
+ eb77aa907276 Downloading [================================================>  ]  879.6MB/907.7MB
+ e0d55fdb4d15 Extracting [=================================================> ]  108.6MB/109MB
+ f9dd052e142d Pull complete 
+ eb77aa907276 Downloading [=================================================> ]  895.7MB/907.7MB
+ e8c6d4883897 Extracting [>                                                  ]  65.54kB/4.398MB
+ eb77aa907276 Downloading [=================================================> ]    907MB/907.7MB
+ eb77aa907276 Verifying Checksum 
+ eb77aa907276 Download complete 
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ e8c6d4883897 Extracting [========>                                          ]  720.9kB/4.398MB
+ e8c6d4883897 Extracting [=========>                                         ]    852kB/4.398MB
+ fbda4a386d13 Pull complete 
+ 257b1af0856e Extracting [>                                                  ]   98.3kB/7.468MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ e8c6d4883897 Extracting [=========================>                         ]  2.228MB/4.398MB
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ 257b1af0856e Extracting [=======>                                           ]   1.18MB/7.468MB
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ e8c6d4883897 Extracting [=====================================>             ]  3.277MB/4.398MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ 257b1af0856e Extracting [==================================================>]  7.468MB/7.468MB
+ 257b1af0856e Pull complete 
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Extracting [==================================================>]  9.472kB/9.472kB
+ e5fbc57eeafe Pull complete 
+ e8c6d4883897 Extracting [==================================================>]  4.398MB/4.398MB
+ e8c6d4883897 Pull complete 
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ f19b7ac6489f Extracting [>                                                  ]  229.4kB/21.31MB
+ 648eb81b3252 Pull complete 
+ eb77aa907276 Extracting [>                                                  ]  557.1kB/907.7MB
+ f19b7ac6489f Extracting [==========>                                        ]  4.358MB/21.31MB
+ eb77aa907276 Extracting [=>                                                 ]  21.73MB/907.7MB
+ f19b7ac6489f Extracting [====================>                              ]  8.946MB/21.31MB
+ eb77aa907276 Extracting [==>                                                ]  39.55MB/907.7MB
+ f19b7ac6489f Extracting [============================>                      ]  12.16MB/21.31MB
+ eb77aa907276 Extracting [===>                                               ]  60.72MB/907.7MB
+ f19b7ac6489f Extracting [===================================>               ]  15.14MB/21.31MB
+ eb77aa907276 Extracting [====>                                              ]  80.22MB/907.7MB
+ f19b7ac6489f Extracting [=======================================>           ]  16.97MB/21.31MB
+ eb77aa907276 Extracting [====>                                              ]   86.9MB/907.7MB
+ f19b7ac6489f Extracting [============================================>      ]  19.04MB/21.31MB
+ eb77aa907276 Extracting [=====>                                             ]  95.26MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]  103.1MB/907.7MB
+ f19b7ac6489f Extracting [================================================>  ]  20.87MB/21.31MB
+ eb77aa907276 Extracting [======>                                            ]  111.4MB/907.7MB
+ f19b7ac6489f Extracting [==================================================>]  21.31MB/21.31MB
+ eb77aa907276 Extracting [======>                                            ]  118.7MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]    127MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  135.4MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  142.6MB/907.7MB
+ f19b7ac6489f Pull complete 
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Extracting [==================================================>]     188B/188B
+ 0f9a1c409bb2 Pull complete 
+ eb77aa907276 Extracting [========>                                          ]  145.9MB/907.7MB
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ d5d9860a5545 Extracting [==================================================>]     109B/109B
+ d5d9860a5545 Pull complete 
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Extracting [==================================================>]     617B/617B
+ fc030d7bf8ba Pull complete 
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ c5ec72a0a4d4 Extracting [==================================================>]     831B/831B
+ c5ec72a0a4d4 Pull complete 
+ a51622689fc8 Extracting [>                                                  ]  131.1kB/12.47MB
+ eb77aa907276 Extracting [========>                                          ]  153.2MB/907.7MB
+ a51622689fc8 Extracting [=================>                                 ]  4.456MB/12.47MB
+ eb77aa907276 Extracting [========>                                          ]  160.4MB/907.7MB
+ a51622689fc8 Extracting [==========================>                        ]  6.554MB/12.47MB
+ eb77aa907276 Extracting [=========>                                         ]  179.4MB/907.7MB
+ a51622689fc8 Extracting [=============================>                     ]   7.34MB/12.47MB
+ eb77aa907276 Extracting [==========>                                        ]  197.2MB/907.7MB
+ a51622689fc8 Extracting [=======================================>           ]  9.961MB/12.47MB
+ eb77aa907276 Extracting [===========>                                       ]  211.7MB/907.7MB
+ a51622689fc8 Extracting [==============================================>    ]  11.53MB/12.47MB
+ eb77aa907276 Extracting [============>                                      ]  222.3MB/907.7MB
+ a51622689fc8 Extracting [==================================================>]  12.47MB/12.47MB
+ eb77aa907276 Extracting [============>                                      ]  231.2MB/907.7MB
+ a51622689fc8 Pull complete 
+ rabbitmq Pulled 
+ eb77aa907276 Extracting [=============>                                     ]  240.1MB/907.7MB
+ eb77aa907276 Extracting [==============>                                    ]  254.6MB/907.7MB
+ eb77aa907276 Extracting [===============>                                   ]  274.6MB/907.7MB
+ eb77aa907276 Extracting [================>                                  ]  299.1MB/907.7MB
+ eb77aa907276 Extracting [=================>                                 ]  319.8MB/907.7MB
+ eb77aa907276 Extracting [==================>                                ]  340.4MB/907.7MB
+ eb77aa907276 Extracting [===================>                               ]  359.3MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  366.5MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  374.3MB/907.7MB
+ eb77aa907276 Extracting [=====================>                             ]    395MB/907.7MB
+ eb77aa907276 Extracting [=======================>                           ]  418.3MB/907.7MB
+ eb77aa907276 Extracting [========================>                          ]  446.8MB/907.7MB
+ eb77aa907276 Extracting [==========================>                        ]  475.2MB/907.7MB
+ eb77aa907276 Extracting [===========================>                       ]  503.6MB/907.7MB
+ eb77aa907276 Extracting [=============================>                     ]    532MB/907.7MB
+ eb77aa907276 Extracting [==============================>                    ]    561MB/907.7MB
+ eb77aa907276 Extracting [================================>                  ]  587.1MB/907.7MB
+ eb77aa907276 Extracting [=================================>                 ]  613.3MB/907.7MB
+ eb77aa907276 Extracting [===================================>               ]  641.2MB/907.7MB
+ eb77aa907276 Extracting [====================================>              ]    669MB/907.7MB
+ eb77aa907276 Extracting [======================================>            ]    698MB/907.7MB
+ eb77aa907276 Extracting [=======================================>           ]  722.5MB/907.7MB
+ eb77aa907276 Extracting [=========================================>         ]    747MB/907.7MB
+ eb77aa907276 Extracting [==========================================>        ]  768.7MB/907.7MB
+ eb77aa907276 Extracting [===========================================>       ]  789.3MB/907.7MB
+ eb77aa907276 Extracting [============================================>      ]  810.5MB/907.7MB
+ eb77aa907276 Extracting [=============================================>     ]  831.1MB/907.7MB
+ eb77aa907276 Extracting [==============================================>    ]  851.7MB/907.7MB
+ eb77aa907276 Extracting [================================================>  ]  872.3MB/907.7MB
+ eb77aa907276 Extracting [=================================================> ]  895.2MB/907.7MB
+ eb77aa907276 Extracting [==================================================>]  907.7MB/907.7MB
+ eb77aa907276 Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Pull complete 
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Pull complete 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+ Container docker_services_cli-opensearch-1  Started
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py,line=854::'crypt' is deprecated and slated for removal in Python 3.13
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py,line=31::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py,line=14::jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py,line=12::The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py,line=12::The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py,line=154::The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py,line=140::Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0 -- /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_users_resources
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collecting ... collected 302 items
+
+docs/conf.py::PYDOCSTYLE PASSED
+docs/conf.py::ISORT PASSED
+docs/conf.py::black PASSED
+tests/conftest.py::PYDOCSTYLE PASSED
+tests/conftest.py::ISORT PASSED
+tests/conftest.py::black PASSED
+tests/resources/test_resources_domains.py::ISORT PASSED
+tests/resources/test_resources_domains.py::black PASSED
+tests/resources/test_resources_domains.py::test_domains_access PASSED
+tests/resources/test_resources_domains.py::test_domains_search PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_read Tried to build event emitter for unregistered event 'record-view'
+[2025-11-18 09:26:09,769] WARNING in receivers: Tried to build event emitter for unregistered event 'record-view'
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_stats/receivers.py,line=54::The 'warn' method is deprecated, use 'warning' instead
+
+tests/resources/test_resources_domains.py::test_domains_delete PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_create PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_create_failure[400-json0] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_create_failure[400-json1] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_create_failure[400-json2] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_create_failure[400-json3] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_domains.py::test_domains_update PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_groups.py::ISORT PASSED
+tests/resources/test_resources_groups.py::black PASSED
+tests/resources/test_resources_groups.py::test_group_avatar PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::ISORT PASSED
+tests/resources/test_resources_users.py::black PASSED
+tests/resources/test_resources_users.py::test_read_self_serialization PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_read_anon_serialization PASSED
+tests/resources/test_resources_users.py::test_read_logged_in_serialization[pub] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_read_logged_in_serialization[pubres] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_read_logged_in_serialization[res] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_user_avatar PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_user_avatar_non_ascii PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_create_user Content-Type: multipart/mixed; boundary="===============7025902877208465026=="
+MIME-Version: 1.0
+Subject: Password reset instructions
+From: no-reply@localhost
+To: newuser@inveniosoftware.org
+Date: Tue, 18 Nov 2025 09:26:16 +0000
+Message-ID: <176345797665.4761.16293683589413041179@runnervmg1sw1.zdtlsx14orjuhm1vjuybvnhl4d.yx.internal.cloudapp.net>
+
+--===============7025902877208465026==
+Content-Type: multipart/alternative; boundary="===============9001331322014260030=="
+MIME-Version: 1.0
+
+--===============9001331322014260030==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Your new account has been created
+
+Click the link below to create a new password:
+
+http://localhost/lost-password/WyIxMCIsIiQ1JHJvdW5kcz01MzUwMDAkbXhQWm90aFlSeDhmSTNHZyQyb3FFbW5aQk1uTzZWaWh4a0xVZlFRNkpZTmZyU2gycVFnWlVwRnhGc2k5Il0.aRw7uA.vbfZH70E1ZBDo4v_ZuqeJhpRuTI
+--===============9001331322014260030==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<p>Your new account has been created</p>
+
+<p>
+  <a href="http://localhost/lost-password/WyIxMCIsIiQ1JHJvdW5kcz01MzUwMDAkbXhQWm90aFlSeDhmSTNHZyQyb3FFbW5aQk1uTzZWaWh4a0xVZlFRNkpZTmZyU2gycVFnWlVwRnhGc2k5Il0.aRw7uA.vbfZH70E1ZBDo4v_ZuqeJhpRuTI">Click here to create a new password</a>
+</p>
+--===============9001331322014260030==--
+
+--===============7025902877208465026==--
+
+-------------------------------------------------------------------------------
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_approve_user PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/resources/test_resources_users.py::test_block_user PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/resources/test_resources_users.py::test_deactivate_user PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_management_permissions PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_impersonate_user PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_admin_links[admin_records_html-/administration/records?q=parent.access.owned_by.user:{id}&f=allversions] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_admin_links[admin_drafts_html-/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_admin_links[admin_moderation_html-/administration/moderation?q=topic.user:{id}] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_admin_links_visibility[user_moderator-True] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_admin_links_visibility[pub-False] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/resources/test_resources_users.py::test_admin_links_visibility[res-False] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/services/test_generators.py::ISORT PASSED
+tests/services/test_generators.py::black PASSED
+tests/services/test_generators.py::test_group_not_managed_generator PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/test_service_groups.py::ISORT PASSED
+tests/services/test_service_groups.py::black PASSED
+tests/services/test_service_groups.py::test_groups_sort Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+[2025-11-18 09:26:23,358] ERROR in api: Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+[2025-11-18 09:26:23,371] ERROR in api: Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+Failed to index record administration-moderation
+Traceback (most recent call last):
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 370, in _actionsiter
+    yield self._index_action(payload)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 416, in _index_action
+    index = self.record_to_index(record)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_indexer/api.py", line 114, in record_to_index
+    result = self._record_to_index(record)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/service.py", line 67, in record_to_index
+    return record.index._name
+           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'index'
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+
+tests/services/test_service_groups.py::test_groups_no_facets PASSED
+tests/services/test_service_groups.py::test_groups_fixed_pagination PASSED
+tests/services/test_service_groups.py::test_groups_search_field[id:it-dep] PASSED
+tests/services/test_service_groups.py::test_groups_search_field[name:IT Department] PASSED
+tests/services/test_service_groups.py::test_groups_search_field[+name:it] PASSED
+tests/services/test_service_groups.py::test_groups_search_field[IT] PASSED
+tests/services/test_service_groups.py::test_groups_search PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/test_service_groups.py::test_groups_read PASSED
+tests/services/test_service_tasks_domains.py::ISORT PASSED
+tests/services/test_service_tasks_domains.py::black PASSED
+tests/services/test_service_tasks_domains.py::test_import_domain_blocklist PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+
+tests/services/test_service_tasks_domains.py::test_import_domain_blocklist_download_error Failed to download http://fake-url
+[2025-11-18 09:26:26,334] ERROR in tasks: Failed to download http://fake-url
+Failed to download http://fake-url
+Failed to download http://fake-url
+Failed to download http://fake-url
+Failed to download http://fake-url
+Failed to download http://fake-url
+PASSED
+tests/services/users/test_service_users.py::ISORT PASSED
+tests/services/users/test_service_users.py::black PASSED
+tests/services/users/test_service_users.py::test_search_restricted PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_service_users.py::test_search_public_users PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[affiliations:CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[affiliation:CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[name:Jose affiliation:CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[+name:Jose +affiliation:CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[Tim] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[Tim CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[Jose] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[Jos] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[Jose CERN] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[email:pub@inveniosoftware.org] PASSED
+tests/services/users/test_service_users.py::test_admin_search_field[username:pub] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[res@inveniosoftware.org] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[pubres@inveniosoftware.org] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[Plazi0] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[inactive] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[unconfirmed] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[restricted] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[Plazi1] PASSED
+tests/services/users/test_service_users.py::test_user_search_field_not_searchable[test] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[CERN] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[Jose CERN] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[Jose AND CERN] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[Tim] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[Tim CERN] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[Jose] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[Jos] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[pub@inveniosoftware.org] PASSED
+tests/services/users/test_service_users.py::test_user_search_field[pub] PASSED
+tests/services/users/test_service_users.py::test_read_with_anon PASSED
+tests/services/users/test_service_users.py::test_read_with_logged_in PASSED
+tests/services/users/test_service_users.py::test_read_self[pub] PASSED
+tests/services/users/test_service_users.py::test_read_self[pubres] PASSED
+tests/services/users/test_service_users.py::test_read_self[res] PASSED
+tests/services/users/test_service_users.py::test_search_permissions PASSED
+tests/services/users/test_service_users.py::test_create_permission_denied PASSED
+tests/services/users/test_service_users.py::test_create_user Content-Type: multipart/mixed; boundary="===============8496053197273471933=="
+MIME-Version: 1.0
+Subject: Password reset instructions
+From: no-reply@localhost
+To: newuser@inveniosoftware.org
+Date: Tue, 18 Nov 2025 09:26:38 +0000
+Message-ID: <176345799838.4761.275919516291752102@runnervmg1sw1.zdtlsx14orjuhm1vjuybvnhl4d.yx.internal.cloudapp.net>
+
+--===============8496053197273471933==
+Content-Type: multipart/alternative; boundary="===============1152599942479573985=="
+MIME-Version: 1.0
+
+--===============1152599942479573985==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Your new account has been created
+
+Click the link below to create a new password:
+
+http://localhost/lost-password/WyIxMCIsIiQ1JHJvdW5kcz01MzUwMDAkNUNmalN0SkZYSWFOYlouSiQ5a2gzaUtzcGZZOU9yMklmVWNxSU4uaXYwdGlJUGNwYXJVRlJSZDl6WHQuIl0.aRw7zg.9cAOYCnofpILDLD5peR9Z4ku_fQ
+--===============1152599942479573985==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<p>Your new account has been created</p>
+
+<p>
+  <a href="http://localhost/lost-password/WyIxMCIsIiQ1JHJvdW5kcz01MzUwMDAkNUNmalN0SkZYSWFOYlouSiQ5a2gzaUtzcGZZOU9yMklmVWNxSU4uaXYwdGlJUGNwYXJVRlJSZDl6WHQuIl0.aRw7zg.9cAOYCnofpILDLD5peR9Z4ku_fQ">Click here to create a new password</a>
+</p>
+--===============1152599942479573985==--
+
+--===============8496053197273471933==--
+
+-------------------------------------------------------------------------------
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/services/users/test_service_users.py::test_create_user_errors Content-Type: multipart/mixed; boundary="===============7310285213566782892=="
+MIME-Version: 1.0
+Subject: Password reset instructions
+From: no-reply@localhost
+To: newuser@inveniosoftware.org
+Date: Tue, 18 Nov 2025 09:26:40 +0000
+Message-ID: <176345799999.4761.4417990123626696253@runnervmg1sw1.zdtlsx14orjuhm1vjuybvnhl4d.yx.internal.cloudapp.net>
+
+--===============7310285213566782892==
+Content-Type: multipart/alternative; boundary="===============8037547582696260798=="
+MIME-Version: 1.0
+
+--===============8037547582696260798==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Your new account has been created
+
+Click the link below to create a new password:
+
+http://localhost/lost-password/WyIxMSIsIiQ1JHJvdW5kcz01MzUwMDAkL1hOVmxlVUZKY0ZIdmY1WCR3SEE4aGVxaEdOQkNPREdrWG5tMFFhS1IwU0lFU1dOT0V6eDFFSUFCdjI0Il0.aRw7zw.NOBPNXjuZWDxaZW8PG3QmgmANZs
+--===============8037547582696260798==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<p>Your new account has been created</p>
+
+<p>
+  <a href="http://localhost/lost-password/WyIxMSIsIiQ1JHJvdW5kcz01MzUwMDAkL1hOVmxlVUZKY0ZIdmY1WCR3SEE4aGVxaEdOQkNPREdrWG5tMFFhS1IwU0lFU1dOT0V6eDFFSUFCdjI0Il0.aRw7zw.NOBPNXjuZWDxaZW8PG3QmgmANZs">Click here to create a new password</a>
+</p>
+--===============8037547582696260798==--
+
+--===============7310285213566782892==--
+
+-------------------------------------------------------------------------------
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+
+tests/services/users/test_service_users.py::test_block PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_service_users.py::test_approve PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_service_users.py::test_deactivate PASSED
+tests/services/users/test_service_users.py::test_non_existent_user_management PASSED
+tests/services/users/test_service_users.py::test_restore PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_user_moderation.py::ISORT PASSED
+tests/services/users/test_user_moderation.py::black PASSED
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_success PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_failure Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+[2025-11-18 09:26:45,401] WARNING in tasks: Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+Could not execute action 'block' for user: Error on lock: <Lock user_moderation_lock.3>: Lock failed to be acquired.
+PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_users_resources/services/users/tasks.py,line=96::The 'warn' method is deprecated, use 'warning' instead
+
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_lock PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_lock_renewal[1-10-True] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_lock_renewal[2-2-False] PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py,line=55::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_invenio_users_resources.py::ISORT PASSED
+tests/test_invenio_users_resources.py::black PASSED
+tests/test_invenio_users_resources.py::test_version PASSED
+tests/test_invenio_users_resources.py::test_init PASSED
+tests/test_notifications.py::ISORT PASSED
+tests/test_notifications.py::black PASSED
+tests/test_notifications.py::test_user_recipient_generator PASSED::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+
+tests/test_notifications.py::test_user_recipient_filter PASSED
+invenio_users_resources/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/__init__.py::ISORT PASSED
+invenio_users_resources/__init__.py::black PASSED
+invenio_users_resources/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/config.py::ISORT PASSED
+invenio_users_resources/config.py::black PASSED
+invenio_users_resources/entity_resolvers.py::PYDOCSTYLE PASSED
+invenio_users_resources/entity_resolvers.py::ISORT PASSED
+invenio_users_resources/entity_resolvers.py::black PASSED
+invenio_users_resources/ext.py::PYDOCSTYLE PASSED
+invenio_users_resources/ext.py::ISORT PASSED
+invenio_users_resources/ext.py::black PASSED
+invenio_users_resources/forms.py::PYDOCSTYLE PASSED
+invenio_users_resources/forms.py::ISORT PASSED
+invenio_users_resources/forms.py::black PASSED
+invenio_users_resources/models.py::PYDOCSTYLE PASSED
+invenio_users_resources/models.py::ISORT PASSED
+invenio_users_resources/models.py::black PASSED
+invenio_users_resources/notifications/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/notifications/__init__.py::ISORT PASSED
+invenio_users_resources/notifications/__init__.py::black PASSED
+invenio_users_resources/notifications/filters.py::PYDOCSTYLE PASSED
+invenio_users_resources/notifications/filters.py::ISORT PASSED
+invenio_users_resources/notifications/filters.py::black PASSED
+invenio_users_resources/notifications/generators.py::PYDOCSTYLE PASSED
+invenio_users_resources/notifications/generators.py::ISORT PASSED
+invenio_users_resources/notifications/generators.py::black PASSED
+invenio_users_resources/permissions.py::PYDOCSTYLE PASSED
+invenio_users_resources/permissions.py::ISORT PASSED
+invenio_users_resources/permissions.py::black PASSED
+invenio_users_resources/proxies.py::PYDOCSTYLE PASSED
+invenio_users_resources/proxies.py::ISORT PASSED
+invenio_users_resources/proxies.py::black PASSED
+invenio_users_resources/records/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/__init__.py::ISORT PASSED
+invenio_users_resources/records/__init__.py::black PASSED
+invenio_users_resources/records/api.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/api.py::ISORT PASSED
+invenio_users_resources/records/api.py::black PASSED
+invenio_users_resources/records/dumpers/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/dumpers/__init__.py::ISORT PASSED
+invenio_users_resources/records/dumpers/__init__.py::black PASSED
+invenio_users_resources/records/dumpers/email.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/dumpers/email.py::ISORT PASSED
+invenio_users_resources/records/dumpers/email.py::black PASSED
+invenio_users_resources/records/hooks.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/hooks.py::ISORT PASSED
+invenio_users_resources/records/hooks.py::black PASSED
+invenio_users_resources/records/mappings/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/mappings/__init__.py::ISORT PASSED
+invenio_users_resources/records/mappings/__init__.py::black PASSED
+invenio_users_resources/records/mappings/os-v1/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/mappings/os-v1/__init__.py::ISORT PASSED
+invenio_users_resources/records/mappings/os-v1/__init__.py::black PASSED
+invenio_users_resources/records/mappings/os-v2/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/mappings/os-v2/__init__.py::ISORT PASSED
+invenio_users_resources/records/mappings/os-v2/__init__.py::black PASSED
+invenio_users_resources/records/mappings/v7/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/mappings/v7/__init__.py::ISORT PASSED
+invenio_users_resources/records/mappings/v7/__init__.py::black PASSED
+invenio_users_resources/records/models.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/models.py::ISORT PASSED
+invenio_users_resources/records/models.py::black PASSED
+invenio_users_resources/records/systemfields/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/records/systemfields/__init__.py::ISORT PASSED
+invenio_users_resources/records/systemfields/__init__.py::black PASSED
+invenio_users_resources/resources/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/__init__.py::ISORT PASSED
+invenio_users_resources/resources/__init__.py::black PASSED
+invenio_users_resources/resources/domains/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/domains/__init__.py::ISORT PASSED
+invenio_users_resources/resources/domains/__init__.py::black PASSED
+invenio_users_resources/resources/domains/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/domains/config.py::ISORT PASSED
+invenio_users_resources/resources/domains/config.py::black PASSED
+invenio_users_resources/resources/domains/resource.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/domains/resource.py::ISORT PASSED
+invenio_users_resources/resources/domains/resource.py::black PASSED
+invenio_users_resources/resources/groups/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/groups/__init__.py::ISORT PASSED
+invenio_users_resources/resources/groups/__init__.py::black PASSED
+invenio_users_resources/resources/groups/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/groups/config.py::ISORT PASSED
+invenio_users_resources/resources/groups/config.py::black PASSED
+invenio_users_resources/resources/groups/resource.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/groups/resource.py::ISORT PASSED
+invenio_users_resources/resources/groups/resource.py::black PASSED
+invenio_users_resources/resources/users/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/users/__init__.py::ISORT PASSED
+invenio_users_resources/resources/users/__init__.py::black PASSED
+invenio_users_resources/resources/users/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/users/config.py::ISORT PASSED
+invenio_users_resources/resources/users/config.py::black PASSED
+invenio_users_resources/resources/users/errors.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/users/errors.py::ISORT PASSED
+invenio_users_resources/resources/users/errors.py::black PASSED
+invenio_users_resources/resources/users/resource.py::PYDOCSTYLE PASSED
+invenio_users_resources/resources/users/resource.py::ISORT PASSED
+invenio_users_resources/resources/users/resource.py::black PASSED
+invenio_users_resources/services/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/__init__.py::ISORT PASSED
+invenio_users_resources/services/__init__.py::black PASSED
+invenio_users_resources/services/common.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/common.py::ISORT PASSED
+invenio_users_resources/services/common.py::black PASSED
+invenio_users_resources/services/domains/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/domains/__init__.py::ISORT PASSED
+invenio_users_resources/services/domains/__init__.py::black PASSED
+invenio_users_resources/services/domains/components.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/domains/components.py::ISORT PASSED
+invenio_users_resources/services/domains/components.py::black PASSED
+invenio_users_resources/services/domains/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/domains/config.py::ISORT PASSED
+invenio_users_resources/services/domains/config.py::black PASSED
+invenio_users_resources/services/domains/facets.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/domains/facets.py::ISORT PASSED
+invenio_users_resources/services/domains/facets.py::black PASSED
+invenio_users_resources/services/domains/service.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/domains/service.py::ISORT PASSED
+invenio_users_resources/services/domains/service.py::black PASSED
+invenio_users_resources/services/domains/tasks.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/domains/tasks.py::ISORT PASSED
+invenio_users_resources/services/domains/tasks.py::black PASSED
+invenio_users_resources/services/generators.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/generators.py::ISORT PASSED
+invenio_users_resources/services/generators.py::black PASSED
+invenio_users_resources/services/groups/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/groups/__init__.py::ISORT PASSED
+invenio_users_resources/services/groups/__init__.py::black PASSED
+invenio_users_resources/services/groups/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/groups/config.py::ISORT PASSED
+invenio_users_resources/services/groups/config.py::black PASSED
+invenio_users_resources/services/groups/results.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/groups/results.py::ISORT PASSED
+invenio_users_resources/services/groups/results.py::black PASSED
+invenio_users_resources/services/groups/service.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/groups/service.py::ISORT PASSED
+invenio_users_resources/services/groups/service.py::black PASSED
+invenio_users_resources/services/groups/tasks.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/groups/tasks.py::ISORT PASSED
+invenio_users_resources/services/groups/tasks.py::black PASSED
+invenio_users_resources/services/params.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/params.py::ISORT PASSED
+invenio_users_resources/services/params.py::black PASSED
+invenio_users_resources/services/permissions.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/permissions.py::ISORT PASSED
+invenio_users_resources/services/permissions.py::black PASSED
+invenio_users_resources/services/results.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/results.py::ISORT PASSED
+invenio_users_resources/services/results.py::black PASSED
+invenio_users_resources/services/schemas.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/schemas.py::ISORT PASSED
+invenio_users_resources/services/schemas.py::black PASSED
+invenio_users_resources/services/users/__init__.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/__init__.py::ISORT PASSED
+invenio_users_resources/services/users/__init__.py::black PASSED
+invenio_users_resources/services/users/config.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/config.py::ISORT PASSED
+invenio_users_resources/services/users/config.py::black PASSED
+invenio_users_resources/services/users/facets.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/facets.py::ISORT PASSED
+invenio_users_resources/services/users/facets.py::black PASSED
+invenio_users_resources/services/users/lock.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/lock.py::ISORT PASSED
+invenio_users_resources/services/users/lock.py::black PASSED
+invenio_users_resources/services/users/results.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/results.py::ISORT PASSED
+invenio_users_resources/services/users/results.py::black PASSED
+invenio_users_resources/services/users/search_params.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/search_params.py::ISORT PASSED
+invenio_users_resources/services/users/search_params.py::black PASSED
+invenio_users_resources/services/users/service.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/service.py::ISORT PASSED
+invenio_users_resources/services/users/service.py::black PASSED
+invenio_users_resources/services/users/tasks.py::PYDOCSTYLE PASSED
+invenio_users_resources/services/users/tasks.py::ISORT PASSED
+invenio_users_resources/services/users/tasks.py::black PASSED
+invenio_users_resources/views.py::PYDOCSTYLE PASSED
+invenio_users_resources/views.py::ISORT PASSED
+invenio_users_resources/views.py::black PASSED
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12: DeprecationWarning: The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
+    from marshmallow import __version_info__ as marshmallow_version
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    storage_class = Str(default="L", dump_only=False)
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py:140: 20 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/base/links.py:140: DeprecationWarning: Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.
+    warnings.warn(
+
+tests/resources/test_resources_domains.py: 18 warnings
+tests/resources/test_resources_groups.py: 1 warning
+tests/resources/test_resources_users.py: 37 warnings
+tests/services/users/test_service_users.py: 4 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py:207: DeprecationWarning: get_user method is deprecated, user get_user_by_email/get_user_by_id
+    warnings.warn(
+
+tests/resources/test_resources_domains.py::test_domains_read
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_stats/receivers.py:54: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+    current_app.logger.warn(
+
+tests/resources/test_resources_groups.py::test_group_avatar
+tests/resources/test_resources_users.py::test_read_self_serialization
+tests/services/test_generators.py::test_group_not_managed_generator
+tests/services/test_service_groups.py::test_groups_sort
+tests/services/test_service_tasks_domains.py::test_import_domain_blocklist
+tests/services/users/test_service_users.py::test_search_restricted
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_success
+tests/test_notifications.py::test_user_recipient_generator
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py:145: DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+    self._set_cache(app, config)
+
+tests/resources/test_resources_groups.py: 1 warning
+tests/resources/test_resources_users.py: 1 warning
+tests/services/test_generators.py: 1 warning
+tests/services/test_service_groups.py: 8 warnings
+tests/services/users/test_service_users.py: 1 warning
+tests/services/users/test_user_moderation.py: 1 warning
+tests/test_notifications.py: 1 warning
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py:36: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    self._confirmed = datetime.utcnow() if confirmed else None
+
+tests/resources/test_resources_users.py: 4 warnings
+tests/services/users/test_service_users.py: 8 warnings
+tests/services/users/test_user_moderation.py: 13 warnings
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/invenio_cache/lock.py:55: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    self._created = datetime.utcnow()
+
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_failure
+  /home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/invenio_users_resources/services/users/tasks.py:96: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+    current_app.logger.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-bug-verification/invenio-bug-verification/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------------------
+invenio_users_resources/__init__.py                                           2      0   100%
+invenio_users_resources/config.py                                            30      0   100%
+invenio_users_resources/entity_resolvers.py                                  82     45    45%   36-43, 47-53, 57, 61-62, 66-90, 102-103, 107, 111, 115, 119, 128-136, 140-145, 149-150, 160, 173-174, 178, 182, 186, 190
+invenio_users_resources/ext.py                                               64      5    92%   115-118, 126
+invenio_users_resources/forms.py                                             14      5    64%   30-32, 38-39
+invenio_users_resources/models.py                                            10      4    60%   21, 25, 29, 39
+invenio_users_resources/notifications/__init__.py                             0      0   100%
+invenio_users_resources/notifications/filters.py                             11      1    91%   23
+invenio_users_resources/notifications/generators.py                          37     15    59%   25, 47, 51-53, 61-62, 67-68, 76-77, 80-85
+invenio_users_resources/permissions.py                                        3      0   100%
+invenio_users_resources/proxies.py                                           12      0   100%
+invenio_users_resources/records/__init__.py                                   2      0   100%
+invenio_users_resources/records/api.py                                      266     16    94%   89, 93, 102, 108, 228-232, 253-254, 263, 270, 277, 284, 296, 367
+invenio_users_resources/records/dumpers/__init__.py                           2      0   100%
+invenio_users_resources/records/dumpers/email.py                             15      0   100%
+invenio_users_resources/records/hooks.py                                     45     16    64%   36-41, 44-49, 73, 78, 82, 88
+invenio_users_resources/records/mappings/__init__.py                          0      0   100%
+invenio_users_resources/records/mappings/os-v1/__init__.py                    0      0   100%
+invenio_users_resources/records/mappings/os-v2/__init__.py                    0      0   100%
+invenio_users_resources/records/mappings/v7/__init__.py                       0      0   100%
+invenio_users_resources/records/models.py                                    98     11    89%   54, 85, 90, 152-154, 178-182
+invenio_users_resources/records/systemfields/__init__.py                     72      0   100%
+invenio_users_resources/resources/__init__.py                                 4      0   100%
+invenio_users_resources/resources/domains/__init__.py                         3      0   100%
+invenio_users_resources/resources/domains/config.py                          11      0   100%
+invenio_users_resources/resources/domains/resource.py                         6      0   100%
+invenio_users_resources/resources/groups/__init__.py                          3      0   100%
+invenio_users_resources/resources/groups/config.py                           11      0   100%
+invenio_users_resources/resources/groups/resource.py                         24      4    83%   44-49, 55-59
+invenio_users_resources/resources/users/__init__.py                           3      0   100%
+invenio_users_resources/resources/users/config.py                            19      0   100%
+invenio_users_resources/resources/users/errors.py                             4      0   100%
+invenio_users_resources/resources/users/resource.py                          74      8    89%   50, 79, 86-91, 149-153, 167-171
+invenio_users_resources/services/__init__.py                                  4      0   100%
+invenio_users_resources/services/common.py                                    5      0   100%
+invenio_users_resources/services/domains/__init__.py                          3      0   100%
+invenio_users_resources/services/domains/components.py                       27      6    78%   50-59
+invenio_users_resources/services/domains/config.py                           29      0   100%
+invenio_users_resources/services/domains/facets.py                            7      0   100%
+invenio_users_resources/services/domains/service.py                           8      0   100%
+invenio_users_resources/services/domains/tasks.py                            61     15    75%   25-30, 36-41, 71-73
+invenio_users_resources/services/generators.py                               80      9    89%   37, 54-59, 86, 95, 161
+invenio_users_resources/services/groups/__init__.py                           3      0   100%
+invenio_users_resources/services/groups/config.py                            30      0   100%
+invenio_users_resources/services/groups/results.py                           57      6    89%   39, 43, 59, 77, 83, 126
+invenio_users_resources/services/groups/service.py                           26      7    73%   32, 38-39, 48, 54-58
+invenio_users_resources/services/groups/tasks.py                             21      8    62%   27-28, 34-39
+invenio_users_resources/services/params.py                                    9      0   100%
+invenio_users_resources/services/permissions.py                              31      0   100%
+invenio_users_resources/services/results.py                                  29      0   100%
+invenio_users_resources/services/schemas.py                                 145     10    93%   200-203, 211, 214, 217, 260, 272, 282
+invenio_users_resources/services/users/__init__.py                            3      0   100%
+invenio_users_resources/services/users/config.py                             44      4    91%   54-57
+invenio_users_resources/services/users/facets.py                              7      0   100%
+invenio_users_resources/services/users/lock.py                               11      0   100%
+invenio_users_resources/services/users/results.py                            57      4    93%   39, 43, 77, 83
+invenio_users_resources/services/users/search_params.py                      23      8    65%   37-55
+invenio_users_resources/services/users/service.py                           134     13    90%   142, 148-149, 158, 164-166, 184, 207, 231, 254, 266, 280
+invenio_users_resources/services/users/tasks.py                              49      8    84%   56-57, 63-68
+invenio_users_resources/templates/security/email/new_user_via_admin.txt       3      1    67%   3
+invenio_users_resources/views.py                                             11      0   100%
+-------------------------------------------------------------------------------------------------------
+TOTAL                                                                      1844    229    88%
+================= 302 passed, 139 warnings in 60.45s (0:01:00) =================
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

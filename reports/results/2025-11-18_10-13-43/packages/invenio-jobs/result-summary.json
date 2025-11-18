@@ -1,0 +1,34 @@
+{
+  "package": "invenio-jobs",
+  "has_patch": true,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "flask-kvsession-invenio flask-oauthlib-invenio flask-security-invenio flask-resources invenio-accounts invenio-db invenio-files-rest invenio-oauthclient invenio-records invenio-records-resources invenio-rest invenio-stats invenio-users-resources marshmallow-utils",
+  "warnings": {
+    "patched": {
+      "DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13": 1,
+      "DeprecationWarning: The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version(\"marshmallow\")).release' instead.": 1,
+      "DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.": 2,
+      "DeprecationWarning: jsonschema.exceptions.RefResolutionError is deprecated as of version 4.18.0. If you wish to catch potential reference resolution errors, directly catch referencing.exceptions.Unresolvable.": 1,
+      "RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.": 2,
+      "DeprecationWarning: Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.": 1,
+      "ChangedInMarshmallow4Warning: `Field` should not be instantiated. Use `fields.Raw` or  another field subclass instead.": 1,
+      "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).": 5,
+      "DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('b54191a7-3433-4d83-ac9f-2cb0b8e2cbd1'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('0aabb4a3-11de-4f24-a7d9-24748e8cd9a6'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('345b3e4a-2da3-4e57-a619-430e8a289a3f'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('c7f8e52e-c7ac-444a-8039-20f48f6306cf'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('f797e8aa-01b0-4b0d-b59e-4dfcfdfe764b'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('5f200005-575b-4e79-b162-cc2ab0b020d8'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1,
+      "SAWarning: Identity map already had an identity for (<class 'invenio_jobs.models.Run'>, (UUID('78f0ccfe-8d6c-452d-97c4-90c201457e67'),), None), replacing it with newly flushed object.   Are there load operations occurring inside of an event handler within the flush?": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 22
+  }
+}

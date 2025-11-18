@@ -1,0 +1,34 @@
+# Warnings (patched)
+
+## Warning 1 - 2 occurrences
+
+DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+
+## Warning 2 - 1 occurrence
+
+DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+
+## Warning 3 - 1 occurrence
+
+DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces/commas for version_locations.  Consider adding path_separator=os to Alembic config.
+
+## Warning 4 - 1 occurrence
+
+DeprecationWarning: The '__version__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'importlib.metadata.version("marshmallow")' instead.
+
+## Warning 5 - 1 occurrence
+
+SADeprecationWarning: The from_engine() method on Inspector is deprecated and will be removed in a future release.  Please use the sqlalchemy.inspect() function on an Engine or Connection in order to acquire an Inspector. (deprecated since: 1.4)
+
+## Warning 6 - 1 occurrence
+
+SAWarning: Object of type <ObjectVersion> not in session, add operation along 'Bucket.objects' will not proceed (This warning originated from the Session 'autoflush' process, which was invoked automatically in response to a user-initiated operation. Consider using ``no_autoflush`` context manager if this warning happened while initializing objects.)
+
+## Warning 7 - 1 occurrence
+
+UserWarning: This streaming does not support multiple storage backends.
+
+## Warning 8 - 1 occurrence
+
+UserWarning: autoincrement and existing_autoincrement only make sense for MySQL
+

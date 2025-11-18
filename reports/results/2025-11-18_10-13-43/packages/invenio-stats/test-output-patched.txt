@@ -1,0 +1,4 @@
+lists of files in version control and sdist match
+
+Warning, treated as error:
+dot command 'dot' cannot be run (needed for graphviz output), check the graphviz_dot setting

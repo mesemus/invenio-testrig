@@ -1,0 +1,29 @@
+{
+  "package": "invenio-oauthclient",
+  "has_patch": true,
+  "patch_applies": true,
+  "original_tests_outcome": "success",
+  "patched_tests_outcome": "failed",
+  "result": "regression",
+  "result_icon": "\u274c",
+  "result_text": "Patch introduced test failures",
+  "patched_packages": "flask-kvsession-invenio flask-oauthlib-invenio flask-security-invenio invenio-accounts invenio-db invenio-rest",
+  "warnings": {
+    "original": {
+      "DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13": 1,
+      "UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.": 1,
+      "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.": 1,
+      "DeprecationWarning: The cern contrib is deprecated. Please use the generic keycloak instead.": 1,
+      "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).": 8,
+      "DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).": 1
+    },
+    "patched": {
+      "DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13": 1,
+      "DeprecationWarning: The cern contrib is deprecated. Please use the generic keycloak instead.": 1
+    }
+  },
+  "warnings_count": {
+    "original": 13,
+    "patched": 2
+  }
+}

@@ -4,6 +4,7 @@ This directory contains reports generated during the bug verification process. T
 
 | Test name | Report date and time | Status | Patches tested |
 |-------------|---------------------|--------|-------------|
+| Christoph's deprecation patches | [2025-11-18 10-13-43](./results/2025-11-18_10-13-43/report.md) | 26 ✅ passed, 15 ❌ failed, 851 warnings | flask-iiif, flask-kvsession-invenio, flask-oauthlib-invenio, flask-resources, flask-security-invenio, invenio-accounts, invenio-admin, invenio-audit-logs, invenio-banners, invenio-checks, invenio-collections, invenio-communities, invenio-db, invenio-drafts-resources, invenio-files-rest, invenio-formatter, invenio-jobs, invenio-oaiserver, invenio-oauth2server, invenio-oauthclient, invenio-rdm-records, invenio-records, invenio-records-resources, invenio-requests, invenio-rest, invenio-stats, invenio-users-resources, marshmallow-utils |
 | invenio pages deadlock test | [2025-11-18 08-28-15](./results/2025-11-18_08-28-15/report.md) | 0 ✅ passed, 1 ❌ failed, 37 warnings | invenio-files-rest, invenio-pages, pytest, pytest-invenio |
 | separate session for initial state | [2025-11-18 08-26-40](./results/2025-11-18_08-26-40/report.md) | 0 ✅ passed, 1 ❌ failed, 71 warnings | invenio-files-rest, invenio-pages, pytest, pytest-invenio |
 | invenio pages test | [2025-11-18 08-14-03](./results/2025-11-18_08-14-03/report.md) | 0 ✅ passed, 1 ❌ failed, 37 warnings | invenio-files-rest, pytest, pytest-invenio |

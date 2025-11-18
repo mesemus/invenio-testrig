@@ -1,0 +1,23 @@
+{
+  "package": "invenio-rest",
+  "has_patch": true,
+  "patch_applies": true,
+  "original_tests_outcome": "success",
+  "patched_tests_outcome": "failed",
+  "result": "regression",
+  "result_icon": "\u274c",
+  "result_text": "Patch introduced test failures",
+  "patched_packages": "invenio-db",
+  "warnings": {
+    "original": {
+      "FutureWarning: CSRF validation will be enabled by default in the version 1.3.x": 2,
+      "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).": 1,
+      "PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.": 3
+    },
+    "patched": {}
+  },
+  "warnings_count": {
+    "original": 6,
+    "patched": 0
+  }
+}
