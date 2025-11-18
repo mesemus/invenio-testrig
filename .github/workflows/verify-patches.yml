@@ -41,6 +41,8 @@ jobs:
   create-report-directory:
     name: Create Report Directory
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     outputs:
       report_dir: ${{ steps.create-dir.outputs.report_dir }}
       report_file: ${{ steps.create-dir.outputs.report_file }}
@@ -134,6 +136,9 @@ jobs:
       - extract-tested-packages
       - create-report-directory
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
     env:
       SO_FAR_OK: 1
     strategy:
@@ -434,6 +439,9 @@ jobs:
       - extract-tested-packages
       - create-report-directory
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
     if: needs.extract-tested-packages.outputs.done_packages != '[]'
     strategy:
       fail-fast: false
