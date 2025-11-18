@@ -1,6 +1,6 @@
 {
     "pytest-invenio": {
         "url": "https://github.com/oarepo/pytest-invenio.git",
-        "branch": "nested-db-session-check"
+        "branch": "nested-db-session-rollback"
     }
 }
