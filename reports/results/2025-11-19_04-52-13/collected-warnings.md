@@ -419,6 +419,16 @@ DeprecationWarning: The '__version__' attribute is deprecated and will be remove
 
 #### Warning 28 - 3 occurrences
 
+UserWarning: Set configuration variable SECRET_KEY with random string
+
+| Package | Count |
+|---------|-------|
+| `invenio-app` | 1 |
+| `invenio-config` | 1 |
+| `invenio-records-rest` | 1 |
+
+#### Warning 29 - 3 occurrences
+
 UserWarning: autoincrement and existing_autoincrement only make sense for MySQL
 
 | Package | Count |
@@ -427,7 +437,7 @@ UserWarning: autoincrement and existing_autoincrement only make sense for MySQL
 | `invenio-audit-logs` | 1 |
 | `invenio-requests` | 1 |
 
-#### Warning 29 - 2 occurrences
+#### Warning 30 - 2 occurrences
 
 DeprecationWarning: Remember me support has been removed.
 
@@ -436,7 +446,7 @@ DeprecationWarning: Remember me support has been removed.
 | `invenio-audit-logs` | 1 |
 | `invenio-requests` | 1 |
 
-#### Warning 30 - 2 occurrences
+#### Warning 31 - 2 occurrences
 
 DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
 
@@ -445,7 +455,7 @@ DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
 | `invenio-drafts-resources` | 1 |
 | `invenio-logging` | 1 |
 
-#### Warning 31 - 2 occurrences
+#### Warning 32 - 2 occurrences
 
 DeprecationWarning: The patch() method is deprecated and will be removed.
 
@@ -454,7 +464,7 @@ DeprecationWarning: The patch() method is deprecated and will be removed.
 | `invenio-records` | 1 |
 | `invenio-records-rest` | 1 |
 
-#### Warning 32 - 2 occurrences
+#### Warning 33 - 2 occurrences
 
 PytestConfigWarning: Unknown config option: pep8ignore
 
@@ -463,7 +473,7 @@ PytestConfigWarning: Unknown config option: pep8ignore
 | `invenio-jsonschemas` | 1 |
 | `invenio-records-ui` | 1 |
 
-#### Warning 33 - 2 occurrences
+#### Warning 34 - 2 occurrences
 
 PytestDeprecationWarning: @pytest.yield_fixture is deprecated.
 
@@ -471,22 +481,13 @@ PytestDeprecationWarning: @pytest.yield_fixture is deprecated.
 |---------|-------|
 | `invenio-pidstore` | 2 |
 
-#### Warning 34 - 2 occurrences
+#### Warning 35 - 2 occurrences
 
 SAWarning: On mapper Mapper[RecordMetadataVersion(records_metadata_version)], primary key column 'records_metadata_version.transaction_id' is being combined with distinct primary key column 'records_metadata_version.transaction_id' in attribute 'transaction_id'. Use explicit properties to give each column its own mapped attribute name. (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
 
 | Package | Count |
 |---------|-------|
 | `invenio-records` | 2 |
-
-#### Warning 35 - 2 occurrences
-
-UserWarning: Set configuration variable SECRET_KEY with random string
-
-| Package | Count |
-|---------|-------|
-| `invenio-app` | 1 |
-| `invenio-records-rest` | 1 |
 
 #### Warning 36 - 1 occurrence
 
