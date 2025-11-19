@@ -1,0 +1,191 @@
+ redis Pulling 
+ rabbitmq Pulling 
+ opensearch Pulling 
+ postgresql Pulling 
+ redis Pulled 
+ rabbitmq Pulled 
+ postgresql Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-opensearch-1  Started
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_checks
+plugins: github-actions-annotate-failures-0.3.0, black-0.6.0, pycodestyle-2.5.0, flask-1.3.0, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 184 items
+
+docs/conf.py ...                                                         [  1%]
+tests/conftest.py ...                                                    [  3%]
+tests/contrib/file_formats/conftest.py ...                               [  4%]
+tests/contrib/file_formats/test_check.py ...                             [  6%]
+tests/contrib/metadata/test_expressions.py ............................. [ 22%]
+............................................                             [ 46%]
+tests/contrib/metadata/test_rules.py ....................                [ 57%]
+tests/test_invenio_checks.py ....                                        [ 59%]
+invenio_checks/__init__.py ...                                           [ 60%]
+invenio_checks/alembic/1742548610_create_checks_branch.py ...            [ 62%]
+invenio_checks/alembic/1742549302_create_base_tables.py ...              [ 64%]
+invenio_checks/api.py ...                                                [ 65%]
+invenio_checks/base.py ...                                               [ 67%]
+invenio_checks/components.py ...                                         [ 69%]
+invenio_checks/config.py ...                                             [ 70%]
+invenio_checks/contrib/__init__.py ...                                   [ 72%]
+invenio_checks/contrib/file_formats.py ...                               [ 73%]
+invenio_checks/contrib/metadata/__init__.py ...                          [ 75%]
+invenio_checks/contrib/metadata/check.py ...                             [ 77%]
+invenio_checks/contrib/metadata/expressions.py ...                       [ 78%]
+invenio_checks/contrib/metadata/rules.py ...                             [ 80%]
+invenio_checks/ext.py ...                                                [ 82%]
+invenio_checks/models.py ...                                             [ 83%]
+invenio_checks/proxies.py ...                                            [ 85%]
+invenio_checks/services/__init__.py ...                                  [ 86%]
+invenio_checks/services/config.py ...                                    [ 88%]
+invenio_checks/services/permissions.py ...                               [ 90%]
+invenio_checks/services/results.py ...                                   [ 91%]
+invenio_checks/services/schema.py ...                                    [ 93%]
+invenio_checks/services/services.py ...                                  [ 95%]
+invenio_checks/utils.py ...                                              [ 96%]
+invenio_checks/views/__init__.py ...                                     [ 98%]
+invenio_checks/views/ui.py ...                                           [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:3146
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/fs/opener/__init__.py:6
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:2558
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(parent)
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+    from marshmallow import __version_info__ as marshmallow_version
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    storage_class = Str(default="L", dump_only=False)
+
+    warnings.warn(
+
+.venv/lib/python3.12/site-packages/invenio_communities/communities/resources/ui_schema.py:16
+    from idutils import detect_identifier_schemes, to_url
+
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:986
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:986: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    super().__init__(**kwargs)
+
+.venv/lib/python3.12/site-packages/marshmallow/utils.py:361
+.venv/lib/python3.12/site-packages/marshmallow/utils.py:361
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/marshmallow/utils.py:361: ChangedInMarshmallow4Warning: `Field` should not be instantiated. Use `fields.Raw` or  another field subclass instead.
+    return cls_or_instance()
+
+.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:55
+.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:55
+.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:55
+.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:55
+.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:55
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:55: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    self.list_schema = list_schema_cls(
+
+.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:53
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_resources/serializers/base.py:53: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    self.object_schema = object_schema_cls(context=schema_context, **schema_kwargs)
+
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                        Stmts   Miss  Cover   Missing
+invenio_checks/__init__.py                                      3      0   100%
+invenio_checks/alembic/1742548610_create_checks_branch.py       8      2    75%   19, 24
+invenio_checks/alembic/1742549302_create_base_tables.py        20      8    60%   28-109, 121-124
+invenio_checks/api.py                                          39     27    31%   25-27, 32-35, 48-95
+invenio_checks/base.py                                         37      7    81%   26, 30, 43, 47, 50, 59, 64
+invenio_checks/components.py                                  100     72    28%   27-29, 47-49, 53-70, 75-86, 91-104, 108-139, 143-145, 149-155, 159-164, 168-181
+invenio_checks/config.py                                        2      0   100%
+invenio_checks/contrib/__init__.py                              0      0   100%
+invenio_checks/contrib/file_formats.py                         87     10    89%   51, 55-56, 78, 115, 120, 123, 127, 131, 158
+invenio_checks/contrib/metadata/__init__.py                     4      0   100%
+invenio_checks/contrib/metadata/check.py                       91     61    33%   32-34, 38, 42-44, 57-71, 76-102, 106-119, 127-130, 135-145, 150-160
+invenio_checks/contrib/metadata/expressions.py                199     18    91%   34, 77, 190-191, 203-204, 247-248, 288, 359, 398-406
+invenio_checks/contrib/metadata/rules.py                       72      0   100%
+invenio_checks/ext.py                                          15      0   100%
+invenio_checks/models.py                                       57      6    89%   42-45, 67, 73
+invenio_checks/proxies.py                                       3      0   100%
+invenio_checks/services/__init__.py                             4      0   100%
+invenio_checks/services/config.py                              24      0   100%
+invenio_checks/services/permissions.py                         16      0   100%
+invenio_checks/services/results.py                             42     27    36%   22, 31-35, 40-47, 53-56, 61-75
+invenio_checks/services/schema.py                              24      0   100%
+invenio_checks/services/services.py                            15      6    60%   23, 31, 35, 39, 43, 47
+invenio_checks/utils.py                                         6      0   100%
+invenio_checks/views/__init__.py                                2      0   100%
+invenio_checks/views/ui.py                                      4      0   100%
+TOTAL                                                         874    244    72%
+====================== 184 passed, 112 warnings in 24.33s ======================
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
