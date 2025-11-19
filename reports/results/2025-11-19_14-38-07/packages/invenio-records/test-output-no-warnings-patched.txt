@@ -1,0 +1,372 @@
+ rabbitmq Pulling 
+ redis Pulling 
+ opensearch Pulling 
+ postgresql Pulling 
+ redis Pulled 
+ postgresql Pulled 
+ rabbitmq Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-opensearch-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: setup.cfg
+testpaths: tests, invenio_records
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, mock-3.15.1, pydocstyle-2.4.0
+collected 232 items
+
+tests/conftest.py ...                                                    [  1%]
+tests/demo/__init__.py ...                                               [  2%]
+tests/demo/json_resolver.py ...                                          [  3%]
+tests/test_alembic.py ..s                                                [  5%]
+tests/test_api.py ...
+.
+.
+.
+.
+.
+..
+..
+..
+.
+.
+..
+.
+                                    [ 13%]
+tests/test_api_dumpers.py ....
+.
+..
+.
+                                       [ 16%]
+tests/test_custom_db.py ...
+                                              [ 18%]
+tests/test_dictutils.py ......                                           [ 20%]
+tests/test_encoder.py ...
+.
+.
+.
+.
+                                            [ 23%]
+tests/test_field_model.py ...
+                                            [ 25%]
+tests/test_invenio_records.py .....
+                                      [ 27%]
+tests/test_relations_field.py ...
+                                        [ 28%]
+tests/test_relations_modelfield.py ...
+                                   [ 29%]
+tests/test_relations_systemfield.py ...
+.
+.
+.
+.
+.
+.
+.
+.
+.
+                         [ 34%]
+tests/test_resolver.py ...
+.....                                          [ 38%]
+tests/test_signals.py ...
+.
+                                               [ 40%]
+tests/test_systemfields.py ...
+.
+.
+.
+.....
+.
+.
+.
+.
+.
+..
+.......
+                     [ 50%]
+tests/test_systemfields_relatedmodelfield.py ....
+...
+.
+..                  [ 55%]
+invenio_records/__init__.py ....
+                                         [ 56%]
+invenio_records/admin.py ...                                             [ 58%]
+invenio_records/alembic/07fb52561c5c_alter_column_from_json_to_jsonb.py . [ 58%]
+..                                                                       [ 59%]
+invenio_records/alembic/1095cdf9f350_create_records_branch.py ...        [ 60%]
+invenio_records/alembic/428b919be0ea_alter_column_from_json_to_jsonb_for_version.py . [ 61%]
+..                                                                       [ 62%]
+invenio_records/alembic/862037093962_create_records_tables.py ...        [ 63%]
+invenio_records/api.py ....                                              [ 65%]
+invenio_records/config.py ...                                            [ 66%]
+invenio_records/dictutils.py ...                                         [ 67%]
+invenio_records/dumpers/__init__.py ...                                  [ 68%]
+invenio_records/dumpers/base.py ...                                      [ 70%]
+invenio_records/dumpers/indexedat.py ...                                 [ 71%]
+invenio_records/dumpers/relations.py ...                                 [ 72%]
+invenio_records/dumpers/search.py ...                                    [ 74%]
+invenio_records/errors.py ...                                            [ 75%]
+invenio_records/ext.py ...                                               [ 76%]
+invenio_records/extensions.py ...                                        [ 78%]
+invenio_records/models.py ...                                            [ 79%]
+invenio_records/resolver.py ...                                          [ 80%]
+invenio_records/signals.py ...                                           [ 81%]
+invenio_records/systemfields/__init__.py ...                             [ 83%]
+invenio_records/systemfields/base.py ...                                 [ 84%]
+invenio_records/systemfields/constant.py ...                             [ 85%]
+invenio_records/systemfields/dict.py ...                                 [ 87%]
+invenio_records/systemfields/model.py ...                                [ 88%]
+invenio_records/systemfields/relatedmodelfield.py ...                    [ 89%]
+invenio_records/systemfields/relations/__init__.py ...                   [ 90%]
+invenio_records/systemfields/relations/errors.py ...                     [ 92%]
+invenio_records/systemfields/relations/field.py ...                      [ 93%]
+invenio_records/systemfields/relations/mapping.py ...                    [ 94%]
+invenio_records/systemfields/relations/modelrelations.py ...             [ 96%]
+invenio_records/systemfields/relations/relations.py ...                  [ 97%]
+invenio_records/systemfields/relations/results.py ...                    [ 98%]
+invenio_records/validators.py ...                                        [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+    from jsonschema import RefResolver as _RefResolver
+
+invenio_records/resolver.py:15
+invenio_records/resolver.py:15
+    from jsonschema import RefResolutionError, RefResolver
+
+invenio_records/resolver.py:15
+invenio_records/resolver.py:15
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/flask_admin/contrib/__init__.py:2
+    __import__('pkg_resources').declare_namespace(__name__)
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:3146
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+.venv/lib/python3.12/site-packages/flask_admin/contrib/__init__.py:2
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__('pkg_resources').declare_namespace(__name__)
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:2558
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(parent)
+
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:335: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+    target.updated = datetime.utcnow()
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:496: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_api.py::test_get_records
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_api.py:51: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_api.py::test_revision_id_created_updated_properties
+    utcnow = datetime.utcnow()
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:443: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_api.py::test_delete
+tests/test_api.py::test_revisions
+tests/test_encoder.py::test_encoding_with_versioning
+tests/test_signals.py::test_signals
+tests/test_signals.py::test_signals_disabled
+tests/test_systemfields.py::test_extension_revert
+invenio_records/__init__.py::invenio_records
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:549: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_api.py::test_undelete_no_get
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_api.py:500: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_api.py::test_undelete_no_get
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_api.py:503: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_api.py::test_undelete_with_get
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_api.py:512: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_api.py::test_undelete_with_get
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_api.py:516: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_api_dumpers.py::test_relations_dumper
+tests/test_custom_db.py::test_class_model
+tests/test_field_model.py::test_model_field
+tests/test_relations_modelfield.py::test_model_relation
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_sqlalchemy/model.py:144: SAWarning: This declarative base already contains a class with the same class name and module name as sqlalchemy_continuum.model_builder.RecordMetadataVersion, and will be replaced in the string-lookup table. (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    super().__init__(name, bases, d, **kwargs)
+
+tests/test_api_dumpers.py::test_relations_dumper
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_continuum/utils.py:198: SAWarning: On mapper Mapper[RecordMetadataVersion(records_metadata_version)], primary key column 'records_metadata_version.transaction_id' is being combined with distinct primary key column 'records_metadata_version.transaction_id' in attribute 'transaction_id'. Use explicit properties to give each column its own mapped attribute name. (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    yield getattr(mapper.attrs, key)
+
+tests/test_api_dumpers.py::test_relations_dumper
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_continuum/utils.py:198: SAWarning: relationship 'RecordMetadataVersion.transaction' will copy column transaction.id to column records_metadata_version.transaction_id, which conflicts with relationship(s): 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id). If this is not the intention, consider if these relationships should be linked with back_populates, or if viewonly=True should be applied to one or more if they are read-only. For the less common case that foreign key constraints are partially overlapping, the orm.foreign() annotation can be used to isolate the columns that should be written towards.   To silence this warning, add the parameter 'overlaps="transaction"' to the 'RecordMetadataVersion.transaction' relationship. (Background on this warning at: https://sqlalche.me/e/20/qzyx) (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    yield getattr(mapper.attrs, key)
+
+tests/test_api_dumpers.py::test_relations_dumper
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_api_dumpers.py:198: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_custom_db.py::test_class_model
+tests/test_field_model.py::test_model_field
+tests/test_relations_modelfield.py::test_model_relation
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:335: SAWarning: On mapper Mapper[RecordMetadataVersion(records_metadata_version)], primary key column 'records_metadata_version.transaction_id' is being combined with distinct primary key column 'records_metadata_version.transaction_id' in attribute 'transaction_id'. Use explicit properties to give each column its own mapped attribute name. (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    with db.session.begin_nested():
+
+tests/test_custom_db.py::test_class_model
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:335: SAWarning: relationship 'RecordMetadataVersion.transaction' will copy column transaction.id to column records_metadata_version.transaction_id, which conflicts with relationship(s): 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id), 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id). If this is not the intention, consider if these relationships should be linked with back_populates, or if viewonly=True should be applied to one or more if they are read-only. For the less common case that foreign key constraints are partially overlapping, the orm.foreign() annotation can be used to isolate the columns that should be written towards.   To silence this warning, add the parameter 'overlaps="transaction,transaction"' to the 'RecordMetadataVersion.transaction' relationship. (Background on this warning at: https://sqlalche.me/e/20/qzyx) (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    with db.session.begin_nested():
+
+tests/test_field_model.py::test_model_field
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:335: SAWarning: relationship 'RecordMetadataVersion.transaction' will copy column transaction.id to column records_metadata_version.transaction_id, which conflicts with relationship(s): 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id), 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id), 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id). If this is not the intention, consider if these relationships should be linked with back_populates, or if viewonly=True should be applied to one or more if they are read-only. For the less common case that foreign key constraints are partially overlapping, the orm.foreign() annotation can be used to isolate the columns that should be written towards.   To silence this warning, add the parameter 'overlaps="transaction,transaction,transaction"' to the 'RecordMetadataVersion.transaction' relationship. (Background on this warning at: https://sqlalche.me/e/20/qzyx) (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    with db.session.begin_nested():
+
+tests/test_invenio_records.py::test_db
+invenio_records/__init__.py::invenio_records
+    warnings.warn(
+
+tests/test_invenio_records.py::test_db
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_invenio_records.py:84: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_invenio_records.py::test_db
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_invenio_records.py:120: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_invenio_records.py::test_db
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_invenio_records.py:135: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_relations_field.py::test_multirelations_field
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_relations_field.py:198: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/fixtures.py:569: SAWarning: nested transaction already deassociated from connection
+    self._transaction.rollback(_to_root=False)
+
+tests/test_relations_modelfield.py::test_model_relation
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_records/api.py:335: SAWarning: relationship 'RecordMetadataVersion.transaction' will copy column transaction.id to column records_metadata_version.transaction_id, which conflicts with relationship(s): 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id), 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id), 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id), 'RecordMetadataVersion.transaction' (copies transaction.id to records_metadata_version.transaction_id). If this is not the intention, consider if these relationships should be linked with back_populates, or if viewonly=True should be applied to one or more if they are read-only. For the less common case that foreign key constraints are partially overlapping, the orm.foreign() annotation can be used to isolate the columns that should be written towards.   To silence this warning, add the parameter 'overlaps="transaction,transaction,transaction,transaction"' to the 'RecordMetadataVersion.transaction' relationship. (Background on this warning at: https://sqlalche.me/e/20/qzyx) (This warning originated from the `configure_mappers()` process, which was invoked automatically in response to a user-initiated operation.)
+    with db.session.begin_nested():
+
+tests/test_relations_systemfield.py::test_relations_field_pk_relation
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_relations_systemfield.py:114: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_relations_systemfield.py::test_relations_field_pk_list_relation
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_relations_systemfield.py:231: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_relations_systemfield.py::test_relations_field_pk_list_relation_of_objects
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_relations_systemfield.py:463: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_relations_systemfield.py::test_relations_field_pk_nested_list_of_objects_w_related_field
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_relations_systemfield.py:783: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_relations_systemfield.py::test_relations_field_pk_nested_list_of_objects_wo_related_field
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_relations_systemfield.py:991: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_systemfields.py::test_constant_field_deletion
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_systemfields.py:156: SAWarning: nested transaction already deassociated from connection
+    db.session.commit()
+
+tests/test_systemfields.py::test_extension_pre_dump
+tests/test_systemfields.py::test_extension_post_load
+    warnings.warn(
+
+tests/test_systemfields.py::test_extension_post_load
+    warnings.warn(
+
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                                                  Stmts   Miss  Cover   Missing
+invenio_records/__init__.py                                                               4      0   100%
+invenio_records/admin.py                                                                 37     12    68%   61-75
+invenio_records/alembic/07fb52561c5c_alter_column_from_json_to_jsonb.py                  12      4    67%   23-24, 34-35
+invenio_records/alembic/428b919be0ea_alter_column_from_json_to_jsonb_for_version.py      12      4    67%   23-24, 34-35
+invenio_records/alembic/1095cdf9f350_create_records_branch.py                             8      0   100%
+invenio_records/alembic/862037093962_create_records_tables.py                            19     10    47%   24-79, 89-102
+invenio_records/api.py                                                                  229      8    97%   108, 240-244, 253-257, 290-294, 524
+invenio_records/config.py                                                                 6      0   100%
+invenio_records/dictutils.py                                                             87      7    92%   55, 63, 131, 167, 170-172
+invenio_records/dumpers/__init__.py                                                       3      0   100%
+invenio_records/dumpers/base.py                                                           7      1    86%   49
+invenio_records/dumpers/indexedat.py                                                      9      0   100%
+invenio_records/dumpers/relations.py                                                     18      3    83%   35-36, 41
+invenio_records/dumpers/search.py                                                       111      6    95%   69-70, 84, 104, 115, 122
+invenio_records/errors.py                                                                 3      0   100%
+invenio_records/ext.py                                                                   49      1    98%   107
+invenio_records/extensions.py                                                            21      0   100%
+invenio_records/models.py                                                                55      3    95%   101-103
+invenio_records/resolver.py                                                              15      1    93%   23
+invenio_records/signals.py                                                               18      0   100%
+invenio_records/systemfields/__init__.py                                                  7      0   100%
+invenio_records/systemfields/base.py                                                    139      5    96%   77, 287-291, 301-305
+invenio_records/systemfields/constant.py                                                 20      0   100%
+invenio_records/systemfields/dict.py                                                     15      0   100%
+invenio_records/systemfields/model.py                                                    32      0   100%
+invenio_records/systemfields/relatedmodelfield.py                                        42      0   100%
+invenio_records/systemfields/relations/__init__.py                                        7      0   100%
+invenio_records/systemfields/relations/errors.py                                          4      0   100%
+invenio_records/systemfields/relations/field.py                                          64      3    95%   34, 38, 42
+invenio_records/systemfields/relations/mapping.py                                        34      3    91%   30, 41, 49
+invenio_records/systemfields/relations/modelrelations.py                                 39      0   100%
+invenio_records/systemfields/relations/relations.py                                     175     22    87%   63, 84, 101, 108, 122-127, 174-175, 209-214, 217-218, 253, 323
+invenio_records/systemfields/relations/results.py                                       181     13    93%   59, 88-89, 103, 112, 126, 164, 166, 229, 233, 249-250, 261
+invenio_records/validators.py                                                            15      0   100%
+TOTAL                                                                                  1497    106    93%
+================ 231 passed, 1 skipped, 511 warnings in 25.27s =================
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
