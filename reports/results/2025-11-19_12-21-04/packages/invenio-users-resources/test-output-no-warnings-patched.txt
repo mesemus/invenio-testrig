@@ -1,0 +1,1552 @@
+running extract_messages
+extracting messages from invenio_users_resources/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/entity_resolvers.py (encoding="utf-8")
+extracting messages from invenio_users_resources/ext.py (encoding="utf-8")
+extracting messages from invenio_users_resources/forms.py (encoding="utf-8")
+extracting messages from invenio_users_resources/models.py (encoding="utf-8")
+extracting messages from invenio_users_resources/permissions.py (encoding="utf-8")
+extracting messages from invenio_users_resources/proxies.py (encoding="utf-8")
+extracting messages from invenio_users_resources/views.py (encoding="utf-8")
+extracting messages from invenio_users_resources/notifications/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/notifications/filters.py (encoding="utf-8")
+extracting messages from invenio_users_resources/notifications/generators.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/api.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/hooks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/models.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/dumpers/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/dumpers/email.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/os-v1/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/os-v2/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/mappings/v7/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/records/systemfields/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/domains/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/domains/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/domains/resource.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/groups/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/groups/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/groups/resource.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/errors.py (encoding="utf-8")
+extracting messages from invenio_users_resources/resources/users/resource.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/common.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/generators.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/params.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/permissions.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/results.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/schemas.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/components.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/facets.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/service.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/domains/tasks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/results.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/service.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/groups/tasks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/__init__.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/config.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/facets.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/lock.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/results.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/search_params.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/service.py (encoding="utf-8")
+extracting messages from invenio_users_resources/services/users/tasks.py (encoding="utf-8")
+extracting messages from invenio_users_resources/templates/security/email/new_user_via_admin.html (encoding="utf-8")
+extracting messages from invenio_users_resources/templates/semantic-ui/invenio_users_resources/settings/notifications.html (encoding="utf-8")
+writing PO template file to /dev/null
+ redis Pulling 
+ opensearch Pulling 
+ postgresql Pulling 
+ rabbitmq Pulling 
+ redis Pulled 
+ rabbitmq Pulled 
+ postgresql Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-opensearch-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: setup.cfg
+testpaths: docs, tests, invenio_users_resources
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 302 items
+
+docs/conf.py ...                                                         [  0%]
+tests/conftest.py ...                                                    [  1%]
+tests/resources/test_resources_domains.py ....::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+                   [  5%]
+tests/resources/test_resources_groups.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+                             [  6%]
+tests/resources/test_resources_users.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::error file=package-repo/tests/resources/test_resources_users.py,line=281::test_admin_links[admin_records_html-/administration/records?q=parent.access.owned_by.user:{id}&f=allversions]%0A%0Asqlalchemy.orm.exc.StaleDataError: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched.
+F::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::error file=package-repo/tests/resources/test_resources_users.py,line=281::test_admin_links[admin_drafts_html-/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions]%0A%0Asqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+F::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::error file=package-repo/tests/resources/test_resources_users.py,line=281::test_admin_links[admin_moderation_html-/administration/moderation?q=topic.user:{id}]%0A%0Asqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+F::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::error file=package-repo/tests/resources/test_resources_users.py,line=303::test_admin_links_visibility[user_moderator-True]%0A%0Asqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+F::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::error file=package-repo/tests/resources/test_resources_users.py,line=303::test_admin_links_visibility[pub-False]%0A%0Asqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+F::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+::error file=package-repo/tests/resources/test_resources_users.py,line=303::test_admin_links_visibility[res-False]%0A%0Asqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+F::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=207::get_user method is deprecated, user get_user_by_email/get_user_by_id
+            [ 13%]
+tests/services/test_generators.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+                                    [ 14%]
+tests/services/test_service_groups.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+.......::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/pytest_invenio/user.py,line=36::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+                        [ 18%]
+tests/services/test_service_tasks_domains.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+.                        [ 19%]
+tests/services/users/test_service_users.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.........::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+. [ 29%]
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=105::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=90::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py,line=90::The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+                                                       [ 35%]
+tests/services/users/test_user_moderation.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py,line=235::The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0)
+                     [ 37%]
+tests/test_invenio_users_resources.py ....                               [ 39%]
+tests/test_notifications.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+.                                         [ 40%]
+invenio_users_resources/__init__.py ...                                  [ 41%]
+invenio_users_resources/config.py ...                                    [ 42%]
+invenio_users_resources/entity_resolvers.py ...                          [ 43%]
+invenio_users_resources/ext.py ...                                       [ 44%]
+invenio_users_resources/forms.py ...                                     [ 45%]
+invenio_users_resources/models.py ...                                    [ 46%]
+invenio_users_resources/notifications/__init__.py ...                    [ 47%]
+invenio_users_resources/notifications/filters.py ...                     [ 48%]
+invenio_users_resources/notifications/generators.py ...                  [ 49%]
+invenio_users_resources/permissions.py ...                               [ 50%]
+invenio_users_resources/proxies.py ...                                   [ 51%]
+invenio_users_resources/records/__init__.py ...                          [ 52%]
+invenio_users_resources/records/api.py ...                               [ 53%]
+invenio_users_resources/records/dumpers/__init__.py ...                  [ 54%]
+invenio_users_resources/records/dumpers/email.py ...                     [ 55%]
+invenio_users_resources/records/hooks.py ...                             [ 56%]
+invenio_users_resources/records/mappings/__init__.py ...                 [ 57%]
+invenio_users_resources/records/mappings/os-v1/__init__.py ...           [ 58%]
+invenio_users_resources/records/mappings/os-v2/__init__.py ...           [ 59%]
+invenio_users_resources/records/mappings/v7/__init__.py ...              [ 60%]
+invenio_users_resources/records/models.py ...                            [ 61%]
+invenio_users_resources/records/systemfields/__init__.py ...             [ 62%]
+invenio_users_resources/resources/__init__.py ...                        [ 63%]
+invenio_users_resources/resources/domains/__init__.py ...                [ 64%]
+invenio_users_resources/resources/domains/config.py ...                  [ 65%]
+invenio_users_resources/resources/domains/resource.py ...                [ 66%]
+invenio_users_resources/resources/groups/__init__.py ...                 [ 67%]
+invenio_users_resources/resources/groups/config.py ...                   [ 68%]
+invenio_users_resources/resources/groups/resource.py ...                 [ 69%]
+invenio_users_resources/resources/users/__init__.py ...                  [ 70%]
+invenio_users_resources/resources/users/config.py ...                    [ 71%]
+invenio_users_resources/resources/users/errors.py ...                    [ 72%]
+invenio_users_resources/resources/users/resource.py ...                  [ 73%]
+invenio_users_resources/services/__init__.py ...                         [ 74%]
+invenio_users_resources/services/common.py ...                           [ 75%]
+invenio_users_resources/services/domains/__init__.py ...                 [ 76%]
+invenio_users_resources/services/domains/components.py ...               [ 77%]
+invenio_users_resources/services/domains/config.py ...                   [ 78%]
+invenio_users_resources/services/domains/facets.py ...                   [ 79%]
+invenio_users_resources/services/domains/service.py ...                  [ 80%]
+invenio_users_resources/services/domains/tasks.py ...                    [ 81%]
+invenio_users_resources/services/generators.py ...                       [ 82%]
+invenio_users_resources/services/groups/__init__.py ...                  [ 83%]
+invenio_users_resources/services/groups/config.py ...                    [ 84%]
+invenio_users_resources/services/groups/results.py ...                   [ 85%]
+invenio_users_resources/services/groups/service.py ...                   [ 86%]
+invenio_users_resources/services/groups/tasks.py ...                     [ 87%]
+invenio_users_resources/services/params.py ...                           [ 88%]
+invenio_users_resources/services/permissions.py ...                      [ 89%]
+invenio_users_resources/services/results.py ...                          [ 90%]
+invenio_users_resources/services/schemas.py ...                          [ 91%]
+invenio_users_resources/services/users/__init__.py ...                   [ 92%]
+invenio_users_resources/services/users/config.py ...                     [ 93%]
+invenio_users_resources/services/users/facets.py ...                     [ 94%]
+invenio_users_resources/services/users/lock.py ...                       [ 95%]
+invenio_users_resources/services/users/results.py ...                    [ 96%]
+invenio_users_resources/services/users/search_params.py ...              [ 97%]
+invenio_users_resources/services/users/service.py ...                    [ 98%]
+invenio_users_resources/services/users/tasks.py ...                      [ 99%]
+invenio_users_resources/views.py ...                                     [100%]
+
+=================================== FAILURES ===================================
+_ test_admin_links[admin_records_html-/administration/records?q=parent.access.owned_by.user:{id}&f=allversions] _
+
+client = <FlaskClient <Flask 'invenio'>>
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+user_moderator = <pytest_invenio.user.UserFixtureBase object at 0x7f7b23ed3ce0>
+user_pub = <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d1e960>
+link_name = 'admin_records_html'
+expected_url = '/administration/records?q=parent.access.owned_by.user:{id}&f=allversions'
+
+    @pytest.mark.parametrize(
+        "link_name,expected_url",
+        [
+            (
+                "admin_records_html",
+                "/administration/records?q=parent.access.owned_by.user:{id}&f=allversions",
+            ),
+            (
+                "admin_drafts_html",
+                "/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions",
+            ),
+            ("admin_moderation_html", "/administration/moderation?q=topic.user:{id}"),
+        ],
+    )
+    def test_admin_links(
+        client, headers, user_moderator, user_pub, link_name, expected_url
+    ):
+        """Test admin links."""
+>       client = user_moderator.login(client)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/resources/test_resources_users.py:281: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:152: in login
+    return self._login(client, "/", logout_first)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:170: in _login
+    res = client.post(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:61: in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:110: in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:191: in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/webargs/core.py:455: in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:278: in post
+    self.login_user(user)
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:268: in login_user
+    return login_user(user)
+           ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/utils.py:99: in login_user
+    identity_changed.send(current_app._get_current_object(), identity=Identity(user.id))
+.venv/lib/python3.12/site-packages/blinker/base.py:249: in send
+    result = receiver(sender, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_principal.py:469: in _on_identity_changed
+    self.set_identity(identity)
+.venv/lib/python3.12/site-packages/flask_principal.py:418: in set_identity
+    self._set_thread_identity(identity)
+.venv/lib/python3.12/site-packages/flask_principal.py:462: in _set_thread_identity
+    identity_loaded.send(current_app._get_current_object(),
+.venv/lib/python3.12/site-packages/blinker/base.py:249: in send
+    result = receiver(sender, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/core.py:256: in _on_identity_loaded
+    for role in getattr(current_user, "roles", []):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py:569: in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py:1096: in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/attributes.py:1131: in _fire_loader_callables
+    return self.callable_(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py:978: in _load_for_state
+    return self._emit_lazyload(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/strategies.py:1141: in _emit_lazyload
+    result = session.execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2228: in _execute_internal
+    ) = compile_state_cls.orm_pre_session_exec(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/context.py:577: in orm_pre_session_exec
+    session._autoflush()
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:3040: in _autoflush
+    self.flush()
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:4331: in flush
+    self._flush(objects)
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:4466: in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py:224: in __exit__
+    raise exc_value.with_traceback(exc_tb)
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:4427: in _flush
+    flush_context.execute()
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py:466: in execute
+    rec.execute(self)
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py:642: in execute
+    util.preloaded.orm_persistence.save_obj(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py:85: in save_obj
+    _emit_update_statements(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+base_mapper = <Mapper at 0x7f7b30d386e0; User>
+uowtransaction = <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x7f7b22fa3da0>
+mapper = <Mapper at 0x7f7b30d386e0; User>
+table = Table('accounts_user', MetaData(), Column('id', Integer(), table=<accounts_user>, primary_key=True, nullable=False), C...ounts_user>, nullable=False, default=CallableColumnDefault(<function datetime.utcnow at 0x7f7b30f67a60>)), schema=None)
+update = <generator object _collect_update_commands at 0x7f7b22fc05e0>
+
+    def _emit_update_statements(
+        base_mapper,
+        uowtransaction,
+        mapper,
+        table,
+        update,
+        *,
+        bookkeeping=True,
+        use_orm_update_stmt=None,
+        enable_check_rowcount=True,
+    ):
+        """Emit UPDATE statements corresponding to value lists collected
+        by _collect_update_commands()."""
+    
+        needs_version_id = (
+            mapper.version_id_col is not None
+            and mapper.version_id_col in mapper._cols_by_table[table]
+        )
+    
+        execution_options = {"compiled_cache": base_mapper._compiled_cache}
+    
+        def update_stmt(existing_stmt=None):
+            clauses = BooleanClauseList._construct_raw(operators.and_)
+    
+            for col in mapper._pks_by_table[table]:
+                clauses._append_inplace(
+                    col == sql.bindparam(col._label, type_=col.type)
+                )
+    
+            if needs_version_id:
+                clauses._append_inplace(
+                    mapper.version_id_col
+                    == sql.bindparam(
+                        mapper.version_id_col._label,
+                        type_=mapper.version_id_col.type,
+                    )
+                )
+    
+            if existing_stmt is not None:
+                stmt = existing_stmt.where(clauses)
+            else:
+                stmt = table.update().where(clauses)
+            return stmt
+    
+        if use_orm_update_stmt is not None:
+            cached_stmt = update_stmt(use_orm_update_stmt)
+    
+        else:
+            cached_stmt = base_mapper._memo(("update", table), update_stmt)
+    
+        for (
+            (connection, paramkeys, hasvalue, has_all_defaults, has_all_pks),
+            records,
+        ) in groupby(
+            update,
+            lambda rec: (
+                rec[4],  # connection
+                set(rec[2]),  # set of parameter keys
+                bool(rec[5]),  # whether or not we have "value" parameters
+                rec[6],  # has_all_defaults
+                rec[7],  # has all pks
+            ),
+        ):
+            rows = 0
+            records = list(records)
+    
+            statement = cached_stmt
+    
+            if use_orm_update_stmt is not None:
+                statement = statement._annotate(
+                    {
+                        "_emit_update_table": table,
+                        "_emit_update_mapper": mapper,
+                    }
+                )
+    
+            return_defaults = False
+    
+            if not has_all_pks:
+                statement = statement.return_defaults(*mapper._pks_by_table[table])
+                return_defaults = True
+    
+            if (
+                bookkeeping
+                and not has_all_defaults
+                and mapper.base_mapper.eager_defaults is True
+                # change as of #8889 - if RETURNING is not going to be used anyway,
+                # (applies to MySQL, MariaDB which lack UPDATE RETURNING) ensure
+                # we can do an executemany UPDATE which is more efficient
+                and table.implicit_returning
+                and connection.dialect.update_returning
+            ):
+                statement = statement.return_defaults(
+                    *mapper._server_onupdate_default_cols[table]
+                )
+                return_defaults = True
+    
+            if mapper._version_id_has_server_side_value:
+                statement = statement.return_defaults(mapper.version_id_col)
+                return_defaults = True
+    
+            assert_singlerow = connection.dialect.supports_sane_rowcount
+    
+            assert_multirow = (
+                assert_singlerow
+                and connection.dialect.supports_sane_multi_rowcount
+            )
+    
+            # change as of #8889 - if RETURNING is not going to be used anyway,
+            # (applies to MySQL, MariaDB which lack UPDATE RETURNING) ensure
+            # we can do an executemany UPDATE which is more efficient
+            allow_executemany = not return_defaults and not needs_version_id
+    
+            if hasvalue:
+                for (
+                    state,
+                    state_dict,
+                    params,
+                    mapper,
+                    connection,
+                    value_params,
+                    has_all_defaults,
+                    has_all_pks,
+                ) in records:
+                    c = connection.execute(
+                        statement.values(value_params),
+                        params,
+                        execution_options=execution_options,
+                    )
+                    if bookkeeping:
+                        _postfetch(
+                            mapper,
+                            uowtransaction,
+                            table,
+                            state,
+                            state_dict,
+                            c,
+                            c.context.compiled_parameters[0],
+                            value_params,
+                            True,
+                            c.returned_defaults,
+                        )
+                    rows += c.rowcount
+                    check_rowcount = enable_check_rowcount and assert_singlerow
+            else:
+                if not allow_executemany:
+                    check_rowcount = enable_check_rowcount and assert_singlerow
+                    for (
+                        state,
+                        state_dict,
+                        params,
+                        mapper,
+                        connection,
+                        value_params,
+                        has_all_defaults,
+                        has_all_pks,
+                    ) in records:
+                        c = connection.execute(
+                            statement, params, execution_options=execution_options
+                        )
+    
+                        # TODO: why with bookkeeping=False?
+                        if bookkeeping:
+                            _postfetch(
+                                mapper,
+                                uowtransaction,
+                                table,
+                                state,
+                                state_dict,
+                                c,
+                                c.context.compiled_parameters[0],
+                                value_params,
+                                True,
+                                c.returned_defaults,
+                            )
+                        rows += c.rowcount
+                else:
+                    multiparams = [rec[2] for rec in records]
+    
+                    check_rowcount = enable_check_rowcount and (
+                        assert_multirow
+                        or (assert_singlerow and len(multiparams) == 1)
+                    )
+    
+                    c = connection.execute(
+                        statement, multiparams, execution_options=execution_options
+                    )
+    
+                    rows += c.rowcount
+    
+                    for (
+                        state,
+                        state_dict,
+                        params,
+                        mapper,
+                        connection,
+                        value_params,
+                        has_all_defaults,
+                        has_all_pks,
+                    ) in records:
+                        if bookkeeping:
+                            _postfetch(
+                                mapper,
+                                uowtransaction,
+                                table,
+                                state,
+                                state_dict,
+                                c,
+                                c.context.compiled_parameters[0],
+                                value_params,
+                                True,
+                                (
+                                    c.returned_defaults
+                                    if not c.context.executemany
+                                    else None
+                                ),
+                            )
+    
+            if check_rowcount:
+                if rows != len(records):
+>                   raise orm_exc.StaleDataError(
+                        "UPDATE statement on table '%s' expected to "
+                        "update %d row(s); %d were matched."
+                        % (table.description, len(records), rows)
+                    )
+E                   sqlalchemy.orm.exc.StaleDataError: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched.
+
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py:948: StaleDataError
+_ test_admin_links[admin_drafts_html-/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions] _
+
+client = <FlaskClient <Flask 'invenio'>>
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+user_moderator = <pytest_invenio.user.UserFixtureBase object at 0x7f7b23ed3ce0>
+user_pub = <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d1e960>
+link_name = 'admin_drafts_html'
+expected_url = '/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions'
+
+    @pytest.mark.parametrize(
+        "link_name,expected_url",
+        [
+            (
+                "admin_records_html",
+                "/administration/records?q=parent.access.owned_by.user:{id}&f=allversions",
+            ),
+            (
+                "admin_drafts_html",
+                "/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions",
+            ),
+            ("admin_moderation_html", "/administration/moderation?q=topic.user:{id}"),
+        ],
+    )
+    def test_admin_links(
+        client, headers, user_moderator, user_pub, link_name, expected_url
+    ):
+        """Test admin links."""
+>       client = user_moderator.login(client)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/resources/test_resources_users.py:281: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:152: in login
+    return self._login(client, "/", logout_first)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:170: in _login
+    res = client.post(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:61: in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:110: in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:191: in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/webargs/core.py:445: in wrapper
+    parsed_args = self.parse(
+.venv/lib/python3.12/site-packages/webargs/core.py:356: in parse
+    result = schema.load(parsed)
+             ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:792: in load
+    return self._do_load(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:951: in _do_load
+    result = self._deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:734: in _deserialize
+    value = self._call_and_store(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:570: in _call_and_store
+    value = getter_func(data)
+            ^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:727: in getter
+    return field_obj.deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:375: in deserialize
+    self._validate(output)
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:276: in _validate
+    self._validate_all(value)
+.venv/lib/python3.12/site-packages/marshmallow/validate.py:82: in __call__
+    r = validator(value)
+        ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:187: in user_exists
+    if not current_datastore.get_user(email):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/datastore.py:219: in get_user
+    rv = self.user_model.query.filter(query).first()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2759: in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2857: in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2239: in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2108: in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:2: in _connection_for_bind
+    ???
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py:101: in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.orm.session.SessionTransaction object at 0x7f7b23ba6110>
+operation_name = '_connection_for_bind'
+state = <SessionTransactionState.DEACTIVE: 4>
+
+    def _raise_for_prerequisite_state(
+        self, operation_name: str, state: _StateChangeState
+    ) -> NoReturn:
+        if state is SessionTransactionState.DEACTIVE:
+            if self._rollback_exception:
+>               raise sa_exc.PendingRollbackError(
+                    "This Session's transaction has been rolled back "
+                    "due to a previous exception during flush."
+                    " To begin a new transaction with this Session, "
+                    "first issue Session.rollback()."
+                    f" Original exception was: {self._rollback_exception}",
+                    code="7s2a",
+                )
+E               sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:971: PendingRollbackError
+_ test_admin_links[admin_moderation_html-/administration/moderation?q=topic.user:{id}] _
+
+client = <FlaskClient <Flask 'invenio'>>
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+user_moderator = <pytest_invenio.user.UserFixtureBase object at 0x7f7b23ed3ce0>
+user_pub = <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d1e960>
+link_name = 'admin_moderation_html'
+expected_url = '/administration/moderation?q=topic.user:{id}'
+
+    @pytest.mark.parametrize(
+        "link_name,expected_url",
+        [
+            (
+                "admin_records_html",
+                "/administration/records?q=parent.access.owned_by.user:{id}&f=allversions",
+            ),
+            (
+                "admin_drafts_html",
+                "/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions",
+            ),
+            ("admin_moderation_html", "/administration/moderation?q=topic.user:{id}"),
+        ],
+    )
+    def test_admin_links(
+        client, headers, user_moderator, user_pub, link_name, expected_url
+    ):
+        """Test admin links."""
+>       client = user_moderator.login(client)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/resources/test_resources_users.py:281: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:152: in login
+    return self._login(client, "/", logout_first)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:170: in _login
+    res = client.post(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:61: in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:110: in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:191: in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/webargs/core.py:445: in wrapper
+    parsed_args = self.parse(
+.venv/lib/python3.12/site-packages/webargs/core.py:356: in parse
+    result = schema.load(parsed)
+             ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:792: in load
+    return self._do_load(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:951: in _do_load
+    result = self._deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:734: in _deserialize
+    value = self._call_and_store(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:570: in _call_and_store
+    value = getter_func(data)
+            ^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:727: in getter
+    return field_obj.deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:375: in deserialize
+    self._validate(output)
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:276: in _validate
+    self._validate_all(value)
+.venv/lib/python3.12/site-packages/marshmallow/validate.py:82: in __call__
+    r = validator(value)
+        ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:187: in user_exists
+    if not current_datastore.get_user(email):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/datastore.py:219: in get_user
+    rv = self.user_model.query.filter(query).first()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2759: in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2857: in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2239: in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2108: in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:2: in _connection_for_bind
+    ???
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py:101: in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.orm.session.SessionTransaction object at 0x7f7b23ba6110>
+operation_name = '_connection_for_bind'
+state = <SessionTransactionState.DEACTIVE: 4>
+
+    def _raise_for_prerequisite_state(
+        self, operation_name: str, state: _StateChangeState
+    ) -> NoReturn:
+        if state is SessionTransactionState.DEACTIVE:
+            if self._rollback_exception:
+>               raise sa_exc.PendingRollbackError(
+                    "This Session's transaction has been rolled back "
+                    "due to a previous exception during flush."
+                    " To begin a new transaction with this Session, "
+                    "first issue Session.rollback()."
+                    f" Original exception was: {self._rollback_exception}",
+                    code="7s2a",
+                )
+E               sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:971: PendingRollbackError
+_______________ test_admin_links_visibility[user_moderator-True] _______________
+
+client = <FlaskClient <Flask 'invenio'>>
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+users = {'accented': <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d2c800>, 'inactive': <pytest_invenio.user.UserFixt...object at 0x7f7b23d2cb90>, 'notification_enabled': <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d6cec0>, ...}
+username = 'user_moderator', expected_admin_links = True
+
+    @pytest.mark.parametrize(
+        "username,expected_admin_links",
+        [
+            ("user_moderator", True),  # user_moderator should have admin links
+            ("pub", False),  # regular user should not have admin links
+            ("res", False),  # regular user should not have admin links
+        ],
+    )
+    def test_admin_links_visibility(client, headers, users, username, expected_admin_links):
+        """Test admin links visibility based on user permissions."""
+        user = users[username]
+>       client = user.login(client)
+                 ^^^^^^^^^^^^^^^^^^
+
+tests/resources/test_resources_users.py:303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:152: in login
+    return self._login(client, "/", logout_first)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:170: in _login
+    res = client.post(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:61: in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:110: in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:191: in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/webargs/core.py:445: in wrapper
+    parsed_args = self.parse(
+.venv/lib/python3.12/site-packages/webargs/core.py:356: in parse
+    result = schema.load(parsed)
+             ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:792: in load
+    return self._do_load(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:951: in _do_load
+    result = self._deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:734: in _deserialize
+    value = self._call_and_store(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:570: in _call_and_store
+    value = getter_func(data)
+            ^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:727: in getter
+    return field_obj.deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:375: in deserialize
+    self._validate(output)
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:276: in _validate
+    self._validate_all(value)
+.venv/lib/python3.12/site-packages/marshmallow/validate.py:82: in __call__
+    r = validator(value)
+        ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:187: in user_exists
+    if not current_datastore.get_user(email):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/datastore.py:219: in get_user
+    rv = self.user_model.query.filter(query).first()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2759: in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2857: in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2239: in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2108: in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:2: in _connection_for_bind
+    ???
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py:101: in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.orm.session.SessionTransaction object at 0x7f7b23ba6110>
+operation_name = '_connection_for_bind'
+state = <SessionTransactionState.DEACTIVE: 4>
+
+    def _raise_for_prerequisite_state(
+        self, operation_name: str, state: _StateChangeState
+    ) -> NoReturn:
+        if state is SessionTransactionState.DEACTIVE:
+            if self._rollback_exception:
+>               raise sa_exc.PendingRollbackError(
+                    "This Session's transaction has been rolled back "
+                    "due to a previous exception during flush."
+                    " To begin a new transaction with this Session, "
+                    "first issue Session.rollback()."
+                    f" Original exception was: {self._rollback_exception}",
+                    code="7s2a",
+                )
+E               sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:971: PendingRollbackError
+____________________ test_admin_links_visibility[pub-False] ____________________
+
+client = <FlaskClient <Flask 'invenio'>>
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+users = {'accented': <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d2c800>, 'inactive': <pytest_invenio.user.UserFixt...object at 0x7f7b23d2cb90>, 'notification_enabled': <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d6cec0>, ...}
+username = 'pub', expected_admin_links = False
+
+    @pytest.mark.parametrize(
+        "username,expected_admin_links",
+        [
+            ("user_moderator", True),  # user_moderator should have admin links
+            ("pub", False),  # regular user should not have admin links
+            ("res", False),  # regular user should not have admin links
+        ],
+    )
+    def test_admin_links_visibility(client, headers, users, username, expected_admin_links):
+        """Test admin links visibility based on user permissions."""
+        user = users[username]
+>       client = user.login(client)
+                 ^^^^^^^^^^^^^^^^^^
+
+tests/resources/test_resources_users.py:303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:152: in login
+    return self._login(client, "/", logout_first)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:170: in _login
+    res = client.post(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:61: in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:110: in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:191: in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/webargs/core.py:445: in wrapper
+    parsed_args = self.parse(
+.venv/lib/python3.12/site-packages/webargs/core.py:356: in parse
+    result = schema.load(parsed)
+             ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:792: in load
+    return self._do_load(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:951: in _do_load
+    result = self._deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:734: in _deserialize
+    value = self._call_and_store(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:570: in _call_and_store
+    value = getter_func(data)
+            ^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:727: in getter
+    return field_obj.deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:375: in deserialize
+    self._validate(output)
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:276: in _validate
+    self._validate_all(value)
+.venv/lib/python3.12/site-packages/marshmallow/validate.py:82: in __call__
+    r = validator(value)
+        ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:187: in user_exists
+    if not current_datastore.get_user(email):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/datastore.py:219: in get_user
+    rv = self.user_model.query.filter(query).first()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2759: in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2857: in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2239: in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2108: in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:2: in _connection_for_bind
+    ???
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py:101: in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.orm.session.SessionTransaction object at 0x7f7b23ba6110>
+operation_name = '_connection_for_bind'
+state = <SessionTransactionState.DEACTIVE: 4>
+
+    def _raise_for_prerequisite_state(
+        self, operation_name: str, state: _StateChangeState
+    ) -> NoReturn:
+        if state is SessionTransactionState.DEACTIVE:
+            if self._rollback_exception:
+>               raise sa_exc.PendingRollbackError(
+                    "This Session's transaction has been rolled back "
+                    "due to a previous exception during flush."
+                    " To begin a new transaction with this Session, "
+                    "first issue Session.rollback()."
+                    f" Original exception was: {self._rollback_exception}",
+                    code="7s2a",
+                )
+E               sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:971: PendingRollbackError
+____________________ test_admin_links_visibility[res-False] ____________________
+
+client = <FlaskClient <Flask 'invenio'>>
+headers = {'accept': 'application/json', 'content-type': 'application/json'}
+users = {'accented': <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d2c800>, 'inactive': <pytest_invenio.user.UserFixt...object at 0x7f7b23d2cb90>, 'notification_enabled': <pytest_invenio.user.UserFixtureBase object at 0x7f7b23d6cec0>, ...}
+username = 'res', expected_admin_links = False
+
+    @pytest.mark.parametrize(
+        "username,expected_admin_links",
+        [
+            ("user_moderator", True),  # user_moderator should have admin links
+            ("pub", False),  # regular user should not have admin links
+            ("res", False),  # regular user should not have admin links
+        ],
+    )
+    def test_admin_links_visibility(client, headers, users, username, expected_admin_links):
+        """Test admin links visibility based on user permissions."""
+        user = users[username]
+>       client = user.login(client)
+                 ^^^^^^^^^^^^^^^^^^
+
+tests/resources/test_resources_users.py:303: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:152: in login
+    return self._login(client, "/", logout_first)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/pytest_invenio/user.py:170: in _login
+    res = client.post(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/testing.py:235: in open
+    response = super().open(
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:61: in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:110: in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask/views.py:191: in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/webargs/core.py:445: in wrapper
+    parsed_args = self.parse(
+.venv/lib/python3.12/site-packages/webargs/core.py:356: in parse
+    result = schema.load(parsed)
+             ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:792: in load
+    return self._do_load(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:951: in _do_load
+    result = self._deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:734: in _deserialize
+    value = self._call_and_store(
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:570: in _call_and_store
+    value = getter_func(data)
+            ^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/marshmallow/schema.py:727: in getter
+    return field_obj.deserialize(
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:375: in deserialize
+    self._validate(output)
+.venv/lib/python3.12/site-packages/marshmallow/fields.py:276: in _validate
+    self._validate_all(value)
+.venv/lib/python3.12/site-packages/marshmallow/validate.py:82: in __call__
+    r = validator(value)
+        ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_accounts/views/rest.py:187: in user_exists
+    if not current_datastore.get_user(email):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/flask_security/datastore.py:219: in get_user
+    rv = self.user_model.query.filter(query).first()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2759: in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/query.py:2857: in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2351: in execute
+    return self._execute_internal(
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2239: in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:2108: in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<string>:2: in _connection_for_bind
+    ???
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py:101: in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.orm.session.SessionTransaction object at 0x7f7b23ba6110>
+operation_name = '_connection_for_bind'
+state = <SessionTransactionState.DEACTIVE: 4>
+
+    def _raise_for_prerequisite_state(
+        self, operation_name: str, state: _StateChangeState
+    ) -> NoReturn:
+        if state is SessionTransactionState.DEACTIVE:
+            if self._rollback_exception:
+>               raise sa_exc.PendingRollbackError(
+                    "This Session's transaction has been rolled back "
+                    "due to a previous exception during flush."
+                    " To begin a new transaction with this Session, "
+                    "first issue Session.rollback()."
+                    f" Original exception was: {self._rollback_exception}",
+                    code="7s2a",
+                )
+E               sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+
+.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py:971: PendingRollbackError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:3146
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/fs/opener/__init__.py:6
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:2558
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(parent)
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+    from marshmallow import __version_info__ as marshmallow_version
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    storage_class = Str(default="L", dump_only=False)
+
+    warnings.warn(
+
+    warnings.warn(
+
+    _security.datetime_factory(),
+
+    target.updated = datetime.utcnow()
+
+    created = datetime.utcnow()
+
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+    return cls(int(id_s, 16), datetime.utcfromtimestamp(int(created_s, 16)))
+
+    now = now or datetime.utcnow()
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py:105: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    return self.schema(context=context, **schema_args).dump(data)
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:631: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    self._schema = schema_class(
+
+tests/resources/test_resources_domains.py::test_domains_read
+    current_app.logger.warn(
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py:90: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    valid_data = self.schema(context=context, **schema_args).load(data)
+
+tests/resources/test_resources_groups.py::test_group_avatar
+tests/resources/test_resources_users.py::test_read_self_serialization
+tests/services/test_generators.py::test_group_not_managed_generator
+tests/services/test_service_groups.py::test_groups_sort
+tests/services/test_service_tasks_domains.py::test_import_domain_blocklist
+tests/services/users/test_service_users.py::test_search_restricted
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_success
+tests/test_notifications.py::test_user_recipient_generator
+    self.init_app(app)
+
+tests/resources/test_resources_groups.py::test_group_avatar
+tests/resources/test_resources_users.py::test_read_self_serialization
+tests/services/test_generators.py::test_group_not_managed_generator
+tests/services/test_service_groups.py::test_groups_sort
+tests/services/test_service_tasks_domains.py::test_import_domain_blocklist
+tests/services/users/test_service_users.py::test_search_restricted
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_success
+tests/test_notifications.py::test_user_recipient_generator
+    self._set_cache(app, config)
+
+    self._confirmed = datetime.utcnow() if confirmed else None
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py:235: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    return self.user_model.query.get(identifier)
+
+tests/resources/test_resources_groups.py::test_group_avatar
+tests/resources/test_resources_users.py::test_user_avatar
+tests/resources/test_resources_users.py::test_user_avatar_non_ascii
+    max_age = datetime.utcnow() - timedelta(days=7)
+
+tests/resources/test_resources_users.py::test_create_user
+tests/services/users/test_service_users.py::test_create_user
+tests/services/users/test_service_users.py::test_create_user_errors
+    user.confirmed_at = datetime.utcnow()
+
+tests/resources/test_resources_users.py::test_create_user
+tests/resources/test_resources_users.py::test_approve_user
+tests/services/users/test_service_users.py::test_create_user
+tests/services/users/test_service_users.py::test_create_user_errors
+tests/services/users/test_service_users.py::test_approve
+    now = datetime.utcnow()
+
+    self._created = datetime.utcnow()
+
+tests/resources/test_resources_users.py::test_block_user
+tests/services/users/test_service_users.py::test_block
+tests/services/users/test_service_users.py::test_restore
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_success
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_failure
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_lock
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_lock_renewal[1-10-True]
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_lock_renewal[2-2-False]
+    now = datetime.utcnow()
+
+tests/services/users/test_user_moderation.py::test_moderation_callbacks_failure
+    current_app.logger.warn(
+
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                                      Stmts   Miss  Cover   Missing
+invenio_users_resources/__init__.py                                           2      0   100%
+invenio_users_resources/config.py                                            30      0   100%
+invenio_users_resources/entity_resolvers.py                                  82     45    45%   36-43, 47-53, 57, 61-62, 66-90, 102-103, 107, 111, 115, 119, 128-136, 140-145, 149-150, 160, 173-174, 178, 182, 186, 190
+invenio_users_resources/ext.py                                               64      5    92%   115-118, 126
+invenio_users_resources/forms.py                                             14      5    64%   30-32, 38-39
+invenio_users_resources/models.py                                            10      4    60%   21, 25, 29, 39
+invenio_users_resources/notifications/__init__.py                             0      0   100%
+invenio_users_resources/notifications/filters.py                             11      1    91%   23
+invenio_users_resources/notifications/generators.py                          37     15    59%   25, 47, 51-53, 61-62, 67-68, 76-77, 80-85
+invenio_users_resources/permissions.py                                        3      0   100%
+invenio_users_resources/proxies.py                                           12      0   100%
+invenio_users_resources/records/__init__.py                                   2      0   100%
+invenio_users_resources/records/api.py                                      266     16    94%   89, 93, 102, 108, 228-232, 253-254, 263, 270, 277, 284, 296, 367
+invenio_users_resources/records/dumpers/__init__.py                           2      0   100%
+invenio_users_resources/records/dumpers/email.py                             15      0   100%
+invenio_users_resources/records/hooks.py                                     45     16    64%   36-41, 44-49, 73, 78, 82, 88
+invenio_users_resources/records/mappings/__init__.py                          0      0   100%
+invenio_users_resources/records/mappings/os-v1/__init__.py                    0      0   100%
+invenio_users_resources/records/mappings/os-v2/__init__.py                    0      0   100%
+invenio_users_resources/records/mappings/v7/__init__.py                       0      0   100%
+invenio_users_resources/records/models.py                                    98     11    89%   54, 85, 90, 152-154, 178-182
+invenio_users_resources/records/systemfields/__init__.py                     72      0   100%
+invenio_users_resources/resources/__init__.py                                 4      0   100%
+invenio_users_resources/resources/domains/__init__.py                         3      0   100%
+invenio_users_resources/resources/domains/config.py                          11      0   100%
+invenio_users_resources/resources/domains/resource.py                         6      0   100%
+invenio_users_resources/resources/groups/__init__.py                          3      0   100%
+invenio_users_resources/resources/groups/config.py                           11      0   100%
+invenio_users_resources/resources/groups/resource.py                         24      4    83%   44-49, 55-59
+invenio_users_resources/resources/users/__init__.py                           3      0   100%
+invenio_users_resources/resources/users/config.py                            19      0   100%
+invenio_users_resources/resources/users/errors.py                             4      0   100%
+invenio_users_resources/resources/users/resource.py                          74      8    89%   50, 79, 86-91, 149-153, 167-171
+invenio_users_resources/services/__init__.py                                  4      0   100%
+invenio_users_resources/services/common.py                                    5      0   100%
+invenio_users_resources/services/domains/__init__.py                          3      0   100%
+invenio_users_resources/services/domains/components.py                       27      6    78%   50-59
+invenio_users_resources/services/domains/config.py                           29      0   100%
+invenio_users_resources/services/domains/facets.py                            7      0   100%
+invenio_users_resources/services/domains/service.py                           8      0   100%
+invenio_users_resources/services/domains/tasks.py                            61     15    75%   25-30, 36-41, 71-73
+invenio_users_resources/services/generators.py                               80      9    89%   37, 54-59, 86, 95, 161
+invenio_users_resources/services/groups/__init__.py                           3      0   100%
+invenio_users_resources/services/groups/config.py                            30      0   100%
+invenio_users_resources/services/groups/results.py                           57      6    89%   39, 43, 59, 77, 83, 126
+invenio_users_resources/services/groups/service.py                           26      7    73%   32, 38-39, 48, 54-58
+invenio_users_resources/services/groups/tasks.py                             21      8    62%   27-28, 34-39
+invenio_users_resources/services/params.py                                    9      0   100%
+invenio_users_resources/services/permissions.py                              31      0   100%
+invenio_users_resources/services/results.py                                  29      0   100%
+invenio_users_resources/services/schemas.py                                 144     10    93%   199-202, 210, 213, 216, 259, 271, 281
+invenio_users_resources/services/users/__init__.py                            3      0   100%
+invenio_users_resources/services/users/config.py                             44      4    91%   54-57
+invenio_users_resources/services/users/facets.py                              7      0   100%
+invenio_users_resources/services/users/lock.py                               11      0   100%
+invenio_users_resources/services/users/results.py                            57      4    93%   39, 43, 77, 83
+invenio_users_resources/services/users/search_params.py                      23      8    65%   37-55
+invenio_users_resources/services/users/service.py                           134     13    90%   142, 148-149, 158, 164-166, 184, 207, 231, 254, 266, 280
+invenio_users_resources/services/users/tasks.py                              49      8    84%   56-57, 63-68
+invenio_users_resources/templates/security/email/new_user_via_admin.txt       3      1    67%   3
+invenio_users_resources/views.py                                             11      0   100%
+TOTAL                                                                      1843    229    88%
+=========================== short test summary info ============================
+FAILED tests/resources/test_resources_users.py::test_admin_links[admin_records_html-/administration/records?q=parent.access.owned_by.user:{id}&f=allversions] - sqlalchemy.orm.exc.StaleDataError: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched.
+FAILED tests/resources/test_resources_users.py::test_admin_links[admin_drafts_html-/administration/drafts?q=parent.access.owned_by.user:{id}&f=allversions] - sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+FAILED tests/resources/test_resources_users.py::test_admin_links[admin_moderation_html-/administration/moderation?q=topic.user:{id}] - sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+FAILED tests/resources/test_resources_users.py::test_admin_links_visibility[user_moderator-True] - sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+FAILED tests/resources/test_resources_users.py::test_admin_links_visibility[pub-False] - sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+FAILED tests/resources/test_resources_users.py::test_admin_links_visibility[res-False] - sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: UPDATE statement on table 'accounts_user' expected to update 1 row(s); 0 were matched. (Background on this error at: https://sqlalche.me/e/20/7s2a)
+============ 6 failed, 296 passed, 839 warnings in 70.37s (0:01:10) ============
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

@@ -1,0 +1,22 @@
+{
+  "package": "invenio-userprofiles",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {
+      "DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13": 1,
+      "DeprecationWarning: current_userprofile is deprecated, use current_user instead": 1,
+      "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).": 5,
+      "DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 8
+  }
+}
