@@ -176,13 +176,31 @@ DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxc
 
 #### Warning 10 - 11 occurrences
 
+DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+
+| Package | Count |
+|---------|-------|
+| `invenio-administration` | 1 |
+| `invenio-app` | 1 |
+| `invenio-audit-logs` | 1 |
+| `invenio-banners` | 1 |
+| `invenio-cache` | 1 |
+| `invenio-collections` | 1 |
+| `invenio-drafts-resources` | 1 |
+| `invenio-jobs` | 1 |
+| `invenio-pages` | 1 |
+| `invenio-requests` | 1 |
+| `invenio-sitemap` | 1 |
+
+#### Warning 11 - 11 occurrences
+
 PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.
 
 | Package | Count |
 |---------|-------|
 | `invenio-records-rest` | 11 |
 
-#### Warning 11 - 10 occurrences
+#### Warning 12 - 10 occurrences
 
 DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('fs.opener')`.
 
@@ -199,7 +217,7 @@ DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('fs.open
 | `invenio-pages` | 1 |
 | `invenio-requests` | 1 |
 
-#### Warning 12 - 10 occurrences
+#### Warning 13 - 10 occurrences
 
 DeprecationWarning: The '__version_info__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'packaging.Version(importlib.metadata.version("marshmallow")).release' instead.
 
@@ -213,23 +231,6 @@ DeprecationWarning: The '__version_info__' attribute is deprecated and will be r
 | `invenio-drafts-resources` | 1 |
 | `invenio-jobs` | 1 |
 | `invenio-notifications` | 1 |
-| `invenio-pages` | 1 |
-| `invenio-requests` | 1 |
-
-#### Warning 13 - 10 occurrences
-
-DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
-
-| Package | Count |
-|---------|-------|
-| `invenio-administration` | 1 |
-| `invenio-app` | 1 |
-| `invenio-audit-logs` | 1 |
-| `invenio-banners` | 1 |
-| `invenio-cache` | 1 |
-| `invenio-collections` | 1 |
-| `invenio-drafts-resources` | 1 |
-| `invenio-jobs` | 1 |
 | `invenio-pages` | 1 |
 | `invenio-requests` | 1 |
 
