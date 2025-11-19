@@ -1,0 +1,19 @@
+{
+  "package": "invenio-sitemap",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "success",
+  "result": "fixed-skipped",
+  "result_icon": "\u2705",
+  "result_text": "Patch applied successfully, tests passed",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {
+      "DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.": 1
+    }
+  },
+  "warnings_count": {
+    "patched": 1
+  }
+}
