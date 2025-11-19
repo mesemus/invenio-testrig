@@ -1,0 +1,17 @@
+{
+  "package": "invenio-records-files",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "failed",
+  "result": "regression-skipped",
+  "result_icon": "\u274c",
+  "result_text": "Patch introduced test failures",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "patched": {}
+  },
+  "warnings_count": {
+    "patched": 0
+  }
+}
