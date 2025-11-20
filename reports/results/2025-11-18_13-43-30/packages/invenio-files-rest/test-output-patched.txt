@@ -1,6 +1,0 @@
-lists of files in version control and sdist match
-WARNING: failed to reach any of the inventories with the following issues:
-intersphinx inventory 'https://docs.sqlalchemy.org/objects.inv' not fetchable due to <class 'requests.exceptions.HTTPError'>: 500 Server Error: Internal Server Error for url: https://docs.sqlalchemy.org/objects.inv
-/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/.venv/lib/python3.12/site-packages/fs/__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
-  __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
-/home/runner/work/invenio-bug-verification/invenio-bug-verification/package-repo/docs/api.rst:41: WARNING: py:exc reference target not found: sqlalchemy.exc.IntegrityError [ref.exc]
