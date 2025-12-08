@@ -1,36 +1,24 @@
 { 
-    // name of the test configuration
     "name": "pytest rollback patch",
-    // Patches to apply - custom repositories with fixes/features
     "patches": {
-        // Format: "package-name": { "git": "git-url", "branch": "branch-name" }
-        "pytest-invenio": {
+        "invenio-records-resources": {
             "git": "https://github.com/max-moser/invenio-records-resources.git",
             "branch": "mm/failed-file-upload-cleanup"
         }
-        // Add more patches here as needed
     },
-    // whether to run original tests without patches when patched test fails
     "run_original_tests": true,
-    // timeout for tested package in minutes
     "test_timeout": 90,
-    // packages to test (if empty, all found packages will be tested)
     "packages": [],
-    // Repository configurations - where to find the original packages
     "repositories": [
         {
-            // Base URL for the repository (without trailing slash)
             "base_url": "https://github.com/inveniosoftware",
             
-            // Branch to use (empty string means default branch)
             "branch": "",
             
-            // Package name patterns to include (regex patterns)
             "package-regexes": [
                 "invenio-.*"
             ],
             
-            // Package name patterns to exclude (regex patterns)
             "exclude-package-regexes": [
                 "invenio-xrootd",
                 "invenio-swh"
