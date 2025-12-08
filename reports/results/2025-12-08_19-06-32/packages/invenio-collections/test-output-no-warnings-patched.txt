@@ -1,0 +1,263 @@
+  __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+ postgresql Pulling 
+ redis Pulling 
+ opensearch Pulling 
+ rabbitmq Pulling 
+ redis Pulled 
+ rabbitmq Pulled 
+ postgresql Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+ Container docker_services_cli-opensearch-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: pyproject.toml
+testpaths: docs, tests, invenio_collections
+plugins: github-actions-annotate-failures-0.3.0, black-0.6.0, pycodestyle-2.5.0, flask-1.3.0, Faker-38.2.0, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 95 items
+
+docs/conf.py ...                                                         [  3%]
+tests/__init__.py ...                                                    [  6%]
+tests/conftest.py ...                                                    [  9%]
+tests/test_api.py ....
+.
+.
+                                                 [ 15%]
+tests/test_invenio_collections.py ....                                   [ 20%]
+tests/test_service.py ...
+.
+.
+.
+.
+.
+.
+.                                         [ 30%]
+tests/test_tasks.py ...
+                                                  [ 33%]
+invenio_collections/__init__.py ...                                      [ 36%]
+invenio_collections/alembic/1748509182_create_collections_branch.py ...  [ 40%]
+invenio_collections/alembic/425b691f768b_create_collections_tables.py .. [ 42%]
+.                                                                        [ 43%]
+invenio_collections/api.py ...                                           [ 46%]
+invenio_collections/config.py ...                                        [ 49%]
+invenio_collections/errors.py ...                                        [ 52%]
+invenio_collections/ext.py ...                                           [ 55%]
+invenio_collections/models.py ...                                        [ 58%]
+invenio_collections/proxies.py ...                                       [ 62%]
+invenio_collections/resources/__init__.py ...                            [ 65%]
+invenio_collections/resources/config.py ...                              [ 68%]
+invenio_collections/resources/resource.py ...                            [ 71%]
+invenio_collections/searchapp.py ...                                     [ 74%]
+invenio_collections/services/__init__.py ...                             [ 77%]
+invenio_collections/services/config.py ...                               [ 81%]
+invenio_collections/services/links.py ...                                [ 84%]
+invenio_collections/services/results.py ...                              [ 87%]
+invenio_collections/services/schema.py ...                               [ 90%]
+invenio_collections/services/service.py ...                              [ 93%]
+invenio_collections/tasks.py ...                                         [ 96%]
+invenio_collections/views.py ...                                         [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:3146
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/fs/opener/__init__.py:6
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:2558
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(parent)
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+    from marshmallow import __version_info__ as marshmallow_version
+
+    warnings.warn(
+
+.venv/lib/python3.12/site-packages/invenio_communities/communities/resources/ui_schema.py:16
+    from idutils import detect_identifier_schemes, to_url
+
+.venv/lib/python3.12/site-packages/marshmallow/utils.py:361
+.venv/lib/python3.12/site-packages/marshmallow/utils.py:361
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/marshmallow/utils.py:361: ChangedInMarshmallow4Warning: `Field` should not be instantiated. Use `fields.Raw` or  another field subclass instead.
+    return cls_or_instance()
+
+.venv/lib/python3.12/site-packages/invenio_rdm_records/services/facets.py:75
+    warn(
+
+.venv/lib/python3.12/site-packages/webargs/compat.py:8
+    MARSHMALLOW_VERSION_INFO = tuple(LooseVersion(ma.__version__).version)  # type: tuple
+
+.venv/lib/python3.12/site-packages/webargs/compat.py:8
+    MARSHMALLOW_VERSION_INFO = tuple(LooseVersion(ma.__version__).version)  # type: tuple
+
+.venv/lib/python3.12/site-packages/webargs/__init__.py:13
+    __version_info__ = tuple(LooseVersion(__version__).version)
+
+.venv/lib/python3.12/site-packages/datacite/jsonutils.py:15
+.venv/lib/python3.12/site-packages/datacite/jsonutils.py:15
+    from jsonschema import RefResolver, validate
+
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+    target.updated = datetime.utcnow()
+
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_collections/models.py:151: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    return cls.query.get(id_)
+
+tests/test_service.py::test_collections_read
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+tests/test_tasks.py::test_update_collections_size
+    warnings.warn(
+
+tests/test_service.py::test_collections_read
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+tests/test_tasks.py::test_update_collections_size
+    warn(
+
+tests/test_service.py::test_collections_read
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+tests/test_tasks.py::test_update_collections_size
+    warn(
+
+tests/test_service.py::test_collections_read
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+tests/test_tasks.py::test_update_collections_size
+    self._set_cache(app, config)
+
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+    self.init_app(app)
+
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+    self._confirmed = datetime.utcnow() if confirmed else None
+
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/datastore.py:235: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    return self.user_model.query.get(identifier)
+
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py:90: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    valid_data = self.schema(context=context, **schema_args).load(data)
+
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/marshmallow/fields.py:631: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    self._schema = schema_class(
+
+tests/test_service.py::test_collections_read
+tests/test_tasks.py::test_update_collections_size
+    now_ = datetime.utcnow()
+
+tests/test_tasks.py::test_update_collections_size
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/records/schema.py:105: RemovedInMarshmallow4Warning: The `context` parameter is deprecated and will be removed in marshmallow 4.0. Use `contextvars.ContextVar` to pass context instead.
+    return self.schema(context=context, **schema_args).dump(data)
+
+tests/test_tasks.py::test_update_collections_size
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records/api.py:335: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_tasks.py::test_update_collections_size
+    target.updated = datetime.utcnow()
+
+tests/test_tasks.py::test_update_collections_size
+    target.updated = datetime.utcnow()
+
+tests/test_tasks.py::test_update_collections_size
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_db/uow.py:193: SAWarning: nested transaction already deassociated from connection
+    self.session.commit()
+
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                                    Stmts   Miss  Cover   Missing
+invenio_collections/__init__.py                                             3      0   100%
+invenio_collections/alembic/425b691f768b_create_collections_tables.py      17      8    53%   24-78, 88-96
+invenio_collections/alembic/1748509182_create_collections_branch.py         8      2    75%   20, 25
+invenio_collections/api.py                                                145     20    86%   42-43, 56, 83, 88, 104, 110, 157, 169, 178, 188, 195-198, 237, 241, 244, 250-251, 256
+invenio_collections/config.py                                               0      0   100%
+invenio_collections/errors.py                                               5      0   100%
+invenio_collections/ext.py                                                 26      2    92%   40, 46
+invenio_collections/models.py                                              78      4    95%   59, 71, 76, 142
+invenio_collections/proxies.py                                              3      0   100%
+invenio_collections/resources/__init__.py                                   0      0   100%
+invenio_collections/resources/config.py                                    15      0   100%
+invenio_collections/resources/resource.py                                  17      3    82%   37-43
+invenio_collections/searchapp.py                                            5      1    80%   18
+invenio_collections/services/__init__.py                                    0      0   100%
+invenio_collections/services/config.py                                     14      0   100%
+invenio_collections/services/links.py                                       8      0   100%
+invenio_collections/services/results.py                                    65     15    77%   120, 157-160, 164, 187-190, 194-203, 207
+invenio_collections/services/schema.py                                      9      0   100%
+invenio_collections/services/service.py                                    87     14    84%   107-111, 159-163, 170, 173, 193, 205
+invenio_collections/tasks.py                                               15      2    87%   30-31
+invenio_collections/views.py                                                3      0   100%
+TOTAL                                                                     523     71    86%
+====================== 95 passed, 238 warnings in 31.43s =======================
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
