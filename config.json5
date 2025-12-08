@@ -5,8 +5,8 @@
     "patches": {
         // Format: "package-name": { "git": "git-url", "branch": "branch-name" }
         "pytest-invenio": {
-            "git": "https://github.com/oarepo/pytest-invenio.git",
-            "branch": "nested-db-session-rollback"
+            "git": "https://github.com/max-moser/invenio-records-resources.git",
+            "branch": "mm/failed-file-upload-cleanup"
         }
         // Add more patches here as needed
     },
