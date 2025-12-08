@@ -1,0 +1,792 @@
+ redis Pulling 
+ postgresql Pulling 
+ opensearch Pulling 
+ f9dd052e142d Pulling fs layer 
+ e8c6d4883897 Pulling fs layer 
+ 648eb81b3252 Pulling fs layer 
+ eb77aa907276 Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ 0ffa8f8aba1e Pulling fs layer 
+ 2e81b9cb93cd Pulling fs layer 
+ eb77aa907276 Waiting 
+ 4f4fb700ef54 Waiting 
+ 0ffa8f8aba1e Waiting 
+ 2e81b9cb93cd Waiting 
+ 8e44f01296e3 Pulling fs layer 
+ 44fc29a25beb Pulling fs layer 
+ 39af693970c0 Pulling fs layer 
+ 517b08eaf3cc Pulling fs layer 
+ 186a03b51bfa Pulling fs layer 
+ fe77c85f37cb Pulling fs layer 
+ 4f4fb700ef54 Pulling fs layer 
+ a43f12641297 Pulling fs layer 
+ 8e44f01296e3 Waiting 
+ 39af693970c0 Waiting 
+ 44fc29a25beb Waiting 
+ 517b08eaf3cc Waiting 
+ 186a03b51bfa Waiting 
+ fe77c85f37cb Waiting 
+ a43f12641297 Waiting 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ b0a0cf830b12 Waiting 
+ 91d2729fa4d5 Pulling fs layer 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ f8406d9c00ea Pulling fs layer 
+ dda3d8fbd5ed Waiting 
+ c199bff16b05 Pulling fs layer 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ 283a477db7bb Waiting 
+ 050d9f8c3b1c Pulling fs layer 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ 91d2729fa4d5 Waiting 
+ 9739ced65621 Waiting 
+ ae3bb1b347a4 Waiting 
+ 873532e5f8c7 Waiting 
+ f8406d9c00ea Waiting 
+ 050d9f8c3b1c Waiting 
+ c199bff16b05 Waiting 
+ 710e142705f8 Waiting 
+ e0d55fdb4d15 Waiting 
+ cb628c265f09 Waiting 
+ c1cb13b19080 Waiting 
+ 648eb81b3252 Downloading [=============================>                     ]     933B/1.561kB
+ 648eb81b3252 Downloading [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Download complete 
+ f9dd052e142d Downloading [>                                                  ]  530.6kB/52.33MB
+ e8c6d4883897 Downloading [>                                                  ]  44.74kB/4.398MB
+ e8c6d4883897 Verifying Checksum 
+ e8c6d4883897 Download complete 
+ f9dd052e142d Downloading [=======>                                           ]  7.948MB/52.33MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ eb77aa907276 Downloading [>                                                  ]  530.9kB/907.7MB
+ 0ffa8f8aba1e Downloading [==================================================>]     226B/226B
+ 0ffa8f8aba1e Verifying Checksum 
+ 0ffa8f8aba1e Download complete 
+ f9dd052e142d Downloading [================>                                  ]  16.97MB/52.33MB
+ 2e81b9cb93cd Downloading [=========================>                         ]     933B/1.859kB
+ 2e81b9cb93cd Downloading [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Download complete 
+ eb77aa907276 Downloading [>                                                  ]  2.127MB/907.7MB
+ f9dd052e142d Downloading [======================>                            ]  23.84MB/52.33MB
+ eb77aa907276 Downloading [>                                                  ]  4.778MB/907.7MB
+ 8e44f01296e3 Downloading [>                                                  ]    288kB/28.23MB
+ f9dd052e142d Downloading [==========================================>        ]  43.99MB/52.33MB
+ f9dd052e142d Verifying Checksum 
+ f9dd052e142d Download complete 
+ eb77aa907276 Downloading [>                                                  ]  7.985MB/907.7MB
+ 8e44f01296e3 Downloading [==============>                                    ]   8.42MB/28.23MB
+ f9dd052e142d Extracting [>                                                  ]  524.3kB/52.33MB
+ 44fc29a25beb Downloading [==========================================>        ]     934B/1.105kB
+ 44fc29a25beb Downloading [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Verifying Checksum 
+ 44fc29a25beb Download complete 
+ eb77aa907276 Downloading [>                                                  ]  9.583MB/907.7MB
+ 8e44f01296e3 Downloading [=======================================>           ]  22.33MB/28.23MB
+ 39af693970c0 Downloading [==================================================>]     874B/874B
+ 39af693970c0 Verifying Checksum 
+ 39af693970c0 Download complete 
+ f9dd052e142d Extracting [=>                                                 ]  1.573MB/52.33MB
+ 8e44f01296e3 Download complete 
+ 517b08eaf3cc Downloading [>                                                  ]  14.62kB/1.438MB
+ 8e44f01296e3 Extracting [>                                                  ]  294.9kB/28.23MB
+ 517b08eaf3cc Verifying Checksum 
+ 517b08eaf3cc Download complete 
+ 186a03b51bfa Downloading [>                                                  ]    156kB/15.35MB
+ eb77aa907276 Downloading [=>                                                 ]  18.62MB/907.7MB
+ fe77c85f37cb Downloading [==================================================>]      97B/97B
+ fe77c85f37cb Verifying Checksum 
+ fe77c85f37cb Download complete 
+ 8e44f01296e3 Extracting [=======>                                           ]  4.424MB/28.23MB
+ 186a03b51bfa Verifying Checksum 
+ 186a03b51bfa Download complete 
+ f9dd052e142d Extracting [====>                                              ]  4.719MB/52.33MB
+ 4f4fb700ef54 Downloading [==================================================>]      32B/32B
+ 4f4fb700ef54 Verifying Checksum 
+ 4f4fb700ef54 Download complete 
+ eb77aa907276 Downloading [=>                                                 ]  23.96MB/907.7MB
+ a43f12641297 Downloading [==================================================>]     571B/571B
+ a43f12641297 Verifying Checksum 
+ a43f12641297 Download complete 
+ 8e44f01296e3 Extracting [================>                                  ]  9.142MB/28.23MB
+ b0a0cf830b12 Downloading [>                                                  ]  306.5kB/29.15MB
+ dda3d8fbd5ed Downloading [========================================>          ]     935B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Verifying Checksum 
+ dda3d8fbd5ed Download complete 
+ f9dd052e142d Extracting [=====>                                             ]  5.767MB/52.33MB
+ eb77aa907276 Downloading [=>                                                 ]  25.03MB/907.7MB
+ 283a477db7bb Downloading [>                                                  ]  46.57kB/4.533MB
+ 8e44f01296e3 Extracting [===================>                               ]  11.21MB/28.23MB
+ b0a0cf830b12 Downloading [========>                                          ]  5.112MB/29.15MB
+ f9dd052e142d Extracting [===========>                                       ]  12.06MB/52.33MB
+ eb77aa907276 Downloading [=>                                                 ]  34.65MB/907.7MB
+ 283a477db7bb Verifying Checksum 
+ 283a477db7bb Download complete 
+ 8e44f01296e3 Extracting [==============================>                    ]   17.4MB/28.23MB
+ b0a0cf830b12 Downloading [=================>                                 ]  9.916MB/29.15MB
+ f9dd052e142d Extracting [=================>                                 ]  18.35MB/52.33MB
+ 91d2729fa4d5 Downloading [>                                                  ]  14.62kB/1.45MB
+ eb77aa907276 Downloading [==>                                                ]  38.91MB/907.7MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ 8e44f01296e3 Extracting [========================================>          ]     23MB/28.23MB
+ b0a0cf830b12 Downloading [========================>                          ]   14.1MB/29.15MB
+ 9739ced65621 Downloading [>                                                  ]  84.39kB/8.069MB
+ f9dd052e142d Extracting [========================>                          ]  25.17MB/52.33MB
+ eb77aa907276 Downloading [==>                                                ]  45.29MB/907.7MB
+ b0a0cf830b12 Downloading [===================================>               ]  20.73MB/29.15MB
+ 9739ced65621 Downloading [===================================>               ]  5.685MB/8.069MB
+ f9dd052e142d Extracting [==========================>                        ]  27.79MB/52.33MB
+ eb77aa907276 Downloading [==>                                                ]  47.42MB/907.7MB
+ 9739ced65621 Verifying Checksum 
+ 9739ced65621 Download complete 
+ 8e44f01296e3 Extracting [==========================================>        ]  23.89MB/28.23MB
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ f9dd052e142d Extracting [===========================>                       ]  28.84MB/52.33MB
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ eb77aa907276 Downloading [===>                                               ]   60.2MB/907.7MB
+ ae3bb1b347a4 Downloading [>                                                  ]  12.41kB/1.196MB
+ 8e44f01296e3 Extracting [==============================================>    ]  26.25MB/28.23MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ c199bff16b05 Downloading [==============>                                    ]     934B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ b0a0cf830b12 Extracting [======>                                            ]  3.834MB/29.15MB
+ eb77aa907276 Downloading [===>                                               ]  72.48MB/907.7MB
+ e0d55fdb4d15 Downloading [>                                                  ]  530.5kB/109MB
+ f9dd052e142d Extracting [============================>                      ]  29.88MB/52.33MB
+ c1cb13b19080 Downloading [====>                                              ]     934B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ b0a0cf830b12 Extracting [============>                                      ]  7.373MB/29.15MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.13MB/28.23MB
+ eb77aa907276 Downloading [====>                                              ]  87.49MB/907.7MB
+ e0d55fdb4d15 Downloading [====>                                              ]  10.12MB/109MB
+ 873532e5f8c7 Downloading [==================================================>]     128B/128B
+ 873532e5f8c7 Verifying Checksum 
+ 873532e5f8c7 Download complete 
+ f9dd052e142d Extracting [=============================>                     ]  30.41MB/52.33MB
+ b0a0cf830b12 Extracting [================>                                  ]  9.732MB/29.15MB
+ 050d9f8c3b1c Downloading [==================================================>]     169B/169B
+ 050d9f8c3b1c Verifying Checksum 
+ 050d9f8c3b1c Download complete 
+ e0d55fdb4d15 Downloading [=======>                                           ]  17.05MB/109MB
+ eb77aa907276 Downloading [=====>                                             ]  92.85MB/907.7MB
+ 710e142705f8 Downloading [========>                                          ]     934B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Verifying Checksum 
+ 710e142705f8 Download complete 
+ b0a0cf830b12 Extracting [====================>                              ]   11.8MB/29.15MB
+ e0d55fdb4d15 Downloading [============>                                      ]  27.76MB/109MB
+ eb77aa907276 Downloading [=====>                                             ]  94.44MB/907.7MB
+ f9dd052e142d Extracting [===============================>                   ]  33.03MB/52.33MB
+ b0a0cf830b12 Extracting [=============================>                     ]   17.4MB/29.15MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ e0d55fdb4d15 Downloading [===============>                                   ]   34.7MB/109MB
+ 8e44f01296e3 Extracting [================================================>  ]  27.43MB/28.23MB
+ eb77aa907276 Downloading [=====>                                             ]  98.16MB/907.7MB
+ f9dd052e142d Extracting [=================================>                 ]   34.6MB/52.33MB
+ b0a0cf830b12 Extracting [=======================================>           ]     23MB/29.15MB
+ e0d55fdb4d15 Downloading [===================>                               ]  41.64MB/109MB
+ eb77aa907276 Downloading [=====>                                             ]  101.9MB/907.7MB
+ 8e44f01296e3 Extracting [==================================================>]  28.23MB/28.23MB
+ f9dd052e142d Extracting [===================================>               ]   36.7MB/52.33MB
+ 8e44f01296e3 Pull complete 
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ 44fc29a25beb Extracting [==================================================>]  1.105kB/1.105kB
+ e0d55fdb4d15 Downloading [========================>                          ]  54.43MB/109MB
+ eb77aa907276 Downloading [=====>                                             ]  105.6MB/907.7MB
+ e0d55fdb4d15 Downloading [============================>                      ]  62.94MB/109MB
+ eb77aa907276 Downloading [======>                                            ]  112.6MB/907.7MB
+ f9dd052e142d Extracting [====================================>              ]  37.75MB/52.33MB
+ e0d55fdb4d15 Downloading [===================================>               ]  77.33MB/109MB
+ eb77aa907276 Downloading [======>                                            ]  114.2MB/907.7MB
+ e0d55fdb4d15 Downloading [========================================>          ]     88MB/109MB
+ f9dd052e142d Extracting [====================================>              ]  38.27MB/52.33MB
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ eb77aa907276 Downloading [======>                                            ]  121.1MB/907.7MB
+ e0d55fdb4d15 Downloading [==========================================>        ]  93.31MB/109MB
+ b0a0cf830b12 Extracting [===============================================>   ]  27.43MB/29.15MB
+ f9dd052e142d Extracting [======================================>            ]  39.85MB/52.33MB
+ eb77aa907276 Downloading [=======>                                           ]  129.1MB/907.7MB
+ e0d55fdb4d15 Downloading [=============================================>     ]  100.2MB/109MB
+ f9dd052e142d Extracting [=======================================>           ]  41.42MB/52.33MB
+ b0a0cf830b12 Extracting [===============================================>   ]  27.72MB/29.15MB
+ eb77aa907276 Downloading [=======>                                           ]  141.4MB/907.7MB
+ e0d55fdb4d15 Downloading [================================================>  ]  106.6MB/109MB
+ f9dd052e142d Extracting [========================================>          ]  42.47MB/52.33MB
+ eb77aa907276 Downloading [========>                                          ]  146.7MB/907.7MB
+ e0d55fdb4d15 Download complete 
+ b0a0cf830b12 Extracting [================================================>  ]  28.02MB/29.15MB
+ eb77aa907276 Downloading [========>                                          ]  154.7MB/907.7MB
+ f9dd052e142d Extracting [==========================================>        ]  44.56MB/52.33MB
+ eb77aa907276 Downloading [========>                                          ]  162.7MB/907.7MB
+ f9dd052e142d Extracting [============================================>      ]  46.14MB/52.33MB
+ eb77aa907276 Downloading [=========>                                         ]  170.7MB/907.7MB
+ f9dd052e142d Extracting [=============================================>     ]  47.71MB/52.33MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ eb77aa907276 Downloading [=========>                                         ]    176MB/907.7MB
+ eb77aa907276 Downloading [==========>                                        ]    183MB/907.7MB
+ b0a0cf830b12 Extracting [=================================================> ]   28.9MB/29.15MB
+ eb77aa907276 Downloading [==========>                                        ]  190.5MB/907.7MB
+ eb77aa907276 Downloading [===========>                                       ]  200.6MB/907.7MB
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ eb77aa907276 Downloading [===========>                                       ]    207MB/907.7MB
+ b0a0cf830b12 Pull complete 
+ f9dd052e142d Extracting [=================================================> ]  51.38MB/52.33MB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ eb77aa907276 Downloading [===========>                                       ]  217.2MB/907.7MB
+ f9dd052e142d Extracting [=================================================> ]   51.9MB/52.33MB
+ f9dd052e142d Extracting [==================================================>]  52.33MB/52.33MB
+ eb77aa907276 Downloading [============>                                      ]  219.8MB/907.7MB
+ f9dd052e142d Pull complete 
+ dda3d8fbd5ed Pull complete 
+ e8c6d4883897 Extracting [>                                                  ]  65.54kB/4.398MB
+ eb77aa907276 Downloading [============>                                      ]    223MB/907.7MB
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ eb77aa907276 Downloading [============>                                      ]  226.2MB/907.7MB
+ eb77aa907276 Downloading [============>                                      ]  229.4MB/907.7MB
+ e8c6d4883897 Extracting [==>                                                ]  262.1kB/4.398MB
+ eb77aa907276 Downloading [============>                                      ]  234.7MB/907.7MB
+ 283a477db7bb Extracting [==>                                                ]  262.1kB/4.533MB
+ eb77aa907276 Downloading [=============>                                     ]  243.3MB/907.7MB
+ 283a477db7bb Extracting [===============>                                   ]  1.442MB/4.533MB
+ 283a477db7bb Extracting [==========================>                        ]  2.425MB/4.533MB
+ eb77aa907276 Downloading [=============>                                     ]  246.5MB/907.7MB
+ e8c6d4883897 Extracting [========>                                          ]  720.9kB/4.398MB
+ eb77aa907276 Downloading [=============>                                     ]  249.1MB/907.7MB
+ eb77aa907276 Downloading [=============>                                     ]  251.2MB/907.7MB
+ e8c6d4883897 Extracting [=========>                                         ]    852kB/4.398MB
+ 283a477db7bb Extracting [=================================>                 ]   3.08MB/4.533MB
+ eb77aa907276 Downloading [==============>                                    ]  256.6MB/907.7MB
+ e8c6d4883897 Extracting [==============>                                    ]  1.311MB/4.398MB
+ eb77aa907276 Downloading [==============>                                    ]  263.5MB/907.7MB
+ 283a477db7bb Extracting [=================================================> ]  4.522MB/4.533MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ e8c6d4883897 Extracting [====================>                              ]  1.835MB/4.398MB
+ eb77aa907276 Downloading [==============>                                    ]  268.3MB/907.7MB
+ eb77aa907276 Downloading [===============>                                   ]  273.1MB/907.7MB
+ e8c6d4883897 Extracting [=======================>                           ]  2.097MB/4.398MB
+ 44fc29a25beb Pull complete 
+ eb77aa907276 Downloading [===============>                                   ]  275.8MB/907.7MB
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ 39af693970c0 Extracting [==================================================>]     874B/874B
+ e8c6d4883897 Extracting [==========================>                        ]  2.294MB/4.398MB
+ 283a477db7bb Pull complete 
+ 39af693970c0 Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 517b08eaf3cc Extracting [=>                                                 ]  32.77kB/1.438MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ 517b08eaf3cc Extracting [==================================================>]  1.438MB/1.438MB
+ eb77aa907276 Downloading [===============>                                   ]  282.2MB/907.7MB
+ 517b08eaf3cc Pull complete 
+ 91d2729fa4d5 Pull complete 
+ 186a03b51bfa Extracting [>                                                  ]  163.8kB/15.35MB
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ e8c6d4883897 Extracting [===================================>               ]  3.146MB/4.398MB
+ eb77aa907276 Downloading [================>                                  ]  294.9MB/907.7MB
+ 186a03b51bfa Extracting [=================>                                 ]  5.243MB/15.35MB
+ 9739ced65621 Extracting [==================>                                ]  2.949MB/8.069MB
+ e8c6d4883897 Extracting [========================================>          ]  3.539MB/4.398MB
+ e8c6d4883897 Extracting [==================================================>]  4.398MB/4.398MB
+ e8c6d4883897 Pull complete 
+ 186a03b51bfa Extracting [======================================>            ]   11.8MB/15.35MB
+ 9739ced65621 Extracting [===========================>                       ]  4.424MB/8.069MB
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Extracting [==================================================>]  1.561kB/1.561kB
+ 648eb81b3252 Pull complete 
+ eb77aa907276 Downloading [================>                                  ]  303.4MB/907.7MB
+ 186a03b51bfa Extracting [==================================================>]  15.35MB/15.35MB
+ 186a03b51bfa Pull complete 
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Extracting [==================================================>]      97B/97B
+ fe77c85f37cb Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Extracting [==================================================>]     571B/571B
+ a43f12641297 Pull complete 
+ redis Pulled 
+ 9739ced65621 Extracting [====================================>              ]  5.898MB/8.069MB
+ eb77aa907276 Downloading [================>                                  ]  304.5MB/907.7MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ eb77aa907276 Downloading [================>                                  ]    305MB/907.7MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ eb77aa907276 Downloading [================>                                  ]  305.6MB/907.7MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.242MB/109MB
+ eb77aa907276 Downloading [================>                                  ]  307.7MB/907.7MB
+ e0d55fdb4d15 Extracting [====>                                              ]  10.58MB/109MB
+ eb77aa907276 Downloading [=================>                                 ]    313MB/907.7MB
+ e0d55fdb4d15 Extracting [=======>                                           ]   15.6MB/109MB
+ eb77aa907276 Downloading [=================>                                 ]  322.6MB/907.7MB
+ e0d55fdb4d15 Extracting [=========>                                         ]  20.05MB/109MB
+ eb77aa907276 Downloading [==================>                                ]  331.2MB/907.7MB
+ e0d55fdb4d15 Extracting [===========>                                       ]  25.62MB/109MB
+ eb77aa907276 Downloading [==================>                                ]  337.6MB/907.7MB
+ e0d55fdb4d15 Extracting [===============>                                   ]  33.98MB/109MB
+ eb77aa907276 Downloading [==================>                                ]  343.4MB/907.7MB
+ e0d55fdb4d15 Extracting [===================>                               ]  41.78MB/109MB
+ eb77aa907276 Downloading [===================>                               ]  354.6MB/907.7MB
+ e0d55fdb4d15 Extracting [======================>                            ]  49.58MB/109MB
+ eb77aa907276 Downloading [===================>                               ]    361MB/907.7MB
+ e0d55fdb4d15 Extracting [=========================>                         ]  54.59MB/109MB
+ eb77aa907276 Downloading [====================>                              ]  364.2MB/907.7MB
+ e0d55fdb4d15 Extracting [===========================>                       ]  60.16MB/109MB
+ eb77aa907276 Downloading [====================>                              ]  372.2MB/907.7MB
+ e0d55fdb4d15 Extracting [================================>                  ]  70.19MB/109MB
+ eb77aa907276 Downloading [====================>                              ]  380.8MB/907.7MB
+ e0d55fdb4d15 Extracting [====================================>              ]  78.54MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  387.2MB/907.7MB
+ e0d55fdb4d15 Extracting [========================================>          ]  87.46MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  390.9MB/907.7MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.03MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  395.2MB/907.7MB
+ e0d55fdb4d15 Extracting [============================================>      ]  96.93MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  396.8MB/907.7MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  100.3MB/109MB
+ eb77aa907276 Downloading [=====================>                             ]  398.9MB/907.7MB
+ e0d55fdb4d15 Extracting [===============================================>   ]  103.6MB/109MB
+ eb77aa907276 Downloading [======================>                            ]    400MB/907.7MB
+ e0d55fdb4d15 Extracting [================================================>  ]  105.3MB/109MB
+ eb77aa907276 Downloading [======================>                            ]  400.5MB/907.7MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ eb77aa907276 Downloading [======================>                            ]    401MB/907.7MB
+ eb77aa907276 Downloading [======================>                            ]  403.7MB/907.7MB
+ eb77aa907276 Downloading [======================>                            ]    416MB/907.7MB
+ eb77aa907276 Downloading [=======================>                           ]  421.8MB/907.7MB
+ eb77aa907276 Downloading [=======================>                           ]  427.6MB/907.7MB
+ eb77aa907276 Downloading [=======================>                           ]  435.1MB/907.7MB
+ eb77aa907276 Downloading [========================>                          ]  438.8MB/907.7MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ eb77aa907276 Downloading [========================>                          ]  447.3MB/907.7MB
+ eb77aa907276 Downloading [========================>                          ]  449.5MB/907.7MB
+ eb77aa907276 Downloading [=========================>                         ]  455.3MB/907.7MB
+ eb77aa907276 Downloading [=========================>                         ]  458.6MB/907.7MB
+ eb77aa907276 Downloading [=========================>                         ]  461.7MB/907.7MB
+ eb77aa907276 Downloading [=========================>                         ]  463.3MB/907.7MB
+ eb77aa907276 Downloading [=========================>                         ]  464.9MB/907.7MB
+ eb77aa907276 Downloading [==========================>                        ]  472.4MB/907.7MB
+ eb77aa907276 Downloading [==========================>                        ]  477.2MB/907.7MB
+ eb77aa907276 Downloading [===========================>                       ]  490.5MB/907.7MB
+ eb77aa907276 Downloading [===========================>                       ]  498.5MB/907.7MB
+ eb77aa907276 Downloading [===========================>                       ]  501.7MB/907.7MB
+ eb77aa907276 Downloading [===========================>                       ]  503.8MB/907.7MB
+ eb77aa907276 Downloading [============================>                      ]  513.9MB/907.7MB
+ eb77aa907276 Downloading [============================>                      ]  519.8MB/907.7MB
+ eb77aa907276 Downloading [============================>                      ]  521.4MB/907.7MB
+ eb77aa907276 Downloading [=============================>                     ]  531.5MB/907.7MB
+ eb77aa907276 Downloading [=============================>                     ]  542.7MB/907.7MB
+ eb77aa907276 Downloading [==============================>                    ]    554MB/907.7MB
+ eb77aa907276 Downloading [==============================>                    ]  559.8MB/907.7MB
+ eb77aa907276 Downloading [===============================>                   ]  566.8MB/907.7MB
+ eb77aa907276 Downloading [===============================>                   ]  571.6MB/907.7MB
+ eb77aa907276 Downloading [===============================>                   ]  577.4MB/907.7MB
+ eb77aa907276 Downloading [================================>                  ]  584.9MB/907.7MB
+ eb77aa907276 Downloading [================================>                  ]  591.8MB/907.7MB
+ eb77aa907276 Downloading [=================================>                 ]  600.4MB/907.7MB
+ eb77aa907276 Downloading [=================================>                 ]  605.7MB/907.7MB
+ eb77aa907276 Downloading [=================================>                 ]  611.6MB/907.7MB
+ eb77aa907276 Downloading [==================================>                ]  624.9MB/907.7MB
+ eb77aa907276 Downloading [==================================>                ]  627.6MB/907.7MB
+ eb77aa907276 Downloading [===================================>               ]  645.7MB/907.7MB
+ eb77aa907276 Downloading [===================================>               ]  653.2MB/907.7MB
+ eb77aa907276 Downloading [====================================>              ]  654.3MB/907.7MB
+ eb77aa907276 Downloading [====================================>              ]  661.2MB/907.7MB
+ eb77aa907276 Downloading [====================================>              ]  666.1MB/907.7MB
+ eb77aa907276 Downloading [====================================>              ]  670.8MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]  676.2MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]  682.6MB/907.7MB
+ eb77aa907276 Downloading [=====================================>             ]    689MB/907.7MB
+ eb77aa907276 Downloading [======================================>            ]  692.2MB/907.7MB
+ eb77aa907276 Downloading [======================================>            ]  700.7MB/907.7MB
+ eb77aa907276 Downloading [======================================>            ]  706.5MB/907.7MB
+ eb77aa907276 Downloading [=======================================>           ]  718.3MB/907.7MB
+ eb77aa907276 Downloading [========================================>          ]  730.5MB/907.7MB
+ eb77aa907276 Downloading [========================================>          ]  740.6MB/907.7MB
+ eb77aa907276 Downloading [=========================================>         ]  744.4MB/907.7MB
+ eb77aa907276 Downloading [=========================================>         ]  752.4MB/907.7MB
+ eb77aa907276 Downloading [=========================================>         ]  760.9MB/907.7MB
+ eb77aa907276 Downloading [==========================================>        ]  767.8MB/907.7MB
+ eb77aa907276 Downloading [===========================================>       ]  783.3MB/907.7MB
+ eb77aa907276 Downloading [===========================================>       ]  790.2MB/907.7MB
+ eb77aa907276 Downloading [===========================================>       ]  797.2MB/907.7MB
+ eb77aa907276 Downloading [============================================>      ]    803MB/907.7MB
+ eb77aa907276 Downloading [============================================>      ]  809.4MB/907.7MB
+ eb77aa907276 Downloading [============================================>      ]  815.8MB/907.7MB
+ eb77aa907276 Downloading [=============================================>     ]  821.7MB/907.7MB
+ eb77aa907276 Downloading [=============================================>     ]  834.5MB/907.7MB
+ eb77aa907276 Downloading [==============================================>    ]  844.1MB/907.7MB
+ eb77aa907276 Downloading [==============================================>    ]  852.7MB/907.7MB
+ eb77aa907276 Downloading [===============================================>   ]    857MB/907.7MB
+ eb77aa907276 Downloading [===============================================>   ]  867.7MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  878.3MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  885.8MB/907.7MB
+ eb77aa907276 Downloading [================================================>  ]  888.4MB/907.7MB
+ eb77aa907276 Downloading [=================================================> ]  892.7MB/907.7MB
+ eb77aa907276 Downloading [=================================================> ]  901.2MB/907.7MB
+ eb77aa907276 Verifying Checksum 
+ eb77aa907276 Download complete 
+ eb77aa907276 Extracting [>                                                  ]  557.1kB/907.7MB
+ eb77aa907276 Extracting [=>                                                 ]  23.95MB/907.7MB
+ eb77aa907276 Extracting [==>                                                ]  46.24MB/907.7MB
+ eb77aa907276 Extracting [===>                                               ]  70.19MB/907.7MB
+ eb77aa907276 Extracting [====>                                              ]  81.89MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]  94.14MB/907.7MB
+ eb77aa907276 Extracting [=====>                                             ]  103.1MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]    112MB/907.7MB
+ eb77aa907276 Extracting [======>                                            ]  120.3MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  128.7MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]    137MB/907.7MB
+ eb77aa907276 Extracting [=======>                                           ]  144.3MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  152.1MB/907.7MB
+ eb77aa907276 Extracting [========>                                          ]  161.5MB/907.7MB
+ eb77aa907276 Extracting [==========>                                        ]  183.8MB/907.7MB
+ eb77aa907276 Extracting [===========>                                       ]  205.6MB/907.7MB
+ eb77aa907276 Extracting [===========>                                       ]  216.7MB/907.7MB
+ eb77aa907276 Extracting [============>                                      ]  227.8MB/907.7MB
+ eb77aa907276 Extracting [=============>                                     ]  237.3MB/907.7MB
+ eb77aa907276 Extracting [=============>                                     ]  249.6MB/907.7MB
+ eb77aa907276 Extracting [==============>                                    ]  268.5MB/907.7MB
+ eb77aa907276 Extracting [================>                                  ]  291.3MB/907.7MB
+ eb77aa907276 Extracting [=================>                                 ]  314.2MB/907.7MB
+ eb77aa907276 Extracting [==================>                                ]  335.3MB/907.7MB
+ eb77aa907276 Extracting [===================>                               ]  355.4MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  364.9MB/907.7MB
+ eb77aa907276 Extracting [====================>                              ]  372.7MB/907.7MB
+ eb77aa907276 Extracting [=====================>                             ]  390.5MB/907.7MB
+ eb77aa907276 Extracting [======================>                            ]  412.8MB/907.7MB
+ eb77aa907276 Extracting [========================>                          ]  441.2MB/907.7MB
+ eb77aa907276 Extracting [=========================>                         ]  470.2MB/907.7MB
+ eb77aa907276 Extracting [===========================>                       ]    498MB/907.7MB
+ eb77aa907276 Extracting [============================>                      ]  526.4MB/907.7MB
+ eb77aa907276 Extracting [==============================>                    ]  554.3MB/907.7MB
+ eb77aa907276 Extracting [================================>                  ]  582.1MB/907.7MB
+ eb77aa907276 Extracting [=================================>                 ]  608.9MB/907.7MB
+ eb77aa907276 Extracting [===================================>               ]  635.6MB/907.7MB
+ eb77aa907276 Extracting [====================================>              ]    664MB/907.7MB
+ eb77aa907276 Extracting [======================================>            ]  692.4MB/907.7MB
+ eb77aa907276 Extracting [=======================================>           ]  716.9MB/907.7MB
+ eb77aa907276 Extracting [========================================>          ]  742.6MB/907.7MB
+ eb77aa907276 Extracting [==========================================>        ]  764.3MB/907.7MB
+ eb77aa907276 Extracting [===========================================>       ]    786MB/907.7MB
+ eb77aa907276 Extracting [============================================>      ]  807.2MB/907.7MB
+ eb77aa907276 Extracting [=============================================>     ]  828.3MB/907.7MB
+ eb77aa907276 Extracting [==============================================>    ]  848.4MB/907.7MB
+ eb77aa907276 Extracting [===============================================>   ]    869MB/907.7MB
+ eb77aa907276 Extracting [=================================================> ]  891.8MB/907.7MB
+ eb77aa907276 Extracting [==================================================>]  907.7MB/907.7MB
+ eb77aa907276 Pull complete 
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Extracting [==================================================>]      32B/32B
+ 4f4fb700ef54 Pull complete 
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Extracting [==================================================>]     226B/226B
+ 0ffa8f8aba1e Pull complete 
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Extracting [==================================================>]  1.859kB/1.859kB
+ 2e81b9cb93cd Pull complete 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-opensearch-1  Started
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py,line=854::'crypt' is deprecated and slated for removal in Python 3.13
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: setup.cfg
+testpaths: tests, invenio_github
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, mock-3.15.1, pydocstyle-2.4.0
+collected 97 items
+
+tests/__init__.py ...                                                    [  3%]
+tests/conftest.py ...                                                    [  6%]
+tests/fixtures.py ...                                                    [  9%]
+tests/test_alembic.py ...                                                [ 12%]
+tests/test_api.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                            [ 23%]
+tests/test_badge.py ..                                                   [ 25%]
+tests/test_invenio_github.py ....                                        [ 29%]
+tests/test_models.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+                                                 [ 32%]
+tests/test_tasks.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_github/tasks.py,line=157::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_github/tasks.py,line=157::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                                 [ 37%]
+tests/test_views.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py,line=87::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_kvsession/__init__.py,line=39::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_kvsession/__init__.py,line=68::datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_kvsession/__init__.py,line=54::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                                  [ 40%]
+tests/test_webhook.py ...::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py,line=29::CSRF validation will be enabled by default in the version 1.3.x
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py,line=145::Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py,line=33::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+.::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+::warning file=/home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py,line=3624::datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+                                               [ 44%]
+invenio_github/__init__.py ...                                           [ 47%]
+invenio_github/alembic/5a5428312b2b_create_github_branch.py ...          [ 50%]
+invenio_github/alembic/b0eaee37b545_create_github_tables.py ...          [ 53%]
+invenio_github/api.py ...                                                [ 56%]
+invenio_github/config.py ...                                             [ 59%]
+invenio_github/errors.py ...                                             [ 62%]
+invenio_github/ext.py ...                                                [ 65%]
+invenio_github/models.py ...                                             [ 69%]
+invenio_github/oauth/handlers.py ...                                     [ 72%]
+invenio_github/oauth/remote_app.py ...                                   [ 75%]
+invenio_github/proxies.py ...                                            [ 78%]
+invenio_github/receivers.py ...                                          [ 81%]
+invenio_github/tasks.py ...                                              [ 84%]
+invenio_github/utils.py ...                                              [ 87%]
+invenio_github/views/__init__.py ...                                     [ 90%]
+invenio_github/views/badge.py ...                                        [ 93%]
+invenio_github/views/github.py ...                                       [ 96%]
+invenio_github/webpack.py ...                                            [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+tests/test_api.py::test_github_api_create_hook
+tests/test_models.py::test_repository_unbound
+tests/test_tasks.py::test_real_process_release_task
+tests/test_views.py::test_api_init_user
+tests/test_webhook.py::test_webhook_post
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_rest/ext.py:29: FutureWarning: CSRF validation will be enabled by default in the version 1.3.x
+    self.init_app(app)
+
+tests/test_api.py::test_github_api_create_hook
+tests/test_models.py::test_repository_unbound
+tests/test_tasks.py::test_real_process_release_task
+tests/test_views.py::test_api_init_user
+tests/test_webhook.py::test_webhook_post
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_caching/__init__.py:145: DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.
+    self._set_cache(app, config)
+
+tests/test_api.py: 57 warnings
+tests/test_tasks.py: 7 warnings
+tests/test_views.py: 1 warning
+tests/test_webhook.py: 9 warnings
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py:3624: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+tests/test_api.py: 13 warnings
+tests/test_tasks.py: 2 warnings
+tests/test_views.py: 1 warning
+tests/test_webhook.py: 1 warning
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/sqlalchemy_utils/models.py:33: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    target.updated = datetime.utcnow()
+
+tests/test_tasks.py::test_refresh_accounts
+tests/test_tasks.py::test_refresh_accounts
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/invenio_github/tasks.py:157: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expiration_date = datetime.datetime.utcnow() - datetime.timedelta(
+
+tests/test_views.py::test_api_init_user
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_security/utils.py:87: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    _security.datetime_factory(),
+
+tests/test_views.py::test_api_init_user
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_kvsession/__init__.py:39: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created = datetime.utcnow()
+
+tests/test_views.py::test_api_init_user
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_kvsession/__init__.py:68: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    return cls(int(id_s, 16), datetime.utcfromtimestamp(int(created_s, 16)))
+
+tests/test_views.py::test_api_init_user
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/flask_kvsession/__init__.py:54: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = now or datetime.utcnow()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                          Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------------------------------
+invenio_github/__init__.py                                        3      0   100%
+invenio_github/alembic/5a5428312b2b_create_github_branch.py      10      0   100%
+invenio_github/alembic/b0eaee37b545_create_github_tables.py      20      0   100%
+invenio_github/api.py                                           358    151    58%   74, 79-83, 88-96, 118-125, 138, 150, 155, 240-245, 263-269, 293, 298-303, 332, 343, 347-363, 367-371, 375-383, 387-402, 407, 412, 416-419, 433-439, 446-453, 458-460, 465-470, 475-480, 494, 524-530, 535-538, 548-551, 562-583, 591-597, 603-604, 608, 622, 642-650, 653, 664, 668, 672, 687-689, 695-699, 711, 715, 721, 727, 732
+invenio_github/config.py                                         31      0   100%
+invenio_github/errors.py                                         63     23    63%   42-46, 56-57, 78-80, 90-91, 101-102, 112-113, 123-124, 134-135, 145, 155, 165
+invenio_github/ext.py                                            38      6    84%   55, 62-63, 87, 92-93
+invenio_github/models.py                                         96      8    92%   92, 97, 102, 107, 198-199, 203, 261
+invenio_github/proxies.py                                         3      0   100%
+invenio_github/receivers.py                                      41      7    83%   67, 80, 99, 107-108, 110-111
+invenio_github/tasks.py                                          87     37    57%   43-46, 51-52, 57-58, 75-94, 112-117, 136-144, 147
+invenio_github/utils.py                                          20      9    55%   42-45, 55-59
+invenio_github/views/__init__.py                                  0      0   100%
+invenio_github/views/badge.py                                    48     32    33%   51-68, 75-92, 100-111, 118-125
+invenio_github/views/github.py                                  130     74    43%   46-50, 89-104, 114-139, 156-164, 176-178, 194-220, 235-263
+invenio_github/webpack.py                                         2      2     0%   9-11
+-------------------------------------------------------------------------------------------
+TOTAL                                                           950    349    63%
+====================== 97 passed, 108 warnings in 21.49s =======================
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
