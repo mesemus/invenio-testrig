@@ -1,0 +1,148 @@
+ postgresql Pulling 
+ opensearch Pulling 
+ redis Pulling 
+ redis Pulled 
+ postgresql Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-opensearch-1  Started
+ Container docker_services_cli-redis-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: setup.cfg
+testpaths: tests, invenio_github
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, mock-3.15.1, pydocstyle-2.4.0
+collected 97 items
+
+tests/__init__.py ...                                                    [  3%]
+tests/conftest.py ...                                                    [  6%]
+tests/fixtures.py ...                                                    [  9%]
+tests/test_alembic.py ...                                                [ 12%]
+tests/test_api.py ...
+.
+.
+.
+.
+.
+.
+.
+.
+                                            [ 23%]
+tests/test_badge.py ..                                                   [ 25%]
+tests/test_invenio_github.py ....                                        [ 29%]
+tests/test_models.py ...
+                                                 [ 32%]
+tests/test_tasks.py ...
+.
+                                                 [ 37%]
+tests/test_views.py ...
+                                                  [ 40%]
+tests/test_webhook.py ...
+.
+                                               [ 44%]
+invenio_github/__init__.py ...                                           [ 47%]
+invenio_github/alembic/5a5428312b2b_create_github_branch.py ...          [ 50%]
+invenio_github/alembic/b0eaee37b545_create_github_tables.py ...          [ 53%]
+invenio_github/api.py ...                                                [ 56%]
+invenio_github/config.py ...                                             [ 59%]
+invenio_github/errors.py ...                                             [ 62%]
+invenio_github/ext.py ...                                                [ 65%]
+invenio_github/models.py ...                                             [ 69%]
+invenio_github/oauth/handlers.py ...                                     [ 72%]
+invenio_github/oauth/remote_app.py ...                                   [ 75%]
+invenio_github/proxies.py ...                                            [ 78%]
+invenio_github/receivers.py ...                                          [ 81%]
+invenio_github/tasks.py ...                                              [ 84%]
+invenio_github/utils.py ...                                              [ 87%]
+invenio_github/views/__init__.py ...                                     [ 90%]
+invenio_github/views/badge.py ...                                        [ 93%]
+invenio_github/views/github.py ...                                       [ 96%]
+invenio_github/webpack.py ...                                            [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+    from crypt import crypt as _crypt
+
+tests/test_api.py::test_github_api_create_hook
+tests/test_models.py::test_repository_unbound
+tests/test_tasks.py::test_real_process_release_task
+tests/test_views.py::test_api_init_user
+tests/test_webhook.py::test_webhook_post
+    self.init_app(app)
+
+tests/test_api.py::test_github_api_create_hook
+tests/test_models.py::test_repository_unbound
+tests/test_tasks.py::test_real_process_release_task
+tests/test_views.py::test_api_init_user
+tests/test_webhook.py::test_webhook_post
+    self._set_cache(app, config)
+
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+    target.updated = datetime.utcnow()
+
+tests/test_tasks.py::test_refresh_accounts
+tests/test_tasks.py::test_refresh_accounts
+    expiration_date = datetime.datetime.utcnow() - datetime.timedelta(
+
+tests/test_views.py::test_api_init_user
+    _security.datetime_factory(),
+
+tests/test_views.py::test_api_init_user
+    created = datetime.utcnow()
+
+tests/test_views.py::test_api_init_user
+    return cls(int(id_s, 16), datetime.utcfromtimestamp(int(created_s, 16)))
+
+tests/test_views.py::test_api_init_user
+    now = now or datetime.utcnow()
+
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                                          Stmts   Miss  Cover   Missing
+invenio_github/__init__.py                                        3      0   100%
+invenio_github/alembic/5a5428312b2b_create_github_branch.py      10      0   100%
+invenio_github/alembic/b0eaee37b545_create_github_tables.py      20      0   100%
+invenio_github/api.py                                           358    151    58%   74, 79-83, 88-96, 118-125, 138, 150, 155, 240-245, 263-269, 293, 298-303, 332, 343, 347-363, 367-371, 375-383, 387-402, 407, 412, 416-419, 433-439, 446-453, 458-460, 465-470, 475-480, 494, 524-530, 535-538, 548-551, 562-583, 591-597, 603-604, 608, 622, 642-650, 653, 664, 668, 672, 687-689, 695-699, 711, 715, 721, 727, 732
+invenio_github/config.py                                         31      0   100%
+invenio_github/errors.py                                         63     23    63%   42-46, 56-57, 78-80, 90-91, 101-102, 112-113, 123-124, 134-135, 145, 155, 165
+invenio_github/ext.py                                            38      6    84%   55, 62-63, 87, 92-93
+invenio_github/models.py                                         96      8    92%   92, 97, 102, 107, 198-199, 203, 261
+invenio_github/proxies.py                                         3      0   100%
+invenio_github/receivers.py                                      41      7    83%   67, 80, 99, 107-108, 110-111
+invenio_github/tasks.py                                          87     37    57%   43-46, 51-52, 57-58, 75-94, 112-117, 136-144, 147
+invenio_github/utils.py                                          20      9    55%   42-45, 55-59
+invenio_github/views/__init__.py                                  0      0   100%
+invenio_github/views/badge.py                                    48     32    33%   51-68, 75-92, 100-111, 118-125
+invenio_github/views/github.py                                  130     74    43%   46-50, 89-104, 114-139, 156-164, 176-178, 194-220, 235-263
+invenio_github/webpack.py                                         2      2     0%   9-11
+TOTAL                                                           950    349    63%
+====================== 97 passed, 108 warnings in 21.35s =======================
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
