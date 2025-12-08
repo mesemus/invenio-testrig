@@ -1,0 +1,19 @@
+{
+  "package": "invenio-records-files",
+  "has_patch": false,
+  "patch_applies": true,
+  "original_tests_outcome": "failed",
+  "patched_tests_outcome": "failed",
+  "result": "still-failing",
+  "result_icon": "\u26a0\ufe0f",
+  "result_text": "Tests still failing after patch",
+  "patched_packages": "pytest-invenio",
+  "warnings": {
+    "original": {},
+    "patched": {}
+  },
+  "warnings_count": {
+    "original": 0,
+    "patched": 0
+  }
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="79" time="7.909" timestamp="2025-12-08T19:02:32.105008+00:00" hostname="runnervmoqczp"><testcase classname="tests.conftest" name="PYDOCSTYLE" time="0.013" /><testcase classname="tests.conftest" name="ISORT" time="0.141" /><testcase classname="tests.conftest" name="black" time="0.355" /><testcase classname="tests.test_app" name="ISORT" time="0.030" /><testcase classname="tests.test_app" name="black" time="0.192" /><testcase classname="tests.test_app" name="test_rate_secure_headers" time="0.018" /><testcase classname="tests.test_app" name="test_headers" time="0.012" /><testcase classname="tests.test_app" name="test_csp_default_src_when_debug_false" time="0.008" /><testcase classname="tests.test_app" name="test_csp_default_src_when_debug_true" time="0.008" /><testcase classname="tests.test_app" name="test_empty_csp_when_set_empty" time="0.008" /><testcase classname="tests.test_app" name="test_default_health_blueprint" time="0.008" /><testcase classname="tests.test_app" name="test_ping_exempt_from_rate_limiting" time="0.009" /><testcase classname="tests.test_app" name="test_requestid" time="0.007" /><testcase classname="tests.test_app" name="test_requestid_different_header" time="0.007" /><testcase classname="tests.test_app" name="test_requestid_cap_200" time="0.006" /><testcase classname="tests.test_app" name="test_requestid_no_extraction" time="0.006" /><testcase classname="tests.test_celery" name="ISORT" time="0.007" /><testcase classname="tests.test_celery" name="black" time="0.159" /><testcase classname="tests.test_celery" name="test_celery" time="0.046"><failure message="ModuleNotFoundError: No module named 'arrow'">def test_celery():
+        """Test celery application."""
+        from invenio_app.celery import celery
+    
+&gt;       celery.loader.import_default_modules()
+
+tests/test_celery.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.12/site-packages/celery/loaders/base.py:104: in import_default_modules
+    raise response
+.venv/lib/python3.12/site-packages/celery/utils/dispatch/signal.py:276: in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/invenio_celery/ext.py:116: in celery_module_imports
+    app.extensions["invenio-celery"].load_entry_points()
+.venv/lib/python3.12/site-packages/invenio_celery/ext.py:73: in load_entry_points
+    self.celery.autodiscover_tasks(
+.venv/lib/python3.12/site-packages/celery/app/base.py:686: in autodiscover_tasks
+    return self._autodiscover_tasks(packages, related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/celery/app/base.py:693: in _autodiscover_tasks
+    return self._autodiscover_tasks_from_names(packages, related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/celery/app/base.py:698: in _autodiscover_tasks_from_names
+    return self.loader.autodiscover_tasks(
+.venv/lib/python3.12/site-packages/celery/loaders/base.py:220: in autodiscover_tasks
+    mod.__name__ for mod in autodiscover_tasks(packages or (),
+.venv/lib/python3.12/site-packages/celery/loaders/base.py:246: in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/celery/loaders/base.py:278: in find_related_module
+    raise e
+.venv/lib/python3.12/site-packages/celery/loaders/base.py:270: in find_related_module
+    return importlib.import_module(module_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;frozen importlib._bootstrap&gt;:1387: in _gcd_import
+    ???
+&lt;frozen importlib._bootstrap&gt;:1360: in _find_and_load
+    ???
+&lt;frozen importlib._bootstrap&gt;:1331: in _find_and_load_unlocked
+    ???
+&lt;frozen importlib._bootstrap&gt;:935: in _load_unlocked
+    ???
+&lt;frozen importlib._bootstrap_external&gt;:999: in exec_module
+    ???
+&lt;frozen importlib._bootstrap&gt;:488: in _call_with_frames_removed
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    # -*- coding: utf-8 -*-
+    #
+    # Copyright (C) 2021-2024 CERN.
+    #
+    # Invenio-Records-Resources is free software; you can redistribute it and/or
+    # modify it under the terms of the MIT License; see LICENSE file for more
+    # details.
+    
+    """Celery tasks for async processing."""
+    
+&gt;   import arrow
+E   ModuleNotFoundError: No module named 'arrow'
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/tasks.py:11: ModuleNotFoundError</failure></testcase><testcase classname="tests.test_cli" name="ISORT" time="0.010" /><testcase classname="tests.test_cli" name="black" time="0.158" /><testcase classname="tests.test_cli" name="test_basic_cli" time="0.884" /><testcase classname="tests.test_factory" name="ISORT" time="0.015" /><testcase classname="tests.test_factory" name="black" time="0.171" /><testcase classname="tests.test_factory" name="test_version" time="0.001" /><testcase classname="tests.test_factory" name="test_config_loader" time="0.114" /><testcase classname="tests.test_factory" name="test_trusted_hosts" time="0.118" /><testcase classname="tests.test_helpers" name="ISORT" time="0.010" /><testcase classname="tests.test_helpers" name="black" time="0.160" /><testcase classname="tests.test_helpers" name="test_get_safe_redirect_target[https://example.org/search?page=1&amp;q=&amp;keywords=taxonomy&amp;keywords=animali-/search?page=1&amp;q=&amp;keywords=taxonomy&amp;keywords=animali]" time="0.006" /><testcase classname="tests.test_helpers" name="test_get_safe_redirect_target[/search?page=1&amp;size=20-/search?page=1&amp;size=20]" time="0.005" /><testcase classname="tests.test_helpers" name="test_get_safe_redirect_target[https://localhost/search?page=1-https://localhost/search?page=1]" time="0.005" /><testcase classname="tests.test_limiter" name="ISORT" time="0.013" /><testcase classname="tests.test_limiter" name="black" time="0.172" /><testcase classname="tests.test_limiter" name="test_limiter" time="0.011" /><testcase classname="tests.test_limiter" name="test_limiter_for_authenticated_user" time="0.014" /><testcase classname="tests.test_limiter" name="test_limiter_for_privileged_user" time="0.015" /><testcase classname="tests.test_templating" name="ISORT" time="0.029" /><testcase classname="tests.test_templating" name="black" time="0.184" /><testcase classname="tests.test_templating" name="test_notheme" time="0.133" /><testcase classname="tests.test_templating" name="test_theme" time="0.123" /><testcase classname="tests.test_templating" name="test_theme_with_instance_templates" time="0.127" /><testcase classname="tests.test_templating" name="test_list_templaes" time="0.116" /><testcase classname="tests.test_wsgi" name="ISORT" time="0.010" /><testcase classname="tests.test_wsgi" name="black" time="0.167" /><testcase classname="tests.test_wsgi" name="test_wsgi" time="0.005" /><testcase classname="invenio_app.__init__" name="PYDOCSTYLE" time="0.005" /><testcase classname="invenio_app.__init__" name="ISORT" time="0.018" /><testcase classname="invenio_app.__init__" name="black" time="0.164" /><testcase classname="invenio_app.celery" name="PYDOCSTYLE" time="0.003" /><testcase classname="invenio_app.celery" name="ISORT" time="0.009" /><testcase classname="invenio_app.celery" name="black" time="0.161" /><testcase classname="invenio_app.cli" name="PYDOCSTYLE" time="0.002" /><testcase classname="invenio_app.cli" name="ISORT" time="0.007" /><testcase classname="invenio_app.cli" name="black" time="0.161" /><testcase classname="invenio_app.config" name="PYDOCSTYLE" time="0.005" /><testcase classname="invenio_app.config" name="ISORT" time="0.025" /><testcase classname="invenio_app.config" name="black" time="0.174" /><testcase classname="invenio_app.ext" name="PYDOCSTYLE" time="0.013" /><testcase classname="invenio_app.ext" name="ISORT" time="0.028" /><testcase classname="invenio_app.ext" name="black" time="0.185" /><testcase classname="invenio_app.factory" name="PYDOCSTYLE" time="0.012" /><testcase classname="invenio_app.factory" name="ISORT" time="0.033" /><testcase classname="invenio_app.factory" name="black" time="0.186" /><testcase classname="invenio_app.helpers" name="PYDOCSTYLE" time="0.013" /><testcase classname="invenio_app.helpers" name="ISORT" time="0.021" /><testcase classname="invenio_app.helpers" name="black" time="0.180" /><testcase classname="invenio_app.limiter" name="PYDOCSTYLE" time="0.005" /><testcase classname="invenio_app.limiter" name="ISORT" time="0.013" /><testcase classname="invenio_app.limiter" name="black" time="0.168" /><testcase classname="invenio_app.wsgi" name="PYDOCSTYLE" time="0.002" /><testcase classname="invenio_app.wsgi" name="ISORT" time="0.005" /><testcase classname="invenio_app.wsgi" name="black" time="0.161" /><testcase classname="invenio_app.wsgi_rest" name="PYDOCSTYLE" time="0.002" /><testcase classname="invenio_app.wsgi_rest" name="ISORT" time="0.005" /><testcase classname="invenio_app.wsgi_rest" name="black" time="0.162" /><testcase classname="invenio_app.wsgi_ui" name="PYDOCSTYLE" time="0.002" /><testcase classname="invenio_app.wsgi_ui" name="ISORT" time="0.005" /><testcase classname="invenio_app.wsgi_ui" name="black" time="0.164" /></testsuite></testsuites>
