@@ -2,15 +2,15 @@
 
 > **⏳ Status: Running** - This report is being updated as tests complete.
 
-_Last updated: 2025-12-08 19:08:59 UTC_
+_Last updated: 2025-12-08 19:09:09 UTC_
 
 ## 📊 Overall Status
 
 | Metric | Count |
 |--------|-------|
-| **Total Packages** | 30 |
+| **Total Packages** | 32 |
 | **Patched Packages** | 6 |
-| **Unpatched Packages** | 24 |
+| **Unpatched Packages** | 26 |
 
 ### Patch Results
 | Result | Count |
@@ -47,6 +47,7 @@ _Last updated: 2025-12-08 19:08:59 UTC_
 | `invenio-indexer` | ⏭️  Skipped |
 | `invenio-oaiserver` | ⏭️  Skipped |
 | `invenio-access` | ⏭️  Skipped |
+| `invenio-rest` | ⏭️  Skipped |
 | `invenio-records-ui` | ⏭️  Skipped |
 | `invenio-userprofiles` | ⏭️  Skipped |
 | `invenio-previewer` | ⏭️  Skipped |
@@ -55,6 +56,7 @@ _Last updated: 2025-12-08 19:08:59 UTC_
 | `invenio-files-rest` | ⏭️  Skipped |
 | `invenio-formatter` | ⏭️  Skipped |
 | `invenio-records-rest` | ⏭️  Skipped |
+| `invenio-i18n` | ⏭️  Skipped |
 | `invenio-oauth2server` | ⏭️  Skipped |
 | `invenio-jsonschemas` | ⏭️  Skipped |
 | `invenio-accounts` | ⏭️  Skipped |
