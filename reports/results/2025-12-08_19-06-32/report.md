@@ -2,15 +2,15 @@
 
 > **⏳ Status: Running** - This report is being updated as tests complete.
 
-_Last updated: 2025-12-08 19:07:18 UTC_
+_Last updated: 2025-12-08 19:07:26 UTC_
 
 ## 📊 Overall Status
 
 | Metric | Count |
 |--------|-------|
-| **Total Packages** | 7 |
+| **Total Packages** | 11 |
 | **Patched Packages** | 0 |
-| **Unpatched Packages** | 7 |
+| **Unpatched Packages** | 11 |
 
 ### Patch Results
 | Result | Count |
@@ -42,6 +42,10 @@ _Last updated: 2025-12-08 19:07:18 UTC_
 | `invenio-assets` | ⏭️  Skipped |
 | `invenio-indexer` | ⏭️  Skipped |
 | `invenio-access` | ⏭️  Skipped |
+| `invenio-records-ui` | ⏭️  Skipped |
+| `invenio-formatter` | ⏭️  Skipped |
+| `invenio-accounts` | ⏭️  Skipped |
+| `invenio-records` | ⏭️  Skipped |
 
 ## 🔄 Packages that depend on patched packages
 
