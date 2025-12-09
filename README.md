@@ -33,8 +33,8 @@ It does not run a repository itself at this point, pytests are run for all influ
             }
          ],
          "patches": {
-             "invenio-db": {
-                "url": "https://github.com/oarepo/invenio-db.git",
+             "invenio-db": {  // <-- do not forget to change this to the name of the package
+                "git": "https://github.com/oarepo/invenio-db.git",
                 "branch": "fix-uow"
              }
          }
