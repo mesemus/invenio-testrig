@@ -2,15 +2,15 @@
 
 > **⏳ Status: Running** - This report is being updated as tests complete.
 
-_Last updated: 2025-12-09 14:18:50 UTC_
+_Last updated: 2025-12-09 14:18:56 UTC_
 
 ## 📊 Overall Status
 
 | Metric | Count |
 |--------|-------|
-| **Total Packages** | 37 |
+| **Total Packages** | 39 |
 | **Patched Packages** | 6 |
-| **Unpatched Packages** | 31 |
+| **Unpatched Packages** | 33 |
 
 ### Patch Results
 | Result | Count |
@@ -65,7 +65,9 @@ _Last updated: 2025-12-09 14:18:50 UTC_
 | `invenio-i18n` | ⏭️  Skipped |
 | `invenio-oauth2server` | ⏭️  Skipped |
 | `invenio-jsonschemas` | ⏭️  Skipped |
+| `invenio-search` | ⏭️  Skipped |
 | `invenio-accounts` | ⏭️  Skipped |
+| `invenio-webhooks` | ⏭️  Skipped |
 | `invenio-records` | ⏭️  Skipped |
 
 ## 🔄 Packages that depend on patched packages
