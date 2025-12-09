@@ -1,0 +1,183 @@
+ postgresql Pulling 
+ rabbitmq Pulling 
+ opensearch Pulling 
+ redis Pulling 
+ redis Pulled 
+ rabbitmq Pulled 
+ postgresql Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+ Container docker_services_cli-opensearch-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/package-repo
+configfile: setup.cfg
+testpaths: tests, invenio_administration
+plugins: github-actions-annotate-failures-0.3.0, pycodestyle-2.5.0, flask-1.3.0, black-ng-0.4.1, invenio-3.4.2, isort-4.0.0, cov-7.0.0, pydocstyle-2.4.0
+collected 89 items
+
+tests/conftest.py ...                                                    [  3%]
+tests/mock_module/__init__.py ...                                        [  6%]
+tests/mock_module/administration/__init__.py ...                         [ 10%]
+tests/mock_module/administration/mock.py ...                             [ 13%]
+tests/mock_module/config.py ...                                          [ 16%]
+tests/mock_module/ext.py ...                                             [ 20%]
+tests/mock_module/resource.py ...                                        [ 23%]
+tests/test_admin_menu.py ...                                             [ 26%]
+tests/test_base.py ...
+.
+.
+.
+                                                [ 33%]
+tests/test_details_view.py ..                                            [ 35%]
+tests/test_invenio_administration.py ...
+.
+                                [ 40%]
+tests/test_list_view.py ..                                               [ 42%]
+tests/test_marshmallow_utils.py ...
+.
+.
+.
+                                   [ 49%]
+invenio_administration/__init__.py ...                                   [ 52%]
+invenio_administration/admin.py ...                                      [ 56%]
+invenio_administration/config.py ...                                     [ 59%]
+invenio_administration/decorators.py ...                                 [ 62%]
+invenio_administration/errors.py ...                                     [ 66%]
+invenio_administration/ext.py ...                                        [ 69%]
+invenio_administration/generators.py ...                                 [ 73%]
+invenio_administration/marshmallow_utils.py ...                          [ 76%]
+invenio_administration/menu/__init__.py ...                              [ 79%]
+invenio_administration/menu/menu.py ...                                  [ 83%]
+invenio_administration/permissions.py ...                                [ 86%]
+invenio_administration/views/__init__.py ...                             [ 89%]
+invenio_administration/views/base.py ...                                 [ 93%]
+invenio_administration/views/dashboard.py ...                            [ 96%]
+invenio_administration/webpack.py ...                                    [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+.venv/lib/python3.12/site-packages/jsonresolver/contrib/jsonschema.py:31
+    from jsonschema import RefResolver as _RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+.venv/lib/python3.12/site-packages/invenio_records/resolver.py:14
+    from jsonschema import RefResolutionError, RefResolver
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:3146
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+.venv/lib/python3.12/site-packages/fs/__init__.py:4
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/fs/opener/__init__.py:6
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    __import__("pkg_resources").declare_namespace(__name__)  # type: ignore
+
+.venv/lib/python3.12/site-packages/pkg_resources/__init__.py:2558
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(parent)
+
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+.venv/lib/python3.12/site-packages/marshmallow_utils/fields/generated.py:12
+    from marshmallow import __version_info__ as marshmallow_version
+
+.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/.venv/lib/python3.12/site-packages/invenio_records_resources/services/files/schema.py:154: RemovedInMarshmallow4Warning: The 'default' argument to fields is deprecated. Use 'dump_default' instead.
+    storage_class = Str(default="L", dump_only=False)
+
+tests/test_base.py:7
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_base.py:7: PytestCollectionWarning: cannot collect test class 'TestCustomView' because it has a __init__ constructor (from: tests/test_base.py)
+    class TestCustomView(AdminView):
+
+tests/test_marshmallow_utils.py:34
+  /home/runner/work/invenio-testrig/invenio-testrig/package-repo/tests/test_marshmallow_utils.py:34: PytestCollectionWarning: cannot collect test class 'TestSchema' because it has a __init__ constructor (from: tests/test_marshmallow_utils.py)
+    class TestSchema(Schema):
+
+tests/test_base.py::test_view_registration_from_entry_point
+tests/test_base.py::test_view_registration_from_entry_point
+tests/test_invenio_administration.py::test_version
+tests/test_invenio_administration.py::test_version
+tests/test_marshmallow_utils.py::test_jsonify_schema_with_standard_fields
+tests/test_marshmallow_utils.py::test_jsonify_schema_with_standard_fields
+    self._set_cache(app, config)
+
+tests/test_base.py::test_view_registration_from_entry_point
+tests/test_invenio_administration.py::test_version
+tests/test_marshmallow_utils.py::test_jsonify_schema_with_standard_fields
+    self.init_app(app)
+
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore
+
+    self._confirmed = datetime.utcnow() if confirmed else None
+
+    target.updated = datetime.utcnow()
+
+- generated xml file: /home/runner/work/invenio-testrig/invenio-testrig/artifacts/test-report-patched.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+
+Name                                          Stmts   Miss  Cover   Missing
+invenio_administration/__init__.py                3      0   100%
+invenio_administration/admin.py                  49      2    96%   55, 102
+invenio_administration/config.py                 10      0   100%
+invenio_administration/decorators.py              1      0   100%
+invenio_administration/errors.py                 19      6    68%   20, 34, 48, 56, 70, 83
+invenio_administration/ext.py                    58      2    97%   62, 117
+invenio_administration/generators.py              7      2    71%   20, 24
+invenio_administration/marshmallow_utils.py      49      9    82%   78, 96, 98, 114, 117-120, 128-131, 142
+invenio_administration/menu/__init__.py           2      0   100%
+invenio_administration/menu/menu.py              66      9    86%   33, 56, 94, 97-98, 119, 127-130
+invenio_administration/permissions.py             4      0   100%
+invenio_administration/views/__init__.py          0      0   100%
+invenio_administration/views/base.py            235     69    71%   60, 80, 91, 100-102, 109, 120, 124-125, 129, 164, 166, 171, 183-184, 191, 198, 202-208, 212, 224-236, 240-243, 247-248, 265-269, 292, 303-306, 360, 364-366, 370, 383-385, 389-391, 395-399, 422, 464, 468, 472, 476
+invenio_administration/views/dashboard.py         9      0   100%
+invenio_administration/webpack.py                 7      0   100%
+TOTAL                                           519     99    81%
+======================= 89 passed, 98 warnings in 12.85s =======================
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
