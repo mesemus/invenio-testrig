@@ -1,0 +1,11 @@
+{
+  "package": "invenio-sitemap",
+  "has_patch": false,
+  "patch_applies": false,
+  "original_tests_outcome": "skipped",
+  "patched_tests_outcome": "skipped",
+  "result": "no-change-both-skipped",
+  "result_icon": "ℹ️",
+  "result_text": "Tests skipped on both original and patched versions",
+  "patched_packages": ""
+}
