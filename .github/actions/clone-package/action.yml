@@ -1,0 +1,39 @@
+name: 'Clone Package Repository'
+description: 'Clone an Invenio package repository'
+inputs:
+  repository-url:
+    description: 'Repository URL to clone'
+    required: true
+  repository-branch:
+    description: 'Branch to clone (optional, uses default branch if not specified)'
+    required: false
+  destination:
+    description: 'Destination directory for the cloned repository'
+    required: false
+    default: 'package-repo'
+runs:
+  using: 'composite'
+  steps:
+    - name: Remove existing directory if present
+      shell: bash
+      run: |
+        if [ -d ${{ inputs.destination }} ]; then
+          rm -rf ${{ inputs.destination }}
+        fi
+    
+    - name: Clone repository
+      shell: bash
+      run: |
+        echo "📦 Cloning from: ${{ inputs.repository-url }}"
+        if [ -n "${{ inputs.repository-branch }}" ]; then
+          echo "   Branch: ${{ inputs.repository-branch }}"
+        fi
+        echo "::group::Cloning package repository"
+        if [ -n "${{ inputs.repository-branch }}" ]; then
+          git clone --depth 1 --branch ${{ inputs.repository-branch }} ${{ inputs.repository-url }} ${{ inputs.destination }}
+        else
+          git clone --depth 1 ${{ inputs.repository-url }} ${{ inputs.destination }}
+        fi
+        echo "::endgroup::"
+        echo "✓ Package cloned successfully"
+        echo "SO_FAR_OK=1" >> $GITHUB_ENV

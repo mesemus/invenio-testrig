@@ -1,0 +1,336 @@
+name: 1. Create Verification
+
+on:
+    workflow_dispatch:
+        inputs:
+            patch_1:
+                description: "Patch 1"
+                required: false
+                type: string
+            patch_2:
+                description: "Patch 2"
+                required: false
+                type: string
+            patch_3:
+                description: "Patch 3 (format: myorg/mypackage@mybranch, space-separated for multiple)"
+                required: false
+                type: string
+            branch_name:
+                description: "Branch name for this verification"
+                required: false
+                type: string
+            verify_without_patch:
+                description: "Verify without patch if the test fails"
+                required: false
+                type: choice
+                options:
+                    - "as in config"
+                    - "true"
+                    - "false"
+                default: "as in config"
+            python_version:
+                description: "Python version to use"
+                required: false
+                type: string
+                default: "3.14"
+
+jobs:
+    setup_branch:
+        name: Setup Branch with Custom Patches
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            actions: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+
+            - name: Install json5
+              run: |
+                  pip install json5
+
+            - name: Configure Git
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            - name: Parse patch inputs
+              env:
+                  PATCH_1: ${{ inputs.patch_1 }}
+                  PATCH_2: ${{ inputs.patch_2 }}
+                  PATCH_3: ${{ inputs.patch_3 }}
+                  REPO_OWNER: ${{ github.repository_owner }}
+              run: |
+                  python3 << 'PYTHON_SCRIPT'
+                  import os
+                  import re
+                  import sys
+
+                  # Get the current repository owner
+                  repo_owner = os.getenv('REPO_OWNER', '')
+
+                  # Collect all patch inputs from environment variables
+                  patch_inputs = [
+                      os.getenv('PATCH_1', ''),
+                      os.getenv('PATCH_2', ''),
+                      os.getenv('PATCH_3', ''),
+                  ]
+
+                  # Parse patches and write to file
+                  patches = []
+                  for patch_input in patch_inputs:
+                      if not patch_input or patch_input.strip() == "":
+                          continue
+                      
+                      # Split by spaces to handle multiple patches in one input
+                      for patch in patch_input.strip().split():
+                          owner = None
+                          repo = None
+                          branch = None
+                          
+                          # Try format: owner/repo@branch
+                          match = re.match(r'^([^/]+)/([^@]+)@(.+)$', patch)
+                          if match:
+                              owner, repo, branch = match.groups()
+                          else:
+                              # Try format: repo@branch (without owner)
+                              match = re.match(r'^([^@]+)@(.+)$', patch)
+                              if match:
+                                  repo, branch = match.groups()
+                                  owner = repo_owner
+                                  if not owner:
+                                      print(f"Warning: No owner specified in '{patch}' and repository owner not available")
+                                      continue
+                              else:
+                                  print(f"Warning: Invalid patch format '{patch}'. Expected format: owner/repo@branch or repo@branch")
+                                  continue
+                          
+                          patches.append((owner, repo, branch))
+
+                  if not patches:
+                      print("Error: No valid patches provided")
+                      sys.exit(1)
+
+                  # Write patches to file: owner repo branch
+                  with open('patches.txt', 'w') as f:
+                      for owner, repo, branch in patches:
+                          f.write(f"{owner} {repo} {branch}\n")
+
+                  print(f"Parsed {len(patches)} patch(es):")
+                  for owner, repo, branch in patches:
+                      print(f"  - {owner}/{repo}@{branch}")
+                  PYTHON_SCRIPT
+
+            - name: Generate branch name if not provided
+              id: branch
+              env:
+                  BRANCH_INPUT: ${{ inputs.branch_name }}
+              run: |
+                  python3 << 'PYTHON_SCRIPT'
+                  import os
+                  import re
+                  import subprocess
+
+                  branch_input = os.getenv('BRANCH_INPUT', '').strip()
+
+                  if branch_input:
+                      # Use provided branch name
+                      branch_name = branch_input
+                      print(f"Using provided branch name: {branch_name}")
+                  else:
+                      # Generate branch name from patches.txt
+                      branch_parts = []
+                      with open('patches.txt', 'r') as f:
+                          for line in f:
+                              owner, repo, branch = line.strip().split()
+                              # Remove invenio- prefix from repo name if present
+                              repo_clean = re.sub(r'^invenio-', '', repo, flags=re.IGNORECASE)
+                              # Clean up names - remove special chars, keep alphanumeric and dashes
+                              repo_clean = re.sub(r'[^a-zA-Z0-9-]', '-', repo_clean)
+                              branch_clean = re.sub(r'[^a-zA-Z0-9-]', '-', branch)
+                              # Combine repo and branch
+                              branch_parts.append(f"{repo_clean}-{branch_clean}")
+                      
+                      if not branch_parts:
+                          print("Error: No patches found")
+                          exit(1)
+                      
+                      # Create base branch name (limit to 50 chars for readability)
+                      base_name = "verify-" + "-".join(branch_parts)
+                      base_name = base_name[:50]
+                      
+                      # Check if branch exists and find available name
+                      branch_name = base_name
+                      suffix = 1
+                      
+                      while True:
+                          # Check if branch exists locally or remotely
+                          result = subprocess.run(
+                              ['git', 'rev-parse', '--verify', branch_name],
+                              capture_output=True,
+                              text=True
+                          )
+                          
+                          remote_result = subprocess.run(
+                              ['git', 'ls-remote', '--heads', 'origin', branch_name],
+                              capture_output=True,
+                              text=True
+                          )
+                          
+                          if result.returncode != 0 and not remote_result.stdout:
+                              # Branch doesn't exist, we can use it
+                              break
+                          
+                          # Branch exists, try with suffix
+                          branch_name = f"{base_name}-{suffix}"
+                          suffix += 1
+                          
+                          if suffix > 100:
+                              print("Error: Could not find available branch name after 100 attempts")
+                              exit(1)
+                      
+                      print(f"Generated branch name: {branch_name}")
+
+                  # Output the branch name
+                  with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                      f.write(f"name={branch_name}\n")
+                  PYTHON_SCRIPT
+
+            - name: Create new branch
+              run: |
+                  # Create and checkout the new branch
+                  git checkout -b ${{ steps.branch.outputs.name }}
+
+            - name: Update patches in config.json5
+              run: |
+                  python3 << 'PYTHON_SCRIPT'
+                  import json5
+
+                  # Read patches from file
+                  patches = {}
+                  with open('patches.txt', 'r') as f:
+                      for line in f:
+                          owner, repo, branch = line.strip().split()
+                          package_name = repo  # Use repo name as package name
+                          patches[package_name] = {
+                              "git": f"https://github.com/{owner}/{repo}.git",
+                              "branch": branch
+                          }
+
+                  print(f"Updating config.json5 with {len(patches)} patch(es):")
+                  for pkg, info in patches.items():
+                      print(f"  - {pkg}: {info['git']} @ {info['branch']}")
+
+                  # Load existing config using json5
+                  with open('config.json5', 'r') as f:
+                      config = json5.load(f)
+
+                  # Update patches in the config
+                  config['patches'] = patches
+
+                  # Save updated config using json5
+                  with open('config.json5', 'w') as f:
+                      json5.dump(config, f, indent=4)
+
+                  print("\nUpdated config.json5 successfully")
+                  PYTHON_SCRIPT
+
+            - name: Display updated config.json5
+              run: |
+                  echo "Updated config.json5 content:"
+                  cat config.json5
+
+            - name: Commit changes
+              run: |
+                  git add config.json5
+                  git commit -m "Update patches for verification on branch ${{ steps.branch.outputs.name }}"
+
+            - name: Push new branch
+              run: |
+                  git push origin ${{ steps.branch.outputs.name }}
+
+            - name: Trigger verify-patches workflow
+              id: trigger
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  BRANCH_NAME: ${{ steps.branch.outputs.name }}
+              run: |
+                  # Trigger the workflow
+                  gh workflow run verify-patches.yml \
+                    --ref "${BRANCH_NAME}" \
+                    --field config_file=config.json5 \
+                    --field verify_without_patch="${{ inputs.verify_without_patch }}" \
+                    --field python_version="${{ inputs.python_version }}"
+
+                  echo "✅ Verification workflow triggered on branch ${BRANCH_NAME}"
+
+                  # Wait a moment for the workflow to start
+                  sleep 5
+
+                  # Get the most recent workflow run for verify-patches on this branch
+                  RUN_ID=$(gh run list \
+                    --workflow=verify-patches.yml \
+                    --branch="${BRANCH_NAME}" \
+                    --limit=1 \
+                    --json databaseId \
+                    --jq '.[0].databaseId')
+
+                  if [ -n "$RUN_ID" ]; then
+                    RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${RUN_ID}"
+                    echo "run_url=${RUN_URL}" >> $GITHUB_OUTPUT
+                    echo "run_id=${RUN_ID}" >> $GITHUB_OUTPUT
+                  else
+                    echo "run_url=${{ github.server_url }}/${{ github.repository }}/actions/workflows/verify-patches.yml" >> $GITHUB_OUTPUT
+                    echo "run_id=" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Create workflow summary
+              if: always()
+              env:
+                  RUN_URL: ${{ steps.trigger.outputs.run_url }}
+                  RUN_ID: ${{ steps.trigger.outputs.run_id }}
+                  BRANCH_NAME: ${{ steps.branch.outputs.name }}
+              run: |
+                  cat >> $GITHUB_STEP_SUMMARY << EOF
+                  # ✅ Verification Started
+
+                  Successfully created branch **\`${BRANCH_NAME}\`** with custom patches and triggered verification workflow.
+
+                  ## 📦 Patches Applied
+
+                  EOF
+
+                  # Display patches from patches.txt
+                  while IFS=' ' read -r owner repo branch; do
+                      echo "- \`${owner}/${repo}@${branch}\`" >> $GITHUB_STEP_SUMMARY
+                  done < patches.txt
+
+                  cat >> $GITHUB_STEP_SUMMARY << EOF
+
+                  ## 🔗 View Verification Progress
+
+                  EOF
+
+                  if [ -n "$RUN_ID" ]; then
+                    cat >> $GITHUB_STEP_SUMMARY << EOF
+                  **[Click here to view the verification workflow →]($RUN_URL)**
+
+                  - **Workflow Run ID:** \`$RUN_ID\`
+                  - **Branch:** \`${BRANCH_NAME}\`
+                  - **Status:** Running
+                  EOF
+                  else
+                    cat >> $GITHUB_STEP_SUMMARY << EOF
+                  **[Click here to view workflow runs →]($RUN_URL)**
+
+                  - **Branch:** \`${BRANCH_NAME}\`
+
+                  > Note: The workflow run may take a few moments to appear in the list.
+                  EOF
+                  fi

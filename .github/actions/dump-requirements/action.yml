@@ -1,0 +1,25 @@
+name: 'Dump Requirements'
+description: 'Dump frozen requirements from a virtual environment to artifacts'
+inputs:
+  package-path:
+    description: 'Path to the package directory containing .venv'
+    required: true
+  requirement-type:
+    description: 'Type of requirements (original or patched)'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Dump requirements
+      shell: bash
+      run: |
+        cd ${{ inputs.package-path }}
+        source .venv/bin/activate
+        
+        # Create artifacts directory
+        mkdir -p ../artifacts
+        
+        # Dump requirements to file
+        echo "📝 Dumping requirements to artifacts/requirements-${{ inputs.requirement-type }}.txt"
+        uv pip freeze > ../artifacts/requirements-${{ inputs.requirement-type }}.txt
+        echo "✓ Requirements dumped"

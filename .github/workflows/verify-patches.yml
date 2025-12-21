@@ -1,0 +1,690 @@
+name: 2. Run Verification
+
+on:
+  workflow_dispatch:
+    inputs:
+      config_file:
+        description: "Path to config file (JSON5 format)"
+        required: false
+        default: "config.json5"
+      continue_from_previous:
+        description: "Continue from previous run"
+        required: false
+        type: boolean
+        default: false
+      verbose_pytest:
+        description: "Run pytest with verbose output (-vv -s)"
+        required: false
+        type: boolean
+        default: false
+      verify_without_patch:
+        description: "Verify without patch if the test fails"
+        required: false
+        type: choice
+        options:
+          - "as in config"
+          - "true"
+          - "false"
+        default: "as in config"
+      python_version:
+        description: "Python version to use"
+        required: false
+        type: string
+        default: "3.14"
+
+env:
+  PYTHONUNBUFFERED: 1
+  PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
+  EXTRAS: "tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin,docs"
+
+jobs:
+  load_config:
+    name: Load Test Configuration
+    runs-on: ubuntu-latest
+    outputs:
+      test_name: ${{ steps.load.outputs.test_name }}
+      run_original_tests: ${{ steps.override.outputs.run_original_tests }}
+      test_timeout: ${{ steps.load.outputs.test_timeout }}
+      packages: ${{ steps.load.outputs.packages }}
+      absolute_config_file: ${{ steps.load.outputs.absolute_config_file }}
+    steps:
+      - name: Checkout verification repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python and UV
+        uses: ./.github/actions/install-python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Load configuration
+        id: load
+        uses: ./.github/actions/load-test-config
+        with:
+          config_file: ${{ inputs.config_file }}
+
+      - name: Override run_original_tests from input
+        id: override
+        run: |
+          # Use input parameter value:
+          # "as in config" - use the config file value
+          # "true" - always run original tests
+          # "false" - never run original tests
+          INPUT_VALUE="${{ inputs.verify_without_patch }}"
+          CONFIG_VALUE="${{ steps.load.outputs.run_original_tests }}"
+
+          if [ "$INPUT_VALUE" = "true" ]; then
+            echo "run_original_tests=true" >> $GITHUB_OUTPUT
+            echo "Using run_original_tests: true (from input)"
+          elif [ "$INPUT_VALUE" = "false" ]; then
+            echo "run_original_tests=false" >> $GITHUB_OUTPUT
+            echo "Using run_original_tests: false (from input)"
+          else
+            echo "run_original_tests=$CONFIG_VALUE" >> $GITHUB_OUTPUT
+            echo "Using run_original_tests: $CONFIG_VALUE (from config)"
+          fi
+
+  create_report_directory:
+    name: Create Report Directory
+    needs: load_config
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      report_dir: ${{ steps.create_dir.outputs.report_dir }}
+      report_file: ${{ steps.create_dir.outputs.report_file }}
+      report_timestamp: ${{ steps.create_dir.outputs.report_timestamp }}
+
+    steps:
+      - name: Checkout invenio-testrig repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python and UV
+        uses: ./.github/actions/install-python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Create report directory
+        id: create_dir
+        run: |
+          REPORT_TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+          REPORT_DIR=reports/results/$REPORT_TIMESTAMP
+          REPORT_FILE=$REPORT_DIR/report.md
+          echo "Report directory: $REPORT_DIR"
+          echo "Report file: $REPORT_FILE"
+          echo "report_dir=$REPORT_DIR" >> $GITHUB_OUTPUT
+          echo "report_file=$REPORT_FILE" >> $GITHUB_OUTPUT
+          echo "report_timestamp=$REPORT_TIMESTAMP" >> $GITHUB_OUTPUT
+          echo "REPORT_DIR=$REPORT_DIR" >> $GITHUB_ENV
+          echo "REPORT_FILE=$REPORT_FILE" >> $GITHUB_ENV
+          echo "REPORT_TIMESTAMP=$REPORT_TIMESTAMP" >> $GITHUB_ENV
+
+      - name: Commit initial report directory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          MAX_ATTEMPTS=10
+          ATTEMPT=0
+          SUCCESS=false
+
+          while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+            ATTEMPT=$((ATTEMPT + 1))
+            echo "Attempt $ATTEMPT of $MAX_ATTEMPTS"
+            
+            # Pull latest changes
+            git pull --rebase origin > /dev/null 2>&1 || {
+              echo "⚠️  Failed to pull/rebase, retrying..."
+              sleep $((2 + RANDOM % 3))
+              continue
+            }
+            
+            # Create report directory
+            mkdir -p ${{ steps.create_dir.outputs.report_dir }}
+            touch ${{ steps.create_dir.outputs.report_file }}
+            git add reports/
+            
+            # Check if there are changes to commit
+            if git diff --cached --quiet; then
+              echo "✓ No changes to commit, report directory already exists"
+              SUCCESS=true
+              break
+            fi
+            
+            git commit --quiet -m "[skip ci] Create report directory ${{ steps.create_dir.outputs.report_dir }}" > /dev/null 2>&1
+            
+            # Try to push
+            if git push --quiet origin > /dev/null 2>&1; then
+              echo "✓ Successfully pushed report directory!"
+              SUCCESS=true
+              break
+            else
+              echo "⚠️  Push failed, another process updated the repository"
+              JITTER=$(( RANDOM % ( ( $ATTEMPT + 1) * 2 ) ))
+              RETRY_TIME=$(( 2 + $JITTER ))
+              echo "Retrying in $RETRY_TIME seconds..."
+              git reset --hard HEAD > /dev/null 2>&1
+              sleep $RETRY_TIME
+            fi
+          done
+
+          if [ "$SUCCESS" = "false" ]; then
+            echo "❌ Failed to push report directory after $MAX_ATTEMPTS attempts"
+            exit 1
+          fi
+
+      - name: Create report artifact metadata
+        run: |
+          mkdir -p artifacts/
+          echo "{\"report_directory\": \"${{ steps.create_dir.outputs.report_dir }}\"}" > artifacts/report.json
+
+      - name: Upload report artifact metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: create_report_directory
+          path: artifacts/
+          retention-days: 1
+
+      - name: Generate initial report
+        uses: ./.github/actions/generate-report
+        with:
+          report_dir: ${{ steps.create_dir.outputs.report_dir }}
+          report_file: ${{ steps.create_dir.outputs.report_file }}
+          report_timestamp: ${{ steps.create_dir.outputs.report_timestamp }}
+          test_name: ${{ needs.load_config.outputs.test_name }}
+          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+          add_report_summary: true
+
+  extract_tested_packages:
+    name: Extract Invenio Packages
+    needs: load_config
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.extract.outputs.packages }}
+      done_packages: ${{ steps.extract.outputs.done_packages }}
+      previous_report: ${{ steps.extract.outputs.previous_report }}
+
+    steps:
+      - name: Checkout invenio-testrig repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python and UV
+        uses: ./.github/actions/install-python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Clone Zenodo RDM repository
+        run: |
+          echo "::group::Cloning zenodo-rdm repository"
+          git clone --depth 1 https://github.com/zenodo/zenodo-rdm.git
+          echo "::endgroup::"
+          echo "✓ zenodo-rdm repository cloned"
+
+      - name: Extract Invenio packages from uv.lock
+        id: extract
+        run: |
+          # Determine if we should continue from previous run
+          opts=()
+
+          if [ "${{ inputs.continue_from_previous }}" = "true" ]; then
+            # Find the most recent report directory
+            PREVIOUS_REPORT=$(ls -d reports/results/*/ 2>/dev/null | sort -r | head -n 1 || echo "")
+
+            if [ -n "$PREVIOUS_REPORT" ]; then
+              echo "Continuing from previous report: $PREVIOUS_REPORT"
+              opts+=("--previous-report" "$PREVIOUS_REPORT")
+            fi
+          fi
+
+          # Add package filter if provided
+          if [ -n "${{ needs.load_config.outputs.packages }}" ]; then
+            echo "Filtering packages: ${{ needs.load_config.outputs.packages }}"
+            opts+=("--filter-packages" ${{ needs.load_config.outputs.packages }})
+          fi
+
+          $TOOLS_PYTHON scripts/extract_packages_to_test.py zenodo-rdm/uv.lock ${{ needs.load_config.outputs.absolute_config_file }} packages.sh ${opts[@]}
+
+          # Source the output variables
+          source packages.sh
+
+          # packages is already a JSON array
+          echo "Found packages: $packages"
+          echo "Already tested packages: $done_packages"
+          echo "packages=$packages" >> $GITHUB_OUTPUT
+          echo "done_packages=$done_packages" >> $GITHUB_OUTPUT
+          echo "previous_report=$PREVIOUS_REPORT" >> $GITHUB_OUTPUT
+
+  test_packages:
+    name: Test ${{ matrix.package }}
+    needs:
+      - load_config
+      - extract_tested_packages
+      - create_report_directory
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    env:
+      SO_FAR_OK: 1
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJson(needs.extract_tested_packages.outputs.packages) }}
+
+    steps:
+      - name: Checkout invenio-testrig repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python and UV
+        uses: ./.github/actions/install-python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Check if sources of ${{ matrix.package }} are patched
+        # determine if there is a patch for the current package
+        # outputs:
+        #   has_patch (true if the current package's sources are patched)
+        #   original_repository_url
+        #   original_repository_branch (currently always empty as default branch is used)
+        #   patched_repository_url (equal to original_repository_url if not patched, otherwise the patch URL)
+        #   patched_repository_branch (equal to original_repository_branch if not patched, otherwise the patch branch)
+        id: load_patches
+        run: |
+
+          # Use lookup_package.py to get repository information
+          eval $($TOOLS_PYTHON scripts/lookup_package.py ${{ needs.load_config.outputs.absolute_config_file }} ${{ matrix.package }})
+
+          # Set outputs
+          echo "original_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
+          echo "original_repository_branch=$original_repository_branch" >> $GITHUB_OUTPUT
+
+          # Determine if patch exists
+          if [ -n "$patched_repository_url" ]; then
+            echo "has_patch=true" >> $GITHUB_OUTPUT
+            echo "patched_repository_url=$patched_repository_url" >> $GITHUB_OUTPUT
+            echo "patched_repository_branch=$patched_repository_branch" >> $GITHUB_OUTPUT
+            echo "Found patch for ${{ matrix.package }}: $patched_repository_url @ $patched_repository_branch"
+          else
+            echo "has_patch=false" >> $GITHUB_OUTPUT
+            echo "patched_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
+            echo "patched_repository_branch=$original_repository_branch" >> $GITHUB_OUTPUT
+            echo "No patch configured for ${{ matrix.package }}"
+          fi
+
+      # we start by cloning the package (possibly patched) to run tests on patch at first
+      - name: Clone package repository for patched (possibly) package tests
+        continue-on-error: true
+        uses: ./.github/actions/clone-package
+        with:
+          repository-url: ${{ steps.load_patches.outputs.patched_repository_url }}
+          repository-branch: ${{ steps.load_patches.outputs.patched_repository_branch }}
+          destination: package-repo
+
+      - name: Setup virtual environment and install dependencies
+        if: env.SO_FAR_OK == '1'
+        continue-on-error: true
+        uses: ./.github/actions/setup-venv
+        with:
+          package-path: package-repo
+          extras: ${{ env.EXTRAS }}
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Dump original requirements
+        if: env.SO_FAR_OK == '1' && ( steps.load_patches.outputs.has_patch == 'false' )
+        uses: ./.github/actions/dump-requirements
+        with:
+          package-path: package-repo
+          requirement-type: original
+
+      - name: Dump requirements of original package with sources patched
+        if: env.SO_FAR_OK == '1' && ( steps.load_patches.outputs.has_patch == 'true' )
+        uses: ./.github/actions/dump-requirements
+        with:
+          package-path: package-repo
+          requirement-type: patched
+
+      - name: Apply patches if applicable
+        id: check_patch
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1'
+        run: |
+
+          # Use apply_patches.py to check and apply patches
+          $TOOLS_PYTHON scripts/apply_patches.py ${{ matrix.package }} package-repo/.venv ${{ needs.load_config.outputs.absolute_config_file }} patch-variables.sh
+
+          # Source the output variables
+          source patch-variables.sh
+
+          # Set outputs
+          echo "applies=$applies" >> $GITHUB_OUTPUT
+          echo "patched_packages=$patched_packages" >> $GITHUB_OUTPUT
+
+          if [ "$applies" = "true" ]; then
+            echo "🔄 Patches were applied to: $patched_packages"
+          else
+            echo "ℹ️  No applicable patches found for this package"
+            echo "reason=no-patch-packages-installed" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Dump requirements for package with patched dependencies
+        if: env.SO_FAR_OK == '1' && ( steps.check_patch.outputs.applies == 'true' )
+        uses: ./.github/actions/dump-requirements
+        with:
+          package-path: package-repo
+          requirement-type: patched-dependencies
+
+      - name: Run tests on patched package / with patched dependencies
+        id: test_with_patch
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1' && ( steps.check_patch.outputs.applies == 'true' || steps.load_patches.outputs.has_patch == 'true' )
+        uses: ./.github/actions/run-tests
+        with:
+          package-path: package-repo
+          package-name: ${{ matrix.package }}
+          test-type: patched
+          timeout: ${{ needs.load_config.outputs.test_timeout }}
+          verbose-pytest: ${{ inputs.verbose_pytest }}
+
+      # if the previous step failed, we will try to run the tests without patches
+      - name: Clone package repository for tests without patches
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
+        uses: ./.github/actions/clone-package
+        with:
+          repository-url: ${{ steps.load_patches.outputs.original_repository_url }}
+          repository-branch: ${{ steps.load_patches.outputs.original_repository_branch }}
+          destination: package-repo
+
+      - name: Setup virtual environment and install dependencies for original package tests
+        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
+        continue-on-error: true
+        uses: ./.github/actions/setup-venv
+        with:
+          package-path: package-repo
+          extras: ${{ env.EXTRAS }}
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Run tests on original package without patches
+        id: test_without_patch
+        continue-on-error: true
+        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
+        uses: ./.github/actions/run-tests
+        with:
+          package-path: package-repo
+          package-name: ${{ matrix.package }}
+          test-type: original
+          timeout: ${{ needs.load_config.outputs.test_timeout }}
+          verbose-pytest: ${{ inputs.verbose_pytest }}
+
+      - name: Compare test results
+        if: env.SO_FAR_OK == '1'
+        id: compare
+        continue-on-error: true
+        run: |
+          # Create a diff of the test outputs
+          if [ -f artifacts/test-output-original.txt ] && [ -f test-output-patched.txt ] ; then
+            diff -buN artifacts/test-output-original.txt test-output-patched.txt > artifacts/test-diff.txt
+          fi
+
+          # Analyze the results using status files
+          ORIGINAL_TESTS_OUTCOME=$(cat artifacts/test-status-original.txt 2>/dev/null || echo "skipped")
+          PATCHED_TESTS_OUTCOME=$(cat artifacts/test-status-patched.txt 2>/dev/null|| echo "skipped")
+
+          if [ "$ORIGINAL_TESTS_OUTCOME" == "failed" ] ; then
+            if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
+              RESULT="still-failing"
+              RESULT_ICON="⚠️"
+              RESULT_TEXT="Tests still failing after patch"
+            elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
+              RESULT="fixed"
+              RESULT_ICON="✅"
+              RESULT_TEXT="Patch fixed failing tests"
+            elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
+              RESULT="still-failing-skipped"
+              RESULT_ICON="⚠️"
+              RESULT_TEXT="Tests failing in original, patched tests skipped"
+            fi
+          elif [ "$ORIGINAL_TESTS_OUTCOME" == "success" ] ; then
+            if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
+              RESULT="regression"
+              RESULT_ICON="❌"
+              RESULT_TEXT="Patch introduced test failures"
+            elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
+              RESULT="ok"
+              RESULT_ICON="✅"
+              RESULT_TEXT="Patch successfully applied, tests passed"
+            elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
+              RESULT="no-change-skipped"
+              RESULT_ICON="✅"
+              RESULT_TEXT="Tests passed on original, skipped patch tests"
+            fi
+          elif [ "$ORIGINAL_TESTS_OUTCOME" == "skipped" ] ; then
+            if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
+              RESULT="regression-skipped"
+              RESULT_ICON="❌"
+              RESULT_TEXT="Patch introduced test failures"
+            elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
+              RESULT="fixed-skipped"
+              RESULT_ICON="✅"
+              RESULT_TEXT="Patch applied successfully, tests passed"
+            elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
+              RESULT="no-change-both-skipped"
+              RESULT_ICON="ℹ️"
+              RESULT_TEXT="Tests skipped on both original and patched versions"
+            fi
+          fi
+
+          echo "$RESULT_ICON $RESULT_TEXT"
+
+          echo "result=$RESULT" >> $GITHUB_OUTPUT
+          echo "result_icon=$RESULT_ICON" >> $GITHUB_OUTPUT
+          echo "result_text=$RESULT_TEXT" >> $GITHUB_OUTPUT
+          echo "ORIGINAL_TESTS_OUTCOME=$ORIGINAL_TESTS_OUTCOME" >> $GITHUB_OUTPUT
+          echo "PATCHED_TESTS_OUTCOME=$PATCHED_TESTS_OUTCOME" >> $GITHUB_OUTPUT
+
+      - name: Create result summary
+        id: summary
+        continue-on-error: true
+        run: |
+          ORIGINAL_TESTS_OUTCOME=$(cat artifacts/test-status-original.txt 2>/dev/null || echo "skipped")
+          PATCHED_TESTS_OUTCOME=$(cat artifacts/test-status-patched.txt 2>/dev/null|| echo "skipped")
+
+          if [ -z "${{ steps.check_patch.outputs.applies }}" ] ; then
+            APPLIES="false"
+          else
+            APPLIES="${{ steps.check_patch.outputs.applies }}"
+          fi
+
+          cat > artifacts/result-summary.json << EOF
+          {
+            "package": "${{ matrix.package }}",
+            "has_patch": ${{ steps.load_patches.outputs.has_patch }},
+            "patch_applies": $APPLIES,
+            "original_tests_outcome": "$ORIGINAL_TESTS_OUTCOME",
+            "patched_tests_outcome": "$PATCHED_TESTS_OUTCOME",
+            "result": "${{ steps.compare.outputs.result }}",
+            "result_icon": "${{ steps.compare.outputs.result_icon }}",
+            "result_text": "${{ steps.compare.outputs.result_text }}",
+            "patched_packages": "${{ steps.check_patch.outputs.patched_packages }}"
+          }
+          EOF
+
+          cat artifacts/result-summary.json
+
+      - name: Extract warnings from test logs
+        if: always()
+        run: |
+          # Extract warnings from original test log if it exists
+          if [ -f artifacts/test-output-original.txt ]; then
+            $TOOLS_PYTHON scripts/extract_warnings.py artifacts/test-output-original.txt original artifacts/result-summary.json artifacts/warnings-original.md
+          fi
+
+          # Extract warnings from patched test log if it exists
+          if [ -f artifacts/test-output-patched.txt ]; then
+            $TOOLS_PYTHON scripts/extract_warnings.py artifacts/test-output-patched.txt patched artifacts/result-summary.json artifacts/warnings-patched.md
+          fi
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results-${{ matrix.package }}
+          path: |
+            artifacts/
+          retention-days: 30
+
+      # needs to be after uploading artifacts
+      # as the action downloads all actual artifacts
+      - name: Push individual package report
+        if: always()
+        uses: ./.github/actions/generate-report
+        with:
+          report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
+          report_file: ${{ needs.create_report_directory.outputs.report_file }}
+          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
+          test_name: ${{ needs.load_config.outputs.test_name }}
+          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+
+      - name: Fail job if any tests failed
+        if: always()
+        run: |
+          ORIGINAL_TESTS_OUTCOME=$(cat artifacts/test-status-original.txt 2>/dev/null || echo "skipped")
+          PATCHED_TESTS_OUTCOME=$(cat artifacts/test-status-patched.txt 2>/dev/null|| echo "skipped")
+
+          if [ "$PATCHED_TESTS_OUTCOME" = "failed" ] ; then
+            echo "Error: Tests for patched package ${{ matrix.package }} failed"
+            exit 1
+          elif [ "$ORIGINAL_TESTS_OUTCOME" = "failed" ] ; then
+            echo "Error: Tests for original package ${{ matrix.package }} failed"
+            exit 1
+          fi
+
+  copy_previous_artifacts:
+    name: Copy Previous Artifacts
+    needs:
+      - load_config
+      - extract_tested_packages
+      - create_report_directory
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    if: needs.extract_tested_packages.outputs.done_packages != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJson(needs.extract_tested_packages.outputs.done_packages) }}
+
+    steps:
+      - name: Checkout invenio-testrig repository
+        uses: actions/checkout@v4
+
+      - name: Copy artifacts from previous report
+        run: |
+          PREVIOUS_REPORT="${{ needs.extract_tested_packages.outputs.previous_report }}"
+          PACKAGE="${{ matrix.package }}"
+
+          echo "Copying artifacts for $PACKAGE from $PREVIOUS_REPORT"
+
+          # Create artifacts directory
+          mkdir -p artifacts
+
+          # Copy all files from previous report's package directory
+          if [ -d "${PREVIOUS_REPORT}packages/${PACKAGE}" ]; then
+            cp -r "${PREVIOUS_REPORT}packages/${PACKAGE}"/* artifacts/ 2>/dev/null || true
+            echo "✓ Copied artifacts for $PACKAGE"
+          else
+            echo "⚠️  No previous artifacts found for $PACKAGE"
+          fi
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.package }}
+          path: |
+            artifacts/
+          retention-days: 30
+
+      # needs to be after uploading artifacts
+      # as the action downloads all actual artifacts
+      - name: Push individual package report
+        if: always()
+        uses: ./.github/actions/generate-report
+        with:
+          report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
+          report_file: ${{ needs.create_report_directory.outputs.report_file }}
+          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
+          test_name: ${{ needs.load_config.outputs.test_name }}
+          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+
+  generate_report:
+    name: Generate Summary Report
+    needs:
+      - create_report_directory
+      - test_packages
+      - copy_previous_artifacts
+      - load_config
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout invenio-testrig repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python and UV
+        uses: ./.github/actions/install-python
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Generate and push report
+        uses: ./.github/actions/generate-report
+        with:
+          report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
+          report_file: ${{ needs.create_report_directory.outputs.report_file }}
+          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
+          test_name: ${{ needs.load_config.outputs.test_name }}
+          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+          report_status: finished
+
+      - name: Squash all commits
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Get the current branch name
+          CURRENT_BRANCH=$(git branch --show-current)
+          echo "Current branch: $CURRENT_BRANCH"
+
+          # Get the default branch (usually main or master)
+          DEFAULT_BRANCH=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+          echo "Default branch: $DEFAULT_BRANCH"
+
+          # Delete temporary branch if it exists (locally and remotely)
+          git branch -D temp-squash 2>/dev/null || true
+          git push origin --delete temp-squash 2>/dev/null || true
+
+          # Create a temporary branch from the default branch
+          git fetch origin $DEFAULT_BRANCH
+          git checkout -b temp-squash origin/$DEFAULT_BRANCH
+
+          # Squash merge all changes from current branch into one commit
+          git merge --squash $CURRENT_BRANCH
+
+          # Create a single commit with all changes
+          COMMIT_MESSAGE="Verification results for branch $CURRENT_BRANCH
+
+          Generated on: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          Report: reports/results/${{ needs.create_report_directory.outputs.report_timestamp }}/report.md"
+
+          git commit -m "$COMMIT_MESSAGE"
+
+          # Force push the squashed commit to the current branch
+          git push origin HEAD:$CURRENT_BRANCH --force
+
+          # Clean up: delete the temporary branch
+          git checkout $CURRENT_BRANCH 2>/dev/null || git checkout -b $CURRENT_BRANCH
+          git branch -D temp-squash 2>/dev/null || true
+
+          echo "✓ Successfully squashed all commits into one and force-pushed to $CURRENT_BRANCH"

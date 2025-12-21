@@ -1,0 +1,46 @@
+name: 'Load Test Configuration'
+description: 'Load test configuration from config.json5 and set default values'
+inputs:
+  config_file:
+    description: 'Path to config.json5 file'
+    required: false
+    default: 'config.json5'
+outputs:
+  test_name:
+    description: 'Name of the test run'
+    value: ${{ steps.load.outputs.test_name }}
+  run_original_tests:
+    description: 'Whether to run original tests when patched tests fail'
+    value: ${{ steps.load.outputs.run_original_tests }}
+  test_timeout:
+    description: 'Timeout in minutes for each test run'
+    value: ${{ steps.load.outputs.test_timeout }}
+  packages:
+    description: 'Space-separated list of packages to test (empty for all)'
+    value: ${{ steps.load.outputs.packages }}
+  absolute_config_file:
+    description: 'Absolute path to the config file'
+    value: ${{ steps.load.outputs.absolute_config_file }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Load configuration
+      id: load
+      shell: bash
+      run: |
+        if [ -z "$TOOLS_PYTHON" ]; then
+          echo "Error: TOOLS_PYTHON environment variable is not set"
+          exit 1
+        fi
+        
+        # Get absolute path to config file
+        ABSOLUTE_CONFIG_FILE="$PWD/${{ inputs.config_file }}"
+        echo "absolute_config_file=$ABSOLUTE_CONFIG_FILE" >> $GITHUB_OUTPUT
+        echo "Loaded: absolute_config_file = $ABSOLUTE_CONFIG_FILE"
+        
+        # Use Python script to parse JSON5 and extract values with defaults
+        # Output goes directly to GITHUB_OUTPUT
+        $TOOLS_PYTHON scripts/load_test_config.py "$ABSOLUTE_CONFIG_FILE" >> $GITHUB_OUTPUT
+        
+        # Echo the loaded values for logging
+        echo "Loaded configuration from $ABSOLUTE_CONFIG_FILE"
