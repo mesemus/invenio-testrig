@@ -22,6 +22,10 @@ inputs:
     description: 'Run pytest with verbose output (-vv -s)'
     required: false
     default: 'false'
+  no-format-check:
+    description: 'Skip format check before running tests'
+    required: false
+    default: 'false'
 outputs:
   conclusion:
     description: 'Test conclusion (success or failure)'
@@ -52,6 +56,24 @@ runs:
           if [ -f run-tests.sh ]; then
             echo "Enabling verbose pytest output (-vv -s)"
             sed -i 's/^python -m pytest/python -m pytest -vv -s --showlocals /g' run-tests.sh
+          fi
+        fi
+
+        # Skip format check if requested
+        if [ "${{ inputs.no-format-check }}" = "true" ]; then
+          # if there is setup.cfg, remove --black --isort --pydocstyle from it
+          if [ -f setup.cfg ]; then
+            echo "Skipping format check as requested"
+            sed -i 's/--black //g' setup.cfg
+            sed -i 's/--isort //g' setup.cfg
+            sed -i 's/--pydocstyle //g' setup.cfg
+          fi
+          # if there is pyproject.toml, remove black and isort from it
+          if [ -f pyproject.toml ]; then
+            echo "Skipping format check as requested"
+            sed -i 's/--black //g' pyproject.toml
+            sed -i 's/--isort //g' pyproject.toml
+            sed -i 's/--pydocstyle //g' pyproject.toml
           fi
         fi
 

@@ -31,6 +31,11 @@ on:
         required: false
         type: string
         default: "3.14"
+      no_format_check:
+        description: "Skip format check"
+        required: false
+        type: boolean
+        default: false
 
 env:
   PYTHONUNBUFFERED: 1
@@ -383,6 +388,7 @@ jobs:
           test-type: patched
           timeout: ${{ needs.load_config.outputs.test_timeout }}
           verbose-pytest: ${{ inputs.verbose_pytest }}
+          no-format-check: ${{ inputs.no_format_check }}
 
       # if the previous step failed, we will try to run the tests without patches
       - name: Clone package repository for tests without patches
@@ -414,6 +420,7 @@ jobs:
           test-type: original
           timeout: ${{ needs.load_config.outputs.test_timeout }}
           verbose-pytest: ${{ inputs.verbose_pytest }}
+          no-format-check: ${{ inputs.no_format_check }}
 
       - name: Compare test results
         if: env.SO_FAR_OK == '1'
