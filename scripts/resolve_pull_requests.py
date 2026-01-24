@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+"""
+Resolve pull request URLs in config.json5 to git+branch format.
+
+This script reads a config.json5 file, identifies patches specified as GitHub PR URLs,
+resolves them to git+branch format by fetching PR information from GitHub API,
+and saves the modified configuration.
+"""
+
+import json
+import re
+import sys
+from pathlib import Path
+from urllib.request import Request, urlopen
+
+import json5
+
+
+def load_config(config_path):
+    """Load config.json5 file."""
+    with config_path.open("r") as f:
+        return json5.load(f)
+
+
+def output_config(config, output_path):
+    """Output config to file or stdout."""
+    if output_path == "-":
+        # Print to stdout
+        json.dump(config, sys.stdout, indent=4)
+        sys.stdout.write("\n")
+    else:
+        # Save to file
+        output_file = Path(output_path)
+        with output_file.open("w") as f:
+            json.dump(config, f, indent=4)
+            f.write("\n")
+
+
+def is_github_pr_url(url):
+    """Check if the URL is a GitHub pull request URL."""
+    if not isinstance(url, str):
+        return False
+    pattern = r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$"
+    return re.match(pattern, url) is not None
+
+
+def parse_github_pr_url(url):
+    """Parse GitHub PR URL and return owner, repo, pr_number."""
+    pattern = r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$"
+    match = re.match(pattern, url)
+    if match:
+        return match.group(1), match.group(2), match.group(3)
+    return None, None, None
+
+
+def get_pr_info(owner, repo, pr_number):
+    """Fetch PR information from GitHub API."""
+    api_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr_number}"
+
+    try:
+        # Create request with User-Agent header (required by GitHub API)
+        request = Request(api_url)
+        request.add_header("User-Agent", "invenio-testrig-resolve-pr")
+        request.add_header("Accept", "application/vnd.github.v3+json")
+
+        with urlopen(request, timeout=10) as response:
+            data = json.loads(response.read().decode("utf-8"))
+
+            # Get the head repository and branch
+            head = data["head"]
+            git_url = head["repo"]["clone_url"]
+            branch = head["ref"]
+
+            return git_url, branch
+    except Exception as e:
+        print(f"Error fetching PR info: {e}", file=sys.stderr)
+        return None, None
+
+
+def resolve_pull_requests(config):
+    """Resolve all PR URLs in patches to git+branch format."""
+    patches = config.get("patches", {})
+    modified = False
+
+    for package_name, patch_info in list(patches.items()):
+        if is_github_pr_url(patch_info):
+            print(f"Resolving PR URL for {package_name}: {patch_info}", file=sys.stderr)
+
+            owner, repo, pr_number = parse_github_pr_url(patch_info)
+            if owner and repo and pr_number:
+                git_url, branch = get_pr_info(owner, repo, pr_number)
+
+                if git_url and branch:
+                    patches[package_name] = {"git": git_url, "branch": branch}
+                    print(f"  ✓ Resolved to: {git_url} @ {branch}", file=sys.stderr)
+                    modified = True
+                else:
+                    print("  ✗ Failed to resolve PR URL", file=sys.stderr)
+            else:
+                print("  ✗ Invalid PR URL format", file=sys.stderr)
+
+    return modified
+
+
+def main():
+    """Main entry point."""
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
+        print(
+            "Usage: resolve_pull_requests.py <config.json5> [output_file]",
+            file=sys.stderr,
+        )
+        print(
+            "  If output_file is not provided, the output will be print to stdout",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    config_path = Path(sys.argv[1])
+    output_path = sys.argv[2] if len(sys.argv) == 3 else None
+
+    if not config_path.exists():
+        print(f"Error: Config file not found: {config_path}", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"Loading config from: {config_path}", file=sys.stderr)
+    config = load_config(config_path)
+
+    print("\nResolving pull requests...", file=sys.stderr)
+    modified = resolve_pull_requests(config)
+
+    if not modified:
+        print("\nNo pull request URLs found to resolve", file=sys.stderr)
+        sys.exit(0)
+
+    print(
+        f"\nSaving modified config to: {output_path if output_path else '-'}",
+        file=sys.stderr,
+    )
+    output_config(config, output_path if output_path else "-")
+
+    print("✓ Config updated successfully", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,25 @@
+name: 'Resolve Pull Requests'
+description: 'Resolve GitHub PR URLs in config to git+branch format'
+inputs:
+  config_file:
+    description: 'Path to config.json5 file'
+    required: false
+    default: 'config.json5'
+runs:
+  using: 'composite'
+  steps:
+    - name: Resolve pull requests in config
+      shell: bash
+      run: |
+        if [ -z "$TOOLS_PYTHON" ]; then
+          echo "Error: TOOLS_PYTHON environment variable is not set"
+          exit 1
+        fi
+        
+        CONFIG_FILE="${{ inputs.config_file }}"
+        echo "Resolving pull requests in: $CONFIG_FILE"
+        
+        # Run the script to resolve PR URLs (overwrites the config file)
+        $TOOLS_PYTHON scripts/resolve_pull_requests.py "$CONFIG_FILE" "$CONFIG_FILE"
+        
+        echo "✓ Pull requests resolved successfully"

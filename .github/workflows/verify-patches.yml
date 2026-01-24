@@ -61,6 +61,11 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      - name: Resolve pull requests
+        uses: ./.github/actions/resolve-pull-requests
+        with:
+          config_file: ${{ inputs.config_file }}
+
       - name: Load configuration
         id: load
         uses: ./.github/actions/load-test-config
