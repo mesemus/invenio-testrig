@@ -52,7 +52,6 @@ jobs:
       run_original_tests: ${{ steps.override.outputs.run_original_tests }}
       test_timeout: ${{ steps.load.outputs.test_timeout }}
       packages: ${{ steps.load.outputs.packages }}
-      absolute_config_file: ${{ steps.load.outputs.absolute_config_file }}
     steps:
       - name: Checkout verification repository
         uses: actions/checkout@v4
