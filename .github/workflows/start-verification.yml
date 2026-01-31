@@ -16,6 +16,16 @@ on:
                 required: false
                 type: string
                 default: "3.14"
+            no_format_check:
+                description: "Skip format check (black/isort) during tests"
+                required: false
+                type: boolean
+                default: false
+            verbose_pytest:
+                description: "Run pytest with verbose output (-vv -s)"
+                required: false
+                type: boolean
+                default: false
 
 jobs:
     setup_branch:
@@ -115,10 +125,16 @@ jobs:
               env:
                   GH_TOKEN: ${{ github.token }}
                   BRANCH_NAME: ${{ inputs.branch_name }}
+                  PYTHON_VERSION: ${{ inputs.python_version }}
+                  VERBOSE_PYTEST: ${{ inputs.verbose_pytest }}
+                  NO_FORMAT_CHECK: ${{ inputs.no_format_check }}
               run: |
                   # Trigger the workflow
                   gh workflow run verify-patches.yml \
-                    --ref "${BRANCH_NAME}"
+                    --ref "${BRANCH_NAME}" \
+                    --field python_version="${PYTHON_VERSION}" \
+                    --field verbose_pytest="${VERBOSE_PYTEST}" \
+                    --field no_format_check="${NO_FORMAT_CHECK}"
 
                   # Wait a moment for the workflow to start
                   sleep 5
