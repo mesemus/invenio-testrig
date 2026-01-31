@@ -7,11 +7,6 @@ on:
         description: "Path to config file (JSON5 format)"
         required: false
         default: "config.json5"
-      continue_from_previous:
-        description: "Continue from previous run"
-        required: false
-        type: boolean
-        default: false
       verbose_pytest:
         description: "Run pytest with verbose output (-vv -s)"
         required: false
@@ -95,8 +90,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       packages: ${{ steps.extract_packages.outputs.packages }}
-      done_packages: ${{ steps.extract_packages.outputs.done_packages }}
-      previous_report: ${{ steps.extract_packages.outputs.previous_report }}
 
     steps:
       - name: Checkout invenio-testrig repository
@@ -108,7 +101,6 @@ jobs:
         with:
           python_version: ${{ env.PYTHON_VERSION }}
           config_resolved: ${{ env.CONFIG_RESOLVED }}
-          continue_from_previous: ${{ inputs.continue_from_previous }}
           filter_packages: ${{ needs.load_config.outputs.packages }}
 
   test_packages:
@@ -363,70 +355,11 @@ jobs:
             exit 1
           fi
 
-  copy_previous_artifacts:
-    name: Copy Previous Artifacts
-    needs:
-      - load_config
-      - extract_tested_packages
-      - create_report_directory
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: read
-    if: needs.extract_tested_packages.outputs.done_packages != '[]'
-    strategy:
-      fail-fast: false
-      matrix:
-        package: ${{ fromJson(needs.extract_tested_packages.outputs.done_packages) }}
-
-    steps:
-      - name: Checkout invenio-testrig repository
-        uses: actions/checkout@v4
-
-      - name: Copy artifacts from previous report
-        run: |
-          PREVIOUS_REPORT="${{ needs.extract_tested_packages.outputs.previous_report }}"
-          PACKAGE="${{ matrix.package }}"
-
-          echo "Copying artifacts for $PACKAGE from $PREVIOUS_REPORT"
-
-          # Create artifacts directory
-          mkdir -p artifacts
-
-          # Copy all files from previous report's package directory
-          if [ -d "${PREVIOUS_REPORT}packages/${PACKAGE}" ]; then
-            cp -r "${PREVIOUS_REPORT}packages/${PACKAGE}"/* artifacts/ 2>/dev/null || true
-            echo "✓ Copied artifacts for $PACKAGE"
-          else
-            echo "⚠️  No previous artifacts found for $PACKAGE"
-          fi
-
-      - name: Upload test artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results-${{ matrix.package }}
-          path: |
-            artifacts/
-          retention-days: 30
-
-      # needs to be after uploading artifacts
-      # as the action downloads all actual artifacts
-      - name: Push individual package report
-        if: always()
-        uses: ./.github/actions/action-generate-report
-        with:
-          report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
-          report_file: ${{ needs.create_report_directory.outputs.report_file }}
-          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
-          test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ env.CONFIG_RESOLVED }}
-
   generate_report:
     name: Generate Summary Report
     needs:
       - create_report_directory
       - test_packages
-      - copy_previous_artifacts
       - load_config
     runs-on: ubuntu-latest
     if: always()

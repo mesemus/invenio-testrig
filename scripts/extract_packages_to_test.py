@@ -10,7 +10,6 @@ import argparse
 import json
 import re
 import sys
-from pathlib import Path
 
 import json5
 
@@ -60,20 +59,6 @@ def filter_packages(packages, config):
     return sorted(filtered)
 
 
-def get_already_tested_packages(previous_report_path):
-    """Get list of packages that were already tested in a previous run."""
-    if not previous_report_path:
-        return []
-
-    packages_dir = Path(previous_report_path) / "packages"
-    if not packages_dir.exists():
-        return []
-
-    # List all subdirectories in the packages directory
-    tested = [d.name for d in packages_dir.iterdir() if d.is_dir()]
-    return sorted(tested)
-
-
 def filter_by_package_list(packages, filter_list):
     """Filter packages to only include those in the filter list."""
     if not filter_list:
@@ -98,9 +83,6 @@ def main():
     parser.add_argument("config_file", help="Path to config.json5 file")
     parser.add_argument("output_file", help="Path to output shell script file")
     parser.add_argument(
-        "--previous-report", help="Path to previous report directory to continue from"
-    )
-    parser.add_argument(
         "--filter-packages",
         nargs="*",
         help="Space or comma separated list of packages to test",
@@ -121,24 +103,16 @@ def main():
             filtered_packages, args.filter_packages
         )
 
-    # Get already tested packages if continuing from previous run
-    already_tested = get_already_tested_packages(args.previous_report)
-
-    # Determine which packages to test
-    packages_to_test = [pkg for pkg in filtered_packages if pkg not in already_tested]
     # Output as JSON arrays
-    packages_json = json.dumps(packages_to_test)
-    done_packages_json = json.dumps(already_tested)
+    packages_json = json.dumps(filtered_packages)
 
     # Write to shell script file
     with open(args.output_file, "w") as f:
         f.write(f"packages='{packages_json}'\n")
-        f.write(f"done_packages='{done_packages_json}'\n")
 
     print(f"Total packages found: {len(all_packages)}")
     print(f"Filtered packages: {len(filtered_packages)}")
-    print(f"Already tested: {len(already_tested)}")
-    print(f"To test: {len(packages_to_test)}")
+    print(f"To test: {len(filtered_packages)}")
 
     if args.filter_packages:
         print(f"Package filter applied: {args.filter_packages}")

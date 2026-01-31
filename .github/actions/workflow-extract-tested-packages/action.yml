@@ -7,9 +7,6 @@ inputs:
   config_resolved:
     description: 'Path to resolved config file'
     required: true
-  continue_from_previous:
-    description: 'Continue from previous run'
-    required: true
   filter_packages:
     description: 'Space-separated list of packages to filter'
     required: false
@@ -17,12 +14,6 @@ outputs:
   packages:
     description: 'JSON array of packages to test'
     value: ${{ steps.extract.outputs.packages }}
-  done_packages:
-    description: 'JSON array of already tested packages'
-    value: ${{ steps.extract.outputs.done_packages }}
-  previous_report:
-    description: 'Path to previous report directory'
-    value: ${{ steps.extract.outputs.previous_report }}
 runs:
   using: 'composite'
   steps:
@@ -49,18 +40,8 @@ runs:
       id: extract
       shell: bash
       run: |
-        # Determine if we should continue from previous run
+        # Build options array
         opts=()
-
-        if [ "${{ inputs.continue_from_previous }}" = "true" ]; then
-          # Find the most recent report directory
-          PREVIOUS_REPORT=$(ls -d reports/results/*/ 2>/dev/null | sort -r | head -n 1 || echo "")
-
-          if [ -n "$PREVIOUS_REPORT" ]; then
-            echo "Continuing from previous report: $PREVIOUS_REPORT"
-            opts+=("--previous-report" "$PREVIOUS_REPORT")
-          fi
-        fi
 
         # Add package filter if provided
         if [ -n "${{ inputs.filter_packages }}" ]; then
@@ -75,7 +56,4 @@ runs:
 
         # packages is already a JSON array
         echo "Found packages: $packages"
-        echo "Already tested packages: $done_packages"
         echo "packages=$packages" >> $GITHUB_OUTPUT
-        echo "done_packages=$done_packages" >> $GITHUB_OUTPUT
-        echo "previous_report=$PREVIOUS_REPORT" >> $GITHUB_OUTPUT
