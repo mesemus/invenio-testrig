@@ -18,6 +18,12 @@ from collections import defaultdict
 from pathlib import Path
 
 
+def normalize_warning_text(warning_text: str) -> str:
+    """Normalize warning text by replacing memory addresses with [id]."""
+    # Replace hexadecimal memory addresses (e.g., 0x7faab2c77880) with [id]
+    return re.sub(r"0x[0-9a-fA-F]+", "[id]", warning_text)
+
+
 def extract_warnings(log_path: Path) -> dict[str, int]:
     """Extract and count warnings from a log file."""
     warnings: dict[str, int] = defaultdict(int)
@@ -33,6 +39,8 @@ def extract_warnings(log_path: Path) -> dict[str, int]:
             match = warning_pattern.search(line)
             if match:
                 warning_text = match.group(1).strip()
+                # Normalize warning text by replacing memory addresses
+                warning_text = normalize_warning_text(warning_text)
                 warnings[warning_text] += 1
 
     return dict(warnings)
