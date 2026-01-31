@@ -101,7 +101,7 @@ def get_pr_info(owner, repo, pr_number):
 
 def resolve_pull_requests(config):
     """Resolve all PR URLs in patches to git+branch format."""
-    patches = config.get("patches", {})
+    patches = config.get("patches") or {}
     modified = False
 
     for package_name, patch_info in list(patches.items()):

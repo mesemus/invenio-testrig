@@ -42,7 +42,7 @@ def apply_patches(
     # Load config and get patches
     with config_path.open("r") as f:
         config = json.load(f)
-    patches = config.get("patches", {})
+    patches = config.get("patches") or {}
 
     # Get Python executable and installed packages
     venv_python = get_venv_python(venv_path)
