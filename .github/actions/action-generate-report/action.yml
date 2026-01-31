@@ -25,7 +25,7 @@ inputs:
   config_file:
     description: 'Path to config file'
     required: false
-    default: 'config.json5'
+    default: 'config-resolved.json'
 runs:
   using: 'composite'
   steps:

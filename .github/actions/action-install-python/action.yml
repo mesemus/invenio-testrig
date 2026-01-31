@@ -27,9 +27,9 @@ runs:
         echo "::group::Creating tools virtualenv"
         uv venv .tools-venv
         source .tools-venv/bin/activate
-        uv pip install --python .tools-venv/bin/python jinja2 json5
+        uv pip install --python .tools-venv/bin/python jinja2 pyyaml
         echo "::endgroup::"
-        echo "✓ Tools virtualenv created with jinja2 and json5"
+        echo "✓ Tools virtualenv created with jinja2 and pyyaml"
         
         # Set environment variable for tools Python
         TOOLS_PYTHON="$(pwd)/.tools-venv/bin/python"

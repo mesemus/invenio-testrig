@@ -3,10 +3,6 @@ name: 2. Run Verification
 on:
   workflow_dispatch:
     inputs:
-      config_file:
-        description: "Path to config file (JSON5 format)"
-        required: false
-        default: "config.json5"
       verbose_pytest:
         description: "Run pytest with verbose output (-vv -s)"
         required: false
@@ -46,7 +42,7 @@ jobs:
         id: load_config
         uses: ./.github/actions/workflow-load-config
         with:
-          config_file: ${{ inputs.config_file }}
+          config_file: config.json5
           python_version: ${{ env.PYTHON_VERSION }}
           config_resolved: ${{ env.CONFIG_RESOLVED }}
 

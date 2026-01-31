@@ -2,9 +2,9 @@ name: 'Load Test Configuration'
 description: 'Load test configuration from config.json5 and set default values'
 inputs:
   config_file:
-    description: 'Path to config.json5 file'
+    description: 'Path to config file'
     required: false
-    default: 'config.json5'
+    default: 'config-resolved.json'
 outputs:
   test_name:
     description: 'Name of the test run'

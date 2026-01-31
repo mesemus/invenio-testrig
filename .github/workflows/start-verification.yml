@@ -255,10 +255,7 @@ jobs:
                   # Trigger the workflow
                   gh workflow run verify-patches.yml \
                     --ref "${BRANCH_NAME}" \
-                    --field config_file=config.json5 \
-                    --field python_version="${{ inputs.python_version }}"
 
-                  echo "✅ Verification workflow triggered on branch ${BRANCH_NAME}"
 
                   # Wait a moment for the workflow to start
                   sleep 5
