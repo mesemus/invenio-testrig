@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
         inputs:
             patches:
-                description: "Patches separated by space in form of repo/package@branch or org/repo#pr"
+                description: "Patches separated by space in form of repo/package@branch or org/repo#pr. Use inveniosoftware/pytest-invenio@master to test all packages."
                 required: true
                 type: string
             branch_name:
@@ -56,6 +56,7 @@ jobs:
                   python3 << 'PYTHON_SCRIPT'
                   import os
                   import yaml
+                  import re
 
                   # Get the patches input
                   patches_input = os.getenv('PATCHES_INPUT', '').strip()
