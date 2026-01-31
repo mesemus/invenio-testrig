@@ -72,7 +72,7 @@ jobs:
                   patches_dict = {}
                   for patch in patches:
                       # split on / or @ or #
-                      patch_parts = re.split(r'[@#]', patch)
+                      patch_parts = re.split(r'[/@#]', patch)
                       if len(patch_parts) != 3:
                           print(f"  Invalid patch format: {patch}. Expected format: repo/package@branch or org/repo#pr")
                           exit(1)

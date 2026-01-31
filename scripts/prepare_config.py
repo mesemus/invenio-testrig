@@ -99,6 +99,37 @@ def get_pr_info(owner, repo, pr_number):
         return None, None, None, None
 
 
+def resolve_branches(config):
+    """Resolve branch string references (org/repo@branch) to git+branch format."""
+    patches = config.get("patches") or {}
+
+    for package_name, patch_info in list(patches.items()):
+        # PR references have already been handled at this point
+        if isinstance(patch_info, str):
+            # Check if it matches org/repo@branch pattern
+            branch_pattern = r"^([^/]+)/([^/@]+)@(.+)$"
+            match = re.match(branch_pattern, patch_info)
+
+            if match:
+                owner, repo, branch = match.groups()
+                git_url = f"https://github.com/{owner}/{repo}.git"
+                patches[package_name] = {"git": git_url, "branch": branch}
+                print(
+                    f"Resolved {package_name}: {patch_info} -> {git_url} @ {branch}",
+                    file=sys.stderr,
+                )
+            else:
+                print(
+                    f"Error: Invalid patch format for {package_name}: '{patch_info}'",
+                    file=sys.stderr,
+                )
+                print(
+                    "  Expected format: org/repo@branch or org/repo#prno",
+                    file=sys.stderr,
+                )
+                sys.exit(1)
+
+
 def resolve_pull_requests(config):
     """Resolve all PR URLs in patches to git+branch format."""
     patches = config.get("patches") or {}
@@ -183,6 +214,8 @@ def main():
 
         if not modified:
             print("No pull request references found to resolve", file=sys.stderr)
+
+        resolve_branches(config)
 
         print(f"\nSaving resolved config to: {output_path}", file=sys.stderr)
         save_config(config, output_path)
