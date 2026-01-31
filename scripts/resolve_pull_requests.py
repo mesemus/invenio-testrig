@@ -36,25 +36,42 @@ def output_config(config, output_path):
             f.write("\n")
 
 
-def is_github_pr_url(url):
-    """Check if the URL is a GitHub pull request URL."""
-    if not isinstance(url, str):
+def is_github_pr_reference(ref):
+    """Check if the ref is a GitHub pull request reference (URL or org/repo#prno format)."""
+    if not isinstance(ref, str):
         return False
-    pattern = r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$"
-    return re.match(pattern, url) is not None
+    # Check for full URL format
+    url_pattern = r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$"
+    if re.match(url_pattern, ref):
+        return True
+    # Check for org/repo#prno format
+    short_pattern = r"^([^/]+)/([^/#]+)#(\d+)$"
+    return re.match(short_pattern, ref) is not None
 
 
-def parse_github_pr_url(url):
-    """Parse GitHub PR URL and return owner, repo, pr_number."""
-    pattern = r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$"
-    match = re.match(pattern, url)
+def parse_github_pr_reference(ref):
+    """Parse GitHub PR reference (URL or org/repo#prno) and return owner, repo, pr_number."""
+    # Try full URL format first
+    url_pattern = r"^https://github\.com/([^/]+)/([^/]+)/pull/(\d+)$"
+    match = re.match(url_pattern, ref)
     if match:
         return match.group(1), match.group(2), match.group(3)
+
+    # Try org/repo#prno format
+    short_pattern = r"^([^/]+)/([^/#]+)#(\d+)$"
+    match = re.match(short_pattern, ref)
+    if match:
+        return match.group(1), match.group(2), match.group(3)
+
     return None, None, None
 
 
 def get_pr_info(owner, repo, pr_number):
-    """Fetch PR information from GitHub API."""
+    """Fetch PR information from GitHub API.
+
+    Returns:
+        tuple: (git_url, branch, is_merged, is_closed) or (None, None, None, None) on error
+    """
     api_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr_number}"
 
     try:
@@ -66,15 +83,23 @@ def get_pr_info(owner, repo, pr_number):
         with urlopen(request, timeout=10) as response:
             data = json.loads(response.read().decode("utf-8"))
 
-            # Get the head repository and branch
-            head = data["head"]
-            git_url = head["repo"]["clone_url"]
-            branch = head["ref"]
+            # Get PR state information
+            is_merged = data.get("merged", False)
+            is_closed = data["state"] == "closed"
 
-            return git_url, branch
+            # If merged, use the base branch; otherwise use head branch
+            if is_merged:
+                target = data["base"]
+            else:
+                target = data["head"]
+
+            git_url = target["repo"]["clone_url"]
+            branch = target["ref"]
+
+            return git_url, branch, is_merged, is_closed
     except Exception as e:
         print(f"Error fetching PR info: {e}", file=sys.stderr)
-        return None, None
+        return None, None, None, None
 
 
 def resolve_pull_requests(config):
@@ -83,21 +108,39 @@ def resolve_pull_requests(config):
     modified = False
 
     for package_name, patch_info in list(patches.items()):
-        if is_github_pr_url(patch_info):
-            print(f"Resolving PR URL for {package_name}: {patch_info}", file=sys.stderr)
+        if is_github_pr_reference(patch_info):
+            print(
+                f"Resolving PR reference for {package_name}: {patch_info}",
+                file=sys.stderr,
+            )
 
-            owner, repo, pr_number = parse_github_pr_url(patch_info)
+            owner, repo, pr_number = parse_github_pr_reference(patch_info)
             if owner and repo and pr_number:
-                git_url, branch = get_pr_info(owner, repo, pr_number)
+                git_url, branch, is_merged, is_closed = get_pr_info(
+                    owner, repo, pr_number
+                )
 
                 if git_url and branch:
-                    patches[package_name] = {"git": git_url, "branch": branch}
-                    print(f"  ✓ Resolved to: {git_url} @ {branch}", file=sys.stderr)
-                    modified = True
+                    # Skip cancelled/closed PRs that were not merged
+                    if is_closed and not is_merged:
+                        print(
+                            "  ⊗ PR is closed without being merged, removing from patches",
+                            file=sys.stderr,
+                        )
+                        del patches[package_name]
+                        modified = True
+                    else:
+                        status = "merged" if is_merged else "open"
+                        patches[package_name] = {"git": git_url, "branch": branch}
+                        print(
+                            f"  ✓ Resolved to: {git_url} @ {branch} (PR {status})",
+                            file=sys.stderr,
+                        )
+                        modified = True
                 else:
-                    print("  ✗ Failed to resolve PR URL", file=sys.stderr)
+                    print("  ✗ Failed to resolve PR reference", file=sys.stderr)
             else:
-                print("  ✗ Invalid PR URL format", file=sys.stderr)
+                print("  ✗ Invalid PR reference format", file=sys.stderr)
 
     return modified
 
@@ -129,7 +172,7 @@ def main():
     modified = resolve_pull_requests(config)
 
     if not modified:
-        print("\nNo pull request URLs found to resolve", file=sys.stderr)
+        print("\nNo pull request references found to resolve", file=sys.stderr)
         sys.exit(0)
 
     print(
