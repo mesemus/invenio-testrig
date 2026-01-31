@@ -173,15 +173,14 @@ def main():
 
     if not modified:
         print("\nNo pull request references found to resolve", file=sys.stderr)
-        sys.exit(0)
 
     print(
-        f"\nSaving modified config to: {output_path if output_path else '-'}",
+        f"\nSaving config to: {output_path if output_path else '-'}",
         file=sys.stderr,
     )
     output_config(config, output_path if output_path else "-")
 
-    print("✓ Config updated successfully", file=sys.stderr)
+    print("✓ Config saved successfully", file=sys.stderr)
 
 
 if __name__ == "__main__":
