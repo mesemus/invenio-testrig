@@ -11,7 +11,7 @@ TEST_NAME="$4"
 ARTIFACTS_DIR="${5:-artifacts}"
 MAX_ATTEMPTS="${6:-20}"
 REPORT_STATUS="${7:-running}"
-CONFIG_FILE="${8:-config.json5}"
+CONFIG_FILE="${8:-config-resolved.json}"
 
 echo "Report directory: $REPORT_DIR"
 echo "Report file: $REPORT_FILE"

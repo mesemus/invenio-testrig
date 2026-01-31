@@ -2,10 +2,10 @@
 """
 Prepare configuration: resolve pull request URLs and load test configuration.
 
-This script reads a config.json5 file, resolves GitHub PR URLs to git+branch format,
+This script reads a config.yaml file, resolves GitHub PR URLs to git+branch format,
 saves the resolved configuration, and outputs test configuration values for GitHub Actions.
 
-Usage: prepare_config.py <input_config.json5> <output_config.json>
+Usage: prepare_config.py <input_config.yaml> <output_config.json>
 
 Outputs key=value pairs for GitHub Actions to stdout.
 """
@@ -16,13 +16,13 @@ import sys
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-import json5
+import yaml
 
 
 def load_config(config_path):
-    """Load config.json5 file."""
+    """Load config.yaml file."""
     with config_path.open("r") as f:
-        return json5.load(f)
+        return yaml.safe_load(f)
 
 
 def save_config(config, output_path):
@@ -162,7 +162,7 @@ def main():
     """Main entry point."""
     if len(sys.argv) != 3:
         print(
-            "Usage: prepare_config.py <input_config.json5> <output_config.json>",
+            "Usage: prepare_config.py <input_config.yaml> <output_config.json>",
             file=sys.stderr,
         )
         sys.exit(1)

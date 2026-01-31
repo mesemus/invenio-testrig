@@ -2,9 +2,9 @@ name: 'Prepare Config'
 description: 'Resolve pull requests and load test configuration'
 inputs:
   config_file:
-    description: 'Path to config.json5 file'
+    description: 'Path to config.yaml file'
     required: false
-    default: 'config.json5'
+    default: 'config.yaml'
   config_resolved:
     description: 'Path to resolved config file'
     required: false

@@ -42,9 +42,9 @@ jobs:
               with:
                   python-version: "3.12"
 
-            - name: Install json5
+            - name: Install pyyaml
               run: |
-                  pip install json5
+                  pip install pyyaml
 
             - name: Configure Git
               run: |
@@ -198,10 +198,10 @@ jobs:
                   # Create and checkout the new branch
                   git checkout -b ${{ steps.branch.outputs.name }}
 
-            - name: Update patches in config.json5
+            - name: Update patches in config.yaml
               run: |
                   python3 << 'PYTHON_SCRIPT'
-                  import json5
+                  import yaml
 
                   # Read patches from file
                   patches = {}
@@ -214,32 +214,32 @@ jobs:
                               "branch": branch
                           }
 
-                  print(f"Updating config.json5 with {len(patches)} patch(es):")
+                  print(f"Updating config.yaml with {len(patches)} patch(es):")
                   for pkg, info in patches.items():
                       print(f"  - {pkg}: {info['git']} @ {info['branch']}")
 
-                  # Load existing config using json5
-                  with open('config.json5', 'r') as f:
-                      config = json5.load(f)
+                  # Load existing config using yaml
+                  with open('config.yaml', 'r') as f:
+                      config = yaml.safe_load(f)
 
                   # Update patches in the config
                   config['patches'] = patches
 
-                  # Save updated config using json5
-                  with open('config.json5', 'w') as f:
-                      json5.dump(config, f, indent=4)
+                  # Save updated config using yaml
+                  with open('config.yaml', 'w') as f:
+                      yaml.dump(config, f, indent=4, default_flow_style=False)
 
-                  print("\nUpdated config.json5 successfully")
+                  print("\nUpdated config.yaml successfully")
                   PYTHON_SCRIPT
 
-            - name: Display updated config.json5
+            - name: Display updated config.yaml
               run: |
-                  echo "Updated config.json5 content:"
-                  cat config.json5
+                  echo "Updated config.yaml content:"
+                  cat config.yaml
 
             - name: Commit changes
               run: |
-                  git add config.json5
+                  git add config.yaml
                   git commit -m "Update patches for verification on branch ${{ steps.branch.outputs.name }}"
 
             - name: Push new branch

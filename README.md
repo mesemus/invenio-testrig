@@ -20,7 +20,7 @@ It does not run a repository itself at this point, pytests are run for all influ
    git switch -c my-bugfix-verification
    ```
 
-3. Edit the `config.json5` file to specify your patches:
+3. Edit the `config.yaml` file to specify your patches:
 
     ```json
     {
@@ -51,7 +51,7 @@ It does not run a repository itself at this point, pytests are run for all influ
    - Click "Run workflow".
    - **Select the correct branch.**
    - Optionally, configure the following inputs:
-     - **Config file**: Path to the configuration file (default: `config.json5`)
+     - **Config file**: Path to the configuration file (default: `config.yaml`)
      - **Continue from previous run**: If enabled, the workflow will continue from the most recent run, skipping packages that were already successfully tested.
      - **Verbose pytest**: If enabled, pytest will run with verbose output (-vv -s) and caching will be disabled. Use this if tests deadlock to see output in real-time.
 
@@ -71,10 +71,10 @@ The CI pipeline performs the following steps:
 
 2. **Test each package** (runs in parallel as a matrix build):
    a. **Clone the package**:
-      - If the package is listed in the `patches` section of `config.json5`, clone the specified repository and branch.
+      - If the package is listed in the `patches` section of `config.yaml`, clone the specified repository and branch.
       - Otherwise, clone the package from the repository specified in the `repositories` section.
    b. **Set up environment**: Create a virtual environment using `uv --seed`.
-   c. **Apply patches**: For each module listed in the `patches` section of `config.json5` that is installed in the virtual environment, install the patched version. If no patches apply, skip to step e.
+   c. **Apply patches**: For each module listed in the `patches` section of `config.yaml` that is installed in the virtual environment, install the patched version. If no patches apply, skip to step e.
    d. **Run tests with patches**: Execute the test suite using the `run-tests.sh` script.
    e. **Run original tests (if needed)**: If the patched tests fail and "Run original tests" is enabled, clone the original package from the configured repository and run its tests.
    f. **Compare results**: Compare test results before and after applying patches. Store test outputs and diffs as artifacts.

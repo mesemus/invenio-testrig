@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 def get_tested_patches(config_path: Path) -> str:
-    """Get comma-separated list of patch names from config.json5."""
+    """Get comma-separated list of patch names from config.json."""
     if not config_path.exists():
         return ""
 

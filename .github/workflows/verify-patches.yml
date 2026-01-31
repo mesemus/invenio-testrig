@@ -42,7 +42,7 @@ jobs:
         id: load_config
         uses: ./.github/actions/workflow-load-config
         with:
-          config_file: config.json5
+          config_file: config.yaml
           python_version: ${{ env.PYTHON_VERSION }}
           config_resolved: ${{ env.CONFIG_RESOLVED }}
 
