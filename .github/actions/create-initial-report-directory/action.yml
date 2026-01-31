@@ -1,0 +1,66 @@
+name: 'Create Initial Report Directory'
+description: 'Create and commit initial report directory with retry logic'
+inputs:
+  report_dir:
+    description: 'Path to the report directory'
+    required: true
+  report_file:
+    description: 'Path to the report file'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Commit initial report directory
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+        MAX_ATTEMPTS=10
+        ATTEMPT=0
+        SUCCESS=false
+
+        while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+          ATTEMPT=$((ATTEMPT + 1))
+          echo "Attempt $ATTEMPT of $MAX_ATTEMPTS"
+          
+          # Pull latest changes
+          git pull --rebase origin > /dev/null 2>&1 || {
+            echo "⚠️  Failed to pull/rebase, retrying..."
+            sleep $((2 + RANDOM % 3))
+            continue
+          }
+          
+          # Create report directory
+          mkdir -p "${{ inputs.report_dir }}"
+          touch "${{ inputs.report_file }}"
+          git add reports/
+          
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
+            echo "✓ No changes to commit, report directory already exists"
+            SUCCESS=true
+            break
+          fi
+          
+          git commit --quiet -m "[skip ci] Create report directory ${{ inputs.report_dir }}" > /dev/null 2>&1
+          
+          # Try to push
+          if git push --quiet origin > /dev/null 2>&1; then
+            echo "✓ Successfully pushed report directory!"
+            SUCCESS=true
+            break
+          else
+            echo "⚠️  Push failed, another process updated the repository"
+            JITTER=$(( RANDOM % ( ( $ATTEMPT + 1) * 2 ) ))
+            RETRY_TIME=$(( 2 + $JITTER ))
+            echo "Retrying in $RETRY_TIME seconds..."
+            git reset --hard HEAD > /dev/null 2>&1
+            sleep $RETRY_TIME
+          fi
+        done
+
+        if [ "$SUCCESS" = "false" ]; then
+          echo "❌ Failed to push report directory after $MAX_ATTEMPTS attempts"
+          exit 1
+        fi

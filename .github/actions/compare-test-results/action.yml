@@ -1,0 +1,92 @@
+name: 'Compare Test Results'
+description: 'Compare original and patched test results and determine the outcome'
+inputs:
+  artifacts_dir:
+    description: 'Path to artifacts directory'
+    required: false
+    default: 'artifacts'
+outputs:
+  result:
+    description: 'Result classification (e.g., fixed, regression, ok)'
+    value: ${{ steps.compare.outputs.result }}
+  result_icon:
+    description: 'Icon representing the result'
+    value: ${{ steps.compare.outputs.result_icon }}
+  result_text:
+    description: 'Text description of the result'
+    value: ${{ steps.compare.outputs.result_text }}
+  original_tests_outcome:
+    description: 'Outcome of original tests (success/failed/skipped)'
+    value: ${{ steps.compare.outputs.original_tests_outcome }}
+  patched_tests_outcome:
+    description: 'Outcome of patched tests (success/failed/skipped)'
+    value: ${{ steps.compare.outputs.patched_tests_outcome }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Compare test results
+      id: compare
+      shell: bash
+      run: |
+        ARTIFACTS_DIR="${{ inputs.artifacts_dir }}"
+        
+        # Create a diff of the test outputs
+        if [ -f "$ARTIFACTS_DIR/test-output-original.txt" ] && [ -f "$ARTIFACTS_DIR/test-output-patched.txt" ] ; then
+          diff -buN "$ARTIFACTS_DIR/test-output-original.txt" "$ARTIFACTS_DIR/test-output-patched.txt" > "$ARTIFACTS_DIR/test-diff.txt" || true
+        fi
+
+        # Analyze the results using status files
+        ORIGINAL_TESTS_OUTCOME=$(cat "$ARTIFACTS_DIR/test-status-original.txt" 2>/dev/null || echo "skipped")
+        PATCHED_TESTS_OUTCOME=$(cat "$ARTIFACTS_DIR/test-status-patched.txt" 2>/dev/null || echo "skipped")
+
+        if [ "$ORIGINAL_TESTS_OUTCOME" == "failed" ] ; then
+          if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
+            RESULT="still-failing"
+            RESULT_ICON="⚠️"
+            RESULT_TEXT="Tests still failing after patch"
+          elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
+            RESULT="fixed"
+            RESULT_ICON="✅"
+            RESULT_TEXT="Patch fixed failing tests"
+          elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
+            RESULT="still-failing-skipped"
+            RESULT_ICON="⚠️"
+            RESULT_TEXT="Tests failing in original, patched tests skipped"
+          fi
+        elif [ "$ORIGINAL_TESTS_OUTCOME" == "success" ] ; then
+          if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
+            RESULT="regression"
+            RESULT_ICON="❌"
+            RESULT_TEXT="Patch introduced test failures"
+          elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
+            RESULT="ok"
+            RESULT_ICON="✅"
+            RESULT_TEXT="Patch successfully applied, tests passed"
+          elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
+            RESULT="no-change-skipped"
+            RESULT_ICON="✅"
+            RESULT_TEXT="Tests passed on original, skipped patch tests"
+          fi
+        elif [ "$ORIGINAL_TESTS_OUTCOME" == "skipped" ] ; then
+          if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
+            RESULT="regression-skipped"
+            RESULT_ICON="❌"
+            RESULT_TEXT="Patch introduced test failures"
+          elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
+            RESULT="fixed-skipped"
+            RESULT_ICON="✅"
+            RESULT_TEXT="Patch applied successfully, tests passed"
+          elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
+            RESULT="no-change-both-skipped"
+            RESULT_ICON="ℹ️"
+            RESULT_TEXT="Tests skipped on both original and patched versions"
+          fi
+        fi
+
+        echo "$RESULT_ICON $RESULT_TEXT"
+
+        echo "result=$RESULT" >> $GITHUB_OUTPUT
+        echo "result_icon=$RESULT_ICON" >> $GITHUB_OUTPUT
+        echo "result_text=$RESULT_TEXT" >> $GITHUB_OUTPUT
+        echo "original_tests_outcome=$ORIGINAL_TESTS_OUTCOME" >> $GITHUB_OUTPUT
+        echo "patched_tests_outcome=$PATCHED_TESTS_OUTCOME" >> $GITHUB_OUTPUT

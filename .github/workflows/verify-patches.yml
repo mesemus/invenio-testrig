@@ -150,58 +150,10 @@ jobs:
           echo "REPORT_TIMESTAMP=$REPORT_TIMESTAMP" >> $GITHUB_ENV
 
       - name: Commit initial report directory
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          MAX_ATTEMPTS=10
-          ATTEMPT=0
-          SUCCESS=false
-
-          while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
-            ATTEMPT=$((ATTEMPT + 1))
-            echo "Attempt $ATTEMPT of $MAX_ATTEMPTS"
-            
-            # Pull latest changes
-            git pull --rebase origin > /dev/null 2>&1 || {
-              echo "⚠️  Failed to pull/rebase, retrying..."
-              sleep $((2 + RANDOM % 3))
-              continue
-            }
-            
-            # Create report directory
-            mkdir -p ${{ steps.create_dir.outputs.report_dir }}
-            touch ${{ steps.create_dir.outputs.report_file }}
-            git add reports/
-            
-            # Check if there are changes to commit
-            if git diff --cached --quiet; then
-              echo "✓ No changes to commit, report directory already exists"
-              SUCCESS=true
-              break
-            fi
-            
-            git commit --quiet -m "[skip ci] Create report directory ${{ steps.create_dir.outputs.report_dir }}" > /dev/null 2>&1
-            
-            # Try to push
-            if git push --quiet origin > /dev/null 2>&1; then
-              echo "✓ Successfully pushed report directory!"
-              SUCCESS=true
-              break
-            else
-              echo "⚠️  Push failed, another process updated the repository"
-              JITTER=$(( RANDOM % ( ( $ATTEMPT + 1) * 2 ) ))
-              RETRY_TIME=$(( 2 + $JITTER ))
-              echo "Retrying in $RETRY_TIME seconds..."
-              git reset --hard HEAD > /dev/null 2>&1
-              sleep $RETRY_TIME
-            fi
-          done
-
-          if [ "$SUCCESS" = "false" ]; then
-            echo "❌ Failed to push report directory after $MAX_ATTEMPTS attempts"
-            exit 1
-          fi
+        uses: ./.github/actions/create-initial-report-directory
+        with:
+          report_dir: ${{ steps.create_dir.outputs.report_dir }}
+          report_file: ${{ steps.create_dir.outputs.report_file }}
 
       - name: Create report artifact metadata
         run: |
@@ -464,75 +416,14 @@ jobs:
         if: env.SO_FAR_OK == '1'
         id: compare
         continue-on-error: true
-        run: |
-          # Create a diff of the test outputs
-          if [ -f artifacts/test-output-original.txt ] && [ -f test-output-patched.txt ] ; then
-            diff -buN artifacts/test-output-original.txt test-output-patched.txt > artifacts/test-diff.txt
-          fi
-
-          # Analyze the results using status files
-          ORIGINAL_TESTS_OUTCOME=$(cat artifacts/test-status-original.txt 2>/dev/null || echo "skipped")
-          PATCHED_TESTS_OUTCOME=$(cat artifacts/test-status-patched.txt 2>/dev/null|| echo "skipped")
-
-          if [ "$ORIGINAL_TESTS_OUTCOME" == "failed" ] ; then
-            if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
-              RESULT="still-failing"
-              RESULT_ICON="⚠️"
-              RESULT_TEXT="Tests still failing after patch"
-            elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
-              RESULT="fixed"
-              RESULT_ICON="✅"
-              RESULT_TEXT="Patch fixed failing tests"
-            elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
-              RESULT="still-failing-skipped"
-              RESULT_ICON="⚠️"
-              RESULT_TEXT="Tests failing in original, patched tests skipped"
-            fi
-          elif [ "$ORIGINAL_TESTS_OUTCOME" == "success" ] ; then
-            if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
-              RESULT="regression"
-              RESULT_ICON="❌"
-              RESULT_TEXT="Patch introduced test failures"
-            elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
-              RESULT="ok"
-              RESULT_ICON="✅"
-              RESULT_TEXT="Patch successfully applied, tests passed"
-            elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
-              RESULT="no-change-skipped"
-              RESULT_ICON="✅"
-              RESULT_TEXT="Tests passed on original, skipped patch tests"
-            fi
-          elif [ "$ORIGINAL_TESTS_OUTCOME" == "skipped" ] ; then
-            if [ "$PATCHED_TESTS_OUTCOME" == "failed" ] ; then
-              RESULT="regression-skipped"
-              RESULT_ICON="❌"
-              RESULT_TEXT="Patch introduced test failures"
-            elif [ "$PATCHED_TESTS_OUTCOME" == "success" ] ; then
-              RESULT="fixed-skipped"
-              RESULT_ICON="✅"
-              RESULT_TEXT="Patch applied successfully, tests passed"
-            elif [ "$PATCHED_TESTS_OUTCOME" == "skipped" ] ; then
-              RESULT="no-change-both-skipped"
-              RESULT_ICON="ℹ️"
-              RESULT_TEXT="Tests skipped on both original and patched versions"
-            fi
-          fi
-
-          echo "$RESULT_ICON $RESULT_TEXT"
-
-          echo "result=$RESULT" >> $GITHUB_OUTPUT
-          echo "result_icon=$RESULT_ICON" >> $GITHUB_OUTPUT
-          echo "result_text=$RESULT_TEXT" >> $GITHUB_OUTPUT
-          echo "ORIGINAL_TESTS_OUTCOME=$ORIGINAL_TESTS_OUTCOME" >> $GITHUB_OUTPUT
-          echo "PATCHED_TESTS_OUTCOME=$PATCHED_TESTS_OUTCOME" >> $GITHUB_OUTPUT
+        uses: ./.github/actions/compare-test-results
+        with:
+          artifacts_dir: artifacts
 
       - name: Create result summary
         id: summary
         continue-on-error: true
         run: |
-          ORIGINAL_TESTS_OUTCOME=$(cat artifacts/test-status-original.txt 2>/dev/null || echo "skipped")
-          PATCHED_TESTS_OUTCOME=$(cat artifacts/test-status-patched.txt 2>/dev/null|| echo "skipped")
-
           if [ -z "${{ steps.check_patch.outputs.applies }}" ] ; then
             APPLIES="false"
           else
@@ -544,8 +435,8 @@ jobs:
             "package": "${{ matrix.package }}",
             "has_patch": ${{ steps.load_patches.outputs.has_patch }},
             "patch_applies": $APPLIES,
-            "original_tests_outcome": "$ORIGINAL_TESTS_OUTCOME",
-            "patched_tests_outcome": "$PATCHED_TESTS_OUTCOME",
+            "original_tests_outcome": "${{ steps.compare.outputs.original_tests_outcome }}",
+            "patched_tests_outcome": "${{ steps.compare.outputs.patched_tests_outcome }}",
             "result": "${{ steps.compare.outputs.result }}",
             "result_icon": "${{ steps.compare.outputs.result_icon }}",
             "result_text": "${{ steps.compare.outputs.result_text }}",
@@ -699,31 +590,7 @@ jobs:
           report_status: finished
 
       - name: Squash all commits
-        run: |
-          # Configure git
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Get the current branch name
-          CURRENT_BRANCH=$(git branch --show-current)
-          echo "Current branch: $CURRENT_BRANCH"
-
-          # Get the initial commit from the workflow start
-          INITIAL_COMMIT="${{ needs.load_config.outputs.initial_commit }}"
-          echo "Initial commit: $INITIAL_COMMIT"
-
-          # Soft reset to the initial commit (keeps all changes staged)
-          git reset --soft "$INITIAL_COMMIT"
-
-          # Create a single commit with all changes
-          COMMIT_MESSAGE="Verification results for branch $CURRENT_BRANCH
-
-          Generated on: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          Report: reports/results/${{ needs.create_report_directory.outputs.report_timestamp }}/report.md"
-
-          git commit -m "$COMMIT_MESSAGE"
-
-          # Force push the squashed commit to the current branch
-          git push origin HEAD:$CURRENT_BRANCH --force
-
-          echo "✓ Successfully squashed all commits into one and force-pushed to $CURRENT_BRANCH"
+        uses: ./.github/actions/squash-commits
+        with:
+          initial_commit: ${{ needs.load_config.outputs.initial_commit }}
+          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}

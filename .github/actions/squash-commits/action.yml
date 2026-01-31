@@ -1,0 +1,42 @@
+name: 'Squash All Commits'
+description: 'Squash all commits since initial commit into a single commit and force push'
+inputs:
+  initial_commit:
+    description: 'The initial commit SHA to reset to'
+    required: true
+  report_timestamp:
+    description: 'Report timestamp for the commit message'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Squash all commits
+      shell: bash
+      run: |
+        # Configure git
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+        # Get the current branch name
+        CURRENT_BRANCH=$(git branch --show-current)
+        echo "Current branch: $CURRENT_BRANCH"
+
+        # Get the initial commit from the workflow start
+        INITIAL_COMMIT="${{ inputs.initial_commit }}"
+        echo "Initial commit: $INITIAL_COMMIT"
+
+        # Soft reset to the initial commit (keeps all changes staged)
+        git reset --soft "$INITIAL_COMMIT"
+
+        # Create a single commit with all changes
+        COMMIT_MESSAGE="Verification results for branch $CURRENT_BRANCH
+
+        Generated on: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+        Report: reports/results/${{ inputs.report_timestamp }}/report.md"
+
+        git commit -m "$COMMIT_MESSAGE"
+
+        # Force push the squashed commit to the current branch
+        git push origin HEAD:$CURRENT_BRANCH --force
+
+        echo "✓ Successfully squashed all commits into one and force-pushed to $CURRENT_BRANCH"
