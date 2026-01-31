@@ -3,16 +3,16 @@ name: 2. Run Verification
 on:
   workflow_dispatch:
     inputs:
-      verbose_pytest:
-        description: "Run pytest with verbose output (-vv -s)"
-        required: false
-        type: boolean
-        default: false
       python_version:
         description: "Python version to use"
         required: false
         type: string
         default: "3.14"
+      verbose_pytest:
+        description: "Run pytest with verbose output (-vv -s)"
+        required: false
+        type: boolean
+        default: false
       no_format_check:
         description: "Skip format check (black/isort) during tests"
         required: false
