@@ -22,10 +22,10 @@ inputs:
     description: 'Run pytest with verbose output (-vv -s)'
     required: false
     default: 'false'
-  no-format-check:
-    description: 'Skip format check before running tests'
+  check-formatting:
+    description: 'Run format check before running tests'
     required: false
-    default: 'false'
+    default: 'true'
 outputs:
   conclusion:
     description: 'Test conclusion (success or failure)'
@@ -60,7 +60,7 @@ runs:
         fi
 
         # Skip format check if requested
-        if [ "${{ inputs.no-format-check }}" = "true" ]; then
+        if [ "${{ inputs.check-formatting }}" = "false" ]; then
           # if there is setup.cfg, remove --black --isort --pydocstyle from it
           if [ -f setup.cfg ]; then
             echo "Skipping format check as requested"

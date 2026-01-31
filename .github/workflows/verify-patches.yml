@@ -13,11 +13,11 @@ on:
         required: false
         type: boolean
         default: false
-      no_format_check:
-        description: "Skip format check (black/isort) during tests"
+      check_formatting:
+        description: "Check black/isort during tests"
         required: false
         type: boolean
-        default: false
+        default: true
 
 env:
   PYTHONUNBUFFERED: 1
@@ -224,7 +224,7 @@ jobs:
           test-type: patched
           timeout: ${{ needs.load_config.outputs.test_timeout }}
           verbose-pytest: ${{ inputs.verbose_pytest }}
-          no-format-check: ${{ inputs.no_format_check }}
+          check-formatting: ${{ inputs.check_formatting }}
 
       # if the previous step failed, we will try to run the tests without patches
       - name: Clone package repository for tests without patches
@@ -256,7 +256,7 @@ jobs:
           test-type: original
           timeout: ${{ needs.load_config.outputs.test_timeout }}
           verbose-pytest: ${{ inputs.verbose_pytest }}
-          no-format-check: ${{ inputs.no_format_check }}
+          check-formatting: ${{ inputs.check_formatting }}
 
       - name: Compare test results
         if: env.SO_FAR_OK == '1'
