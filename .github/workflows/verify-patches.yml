@@ -52,9 +52,17 @@ jobs:
       run_original_tests: ${{ steps.override.outputs.run_original_tests }}
       test_timeout: ${{ steps.load.outputs.test_timeout }}
       packages: ${{ steps.load.outputs.packages }}
+      initial_commit: ${{ steps.capture_commit.outputs.initial_commit }}
     steps:
       - name: Checkout verification repository
         uses: actions/checkout@v4
+
+      - name: Capture initial commit
+        id: capture_commit
+        run: |
+          INITIAL_COMMIT=$(git rev-parse HEAD)
+          echo "initial_commit=$INITIAL_COMMIT" >> $GITHUB_OUTPUT
+          echo "Initial commit: $INITIAL_COMMIT"
 
       - name: Setup Python and UV
         uses: ./.github/actions/install-python
@@ -700,20 +708,12 @@ jobs:
           CURRENT_BRANCH=$(git branch --show-current)
           echo "Current branch: $CURRENT_BRANCH"
 
-          # Get the default branch (usually main or master)
-          DEFAULT_BRANCH=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
-          echo "Default branch: $DEFAULT_BRANCH"
+          # Get the initial commit from the workflow start
+          INITIAL_COMMIT="${{ needs.load_config.outputs.initial_commit }}"
+          echo "Initial commit: $INITIAL_COMMIT"
 
-          # Delete temporary branch if it exists (locally and remotely)
-          git branch -D temp-squash 2>/dev/null || true
-          git push origin --delete temp-squash 2>/dev/null || true
-
-          # Create a temporary branch from the default branch
-          git fetch origin $DEFAULT_BRANCH
-          git checkout -b temp-squash origin/$DEFAULT_BRANCH
-
-          # Squash merge all changes from current branch into one commit
-          git merge --squash $CURRENT_BRANCH
+          # Soft reset to the initial commit (keeps all changes staged)
+          git reset --soft "$INITIAL_COMMIT"
 
           # Create a single commit with all changes
           COMMIT_MESSAGE="Verification results for branch $CURRENT_BRANCH
@@ -725,9 +725,5 @@ jobs:
 
           # Force push the squashed commit to the current branch
           git push origin HEAD:$CURRENT_BRANCH --force
-
-          # Clean up: delete the temporary branch
-          git checkout $CURRENT_BRANCH 2>/dev/null || git checkout -b $CURRENT_BRANCH
-          git branch -D temp-squash 2>/dev/null || true
 
           echo "✓ Successfully squashed all commits into one and force-pushed to $CURRENT_BRANCH"
