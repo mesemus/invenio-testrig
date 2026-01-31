@@ -4,10 +4,11 @@
     // Patches to apply - custom repositories with fixes/features
     "patches": {
         // Format: "package-name": { "git": "git-url", "branch": "branch-name" }
-        "pytest-invenio": {
-            "git": "https://github.com/oarepo/pytest-invenio.git",
-            "branch": "master"
-        }
+        // or: package-name: "pr url or org/repo#pr-number"
+        // "pytest-invenio": {
+        //     "git": "https://github.com/oarepo/pytest-invenio.git",
+        //     "branch": "master"
+        // }
         // Add more patches here as needed
     },
     // timeout for tested package in minutes

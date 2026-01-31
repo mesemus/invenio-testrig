@@ -25,6 +25,9 @@ runs:
         INITIAL_COMMIT="${{ inputs.initial_commit }}"
         echo "Initial commit: $INITIAL_COMMIT"
 
+        # Pull latest changes to load any previous commits
+        git pull
+
         # Soft reset to the initial commit (keeps all changes staged)
         git reset --soft "$INITIAL_COMMIT"
 
