@@ -458,6 +458,20 @@ jobs:
           config_file: ${{ env.CONFIG_RESOLVED }}
           report_status: finished
 
+  squash_commits:
+    name: Squash Commits
+    needs:
+      - generate_report
+      - load_config
+      - create_report_directory
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout invenio-testrig repository
+        uses: actions/checkout@v4
+
       - name: Squash all commits
         uses: ./.github/actions/action-squash-commits
         with:
