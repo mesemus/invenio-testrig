@@ -41,6 +41,7 @@ env:
   PYTHONUNBUFFERED: 1
   PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
   EXTRAS: "tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin,docs"
+  CONFIG_RESOLVED: ${{ github.workspace }}/config-resolved.json
 
 jobs:
   load_config:
@@ -66,18 +67,18 @@ jobs:
         with:
           config_file: ${{ inputs.config_file }}
 
-      - name: Upload modified config
+      - name: Upload resolved config
         uses: actions/upload-artifact@v4
         with:
           name: resolved-config
-          path: ${{ inputs.config_file }}
+          path: config-resolved.json
           retention-days: 1
 
       - name: Load configuration
         id: load
         uses: ./.github/actions/load-test-config
         with:
-          config_file: ${{ inputs.config_file }}
+          config_file: ${{ env.CONFIG_RESOLVED }}
 
       - name: Override run_original_tests from input
         id: override
@@ -214,7 +215,7 @@ jobs:
           report_file: ${{ steps.create_dir.outputs.report_file }}
           report_timestamp: ${{ steps.create_dir.outputs.report_timestamp }}
           test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+          config_file: ${{ env.CONFIG_RESOLVED }}
           add_report_summary: true
 
   extract_tested_packages:
@@ -270,7 +271,7 @@ jobs:
             opts+=("--filter-packages" ${{ needs.load_config.outputs.packages }})
           fi
 
-          $TOOLS_PYTHON scripts/extract_packages_to_test.py zenodo-rdm/uv.lock ${{ needs.load_config.outputs.absolute_config_file }} packages.sh ${opts[@]}
+          $TOOLS_PYTHON scripts/extract_packages_to_test.py zenodo-rdm/uv.lock "${{ env.CONFIG_RESOLVED }}" packages.sh ${opts[@]}
 
           # Source the output variables
           source packages.sh
@@ -326,7 +327,7 @@ jobs:
         run: |
 
           # Use lookup_package.py to get repository information
-          eval $($TOOLS_PYTHON scripts/lookup_package.py ${{ needs.load_config.outputs.absolute_config_file }} ${{ matrix.package }})
+          eval $($TOOLS_PYTHON scripts/lookup_package.py "${{ env.CONFIG_RESOLVED }}" ${{ matrix.package }})
 
           # Set outputs
           echo "original_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
@@ -384,7 +385,7 @@ jobs:
         run: |
 
           # Use apply_patches.py to check and apply patches
-          $TOOLS_PYTHON scripts/apply_patches.py ${{ matrix.package }} package-repo/.venv ${{ needs.load_config.outputs.absolute_config_file }} patch-variables.sh
+          $TOOLS_PYTHON scripts/apply_patches.py ${{ matrix.package }} package-repo/.venv "${{ env.CONFIG_RESOLVED }}" patch-variables.sh
 
           # Source the output variables
           source patch-variables.sh
@@ -579,7 +580,7 @@ jobs:
           report_file: ${{ needs.create_report_directory.outputs.report_file }}
           report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
           test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+          config_file: ${{ env.CONFIG_RESOLVED }}
 
       - name: Fail job if any tests failed
         if: always()
@@ -651,7 +652,7 @@ jobs:
           report_file: ${{ needs.create_report_directory.outputs.report_file }}
           report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
           test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+          config_file: ${{ env.CONFIG_RESOLVED }}
 
   generate_report:
     name: Generate Summary Report
@@ -687,7 +688,7 @@ jobs:
           report_file: ${{ needs.create_report_directory.outputs.report_file }}
           report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
           test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ needs.load_config.outputs.absolute_config_file }}
+          config_file: ${{ env.CONFIG_RESOLVED }}
           report_status: finished
 
       - name: Squash all commits

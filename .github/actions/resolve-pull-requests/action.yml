@@ -17,9 +17,11 @@ runs:
         fi
         
         CONFIG_FILE="${{ inputs.config_file }}"
+        RESOLVED_CONFIG="config-resolved.json"
         echo "Resolving pull requests in: $CONFIG_FILE"
+        echo "Output will be written to: $RESOLVED_CONFIG"
         
-        # Run the script to resolve PR URLs (overwrites the config file)
-        $TOOLS_PYTHON scripts/resolve_pull_requests.py "$CONFIG_FILE" "$CONFIG_FILE"
+        # Run the script to resolve PR URLs (creates config-resolved.json)
+        $TOOLS_PYTHON scripts/resolve_pull_requests.py "$CONFIG_FILE" "$RESOLVED_CONFIG"
         
-        echo "✓ Pull requests resolved successfully"
+        echo "✓ Pull requests resolved successfully to $RESOLVED_CONFIG"
