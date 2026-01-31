@@ -59,6 +59,7 @@ def create_package_links(report_dir: Path, package: str) -> tuple[str, str]:
     patched_links = []
 
     original_files = [
+        ("requirements-original.txt", "requirements"),
         ("test-output-original.txt", "output"),
         ("test-output-no-warnings-original.txt", "output-no-warnings"),
         ("test-report-original.xml", "xml"),
@@ -66,6 +67,8 @@ def create_package_links(report_dir: Path, package: str) -> tuple[str, str]:
     ]
 
     patched_files = [
+        ("requirements-patched.txt", "requirements"),
+        ("requirements-patched-dependencies.txt", "requirements"),
         ("test-output-patched.txt", "output"),
         ("test-output-no-warnings-patched.txt", "output-no-warnings"),
         ("test-report-patched.xml", "xml"),
