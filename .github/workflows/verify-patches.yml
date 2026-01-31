@@ -14,7 +14,7 @@ on:
         type: string
         default: "3.14"
       no_format_check:
-        description: "Skip format check"
+        description: "Skip format check (black/isort) during tests"
         required: false
         type: boolean
         default: false
