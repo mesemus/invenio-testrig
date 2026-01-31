@@ -9,9 +9,6 @@ outputs:
   test_name:
     description: 'Name of the test run'
     value: ${{ steps.load.outputs.test_name }}
-  run_original_tests:
-    description: 'Whether to run original tests when patched tests fail'
-    value: ${{ steps.load.outputs.run_original_tests }}
   test_timeout:
     description: 'Timeout in minutes for each test run'
     value: ${{ steps.load.outputs.test_timeout }}

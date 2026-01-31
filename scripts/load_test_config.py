@@ -25,7 +25,7 @@ def load_test_config(config_file: Path) -> None:
 
         # Extract values with defaults
         test_name = config.get("name", "")
-        run_original_tests = config.get("run_original_tests", True)
+
         test_timeout = config.get("test_timeout", 90)
         packages = config.get("packages", [])
 
@@ -34,7 +34,6 @@ def load_test_config(config_file: Path) -> None:
 
         # Output to stdout for parsing
         print(f"test_name={test_name}")
-        print(f"run_original_tests={'true' if run_original_tests else 'false'}")
         print(f"test_timeout={test_timeout}")
         print(f"packages={packages_str}")
 

@@ -10,8 +10,6 @@
         }
         // Add more patches here as needed
     },
-    // whether to run original tests without patches when patched test fails
-    "run_original_tests": true,
     // timeout for tested package in minutes
     "test_timeout": 90,
     // packages to test (if empty, all found packages will be tested)

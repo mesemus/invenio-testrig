@@ -12,15 +12,6 @@ on:
         required: false
         type: boolean
         default: false
-      verify_without_patch:
-        description: "Verify without patch if the test fails"
-        required: false
-        type: choice
-        options:
-          - "as in config"
-          - "true"
-          - "false"
-        default: "as in config"
       python_version:
         description: "Python version to use"
         required: false
@@ -44,7 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       test_name: ${{ steps.load_config.outputs.test_name }}
-      run_original_tests: ${{ steps.load_config.outputs.run_original_tests }}
       test_timeout: ${{ steps.load_config.outputs.test_timeout }}
       packages: ${{ steps.load_config.outputs.packages }}
       initial_commit: ${{ steps.load_config.outputs.initial_commit }}
@@ -57,7 +47,6 @@ jobs:
         uses: ./.github/actions/workflow-load-config
         with:
           config_file: ${{ inputs.config_file }}
-          verify_without_patch: ${{ inputs.verify_without_patch }}
           python_version: ${{ env.PYTHON_VERSION }}
           config_resolved: ${{ env.CONFIG_RESOLVED }}
 
@@ -244,7 +233,7 @@ jobs:
       # if the previous step failed, we will try to run the tests without patches
       - name: Clone package repository for tests without patches
         continue-on-error: true
-        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
+        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure'
         uses: ./.github/actions/action-clone-package
         with:
           repository-url: ${{ steps.load_patches.outputs.original_repository_url }}
@@ -252,7 +241,7 @@ jobs:
           destination: package-repo
 
       - name: Setup virtual environment and install dependencies for original package tests
-        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
+        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure'
         continue-on-error: true
         uses: ./.github/actions/action-setup-venv
         with:
@@ -263,7 +252,7 @@ jobs:
       - name: Run tests on original package without patches
         id: test_without_patch
         continue-on-error: true
-        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
+        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure'
         uses: ./.github/actions/action-run-tests
         with:
           package-path: package-repo

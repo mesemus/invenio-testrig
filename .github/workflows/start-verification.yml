@@ -19,15 +19,6 @@ on:
                 description: "Branch name for this verification"
                 required: false
                 type: string
-            verify_without_patch:
-                description: "Verify without patch if the test fails"
-                required: false
-                type: choice
-                options:
-                    - "as in config"
-                    - "true"
-                    - "false"
-                default: "as in config"
             python_version:
                 description: "Python version to use"
                 required: false
@@ -265,7 +256,6 @@ jobs:
                   gh workflow run verify-patches.yml \
                     --ref "${BRANCH_NAME}" \
                     --field config_file=config.json5 \
-                    --field verify_without_patch="${{ inputs.verify_without_patch }}" \
                     --field python_version="${{ inputs.python_version }}"
 
                   echo "✅ Verification workflow triggered on branch ${BRANCH_NAME}"
