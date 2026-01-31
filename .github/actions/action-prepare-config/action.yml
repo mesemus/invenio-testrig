@@ -1,8 +1,12 @@
-name: 'Load Test Configuration'
-description: 'Load test configuration from config.json5 and set default values'
+name: 'Prepare Config'
+description: 'Resolve pull requests and load test configuration'
 inputs:
   config_file:
-    description: 'Path to config file'
+    description: 'Path to config.json5 file'
+    required: false
+    default: 'config.json5'
+  config_resolved:
+    description: 'Path to resolved config file'
     required: false
     default: 'config-resolved.json'
 outputs:
@@ -18,7 +22,7 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - name: Load configuration
+    - name: Prepare configuration
       id: load
       shell: bash
       run: |
@@ -28,10 +32,7 @@ runs:
         fi
         
         CONFIG_FILE="${{ inputs.config_file }}"
+        RESOLVED_CONFIG="${{ inputs.config_resolved }}"
         
-        # Use Python script to parse JSON5 and extract values with defaults
-        # Output goes directly to GITHUB_OUTPUT
-        $TOOLS_PYTHON scripts/load_test_config.py "$CONFIG_FILE" >> $GITHUB_OUTPUT
-        
-        # Echo the loaded values for logging
-        echo "Loaded configuration from $CONFIG_FILE"
+        # Run the script to resolve PRs and load config (outputs to GITHUB_OUTPUT)
+        $TOOLS_PYTHON scripts/prepare_config.py "$CONFIG_FILE" "$RESOLVED_CONFIG" >> $GITHUB_OUTPUT

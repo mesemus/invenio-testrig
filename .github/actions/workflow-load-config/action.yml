@@ -39,10 +39,12 @@ runs:
       with:
         python-version: ${{ inputs.python_version }}
 
-    - name: Resolve pull requests
-      uses: ./.github/actions/action-resolve-pull-requests
+    - name: Prepare configuration
+      id: load
+      uses: ./.github/actions/action-prepare-config
       with:
         config_file: ${{ inputs.config_file }}
+        config_resolved: ${{ inputs.config_resolved }}
 
     - name: Upload resolved config
       uses: actions/upload-artifact@v4
@@ -50,9 +52,3 @@ runs:
         name: resolved-config
         path: config-resolved.json
         retention-days: 1
-
-    - name: Load configuration
-      id: load
-      uses: ./.github/actions/action-load-test-config
-      with:
-        config_file: ${{ inputs.config_resolved }}

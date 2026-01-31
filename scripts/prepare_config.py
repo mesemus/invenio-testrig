@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Resolve pull request URLs in config.json5 to git+branch format.
+Prepare configuration: resolve pull request URLs and load test configuration.
 
-This script reads a config.json5 file, identifies patches specified as GitHub PR URLs,
-resolves them to git+branch format by fetching PR information from GitHub API,
-and saves the modified configuration.
+This script reads a config.json5 file, resolves GitHub PR URLs to git+branch format,
+saves the resolved configuration, and outputs test configuration values for GitHub Actions.
+
+Usage: prepare_config.py <input_config.json5> <output_config.json>
+
+Outputs key=value pairs for GitHub Actions to stdout.
 """
 
 import json
@@ -22,18 +25,12 @@ def load_config(config_path):
         return json5.load(f)
 
 
-def output_config(config, output_path):
-    """Output config to file or stdout."""
-    if output_path == "-":
-        # Print to stdout
-        json.dump(config, sys.stdout, indent=4)
-        sys.stdout.write("\n")
-    else:
-        # Save to file
-        output_file = Path(output_path)
-        with output_file.open("w") as f:
-            json.dump(config, f, indent=4)
-            f.write("\n")
+def save_config(config, output_path):
+    """Save config to JSON file."""
+    output_file = Path(output_path)
+    with output_file.open("w") as f:
+        json.dump(config, f, indent=4)
+        f.write("\n")
 
 
 def is_github_pr_reference(ref):
@@ -145,42 +142,61 @@ def resolve_pull_requests(config):
     return modified
 
 
+def output_test_config(config):
+    """Output test configuration values for GitHub Actions."""
+    # Extract values with defaults
+    test_name = config.get("name", "")
+    test_timeout = config.get("test_timeout", 90)
+    packages = config.get("packages", [])
+
+    # Convert packages list to space-separated string
+    packages_str = " ".join(packages) if packages else ""
+
+    # Output to stdout for parsing by GitHub Actions
+    print(f"test_name={test_name}")
+    print(f"test_timeout={test_timeout}")
+    print(f"packages={packages_str}")
+
+
 def main():
     """Main entry point."""
-    if len(sys.argv) < 2 or len(sys.argv) > 3:
+    if len(sys.argv) != 3:
         print(
-            "Usage: resolve_pull_requests.py <config.json5> [output_file]",
-            file=sys.stderr,
-        )
-        print(
-            "  If output_file is not provided, the output will be print to stdout",
+            "Usage: prepare_config.py <input_config.json5> <output_config.json>",
             file=sys.stderr,
         )
         sys.exit(1)
 
     config_path = Path(sys.argv[1])
-    output_path = sys.argv[2] if len(sys.argv) == 3 else None
+    output_path = Path(sys.argv[2])
 
     if not config_path.exists():
         print(f"Error: Config file not found: {config_path}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Loading config from: {config_path}", file=sys.stderr)
-    config = load_config(config_path)
+    try:
+        print(f"Loading config from: {config_path}", file=sys.stderr)
+        config = load_config(config_path)
 
-    print("\nResolving pull requests...", file=sys.stderr)
-    modified = resolve_pull_requests(config)
+        print("\nResolving pull requests...", file=sys.stderr)
+        modified = resolve_pull_requests(config)
 
-    if not modified:
-        print("\nNo pull request references found to resolve", file=sys.stderr)
+        if not modified:
+            print("No pull request references found to resolve", file=sys.stderr)
 
-    print(
-        f"\nSaving config to: {output_path if output_path else '-'}",
-        file=sys.stderr,
-    )
-    output_config(config, output_path if output_path else "-")
+        print(f"\nSaving resolved config to: {output_path}", file=sys.stderr)
+        save_config(config, output_path)
+        print("✓ Config saved successfully", file=sys.stderr)
 
-    print("✓ Config saved successfully", file=sys.stderr)
+        print("\nOutputting test configuration...", file=sys.stderr)
+        output_test_config(config)
+
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        import traceback
+
+        traceback.print_exc()
+        sys.exit(1)
 
 
 if __name__ == "__main__":
