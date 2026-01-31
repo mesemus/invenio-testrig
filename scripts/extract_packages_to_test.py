@@ -11,8 +11,6 @@ import json
 import re
 import sys
 
-import json5
-
 
 def parse_uv_lock(lock_file_path):
     """Parse uv.lock file and extract package names."""
@@ -31,9 +29,9 @@ def parse_uv_lock(lock_file_path):
 
 
 def load_config(config_path):
-    """Load repository configuration from JSON5."""
+    """Load repository configuration from JSON."""
     with open(config_path, "r") as f:
-        return json5.load(f)
+        return json.load(f)
 
 
 def filter_packages(packages, config):
@@ -80,7 +78,7 @@ def main():
         description="Extract Invenio packages to test from uv.lock"
     )
     parser.add_argument("lock_file", help="Path to uv.lock file")
-    parser.add_argument("config_file", help="Path to config.json5 file")
+    parser.add_argument("config_file", help="Path to config.json file")
     parser.add_argument("output_file", help="Path to output shell script file")
     parser.add_argument(
         "--filter-packages",

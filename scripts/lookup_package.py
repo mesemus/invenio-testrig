@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Lookup package repository information from config.json5.
+Lookup package repository information from config.json.
 
-Usage: lookup_package.py <config.json5> <package-name>
+Usage: lookup_package.py <config.json> <package-name>
 
 Outputs bash-compatible environment variable assignments:
   original_repository_url="..."
@@ -11,11 +11,10 @@ Outputs bash-compatible environment variable assignments:
   patched_repository_branch="..."
 """
 
+import json
 import re
 import sys
 from pathlib import Path
-
-import json5
 
 
 def package_matches(package_name: str, regexes: list[str]) -> bool:
@@ -31,9 +30,9 @@ def package_matches(package_name: str, regexes: list[str]) -> bool:
 def lookup_package(config_path: Path, package_name: str) -> None:
     """Look up package information and return repository URLs and branches."""
 
-    # Load config.json5 with json5
+    # Load config.json
     with config_path.open("r") as f:
-        config = json5.load(f)
+        config = json.load(f)
 
     # Get patches from config
     patches = config.get("patches", {})
@@ -83,7 +82,7 @@ def lookup_package(config_path: Path, package_name: str) -> None:
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print(
-            "Usage: lookup_package.py <config.json5> <package-name>",
+            "Usage: lookup_package.py <config.json> <package-name>",
             file=sys.stderr,
         )
         sys.exit(1)

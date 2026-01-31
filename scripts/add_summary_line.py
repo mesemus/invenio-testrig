@@ -10,11 +10,10 @@ The test_name is an optional description of the test run.
 The patches_json_path is used to extract the list of tested patches.
 """
 
+import json
 import re
 import sys
 from pathlib import Path
-
-import json5
 
 
 def get_tested_patches(config_path: Path) -> str:
@@ -24,14 +23,14 @@ def get_tested_patches(config_path: Path) -> str:
 
     try:
         with config_path.open("r", encoding="utf-8") as f:
-            config = json5.load(f)
+            config = json.load(f)
 
         # Get the patches section and extract package names
         patches = config.get("patches", {})
         patch_names = list(patches.keys())
         return ", ".join(sorted(patch_names)) if patch_names else ""
     except Exception as e:
-        print(f"Warning: Could not read config.json5: {e}", file=sys.stderr)
+        print(f"Warning: Could not read config.json: {e}", file=sys.stderr)
         return ""
 
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Apply patches from config.json5 to packages in a virtual environment.
+Apply patches from config.json to packages in a virtual environment.
 
-Usage: apply_patches.py <package_name> <venv_path> <config.json5> <variables.sh>
+Usage: apply_patches.py <package_name> <venv_path> <config.json> <variables.sh>
 
 Checks which packages from config (patches key) are installed in the virtual environment,
 installs patched versions (excluding the package being tested), and outputs results to variables.sh.
@@ -12,8 +12,6 @@ import json
 import subprocess
 import sys
 from pathlib import Path
-
-import json5
 
 
 def get_venv_python(venv_path: Path) -> Path:
@@ -43,7 +41,7 @@ def apply_patches(
 
     # Load config and get patches
     with config_path.open("r") as f:
-        config = json5.load(f)
+        config = json.load(f)
     patches = config.get("patches", {})
 
     # Get Python executable and installed packages
@@ -115,7 +113,7 @@ def apply_patches(
 if __name__ == "__main__":
     if len(sys.argv) != 5:
         print(
-            "Usage: apply_patches.py <package_name> <venv_path> <config.json5> <variables.sh>",
+            "Usage: apply_patches.py <package_name> <venv_path> <config.json> <variables.sh>",
             file=sys.stderr,
         )
         sys.exit(1)

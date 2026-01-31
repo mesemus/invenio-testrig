@@ -14,7 +14,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-import json5
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -176,13 +175,13 @@ def calculate_statistics(artifacts_dir: Path) -> dict[str, int]:
 
 
 def load_configured_patches(config_path: Path) -> list[dict[str, str]]:
-    """Load configured patches from config.json5."""
+    """Load configured patches from config.json."""
     if not config_path.exists():
         return []
 
     try:
         with config_path.open("r") as f:
-            config = json5.load(f)
+            config = json.load(f)
         patches_data = config.get("patches", {})
 
         configured_patches = []
@@ -207,7 +206,7 @@ def load_configured_patches(config_path: Path) -> list[dict[str, str]]:
 
         return configured_patches
     except Exception as e:
-        print(f"Warning: Could not read config.json5: {e}", file=sys.stderr)
+        print(f"Warning: Could not read config.json: {e}", file=sys.stderr)
         return []
 
 
