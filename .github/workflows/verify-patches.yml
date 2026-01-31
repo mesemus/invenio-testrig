@@ -48,65 +48,23 @@ jobs:
     name: Load Test Configuration
     runs-on: ubuntu-latest
     outputs:
-      test_name: ${{ steps.load.outputs.test_name }}
-      run_original_tests: ${{ steps.override.outputs.run_original_tests }}
-      test_timeout: ${{ steps.load.outputs.test_timeout }}
-      packages: ${{ steps.load.outputs.packages }}
-      initial_commit: ${{ steps.capture_commit.outputs.initial_commit }}
+      test_name: ${{ steps.load_config.outputs.test_name }}
+      run_original_tests: ${{ steps.load_config.outputs.run_original_tests }}
+      test_timeout: ${{ steps.load_config.outputs.test_timeout }}
+      packages: ${{ steps.load_config.outputs.packages }}
+      initial_commit: ${{ steps.load_config.outputs.initial_commit }}
     steps:
       - name: Checkout verification repository
         uses: actions/checkout@v4
 
-      - name: Capture initial commit
-        id: capture_commit
-        run: |
-          INITIAL_COMMIT=$(git rev-parse HEAD)
-          echo "initial_commit=$INITIAL_COMMIT" >> $GITHUB_OUTPUT
-          echo "Initial commit: $INITIAL_COMMIT"
-
-      - name: Setup Python and UV
-        uses: ./.github/actions/install-python
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-
-      - name: Resolve pull requests
-        uses: ./.github/actions/resolve-pull-requests
+      - name: Load configuration
+        id: load_config
+        uses: ./.github/actions/workflow-load-config
         with:
           config_file: ${{ inputs.config_file }}
-
-      - name: Upload resolved config
-        uses: actions/upload-artifact@v4
-        with:
-          name: resolved-config
-          path: config-resolved.json
-          retention-days: 1
-
-      - name: Load configuration
-        id: load
-        uses: ./.github/actions/load-test-config
-        with:
-          config_file: ${{ env.CONFIG_RESOLVED }}
-
-      - name: Override run_original_tests from input
-        id: override
-        run: |
-          # Use input parameter value:
-          # "as in config" - use the config file value
-          # "true" - always run original tests
-          # "false" - never run original tests
-          INPUT_VALUE="${{ inputs.verify_without_patch }}"
-          CONFIG_VALUE="${{ steps.load.outputs.run_original_tests }}"
-
-          if [ "$INPUT_VALUE" = "true" ]; then
-            echo "run_original_tests=true" >> $GITHUB_OUTPUT
-            echo "Using run_original_tests: true (from input)"
-          elif [ "$INPUT_VALUE" = "false" ]; then
-            echo "run_original_tests=false" >> $GITHUB_OUTPUT
-            echo "Using run_original_tests: false (from input)"
-          else
-            echo "run_original_tests=$CONFIG_VALUE" >> $GITHUB_OUTPUT
-            echo "Using run_original_tests: $CONFIG_VALUE (from config)"
-          fi
+          verify_without_patch: ${{ inputs.verify_without_patch }}
+          python_version: ${{ env.PYTHON_VERSION }}
+          config_resolved: ${{ env.CONFIG_RESOLVED }}
 
   create_report_directory:
     name: Create Report Directory
@@ -115,132 +73,43 @@ jobs:
     permissions:
       contents: write
     outputs:
-      report_dir: ${{ steps.create_dir.outputs.report_dir }}
-      report_file: ${{ steps.create_dir.outputs.report_file }}
-      report_timestamp: ${{ steps.create_dir.outputs.report_timestamp }}
+      report_dir: ${{ steps.create_report.outputs.report_dir }}
+      report_file: ${{ steps.create_report.outputs.report_file }}
+      report_timestamp: ${{ steps.create_report.outputs.report_timestamp }}
 
     steps:
       - name: Checkout invenio-testrig repository
         uses: actions/checkout@v4
 
-      - name: Download modified config
-        uses: actions/download-artifact@v4
-        with:
-          name: resolved-config
-          path: .
-
-      - name: Setup Python and UV
-        uses: ./.github/actions/install-python
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-
       - name: Create report directory
-        id: create_dir
-        run: |
-          REPORT_TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
-          REPORT_DIR=reports/results/$REPORT_TIMESTAMP
-          REPORT_FILE=$REPORT_DIR/report.md
-          echo "Report directory: $REPORT_DIR"
-          echo "Report file: $REPORT_FILE"
-          echo "report_dir=$REPORT_DIR" >> $GITHUB_OUTPUT
-          echo "report_file=$REPORT_FILE" >> $GITHUB_OUTPUT
-          echo "report_timestamp=$REPORT_TIMESTAMP" >> $GITHUB_OUTPUT
-          echo "REPORT_DIR=$REPORT_DIR" >> $GITHUB_ENV
-          echo "REPORT_FILE=$REPORT_FILE" >> $GITHUB_ENV
-          echo "REPORT_TIMESTAMP=$REPORT_TIMESTAMP" >> $GITHUB_ENV
-
-      - name: Commit initial report directory
-        uses: ./.github/actions/create-initial-report-directory
+        id: create_report
+        uses: ./.github/actions/workflow-create-report-directory
         with:
-          report_dir: ${{ steps.create_dir.outputs.report_dir }}
-          report_file: ${{ steps.create_dir.outputs.report_file }}
-
-      - name: Create report artifact metadata
-        run: |
-          mkdir -p artifacts/
-          echo "{\"report_directory\": \"${{ steps.create_dir.outputs.report_dir }}\"}" > artifacts/report.json
-
-      - name: Upload report artifact metadata
-        uses: actions/upload-artifact@v4
-        with:
-          name: create_report_directory
-          path: artifacts/
-          retention-days: 1
-
-      - name: Generate initial report
-        uses: ./.github/actions/generate-report
-        with:
-          report_dir: ${{ steps.create_dir.outputs.report_dir }}
-          report_file: ${{ steps.create_dir.outputs.report_file }}
-          report_timestamp: ${{ steps.create_dir.outputs.report_timestamp }}
+          python_version: ${{ env.PYTHON_VERSION }}
+          config_resolved: ${{ env.CONFIG_RESOLVED }}
           test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ env.CONFIG_RESOLVED }}
-          add_report_summary: true
 
   extract_tested_packages:
     name: Extract Invenio Packages
     needs: load_config
     runs-on: ubuntu-latest
     outputs:
-      packages: ${{ steps.extract.outputs.packages }}
-      done_packages: ${{ steps.extract.outputs.done_packages }}
-      previous_report: ${{ steps.extract.outputs.previous_report }}
+      packages: ${{ steps.extract_packages.outputs.packages }}
+      done_packages: ${{ steps.extract_packages.outputs.done_packages }}
+      previous_report: ${{ steps.extract_packages.outputs.previous_report }}
 
     steps:
       - name: Checkout invenio-testrig repository
         uses: actions/checkout@v4
 
-      - name: Download modified config
-        uses: actions/download-artifact@v4
+      - name: Extract packages
+        id: extract_packages
+        uses: ./.github/actions/workflow-extract-tested-packages
         with:
-          name: resolved-config
-          path: .
-
-      - name: Setup Python and UV
-        uses: ./.github/actions/install-python
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-
-      - name: Clone Zenodo RDM repository
-        run: |
-          echo "::group::Cloning zenodo-rdm repository"
-          git clone --depth 1 https://github.com/zenodo/zenodo-rdm.git
-          echo "::endgroup::"
-          echo "✓ zenodo-rdm repository cloned"
-
-      - name: Extract Invenio packages from uv.lock
-        id: extract
-        run: |
-          # Determine if we should continue from previous run
-          opts=()
-
-          if [ "${{ inputs.continue_from_previous }}" = "true" ]; then
-            # Find the most recent report directory
-            PREVIOUS_REPORT=$(ls -d reports/results/*/ 2>/dev/null | sort -r | head -n 1 || echo "")
-
-            if [ -n "$PREVIOUS_REPORT" ]; then
-              echo "Continuing from previous report: $PREVIOUS_REPORT"
-              opts+=("--previous-report" "$PREVIOUS_REPORT")
-            fi
-          fi
-
-          # Add package filter if provided
-          if [ -n "${{ needs.load_config.outputs.packages }}" ]; then
-            echo "Filtering packages: ${{ needs.load_config.outputs.packages }}"
-            opts+=("--filter-packages" ${{ needs.load_config.outputs.packages }})
-          fi
-
-          $TOOLS_PYTHON scripts/extract_packages_to_test.py zenodo-rdm/uv.lock "${{ env.CONFIG_RESOLVED }}" packages.sh ${opts[@]}
-
-          # Source the output variables
-          source packages.sh
-
-          # packages is already a JSON array
-          echo "Found packages: $packages"
-          echo "Already tested packages: $done_packages"
-          echo "packages=$packages" >> $GITHUB_OUTPUT
-          echo "done_packages=$done_packages" >> $GITHUB_OUTPUT
-          echo "previous_report=$PREVIOUS_REPORT" >> $GITHUB_OUTPUT
+          python_version: ${{ env.PYTHON_VERSION }}
+          config_resolved: ${{ env.CONFIG_RESOLVED }}
+          continue_from_previous: ${{ inputs.continue_from_previous }}
+          filter_packages: ${{ needs.load_config.outputs.packages }}
 
   test_packages:
     name: Test ${{ matrix.package }}
@@ -270,7 +139,7 @@ jobs:
           path: .
 
       - name: Setup Python and UV
-        uses: ./.github/actions/install-python
+        uses: ./.github/actions/action-install-python
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
@@ -308,7 +177,7 @@ jobs:
       # we start by cloning the package (possibly patched) to run tests on patch at first
       - name: Clone package repository for patched (possibly) package tests
         continue-on-error: true
-        uses: ./.github/actions/clone-package
+        uses: ./.github/actions/action-clone-package
         with:
           repository-url: ${{ steps.load_patches.outputs.patched_repository_url }}
           repository-branch: ${{ steps.load_patches.outputs.patched_repository_branch }}
@@ -317,7 +186,7 @@ jobs:
       - name: Setup virtual environment and install dependencies
         if: env.SO_FAR_OK == '1'
         continue-on-error: true
-        uses: ./.github/actions/setup-venv
+        uses: ./.github/actions/action-setup-venv
         with:
           package-path: package-repo
           extras: ${{ env.EXTRAS }}
@@ -325,14 +194,14 @@ jobs:
 
       - name: Dump original requirements
         if: env.SO_FAR_OK == '1' && ( steps.load_patches.outputs.has_patch == 'false' )
-        uses: ./.github/actions/dump-requirements
+        uses: ./.github/actions/action-dump-requirements
         with:
           package-path: package-repo
           requirement-type: original
 
       - name: Dump requirements of original package with sources patched
         if: env.SO_FAR_OK == '1' && ( steps.load_patches.outputs.has_patch == 'true' )
-        uses: ./.github/actions/dump-requirements
+        uses: ./.github/actions/action-dump-requirements
         with:
           package-path: package-repo
           requirement-type: patched
@@ -362,7 +231,7 @@ jobs:
 
       - name: Dump requirements for package with patched dependencies
         if: env.SO_FAR_OK == '1' && ( steps.check_patch.outputs.applies == 'true' )
-        uses: ./.github/actions/dump-requirements
+        uses: ./.github/actions/action-dump-requirements
         with:
           package-path: package-repo
           requirement-type: patched-dependencies
@@ -371,7 +240,7 @@ jobs:
         id: test_with_patch
         continue-on-error: true
         if: env.SO_FAR_OK == '1' && ( steps.check_patch.outputs.applies == 'true' || steps.load_patches.outputs.has_patch == 'true' )
-        uses: ./.github/actions/run-tests
+        uses: ./.github/actions/action-run-tests
         with:
           package-path: package-repo
           package-name: ${{ matrix.package }}
@@ -384,7 +253,7 @@ jobs:
       - name: Clone package repository for tests without patches
         continue-on-error: true
         if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
-        uses: ./.github/actions/clone-package
+        uses: ./.github/actions/action-clone-package
         with:
           repository-url: ${{ steps.load_patches.outputs.original_repository_url }}
           repository-branch: ${{ steps.load_patches.outputs.original_repository_branch }}
@@ -393,7 +262,7 @@ jobs:
       - name: Setup virtual environment and install dependencies for original package tests
         if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
         continue-on-error: true
-        uses: ./.github/actions/setup-venv
+        uses: ./.github/actions/action-setup-venv
         with:
           package-path: package-repo
           extras: ${{ env.EXTRAS }}
@@ -403,7 +272,7 @@ jobs:
         id: test_without_patch
         continue-on-error: true
         if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure' && needs.load_config.outputs.run_original_tests == 'true'
-        uses: ./.github/actions/run-tests
+        uses: ./.github/actions/action-run-tests
         with:
           package-path: package-repo
           package-name: ${{ matrix.package }}
@@ -416,7 +285,7 @@ jobs:
         if: env.SO_FAR_OK == '1'
         id: compare
         continue-on-error: true
-        uses: ./.github/actions/compare-test-results
+        uses: ./.github/actions/action-compare-test-results
         with:
           artifacts_dir: artifacts
 
@@ -472,7 +341,7 @@ jobs:
       # as the action downloads all actual artifacts
       - name: Push individual package report
         if: always()
-        uses: ./.github/actions/generate-report
+        uses: ./.github/actions/action-generate-report
         with:
           report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
           report_file: ${{ needs.create_report_directory.outputs.report_file }}
@@ -544,7 +413,7 @@ jobs:
       # as the action downloads all actual artifacts
       - name: Push individual package report
         if: always()
-        uses: ./.github/actions/generate-report
+        uses: ./.github/actions/action-generate-report
         with:
           report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
           report_file: ${{ needs.create_report_directory.outputs.report_file }}
@@ -575,12 +444,12 @@ jobs:
           path: .
 
       - name: Setup Python and UV
-        uses: ./.github/actions/install-python
+        uses: ./.github/actions/action-install-python
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Generate and push report
-        uses: ./.github/actions/generate-report
+        uses: ./.github/actions/action-generate-report
         with:
           report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
           report_file: ${{ needs.create_report_directory.outputs.report_file }}
@@ -590,7 +459,7 @@ jobs:
           report_status: finished
 
       - name: Squash all commits
-        uses: ./.github/actions/squash-commits
+        uses: ./.github/actions/action-squash-commits
         with:
           initial_commit: ${{ needs.load_config.outputs.initial_commit }}
           report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}

@@ -1,0 +1,86 @@
+name: 'Workflow Load Config'
+description: 'Load and resolve test configuration with all necessary setup'
+inputs:
+  config_file:
+    description: 'Path to config file (JSON5 format)'
+    required: true
+  verify_without_patch:
+    description: 'Verify without patch if the test fails (as in config/true/false)'
+    required: true
+  python_version:
+    description: 'Python version to use'
+    required: true
+  config_resolved:
+    description: 'Path to resolved config file'
+    required: true
+outputs:
+  test_name:
+    description: 'Name of the test run'
+    value: ${{ steps.load.outputs.test_name }}
+  run_original_tests:
+    description: 'Whether to run original tests when patched tests fail'
+    value: ${{ steps.override.outputs.run_original_tests }}
+  test_timeout:
+    description: 'Timeout in minutes for each test run'
+    value: ${{ steps.load.outputs.test_timeout }}
+  packages:
+    description: 'Space-separated list of packages to test (empty for all)'
+    value: ${{ steps.load.outputs.packages }}
+  initial_commit:
+    description: 'Initial commit SHA'
+    value: ${{ steps.capture_commit.outputs.initial_commit }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Capture initial commit
+      id: capture_commit
+      shell: bash
+      run: |
+        INITIAL_COMMIT=$(git rev-parse HEAD)
+        echo "initial_commit=$INITIAL_COMMIT" >> $GITHUB_OUTPUT
+        echo "Initial commit: $INITIAL_COMMIT"
+
+    - name: Setup Python and UV
+      uses: ./.github/actions/action-install-python
+      with:
+        python-version: ${{ inputs.python_version }}
+
+    - name: Resolve pull requests
+      uses: ./.github/actions/action-resolve-pull-requests
+      with:
+        config_file: ${{ inputs.config_file }}
+
+    - name: Upload resolved config
+      uses: actions/upload-artifact@v4
+      with:
+        name: resolved-config
+        path: config-resolved.json
+        retention-days: 1
+
+    - name: Load configuration
+      id: load
+      uses: ./.github/actions/action-load-test-config
+      with:
+        config_file: ${{ inputs.config_resolved }}
+
+    - name: Override run_original_tests from input
+      id: override
+      shell: bash
+      run: |
+        # Use input parameter value:
+        # "as in config" - use the config file value
+        # "true" - always run original tests
+        # "false" - never run original tests
+        INPUT_VALUE="${{ inputs.verify_without_patch }}"
+        CONFIG_VALUE="${{ steps.load.outputs.run_original_tests }}"
+
+        if [ "$INPUT_VALUE" = "true" ]; then
+          echo "run_original_tests=true" >> $GITHUB_OUTPUT
+          echo "Using run_original_tests: true (from input)"
+        elif [ "$INPUT_VALUE" = "false" ]; then
+          echo "run_original_tests=false" >> $GITHUB_OUTPUT
+          echo "Using run_original_tests: false (from input)"
+        else
+          echo "run_original_tests=$CONFIG_VALUE" >> $GITHUB_OUTPUT
+          echo "Using run_original_tests: $CONFIG_VALUE (from config)"
+        fi

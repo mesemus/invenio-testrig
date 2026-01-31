@@ -1,0 +1,80 @@
+name: 'Workflow Create Report Directory'
+description: 'Create report directory and generate initial report'
+inputs:
+  python_version:
+    description: 'Python version to use'
+    required: true
+  config_resolved:
+    description: 'Path to resolved config file'
+    required: true
+  test_name:
+    description: 'Name of the test run'
+    required: true
+outputs:
+  report_dir:
+    description: 'Report directory path'
+    value: ${{ steps.create_dir.outputs.report_dir }}
+  report_file:
+    description: 'Report file path'
+    value: ${{ steps.create_dir.outputs.report_file }}
+  report_timestamp:
+    description: 'Report timestamp'
+    value: ${{ steps.create_dir.outputs.report_timestamp }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Download modified config
+      uses: actions/download-artifact@v4
+      with:
+        name: resolved-config
+        path: .
+
+    - name: Setup Python and UV
+      uses: ./.github/actions/action-install-python
+      with:
+        python-version: ${{ inputs.python_version }}
+
+    - name: Create report directory
+      id: create_dir
+      shell: bash
+      run: |
+        REPORT_TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+        REPORT_DIR=reports/results/$REPORT_TIMESTAMP
+        REPORT_FILE=$REPORT_DIR/report.md
+        echo "Report directory: $REPORT_DIR"
+        echo "Report file: $REPORT_FILE"
+        echo "report_dir=$REPORT_DIR" >> $GITHUB_OUTPUT
+        echo "report_file=$REPORT_FILE" >> $GITHUB_OUTPUT
+        echo "report_timestamp=$REPORT_TIMESTAMP" >> $GITHUB_OUTPUT
+        echo "REPORT_DIR=$REPORT_DIR" >> $GITHUB_ENV
+        echo "REPORT_FILE=$REPORT_FILE" >> $GITHUB_ENV
+        echo "REPORT_TIMESTAMP=$REPORT_TIMESTAMP" >> $GITHUB_ENV
+
+    - name: Commit initial report directory
+      uses: ./.github/actions/action-create-initial-report-directory
+      with:
+        report_dir: ${{ steps.create_dir.outputs.report_dir }}
+        report_file: ${{ steps.create_dir.outputs.report_file }}
+
+    - name: Create report artifact metadata
+      shell: bash
+      run: |
+        mkdir -p artifacts/
+        echo "{\"report_directory\": \"${{ steps.create_dir.outputs.report_dir }}\"}" > artifacts/report.json
+
+    - name: Upload report artifact metadata
+      uses: actions/upload-artifact@v4
+      with:
+        name: create_report_directory
+        path: artifacts/
+        retention-days: 1
+
+    - name: Generate initial report
+      uses: ./.github/actions/action-generate-report
+      with:
+        report_dir: ${{ steps.create_dir.outputs.report_dir }}
+        report_file: ${{ steps.create_dir.outputs.report_file }}
+        report_timestamp: ${{ steps.create_dir.outputs.report_timestamp }}
+        test_name: ${{ inputs.test_name }}
+        config_file: ${{ inputs.config_resolved }}
+        add_report_summary: true
