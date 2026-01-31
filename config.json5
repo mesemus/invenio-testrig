@@ -6,7 +6,7 @@
         // Format: "package-name": { "git": "git-url", "branch": "branch-name" }
         "pytest-invenio": {
             "git": "https://github.com/oarepo/pytest-invenio.git",
-            "branch": "nested-db-session-rollback"
+            "branch": "master"
         }
         // Add more patches here as needed
     },
