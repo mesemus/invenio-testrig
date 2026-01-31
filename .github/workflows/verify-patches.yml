@@ -66,6 +66,13 @@ jobs:
         with:
           config_file: ${{ inputs.config_file }}
 
+      - name: Upload modified config
+        uses: actions/upload-artifact@v4
+        with:
+          name: resolved-config
+          path: ${{ inputs.config_file }}
+          retention-days: 1
+
       - name: Load configuration
         id: load
         uses: ./.github/actions/load-test-config
@@ -107,6 +114,12 @@ jobs:
     steps:
       - name: Checkout invenio-testrig repository
         uses: actions/checkout@v4
+
+      - name: Download modified config
+        uses: actions/download-artifact@v4
+        with:
+          name: resolved-config
+          path: .
 
       - name: Setup Python and UV
         uses: ./.github/actions/install-python
@@ -217,6 +230,12 @@ jobs:
       - name: Checkout invenio-testrig repository
         uses: actions/checkout@v4
 
+      - name: Download modified config
+        uses: actions/download-artifact@v4
+        with:
+          name: resolved-config
+          path: .
+
       - name: Setup Python and UV
         uses: ./.github/actions/install-python
         with:
@@ -283,6 +302,12 @@ jobs:
     steps:
       - name: Checkout invenio-testrig repository
         uses: actions/checkout@v4
+
+      - name: Download modified config
+        uses: actions/download-artifact@v4
+        with:
+          name: resolved-config
+          path: .
 
       - name: Setup Python and UV
         uses: ./.github/actions/install-python
@@ -643,6 +668,12 @@ jobs:
     steps:
       - name: Checkout invenio-testrig repository
         uses: actions/checkout@v4
+
+      - name: Download modified config
+        uses: actions/download-artifact@v4
+        with:
+          name: resolved-config
+          path: .
 
       - name: Setup Python and UV
         uses: ./.github/actions/install-python
