@@ -99,6 +99,36 @@ def get_pr_info(owner, repo, pr_number):
         return None, None, None, None
 
 
+def resolve_branch_reference(ref_str, context_name=""):
+    """Convert org/repo@branch reference to git+branch dict format.
+
+    Args:
+        ref_str: String in format org/repo or org/repo@branch
+        context_name: Name for logging purposes (e.g., package name or field name)
+
+    Returns:
+        dict with 'git' and 'branch' keys, or None if not a valid format
+    """
+    # Check if it matches org/repo@branch pattern
+    branch_pattern = r"^([^/]+)/([^/@]+)(?:@(.+))?$"
+    match = re.match(branch_pattern, ref_str)
+
+    if match:
+        owner, repo, branch = match.groups()
+        git_url = f"https://github.com/{owner}/{repo}.git"
+        # Default to empty string (default branch) if no branch specified
+        branch = branch or ""
+
+        log_msg = f"{context_name}: {ref_str} -> {git_url}"
+        if branch:
+            log_msg += f" @ {branch}"
+        print(f"Resolved {log_msg}", file=sys.stderr)
+
+        return {"git": git_url, "branch": branch}
+
+    return None
+
+
 def resolve_branches(config):
     """Resolve branch string references (org/repo@branch) to git+branch format."""
     patches = config.get("patches") or {}
@@ -106,18 +136,9 @@ def resolve_branches(config):
     for package_name, patch_info in list(patches.items()):
         # PR references have already been handled at this point
         if isinstance(patch_info, str):
-            # Check if it matches org/repo@branch pattern
-            branch_pattern = r"^([^/]+)/([^/@]+)@(.+)$"
-            match = re.match(branch_pattern, patch_info)
-
-            if match:
-                owner, repo, branch = match.groups()
-                git_url = f"https://github.com/{owner}/{repo}.git"
-                patches[package_name] = {"git": git_url, "branch": branch}
-                print(
-                    f"Resolved {package_name}: {patch_info} -> {git_url} @ {branch}",
-                    file=sys.stderr,
-                )
+            resolved = resolve_branch_reference(patch_info, package_name)
+            if resolved:
+                patches[package_name] = resolved
             else:
                 print(
                     f"Error: Invalid patch format for {package_name}: '{patch_info}'",
@@ -128,6 +149,16 @@ def resolve_branches(config):
                     file=sys.stderr,
                 )
                 sys.exit(1)
+
+    # Handle e2e_repository fields
+    e2e_repo = config.get("e2e_repository")
+    if e2e_repo:
+        for field in ["git", "e2e_git"]:
+            value = e2e_repo.get(field)
+            if value and isinstance(value, str):
+                resolved = resolve_branch_reference(value, f"e2e_repository.{field}")
+                if resolved:
+                    e2e_repo[field] = resolved
 
 
 def resolve_pull_requests(config):

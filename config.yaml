@@ -34,3 +34,10 @@ repositories:
     exclude-package-regexes:
       - "invenio-xrootd"
       - "invenio-swh"
+
+e2e_repository:
+  # the repositories below can be:
+  # org/repo with optional @branch
+  # org/repo#pr-number for pull requests
+  git: samk13/invenio-dev-latest
+  e2e_git: oarepo/invenio-e2e

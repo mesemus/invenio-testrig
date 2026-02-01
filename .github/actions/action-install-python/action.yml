@@ -27,11 +27,12 @@ runs:
         echo "::group::Creating tools virtualenv"
         uv venv .tools-venv
         source .tools-venv/bin/activate
-        uv pip install --python .tools-venv/bin/python jinja2 pyyaml
+        uv pip install --python .tools-venv/bin/python jinja2 pyyaml invenio-cli
         echo "::endgroup::"
-        echo "✓ Tools virtualenv created with jinja2 and pyyaml"
+        echo "✓ Tools virtualenv created with jinja2, pyyaml and invenio-cli"
         
         # Set environment variable for tools Python
         TOOLS_PYTHON="$(pwd)/.tools-venv/bin/python"
         echo "TOOLS_PYTHON=$TOOLS_PYTHON" >> $GITHUB_ENV
+        echo "TOOLS_BIN=$(pwd)/.tools-venv/bin" >> $GITHUB_ENV
         echo "Tools Python available at: $TOOLS_PYTHON"
