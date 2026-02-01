@@ -153,14 +153,9 @@ jobs:
                   cd "${{ env.REPOSITORY_E2E_ROOT }}"
 
                   # Check if e2e directory exists in the main repository
-                  if [ ! -d "repo/e2e" ]; then
-                    echo "Creating e2e directory in repo"
-                    mkdir -p "repo/e2e"
-                    
-                    # Copy sample e2e structure from invenio-e2e if available
-                    if [ -d "invenio-e2e/sample-e2e" ]; then
-                      cp -r invenio-e2e/sample-e2e/* "repo/e2e/"
-                    fi
+                  # and if not, copy the default example-tests
+                  if [ ! -d "repo/e2e" ]; then                    
+                      cp -r invenio-e2e/example-tests "repo/e2e"
                   fi
 
                   echo "E2E directory structure ready"
