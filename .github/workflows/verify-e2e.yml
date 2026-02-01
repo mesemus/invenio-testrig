@@ -198,7 +198,7 @@ jobs:
                     ./run.sh install
                   else
                     # invenio rdm standard
-                    $(TOOLS_BIN)/invenio-cli install
+                    $TOOLS_BIN/invenio-cli install
                   fi
 
                   # setup services
@@ -206,7 +206,7 @@ jobs:
                   if [ -f "run.sh" ]; then
                     ./run.sh services setup
                   else
-                     $(TOOLS_BIN)/invenio-cli services setup
+                     $TOOLS_BIN/invenio-cli services setup
                   fi
 
             - name: Start Invenio server
@@ -214,22 +214,25 @@ jobs:
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
 
                   # Start the server in the background
-                  if command -v invenio-cli &> /dev/null; then
-                    nohup invenio-cli run > invenio-server.log 2>&1 &
-                    echo $! > invenio-server.pid
-                    
-                    # Wait for server to start
-                    echo "Waiting for server to start..."
-                    for i in {1..30}; do
+                  if [ -f "run.sh" ]; then
+                      # cesnet flavour
+                      nohup ./run.sh run > invenio-server.log 2>&1 &
+                      echo $! > invenio-server.pid
+                  else
+                      # invenio rdm standard
+                      nohup $TOOLS_BIN/invenio-cli run > invenio-server.log 2>&1 &
+                      echo $! > invenio-server.pid
+                  fi
+
+                  # Wait for server to start
+                  echo "Waiting for server to start..."
+                  for i in {1..30}; do
                       if curl -s http://localhost:5000 > /dev/null; then
-                        echo "Server started successfully"
-                        break
+                          echo "Server started successfully"
+                          break
                       fi
                       sleep 2
-                    done
-                  else
-                    echo "Warning: invenio-cli not found, skipping server start"
-                  fi
+                  done
 
             - name: Run E2E tests
               id: run_tests
