@@ -155,7 +155,7 @@ jobs:
                   # Check if e2e directory exists in the main repository
                   # and if not, copy the default 
                   if [ ! -d "repo/e2e" ]; then                    
-                      cp -r invenio-e2e/example-tests "repo/e2e"
+                      cp -r invenio-e2e/e2e "repo/e2e"
                   fi
 
                   echo "E2E directory structure ready"
