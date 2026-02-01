@@ -80,7 +80,7 @@ jobs:
             contents: write
             actions: read
         env:
-            REPOSITORY_E2E_ROOT: ${{ github.workspace }}/parent-directory
+            REPOSITORY_E2E_ROOT: ${{ github.workspace }}/root
 
         steps:
             - name: Checkout invenio-testrig repository
@@ -105,7 +105,7 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v4
               with:
-                  version: latest
+                  version: 9
 
             - name: Create directory structure
               run: |
@@ -174,7 +174,12 @@ jobs:
                   echo "Created pnpm-workspace.yaml:"
                   cat pnpm-workspace.yaml
 
-            - name: Install pnpm dependencies
+            - name: Install invenio-e2e
+              run: |
+                  cd "${{ env.REPOSITORY_E2E_ROOT }}/invenio-e2e"
+                  pnpm install
+
+            - name: Install e2e test dependencies
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo/e2e"
                   pnpm install
