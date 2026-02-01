@@ -242,6 +242,9 @@ jobs:
                   export INVENIO_USER_EMAIL=demo@user.org
                   export INVENIO_USER_PASSWORD=123456
 
+                  # store auth state
+                  npx playwright test tests/api/auth.setup.ts
+
                   # Run Playwright tests
                   npx playwright test --reporter=html,list
 
