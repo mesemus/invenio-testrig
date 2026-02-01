@@ -80,7 +80,7 @@ jobs:
             contents: write
             actions: read
         env:
-            REPOSITORY_E2E_ROOT: ${{ github.workspace }}/root
+            REPOSITORY_E2E_ROOT: ${{ github.workspace }}/parent-directory
 
         steps:
             - name: Checkout invenio-testrig repository
@@ -105,7 +105,7 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v4
               with:
-                  version: 9
+                  version: latest
 
             - name: Create directory structure
               run: |
@@ -153,7 +153,7 @@ jobs:
                   cd "${{ env.REPOSITORY_E2E_ROOT }}"
 
                   # Check if e2e directory exists in the main repository
-                  # and if not, copy the default example-tests
+                  # and if not, copy the default 
                   if [ ! -d "repo/e2e" ]; then                    
                       cp -r invenio-e2e/example-tests "repo/e2e"
                   fi
@@ -174,15 +174,13 @@ jobs:
                   echo "Created pnpm-workspace.yaml:"
                   cat pnpm-workspace.yaml
 
-            - name: Install invenio-e2e
-              run: |
-                  cd "${{ env.REPOSITORY_E2E_ROOT }}/invenio-e2e"
-                  pnpm install
-
-            - name: Install e2e test dependencies
+            - name: Install pnpm dependencies
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo/e2e"
                   pnpm install
+
+                  # list installed packages
+                  pnpm list
 
             - name: Install Playwright browsers
               run: |
