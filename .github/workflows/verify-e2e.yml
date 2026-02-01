@@ -242,10 +242,13 @@ jobs:
                   export INVENIO_USER_EMAIL=demo@user.org
                   export INVENIO_USER_PASSWORD=123456
 
-                  # store auth state
+                  echo "Running E2E tests in $(pwd)" 
+                  ls -lR .
+
+                  echo "Storing authentication state..."
                   npx playwright test tests/api/auth.setup.ts
 
-                  # Run Playwright tests
+                  echo "Running all E2E tests..."
                   npx playwright test --reporter=html,list
 
             - name: Stop Invenio server
