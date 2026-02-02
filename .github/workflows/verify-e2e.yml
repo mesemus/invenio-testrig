@@ -209,7 +209,10 @@ jobs:
 
                   echo "RATELIMIT_ENABLED=False" >> invenio.cfg
 
-            - name: Start Invenio server
+            - name: Run E2E tests
+              id: run_tests
+              continue-on-error: true
+              timeout-minutes: ${{ fromJson(needs.load_config.outputs.test_timeout) }}
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
 
@@ -221,6 +224,7 @@ jobs:
                   else
                       # invenio rdm standard
                       nohup $TOOLS_BIN/invenio-cli run >invenio-server.log 2>&1 &
+                      nohup $TOOLS_BIN/invenio-cli run &
                       echo $! > invenio-server.pid
                   fi
 
@@ -234,11 +238,6 @@ jobs:
                       sleep 2
                   done
 
-            - name: Run E2E tests
-              id: run_tests
-              continue-on-error: true
-              timeout-minutes: ${{ fromJson(needs.load_config.outputs.test_timeout) }}
-              run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo/e2e"
 
                   export INVENIO_USER_EMAIL=user@demo.org
