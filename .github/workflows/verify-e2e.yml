@@ -187,6 +187,14 @@ jobs:
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo/e2e"
                   npx playwright install --with-deps
 
+            - name: Create default bucket
+              run: |
+                  cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
+
+                  if [ ! -d data/default ] ; then
+                    mkdir -p data/default
+                  fi
+
             - name: Setup Invenio instance
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
@@ -213,13 +221,8 @@ jobs:
                   RATELIMIT_ENABLED=False
                   EOF
 
-            - name: Create default bucket
-              run: |
-                  cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
-
-                  if [ ! -d data/default ] ; then
-                    mkdir -p data/default
-                  fi
+                  echo "Invenio instance setup completed, running containers:" 
+                  docker ps
 
             - name: Run E2E tests
               id: run_tests
