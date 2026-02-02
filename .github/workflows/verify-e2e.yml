@@ -191,6 +191,11 @@ jobs:
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
 
+                  if [ -d data ] ; then
+                    echo "Removing existing data directory..."
+                    rm -rf data
+                  fi
+
                   if [ -f "run.sh" ]; then
                     # cesnet flavour
                     ./run.sh install
@@ -215,6 +220,9 @@ jobs:
 
                   echo "Invenio instance setup completed, running containers:" 
                   docker ps
+
+                  # dump all logs from docker containers
+                  docker compose logs | egrep '^s3'
 
             - name: Create default bucket
               run: |
