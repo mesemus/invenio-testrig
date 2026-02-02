@@ -253,6 +253,9 @@ jobs:
                   echo "Collecting translations..."
                   npm run collect-translations
 
+                  echo "Storing authentication state..."
+                  npx playwright test tests/api/auth.setup.ts --reporter=html,list
+
                   echo "Running all E2E tests..."
                   npx playwright test --reporter=html,list
 
