@@ -13,6 +13,11 @@ on:
                 required: false
                 type: string
                 default: "21"
+            log_xhr:
+                description: "Enable logging of XHR requests in Playwright"
+                required: false
+                type: boolean
+                default: false
 
 env:
     PYTHONUNBUFFERED: 1
@@ -20,6 +25,7 @@ env:
     PYTHON: python${{ inputs.python_version || '3.14' }}
     CONFIG_RESOLVED: ${{ github.workspace }}/config-resolved.json
     NODE_VERSION: ${{ inputs.node_version || '21' }}
+    LOG_XHR: ${{ inputs.log_xhr || 'false' }}
 
 jobs:
     load_config:
