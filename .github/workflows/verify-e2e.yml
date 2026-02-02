@@ -213,6 +213,14 @@ jobs:
                   RATELIMIT_ENABLED=False
                   EOF
 
+            - name: Create default bucket
+              run: |
+                  cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
+
+                  if [ ! -d data/default ] ; then
+                    mkdir -p data/default
+                  fi
+
             - name: Run E2E tests
               id: run_tests
               continue-on-error: true
