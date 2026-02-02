@@ -207,6 +207,8 @@ jobs:
                      $TOOLS_BIN/invenio-cli services setup
                   fi
 
+                  echo "RATELIMIT_ENABLED=False" >> invenio.cfg
+
             - name: Start Invenio server
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
@@ -239,14 +241,17 @@ jobs:
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo/e2e"
 
-                  export INVENIO_USER_EMAIL=demo@user.org
+                  export INVENIO_USER_EMAIL=user@demo.org
                   export INVENIO_USER_PASSWORD=123456
 
                   echo "Running E2E tests in $(pwd)" 
                   ls -lR .
 
+                  echo "Collecting translations..."
+                  npm run collect-translations
+
                   echo "Storing authentication state..."
-                  npx playwright test tests/api/auth.setup.ts
+                  npx playwright test tests/api/auth.setup.spec.ts --reporter=html,list
 
                   echo "Running all E2E tests..."
                   npx playwright test --reporter=html,list
