@@ -187,14 +187,6 @@ jobs:
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo/e2e"
                   npx playwright install --with-deps
 
-            - name: Create default bucket
-              run: |
-                  cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
-
-                  if [ ! -d data/default ] ; then
-                    mkdir -p data/default
-                  fi
-
             - name: Setup Invenio instance
               run: |
                   cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
@@ -223,6 +215,55 @@ jobs:
 
                   echo "Invenio instance setup completed, running containers:" 
                   docker ps
+
+            - name: Create default bucket
+              run: |
+                  cd "${{ env.REPOSITORY_E2E_ROOT }}/repo"
+
+                  source .venv/bin/activate
+                  uv pip install boto3
+
+                  echo "Creating default S3 bucket..."
+                  invenio shell << EOF
+                  import boto3
+                  import json
+                  from flask import current_app
+                  from botocore.exceptions import ClientError
+
+                  config = current_app.extensions["invenio-s3"].init_s3fs_info
+
+                  # Create boto3 S3 client
+                  s3_client = boto3.client(
+                    "s3",
+                    aws_access_key_id=config["key"],
+                    aws_secret_access_key=config["secret"],
+                    endpoint_url=config["client_kwargs"]["endpoint_url"],
+                    config=boto3.session.Config(
+                        s3=config["config_kwargs"]["s3"],
+                        signature_version=config["config_kwargs"]["signature_version"]
+                    )
+                  )
+
+                  s3_client.create_bucket(Bucket="default")
+
+                  public_read_policy = {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "PublicReadGetObject",
+                            "Effect": "Allow",
+                            "Principal": "*",
+                            "Action": ["s3:GetObject"],
+                            "Resource": [f"arn:aws:s3:::default/*"]
+                        }
+                    ]
+                  }
+
+                  s3_client.put_bucket_policy(
+                    Bucket="default",
+                    Policy=json.dumps(public_read_policy)
+                  )                  
+                  EOF
 
             - name: Run E2E tests
               id: run_tests
