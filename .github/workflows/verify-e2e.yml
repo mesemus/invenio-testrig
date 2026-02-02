@@ -207,7 +207,11 @@ jobs:
                      $TOOLS_BIN/invenio-cli services setup
                   fi
 
-                  echo "RATELIMIT_ENABLED=False" >> invenio.cfg
+                  cat >> "invenio.cfg" << EOF
+
+                  # disable rate limiting for tests
+                  RATELIMIT_ENABLED=False
+                  EOF
 
             - name: Run E2E tests
               id: run_tests
