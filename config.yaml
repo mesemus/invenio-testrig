@@ -40,4 +40,4 @@ e2e_repository:
   # org/repo with optional @branch
   # org/repo#pr-number for pull requests
   git: samk13/invenio-dev-latest
-  e2e_git: oarepo/invenio-e2e@fix-e2e-directory
+  e2e_git: oarepo/invenio-e2e
