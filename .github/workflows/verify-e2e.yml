@@ -196,6 +196,11 @@ jobs:
                     rm -rf data
                   fi
 
+                  # allow the data be writable from within
+                  # the docker container
+                  mkdir data
+                  chmod 777 data
+
                   if [ -f "run.sh" ]; then
                     # cesnet flavour
                     ./run.sh install
@@ -205,12 +210,14 @@ jobs:
                   fi
 
                   # setup services
+                  (
                   export INVENIO_CELERY_ALWAYS_EAGER=1
                   if [ -f "run.sh" ]; then
                     ./run.sh services setup
                   else
                      $TOOLS_BIN/invenio-cli services setup
                   fi
+                  ) 2>&1 | egrep -v 'stats-file-download|stats-record-view|added new fixture'
 
                   cat >> "invenio.cfg" << EOF
 
