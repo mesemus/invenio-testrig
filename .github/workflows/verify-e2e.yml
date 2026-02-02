@@ -216,18 +216,18 @@ jobs:
                   # Start the server in the background
                   if [ -f "run.sh" ]; then
                       # cesnet flavour
-                      nohup ./run.sh run > invenio-server.log 2>&1 &
+                      nohup ./run.sh run >invenio-server.log 2>&1 &
                       echo $! > invenio-server.pid
                   else
                       # invenio rdm standard
-                      nohup $TOOLS_BIN/invenio-cli run > invenio-server.log 2>&1 &
+                      nohup $TOOLS_BIN/invenio-cli run >invenio-server.log 2>&1 &
                       echo $! > invenio-server.pid
                   fi
 
                   # Wait for server to start
                   echo "Waiting for server to start..."
                   for i in {1..30}; do
-                      if curl -s http://localhost:5000 > /dev/null; then
+                      if curl -s https://127.0.0.1:5000 > /dev/null; then
                           echo "Server started successfully"
                           break
                       fi
