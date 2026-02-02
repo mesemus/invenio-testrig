@@ -294,8 +294,7 @@ jobs:
                       echo $! > invenio-server.pid
                   else
                       # invenio rdm standard
-                      # nohup $TOOLS_BIN/invenio-cli run >invenio-server.log 2>&1 &
-                      nohup $TOOLS_BIN/invenio-cli run &
+                      nohup $TOOLS_BIN/invenio-cli run >invenio-server.log 2>&1 &
                       echo $! > invenio-server.pid
                   fi
 
