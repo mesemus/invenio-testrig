@@ -5,7 +5,9 @@
 # Note: If no patches are specified (empty list or null), tests will be run for all packages
 # matching the github filters without applying any patches.
 patches:
+  - https://github.com/inveniosoftware/invenio-rdm-records/pull/2250
   # Array of patches to apply. Each patch is a string and can be specified as:
+  #   - full url to branch or PR
   #   - org/package@branch
   #   - org/package#pr_number
   #   - org/package@branch[base]
@@ -73,8 +75,7 @@ github:
       - oaipmh
       - rdf
       - sparql
-      - postgresql
-    
+      - postgresql    
 
 # Repository to test - used for extracting dependencies and optionally running e2e tests.
 repository:
@@ -101,7 +102,7 @@ repository:
 #
 # - pinned   : Rebase the patch on top of the version installed from packages_git.
 #              Multiple patches for the same package will be cherry-picked in order.
-mode: as-is
+mode: upstream
 
 # Hooks - custom bash commands to run at specific points in the workflow.
 # All hooks are optional. Commands are executed in bash and can produce side effects.

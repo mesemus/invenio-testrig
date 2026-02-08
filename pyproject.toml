@@ -1,0 +1,49 @@
+[project]
+name = "invenio-testrig"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "black>=26.1.0",
+    "click>=8.3.1",
+    "httpx>=0.28.1",
+    "lark>=1.3.1",
+    "marshmallow>=4.2.2",
+    "marshmallow-polyfield>=5.11",
+    "pyyaml>=6.0.3",
+    "semver>=3.0.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-dotenv>=0.5.2",
+    "python-dotenv>=1.0.0",
+    "respx>=0.21.1",
+    "types-pyyaml>=6.0.12",
+    "pytest-cov>=7.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["invenio_testrig*"]
+exclude = ["old*", "reports*", "tests*"]
+
+[project.scripts]
+invenio-testrig = "invenio_testrig.cli.main:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--cov=invenio_testrig",
+    "--cov-report=term-missing",
+    "--cov-fail-under=80",
+]
+env_files = [".env"]

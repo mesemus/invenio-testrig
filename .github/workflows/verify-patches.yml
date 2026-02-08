@@ -1,397 +1,273 @@
 name: 2. Run Verification
 
 on:
-  workflow_dispatch:
-    inputs:
-      python_version:
-        description: "Python version to use"
-        required: false
-        type: string
-        default: "3.14"
-      verbose_pytest:
-        description: "Run pytest with verbose output (-vv -s)"
-        required: false
-        type: boolean
-        default: false
-      check_formatting:
-        description: "Check black/isort during tests"
-        required: false
-        type: boolean
-        default: true
+    # the workflow can be triggered manually
+    workflow_dispatch:
+        inputs:
+            python_version:
+                description: "Python version to use"
+                required: false
+                type: string
+                default: "3.14"
+            verbose_pytest:
+                description: "Run pytest with verbose output (-vv -s)"
+                required: false
+                type: boolean
+                default: false
+            check_formatting:
+                description: "Check black/isort during tests"
+                required: false
+                type: boolean
+                default: true
+
+    # or called from another workflow from another repository
+    workflow_call:
+        inputs:
+            testrig_repository:
+                description: "Repository containing invenio-testrig (owner/repo)"
+                required: false
+                default: oarepo/invenio-testrig
+                type: string
+            testrig_branch:
+                description: "Branch of invenio-testrig to use"
+                required: false
+                default: ng
+                type: string
+            python_version:
+                description: "Python version to use"
+                required: false
+                type: string
+                default: "3.14"
+            verbose_pytest:
+                description: "Run pytest with verbose output (-vv -s)"
+                required: false
+                type: boolean
+                default: false
+            check_formatting:
+                description: "Check black/isort during tests"
+                required: false
+                type: boolean
+                default: true
+            config_file:
+                description: "Path to the configuration file to use (relative to workspace root)"
+                required: false
+                default: config.yaml
+                type: string
 
 env:
-  PYTHONUNBUFFERED: 1
-  PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
-  EXTRAS: "tests,opensearch2,s3,devs,s3fs,oaipmh,rdf,sparql,postgresql,admin,docs"
-  CONFIG_RESOLVED: ${{ github.workspace }}/config-resolved.json
+    PYTHONUNBUFFERED: 1
+    PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
+    VERBOSE_PYTEST: ${{ inputs.verbose_pytest }}
+    CHECK_FORMATTING: ${{ inputs.check_formatting }}
+
+    # if the workflow is called from another workflow, we use the defaults
+    TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
+    TESTRIG_BRANCH: ${{ inputs.testrig_branch || github.ref_name }}
+
+    # Path to the configuration file to use (relative to workspace root)
+    # if workflow is called manually, use the default from this branch
+    YAML_CONFIG_PATH: ${{ inputs.config_file || '.pipeline/config_test.yaml' }}
+    JSON_CONFIG_PATH: ${{ inputs.config_file || 'config.json' }}
+    CLONED_PACKAGES_DIR: ${{ github.workspace }}/cloned-packages
+    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    TEST_DIR: ${{ github.workspace }}/test_dir
+
+permissions:
+    contents: read
 
 jobs:
-  load_config:
-    name: Load Test Configuration
-    runs-on: ubuntu-latest
-    outputs:
-      test_name: ${{ steps.load_config.outputs.test_name }}
-      test_timeout: ${{ steps.load_config.outputs.test_timeout }}
-      packages: ${{ steps.load_config.outputs.packages }}
-      initial_commit: ${{ steps.load_config.outputs.initial_commit }}
-    steps:
-      - name: Checkout verification repository
-        uses: actions/checkout@v4
+    prepare:
+        runs-on: ubuntu-latest
+        outputs:
+            matrix_tested_packages: ${{ steps.prepare.outputs.matrix_tested_packages }}
+        steps:
+            - name: Checkout the testrig repository to .pipeline
+              uses: actions/checkout@v4
+              with:
+                  repository: ${{ env.TESTRIG_REPOSITORY }}
+                  ref: ${{ env.TESTRIG_BRANCH }}
+                  path: .pipeline
 
-      - name: Load configuration
-        id: load_config
-        uses: ./.github/actions/workflow-load-config
-        with:
-          config_file: config.yaml
-          python_version: ${{ env.PYTHON_VERSION }}
-          config_resolved: ${{ env.CONFIG_RESOLVED }}
+            - name: Prepare python and tools
+              uses: ./.pipeline/.github/actions/action-install-tools
+              with:
+                  python-version: ${{ env.PYTHON_VERSION }}
+                  testrig-directory: ${{ github.workspace }}/.pipeline
 
-  create_report_directory:
-    name: Create Report Directory
-    needs: load_config
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    outputs:
-      report_dir: ${{ steps.create_report.outputs.report_dir }}
-      report_file: ${{ steps.create_report.outputs.report_file }}
-      report_timestamp: ${{ steps.create_report.outputs.report_timestamp }}
+            - name: Prepare testrig
+              id: prepare
+              shell: bash
+              run: |
 
-    steps:
-      - name: Checkout invenio-testrig repository
-        uses: actions/checkout@v4
+                  echo "::group::⚙️ Preparing testrig configuration"
+                  invenio-testrig init $YAML_CONFIG_PATH $JSON_CONFIG_PATH
+                  invenio-testrig collect $JSON_CONFIG_PATH
+                  invenio-testrig filter $JSON_CONFIG_PATH
+                  echo "::endgroup::"
 
-      - name: Create report directory
-        id: create_report
-        uses: ./.github/actions/workflow-create-report-directory
-        with:
-          python_version: ${{ env.PYTHON_VERSION }}
-          config_resolved: ${{ env.CONFIG_RESOLVED }}
-          test_name: ${{ needs.load_config.outputs.test_name }}
+                  echo "::group::⚙️📊 Generating test matrix"
+                  invenio-testrig matrix $JSON_CONFIG_PATH $GITHUB_OUTPUT
+                  echo "::endgroup::"
 
-  extract_tested_packages:
-    name: Extract Invenio Packages
-    needs: load_config
-    runs-on: ubuntu-latest
-    outputs:
-      packages: ${{ steps.extract_packages.outputs.packages }}
+            - name: Store the config file as artifact
+              uses: actions/upload-artifact@v6
+              with:
+                  name: config-file
+                  path: ${{ env.JSON_CONFIG_PATH }}
 
-    steps:
-      - name: Checkout invenio-testrig repository
-        uses: actions/checkout@v4
+    patch:
+        needs: prepare
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the testrig repository to .pipeline
+              uses: actions/checkout@v4
+              with:
+                  repository: ${{ env.TESTRIG_REPOSITORY }}
+                  ref: ${{ env.TESTRIG_BRANCH }}
+                  path: .pipeline
 
-      - name: Extract packages
-        id: extract_packages
-        uses: ./.github/actions/workflow-extract-tested-packages
-        with:
-          python_version: ${{ env.PYTHON_VERSION }}
-          config_resolved: ${{ env.CONFIG_RESOLVED }}
-          filter_packages: ${{ needs.load_config.outputs.packages }}
+            - name: Load config file artifact
+              uses: actions/download-artifact@v7
+              with:
+                  name: config-file
 
-  test_packages:
-    name: Test ${{ matrix.package }}
-    needs:
-      - load_config
-      - extract_tested_packages
-      - create_report_directory
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: read
-    env:
-      SO_FAR_OK: 1
-    strategy:
-      fail-fast: false
-      matrix:
-        package: ${{ fromJson(needs.extract_tested_packages.outputs.packages) }}
+            - name: Prepare python and tools
+              uses: ./.pipeline/.github/actions/action-install-tools
+              with:
+                  python-version: ${{ env.PYTHON_VERSION }}
+                  testrig-directory: ${{ github.workspace }}/.pipeline
 
-    steps:
-      - name: Checkout invenio-testrig repository
-        uses: actions/checkout@v4
+            - name: Clone the packages and apply patches
+              id: prepare
+              shell: bash
+              run: |
+                  echo "::group::📦 Cloning and patching packages"
+                  invenio-testrig clone $JSON_CONFIG_PATH $CLONED_PACKAGES_DIR
+                  echo "::endgroup::"
 
-      - name: Download modified config
-        uses: actions/download-artifact@v4
-        with:
-          name: resolved-config
-          path: .
+            - name: Store cloned packages as artifact
+              uses: ./.pipeline/.github/actions/upload-artifact-tar
+              with:
+                  name: cloned-packages
+                  path: ${{ env.CLONED_PACKAGES_DIR }}
 
-      - name: Setup Python and UV
-        uses: ./.github/actions/action-install-python
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
+    test:
+        needs:
+            - prepare
+            - patch
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                package: ${{ fromJson(needs.prepare.outputs.matrix_tested_packages) }}
+            fail-fast: false
+        env:
+            LOG_DIR: ${{ github.workspace }}/logs
+        steps:
+            - name: Checkout the testrig repository to .pipeline
+              uses: actions/checkout@v4
+              with:
+                  repository: ${{ env.TESTRIG_REPOSITORY }}
+                  ref: ${{ env.TESTRIG_BRANCH }}
+                  path: .pipeline
 
-      - name: Check if sources of ${{ matrix.package }} are patched
-        # determine if there is a patch for the current package
-        # outputs:
-        #   has_patch (true if the current package's sources are patched)
-        #   original_repository_url
-        #   original_repository_branch (currently always empty as default branch is used)
-        #   patched_repository_url (equal to original_repository_url if not patched, otherwise the patch URL)
-        #   patched_repository_branch (equal to original_repository_branch if not patched, otherwise the patch branch)
-        id: load_patches
-        run: |
+            - name: Load cloned packages artifact
+              uses: ./.pipeline/.github/actions/download-artifact-tar
+              with:
+                  name: cloned-packages
+                  path: ${{ env.CLONED_PACKAGES_DIR }}
 
-          # Use lookup_package.py to get repository information
-          eval $($TOOLS_PYTHON scripts/lookup_package.py "${{ env.CONFIG_RESOLVED }}" ${{ matrix.package }})
+            - name: Load config file artifact
+              uses: actions/download-artifact@v7
+              with:
+                  name: config-file
 
-          # Set outputs
-          echo "original_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
-          echo "original_repository_branch=$original_repository_branch" >> $GITHUB_OUTPUT
+            - name: Prepare python and tools
+              uses: ./.pipeline/.github/actions/action-install-tools
+              with:
+                  python-version: ${{ env.PYTHON_VERSION }}
+                  testrig-directory: ${{ github.workspace }}/.pipeline
 
-          # Determine if patch exists
-          if [ -n "$patched_repository_url" ]; then
-            echo "has_patch=true" >> $GITHUB_OUTPUT
-            echo "patched_repository_url=$patched_repository_url" >> $GITHUB_OUTPUT
-            echo "patched_repository_branch=$patched_repository_branch" >> $GITHUB_OUTPUT
-            echo "Found patch for ${{ matrix.package }}: $patched_repository_url @ $patched_repository_branch"
-          else
-            echo "has_patch=false" >> $GITHUB_OUTPUT
-            echo "patched_repository_url=$original_repository_url" >> $GITHUB_OUTPUT
-            echo "patched_repository_branch=$original_repository_branch" >> $GITHUB_OUTPUT
-            echo "No patch configured for ${{ matrix.package }}"
-          fi
+            - name: Run tests for the patched version of the package
+              shell: bash
+              id: run-patched
+              run: |
+                  echo "::group::🧪 Running tests for package ${{ matrix.package }}"
+                  invenio-testrig test \
+                      $JSON_CONFIG_PATH \
+                      $CLONED_PACKAGES_DIR \
+                      ${{ matrix.package }}  \
+                      $TEST_DIR \
+                      --apply-patches \
+                      --python $PYTHON_VERSION \
+                      --log-dir $LOG_DIR \
+                      || true
+                  echo "::endgroup::"
 
-      # we start by cloning the package (possibly patched) to run tests on patch at first
-      - name: Clone package repository for patched (possibly) package tests
-        continue-on-error: true
-        uses: ./.github/actions/action-clone-package
-        with:
-          repository-url: ${{ steps.load_patches.outputs.patched_repository_url }}
-          repository-branch: ${{ steps.load_patches.outputs.patched_repository_branch }}
-          destination: package-repo
+                  STATUS_FILE=$LOG_DIR/patched_status.json 
 
-      - name: Setup virtual environment and install dependencies
-        if: env.SO_FAR_OK == '1'
-        continue-on-error: true
-        uses: ./.github/actions/action-setup-venv
-        with:
-          package-path: package-repo
-          extras: ${{ env.EXTRAS }}
-          python-version: ${{ env.PYTHON_VERSION }}
+                  echo "test_patch_status=$(cat $STATUS_FILE | jq -r '.status')" >> $GITHUB_OUTPUT
+                  status=$(cat $STATUS_FILE | jq -r '.status')
 
-      - name: Dump original requirements
-        if: env.SO_FAR_OK == '1' && ( steps.load_patches.outputs.has_patch == 'false' )
-        uses: ./.github/actions/action-dump-requirements
-        with:
-          package-path: package-repo
-          requirement-type: original
+                  if [ "$status" == "failed" ]; then
+                      echo "::error::❌ Tests failed for package ${{ matrix.package }}. "
+                      echo "See $LOG_DIR/patched_log.log for details."
+                      exit 1
+                  elif [ "$status" == "skipped" ]; then
+                      echo "::warning::✅ Tests were skipped for package ${{ matrix.package }} - no patches to apply."
+                  else
+                      echo "::notice::✅ Tests passed for package ${{ matrix.package }}."
+                  fi
 
-      - name: Dump requirements of original package with sources patched
-        if: env.SO_FAR_OK == '1' && ( steps.load_patches.outputs.has_patch == 'true' )
-        uses: ./.github/actions/action-dump-requirements
-        with:
-          package-path: package-repo
-          requirement-type: patched
+            - name: Run unpatched tests for the package
+              shell: bash
+              id: run-unpatched
+              if: ${{ steps.run-patched.outputs.test_patch_status != 'success' }}
+              run: |
+                  echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"
+                  if [ -d "$TEST_DIR" ]; then
+                      echo "Cleaning test directory $TEST_DIR"
+                      rm -rf $TEST_DIR
+                  fi
+                  invenio-testrig test \
+                      $JSON_CONFIG_PATH \
+                      $CLONED_PACKAGES_DIR \
+                      ${{ matrix.package }}  \
+                      $TEST_DIR \
+                      --python $PYTHON_VERSION \
+                      --log-dir $LOG_DIR \
+                      || true
+                  echo "::endgroup::"
 
-      - name: Apply patches if applicable
-        id: check_patch
-        continue-on-error: true
-        if: env.SO_FAR_OK == '1'
-        run: |
+                  STATUS_FILE=$LOG_DIR/original_status.json 
 
-          # Use apply_patches.py to check and apply patches
-          $TOOLS_PYTHON scripts/apply_patches.py ${{ matrix.package }} package-repo/.venv "${{ env.CONFIG_RESOLVED }}" patch-variables.sh
+                  echo "test_original_status=$(cat $STATUS_FILE | jq -r '.status')" >> $GITHUB_OUTPUT
+                  status=$(cat $STATUS_FILE | jq -r '.status')
 
-          # Source the output variables
-          source patch-variables.sh
+                  if [ "$status" == "failed" ]; then
+                      echo "::error::❌ Tests failed for package ${{ matrix.package }}. "
+                      echo "See $LOG_DIR/original_log.log for details."
+                      exit 1
+                  elif [ "$status" == "skipped" ]; then
+                      echo "::warning::❌ Tests were skipped for package ${{ matrix.package }} - not sure why."
+                      exit 1
+                  else
+                      echo "::notice::✅ Tests passed for package ${{ matrix.package }}."
+                  fi
 
-          # Set outputs
-          echo "applies=$applies" >> $GITHUB_OUTPUT
-          echo "patched_packages=$patched_packages" >> $GITHUB_OUTPUT
+            - name: Prepare test results for upload
+              if: always()
+              shell: bash
+              run: |
+                  # Create package-specific directory structure
+                  PACKAGE_DIR=$LOG_DIR/${{ matrix.package }}
+                  mkdir -p "$PACKAGE_DIR"
 
-          if [ "$applies" = "true" ]; then
-            echo "🔄 Patches were applied to: $patched_packages"
-          else
-            echo "ℹ️  No applicable patches found for this package"
-            echo "reason=no-patch-packages-installed" >> $GITHUB_OUTPUT
-          fi
+                  # Move all log and status files to the package directory
+                    find "$LOG_DIR" -maxdepth 1 -type f -exec mv {} "$PACKAGE_DIR/" \;
 
-      - name: Dump requirements for package with patched dependencies
-        if: env.SO_FAR_OK == '1' && ( steps.check_patch.outputs.applies == 'true' )
-        uses: ./.github/actions/action-dump-requirements
-        with:
-          package-path: package-repo
-          requirement-type: patched-dependencies
-
-      - name: Run tests on patched package / with patched dependencies
-        id: test_with_patch
-        continue-on-error: true
-        if: env.SO_FAR_OK == '1' && ( steps.check_patch.outputs.applies == 'true' || steps.load_patches.outputs.has_patch == 'true' )
-        uses: ./.github/actions/action-run-tests
-        with:
-          package-path: package-repo
-          package-name: ${{ matrix.package }}
-          test-type: patched
-          timeout: ${{ needs.load_config.outputs.test_timeout }}
-          verbose-pytest: ${{ inputs.verbose_pytest }}
-          check-formatting: ${{ inputs.check_formatting }}
-
-      # if the previous step failed, we will try to run the tests without patches
-      - name: Clone package repository for tests without patches
-        continue-on-error: true
-        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure'
-        uses: ./.github/actions/action-clone-package
-        with:
-          repository-url: ${{ steps.load_patches.outputs.original_repository_url }}
-          repository-branch: ${{ steps.load_patches.outputs.original_repository_branch }}
-          destination: package-repo
-
-      - name: Setup virtual environment and install dependencies for original package tests
-        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure'
-        continue-on-error: true
-        uses: ./.github/actions/action-setup-venv
-        with:
-          package-path: package-repo
-          extras: ${{ env.EXTRAS }}
-          python-version: ${{ env.PYTHON_VERSION }}
-
-      - name: Run tests on original package without patches
-        id: test_without_patch
-        continue-on-error: true
-        if: env.SO_FAR_OK == '1' && steps.test_with_patch.outputs.conclusion == 'failure'
-        uses: ./.github/actions/action-run-tests
-        with:
-          package-path: package-repo
-          package-name: ${{ matrix.package }}
-          test-type: original
-          timeout: ${{ needs.load_config.outputs.test_timeout }}
-          verbose-pytest: ${{ inputs.verbose_pytest }}
-          check-formatting: ${{ inputs.check_formatting }}
-
-      - name: Compare test results
-        if: env.SO_FAR_OK == '1'
-        id: compare
-        continue-on-error: true
-        uses: ./.github/actions/action-compare-test-results
-        with:
-          artifacts_dir: artifacts
-
-      - name: Create result summary
-        id: summary
-        continue-on-error: true
-        run: |
-          if [ -z "${{ steps.check_patch.outputs.applies }}" ] ; then
-            APPLIES="false"
-          else
-            APPLIES="${{ steps.check_patch.outputs.applies }}"
-          fi
-
-          cat > artifacts/result-summary.json << EOF
-          {
-            "package": "${{ matrix.package }}",
-            "has_patch": ${{ steps.load_patches.outputs.has_patch }},
-            "patch_applies": $APPLIES,
-            "original_tests_outcome": "${{ steps.compare.outputs.original_tests_outcome }}",
-            "patched_tests_outcome": "${{ steps.compare.outputs.patched_tests_outcome }}",
-            "result": "${{ steps.compare.outputs.result }}",
-            "result_icon": "${{ steps.compare.outputs.result_icon }}",
-            "result_text": "${{ steps.compare.outputs.result_text }}",
-            "patched_packages": "${{ steps.check_patch.outputs.patched_packages }}"
-          }
-          EOF
-
-          cat artifacts/result-summary.json
-
-      - name: Extract warnings from test logs
-        if: always()
-        run: |
-          # Extract warnings from original test log if it exists
-          if [ -f artifacts/test-output-original.txt ]; then
-            $TOOLS_PYTHON scripts/extract_warnings.py artifacts/test-output-original.txt original artifacts/result-summary.json artifacts/warnings-original.md
-          fi
-
-          # Extract warnings from patched test log if it exists
-          if [ -f artifacts/test-output-patched.txt ]; then
-            $TOOLS_PYTHON scripts/extract_warnings.py artifacts/test-output-patched.txt patched artifacts/result-summary.json artifacts/warnings-patched.md
-          fi
-
-      - name: Upload test artifacts
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: test-results-${{ matrix.package }}
-          path: |
-            artifacts/
-          retention-days: 30
-
-      # needs to be after uploading artifacts
-      # as the action downloads all actual artifacts
-      - name: Push individual package report
-        if: always()
-        uses: ./.github/actions/action-generate-report
-        with:
-          report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
-          report_file: ${{ needs.create_report_directory.outputs.report_file }}
-          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
-          test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ env.CONFIG_RESOLVED }}
-
-      - name: Fail job if any tests failed
-        if: always()
-        run: |
-          ORIGINAL_TESTS_OUTCOME=$(cat artifacts/test-status-original.txt 2>/dev/null || echo "skipped")
-          PATCHED_TESTS_OUTCOME=$(cat artifacts/test-status-patched.txt 2>/dev/null|| echo "skipped")
-
-          if [ "$PATCHED_TESTS_OUTCOME" = "failed" ] ; then
-            echo "Error: Tests for patched package ${{ matrix.package }} failed"
-            exit 1
-          elif [ "$ORIGINAL_TESTS_OUTCOME" = "failed" ] ; then
-            echo "Error: Tests for original package ${{ matrix.package }} failed"
-            exit 1
-          fi
-
-  generate_report:
-    name: Generate Summary Report
-    needs:
-      - create_report_directory
-      - test_packages
-      - load_config
-    runs-on: ubuntu-latest
-    if: always()
-    permissions:
-      contents: write
-
-    steps:
-      - name: Checkout invenio-testrig repository
-        uses: actions/checkout@v4
-
-      - name: Download modified config
-        uses: actions/download-artifact@v4
-        with:
-          name: resolved-config
-          path: .
-
-      - name: Setup Python and UV
-        uses: ./.github/actions/action-install-python
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-
-      - name: Generate and push report
-        uses: ./.github/actions/action-generate-report
-        with:
-          report_dir: ${{ needs.create_report_directory.outputs.report_dir }}
-          report_file: ${{ needs.create_report_directory.outputs.report_file }}
-          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
-          test_name: ${{ needs.load_config.outputs.test_name }}
-          config_file: ${{ env.CONFIG_RESOLVED }}
-          report_status: finished
-
-  squash_commits:
-    name: Squash Commits
-    needs:
-      - generate_report
-      - load_config
-      - create_report_directory
-    runs-on: ubuntu-latest
-    if: always()
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout invenio-testrig repository
-        uses: actions/checkout@v4
-
-      - name: Squash all commits
-        uses: ./.github/actions/action-squash-commits
-        with:
-          initial_commit: ${{ needs.load_config.outputs.initial_commit }}
-          report_timestamp: ${{ needs.create_report_directory.outputs.report_timestamp }}
+            - name: Store test results as artifact
+              if: always()
+              uses: actions/upload-artifact@v6
+              with:
+                  name: test-results-${{ matrix.package }}
+                  path: ${{ env.LOG_DIR }}
