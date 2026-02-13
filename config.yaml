@@ -110,7 +110,7 @@ repository:
 # - pinned-rebase :
 #       Use the same version as installed in repository.git for non-patched packages
 #       For patched packages rebase the patch on top of the upstream.
-mode: upstream-overwrite
+mode: pinned-rebase
 
 # Hooks - python functions to run at specific points during the process. 
 # The function gets:

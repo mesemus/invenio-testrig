@@ -45,7 +45,7 @@
     "before_filtering_packages": null,
     "before_selecting_patches": null
   },
-  "mode": "upstream-overwrite",
+  "mode": "pinned-rebase",
   "packages": {
     "alembic": "1.17.2",
     "amqp": "5.3.1",
