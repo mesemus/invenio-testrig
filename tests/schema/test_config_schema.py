@@ -6,7 +6,8 @@ from typing import Any, cast
 import pytest
 from marshmallow import ValidationError
 
-from invenio_testrig.config import GitReference, GitReferencePolyField
+from invenio_testrig.config import GitReferencePolyField
+from invenio_testrig.github.types import GitReference
 
 DeserializeReference = Callable[[str | dict[str, Any]], GitReference]
 

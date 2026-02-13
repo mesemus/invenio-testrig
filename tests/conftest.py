@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 from dotenv import load_dotenv
 
-from invenio_testrig.config import GitReference
-from invenio_testrig.git_api import GitApi, git_api
+from invenio_testrig.github.api import GitApi, git_api
+from invenio_testrig.github.types import GitReference
 
 # Load environment variables from .env file at the project root
 env_path = Path(__file__).parent.parent / ".env"

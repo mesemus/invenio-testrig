@@ -1,27 +1,96 @@
-from invenio_testrig.config import GitReference
-from invenio_testrig.git_api import git_api
+from pathlib import Path
 
+from invenio_testrig.github.api import git_api
+from invenio_testrig.github.types import GitReference
+
+from ..config import TestedPackageInfo
 from .base import Patcher
 
 
-class PinnedPatcher(Patcher):
-    """Patcher for pinned repositories.
+class PinnedOverwritePatcher(Patcher):
+    """Patcher for upstream repositories.
 
     For packages with patches:
-    - Uses the pinned version from dependencies
-    - Applies patches on top of the pinned version
-    - Allows multiple patches per package
+    - Uses the exact commit specified in the github configuration for the unpatched version
+      (that is, the exact version installed in the source repository)
+    - Expects a single patch per package and use it instead of the original version
+    - Fail if there are multiple patches for the same package
     """
 
-    def _clone_patched(
-        self, reference: GitReference, patches: list[GitReference]
+    def _build_unpatched_reference(
+        self, package_name: str, package_info: TestedPackageInfo
+    ) -> GitReference:
+        """Build GitReference for the unpatched version of the dependency."""
+        if not package_info.reference.commit:
+            raise ValueError(
+                f"Commit must be specified for package {package_name} in 'pinned-overwrite' mode"
+            )
+        return GitReference(
+            org=package_info.reference.org,
+            repo=package_info.reference.repo,
+            package=package_name,
+            commit=package_info.reference.commit,
+        )
+
+    def _build_patched_reference(
+        self, package_name: str, package_info: TestedPackageInfo
+    ) -> GitReference | None:
+        if not package_info.patches:
+            return None
+        if len(package_info.patches) > 1:
+            raise ValueError(
+                f"Multiple patches found for package {package_name}, but only one is supported in 'upstream-overwrite' mode"
+            )
+        return package_info.patches[0]
+
+    def _apply_patches(
+        self,
+        patched_reference_path: Path,
+        package_name: str,
+        package_info: TestedPackageInfo,
+        reference: GitReference,
     ) -> None:
-        if not patches:
-            return
+        """Apply the patch to the cloned repository."""
+        # does nothing, as we already cloned the patched version
+        pass
 
-        target_dir = self._clone_package(reference, self.patched_dir)
 
-        for patch in patches:
-            git_api.apply_reference(target_dir, patch)
+class PinnedRebasePatcher(Patcher):
+    """Patcher for upstream repositories with rebase.
 
-        self._add_patch_info(target_dir, "pinned", reference, patches)
+    For packages with patches:
+    - Uses the upstream branch (normally master) for the unpatched version
+    - Expects one or more patches per package, and applies them on top of the upstream branch for the patched version
+    """
+
+    def _build_unpatched_reference(
+        self, package_name: str, package_info: TestedPackageInfo
+    ) -> GitReference:
+        """Build GitReference for the unpatched version of the dependency."""
+        return GitReference(
+            org=package_info.reference.org,
+            repo=package_info.reference.repo,
+            package=package_name,
+            commit=package_info.reference.commit,
+        )
+
+    def _build_patched_reference(
+        self, package_name: str, package_info: TestedPackageInfo
+    ) -> GitReference | None:
+        if not package_info.patches:
+            return None
+
+        return self._build_unpatched_reference(package_name, package_info)
+
+    def _apply_patches(
+        self,
+        patched_reference_path: Path,
+        package_name: str,
+        package_info: TestedPackageInfo,
+        reference: GitReference,
+    ) -> None:
+        """Apply the patch to the cloned repository."""
+        # does nothing, as we already cloned the patched version
+
+        for patch in package_info.patches:
+            git_api.apply_reference(patched_reference_path, patch)

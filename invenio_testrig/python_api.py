@@ -7,6 +7,8 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
+from invenio_testrig.utils import call_executable_quietly
+
 log = logging.getLogger(__name__)
 
 
@@ -42,7 +44,7 @@ class PythonAPI:
 
         # Strategy 1: If uv.lock exists, use uv sync --locked
         if lock_path.exists():
-            subprocess.run(
+            call_executable_quietly(
                 [
                     self.uv_executable,
                     "sync",
@@ -52,7 +54,6 @@ class PythonAPI:
                 ],
                 cwd=project_path,
                 env=self.build_environment(project_path),
-                check=True,
             )
             return
 
@@ -63,7 +64,7 @@ class PythonAPI:
                     pyproject_data = tomllib.load(f)
 
                 if "project" in pyproject_data:
-                    subprocess.run(
+                    call_executable_quietly(
                         [
                             self.uv_executable,
                             "sync",
@@ -72,7 +73,6 @@ class PythonAPI:
                         ],
                         cwd=project_path,
                         env=self.build_environment(project_path),
-                        check=True,
                     )
                     return
             except Exception:
@@ -87,14 +87,13 @@ class PythonAPI:
         clean_env.pop("VIRTUAL_ENV", None)
         clean_env.pop("PYTHONHOME", None)
 
-        subprocess.run(
+        call_executable_quietly(
             [
                 self.uv_executable,
                 "venv",
                 "--python",
                 self.python_version,
             ],
-            check=True,
             cwd=project_path,
             env=clean_env,
         )
@@ -102,11 +101,10 @@ class PythonAPI:
         # Then install using the new venv's environment
         extras_str = f"[{','.join(extras)}]" if extras else ""
         project_spec = f".{extras_str}"
-        subprocess.run(
+        call_executable_quietly(
             [self.uv_executable, "pip", "install", "-e", project_spec],
             cwd=project_path,
             env=self.build_environment(project_path),
-            check=True,
         )
 
     def get_dependencies(self, project_path: Path) -> dict[str, str]:
@@ -174,17 +172,14 @@ class PythonAPI:
 
     def get_installed_dependencies(self, project_path: Path) -> dict[str, str]:
         """Get installed dependencies using uv pip list."""
-        result = subprocess.run(
+        stdout, _ = call_executable_quietly(
             [self.uv_executable, "pip", "list", "--format", "json"],
             cwd=project_path,
             env=self.build_environment(project_path),
-            check=True,
-            capture_output=True,
-            text=True,
         )
 
         # Parse JSON output
-        packages_list = json.loads(result.stdout)
+        packages_list = json.loads(stdout)
 
         # Convert to dict of package -> version
         dependencies = {pkg["name"]: pkg["version"] for pkg in packages_list}
@@ -240,6 +235,7 @@ class PythonAPI:
         dependencies = self.get_installed_dependencies(project_path)
         patch_info_dict: dict[str, dict[str, Any]] = {}
 
+        paths_to_install: list[Path] = []
         for library_package in dependencies.keys():
             library_path = None
 
@@ -252,8 +248,10 @@ class PythonAPI:
 
             # If we installed from a local library, get patch info
             if library_path:
-                self.install_external_library(project_path, library_path)
+                paths_to_install.append(library_path)
                 patch_info_dict[library_package] = self._get_patch_info(library_path)
+
+        self.install_external_libraries(project_path, *paths_to_install)
 
         return patch_info_dict
 
@@ -262,14 +260,11 @@ class PythonAPI:
         patch_info_file = package_path / "patch_info.py"
         if patch_info_file.exists():
             try:
-                result = subprocess.run(
+                stdout, _ = call_executable_quietly(
                     ["python3", str(patch_info_file)],
                     cwd=package_path,
-                    capture_output=True,
-                    text=True,
-                    check=True,
                 )
-                patch_data = json.loads(result.stdout)
+                patch_data = json.loads(stdout)
                 return {
                     "base": patch_data.get("reference"),
                     "patches": patch_data.get("applied_patches", []),
@@ -282,18 +277,19 @@ class PythonAPI:
                 log.warning(f"Failed to read patch info for {package_path}")
         return {}
 
-    def install_external_library(self, project_path: Path, library_path: Path) -> None:
+    def install_external_libraries(
+        self, project_path: Path, *library_paths: Path
+    ) -> None:
         """Install a project directory using uv pip install."""
 
         args = [self.uv_executable, "pip", "install"]
         args.extend(["--no-deps", "--force-reinstall"])
-        args.append(str(library_path))
+        args.extend([str(library_path) for library_path in library_paths])
 
-        subprocess.run(
+        call_executable_quietly(
             args,
             cwd=project_path,
             env=self.build_environment(project_path),
-            check=True,
         )
 
     def install_with_patches(
@@ -303,6 +299,7 @@ class PythonAPI:
         target_dir: Path,
         install_patched_dependencies: bool = True,
         extras: list[str] | None = None,
+        freeze: list[str] | None = None,
         progress: Callable[[str], None] = (lambda _msg: None),
     ) -> tuple[dict[str, Any], dict[str, Any]]:
         """Install a package with patches applied.
@@ -321,6 +318,7 @@ class PythonAPI:
         3. Copy the source code to the target directory
         4. Install the package in the target directory
         5. Install patched dependencies if any
+        6. Apply the freeze list if provided
         """
 
         source_path = repositories_root / "patched" / package_name
@@ -357,6 +355,23 @@ class PythonAPI:
         else:
             libraries_patch_info = {}
 
+        if freeze:
+            progress(f"Applying freeze list for package '{package_name}': {freeze}")
+            stdout, stderr = call_executable_quietly(
+                [
+                    self.uv_executable,
+                    "pip",
+                    "install",
+                    "--force-reinstall",
+                    "-U",
+                    *freeze,
+                ],
+                cwd=target_dir,
+                env=self.build_environment(target_dir),
+            )
+            print(stdout, stderr)
+            progress(f"Freeze list applied for package '{package_name}'")
+
         return package_patch_info, libraries_patch_info
 
     def run_in_venv(
@@ -364,6 +379,7 @@ class PythonAPI:
         project_path: Path,
         command: list[str],
         capture_to_file: Path | None = None,
+        tee_output: bool = True,
     ) -> None:
         """Run a command inside the virtual environment."""
         if capture_to_file is None:
@@ -373,7 +389,7 @@ class PythonAPI:
                 env=self.build_environment(project_path),
                 check=True,
             )
-        else:
+        elif tee_output:
             import shlex
 
             # Escape each command argument and join them
@@ -388,3 +404,13 @@ class PythonAPI:
                 env=self.build_environment(project_path),
                 check=True,
             )
+        else:
+            with open(capture_to_file, "w") as f:
+                subprocess.run(
+                    command,
+                    cwd=project_path,
+                    env=self.build_environment(project_path),
+                    stdout=f,
+                    stderr=subprocess.STDOUT,
+                    check=True,
+                )

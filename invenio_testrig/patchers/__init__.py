@@ -1,18 +1,19 @@
-from .asis import AsIsPatcher
 from .base import Patcher
-from .pinned import PinnedPatcher
-from .upstream import UpstreamPatcher
+from .pinned import PinnedOverwritePatcher, PinnedRebasePatcher
+from .upstream import UpstreamOverwritePatcher, UpstreamRebasePatcher
 
 patchers_by_mode: dict[str, type[Patcher]] = {
-    "as-is": AsIsPatcher,
-    "pinned": PinnedPatcher,
-    "upstream": UpstreamPatcher,
+    "pinned-overwrite": PinnedOverwritePatcher,
+    "pinned-rebase": PinnedRebasePatcher,
+    "upstream-overwrite": UpstreamOverwritePatcher,
+    "upstream-rebase": UpstreamRebasePatcher,
 }
 
 __all__ = [
     "Patcher",
-    "AsIsPatcher",
-    "PinnedPatcher",
-    "UpstreamPatcher",
+    "UpstreamOverwritePatcher",
+    "UpstreamRebasePatcher",
+    "PinnedOverwritePatcher",
+    "PinnedRebasePatcher",
     "patchers_by_mode",
 ]

@@ -4,8 +4,8 @@ import httpx
 import respx
 
 from invenio_testrig import JSON
-from invenio_testrig.config import GitReference
 from invenio_testrig.git_api import git_api
+from invenio_testrig.github.types import GitReference
 
 
 @respx.mock

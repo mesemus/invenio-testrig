@@ -1,49 +1,50 @@
 import logging
-import os
-import subprocess
 from pathlib import Path
+from typing import Any
 
-from invenio_testrig.config import ConfigDict, load_config, save_config
+from .config import Config
 
 logger = logging.getLogger(__name__)
 
 
 def run_hook(
-    config: ConfigDict,
+    config: Config,
     config_path: str | Path,
     hook_name: str,
-    *,
-    cwd: Path | None = None,
-    env: dict[str, str] | None = None,
-) -> ConfigDict:
-    """Run a hook by name, passing extra environment variables.
-
-    The hook is a potentially multiline shell script (as a single string)
-    that should be invoked with a bash shell. Use /usr/bin/env bash to ensure
-    it runs with the user's default bash.
+    **extra_parameters: Any,
+) -> Config:
+    """Run a hook by name. A hook is a python function defined as a string in the config
+    which is called at a specific point during the process. The hook function can optionally take
+    additional environment variables and a working directory.
     """
-    hooks = config.get("hooks", {})
-    hook_func = hooks.get(hook_name)
+    hook_func = getattr(config.hooks, hook_name, None)
 
     if not hook_func:
         return config
 
     logging.info("Running hook %s", hook_name)
 
-    # Save config before running the hook, so that it can be modified by the hook script if needed
-    save_config(config_path, config)
+    # Import the Python function from package.module:function string
+    if ":" not in hook_func:
+        raise ValueError(
+            f"Invalid hook format: {hook_func}. Expected 'package.module:function'"
+        )
 
-    # Prepare environment with extra variables
-    merged_env = os.environ.copy()
-    if env is not None:
-        merged_env.update(env)
+    module_path, func_name = hook_func.rsplit(":", 1)
 
-    # Run the hook script with bash
-    subprocess.run(
-        ["/usr/bin/env", "bash", "-c", hook_func],
-        env=merged_env,
-        cwd=(cwd or Path(".")).resolve(),
-        check=True,
+    # Import the module
+    import importlib
+
+    module = importlib.import_module(module_path)
+
+    # Get the function from the module
+    func = getattr(module, func_name)
+
+    # Call the hook function with config, config_path, and other parameters
+    func(
+        config=config,
+        config_path=config_path,
+        **extra_parameters,
     )
-    # Reload config after running the hook, in case it was modified by the hook script
-    return load_config(config_path)
+
+    return config

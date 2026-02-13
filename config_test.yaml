@@ -5,7 +5,12 @@
 # Note: If no patches are specified (empty list or null), tests will be run for all packages
 # matching the github filters without applying any patches.
 patches:
-  - https://github.com/inveniosoftware/invenio-rdm-records/pull/2250
+  - https://github.com/inveniosoftware/invenio-records-resources/pull/666
+  - https://github.com/inveniosoftware/invenio-previewer/pull/243
+  - https://github.com/inveniosoftware/invenio-rdm-records/pull/2222
+  - https://github.com/inveniosoftware/invenio-app-rdm/pull/3266
+  # - https://github.com/inveniosoftware/invenio-rdm-records/pull/2250
+  # - OliverGeneser/invenio-rdm-records@fix-form-label[v22.7.0]
   # Array of patches to apply. Each patch is a string and can be specified as:
   #   - full url to branch or PR
   #   - org/package@branch
@@ -49,10 +54,6 @@ github:
     include: 
       - "invenio-.*"
 
-    # Branch to use in "upstream" mode. If not specified, the repository's
-    # default branch will be used.
-    branch: 
-
     # Packages to exclude from testing, even if they match the include patterns.
     exclude:
       - "invenio-xrootd"
@@ -76,6 +77,9 @@ github:
       - rdf
       - sparql
       - postgresql    
+      - admin
+    freeze:
+      - setuptools<82.0.0
 
 # Repository to test - used for extracting dependencies and optionally running e2e tests.
 repository:
@@ -94,57 +98,40 @@ repository:
 
 # Mode for patching packages. Allowed values are:
 #
-# - as-is    : (Default) Use exactly the patch specified in the patches section.
-#              Multiple patches for the same package will cause the workflow to fail.
-#
-# - upstream : Rebase the patch on top of the branch configured in github.branch.
-#              Multiple patches for the same package will be cherry-picked in order.
-#
-# - pinned   : Rebase the patch on top of the version installed from packages_git.
-#              Multiple patches for the same package will be cherry-picked in order.
-mode: upstream
+# - upstream-overwrite : 
+#       Use upstream for non-patched packages
+#       For patched packages use just the patch's branch
+# - upstream-rebase : 
+#       Use upstream for non-patched packages
+#       For patched packages rebase the patch on top of the upstream.
+# - pinned-overwrite :
+#       Use the same version as installed in repository.git for non-patched packages
+#       For patched packages use just the patch's branch
+# - pinned-rebase :
+#       Use the same version as installed in repository.git for non-patched packages
+#       For patched packages rebase the patch on top of the upstream.
+mode: upstream-overwrite
 
-# Hooks - custom bash commands to run at specific points in the workflow.
-# All hooks are optional. Commands are executed in bash and can produce side effects.
-# If a hook creates a .env file, it will be sourced after the command runs, allowing
-# you to set environment variables for subsequent steps.
-#
-# Available hooks (in execution order):
+# Hooks - python functions to run at specific points during the process. 
+# The function gets:
+#   * config
+#   * config_path
+# and any extra parameters the caller passes. The hook can modify
+# the config file or do any other side effect. If it modifies the config,
+# it is responsible for saving it back to the same path. 
+# Available hooks:
 hooks:
-  # Run after loading and preprocessing the config file
-  after-config-preprocessing:
-  
-  # Run before cloning the repository.git
-  before-repository-checkout:
-  
-  # Run after cloning repository.git but before uv sync
-  after-repository-checkout:
-  
-  # Run after 'uv sync' installs all dependencies
-  after-uv-sync:
-  
-  # Run after extracting the list of packages to test
-  after-package-extraction:
-  
-  # Run before applying each patch (cherry-picking)
-  # Useful for preparing the environment or modifying files before patching
-  before-cherry-pick:
-  
-  # Run after applying each patch (cherry-picking)
-  # Useful for additional modifications or validation after patching
-  after-cherry-pick:
-  
-  # Run before executing unit tests for each package
-  before-tests:
-  
-  # Run after unit tests complete for each package
-  after-tests:
-  
-  # Run before executing e2e tests
-  before-e2e-tests:
-  
-  # Run after e2e tests complete
-  after-e2e-tests:
+    # after_config_preprocessing = "package.module:function_name"
+    # after_invenio_repo_clone
+    # after_dependencies_collected
+    # before_filtering_packages
+    # after_filtering_packages
+    # before_cloning_packages
+    # after_cloning_repository
+    # after_cloning_e2e_repository
+    # after_cloning_dependency
+    # after_cloning_packages
+
 
 # Timeout for each tested package (in minutes)
 test_timeout: 90

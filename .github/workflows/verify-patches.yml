@@ -103,6 +103,7 @@ jobs:
                   invenio-testrig init $YAML_CONFIG_PATH $JSON_CONFIG_PATH
                   invenio-testrig collect $JSON_CONFIG_PATH
                   invenio-testrig filter $JSON_CONFIG_PATH
+                  invenio-testrig select-patches $JSON_CONFIG_PATH
                   echo "::endgroup::"
 
                   echo "::group::⚙️📊 Generating test matrix"

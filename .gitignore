@@ -15,3 +15,7 @@ config.json
 uv.lock
 
 **/__pycache__/**
+
+*.egg-info/
+dist/
+reports/
