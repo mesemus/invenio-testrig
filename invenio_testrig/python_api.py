@@ -82,12 +82,25 @@ class PythonAPI:
                 with open(pyproject_path, "rb") as f:
                     pyproject_data = tomllib.load(f)
 
-                sync_extras = []
-                for extra in extras or []:
-                    sync_extras.append("--extra")
-                    sync_extras.append(extra)
-
                 if "project" in pyproject_data:
+                    # Get available optional dependencies
+                    available_extras = set()
+                    if "optional-dependencies" in pyproject_data.get("project", {}):
+                        available_extras = set(
+                            pyproject_data["project"]["optional-dependencies"].keys()
+                        )
+
+                    # Filter extras to only include ones that exist in the project
+                    sync_extras = []
+                    for extra in extras or []:
+                        if extra in available_extras:
+                            sync_extras.append("--extra")
+                            sync_extras.append(extra)
+                        else:
+                            log.warning(
+                                f"Extra '{extra}' not found in project's optional-dependencies, skipping"
+                            )
+
                     call_executable_quietly(
                         [
                             self.uv_executable,
@@ -106,6 +119,7 @@ class PythonAPI:
                 pass
 
         # Strategy 3: Use uv venv + uv pip install -e .
+        # no need to filter extras here, uv pip ignores non-existent extras, and this allows installing extras that are not declared in pyproject.toml (e.g. for older projects without proper pyproject.toml)
         # First, create the venv with a clean environment
         clean_env = os.environ.copy()
         # Clear virtualenv variables to avoid conflicts during venv creation
