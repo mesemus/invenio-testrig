@@ -102,7 +102,7 @@ def load_test_artifacts(
     package_data: dict[str, ReportPackageData] = {
         package_name: ReportPackageData(
             info=package_info,
-            artefact_dir=package_name,
+            artefact_dir=f"artifacts/{package_name}",
             patched=ExecutionStatus(status="skipped", package=package_info),
             original=ExecutionStatus(status="skipped", package=package_info),
         )

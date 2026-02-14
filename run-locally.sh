@@ -458,12 +458,13 @@ if [ "$SKIP_REPORT" = false ]; then
     
     # Copy artifacts to report directory
     print_step "Copying artifacts to report directory..."
+    mkdir -p "$REPORT_PATH/artifacts"
     if [ -d "$ARTIFACTS_PATH" ]; then
         # Copy all package directories from artifacts to report
         for package_dir in "$ARTIFACTS_PATH"/*; do
             if [ -d "$package_dir" ] && [[ "$(basename "$package_dir")" != .working* ]]; then
                 package_name=$(basename "$package_dir")
-                cp -r "$package_dir" "$REPORT_PATH/$package_name"
+                cp -r "$package_dir" "$REPORT_PATH/artifacts/$package_name"
             fi
         done
         print_success "Artifacts copied to: $REPORT_PATH"
