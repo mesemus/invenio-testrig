@@ -82,6 +82,11 @@ class PythonAPI:
                 with open(pyproject_path, "rb") as f:
                     pyproject_data = tomllib.load(f)
 
+                sync_extras = []
+                for extra in extras or []:
+                    sync_extras.append("--extra")
+                    sync_extras.append(extra)
+
                 if "project" in pyproject_data:
                     call_executable_quietly(
                         [
@@ -89,6 +94,7 @@ class PythonAPI:
                             "sync",
                             "--python",
                             self.python_version,
+                            *sync_extras,
                         ],
                         cwd=project_path,
                         env=self.build_environment(project_path),
