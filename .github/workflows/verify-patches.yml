@@ -14,11 +14,11 @@ on:
                 required: false
                 type: boolean
                 default: false
-            check_formatting:
-                description: "Check black/isort during tests"
+            disable_codestyle_checks:
+                description: "Disable codestyle checks (black/isort) during tests"
                 required: false
                 type: boolean
-                default: true
+                default: false
 
     # or called from another workflow from another repository
     workflow_call:
@@ -43,11 +43,11 @@ on:
                 required: false
                 type: boolean
                 default: false
-            check_formatting:
-                description: "Check black/isort during tests"
+            disable_codestyle_checks:
+                description: "Disable codestyle checks (black/isort) during tests"
                 required: false
                 type: boolean
-                default: true
+                default: false
             config_file:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
@@ -58,7 +58,7 @@ env:
     PYTHONUNBUFFERED: 1
     PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
     VERBOSE_PYTEST: ${{ inputs.verbose_pytest }}
-    CHECK_FORMATTING: ${{ inputs.check_formatting }}
+    DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable_codestyle_checks }}
 
     # if the workflow is called from another workflow, we use the defaults
     TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
@@ -98,7 +98,12 @@ jobs:
               run: |
 
                   echo "::group::⚙️ Preparing testrig configuration"
-                  invenio-testrig init $YAML_CONFIG_PATH $WORKDIR
+                  init_args=("--verbose")
+
+                  if [ "$DISABLE_CODESTYLE_CHECKS" == "true" ]; then
+                      init_args+=("--disable-codestyle-checks")
+                  fi
+                  invenio-testrig init $YAML_CONFIG_PATH $WORKDIR "${init_args[@]}"
                   invenio-testrig collect $WORKDIR
                   invenio-testrig filter $WORKDIR
                   invenio-testrig select-patches $WORKDIR
