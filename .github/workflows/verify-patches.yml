@@ -173,13 +173,7 @@ jobs:
                   status=$(cat $STATUS_FILE | jq -r '.status')
 
                   if [ "$status" == "failed" ]; then
-                      echo "::error::❌ Tests failed for package ${{ matrix.package }}. "
-                      echo "See $WORKDIR/artifacts/${{ matrix.package }}/patched_log.log for details."
                       exit 1
-                  elif [ "$status" == "skipped" ]; then
-                      echo "::warning::✅ Tests were skipped for package ${{ matrix.package }} - no patches to apply."
-                  else
-                      echo "::notice::✅ Tests passed for package ${{ matrix.package }}."
                   fi
 
             - name: Run unpatched tests for the package
@@ -199,15 +193,8 @@ jobs:
                   echo "test_original_status=$(cat $STATUS_FILE | jq -r '.status')" >> $GITHUB_OUTPUT
                   status=$(cat $STATUS_FILE | jq -r '.status')
 
-                  if [ "$status" == "failed" ]; then
-                      echo "::error::❌ Tests failed for package ${{ matrix.package }}. "
-                      echo "See $WORKDIR/artifacts/${{ matrix.package }}/original_log.log for details."
+                  if [ "$status" == "failed" ] || [ "$status" == "skipped" ]; then
                       exit 1
-                  elif [ "$status" == "skipped" ]; then
-                      echo "::warning::❌ Tests were skipped for package ${{ matrix.package }} - not sure why."
-                      exit 1
-                  else
-                      echo "::notice::✅ Tests passed for package ${{ matrix.package }}."
                   fi
 
             - name: Store test results as artifact
