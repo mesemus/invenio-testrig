@@ -215,7 +215,7 @@ jobs:
               uses: actions/upload-artifact@v6
               with:
                   name: test-results-${{ matrix.package }}
-                  path: ${{ env.WORKDIR }}/artifacts/${{ matrix.package }}
+                  path: ${{ env.WORKDIR }}/artifacts
 
     report:
         needs:
@@ -254,6 +254,7 @@ jobs:
               shell: bash
               run: |
                   echo "::group::📊 Generating test report"
+                  ls -la ${{ env.WORKDIR }}/artifacts
                   REPORT_PATH=${{ github.workspace }}/report
                   invenio-testrig report $WORKDIR $REPORT_PATH --completed
                   # copy the artifacts for the report to the report directory
