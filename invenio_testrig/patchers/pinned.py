@@ -1,9 +1,14 @@
+"""Pinned version patching strategies.
+
+This module provides patchers that use exact pinned commits for both
+unpatched and patched versions, with either overwrite or rebase modes.
+"""
+
 from pathlib import Path
 
-from invenio_testrig.github.api import git_api
 from invenio_testrig.github.types import GitReference
 
-from ..config import TestedPackageInfo
+from ..types import TestedPackageInfo
 from .base import Patcher
 
 
@@ -93,4 +98,4 @@ class PinnedRebasePatcher(Patcher):
         # does nothing, as we already cloned the patched version
 
         for patch in package_info.patches:
-            git_api.apply_reference(patched_reference_path, patch)
+            self.git_api.apply_reference(patched_reference_path, patch)

@@ -112,26 +112,5 @@ repository:
 #       For patched packages rebase the patch on top of the upstream.
 mode: pinned-rebase
 
-# Hooks - python functions to run at specific points during the process. 
-# The function gets:
-#   * config
-#   * config_path
-# and any extra parameters the caller passes. The hook can modify
-# the config file or do any other side effect. If it modifies the config,
-# it is responsible for saving it back to the same path. 
-# Available hooks:
-hooks:
-    # after_config_preprocessing = "package.module:function_name"
-    # after_invenio_repo_clone
-    # after_dependencies_collected
-    # before_filtering_packages
-    # after_filtering_packages
-    # before_cloning_packages
-    # after_cloning_repository
-    # after_cloning_e2e_repository
-    # after_cloning_dependency
-    # after_cloning_packages
-
-
 # Timeout for each tested package (in minutes)
 test_timeout: 90

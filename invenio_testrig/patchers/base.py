@@ -1,16 +1,40 @@
+"""Base patcher class with common functionality for cloning and patching.
+
+This module defines the abstract Patcher base class that provides shared
+logic for cloning repositories and applying patches. Subclasses implement
+specific strategies for handling unpatched and patched versions.
+"""
+
 import shutil
-import subprocess
 from pathlib import Path
 
-from invenio_testrig.github.api import git_api
+import black
+
+from invenio_testrig.github.api import GitApi, GitCache
 from invenio_testrig.github.types import GitReference
 
-from ..config import Config, TestedPackageInfo
+from ..config import Config
+from ..types import TestedPackageInfo
 
 
 class Patcher:
+    """Base class for applying patches to repository clones.
+
+    Provides common functionality for cloning repositories with and without
+    patches, and applying patches according to different strategies.
+    Subclasses must implement specific patching strategies.
+    """
+
     def __init__(self, config: Config, unpatched_dir: Path, patched_dir: Path):
+        """Initialize the Patcher with configuration and directory paths.
+
+        Args:
+            config: Configuration object containing patch and package information
+            unpatched_dir: Directory where unpatched repositories will be cloned
+            patched_dir: Directory where patched repositories will be cloned
+        """
         self.config = config
+        self.git_api = GitApi(GitCache(config.workdir_path("git_cache")))
         self.unpatched_dir = unpatched_dir
         self.patched_dir = patched_dir
 
@@ -20,7 +44,7 @@ class Patcher:
         name, info = self._get_tested_package(package)
 
         unpatched_reference = self._build_unpatched_reference(name, info)
-        unpatched_reference = git_api.resolve_reference(unpatched_reference)
+        unpatched_reference = self.git_api.resolve_reference(unpatched_reference)
         unpatched_reference_path = self._clone_package(
             unpatched_reference, self.unpatched_dir
         )
@@ -28,7 +52,7 @@ class Patcher:
         patched_reference = self._build_patched_reference(name, info)
         patched_reference_path = None
         if patched_reference:
-            patched_reference = git_api.resolve_reference(patched_reference)
+            patched_reference = self.git_api.resolve_reference(patched_reference)
             patched_reference_path = self._clone_package(
                 patched_reference, self.patched_dir
             )
@@ -81,6 +105,14 @@ class Patcher:
             shutil.rmtree(git_directory)
 
     def _fix_check_manifest(self, path: Path) -> None:
+        """Remove check-manifest commands from run-tests.sh script.
+
+        The check-manifest command fails when there are untracked files (like
+        removed .git directories), so we remove it from test scripts.
+
+        Args:
+            path: Path to the repository directory
+        """
         # invenio: if there is a run-tests.sh script, it might contain a check-manifest
         # command. This command will fail if there are untracked files in the repository,
         # so we need to remove the command.
@@ -110,7 +142,7 @@ class Patcher:
         package_dir = destination / reference.package
         if package_dir.exists():
             shutil.rmtree(package_dir)
-        git_api.clone_git_reference(reference, package_dir)
+        self.git_api.clone_git_reference(reference, package_dir)
         return package_dir
 
     def _add_patch_info(
@@ -171,13 +203,19 @@ class Patcher:
             # Write the file
             patch_info_file.write_text(content)
 
-            # Call black to format the file. We suppose that black is always installed.
-            subprocess.check_call(
-                ["black", patch_info_file],
+            # Call black to format the file.
+            black.format_file_in_place(
+                patch_info_file,
+                fast=False,
+                mode=black.Mode(),
+                write_back=black.WriteBack.YES,
             )
 
         top_level_info = target_dir / "patch_info.py"
         top_level_info.write_text(content)
-        subprocess.check_call(
-            ["black", top_level_info],
+        black.format_file_in_place(
+            top_level_info,
+            fast=False,
+            mode=black.Mode(),
+            write_back=black.WriteBack.YES,
         )

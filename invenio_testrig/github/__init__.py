@@ -1,6 +1,7 @@
 """GitHub-related types and utilities."""
 
-from .ref_parser import parse_reference
+from .api import GitApi
+from .cache import GitCache
 from .types import GitReference, GitReferenceSchema, PullRequestInfo, VersionConstraint
 
 __all__ = [
@@ -8,5 +9,6 @@ __all__ = [
     "GitReferenceSchema",
     "PullRequestInfo",
     "VersionConstraint",
-    "parse_reference",
+    "GitApi",
+    "GitCache",
 ]

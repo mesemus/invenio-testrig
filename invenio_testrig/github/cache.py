@@ -1,8 +1,17 @@
+"""Git repository caching layer to minimize GitHub API calls.
+
+This module provides a caching mechanism for git repository data using
+local clones instead of API calls to avoid rate limiting. It caches
+repository metadata, branch information, and pull request details.
+"""
+
 import json
+import multiprocessing
 import shutil
 from pathlib import Path
 from typing import Any
 
+from ..types import Progress
 from ..utils import call_executable_quietly
 from .types import PullRequestInfo
 
@@ -143,6 +152,34 @@ class GitCache:
         )
         return output.strip().split("\n")
 
+    def cache_repositories(
+        self, repositories: list[tuple[str, str]], progress: Progress
+    ) -> None:
+        """Cache multiple repositories in parallel using multiprocessing.
+
+        Args:
+            repositories: List of (org, repo) tuples to cache
+            progress: Progress callback for status updates
+        """
+        if not repositories:
+            return
+
+        progress.info(
+            f"Caching {len(repositories)} repositories in parallel...", icon="📦"
+        )
+
+        # Prepare arguments for the worker pool
+        clone_args = [(self, org, repo, progress) for org, repo in repositories]
+
+        # Use multiprocessing to clone repositories in parallel
+        # Use cpu_count for number of workers, but cap at reasonable limit
+        num_workers = min(multiprocessing.cpu_count(), len(repositories), 8)
+
+        with multiprocessing.Pool(processes=num_workers) as pool:
+            pool.starmap(_clone_repo_worker, clone_args)
+
+        progress.info(f"Finished caching {len(repositories)} repositories", icon="✅")
+
     def _prepare_pr(self, org: str, repo: str, pr: int) -> None:
         """Prepare the local cache for the given PR reference.
 
@@ -196,28 +233,20 @@ class GitCache:
         return repo_cache_path
 
 
-# default global cache instance used by the rest of the codebase
-git_cache = GitCache(cache_dir=Path("/tmp").resolve() / ".invenio_testrig_git_cache")
+def _clone_repo_worker(
+    cache: GitCache, org: str, repo: str, progress: Progress
+) -> None:
+    """Worker function for parallel repository cloning.
 
-if __name__ == "__main__":
-    # Example usage
-    git_cache.clear_cache()  # Clear cache before starting
-    pr_info = git_cache.get_pr_info("inveniosoftware", "invenio-rdm-records", 2205)
-    print("PR Info for inveniosoftware/invenio-rdm-records#1234", pr_info)
+    Args:
+        cache: GitCache instance
+        org: GitHub organization
+        repo: GitHub repository
+        progress: Progress reporter
 
-    branch_commit = git_cache.get_branch_commit(
-        "inveniosoftware", "invenio-rdm-records"
-    )
-    print(
-        "Latest commit on default branch for inveniosoftware/invenio-rdm-records",
-        branch_commit,
-    )
+    Returns:
+        Path to the cached repository
+    """
 
-    branch_commit = git_cache.get_branch_commit(
-        "inveniosoftware", "invenio-rdm-records", branch="v10.0.0"
-    )
-    print(
-        "Latest commit on branch v10.0.0 for inveniosoftware/invenio-rdm-records",
-        branch_commit,
-    )
-    print("Cache path:", git_cache.cache_dir)
+    progress.info(f"Caching repository {org}/{repo}...", icon="📦")
+    cache._clone_repo(org, repo)  # type: ignore[reportPrivateUsage]

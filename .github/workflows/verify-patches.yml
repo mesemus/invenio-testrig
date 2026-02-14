@@ -67,10 +67,8 @@ env:
     # Path to the configuration file to use (relative to workspace root)
     # if workflow is called manually, use the default from this branch
     YAML_CONFIG_PATH: ${{ inputs.config_file || '.pipeline/config_test.yaml' }}
-    JSON_CONFIG_PATH: ${{ inputs.config_file || 'config.json' }}
-    CLONED_PACKAGES_DIR: ${{ github.workspace }}/cloned-packages
+    WORKDIR: ${{ github.workspace }}/workdir
     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    TEST_DIR: ${{ github.workspace }}/test_dir
 
 permissions:
     contents: read
@@ -100,69 +98,38 @@ jobs:
               run: |
 
                   echo "::group::⚙️ Preparing testrig configuration"
-                  invenio-testrig init $YAML_CONFIG_PATH $JSON_CONFIG_PATH
-                  invenio-testrig collect $JSON_CONFIG_PATH
-                  invenio-testrig filter $JSON_CONFIG_PATH
-                  invenio-testrig select-patches $JSON_CONFIG_PATH
+                  invenio-testrig init $YAML_CONFIG_PATH $WORKDIR
+                  invenio-testrig collect $WORKDIR
+                  invenio-testrig filter $WORKDIR
+                  invenio-testrig select-patches $WORKDIR
                   echo "::endgroup::"
 
                   echo "::group::⚙️📊 Generating test matrix"
-                  invenio-testrig matrix $JSON_CONFIG_PATH $GITHUB_OUTPUT
+                  invenio-testrig matrix $WORKDIR $GITHUB_OUTPUT
                   echo "::endgroup::"
 
-            - name: Store the config file as artifact
-              uses: actions/upload-artifact@v6
-              with:
-                  name: config-file
-                  path: ${{ env.JSON_CONFIG_PATH }}
-
-    patch:
-        needs: prepare
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout the testrig repository to .pipeline
-              uses: actions/checkout@v4
-              with:
-                  repository: ${{ env.TESTRIG_REPOSITORY }}
-                  ref: ${{ env.TESTRIG_BRANCH }}
-                  path: .pipeline
-
-            - name: Load config file artifact
-              uses: actions/download-artifact@v7
-              with:
-                  name: config-file
-
-            - name: Prepare python and tools
-              uses: ./.pipeline/.github/actions/action-install-tools
-              with:
-                  python-version: ${{ env.PYTHON_VERSION }}
-                  testrig-directory: ${{ github.workspace }}/.pipeline
-
             - name: Clone the packages and apply patches
-              id: prepare
+              id: clone-and-patch
               shell: bash
               run: |
                   echo "::group::📦 Cloning and patching packages"
-                  invenio-testrig clone $JSON_CONFIG_PATH $CLONED_PACKAGES_DIR
+                  invenio-testrig clone $WORKDIR
                   echo "::endgroup::"
 
-            - name: Store cloned packages as artifact
+            - name: Store workdir with cloned packages as artifact
               uses: ./.pipeline/.github/actions/upload-artifact-tar
               with:
-                  name: cloned-packages
-                  path: ${{ env.CLONED_PACKAGES_DIR }}
+                  name: workdir
+                  path: ${{ env.WORKDIR }}
 
     test:
         needs:
             - prepare
-            - patch
         runs-on: ubuntu-latest
         strategy:
             matrix:
                 package: ${{ fromJson(needs.prepare.outputs.matrix_tested_packages) }}
             fail-fast: false
-        env:
-            LOG_DIR: ${{ github.workspace }}/logs
         steps:
             - name: Checkout the testrig repository to .pipeline
               uses: actions/checkout@v4
@@ -171,16 +138,11 @@ jobs:
                   ref: ${{ env.TESTRIG_BRANCH }}
                   path: .pipeline
 
-            - name: Load cloned packages artifact
+            - name: Load workdir artifact
               uses: ./.pipeline/.github/actions/download-artifact-tar
               with:
-                  name: cloned-packages
-                  path: ${{ env.CLONED_PACKAGES_DIR }}
-
-            - name: Load config file artifact
-              uses: actions/download-artifact@v7
-              with:
-                  name: config-file
+                  name: workdir
+                  path: ${{ env.WORKDIR }}
 
             - name: Prepare python and tools
               uses: ./.pipeline/.github/actions/action-install-tools
@@ -194,24 +156,20 @@ jobs:
               run: |
                   echo "::group::🧪 Running tests for package ${{ matrix.package }}"
                   invenio-testrig test \
-                      $JSON_CONFIG_PATH \
-                      $CLONED_PACKAGES_DIR \
-                      ${{ matrix.package }}  \
-                      $TEST_DIR \
+                      $WORKDIR \
+                      ${{ matrix.package }} \
                       --apply-patches \
-                      --python $PYTHON_VERSION \
-                      --log-dir $LOG_DIR \
                       || true
                   echo "::endgroup::"
 
-                  STATUS_FILE=$LOG_DIR/patched_status.json 
+                  STATUS_FILE=$WORKDIR/artifacts/${{ matrix.package }}/patched_status.json
 
                   echo "test_patch_status=$(cat $STATUS_FILE | jq -r '.status')" >> $GITHUB_OUTPUT
                   status=$(cat $STATUS_FILE | jq -r '.status')
 
                   if [ "$status" == "failed" ]; then
                       echo "::error::❌ Tests failed for package ${{ matrix.package }}. "
-                      echo "See $LOG_DIR/patched_log.log for details."
+                      echo "See $WORKDIR/artifacts/${{ matrix.package }}/patched_log.log for details."
                       exit 1
                   elif [ "$status" == "skipped" ]; then
                       echo "::warning::✅ Tests were skipped for package ${{ matrix.package }} - no patches to apply."
@@ -225,28 +183,20 @@ jobs:
               if: ${{ steps.run-patched.outputs.test_patch_status != 'success' }}
               run: |
                   echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"
-                  if [ -d "$TEST_DIR" ]; then
-                      echo "Cleaning test directory $TEST_DIR"
-                      rm -rf $TEST_DIR
-                  fi
                   invenio-testrig test \
-                      $JSON_CONFIG_PATH \
-                      $CLONED_PACKAGES_DIR \
-                      ${{ matrix.package }}  \
-                      $TEST_DIR \
-                      --python $PYTHON_VERSION \
-                      --log-dir $LOG_DIR \
+                      $WORKDIR \
+                      ${{ matrix.package }} \
                       || true
                   echo "::endgroup::"
 
-                  STATUS_FILE=$LOG_DIR/original_status.json 
+                  STATUS_FILE=$WORKDIR/artifacts/${{ matrix.package }}/original_status.json
 
                   echo "test_original_status=$(cat $STATUS_FILE | jq -r '.status')" >> $GITHUB_OUTPUT
                   status=$(cat $STATUS_FILE | jq -r '.status')
 
                   if [ "$status" == "failed" ]; then
                       echo "::error::❌ Tests failed for package ${{ matrix.package }}. "
-                      echo "See $LOG_DIR/original_log.log for details."
+                      echo "See $WORKDIR/artifacts/${{ matrix.package }}/original_log.log for details."
                       exit 1
                   elif [ "$status" == "skipped" ]; then
                       echo "::warning::❌ Tests were skipped for package ${{ matrix.package }} - not sure why."
@@ -255,20 +205,60 @@ jobs:
                       echo "::notice::✅ Tests passed for package ${{ matrix.package }}."
                   fi
 
-            - name: Prepare test results for upload
-              if: always()
-              shell: bash
-              run: |
-                  # Create package-specific directory structure
-                  PACKAGE_DIR=$LOG_DIR/${{ matrix.package }}
-                  mkdir -p "$PACKAGE_DIR"
-
-                  # Move all log and status files to the package directory
-                    find "$LOG_DIR" -maxdepth 1 -type f -exec mv {} "$PACKAGE_DIR/" \;
-
             - name: Store test results as artifact
               if: always()
               uses: actions/upload-artifact@v6
               with:
                   name: test-results-${{ matrix.package }}
-                  path: ${{ env.LOG_DIR }}
+                  path: ${{ env.WORKDIR }}/artifacts/${{ matrix.package }}
+
+    report:
+        needs:
+            - prepare
+            - test
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the testrig repository to .pipeline
+              uses: actions/checkout@v4
+              with:
+                  repository: ${{ env.TESTRIG_REPOSITORY }}
+                  ref: ${{ env.TESTRIG_BRANCH }}
+                  path: .pipeline
+
+            - name: Load workdir artifact
+              uses: ./.pipeline/.github/actions/download-artifact-tar
+              with:
+                  name: workdir
+                  path: ${{ env.WORKDIR }}
+
+            - name: Download all test results
+              uses: actions/download-artifact@v7
+              with:
+                  pattern: test-results-*
+                  path: ${{ env.WORKDIR }}/artifacts
+                  merge-multiple: true
+
+            - name: Prepare python and tools
+              uses: ./.pipeline/.github/actions/action-install-tools
+              with:
+                  python-version: ${{ env.PYTHON_VERSION }}
+                  testrig-directory: ${{ github.workspace }}/.pipeline
+
+            - name: Generate report
+              shell: bash
+              run: |
+                  echo "::group::📊 Generating test report"
+                  REPORT_PATH=${{ github.workspace }}/report
+                  invenio-testrig report $WORKDIR $REPORT_PATH --completed
+                  # copy the artifacts for the report to the report directory
+                  cp -r $WORKDIR/artifacts $REPORT_PATH/
+                  echo "::endgroup::"
+
+                  echo "::notice::✅ Report generated at $REPORT_PATH/index.html"
+
+            - name: Store report as artifact
+              uses: actions/upload-artifact@v6
+              with:
+                  name: test-report
+                  path: ${{ github.workspace }}/report

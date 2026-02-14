@@ -1,5 +1,11 @@
+"""Hook execution system for running custom Python functions at workflow stages.
+
+Hooks allow users to inject custom Python code at specific points during the
+testrig workflow, enabling configuration modifications and custom processing.
+"""
+
+import importlib.metadata as importlib_metadata
 import logging
-from pathlib import Path
 from typing import Any
 
 from .config import Config
@@ -7,44 +13,29 @@ from .config import Config
 logger = logging.getLogger(__name__)
 
 
+def get_hooks(hook_name):
+    """Load hooks from the entrypoints. Hooks are named as
+    invenio_testrig.hooks.<hook_name>
+    """
+    for ep in importlib_metadata.entry_points(group="invenio_testrig.hooks"):
+        if ep.name == hook_name:
+            yield ep.load()
+
+
 def run_hook(
     config: Config,
-    config_path: str | Path,
     hook_name: str,
     **extra_parameters: Any,
-) -> Config:
+) -> None:
     """Run a hook by name. A hook is a python function defined as a string in the config
     which is called at a specific point during the process. The hook function can optionally take
     additional environment variables and a working directory.
     """
-    hook_func = getattr(config.hooks, hook_name, None)
+    for hook_ep_name, hook_func in get_hooks(hook_name):
+        logging.info("Running hook %s", hook_ep_name)
 
-    if not hook_func:
-        return config
-
-    logging.info("Running hook %s", hook_name)
-
-    # Import the Python function from package.module:function string
-    if ":" not in hook_func:
-        raise ValueError(
-            f"Invalid hook format: {hook_func}. Expected 'package.module:function'"
+        # Call the hook function with config, config_path, and other parameters
+        hook_func(
+            config=config,
+            **extra_parameters,
         )
-
-    module_path, func_name = hook_func.rsplit(":", 1)
-
-    # Import the module
-    import importlib
-
-    module = importlib.import_module(module_path)
-
-    # Get the function from the module
-    func = getattr(module, func_name)
-
-    # Call the hook function with config, config_path, and other parameters
-    func(
-        config=config,
-        config_path=config_path,
-        **extra_parameters,
-    )
-
-    return config

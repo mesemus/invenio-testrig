@@ -1,18 +1,77 @@
+"""GitHub API client wrapper for git operations.
+
+This module provides a high-level interface for interacting with GitHub
+repositories, including resolving references, fetching commits, managing
+branches and tags, and handling pull requests.
+"""
+
 import shutil
 import subprocess
 from collections.abc import Callable
 from pathlib import Path
+from typing import Any, cast
 
 import semver
 
 from ..utils import call_executable_quietly
-from .cache import GitCache, git_cache
-from .types import GitReference, PullRequestInfo
+from .cache import GitCache
+from .types import GitReference, GitReferenceSchema, PullRequestInfo
 
 
 class GitApi:
+    """High-level GitHub API client for git operations.
+
+    Provides methods for resolving git references, cloning repositories,
+    applying patches, and managing branches, tags, and pull requests.
+    """
+
     def __init__(self, cache: GitCache):
+        """Initialize GitApi with a cache instance.
+
+        Args:
+            cache: GitCache instance for caching repository data
+        """
         self._cache = cache
+
+    def parse_reference(
+        self, reference: str | GitReference | dict[str, Any]
+    ) -> GitReference:
+        """Parse a git reference string into a GitReference structure.
+
+        Supported formats:
+        - org/package@branch
+        - org/package#pr_number
+        - org/package@branch[base]
+        - org/package[@branch|#pr]version-range
+        - package_name: org/package...
+        - https://github.com/org/repo
+        - https://github.com/org/repo/tree/branch-name
+        - https://github.com/org/repo/pull/123
+
+        Also pip-installed github references:
+        - https://github.com/inveniosoftware/invenio-records-resources?branch=fix-read-many#c6b973a14802e2a7f73100ab4e32cb0c36bd4672
+        - https://github.com/inveniosoftware/invenio-swh?rev=v0.13.4#828a3a415cf8e725c369939832b61281c44aec40
+
+        Args:
+            reference: Git reference string to parse
+
+        Returns:
+            Parsed GitReference structure
+
+        Raises:
+            ValidationError: If the reference string is invalid
+        """
+        # Import here to avoid circular imports
+        from .ref_parser import parse_string_reference
+
+        if isinstance(reference, str):
+            parsed_reference = parse_string_reference(reference)
+        elif isinstance(reference, dict):
+            parsed_reference = cast(GitReference, GitReferenceSchema().load(reference))
+        else:
+            parsed_reference = reference
+
+        return self.resolve_reference(parsed_reference)
 
     def get_commit(self, org: str, repo: str, branch_or_tag_or_commit: str) -> str:
         """Resolve any git reference to a commit SHA.
@@ -246,7 +305,14 @@ class GitApi:
         for commit_sha in commits:
             try:
                 call_executable_quietly(
-                    ["git", "cherry-pick", commit_sha],
+                    [
+                        "git",
+                        "cherry-pick",
+                        "--allow-empty",
+                        "--allow-empty-message",
+                        "--empty=drop",
+                        commit_sha,
+                    ],
                     cwd=directory,
                 )
             except subprocess.CalledProcessError as e:
@@ -304,6 +370,3 @@ class GitApi:
             predicate=predicate,
         )
         return matching[0] if matching else None
-
-
-git_api = GitApi(cache=git_cache)

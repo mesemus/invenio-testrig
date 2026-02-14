@@ -1,3 +1,10 @@
+"""Common utility functions and decorators.
+
+This module provides shared utilities including the extensible_dataclass
+decorator for creating dataclasses that accept unknown keyword arguments,
+and subprocess execution helpers.
+"""
+
 import logging
 import subprocess
 from dataclasses import dataclass, field, fields

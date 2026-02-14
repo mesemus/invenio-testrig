@@ -67,5 +67,15 @@ class GitReference:
             "commit": self.commit,
         }
 
+    @property
+    def github_url(self) -> str:
+        """Construct the GitHub URL for this reference."""
+        url = f"https://github.com/{self.org}/{self.repo}"
+        if self.branch:
+            url += f"/tree/{self.branch}"
+        elif self.pr is not None:
+            url += f"/pull/{self.pr}"
+        return url
+
 
 GitReferenceSchema = class_schema(GitReference)

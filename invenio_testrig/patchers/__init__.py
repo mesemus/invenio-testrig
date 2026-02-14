@@ -1,3 +1,9 @@
+"""Patcher implementations for applying patches to repositories.
+
+This module provides different patching strategies for managing repository
+versions with and without patches, including pinned and upstream modes.
+"""
+
 from .base import Patcher
 from .pinned import PinnedOverwritePatcher, PinnedRebasePatcher
 from .upstream import UpstreamOverwritePatcher, UpstreamRebasePatcher

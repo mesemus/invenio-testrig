@@ -1,9 +1,14 @@
+"""Upstream branch patching strategies.
+
+This module provides patchers that use the upstream default branch for
+unpatched versions and apply patches on top, with either overwrite or rebase modes.
+"""
+
 from pathlib import Path
 
-from invenio_testrig.github.api import git_api
 from invenio_testrig.github.types import GitReference
 
-from ..config import TestedPackageInfo
+from ..types import TestedPackageInfo
 from .base import Patcher
 
 
@@ -86,4 +91,4 @@ class UpstreamRebasePatcher(Patcher):
         # does nothing, as we already cloned the patched version
 
         for patch in package_info.patches:
-            git_api.apply_reference(patched_reference_path, patch)
+            self.git_api.apply_reference(patched_reference_path, patch)

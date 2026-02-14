@@ -1,21 +1,40 @@
+"""Python package management and installation using uv.
+
+This module provides a wrapper around the uv package manager for creating
+virtual environments, installing packages, and managing Python dependencies.
+It handles various project configurations including modern pyproject.toml
+and legacy setup.py based projects.
+"""
+
 import json
 import logging
 import os
 import shutil
 import subprocess
-from collections.abc import Callable
 from pathlib import Path
-from typing import Any
 
+from invenio_testrig.types import Progress
 from invenio_testrig.utils import call_executable_quietly
 
 log = logging.getLogger(__name__)
 
 
 class PythonAPI:
+    """Python package management API using uv.
+
+    Provides methods for creating virtual environments, installing packages,
+    managing dependencies, and running commands within virtual environments.
+    """
+
     def __init__(
         self, uv_executable: str = "uv", python_version: str = "python3"
     ) -> None:
+        """Initialize the PythonAPI with uv executable and Python version.
+
+        Args:
+            uv_executable: Path to the uv executable (default: "uv")
+            python_version: Python version to use (default: "python3")
+        """
         self.uv_executable = uv_executable
         self.python_version = python_version
 
@@ -219,63 +238,37 @@ class PythonAPI:
         project_path: Path,
         packages_root: Path,
         patched_packages_root: Path,
-        progress: Callable[[str], None] = (lambda _msg: None),
-    ) -> dict[str, dict[str, Any]]:
+        progress: Progress,
+    ) -> list[str]:
         """Reinstall dependencies with local patches when available.
 
         Returns:
-            Dictionary mapping package names to patch info:
-            {
-                package_name: {
-                    'base': GitReference of the base package,
-                    'patches': list of patches
-                }
-            }
+            A list of installed dependencies (package names).
         """
-        dependencies = self.get_installed_dependencies(project_path)
-        patch_info_dict: dict[str, dict[str, Any]] = {}
+        all_dependencies = self.get_installed_dependencies(project_path)
+        dependencies: list[str] = []
 
         paths_to_install: list[Path] = []
-        for library_package in dependencies.keys():
+        for library_package in all_dependencies.keys():
             library_path = None
 
             if (patched_packages_root / library_package).exists():
-                progress(f"Installing patched dependency '{library_package}'")
+                progress.info(f"Installing patched dependency '{library_package}'")
                 library_path = patched_packages_root / library_package
             elif (packages_root / library_package).exists():
-                progress(f"Installing dependency '{library_package}' from local clone")
+                progress.info(
+                    f"Installing dependency '{library_package}' from local clone"
+                )
                 library_path = packages_root / library_package
 
             # If we installed from a local library, get patch info
             if library_path:
                 paths_to_install.append(library_path)
-                patch_info_dict[library_package] = self._get_patch_info(library_path)
+                dependencies.append(library_package)
 
         self.install_external_libraries(project_path, *paths_to_install)
 
-        return patch_info_dict
-
-    def _get_patch_info(self, package_path: Path) -> dict[str, Any]:
-        """Get patch info from the library's patch_info.py file."""
-        patch_info_file = package_path / "patch_info.py"
-        if patch_info_file.exists():
-            try:
-                stdout, _ = call_executable_quietly(
-                    ["python3", str(patch_info_file)],
-                    cwd=package_path,
-                )
-                patch_data = json.loads(stdout)
-                return {
-                    "base": patch_data.get("reference"),
-                    "patches": patch_data.get("applied_patches", []),
-                }
-            except (
-                subprocess.CalledProcessError,
-                json.JSONDecodeError,
-                KeyError,
-            ):
-                log.warning(f"Failed to read patch info for {package_path}")
-        return {}
+        return dependencies
 
     def install_external_libraries(
         self, project_path: Path, *library_paths: Path
@@ -297,20 +290,26 @@ class PythonAPI:
         repositories_root: Path,
         package_name: str,
         target_dir: Path,
-        install_patched_dependencies: bool = True,
+        install_patched_dependencies: bool,
+        progress: Progress,
+        *,
         extras: list[str] | None = None,
         freeze: list[str] | None = None,
-        progress: Callable[[str], None] = (lambda _msg: None),
-    ) -> tuple[dict[str, Any], dict[str, Any]]:
+    ) -> list[str]:
         """Install a package with patches applied.
 
         Args:
             repositories_root: Root directory containing both patched and regular packages
             package_name: Name of the package to install
             target_dir: Directory where the package should be installed
+            install_patched_dependencies: Whether to install patched dependencies.
+            extras: Optional list of extras to install with the package
+            freeze: Optional list of dependencies to freeze after installation (e.g. ["package==1.2.3"])
+            progress: Callback function to report progress messages
+
 
         Returns:
-            A dictionary containing patch information for the package and its libraries.
+            A list of installed dependencies
 
         Strategy:
         1. Check if patched version of the package exists in patched_packages_root
@@ -321,31 +320,36 @@ class PythonAPI:
         6. Apply the freeze list if provided
         """
 
-        source_path = repositories_root / "patched" / package_name
-        if not source_path.exists() or not install_patched_dependencies:
-            source_path = repositories_root / "packages" / package_name
-            if not source_path.exists():
-                raise FileNotFoundError(
-                    f"Package '{package_name}' not found in patched or regular packages directories"
-                )
-        # copy source to target directory
         if target_dir.exists():
             raise FileExistsError(f"Target directory '{target_dir}' already exists")
 
-        progress(f"Copying package '{package_name}' from {source_path} to {target_dir}")
+        # get the source path for the package, prioritizing patched version
+        # if should test patched dependencies, and raise an error if the package is
+        # not found in either location
+        candidates = [repositories_root / "packages" / package_name]
+        if install_patched_dependencies:
+            candidates.insert(0, repositories_root / "patched" / package_name)
+        try:
+            source_path = next(path for path in candidates if path.exists())
+        except StopIteration:
+            raise FileNotFoundError(
+                f"Package '{package_name}' not found in patched or regular packages directories"
+            )
+
+        progress.info(
+            f"Copying package '{package_name}' from {source_path} to {target_dir}"
+        )
 
         shutil.copytree(source_path, target_dir)
 
-        progress(f"Installing package '{package_name}' in {target_dir}")
+        progress.info(f"Installing package '{package_name}' in {target_dir}")
         # install the package in the target directory
         self.install_project(target_dir, extras=extras)
 
-        # get the {"base": ..., "patches": [...]} info for the installed package
-        package_patch_info = self._get_patch_info(source_path)
-
         # install patched dependencies if any
+        dependencies: list[str]
         if install_patched_dependencies:
-            libraries_patch_info = self.install_patched_dependencies(
+            dependencies = self.install_patched_dependencies(
                 project_path=target_dir,
                 packages_root=repositories_root / "packages",
                 patched_packages_root=repositories_root / "patched",
@@ -353,10 +357,12 @@ class PythonAPI:
             )
             # Check if any patches were applied
         else:
-            libraries_patch_info = {}
+            dependencies = []
 
         if freeze:
-            progress(f"Applying freeze list for package '{package_name}': {freeze}")
+            progress.info(
+                f"Applying freeze list for package '{package_name}': {freeze}"
+            )
             stdout, stderr = call_executable_quietly(
                 [
                     self.uv_executable,
@@ -370,9 +376,9 @@ class PythonAPI:
                 env=self.build_environment(target_dir),
             )
             print(stdout, stderr)
-            progress(f"Freeze list applied for package '{package_name}'")
+            progress.success(f"Freeze list applied for package '{package_name}'")
 
-        return package_patch_info, libraries_patch_info
+        return dependencies
 
     def run_in_venv(
         self,

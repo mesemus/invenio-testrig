@@ -19,3 +19,6 @@ uv.lock
 *.egg-info/
 dist/
 reports/
+
+config_test.yaml
+workdir
