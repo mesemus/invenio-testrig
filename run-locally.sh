@@ -17,7 +17,8 @@
 #   --package <name>          Test only specific package (default: all)
 #   --debug                   Enable debug output for all commands
 #   --keep-cache              Skip clearing git cache before initialization
-#   --always-test-original    Always test original version, even if patched succeeds
+#   --test-mode <mode>        Test execution mode (default: on-failure)
+#                             Options: patched-only, on-failure, always-unpatched, both
 #   --disable-codestyle-checks Disable codestyle checks in tests
 #   --prepare                 Only prepare (skip tests and report)
 #   --help                    Show this help message
@@ -82,7 +83,7 @@ CONFIG_YAML=""
 WORKDIR="$DEFAULT_WORKDIR"
 PACKAGE_NAME=""
 KEEP_CACHE=false
-ALWAYS_TEST_ORIGINAL=false
+TEST_MODE="on-failure"
 SKIP_TESTS=false
 SKIP_REPORT=false
 INIT_OPTIONS=(--verbose)
@@ -116,9 +117,15 @@ while [[ $# -gt 0 ]]; do
             KEEP_CACHE=true
             shift
             ;;
-        --always-test-original)
-            ALWAYS_TEST_ORIGINAL=true
-            shift
+        --test-mode)
+            TEST_MODE="$2"
+            # Validate test mode
+            if [[ ! "$TEST_MODE" =~ ^(patched-only|on-failure|always-unpatched|both)$ ]]; then
+                print_error "Invalid test mode: $TEST_MODE"
+                echo "Valid options: patched-only, on-failure, always-unpatched, both"
+                exit 1
+            fi
+            shift 2
             ;;
         --disable-codestyle-checks)
             INIT_OPTIONS+=(--disable-codestyle-checks)
@@ -353,19 +360,30 @@ if [ "$SKIP_TESTS" = false ]; then
             PATCHED_STATUS="unknown"
         fi
         
-        # Determine if original tests should run based on patched status
+        # Determine if original tests should run based on patched status and test mode
         TEST_ORIGINAL=false
-        if [ "$ALWAYS_TEST_ORIGINAL" = true ]; then
-            # Test if patched was not skipped (i.e., it ran - either success or failed)
-            if [ "$PATCHED_STATUS" != "skipped" ]; then
+        case "$TEST_MODE" in
+            patched-only)
+                # Never test original
+                TEST_ORIGINAL=false
+                ;;
+            on-failure)
+                # Test only if patched failed
+                if [ "$PATCHED_STATUS" = "failed" ]; then
+                    TEST_ORIGINAL=true
+                fi
+                ;;
+            always-unpatched)
+                # Test if patched was not skipped (i.e., it ran)
+                if [ "$PATCHED_STATUS" != "skipped" ]; then
+                    TEST_ORIGINAL=true
+                fi
+                ;;
+            both)
+                # Always test original
                 TEST_ORIGINAL=true
-            fi
-        else
-            # Test only if patched failed
-            if [ "$PATCHED_STATUS" = "failed" ]; then
-                TEST_ORIGINAL=true
-            fi
-        fi
+                ;;
+        esac
         
         # Display patched test results
         if [ "$PATCHED_STATUS" = "success" ]; then

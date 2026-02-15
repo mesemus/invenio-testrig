@@ -14,11 +14,16 @@ on:
                 required: false
                 type: boolean
                 default: false
-            always_test_unpatched:
-                description: "Always test unpatched version if patched tests ran (not skipped)"
+            test_mode:
+                description: "Test execution mode: 'patched-only' (never test unpatched), 'on-failure' (default), 'always-unpatched' (always test unpatched if package has patches), 'both' (always test patched and unpatched packages)"
                 required: false
-                type: boolean
-                default: false
+                type: choice
+                default: "on-failure"
+                options:
+                    - patched-only
+                    - on-failure
+                    - always-unpatched
+                    - both
 
     # or called from another workflow from another repository
     workflow_call:
@@ -43,11 +48,11 @@ on:
                 required: false
                 type: boolean
                 default: false
-            always_test_unpatched:
-                description: "Always test unpatched version if patched tests ran (not skipped)"
+            test_mode:
+                description: "Test execution mode: 'patched-only', 'on-failure' (default), 'always-unpatched', 'both'"
                 required: false
-                type: boolean
-                default: false
+                type: string
+                default: "on-failure"
             config_file:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
@@ -71,7 +76,7 @@ env:
     PYTHONUNBUFFERED: 1
     PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
     DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable_codestyle_checks }}
-    ALWAYS_TEST_UNPATCHED: ${{ inputs.always_test_unpatched }}
+    TEST_MODE: ${{ inputs.test_mode || 'on-failure' }}
 
     # if the workflow is called from another workflow, we use the defaults
     TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
@@ -225,7 +230,12 @@ jobs:
             - name: Run unpatched tests for the package
               shell: bash
               id: run-unpatched
-              if: ${{ failure() || (env.ALWAYS_TEST_UNPATCHED == 'true' && steps.run-patched.outputs.test_patch_status != 'skipped') }}
+              if: |
+                  ${{ 
+                    env.TEST_MODE == 'both' || 
+                    (env.TEST_MODE == 'on-failure' && failure()) ||
+                    (env.TEST_MODE == 'always-unpatched' && steps.run-patched.outputs.test_patch_status != 'skipped')
+                  }}
               run: |
                   echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"
                   invenio-testrig test \
