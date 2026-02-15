@@ -24,7 +24,7 @@
                 {% if show_patches %}
                 <td>
                     {% for patch in pkg.info.patches %}
-                        <a href="{{ patch.github_url }}" target="_blank">{{ patch.package }}</a>
+                        <a href="{{ patch.github_url }}" target="_blank">{{ patch }}</a>
                         {% if not loop.last %}<br>{% endif %}
                     {% endfor %}
                     {# go through dependent libraries and show their patches as well #}
