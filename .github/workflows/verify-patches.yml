@@ -53,6 +53,19 @@ on:
                 required: false
                 default: config.yaml
                 type: string
+            report-repository:
+                description: "Repository to push the report to (owner/repo)"
+                required: false
+                type: string
+            report-branch:
+                description: "Branch to push the report to"
+                required: false
+                default: gh-pages
+                type: string
+            report-repository-token:
+                description: "GitHub token with permissions to push the report repository"
+                required: false
+                type: string
 
 env:
     PYTHONUNBUFFERED: 1
@@ -68,16 +81,21 @@ env:
     # if workflow is called manually, use the default from this branch
     YAML_CONFIG_PATH: ${{ inputs.config_file || '.pipeline/config_test.yaml' }}
     WORKDIR: ${{ github.workspace }}/workdir
-    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    # Report repository settings - defaults to current repository and gh-pages for workflow_dispatch
+    REPORT_REPOSITORY: ${{ inputs.report-repository || github.repository }}
+    REPORT_BRANCH: ${{ inputs.report-branch || 'gh-pages' }}
+    REPORT_TOKEN: ${{ inputs.report-repository-token || secrets.GITHUB_TOKEN }}
 
 permissions:
-    contents: read
+    contents: write # Required for pushing reports to the repository
 
 jobs:
     prepare:
         runs-on: ubuntu-latest
         outputs:
             matrix_tested_packages: ${{ steps.prepare.outputs.matrix_tested_packages }}
+            report_name: ${{ steps.prepare-report-name.outputs.report_name }}
         steps:
             - name: Checkout the testrig repository to .pipeline
               uses: actions/checkout@v4
@@ -120,6 +138,17 @@ jobs:
                   echo "::group::📦 Cloning and patching packages"
                   invenio-testrig clone $WORKDIR
                   echo "::endgroup::"
+
+            - name: Prepare report name
+              id: prepare-report-name
+              shell: bash
+              run: |
+                  # take the .name from the config.json file, slugify it and add current date and time to it
+                  CONFIG_NAME=$(cat $WORKDIR/config.json | jq -r '.name')
+                  REPORT_NAME=$(echo "$CONFIG_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')
+                  REPORT_NAME="${REPORT_NAME}-$(date +'%Y-%m-%d-%H-%M-%S')"
+
+                  echo "report_name=$REPORT_NAME" >> $GITHUB_OUTPUT
 
             - name: Store workdir with cloned packages as artifact
               uses: ./.pipeline/.github/actions/upload-artifact-tar
@@ -179,7 +208,7 @@ jobs:
             - name: Run unpatched tests for the package
               shell: bash
               id: run-unpatched
-              if: ${{ steps.run-patched.outputs.test_patch_status != 'success' }}
+              if: ${{ failure() || steps.run-patched.outputs.test_patch_status == 'skipped' }}
               run: |
                   echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"
                   invenio-testrig test \
@@ -249,6 +278,27 @@ jobs:
                   echo "::endgroup::"
 
                   echo "::notice::✅ Report generated at $REPORT_PATH/index.html"
+
+            - name: Push report to repository
+              id: push-report
+              if: ${{ env.REPORT_REPOSITORY && env.REPORT_TOKEN }}
+              uses: ./.pipeline/.github/actions/push-report
+              with:
+                  report-path: ${{ github.workspace }}/report
+                  report-repository: ${{ env.REPORT_REPOSITORY }}
+                  report-branch: ${{ env.REPORT_BRANCH }}
+                  report-directory: ${{ needs.prepare.outputs.report_name }}
+                  github-token: ${{ env.REPORT_TOKEN }}
+                  max-retries: "5"
+
+            - name: Display report URL
+              if: ${{ steps.push-report.outputs.report-url }}
+              shell: bash
+              run: |
+                  echo "::notice::📊 Report published at: ${{ steps.push-report.outputs.report-url }}"
+                  echo "### 📊 Test Report Published" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "View the report at: [${{ steps.push-report.outputs.report-url }}](${{ steps.push-report.outputs.report-url }})" >> $GITHUB_STEP_SUMMARY
 
             - name: Store report as artifact
               uses: actions/upload-artifact@v6

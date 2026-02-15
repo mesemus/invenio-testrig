@@ -1,0 +1,132 @@
+name: Push Report to Repository
+description: Pushes the generated report to a GitHub repository with retry logic
+
+inputs:
+    report-path:
+        description: Path to the report directory to push
+        required: true
+    report-repository:
+        description: Repository to push the report to (owner/repo)
+        required: true
+    report-branch:
+        description: Branch to push the report to
+        required: true
+        default: gh-pages
+    report-directory:
+        description: Directory name within the repository to store the report
+        required: true
+    github-token:
+        description: GitHub token with permissions to push to the report repository
+        required: true
+    max-retries:
+        description: Maximum number of retries on push conflicts
+        required: false
+        default: "3"
+
+outputs:
+    report-url:
+        description: GitHub Pages URL where the report is available
+        value: ${{ steps.push-report.outputs.report_url }}
+
+runs:
+    using: composite
+    steps:
+        - name: Push report to repository
+          id: push-report
+          shell: bash
+          env:
+              REPORT_PATH: ${{ inputs.report-path }}
+              REPORT_REPOSITORY: ${{ inputs.report-repository }}
+              REPORT_BRANCH: ${{ inputs.report-branch }}
+              REPORT_DIRECTORY: ${{ inputs.report-directory }}
+              GITHUB_TOKEN: ${{ inputs.github-token }}
+              MAX_RETRIES: ${{ inputs.max-retries }}
+          run: |
+              set -e
+              
+              CHECKOUT_DIR="${GITHUB_WORKSPACE}/report-repo-checkout"
+              RETRY_COUNT=0
+              SUCCESS=false
+              
+              while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$SUCCESS" = "false" ]; do
+                  echo "::group::📤 Attempt $((RETRY_COUNT + 1))/$MAX_RETRIES: Pushing report to $REPORT_REPOSITORY/$REPORT_BRANCH"
+                  
+                  # Clean up any previous checkout
+                  if [ -d "$CHECKOUT_DIR" ]; then
+                      rm -rf "$CHECKOUT_DIR"
+                  fi
+                  
+                  # Clone the repository (or create orphan branch if it doesn't exist)
+                  echo "Cloning repository $REPORT_REPOSITORY..."
+                  git clone --depth 1 --branch "$REPORT_BRANCH" \
+                      "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPORT_REPOSITORY}.git" \
+                      "$CHECKOUT_DIR" 2>/dev/null; then
+                  echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
+                  
+                  # Configure git
+                  cd "$CHECKOUT_DIR"
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  
+                  # Create or update the report directory
+                  echo "Copying report to $REPORT_DIRECTORY..."
+                  
+                  # Remove old report directory if it exists
+                  if [ -d "$REPORT_DIRECTORY" ]; then
+                      rm -rf "$REPORT_DIRECTORY"
+                  fi
+                  
+                  # Create parent directory structure if report_name contains slashes
+                  PARENT_DIR=$(dirname "$REPORT_DIRECTORY")
+                  if [ "$PARENT_DIR" != "." ]; then
+                      mkdir -p "$PARENT_DIR"
+                  fi
+                  
+                  # Copy report contents directly to REPORT_DIRECTORY path
+                  cp -r "$REPORT_PATH" "$REPORT_DIRECTORY"
+                  
+                  # Add, commit, and push
+                  git add "$REPORT_DIRECTORY"
+                  
+                  COMMIT_MSG="Update report: $REPORT_DIRECTORY"
+                  git commit -m "$COMMIT_MSG" --allow-empty
+                  
+                  echo "Pushing to $REPORT_REPOSITORY/$REPORT_BRANCH..."
+                  if git push origin "$REPORT_BRANCH"; then
+                      echo "✅ Successfully pushed report to $REPORT_REPOSITORY/$REPORT_BRANCH/$REPORT_DIRECTORY"
+                      SUCCESS=true
+                      echo "::endgroup::"
+                  else
+                      echo "⚠️  Push failed, possibly due to concurrent update"
+                      RETRY_COUNT=$((RETRY_COUNT + 1))
+                      echo "::endgroup::"
+                      
+                      if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                          RANDOM_INTERVAL=$((RANDOM % 10))
+                          echo "Waiting 5 seconds plus random interval of $RANDOM_INTERVAL seconds before retry..."
+                          sleep $((5 + RANDOM_INTERVAL))
+                      fi
+                  fi
+                  
+                  cd - > /dev/null
+              done
+              
+              # Clean up
+              if [ -d "$CHECKOUT_DIR" ]; then
+                  rm -rf "$CHECKOUT_DIR"
+              fi
+              
+              if [ "$SUCCESS" = "false" ]; then
+                  echo "::error::❌ Failed to push report after $MAX_RETRIES attempts"
+                  exit 1
+              fi
+              
+              # Calculate GitHub Pages URL
+              OWNER=$(echo "$REPORT_REPOSITORY" | cut -d'/' -f1)
+              REPO=$(echo "$REPORT_REPOSITORY" | cut -d'/' -f2)
+              PAGES_URL="https://${OWNER}.github.io/${REPO}/${REPORT_DIRECTORY}"
+              
+              # Set output
+              echo "report_url=$PAGES_URL" >> $GITHUB_OUTPUT
+              
+              echo "::notice::✅ Report will be available at: $PAGES_URL"
