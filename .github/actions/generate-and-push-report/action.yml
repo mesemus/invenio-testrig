@@ -110,9 +110,9 @@ runs:
                   
                   # Clone the repository (or create orphan branch if it doesn't exist)
                   echo "Cloning repository $REPORT_REPOSITORY..."
-                  git clone --depth 1 --branch "$REPORT_BRANCH" \
+                  git clone --quiet --depth 1 --branch "$REPORT_BRANCH" \
                       "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPORT_REPOSITORY}.git" \
-                      "$CHECKOUT_DIR" 2>/dev/null; 
+                      "$CHECKOUT_DIR"; 
                   echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
                   
                   # Check if report was recently updated (only if not generating completed report and not forcing)
@@ -168,8 +168,8 @@ runs:
                   
                   # Configure git
                   cd "$CHECKOUT_DIR"
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --quiet user.name "github-actions[bot]"
+                  git config --quiet user.email "github-actions[bot]@users.noreply.github.com"
                   
                   # Create or update the report directory
                   echo "Copying report to $REPORT_DIRECTORY..."
@@ -193,13 +193,13 @@ runs:
                   echo "📝 Created last-updated.txt with timestamp: $(date +%s)"
                   
                   # Add, commit, and push
-                  git add "$REPORT_DIRECTORY"
+                  git add --quiet "$REPORT_DIRECTORY"
                   
                   COMMIT_MSG="Update report: $REPORT_DIRECTORY"
-                  git commit -m "$COMMIT_MSG" --allow-empty
+                  git commit --quiet -m "$COMMIT_MSG" --allow-empty
                   
                   echo "Pushing to $REPORT_REPOSITORY/$REPORT_BRANCH..."
-                  if git push origin "$REPORT_BRANCH"; then
+                  if git push --quiet origin "$REPORT_BRANCH"; then
                       echo "✅ Successfully pushed report to $REPORT_REPOSITORY/$REPORT_BRANCH/$REPORT_DIRECTORY"
                       SUCCESS=true
                       PUSHED=true
