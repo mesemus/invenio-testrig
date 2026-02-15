@@ -19,9 +19,7 @@
 #   --keep-cache              Skip clearing git cache before initialization
 #   --always-test-original    Always test original version, even if patched succeeds
 #   --disable-codestyle-checks Disable codestyle checks in tests
-#   --skip-clone              Skip cloning (use existing repos)
-#   --skip-tests              Skip running tests
-#   --skip-report             Skip report generation
+#   --prepare                 Only prepare (skip tests and report)
 #   --help                    Show this help message
 #
 # Note: The config JSON is always named config.json inside the workdir.
@@ -85,7 +83,6 @@ WORKDIR="$DEFAULT_WORKDIR"
 PACKAGE_NAME=""
 KEEP_CACHE=false
 ALWAYS_TEST_ORIGINAL=false
-SKIP_CLONE=false
 SKIP_TESTS=false
 SKIP_REPORT=false
 INIT_OPTIONS=(--verbose)
@@ -127,15 +124,8 @@ while [[ $# -gt 0 ]]; do
             INIT_OPTIONS+=(--disable-codestyle-checks)
             shift
             ;;
-        --skip-clone)
-            SKIP_CLONE=true
-            shift
-            ;;
-        --skip-tests)
+        --prepare)
             SKIP_TESTS=true
-            shift
-            ;;
-        --skip-report)
             SKIP_REPORT=true
             shift
             ;;
@@ -289,7 +279,7 @@ fi
 ################################################################################
 # STEP 4: Clone repositories
 ################################################################################
-if [ "$SKIP_CLONE" = false ] && [ "$REUSE_WORKDIR" = false ]; then
+if [ "$REUSE_WORKDIR" = false ]; then
     print_header "STEP 4: Clone Repositories"
     print_step "Cloning all package repositories with patches..."
 
@@ -297,15 +287,8 @@ if [ "$SKIP_CLONE" = false ] && [ "$REUSE_WORKDIR" = false ]; then
 
     print_success "Repositories cloned to: $CLONE_PATH"
     echo ""
-elif [ "$REUSE_WORKDIR" = true ]; then
-    print_warning "Skipping clone step (reusing existing workdir with repositories at $CLONE_PATH)"
-    if [ ! -d "$CLONE_PATH" ]; then
-        print_error "Clone path does not exist: $CLONE_PATH"
-        exit 1
-    fi
-    echo ""
 else
-    print_warning "Skipping clone step (using existing repositories at $CLONE_PATH)"
+    print_warning "Skipping clone step (reusing existing workdir with repositories at $CLONE_PATH)"
     if [ ! -d "$CLONE_PATH" ]; then
         print_error "Clone path does not exist: $CLONE_PATH"
         exit 1
