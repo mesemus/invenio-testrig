@@ -127,7 +127,7 @@ runs:
                   
                   # Check if report was recently updated (only if not generating completed report and not forcing)
                   if [ "$COMPLETED" != "true" ] && [ "$FORCE_REPORT" != "true" ]; then
-                      LAST_UPDATED_FILE="$CHECKOUT_DIR/$REPORT_DIRECTORY/last-updated.txt"
+                      LAST_UPDATED_FILE="$CHECKOUT_DIR/last-updated.txt"
                       if [ -f "$LAST_UPDATED_FILE" ]; then
                           LAST_TIMESTAMP=$(cat "$LAST_UPDATED_FILE")
                           CURRENT_TIMESTAMP=$(date +%s)
@@ -203,11 +203,12 @@ runs:
                   tree "$REPORT_DIRECTORY"
                   
                   # Generate last-updated.txt with current timestamp
-                  echo "$(date +%s)" > "$REPORT_DIRECTORY/last-updated.txt"
+                  echo "$(date +%s)" > "last-updated.txt"
                   echo "📝 Created last-updated.txt with timestamp: $(date +%s)"
                   
                   # Add, commit, and push
                   git add "$REPORT_DIRECTORY"
+                  git add "last-updated.txt"
                   
                   COMMIT_MSG="Update report: $REPORT_DIRECTORY"
                   git commit --amend -m "$COMMIT_MSG" --allow-empty
