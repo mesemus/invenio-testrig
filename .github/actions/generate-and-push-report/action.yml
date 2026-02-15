@@ -100,8 +100,15 @@ runs:
               SUCCESS=false
               PUSHED=false
               
-              while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$SUCCESS" = "false" ]; do
-                  echo "::group::📤 Attempt $((RETRY_COUNT + 1))/$MAX_RETRIES: Pushing report to $REPORT_REPOSITORY/$REPORT_BRANCH"
+              # For partial reports (not forced, not completed), limit retries to 1
+              if [ "$COMPLETED" != "true" ] && [ "$FORCE_REPORT" != "true" ]; then
+                  EFFECTIVE_MAX_RETRIES=1
+              else
+                  EFFECTIVE_MAX_RETRIES=$MAX_RETRIES
+              fi
+              
+              while [ $RETRY_COUNT -lt $EFFECTIVE_MAX_RETRIES ] && [ "$SUCCESS" = "false" ]; do
+                  echo "::group::📤 Attempt $((RETRY_COUNT + 1))/$EFFECTIVE_MAX_RETRIES: Pushing report to $REPORT_REPOSITORY/$REPORT_BRANCH"
                   
                   # Clean up any previous checkout
                   if [ -d "$CHECKOUT_DIR" ]; then
@@ -210,7 +217,7 @@ runs:
                       RETRY_COUNT=$((RETRY_COUNT + 1))
                       echo "::endgroup::"
                       
-                      if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                      if [ $RETRY_COUNT -lt $EFFECTIVE_MAX_RETRIES ]; then
                           RANDOM_INTERVAL=$((RANDOM % 10))
                           echo "Waiting 5 seconds plus random interval of $RANDOM_INTERVAL seconds before retry..."
                           sleep $((5 + RANDOM_INTERVAL))
@@ -221,8 +228,13 @@ runs:
               done
                             
               if [ "$SUCCESS" = "false" ]; then
-                  echo "::error::❌ Failed to push report after $MAX_RETRIES attempts"
-                  exit 1
+                  # Only raise error for forced or completed reports
+                  if [ "$COMPLETED" = "true" ] || [ "$FORCE_REPORT" = "true" ]; then
+                      echo "::error::❌ Failed to push report after $EFFECTIVE_MAX_RETRIES attempts"
+                      exit 1
+                  else
+                      echo "::warning::⚠️  Failed to push report after $EFFECTIVE_MAX_RETRIES attempts (non-critical)"
+                  fi
               fi
 
               # Export whether we actually pushed
