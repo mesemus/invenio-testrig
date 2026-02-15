@@ -113,9 +113,7 @@ def generate_report(
         "still_failing_count": still_failing_count,
         "packages": test_results,
         "packages_without_patches": [
-            p
-            for p in test_results
-            if p.patched.status == "skipped" and p.original.status != "skipped"
+            p for p in test_results if p.patched.status == "skipped"
         ],
         "patched_packages": [
             p for p in test_results if p.patched.status != "skipped" and p.info.patches
