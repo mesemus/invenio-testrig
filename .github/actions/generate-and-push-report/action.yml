@@ -113,17 +113,40 @@ runs:
               while [ $RETRY_COUNT -lt $EFFECTIVE_MAX_RETRIES ] && [ "$SUCCESS" = "false" ]; do
                   echo "::group::📤 Attempt $((RETRY_COUNT + 1))/$EFFECTIVE_MAX_RETRIES: Pushing report to $REPORT_REPOSITORY/$REPORT_BRANCH"
                   
+                  # Wait before retry (skip on first attempt)
+                  if [ $RETRY_COUNT -gt 0 ]; then
+                      RANDOM_INTERVAL=$((RANDOM % 10))
+                      echo "Waiting 5 seconds plus random interval of $RANDOM_INTERVAL seconds before retry..."
+                      sleep $((5 + RANDOM_INTERVAL))
+                  fi
+                  
+                  # Ensure we're in a valid directory before operations
+                  cd "${GITHUB_WORKSPACE}"
+                  
                   # Clean up any previous checkout
                   if [ -d "$CHECKOUT_DIR" ]; then
                       rm -rf "$CHECKOUT_DIR"
                   fi
                   
+                  # Ensure parent directory exists
+                  PARENT_CHECKOUT_DIR=$(dirname "$CHECKOUT_DIR")
+                  if [ ! -d "$PARENT_CHECKOUT_DIR" ]; then
+                      echo "Creating parent directory: $PARENT_CHECKOUT_DIR"
+                      mkdir -p "$PARENT_CHECKOUT_DIR"
+                  fi
+                  
                   # Clone the repository (or create orphan branch if it doesn't exist)
                   echo "Cloning repository $REPORT_REPOSITORY..."
-                  git clone --depth 1 --branch "$REPORT_BRANCH" \
+                  if git clone --depth 1 --branch "$REPORT_BRANCH" \
                       "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPORT_REPOSITORY}.git" \
-                      "$CHECKOUT_DIR"; 
-                  echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
+                      "$CHECKOUT_DIR"; then
+                      echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
+                  else
+                      echo "⚠️  Failed to clone repository"
+                      RETRY_COUNT=$((RETRY_COUNT + 1))
+                      echo "::endgroup::"
+                      continue
+                  fi
                   
                   # Check if report was recently updated (only if not generating completed report and not forcing)
                   if [ "$COMPLETED" != "true" ] && [ "$FORCE_REPORT" != "true" ]; then
@@ -223,15 +246,7 @@ runs:
                       echo "⚠️  Push failed, possibly due to concurrent update"
                       RETRY_COUNT=$((RETRY_COUNT + 1))
                       echo "::endgroup::"
-                      
-                      if [ $RETRY_COUNT -lt $EFFECTIVE_MAX_RETRIES ]; then
-                          RANDOM_INTERVAL=$((RANDOM % 10))
-                          echo "Waiting 5 seconds plus random interval of $RANDOM_INTERVAL seconds before retry..."
-                          sleep $((5 + RANDOM_INTERVAL))
-                      fi
                   fi
-                  
-                  cd - > /dev/null
               done
                             
               if [ "$SUCCESS" = "false" ]; then
