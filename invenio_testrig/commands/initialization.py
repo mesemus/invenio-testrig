@@ -1,5 +1,6 @@
 """Initialization command implementation."""
 
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import cast
 
@@ -47,6 +48,8 @@ def initialize_config(
         config_data["hooks"] = config_data.get("hooks", {}) or {}
 
         config = cast(Config, ConfigSchema().load(config_data, unknown=ma.INCLUDE))
+
+        config.started_at = datetime.now(UTC).isoformat()
 
     # Run after-config-preprocessing hook if it exists
     run_hook(

@@ -39,8 +39,49 @@ def generate_report(
     click.secho(f"🔍 Patched results (not skipped): {patched_not_skipped}", fg="cyan")
     click.secho(f"🔍 Original results (not skipped): {original_not_skipped}", fg="cyan")
 
+    # Calculate error totals
+    regression_count = sum(
+        1
+        for p in test_results
+        if p.patched.status == "failed" and p.original.status == "success"
+    )
+    still_failing_count = sum(
+        1
+        for p in test_results
+        if p.original.status == "failed" and p.patched.status != "success"
+    )
+    total_errors = regression_count + still_failing_count
+    has_errors = total_errors > 0
+
+    # Determine status and badge styling
+    if completed:
+        if has_errors:
+            status = "Complete with Errors"
+            status_class = "complete-errors"
+            status_icon = "❌"
+        else:
+            status = "Complete"
+            status_class = "complete"
+            status_icon = "✅"
+    else:
+        if has_errors:
+            status = "In Progress with Errors"
+            status_class = "in-progress-errors"
+            status_icon = "⚠️"
+        else:
+            status = "In Progress"
+            status_class = "in-progress"
+            status_icon = "🔄"
+
     jinja_context: dict[str, Any] = {
-        "status": "Complete" if completed else "In Progress",
+        "config_name": config.name,
+        "config_mode": config.mode,
+        "started_at": config.started_at,
+        "status": status,
+        "status_class": status_class,
+        "status_icon": status_icon,
+        "completed": completed,
+        "has_errors": has_errors,
         "last_updated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "total_packages_count": len(test_results),
         "patched_packages_count": sum(
@@ -59,16 +100,8 @@ def generate_report(
             if p.patched.status == "success"
             or (p.original.status == "success" and p.patched.status == "skipped")
         ),
-        "regression_count": sum(
-            1
-            for p in test_results
-            if p.patched.status == "failed" and p.original.status == "success"
-        ),
-        "still_failing_count": sum(
-            1
-            for p in test_results
-            if p.original.status == "failed" and p.patched.status != "success"
-        ),
+        "regression_count": regression_count,
+        "still_failing_count": still_failing_count,
         "packages": test_results,
         "packages_without_patches": [
             p

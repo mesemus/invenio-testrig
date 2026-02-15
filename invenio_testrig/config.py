@@ -78,6 +78,10 @@ class Config:
 
     github: list[Github]
     repository: Repository
+    name: str | None = None
+    """Optional name for this test configuration run."""
+    started_at: str | None = None
+    """ISO datetime when the configuration was initialized."""
     patches: list[GitReference] = field(default_factory=list)  # type: ignore[assignment]
     mode: Literal[
         "upstream-overwrite", "upstream-rebase", "pinned-overwrite", "pinned-rebase"
