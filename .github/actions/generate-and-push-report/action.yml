@@ -62,6 +62,9 @@ runs:
               if [ ! -d "$WORKDIR/artifacts" ]; then
                   mkdir -p "$WORKDIR/artifacts"
               fi
+
+              echo "Downloaded artifacts:"
+              tree "$WORKDIR/artifacts"
               
               if [ "$COMPLETED" == "true" ]; then
                   echo "Generating completed report..."
