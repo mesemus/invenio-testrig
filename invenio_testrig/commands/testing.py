@@ -1,6 +1,9 @@
 """Testing command implementation."""
 
+import json
+import re
 import subprocess
+from collections import defaultdict
 from pathlib import Path
 
 from invenio_testrig.config import (
@@ -17,6 +20,103 @@ def testing_directory(config: Config, package_name: str, apply_patches: bool) ->
         / package_name
         / ("patched" if apply_patches else "original")
     )
+
+
+def process_warnings(
+    input_log_path: Path, warnings_json_path: Path, output_log_path: Path
+) -> None:
+    """Extract warnings from log file and create a filtered version without warnings.
+
+    This function:
+    1. Extracts Python warnings from the log file (e.g., DeprecationWarning, RuntimeWarning)
+    2. Normalizes and counts occurrences of each warning
+    3. Saves warnings to a JSON file
+    4. Creates a filtered log file with warnings and other noise removed
+
+    Args:
+        input_log_path: Path to the input log file
+        warnings_json_path: Path where warnings JSON should be saved
+        output_log_path: Path where filtered log (without warnings) should be saved
+    """
+    if not input_log_path.exists():
+        # If input log doesn't exist, create empty output files
+        warnings_json_path.write_text("{}")
+        output_log_path.write_text("")
+        return
+
+    # Extract warnings
+    warnings: dict[str, int] = defaultdict(int)
+    warning_pattern = re.compile(r"(\w+Warning:.*?)$")
+
+    with input_log_path.open("r", encoding="utf-8", errors="ignore") as f:
+        content = f.read()
+        for line in content.splitlines():
+            match = warning_pattern.search(line)
+            if match:
+                warning_text = match.group(1).strip()
+                # Normalize by replacing memory addresses with [id]
+                warning_text = re.sub(r"0x[0-9a-fA-F]+", "[id]", warning_text)
+                warnings[warning_text] += 1
+
+    # Save warnings to JSON
+    warnings_json_path.parent.mkdir(parents=True, exist_ok=True)
+    warnings_json_path.write_text(json.dumps(dict(warnings), indent=2))
+
+    # Create filtered log without warnings
+    output_log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Read the original content
+    with input_log_path.open("r", encoding="utf-8", errors="ignore") as f:
+        lines = f.readlines()
+
+    # Filter out unwanted lines
+    filtered_lines = []
+    for line in lines:
+        # Skip GitHub Actions warning annotations
+        if line.strip().startswith("::warning file="):
+            continue
+        # Remove ::warning from within lines
+        line = re.sub(r"::warning file=.*", "", line)
+
+        # Skip Python warning lines
+        if re.search(
+            r"DeprecationWarning|PendingDeprecationWarning|ResourceWarning|"
+            r"UserWarning|FutureWarning|ImportWarning|RuntimeWarning",
+            line,
+        ):
+            continue
+
+        # Skip pytest warning summary lines
+        if re.match(r"^\s*warnings summary", line):
+            continue
+        if re.match(r"^\s*--.*warnings", line):
+            continue
+        if re.search(r"[0-9]+ warnings?$", line):
+            continue
+
+        # Skip Docker pull output lines
+        if re.match(
+            r"^\s*[0-9a-f]{12}\s+(Waiting|Pulling|Downloading|Verifying|Download|Extracting|Pull complete)",
+            line,
+        ):
+            continue
+
+        # Skip separator lines
+        if re.match(r"^[=\-]{10,}$", line.strip()):
+            continue
+
+        # Remove test progress indicators (dots) from beginning and end of lines
+        line = re.sub(r"^\.+", "", line)
+        line = re.sub(r"\.+$", "", line)
+
+        # Skip empty lines
+        if not line.strip():
+            continue
+
+        filtered_lines.append(line)
+
+    # Write filtered output
+    output_log_path.write_text("".join(filtered_lines))
 
 
 def install_package_for_testing(
@@ -147,6 +247,12 @@ def run_tests(
     log_dir = config.workdir_path("artifacts") / package_name
     log_file = log_dir / f"{'patched' if apply_patches else 'original'}_log.log"
     status_file = log_dir / f"{'patched' if apply_patches else 'original'}_status.json"
+    warnings_file = (
+        log_dir / f"warnings_{'patched' if apply_patches else 'original'}.json"
+    )
+    simplified_log_file = (
+        log_dir / f"{'patched' if apply_patches else 'original'}_simplified_log.log"
+    )
 
     if apply_patches and not patched:
         # skip the test execution if patches were requested but not applied
@@ -179,6 +285,10 @@ def run_tests(
             log_file,
         )
         progress.success(f"Tests completed successfully for package '{package_name}'")
+
+        # Process warnings from log file
+        process_warnings(log_file, warnings_file, simplified_log_file)
+
         status = "success"
         save_execution_status(
             status_file,
@@ -194,6 +304,10 @@ def run_tests(
         )
         if log_file:
             progress.info(f"Check the output log at: {log_file}", icon="💡")
+
+        # Process warnings from log file even on failure
+        process_warnings(log_file, warnings_file, simplified_log_file)
+
         save_execution_status(
             status_file,
             ExecutionStatus(

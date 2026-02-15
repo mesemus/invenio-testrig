@@ -51,13 +51,15 @@
                             <strong>{{ pkg.original.status }}</strong>
                         {% endif %}
                     </div>
-                    <div class="link-list">
-                        {% if pkg.original.status != "skipped" %}
-                        <br><a href="{{ pkg.artefact_dir }}/original_freeze.txt" target="_blank">freeze</a>
-                        <br><a href="{{ pkg.artefact_dir }}/original_log.log" target="_blank">log</a>
-                        <br><a href="{{ pkg.artefact_dir }}/original_status.json" target="_blank">status</a>
-                        {% endif %}
-                    </div>
+                    {% if pkg.original.status != "skipped" %}
+                    <ul class="link-list">
+                        <li><a href="{{ pkg.artefact_dir }}/original_freeze.txt" target="_blank">freeze</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/original_log.log" target="_blank">log</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/original_simplified_log.log" target="_blank">simplified log</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/warnings_original.json" target="_blank">warnings</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/original_status.json" target="_blank">status</a></li>
+                    </ul>
+                    {% endif %}
                 </td>
                 {% if show_patches %}
                 <td>
@@ -72,13 +74,15 @@
                             <strong>{{ pkg.patched.status }}</strong>
                         {% endif %}
                     </div>
-                    <div class="link-list">
-                        {% if pkg.patched.status != "skipped" %}
-                        <br><a href="{{ pkg.artefact_dir }}/patched_freeze.txt" target="_blank">freeze</a>
-                        <br><a href="{{ pkg.artefact_dir }}/patched_log.log" target="_blank">log</a>
-                        <br><a href="{{ pkg.artefact_dir }}/patched_status.json" target="_blank">status</a>
-                        {% endif %}
-                    </div>
+                    {% if pkg.patched.status != "skipped" %}
+                    <ul class="link-list">
+                        <li><a href="{{ pkg.artefact_dir }}/patched_freeze.txt" target="_blank">freeze</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/patched_log.log" target="_blank">log</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/patched_simplified_log.log" target="_blank">simplified log</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/warnings_patched.json" target="_blank">warnings</a></li>
+                        <li><a href="{{ pkg.artefact_dir }}/patched_status.json" target="_blank">status</a></li>
+                    </ul>
+                    {% endif %}
                 </td>
                 <td>
                     {% if pkg.patched.status == "success" and pkg.original.status != "success" %}
