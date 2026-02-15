@@ -33,7 +33,7 @@ inputs:
     max-reports:
         description: Maximum number of reports to keep in the repository (oldest will be deleted)
         required: false
-        default: "10"
+        default: "1"
     force-report:
         description: Force report generation and push regardless of last modification time
         required: false
@@ -197,6 +197,10 @@ runs:
                   
                   # Copy report contents directly to REPORT_DIRECTORY path
                   cp -r "$REPORT_PATH" "$REPORT_DIRECTORY"
+                  echo "Report path: $REPORT_PATH"
+                  tree "$REPORT_PATH"
+                  echo "Report directory in repo after copying: $REPORT_DIRECTORY"
+                  tree "$REPORT_DIRECTORY"
                   
                   # Generate last-updated.txt with current timestamp
                   echo "$(date +%s)" > "$REPORT_DIRECTORY/last-updated.txt"
