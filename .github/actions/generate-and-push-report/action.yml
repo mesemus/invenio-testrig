@@ -1,9 +1,9 @@
-name: Push Report to Repository
-description: Pushes the generated report to a GitHub repository with retry logic
+name: Generate and Push Report to Repository
+description: Generates test report from workdir/artifacts and pushes it to a GitHub repository with retry logic
 
 inputs:
-    report-path:
-        description: Path to the report directory to push
+    workdir:
+        description: Path to the working directory containing config.json and artifacts
         required: true
     report-repository:
         description: Repository to push the report to (owner/repo)
@@ -22,20 +22,55 @@ inputs:
         description: Maximum number of retries on push conflicts
         required: false
         default: "3"
-
-outputs:
-    report-url:
-        description: GitHub Pages URL where the report is available
-        value: ${{ steps.push-report.outputs.report_url }}
+    completed:
+        description: Whether to generate a completed report (--completed flag)
+        required: false
+        default: "false"
+    download-artifacts:
+        description: Whether to download test result artifacts before generating report
+        required: false
+        default: "false"
 
 runs:
     using: composite
     steps:
-        - name: Push report to repository
-          id: push-report
+        - name: Download test result artifacts
+          if: ${{ inputs.download-artifacts == 'true' }}
+          uses: actions/download-artifact@v7
+          with:
+              pattern: test-results-*
+              path: ${{ inputs.workdir }}/artifacts
+              merge-multiple: true
+
+        - name: Generate report
           shell: bash
           env:
-              REPORT_PATH: ${{ inputs.report-path }}
+              WORKDIR: ${{ inputs.workdir }}
+              COMPLETED: ${{ inputs.completed }}
+          run: |
+              echo "::group::📊 Generating test report"
+              REPORT_PATH=${{ runner.temp }}/generated-report
+              
+              if [ "$COMPLETED" == "true" ]; then
+                  echo "Generating completed report..."
+                  invenio-testrig report $WORKDIR $REPORT_PATH --completed
+              else
+                  echo "Generating initial report..."
+                  invenio-testrig report $WORKDIR $REPORT_PATH
+              fi
+              
+              # Copy artifacts to report directory if they exist
+              if [ -d "$WORKDIR/artifacts" ]; then
+                  cp -r $WORKDIR/artifacts $REPORT_PATH/
+              fi
+              
+              echo "::endgroup::"
+              echo "::notice::✅ Report generated"
+
+        - name: Push report to repository
+          shell: bash
+          env:
+              REPORT_PATH: ${{ runner.temp }}/generated-report
               REPORT_REPOSITORY: ${{ inputs.report-repository }}
               REPORT_BRANCH: ${{ inputs.report-branch }}
               REPORT_DIRECTORY: ${{ inputs.report-directory }}
@@ -120,13 +155,3 @@ runs:
                   echo "::error::❌ Failed to push report after $MAX_RETRIES attempts"
                   exit 1
               fi
-              
-              # Calculate GitHub Pages URL
-              OWNER=$(echo "$REPORT_REPOSITORY" | cut -d'/' -f1)
-              REPO=$(echo "$REPORT_REPOSITORY" | cut -d'/' -f2)
-              PAGES_URL="https://${OWNER}.github.io/${REPO}/${REPORT_DIRECTORY}"
-              
-              # Set output
-              echo "report_url=$PAGES_URL" >> $GITHUB_OUTPUT
-              
-              echo "::notice::✅ Report will be available at: $PAGES_URL"

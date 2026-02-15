@@ -98,7 +98,8 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             matrix_tested_packages: ${{ steps.prepare.outputs.matrix_tested_packages }}
-            report_name: ${{ steps.prepare-report-name.outputs.report_name }}
+            report_name: ${{ steps.prepare-and-push-report.outputs.report-name }}
+            report_url: ${{ steps.prepare-and-push-report.outputs.report-url }}
         steps:
             - name: Checkout the testrig repository to .pipeline
               uses: actions/checkout@v4
@@ -142,16 +143,15 @@ jobs:
                   invenio-testrig clone $WORKDIR
                   echo "::endgroup::"
 
-            - name: Prepare report name
-              id: prepare-report-name
-              shell: bash
-              run: |
-                  # take the .name from the config.json file, slugify it and add current date and time to it
-                  CONFIG_NAME=$(cat $WORKDIR/config.json | jq -r '.name')
-                  REPORT_NAME=$(echo "$CONFIG_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')
-                  REPORT_NAME="${REPORT_NAME}-$(date +'%Y-%m-%d-%H-%M-%S')"
-
-                  echo "report_name=$REPORT_NAME" >> $GITHUB_OUTPUT
+            - name: Prepare and push initial report
+              id: prepare-and-push-report
+              uses: ./.pipeline/.github/actions/prepare-and-push-initial-report
+              with:
+                  workdir: ${{ env.WORKDIR }}
+                  report-repository: ${{ env.REPORT_REPOSITORY }}
+                  report-branch: ${{ env.REPORT_BRANCH }}
+                  github-token: ${{ env.REPORT_TOKEN }}
+                  fallback-name: ${{ github.ref_name }}
 
             - name: Store workdir with cloned packages as artifact
               uses: ./.pipeline/.github/actions/upload-artifact-tar
@@ -236,6 +236,19 @@ jobs:
                   name: test-results-${{ matrix.package }}
                   path: ${{ env.WORKDIR }}/artifacts
 
+            - name: Regenerate and upload partial report for the package
+              if: always()
+              uses: ./.pipeline/.github/actions/generate-and-push-report
+              with:
+                  workdir: ${{ env.WORKDIR }}
+                  report-repository: ${{ env.REPORT_REPOSITORY }}
+                  report-branch: ${{ env.REPORT_BRANCH }}
+                  report-directory: ${{ needs.prepare.outputs.report_name }}/partial/${{ matrix.package }}
+                  github-token: ${{ env.REPORT_TOKEN }}
+                  completed: "false"
+                  download-artifacts: "true"
+                  max-retries: "5"
+
     report:
         needs:
             - prepare
@@ -256,55 +269,33 @@ jobs:
                   name: workdir
                   path: ${{ env.WORKDIR }}
 
-            - name: Download all test results
-              uses: actions/download-artifact@v7
-              with:
-                  pattern: test-results-*
-                  path: ${{ env.WORKDIR }}/artifacts
-                  merge-multiple: true
-
             - name: Prepare python and tools
               uses: ./.pipeline/.github/actions/action-install-tools
               with:
                   python-version: ${{ env.PYTHON_VERSION }}
                   testrig-directory: ${{ github.workspace }}/.pipeline
 
-            - name: Generate report
-              shell: bash
-              run: |
-                  echo "::group::📊 Generating test report"
-                  ls -la ${{ env.WORKDIR }}/artifacts
-                  REPORT_PATH=${{ github.workspace }}/report
-                  invenio-testrig report $WORKDIR $REPORT_PATH --completed
-                  # copy the artifacts for the report to the report directory
-                  cp -r $WORKDIR/artifacts $REPORT_PATH/
-                  echo "::endgroup::"
-
-                  echo "::notice::✅ Report generated at $REPORT_PATH/index.html"
-
-            - name: Push report to repository
-              id: push-report
+            - name: Generate and push final report
               if: ${{ env.REPORT_REPOSITORY && env.REPORT_TOKEN }}
-              uses: ./.pipeline/.github/actions/push-report
+              uses: ./.pipeline/.github/actions/generate-and-push-report
               with:
-                  report-path: ${{ github.workspace }}/report
+                  workdir: ${{ env.WORKDIR }}
                   report-repository: ${{ env.REPORT_REPOSITORY }}
                   report-branch: ${{ env.REPORT_BRANCH }}
                   report-directory: ${{ needs.prepare.outputs.report_name }}
                   github-token: ${{ env.REPORT_TOKEN }}
+                  completed: "true"
+                  download-artifacts: "true"
                   max-retries: "5"
 
             - name: Display report URL
-              if: ${{ steps.push-report.outputs.report-url }}
+              if: ${{ needs.prepare.outputs.report_url }}
               shell: bash
               run: |
-                  echo "::notice::📊 Report published at: ${{ steps.push-report.outputs.report-url }}"
+                  REPORT_URL="${{ needs.prepare.outputs.report_url }}"
+                  echo "::notice::📊 Final report published at: $REPORT_URL"
                   echo "### 📊 Test Report Published" >> $GITHUB_STEP_SUMMARY
                   echo "" >> $GITHUB_STEP_SUMMARY
-                  echo "View the report at: [${{ steps.push-report.outputs.report-url }}](${{ steps.push-report.outputs.report-url }})" >> $GITHUB_STEP_SUMMARY
-
-            - name: Store report as artifact
-              uses: actions/upload-artifact@v6
-              with:
-                  name: test-report
-                  path: ${{ github.workspace }}/report
+                  echo "**Report URL:** [$REPORT_URL]($REPORT_URL)" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "*(Initial report was published before tests started, final report shows completed results)*" >> $GITHUB_STEP_SUMMARY
