@@ -30,6 +30,13 @@ inputs:
         description: Whether to download test result artifacts before generating report
         required: false
         default: "false"
+    max-reports:
+        description: Maximum number of reports to keep in the repository (oldest will be deleted)
+        required: false
+        default: "10"
+    github-pages-url:
+        description: Base URL of the GitHub Pages site (e.g., https://username.github.io/repo)
+        required: true
 
 runs:
     using: composite
@@ -42,7 +49,50 @@ runs:
               path: ${{ inputs.workdir }}/artifacts
               merge-multiple: true
 
+        - name: Check if report was recently updated
+          id: check-timestamp
+          shell: bash
+          env:
+              GITHUB_PAGES_URL: ${{ inputs.github-pages-url }}
+              REPORT_DIRECTORY: ${{ inputs.report-directory }}
+              COMPLETED: ${{ inputs.completed }}
+          run: |
+              echo "::group::⏱️  Checking last update timestamp"
+              SHOULD_PROCEED="true"
+              
+              # Only check timestamp if not generating completed report
+              if [ "$COMPLETED" != "true" ]; then
+                  LAST_UPDATED_URL="${GITHUB_PAGES_URL}/${REPORT_DIRECTORY}/last-updated.txt"
+                  echo "Checking timestamp at: $LAST_UPDATED_URL"
+                  
+                  # Try to download the last-updated.txt file
+                  if curl -f -s -o /tmp/last-updated.txt "$LAST_UPDATED_URL" 2>/dev/null; then
+                      LAST_TIMESTAMP=$(cat /tmp/last-updated.txt)
+                      CURRENT_TIMESTAMP=$(date +%s)
+                      TIME_DIFF=$((CURRENT_TIMESTAMP - LAST_TIMESTAMP))
+                      
+                      echo "Last update: $LAST_TIMESTAMP"
+                      echo "Current time: $CURRENT_TIMESTAMP"
+                      echo "Time difference: ${TIME_DIFF} seconds"
+                      
+                      if [ $TIME_DIFF -lt 30 ]; then
+                          echo "⏭️  Skipping report generation - last update was ${TIME_DIFF} seconds ago (< 30 seconds)"
+                          SHOULD_PROCEED="false"
+                      else
+                          echo "✅ Proceeding - last update was ${TIME_DIFF} seconds ago (>= 30 seconds)"
+                      fi
+                  else
+                      echo "ℹ️  No previous timestamp found, proceeding with report generation"
+                  fi
+              else
+                  echo "ℹ️  Generating completed report, skipping timestamp check"
+              fi
+              
+              echo "should_proceed=$SHOULD_PROCEED" >> $GITHUB_OUTPUT
+              echo "::endgroup::"
+
         - name: Generate report
+          if: steps.check-timestamp.outputs.should_proceed == 'true'
           shell: bash
           env:
               WORKDIR: ${{ inputs.workdir }}
@@ -72,6 +122,7 @@ runs:
               echo "::notice::✅ Report generated"
 
         - name: Push report to repository
+          if: steps.check-timestamp.outputs.should_proceed == 'true'
           shell: bash
           env:
               REPORT_PATH: ${{ runner.temp }}/generated-report
@@ -80,6 +131,7 @@ runs:
               REPORT_DIRECTORY: ${{ inputs.report-directory }}
               GITHUB_TOKEN: ${{ inputs.github-token }}
               MAX_RETRIES: ${{ inputs.max-retries }}
+              MAX_REPORTS: ${{ inputs.max-reports }}
           run: |
               set -e
               
@@ -102,6 +154,25 @@ runs:
                       "$CHECKOUT_DIR" 2>/dev/null; 
                   echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
                   
+                  # Clean up old reports (keep only MAX_REPORTS newest)
+                  cd "$CHECKOUT_DIR"
+                  echo "Cleaning up old reports (keeping $MAX_REPORTS newest)..."
+                  REPORT_COUNT=$(find . -maxdepth 1 -type d ! -name '.' ! -name '.git' | wc -l)
+                  if [ $REPORT_COUNT -gt $MAX_REPORTS ]; then
+                      # List directories by modification time, skip the newest MAX_REPORTS, delete the rest
+                      find . -maxdepth 1 -type d ! -name '.' ! -name '.git' -printf '%T@ %p\n' | \
+                          sort -rn | \
+                          tail -n +$((MAX_REPORTS + 1)) | \
+                          cut -d' ' -f2- | \
+                          while read -r dir; do
+                              echo "  Removing old report: $dir"
+                              rm -rf "$dir"
+                          done
+                      echo "✅ Cleaned up $((REPORT_COUNT - MAX_REPORTS)) old report(s)"
+                  else
+                      echo "  Current report count ($REPORT_COUNT) is within limit ($MAX_REPORTS)"
+                  fi
+                  
                   # Configure git
                   cd "$CHECKOUT_DIR"
                   git config user.name "github-actions[bot]"
@@ -123,6 +194,10 @@ runs:
                   
                   # Copy report contents directly to REPORT_DIRECTORY path
                   cp -r "$REPORT_PATH" "$REPORT_DIRECTORY"
+                  
+                  # Generate last-updated.txt with current timestamp
+                  echo "$(date +%s)" > "$REPORT_DIRECTORY/last-updated.txt"
+                  echo "📝 Created last-updated.txt with timestamp: $(date +%s)"
                   
                   # Add, commit, and push
                   git add "$REPORT_DIRECTORY"
@@ -155,12 +230,14 @@ runs:
                   exit 1
               fi
         - name: Prepare github pages artifact
+          if: steps.check-timestamp.outputs.should_proceed == 'true'
           id: prepare-pages-artifact
           uses: actions/upload-pages-artifact@v3
           with:
             path: ${{ github.workspace }}/report-repo-checkout
 
         - name: Deploy to GitHub Pages
+          if: steps.check-timestamp.outputs.should_proceed == 'true'
           id: deployment
           uses: actions/deploy-pages@v4     
           with:
