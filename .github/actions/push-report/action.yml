@@ -60,7 +60,7 @@ runs:
                   echo "Cloning repository $REPORT_REPOSITORY..."
                   git clone --depth 1 --branch "$REPORT_BRANCH" \
                       "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPORT_REPOSITORY}.git" \
-                      "$CHECKOUT_DIR" 2>/dev/null; then
+                      "$CHECKOUT_DIR" 2>/dev/null; 
                   echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
                   
                   # Configure git
