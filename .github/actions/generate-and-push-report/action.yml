@@ -33,7 +33,7 @@ inputs:
     max-reports:
         description: Maximum number of reports to keep in the repository (oldest will be deleted)
         required: false
-        default: "1"
+        default: "10"
     force-report:
         description: Force report generation and push regardless of last modification time
         required: false
