@@ -155,9 +155,9 @@ def cli():
 @click.option(
     "--test-mode",
     "test_mode",
-    type=click.Choice(["first-only", "stop-on-success", "run-all"]),
+    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
     default="stop-on-success",
-    help="Test mode: 'first-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
+    help="Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
 )
 def init_cmd(
     config_yaml_path: Path,

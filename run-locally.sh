@@ -20,7 +20,7 @@
 #   --scope <scope>           Test scope (default: affected)
 #                             Options: affected (only packages with patches), all (all packages)
 #   --mode <mode>             Test execution mode (default: stop-on-success)
-#                             Options: first-only, stop-on-success, run-all
+#                             Options: patched-only, stop-on-success, run-all
 #   --disable-codestyle-checks Disable codestyle checks in tests
 #   --prepare                 Only prepare (skip tests and report)
 #   --help                    Show this help message
@@ -134,9 +134,9 @@ while [[ $# -gt 0 ]]; do
         --mode)
             TEST_MODE="$2"
             # Validate test mode
-            if [[ ! "$TEST_MODE" =~ ^(first-only|stop-on-success|run-all)$ ]]; then
+            if [[ ! "$TEST_MODE" =~ ^(patched-only|stop-on-success|run-all)$ ]]; then
                 print_error "Invalid test mode: $TEST_MODE"
-                echo "Valid options: first-only, stop-on-success, run-all"
+                echo "Valid options: patched-only, stop-on-success, run-all"
                 exit 1
             fi
             INIT_OPTIONS+=(--test-mode "$TEST_MODE")
@@ -378,7 +378,7 @@ if [ "$SKIP_TESTS" = false ]; then
         # Determine if original tests should run based on patched status and test mode
         TEST_ORIGINAL=false
         case "$TEST_MODE" in
-            first-only)
+            patched-only)
                 # Never test original
                 TEST_ORIGINAL=false
                 ;;

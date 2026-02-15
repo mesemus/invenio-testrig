@@ -23,12 +23,12 @@ on:
                     - affected
                     - all
             mode:
-                description: "Test mode: 'first-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
+                description: "Test selection for patched packages: 'patched-only', 'stop-on-success', 'run-all'"
                 required: false
                 type: choice
                 default: "stop-on-success"
                 options:
-                    - first-only
+                    - patched-only
                     - stop-on-success
                     - run-all
 
@@ -61,7 +61,7 @@ on:
                 type: string
                 default: "affected"
             mode:
-                description: "Test mode: 'first-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
+                description: "Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
                 required: false
                 type: string
                 default: "stop-on-success"
