@@ -228,10 +228,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for package_name, count in warning.packages %}
+                                {% for package in warning.packages %}
                                 <tr>
-                                    <td><code>{{ package_name }}</code></td>
-                                    <td>{{ count }}</td>
+                                    <td>
+                                        <a href="{{ package.link }}" target="_blank" class="text-decoration-none">
+                                            <code>{{ package.name }}</code>
+                                        </a>
+                                    </td>
+                                    <td>{{ package.count }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

@@ -19,18 +19,18 @@ from invenio_testrig.types import ExecutionStatus, Progress, ReportPackageData
 
 def collect_warnings_by_log_type(
     artifacts_path: Path, progress: Progress
-) -> dict[str, dict[str, dict[str, int]]]:
+) -> dict[str, dict[str, dict[str, tuple[int, str]]]]:
     """Collect warnings from all package warnings JSON files, organized by log type.
 
     Args:
         artifacts_path: Path to the artifacts directory containing package subdirectories
 
     Returns:
-        Dict mapping log_type to warning text to package counts.
-        Structure: {log_type: {warning_text: {package_name: count}}}
+        Dict mapping log_type to warning text to package data (count and artifact link).
+        Structure: {log_type: {warning_text: {package_name: (count, artifact_link)}}}
     """
-    warnings_by_type: dict[str, dict[str, dict[str, int]]] = defaultdict(
-        lambda: defaultdict(lambda: defaultdict(int))
+    warnings_by_type: dict[str, dict[str, dict[str, tuple[int, str]]]] = defaultdict(
+        lambda: defaultdict(dict)
     )
 
     if not artifacts_path.exists():
@@ -42,12 +42,18 @@ def collect_warnings_by_log_type(
             package_name = warnings_file.parent.name
             log_type = "patched" if "patched" in warnings_file.name else "original"
 
+            # Construct link to the simplified log file
+            artifact_link = f"artifacts/{package_name}/{log_type}_simplified_log.log"
+
             with warnings_file.open("r") as f:
                 warnings_data = json.load(f)
 
             if isinstance(warnings_data, dict):
                 for warning_text, count in warnings_data.items():
-                    warnings_by_type[log_type][warning_text][package_name] = count
+                    warnings_by_type[log_type][warning_text][package_name] = (
+                        count,
+                        artifact_link,
+                    )
 
         except (json.JSONDecodeError, IOError) as e:
             progress.error(f"Failed to process {warnings_file}: {e}")
@@ -56,9 +62,9 @@ def collect_warnings_by_log_type(
     return {k: dict(v) for k, v in warnings_by_type.items()}
 
 
-def calculate_total_occurrences(package_counts: dict[str, int]) -> int:
+def calculate_total_occurrences(package_data: dict[str, tuple[int, str]]) -> int:
     """Calculate total occurrences of a warning across all packages."""
-    return sum(package_counts.values())
+    return sum(count for count, _ in package_data.values())
 
 
 def create_warnings_report(
@@ -85,9 +91,9 @@ def create_warnings_report(
     total_warning_occurrences = 0
 
     for log_type, warnings_data in warnings_by_type.items():
-        for warning_text, package_counts in warnings_data.items():
-            total_packages_with_warnings.update(package_counts.keys())
-            total_warning_occurrences += calculate_total_occurrences(package_counts)
+        for warning_text, package_data in warnings_data.items():
+            total_packages_with_warnings.update(package_data.keys())
+            total_warning_occurrences += calculate_total_occurrences(package_data)
 
     progress.info(
         f"Found {total_unique_warnings} unique warning(s) from {len(total_packages_with_warnings)} package(s)"
@@ -107,10 +113,19 @@ def create_warnings_report(
         )
 
         warnings_list = []
-        for warning_text, package_counts in sorted_warnings:
-            total_count = calculate_total_occurrences(package_counts)
-            # Sort packages by count descending
-            package_list = sorted(package_counts.items(), key=lambda x: (-x[1], x[0]))
+        for warning_text, package_data in sorted_warnings:
+            total_count = calculate_total_occurrences(package_data)
+            # Sort packages by count descending, build list with name, count, and link
+            package_list = [
+                {
+                    "name": pkg_name,
+                    "count": count,
+                    "link": artifact_link,
+                }
+                for pkg_name, (count, artifact_link) in sorted(
+                    package_data.items(), key=lambda x: (-x[1][0], x[0])
+                )
+            ]
 
             warnings_list.append(
                 {
