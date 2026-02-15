@@ -11,6 +11,19 @@ runs:
   using: 'composite'
   steps:
 
+    - name: Set up OS requirements
+      shell: bash
+      run: |
+        echo "::group::Setting up OS requirements"
+        sudo apt-get update
+        sudo apt-get install -y graphviz imagemagick \
+          libssl-dev libffi-dev \
+          libxml2-dev libxslt1-dev zlib1g-dev \
+          libcairo2-dev pkg-config \
+          fonts-dejavu imagemagick \
+          libpq-dev libjpeg-dev
+        echo "::endgroup::"
+
     # set up 3.14 if python-version is not 3.14.x
     - name: Setup Python
       uses: actions/setup-python@v6
