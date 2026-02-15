@@ -73,10 +73,19 @@ def generate_report(
             status_class = "in-progress"
             status_icon = "🔄"
 
+    # Convert started_at from ISO format to human-readable format
+    started_at_formatted = None
+    if config.started_at:
+        try:
+            started_at_dt = datetime.fromisoformat(config.started_at)
+            started_at_formatted = started_at_dt.strftime("%Y-%m-%d %H:%M:%S UTC")
+        except (ValueError, AttributeError):
+            started_at_formatted = config.started_at
+
     jinja_context: dict[str, Any] = {
         "config_name": config.name,
         "config_mode": config.mode,
-        "started_at": config.started_at,
+        "started_at": started_at_formatted,
         "status": status,
         "status_class": status_class,
         "status_icon": status_icon,
