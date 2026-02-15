@@ -50,6 +50,10 @@ runs:
           run: |
               echo "::group::📊 Generating test report"
               REPORT_PATH=${{ runner.temp }}/generated-report
+
+              if [ ! -d "$WORKDIR/artifacts" ]; then
+                  mkdir -p "$WORKDIR/artifacts"
+              fi
               
               if [ "$COMPLETED" == "true" ]; then
                   echo "Generating completed report..."
