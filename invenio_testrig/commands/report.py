@@ -31,10 +31,22 @@ def generate_report(
     click.secho(f"🔍 Report output path: {report_output_path}", fg="cyan")
     click.secho(f"🔍 Completed: {completed}", fg="cyan")
 
+    # Filter out packages that are still pending (both patched and original are pending)
+    test_results = [
+        p
+        for p in test_results
+        if not (p.patched.status == "pending" and p.original.status == "pending")
+    ]
+    click.secho(
+        f"🔍 After filtering pending: {len(test_results)} test results", fg="cyan"
+    )
+
     # Debug: Show summary of test results
-    patched_not_skipped = sum(1 for p in test_results if p.patched.status != "skipped")
+    patched_not_skipped = sum(
+        1 for p in test_results if p.patched.status not in ("skipped", "pending")
+    )
     original_not_skipped = sum(
-        1 for p in test_results if p.original.status != "skipped"
+        1 for p in test_results if p.original.status not in ("skipped", "pending")
     )
     click.secho(f"🔍 Patched results (not skipped): {patched_not_skipped}", fg="cyan")
     click.secho(f"🔍 Original results (not skipped): {original_not_skipped}", fg="cyan")
@@ -96,32 +108,42 @@ def generate_report(
         "patched_packages_count": sum(
             1
             for p in test_results
-            if p.patched.status != "skipped" or p.original.status != "skipped"
+            if p.patched.status not in ("skipped", "pending")
+            or p.original.status not in ("skipped", "pending")
         ),
         "unpatched_packages_count": sum(
             1
             for p in test_results
-            if p.patched.status == "skipped" and p.original.status == "skipped"
+            if p.patched.status in ("skipped", "pending")
+            and p.original.status in ("skipped", "pending")
         ),
         "ok_count": sum(
             1
             for p in test_results
             if p.patched.status == "success"
-            or (p.original.status == "success" and p.patched.status == "skipped")
+            or (
+                p.original.status == "success"
+                and p.patched.status in ("skipped", "pending")
+            )
         ),
         "regression_count": regression_count,
         "still_failing_count": still_failing_count,
         "packages": test_results,
         "packages_without_patches": [
-            p for p in test_results if p.patched.status == "skipped"
+            p
+            for p in test_results
+            if p.patched.status in ("skipped", "pending")
+            and p.original.status not in ("pending",)
         ],
         "patched_packages": [
-            p for p in test_results if p.patched.status != "skipped" and p.info.patches
+            p
+            for p in test_results
+            if p.patched.status not in ("skipped", "pending") and p.info.patches
         ],
         "packages_with_patched_dependencies": [
             p
             for p in test_results
-            if p.patched.status != "skipped" and not p.info.patches
+            if p.patched.status not in ("skipped", "pending") and not p.info.patches
         ],
     }
 
@@ -244,6 +266,11 @@ def load_test_artifacts(
                 f"🔍 Package '{package_name}': Found {len(status_files)} status files",
                 fg="cyan",
             )
+            # the directory is present, thus the package is not pending
+            package_data[package_name].patched.status = "skipped"
+            package_data[package_name].original.status = "skipped"
+
+            # now overwrite with actual status if status files are present
             for status_file in status_files:
                 click.secho(f"🔍   Loading: {status_file.name}", fg="cyan")
                 loaded_status = load_execution_status(status_file)
