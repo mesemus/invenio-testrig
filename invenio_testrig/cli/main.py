@@ -544,8 +544,6 @@ def report_cmd(
     "reports_directory", type=click.Path(exists=True, path_type=Path, resolve_path=True)
 )
 @click.argument("output_file", type=click.Path(path_type=Path, resolve_path=True))
-@with_verbose
-@with_debug
 def reports_index_cmd(
     reports_directory: Path,
     output_file: Path,

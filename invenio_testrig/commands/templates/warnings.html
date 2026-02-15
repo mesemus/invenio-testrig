@@ -138,6 +138,8 @@
             color: white;
             text-decoration: none;
             opacity: 0.9;
+            display: inline-block;
+            margin-right: 1rem;
         }
         .back-link:hover {
             opacity: 1;
@@ -157,7 +159,10 @@
             <p class="mb-1"><em>Mode: {{ config_mode }}</em></p>
             {% endif %}
             <p class="mb-3"><em>Last updated: {{ last_updated }}</em></p>
-            <a href="index.html" class="back-link">← Back to Main Report</a>
+            <div>
+                <a href="../index.html" class="back-link">← Back to Reports Index</a>
+                <a href="index.html" class="back-link">← Back to Main Report</a>
+            </div>
         </div>
     </div>
 
