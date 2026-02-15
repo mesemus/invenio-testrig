@@ -28,7 +28,7 @@
                         {% if not loop.last %}<br>{% endif %}
                     {% endfor %}
                     {# go through dependent libraries and show their patches as well #}
-                    {% for dep in pkg.info.dependencies %}
+                    {% for dep in (pkg.patched.dependencies or []) %}
                         {% for patch in dep.patches %}
                             <a href="{{ patch.github_url }}" target="_blank">{{ patch }}</a>
                             {% if not loop.last %}<br>{% endif %}
