@@ -24,7 +24,7 @@ class TestedPackageInfo:
 class ExecutionStatus:
     """Execution status for a tested package."""
 
-    status: str
+    status: str  # e.g. "passed", "failed", "skipped" or "pending"
     package: TestedPackageInfo
     dependencies: list[TestedPackageInfo] = field(default_factory=list)  # type: ignore[assignment]
 

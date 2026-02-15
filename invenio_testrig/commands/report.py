@@ -203,8 +203,8 @@ def load_test_artifacts(
         package_name: ReportPackageData(
             info=package_info,
             artefact_dir=f"artifacts/{package_name}",
-            patched=ExecutionStatus(status="skipped", package=package_info),
-            original=ExecutionStatus(status="skipped", package=package_info),
+            patched=ExecutionStatus(status="pending", package=package_info),
+            original=ExecutionStatus(status="pending", package=package_info),
         )
         for package_name, package_info in config.tested_packages.items()
     }
