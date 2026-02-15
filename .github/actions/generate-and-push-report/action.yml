@@ -158,10 +158,19 @@ runs:
           id: prepare-pages-artifact
           uses: actions/upload-pages-artifact@v3
           with:
-            path: ${{env.GITHUB_WORKSPACE}}/report-repo-checkout
+            path: ${{ github.workspace }}/report-repo-checkout
 
         - name: Deploy to GitHub Pages
           id: deployment
           uses: actions/deploy-pages@v4     
           with:
             token: ${{ inputs.github-token }}
+
+        - name: Clean up report repository checkout
+          if: always()
+          shell: bash
+          run: |
+              CHECKOUT_DIR="${GITHUB_WORKSPACE}/report-repo-checkout"
+              if [ -d "$CHECKOUT_DIR" ]; then
+                  rm -rf "$CHECKOUT_DIR"
+              fi
