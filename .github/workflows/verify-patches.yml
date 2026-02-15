@@ -93,6 +93,7 @@ env:
 permissions:
     contents: write # Required for pushing reports to the repository
     id-token: write # Required for publishing to GitHub Pages using actions/upload-pages-artifact
+    pages: write # Required for publishing to GitHub Pages using actions/upload-pages-artifact
 
 jobs:
     prepare:
