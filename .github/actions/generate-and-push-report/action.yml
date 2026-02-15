@@ -34,9 +34,10 @@ inputs:
         description: Maximum number of reports to keep in the repository (oldest will be deleted)
         required: false
         default: "10"
-    github-pages-url:
-        description: Base URL of the GitHub Pages site (e.g., https://username.github.io/repo)
-        required: true
+    force-report:
+        description: Force report generation and push regardless of last modification time
+        required: false
+        default: "false"
 
 runs:
     using: composite
@@ -49,50 +50,7 @@ runs:
               path: ${{ inputs.workdir }}/artifacts
               merge-multiple: true
 
-        - name: Check if report was recently updated
-          id: check-timestamp
-          shell: bash
-          env:
-              GITHUB_PAGES_URL: ${{ inputs.github-pages-url }}
-              REPORT_DIRECTORY: ${{ inputs.report-directory }}
-              COMPLETED: ${{ inputs.completed }}
-          run: |
-              echo "::group::⏱️  Checking last update timestamp"
-              SHOULD_PROCEED="true"
-              
-              # Only check timestamp if not generating completed report
-              if [ "$COMPLETED" != "true" ]; then
-                  LAST_UPDATED_URL="${GITHUB_PAGES_URL}/${REPORT_DIRECTORY}/last-updated.txt"
-                  echo "Checking timestamp at: $LAST_UPDATED_URL"
-                  
-                  # Try to download the last-updated.txt file
-                  if curl -f -s -o /tmp/last-updated.txt "$LAST_UPDATED_URL" 2>/dev/null; then
-                      LAST_TIMESTAMP=$(cat /tmp/last-updated.txt)
-                      CURRENT_TIMESTAMP=$(date +%s)
-                      TIME_DIFF=$((CURRENT_TIMESTAMP - LAST_TIMESTAMP))
-                      
-                      echo "Last update: $LAST_TIMESTAMP"
-                      echo "Current time: $CURRENT_TIMESTAMP"
-                      echo "Time difference: ${TIME_DIFF} seconds"
-                      
-                      if [ $TIME_DIFF -lt 30 ]; then
-                          echo "⏭️  Skipping report generation - last update was ${TIME_DIFF} seconds ago (< 30 seconds)"
-                          SHOULD_PROCEED="false"
-                      else
-                          echo "✅ Proceeding - last update was ${TIME_DIFF} seconds ago (>= 30 seconds)"
-                      fi
-                  else
-                      echo "ℹ️  No previous timestamp found, proceeding with report generation"
-                  fi
-              else
-                  echo "ℹ️  Generating completed report, skipping timestamp check"
-              fi
-              
-              echo "should_proceed=$SHOULD_PROCEED" >> $GITHUB_OUTPUT
-              echo "::endgroup::"
-
         - name: Generate report
-          if: steps.check-timestamp.outputs.should_proceed == 'true'
           shell: bash
           env:
               WORKDIR: ${{ inputs.workdir }}
@@ -122,7 +80,7 @@ runs:
               echo "::notice::✅ Report generated"
 
         - name: Push report to repository
-          if: steps.check-timestamp.outputs.should_proceed == 'true'
+          id: push-report
           shell: bash
           env:
               REPORT_PATH: ${{ runner.temp }}/generated-report
@@ -132,12 +90,15 @@ runs:
               GITHUB_TOKEN: ${{ inputs.github-token }}
               MAX_RETRIES: ${{ inputs.max-retries }}
               MAX_REPORTS: ${{ inputs.max-reports }}
+              COMPLETED: ${{ inputs.completed }}
+              FORCE_REPORT: ${{ inputs.force-report }}
           run: |
               set -e
               
               CHECKOUT_DIR="${GITHUB_WORKSPACE}/report-repo-checkout"
               RETRY_COUNT=0
               SUCCESS=false
+              PUSHED=false
               
               while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$SUCCESS" = "false" ]; do
                   echo "::group::📤 Attempt $((RETRY_COUNT + 1))/$MAX_RETRIES: Pushing report to $REPORT_REPOSITORY/$REPORT_BRANCH"
@@ -153,6 +114,38 @@ runs:
                       "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPORT_REPOSITORY}.git" \
                       "$CHECKOUT_DIR" 2>/dev/null; 
                   echo "✅ Branch $REPORT_BRANCH exists, cloned successfully"
+                  
+                  # Check if report was recently updated (only if not generating completed report and not forcing)
+                  if [ "$COMPLETED" != "true" ] && [ "$FORCE_REPORT" != "true" ]; then
+                      LAST_UPDATED_FILE="$CHECKOUT_DIR/$REPORT_DIRECTORY/last-updated.txt"
+                      if [ -f "$LAST_UPDATED_FILE" ]; then
+                          LAST_TIMESTAMP=$(cat "$LAST_UPDATED_FILE")
+                          CURRENT_TIMESTAMP=$(date +%s)
+                          TIME_DIFF=$((CURRENT_TIMESTAMP - LAST_TIMESTAMP))
+                          
+                          echo "⏱️  Last update: $LAST_TIMESTAMP"
+                          echo "⏱️  Current time: $CURRENT_TIMESTAMP"
+                          echo "⏱️  Time difference: ${TIME_DIFF} seconds"
+                          
+                          if [ $TIME_DIFF -lt 30 ]; then
+                              echo "⏭️  Skipping report - last update was ${TIME_DIFF} seconds ago (< 30 seconds)"
+                              echo "::notice::⏭️  Report skipped - last update was ${TIME_DIFF} seconds ago"
+                              SUCCESS=true
+                              echo "::endgroup::"
+                              break
+                          else
+                              echo "✅ Proceeding - last update was ${TIME_DIFF} seconds ago (>= 30 seconds)"
+                          fi
+                      else
+                          echo "ℹ️  No previous timestamp found, proceeding with update"
+                      fi
+                  else
+                      if [ "$COMPLETED" = "true" ]; then
+                          echo "ℹ️  Generating completed report, skipping timestamp check"
+                      elif [ "$FORCE_REPORT" = "true" ]; then
+                          echo "ℹ️  Force report enabled, skipping timestamp check"
+                      fi
+                  fi
                   
                   # Clean up old reports (keep only MAX_REPORTS newest)
                   cd "$CHECKOUT_DIR"
@@ -209,6 +202,7 @@ runs:
                   if git push origin "$REPORT_BRANCH"; then
                       echo "✅ Successfully pushed report to $REPORT_REPOSITORY/$REPORT_BRANCH/$REPORT_DIRECTORY"
                       SUCCESS=true
+                      PUSHED=true
                       echo "::endgroup::"
                   else
                       echo "⚠️  Push failed, possibly due to concurrent update"
@@ -229,15 +223,19 @@ runs:
                   echo "::error::❌ Failed to push report after $MAX_RETRIES attempts"
                   exit 1
               fi
+
+              # Export whether we actually pushed
+              echo "pushed=$PUSHED" >> $GITHUB_OUTPUT
+              
         - name: Prepare github pages artifact
-          if: steps.check-timestamp.outputs.should_proceed == 'true'
+          if: steps.push-report.outputs.pushed == 'true'
           id: prepare-pages-artifact
           uses: actions/upload-pages-artifact@v3
           with:
             path: ${{ github.workspace }}/report-repo-checkout
 
         - name: Deploy to GitHub Pages
-          if: steps.check-timestamp.outputs.should_proceed == 'true'
+          if: steps.push-report.outputs.pushed == 'true'
           id: deployment
           uses: actions/deploy-pages@v4     
           with:

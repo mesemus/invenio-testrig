@@ -83,3 +83,4 @@ runs:
               github-token: ${{ inputs.github-token }}
               completed: "false"
               max-retries: "5"
+              force-report: "true"
