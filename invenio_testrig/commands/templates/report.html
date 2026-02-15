@@ -139,6 +139,17 @@
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
+        .warnings-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        .warnings-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -156,8 +167,9 @@
             {% endif %}
             <p class="mb-1"><em>Last updated: {{ last_updated }}</em></p>
             {% if config_mode %}
-            <p class="mb-0"><em>Mode: {{ config_mode }}</em></p>
+            <p class="mb-1"><em>Mode: {{ config_mode }}</em></p>
             {% endif %}
+            <a href="warnings.html" class="warnings-link">⚠️ View Warnings Report →</a>
         </div>
     </div>
 

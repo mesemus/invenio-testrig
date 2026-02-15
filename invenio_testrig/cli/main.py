@@ -515,7 +515,7 @@ def report_cmd(
     if len(config.tested_packages) > 5:
         progress.info(f"  ... and {len(config.tested_packages) - 5} more")
 
-    test_result_data = load_test_artifacts(config, artefacts_path)
+    test_result_data = load_test_artifacts(config, artefacts_path, progress=progress)
 
     # Debug: Check loaded test results
     progress.info(f"Loaded {len(test_result_data)} test result entries")
@@ -527,7 +527,11 @@ def report_cmd(
         progress.info(f"  ... and {len(test_result_data) - 5} more")
 
     generate_report(
-        config, completed, test_result_data, report_output_path=report_output_path
+        config,
+        completed,
+        test_result_data,
+        report_output_path=report_output_path,
+        progress=progress,
     )
 
 
