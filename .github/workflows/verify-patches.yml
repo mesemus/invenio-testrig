@@ -180,7 +180,7 @@ jobs:
             matrix:
                 package: ${{ fromJson(needs.prepare.outputs.matrix_tested_packages) }}
             fail-fast: false
-            max-parallel: 1
+            # max-parallel: 1
         steps:
             - name: Checkout the testrig repository to .pipeline
               uses: actions/checkout@v4
