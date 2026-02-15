@@ -215,7 +215,9 @@ runs:
                       echo "✅ Successfully pushed report to $REPORT_REPOSITORY/$REPORT_BRANCH/$REPORT_DIRECTORY"
                       SUCCESS=true
                       PUSHED=true
-                      echo "commit-id=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+                      # Create unique commit-id by combining git commit hash, job ID, timestamp, and random number
+                      UNIQUE_ID="$(git rev-parse --short HEAD)-${GITHUB_JOB:-unknown}-$(date +%s)-$RANDOM"
+                      echo "commit-id=$UNIQUE_ID" >> $GITHUB_OUTPUT
                       echo "::endgroup::"
                   else
                       echo "⚠️  Push failed, possibly due to concurrent update"
