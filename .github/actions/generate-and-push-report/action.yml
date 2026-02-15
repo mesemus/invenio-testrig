@@ -203,10 +203,10 @@ runs:
                   git add "$REPORT_DIRECTORY"
                   
                   COMMIT_MSG="Update report: $REPORT_DIRECTORY"
-                  git commit -m "$COMMIT_MSG" --allow-empty
+                  git commit --amend -m "$COMMIT_MSG" --allow-empty
                   
                   echo "Pushing to $REPORT_REPOSITORY/$REPORT_BRANCH..."
-                  if git push origin "$REPORT_BRANCH"; then
+                  if git push --force-with-lease origin "$REPORT_BRANCH"; then
                       echo "✅ Successfully pushed report to $REPORT_REPOSITORY/$REPORT_BRANCH/$REPORT_DIRECTORY"
                       SUCCESS=true
                       PUSHED=true
