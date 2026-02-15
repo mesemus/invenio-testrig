@@ -222,12 +222,18 @@ runs:
                   # Copy report contents directly to REPORT_DIRECTORY path
                   cp -r "$REPORT_PATH" "$REPORT_DIRECTORY"
                   
+                  # Generate reports index
+                  echo "📑 Generating reports index..."
+                  invenio-testrig reports-index "$(pwd)" "$(pwd)/index.html"
+                  echo "✅ Reports index generated"
+                  
                   # Generate last-updated.txt with current timestamp
                   echo "$(date +%s)" > "last-updated.txt"
                   echo "📝 Created last-updated.txt with timestamp: $(date +%s)"
                   
                   # Add, commit, and push
                   git add "$REPORT_DIRECTORY"
+                  git add "index.html"
                   git add "last-updated.txt"
                   
                   COMMIT_MSG="Update report: $REPORT_DIRECTORY"

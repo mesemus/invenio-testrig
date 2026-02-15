@@ -407,3 +407,72 @@ def load_test_artifacts(
         return (priority, pkg.info.reference.package)
 
     return sorted(package_data.values(), key=sort_key)
+
+
+def generate_reports_index(
+    reports_directory: Path,
+    output_file: Path,
+    progress: Progress,
+) -> None:
+    """Generate an index page listing all reports in the reports directory.
+
+    Args:
+        reports_directory: Path to the directory containing report subdirectories
+        output_file: Path where the index HTML file should be saved
+        progress: Progress reporter for status updates
+    """
+    progress.start("Generating reports index", icon="📑")
+
+    if not reports_directory.exists():
+        progress.error(f"Reports directory does not exist: {reports_directory}")
+        return
+
+    # Find all directories in the reports directory
+    report_dirs: list[dict[str, Any]] = []
+    for item in reports_directory.iterdir():
+        if item.is_dir():
+            # Get the last modification time
+            mtime = item.stat().st_mtime
+
+            # Check if index.html exists in the directory
+            index_file = item / "index.html"
+            has_index = index_file.exists()
+
+            # Try to get basic info from the directory
+            report_dirs.append(
+                {
+                    "name": item.name,
+                    "path": item.name,  # Relative path from the index
+                    "mtime": mtime,
+                    "mtime_formatted": datetime.fromtimestamp(mtime).strftime(
+                        "%Y-%m-%d %H:%M:%S"
+                    ),
+                    "has_index": has_index,
+                }
+            )
+
+    # Sort by modification time, most recent first
+    report_dirs.sort(key=lambda x: float(x["mtime"]), reverse=True)
+
+    progress.info(f"Found {len(report_dirs)} report directories")
+
+    jinja_context = {
+        "last_updated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC"),
+        "total_reports": len(report_dirs),
+        "reports": report_dirs,
+    }
+
+    # Render the template
+    from jinja2 import Environment, FileSystemLoader
+
+    env = Environment(
+        loader=FileSystemLoader(searchpath=Path(__file__).parent / "templates")
+    )
+    template = env.get_template("reports_index.html")
+    report_content = template.render(**jinja_context)
+
+    # Save the report
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    output_file.write_text(report_content)
+
+    progress.success(f"Reports index written to: {output_file}")

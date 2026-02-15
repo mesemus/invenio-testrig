@@ -12,7 +12,11 @@ import click
 
 from invenio_testrig.commands.dependencies import collect_dependencies, filter_packages
 from invenio_testrig.commands.initialization import initialize_config
-from invenio_testrig.commands.report import generate_report, load_test_artifacts
+from invenio_testrig.commands.report import (
+    generate_report,
+    generate_reports_index,
+    load_test_artifacts,
+)
 from invenio_testrig.commands.repository import clone_repositories, select_patches
 from invenio_testrig.commands.testing import (
     disable_codestyle_checks,
@@ -531,6 +535,38 @@ def report_cmd(
         completed,
         test_result_data,
         report_output_path=report_output_path,
+        progress=progress,
+    )
+
+
+@cli.command("reports-index")
+@click.argument(
+    "reports_directory", type=click.Path(exists=True, path_type=Path, resolve_path=True)
+)
+@click.argument("output_file", type=click.Path(path_type=Path, resolve_path=True))
+@with_verbose
+@with_debug
+def reports_index_cmd(
+    reports_directory: Path,
+    output_file: Path,
+):
+    """8/ Generate an index page listing all reports in a directory.
+
+    Scans the reports directory for subdirectories and creates an index.html
+    file listing all available reports, sorted by last modification time.
+
+    Arguments:
+        reports_directory: Path to the directory containing report subdirectories
+        output_file: Path where the index HTML file should be saved
+    """
+    progress.start(
+        f"Generating reports index from {reports_directory}",
+        icon="📑",
+    )
+
+    generate_reports_index(
+        reports_directory=reports_directory,
+        output_file=output_file,
         progress=progress,
     )
 
