@@ -257,7 +257,7 @@ jobs:
                   workdir: ${{ env.WORKDIR }}
                   report-repository: ${{ env.REPORT_REPOSITORY }}
                   report-branch: ${{ env.REPORT_BRANCH }}
-                  report-directory: ${{ needs.prepare.outputs.report_name }}/partial/${{ matrix.package }}
+                  report-directory: ${{ needs.prepare.outputs.report_name }}
                   github-token: ${{ env.REPORT_TOKEN }}
                   completed: "false"
                   download-artifacts: "true"

@@ -170,6 +170,7 @@ runs:
                           while read -r dir; do
                               echo "  Removing old report: $dir"
                               rm -rf "$dir"
+                              git add "$dir" # remove from git index
                           done
                       echo "✅ Cleaned up $((REPORT_COUNT - MAX_REPORTS)) old report(s)"
                   else
