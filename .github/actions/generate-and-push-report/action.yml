@@ -149,13 +149,19 @@ runs:
                   
                   cd - > /dev/null
               done
-              
-              # Clean up
-              if [ -d "$CHECKOUT_DIR" ]; then
-                  rm -rf "$CHECKOUT_DIR"
-              fi
-              
+                            
               if [ "$SUCCESS" = "false" ]; then
                   echo "::error::❌ Failed to push report after $MAX_RETRIES attempts"
                   exit 1
               fi
+        - name: Prepare github pages artifact
+          id: prepare-pages-artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: ${{env.GITHUB_WORKSPACE}}/report-repo-checkout
+
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4     
+          with:
+            token: ${{ inputs.github-token }}

@@ -16,12 +16,14 @@ runs:
       run: |
         echo "::group::Setting up OS requirements"
         sudo apt-get update -qq
-        sudo apt-get install -y -qq graphviz imagemagick \
-          libssl-dev libffi-dev \
-          libxml2-dev libxslt1-dev zlib1g-dev \
-          libcairo2-dev pkg-config \
-          fonts-dejavu imagemagick \
-          libpq-dev libjpeg-dev
+        sudo DEBIAN_FRONTEND=noninteractive \
+          apt-get install -y -qq 
+            graphviz imagemagick \
+            libssl-dev libffi-dev \
+            libxml2-dev libxslt1-dev zlib1g-dev \
+            libcairo2-dev pkg-config \
+            fonts-dejavu imagemagick \
+            libpq-dev libjpeg-dev
         echo "::endgroup::"
 
     # set up 3.14 if python-version is not 3.14.x
