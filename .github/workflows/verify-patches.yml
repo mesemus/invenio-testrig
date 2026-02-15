@@ -14,16 +14,23 @@ on:
                 required: false
                 type: boolean
                 default: false
-            test_mode:
-                description: "Test unpatched packages: 'patched-only' (never test unpatched), 'on-failure' (test unpatched only if patched fails), 'always-unpatched' (always test unpatched if package has patches), 'both' (always test patched and unpatched packages)"
+            scope:
+                description: "Test scope: 'affected' (only packages with patches), 'all' (all packages)"
                 required: false
                 type: choice
-                default: "on-failure"
+                default: "affected"
                 options:
-                    - patched-only
-                    - on-failure
-                    - always-unpatched
-                    - both
+                    - affected
+                    - all
+            mode:
+                description: "Test mode: 'first-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
+                required: false
+                type: choice
+                default: "stop-on-success"
+                options:
+                    - first-only
+                    - stop-on-success
+                    - run-all
 
     # or called from another workflow from another repository
     workflow_call:
@@ -48,11 +55,16 @@ on:
                 required: false
                 type: boolean
                 default: false
-            test_mode:
-                description: "Test execution mode: 'patched-only', 'on-failure' (default), 'always-unpatched', 'both'"
+            scope:
+                description: "Test scope: 'affected' (only packages with patches), 'all' (all packages)"
                 required: false
                 type: string
-                default: "on-failure"
+                default: "affected"
+            mode:
+                description: "Test mode: 'first-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
+                required: false
+                type: string
+                default: "stop-on-success"
             config_file:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
@@ -76,7 +88,8 @@ env:
     PYTHONUNBUFFERED: 1
     PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
     DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable_codestyle_checks }}
-    TEST_MODE: ${{ inputs.test_mode || 'on-failure' }}
+    TEST_SCOPE: ${{ inputs.scope || 'affected' }}
+    TEST_MODE: ${{ inputs.mode || 'stop-on-success' }}
 
     # if the workflow is called from another workflow, we use the defaults
     TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
@@ -232,9 +245,8 @@ jobs:
               id: run-unpatched
               if: |
                   ${{ 
-                    env.TEST_MODE == 'both' || 
-                    (env.TEST_MODE == 'on-failure' && failure()) ||
-                    (env.TEST_MODE == 'always-unpatched' && steps.run-patched.outputs.test_patch_status != 'skipped')
+                    env.TEST_MODE == 'run-all' || 
+                    (env.TEST_MODE == 'stop-on-success' && failure())
                   }}
               run: |
                   echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"

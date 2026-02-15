@@ -17,8 +17,10 @@
 #   --package <name>          Test only specific package (default: all)
 #   --debug                   Enable debug output for all commands
 #   --keep-cache              Skip clearing git cache before initialization
-#   --test-mode <mode>        Test execution mode (default: on-failure)
-#                             Options: patched-only, on-failure, always-unpatched, both
+#   --scope <scope>           Test scope (default: affected)
+#                             Options: affected (only packages with patches), all (all packages)
+#   --mode <mode>             Test execution mode (default: stop-on-success)
+#                             Options: first-only, stop-on-success, run-all
 #   --disable-codestyle-checks Disable codestyle checks in tests
 #   --prepare                 Only prepare (skip tests and report)
 #   --help                    Show this help message
@@ -83,7 +85,8 @@ CONFIG_YAML=""
 WORKDIR="$DEFAULT_WORKDIR"
 PACKAGE_NAME=""
 KEEP_CACHE=false
-TEST_MODE="on-failure"
+TEST_SCOPE="affected"
+TEST_MODE="stop-on-success"
 SKIP_TESTS=false
 SKIP_REPORT=false
 INIT_OPTIONS=(--verbose)
@@ -117,12 +120,22 @@ while [[ $# -gt 0 ]]; do
             KEEP_CACHE=true
             shift
             ;;
-        --test-mode)
+        --scope)
+            TEST_SCOPE="$2"
+            # Validate test scope
+            if [[ ! "$TEST_SCOPE" =~ ^(affected|all)$ ]]; then
+                print_error "Invalid test scope: $TEST_SCOPE"
+                echo "Valid options: affected, all"
+                exit 1
+            fi
+            shift 2
+            ;;
+        --mode)
             TEST_MODE="$2"
             # Validate test mode
-            if [[ ! "$TEST_MODE" =~ ^(patched-only|on-failure|always-unpatched|both)$ ]]; then
+            if [[ ! "$TEST_MODE" =~ ^(first-only|stop-on-success|run-all)$ ]]; then
                 print_error "Invalid test mode: $TEST_MODE"
-                echo "Valid options: patched-only, on-failure, always-unpatched, both"
+                echo "Valid options: first-only, stop-on-success, run-all"
                 exit 1
             fi
             shift 2
@@ -363,23 +376,17 @@ if [ "$SKIP_TESTS" = false ]; then
         # Determine if original tests should run based on patched status and test mode
         TEST_ORIGINAL=false
         case "$TEST_MODE" in
-            patched-only)
+            first-only)
                 # Never test original
                 TEST_ORIGINAL=false
                 ;;
-            on-failure)
+            stop-on-success)
                 # Test only if patched failed
                 if [ "$PATCHED_STATUS" = "failed" ]; then
                     TEST_ORIGINAL=true
                 fi
                 ;;
-            always-unpatched)
-                # Test if patched was not skipped (i.e., it ran)
-                if [ "$PATCHED_STATUS" != "skipped" ]; then
-                    TEST_ORIGINAL=true
-                fi
-                ;;
-            both)
+            run-all)
                 # Always test original
                 TEST_ORIGINAL=true
                 ;;
