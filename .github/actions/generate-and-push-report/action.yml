@@ -137,14 +137,14 @@ runs:
                           echo "⏱️  Current time: $CURRENT_TIMESTAMP"
                           echo "⏱️  Time difference: ${TIME_DIFF} seconds"
                           
-                          if [ $TIME_DIFF -lt 30 ]; then
-                              echo "⏭️  Skipping report - last update was ${TIME_DIFF} seconds ago (< 30 seconds)"
+                          if [ $TIME_DIFF -lt 15 ]; then
+                              echo "⏭️  Skipping report - last update was ${TIME_DIFF} seconds ago (< 15 seconds)"
                               echo "::notice::⏭️  Report skipped - last update was ${TIME_DIFF} seconds ago"
                               SUCCESS=true
                               echo "::endgroup::"
                               break
                           else
-                              echo "✅ Proceeding - last update was ${TIME_DIFF} seconds ago (>= 30 seconds)"
+                              echo "✅ Proceeding - last update was ${TIME_DIFF} seconds ago (>= 15 seconds)"
                           fi
                       else
                           echo "ℹ️  No previous timestamp found, proceeding with update"
