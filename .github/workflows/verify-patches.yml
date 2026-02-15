@@ -15,7 +15,7 @@ on:
                 type: boolean
                 default: false
             scope:
-                description: "Test scope: 'affected' (only packages with patches), 'all'"
+                description: "Test scope: 'affected' (only packages affected by patches), 'all'"
                 required: false
                 type: choice
                 default: "affected"
