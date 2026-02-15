@@ -25,6 +25,19 @@ def generate_report(
     report_output_path: Path,
 ) -> None:
     """Generate a report based on the execution status of the tested packages."""
+    click.secho(
+        f"🔍 Generating report with {len(test_results)} test results", fg="cyan"
+    )
+    click.secho(f"🔍 Report output path: {report_output_path}", fg="cyan")
+    click.secho(f"🔍 Completed: {completed}", fg="cyan")
+
+    # Debug: Show summary of test results
+    patched_not_skipped = sum(1 for p in test_results if p.patched.status != "skipped")
+    original_not_skipped = sum(
+        1 for p in test_results if p.original.status != "skipped"
+    )
+    click.secho(f"🔍 Patched results (not skipped): {patched_not_skipped}", fg="cyan")
+    click.secho(f"🔍 Original results (not skipped): {original_not_skipped}", fg="cyan")
 
     jinja_context: dict[str, Any] = {
         "status": "Complete" if completed else "In Progress",
@@ -71,6 +84,38 @@ def generate_report(
             if p.patched.status != "skipped" and not p.info.patches
         ],
     }
+
+    # Debug: Show calculated counts
+    click.secho("🔍 Report statistics:", fg="cyan")
+    click.secho(
+        f"   - Total packages: {jinja_context['total_packages_count']}", fg="cyan"
+    )
+    click.secho(
+        f"   - Patched packages: {jinja_context['patched_packages_count']}", fg="cyan"
+    )
+    click.secho(
+        f"   - Unpatched packages: {jinja_context['unpatched_packages_count']}",
+        fg="cyan",
+    )
+    click.secho(f"   - OK count: {jinja_context['ok_count']}", fg="cyan")
+    click.secho(
+        f"   - Regression count: {jinja_context['regression_count']}", fg="cyan"
+    )
+    click.secho(
+        f"   - Still failing count: {jinja_context['still_failing_count']}", fg="cyan"
+    )
+    click.secho(
+        f"   - Packages without patches: {len(jinja_context['packages_without_patches'])}",
+        fg="cyan",
+    )
+    click.secho(
+        f"   - Patched packages: {len(jinja_context['patched_packages'])}", fg="cyan"
+    )
+    click.secho(
+        f"   - Packages with patched deps: {len(jinja_context['packages_with_patched_dependencies'])}",
+        fg="cyan",
+    )
+
     # render the invenio-testrig/templates/report.html template with the collected data and save to report_output_path/report.html
     from jinja2 import Environment, FileSystemLoader
 
@@ -81,7 +126,15 @@ def generate_report(
     report_content = template.render(**jinja_context)
 
     report_output_path.mkdir(parents=True, exist_ok=True)
-    (report_output_path / "index.html").write_text(report_content)
+    report_file = report_output_path / "index.html"
+    report_file.write_text(report_content)
+
+    # Debug: Confirm report was written
+    click.secho(f"🔍 Report file written to: {report_file}", fg="cyan")
+    click.secho(f"🔍 Report file size: {report_file.stat().st_size} bytes", fg="cyan")
+    click.secho(
+        f"🔍 Report content length: {len(report_content)} characters", fg="cyan"
+    )
 
 
 def load_test_artifacts(
@@ -99,6 +152,13 @@ def load_test_artifacts(
     Returns:
         List of ReportPackageData with test execution status for each package
     """
+    click.secho(f"🔍 Loading test artifacts from: {artefacts_path}", fg="cyan")
+    click.secho(f"🔍 Artifacts path exists: {artefacts_path.exists()}", fg="cyan")
+    click.secho(
+        f"🔍 Number of tested packages in config: {len(config.tested_packages)}",
+        fg="cyan",
+    )
+
     package_data: dict[str, ReportPackageData] = {
         package_name: ReportPackageData(
             info=package_info,
@@ -109,8 +169,28 @@ def load_test_artifacts(
         for package_name, package_info in config.tested_packages.items()
     }
 
-    for package_dir in artefacts_path.iterdir():
+    click.secho(
+        f"🔍 Initialized package_data dict with {len(package_data)} entries", fg="cyan"
+    )
+
+    if not artefacts_path.exists():
+        click.secho(
+            f"⚠️  Artifacts path does not exist: {artefacts_path}", fg="yellow", err=True
+        )
+        return sorted(
+            package_data.values(), key=lambda p: (4, p.info.reference.package)
+        )
+
+    dir_items = list(artefacts_path.iterdir())
+    click.secho(f"🔍 Found {len(dir_items)} items in artifacts directory", fg="cyan")
+
+    for package_dir in dir_items:
         package_name = package_dir.name
+        click.secho(
+            f"🔍 Checking item: {package_name} (is_dir: {package_dir.is_dir()})",
+            fg="cyan",
+        )
+
         if package_name not in package_data:
             click.secho(
                 f"⚠️  Found artefacts for package '{package_name}' which is not in the config, skipping",
@@ -120,7 +200,12 @@ def load_test_artifacts(
             continue
         if package_dir.is_dir():
             status_files = list(package_dir.glob("*_status.json"))
+            click.secho(
+                f"🔍 Package '{package_name}': Found {len(status_files)} status files",
+                fg="cyan",
+            )
             for status_file in status_files:
+                click.secho(f"🔍   Loading: {status_file.name}", fg="cyan")
                 loaded_status = load_execution_status(status_file)
                 match status_file.stem:
                     case "patched_status":

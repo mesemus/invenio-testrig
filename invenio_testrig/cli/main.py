@@ -490,7 +490,42 @@ def report_cmd(
         icon="📊",
     )
 
+    # Debug: Check if artifacts directory exists and what's in it
+    progress.info(f"Checking artifacts directory: {artefacts_path}")
+    if not artefacts_path.exists():
+        progress.error(f"Artifacts directory does not exist: {artefacts_path}")
+    else:
+        progress.info(f"Artifacts directory exists: {artefacts_path}")
+        items = list(artefacts_path.iterdir())
+        progress.info(f"Found {len(items)} items in artifacts directory")
+        for item in items:
+            if item.is_dir():
+                progress.info(f"  - Directory: {item.name}")
+                status_files = list(item.glob("*_status.json"))
+                progress.info(
+                    f"    Found {len(status_files)} status files: {[f.name for f in status_files]}"
+                )
+            else:
+                progress.info(f"  - File: {item.name}")
+
+    # Debug: Check tested packages in config
+    progress.info(f"Config contains {len(config.tested_packages)} tested packages")
+    for pkg_name in list(config.tested_packages.keys())[:5]:  # Show first 5
+        progress.info(f"  - {pkg_name}")
+    if len(config.tested_packages) > 5:
+        progress.info(f"  ... and {len(config.tested_packages) - 5} more")
+
     test_result_data = load_test_artifacts(config, artefacts_path)
+
+    # Debug: Check loaded test results
+    progress.info(f"Loaded {len(test_result_data)} test result entries")
+    for pkg in test_result_data[:5]:  # Show first 5
+        progress.info(
+            f"  - {pkg.info.reference.package}: patched={pkg.patched.status}, original={pkg.original.status}"
+        )
+    if len(test_result_data) > 5:
+        progress.info(f"  ... and {len(test_result_data) - 5} more")
+
     generate_report(
         config, completed, test_result_data, report_output_path=report_output_path
     )

@@ -155,6 +155,17 @@ jobs:
                   github-token: ${{ env.REPORT_TOKEN }}
                   fallback-name: ${{ github.ref_name }}
 
+            - name: Add report URL to workflow summary
+              if: ${{ steps.prepare-and-push-report.outputs.report-url }}
+              shell: bash
+              run: |
+                  REPORT_URL="${{ steps.prepare-and-push-report.outputs.report-url }}"
+                  echo "### 📊 Test Report" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "**Report URL:** [$REPORT_URL]($REPORT_URL)" >> $GITHUB_STEP_SUMMARY
+                  echo "" >> $GITHUB_STEP_SUMMARY
+                  echo "The report will be updated as tests progress." >> $GITHUB_STEP_SUMMARY
+
             - name: Store workdir with cloned packages as artifact
               uses: ./.pipeline/.github/actions/upload-artifact-tar
               with:
@@ -169,6 +180,7 @@ jobs:
             matrix:
                 package: ${{ fromJson(needs.prepare.outputs.matrix_tested_packages) }}
             fail-fast: false
+            max-parallel: 1
         steps:
             - name: Checkout the testrig repository to .pipeline
               uses: actions/checkout@v4
