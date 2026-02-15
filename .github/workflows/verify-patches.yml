@@ -15,7 +15,7 @@ on:
                 type: boolean
                 default: false
             test_mode:
-                description: "Test execution mode: 'patched-only' (never test unpatched), 'on-failure' (default), 'always-unpatched' (always test unpatched if package has patches), 'both' (always test patched and unpatched packages)"
+                description: "Test unpatched packages: 'patched-only' (never test unpatched), 'on-failure' (test unpatched only if patched fails), 'always-unpatched' (always test unpatched if package has patches), 'both' (always test patched and unpatched packages)"
                 required: false
                 type: choice
                 default: "on-failure"
