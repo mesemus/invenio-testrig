@@ -427,18 +427,19 @@ def generate_reports_index(
         progress.error(f"Reports directory does not exist: {reports_directory}")
         return
 
-    # Find all directories in the reports directory
+    # Find all directories in the reports directory that have an index.html
     report_dirs: list[dict[str, Any]] = []
     for item in reports_directory.iterdir():
         if item.is_dir():
+            # Check if index.html exists in the directory
+            index_file = item / "index.html"
+            if not index_file.exists():
+                continue
+
             # Get the last modification time
             mtime = item.stat().st_mtime
 
-            # Check if index.html exists in the directory
-            index_file = item / "index.html"
-            has_index = index_file.exists()
-
-            # Try to get basic info from the directory
+            # Add report directory info
             report_dirs.append(
                 {
                     "name": item.name,
@@ -447,7 +448,6 @@ def generate_reports_index(
                     "mtime_formatted": datetime.fromtimestamp(mtime).strftime(
                         "%Y-%m-%d %H:%M:%S"
                     ),
-                    "has_index": has_index,
                 }
             )
 

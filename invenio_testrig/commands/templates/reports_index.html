@@ -143,7 +143,6 @@
                             <tr>
                                 <th>Report Name</th>
                                 <th>Last Modified</th>
-                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -151,27 +150,18 @@
                             {% for report in reports %}
                             <tr>
                                 <td>
-                                    <span class="report-name">{{ report.name }}</span>
+                                    <a href="{{ report.path }}/index.html">
+                                        <span class="report-name">{{ report.name }}</span>
+                                    </a>
                                 </td>
                                 <td>{{ report.mtime_formatted }}</td>
                                 <td>
-                                    {% if report.has_index %}
-                                    <span class="badge bg-success badge-status">Available</span>
-                                    {% else %}
-                                    <span class="badge bg-warning badge-status">Incomplete</span>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    {% if report.has_index %}
                                     <a href="{{ report.path }}/index.html" class="btn btn-sm btn-primary">
                                         View Report
                                     </a>
                                     <a href="{{ report.path }}/warnings.html" class="btn btn-sm btn-warning">
                                         Warnings
                                     </a>
-                                    {% else %}
-                                    <span class="text-muted">No report available</span>
-                                    {% endif %}
                                 </td>
                             </tr>
                             {% endfor %}
