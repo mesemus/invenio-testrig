@@ -473,7 +473,6 @@ def generate_reports_index(
 
     jinja_context = {
         "last_updated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC"),
-        "total_reports": len(report_dirs),
         "reports": report_dirs,
     }
 
