@@ -43,7 +43,7 @@ def collect_warnings_by_log_type(
             log_type = "patched" if "patched" in warnings_file.name else "original"
 
             # Construct link to the simplified log file
-            artifact_link = f"artifacts/{package_name}/{log_type}_simplified_log.log"
+            artifact_link = f"artifacts/{package_name}/{log_type}_log.log"
 
             with warnings_file.open("r") as f:
                 warnings_data = json.load(f)
