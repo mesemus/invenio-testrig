@@ -83,12 +83,13 @@ class Config:
     started_at: str | None = None
     """ISO datetime when the configuration was initialized."""
     patches: list[GitReference] = field(default_factory=list)  # type: ignore[assignment]
-    mode: Literal[
+    patch_mode: Literal[
         "upstream-overwrite", "upstream-rebase", "pinned-overwrite", "pinned-rebase"
     ] = "upstream-overwrite"
     test_timeout: int = 90  # 90 minutes
 
-    # runtime information
+    # runtime information - these are populated during execution and not
+    # expected to be set by users, but we keep them here for simplicity and extensibility
     packages: dict[str, str] = field(  # type: ignore[assignment]
         default_factory=dict
     )  # package name to version mapping for dependencies
@@ -96,7 +97,7 @@ class Config:
         default_factory=dict
     )  # package name to tested package info mapping
 
-    # Execution options
+    # Execution options - again,  not setup in the config file but can be set programmatically or via hooks
     python_version: str = "python3"
     """Python version to use for testing."""
 
@@ -111,6 +112,26 @@ class Config:
 
     verbose: bool = False
     """Whether to enable verbose output with additional logging information."""
+
+    test_mode: Literal["first-only", "stop-on-success", "run-all"] = "stop-on-success"
+    """This setting controls when package testing (patched and unpatched version) should stop.
+    
+    The options are:
+    - first-only: If patched, only test the patched version of the package and 
+                  always skip testing the unpatched version.
+    - stop-on-success: If patched, test it and if the test fails, also test 
+                  the unpatched version. If the test succeeds, skip testing the unpatched version.
+    - run-all: Run tests for both the patched and unpatched version of the package, regardless of the test results.
+    """
+
+    test_scope: Literal["affected", "all"] = "affected"
+    """This setting controls which packages should be tested.
+    
+    The options are:
+    - affected: Only test packages that are affected by the patches 
+                (i.e. packages that have patches or depend on packages with patches).
+    - all: Test all packages, regardless of whether they are affected by the patches or not.
+    """
 
     @property
     def workdir(self) -> Path:

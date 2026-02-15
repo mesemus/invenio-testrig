@@ -59,7 +59,7 @@ class Patcher:
             self._apply_patches(patched_reference_path, name, info, patched_reference)
             self._add_patch_info(
                 patched_reference_path,
-                patch_mode=self.config.mode,
+                patch_mode=self.config.patch_mode,
                 reference=patched_reference,
                 applied_patches=info.patches or [],
             )

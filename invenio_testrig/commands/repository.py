@@ -83,7 +83,7 @@ def clone_repositories(
     Clone repository.git and repository.e2e (if configured) to the output directory.
     Then clone all packages specified in "tested_packages" into the packages/ subdirectory.
     If a package has patches, also clone it into the patched/ subdirectory and apply patches.
-    The patching behavior depends on the mode specified in the config (as-is, upstream, or custom).
+    The patching behavior depends on the patch_mode specified in the config (as-is, upstream, or custom).
 
     Layout of the output directory:
         clone_path/
@@ -100,7 +100,7 @@ def clone_repositories(
         progress: Progress reporter for status updates
 
     Raises:
-        ValueError: If the clone_path already exists or if the mode is unsupported
+        ValueError: If the clone_path already exists or if the patch_mode is unsupported
     """
     # Check if output directory exists
     if clone_path.exists():
@@ -147,11 +147,11 @@ def clone_repositories(
 
     # Clone dependencies using appropriate patcher mode
     tested_packages = config.tested_packages or {}
-    mode = config.mode
+    mode = config.patch_mode
     patcher_cls = patchers_by_mode.get(mode)
 
     if patcher_cls is None:
-        raise ValueError(f"Unsupported mode '{mode}'")
+        raise ValueError(f"Unsupported patch_mode '{mode}'")
 
     if tested_packages:
         packages_dir = clone_path / "packages"

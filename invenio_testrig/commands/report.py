@@ -139,7 +139,9 @@ def create_warnings_report(
 
     jinja_context = {
         "config_name": config.name,
-        "config_mode": config.mode,
+        "patch_mode": config.patch_mode,
+        "test_mode": config.test_mode,
+        "test_scope": config.test_scope,
         "last_updated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "total_unique_warnings": total_unique_warnings,
         "total_packages_with_warnings": len(total_packages_with_warnings),
@@ -239,7 +241,9 @@ def generate_report(
 
     jinja_context: dict[str, Any] = {
         "config_name": config.name,
-        "config_mode": config.mode,
+        "patch_mode": config.patch_mode,
+        "test_mode": config.test_mode,
+        "test_scope": config.test_scope,
         "started_at": started_at_formatted,
         "status": status,
         "status_class": status_class,

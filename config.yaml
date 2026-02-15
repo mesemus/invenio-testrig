@@ -113,7 +113,7 @@ repository:
 # - pinned-rebase :
 #       Use the same version as installed in repository.git for non-patched packages
 #       For patched packages rebase the patch on top of the upstream.
-mode: pinned-rebase
+patch_mode: pinned-rebase
 
 # Timeout for each tested package (in minutes)
 test_timeout: 90

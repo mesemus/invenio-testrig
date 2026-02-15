@@ -118,9 +118,9 @@ repository:
   e2e:  # Leave empty or do not include to skip e2e tests
 ```
 
-### Mode
+### Patch Model
 
-The mode determines how patches are applied and tested. Choose based on your testing scenario:
+The patch model determines how patches are applied and tested. Choose based on your testing scenario:
 
 #### `as-is` (Default)
 
@@ -135,7 +135,7 @@ The mode determines how patches are applied and tested. Choose based on your tes
 - **Note:** If other packages have dependencies on the patched package, they will be tested with the exact patched version of the package
 
 ```yaml
-mode: as-is
+patch_mode: as-is
 patches:
   - invenio-db@fix-transaction-bug    # Tests this exact branch
 ```
@@ -151,7 +151,7 @@ patches:
 - **Note:** The upstream version may be different from the version installed from `repository.git`
 
 ```yaml
-mode: upstream
+patch_mode: upstream
 github:
   - org: "inveniosoftware"
     include: ["invenio-.*"]
@@ -172,7 +172,7 @@ patches:
   fix works with that exact version
 
 ```yaml
-mode: pinned
+patch_mode: pinned
 repository:
   git: zenodo/zenodo-rdm@v12.0.0      # Use Zenodo v12 dependencies
 patches:
@@ -314,7 +314,7 @@ repository:
   git: samk13/invenio-dev-latest@master
   e2e: oarepo/invenio-e2e@main
 
-mode: as-is
+patch_mode: as-is
 test_timeout: 120
 ```
 
@@ -326,7 +326,7 @@ The CI pipeline performs the following steps:
 
 2. **Test each package** (runs in parallel as a matrix build):
    a. **Set up environment**: Clone `repository.git` and create a virtual environment using `uv sync`. This installs all dependencies including the package to be tested.
-   b. **Apply patches**: For each package being tested that has patches in `config.yaml`, apply the patches according to the mode:
+   b. **Apply patches**: For each package being tested that has patches in `config.yaml`, apply the patches according to the patch_mode:
       - **as-is mode**: Install the exact patched branch/PR over the installed version
       - **upstream mode**: Clone the upstream branch, cherry-pick the patch commits, and install the result
       - **pinned mode**: Clone the exact version from `repository.git`, cherry-pick the patch commits, and install the result

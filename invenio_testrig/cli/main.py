@@ -145,12 +145,28 @@ def cli():
     is_flag=True,
     help="Disable codestyle checks (black, isort, pydocstyle) in test configuration",
 )
+@click.option(
+    "--test-scope",
+    "test_scope",
+    type=click.Choice(["affected", "all"]),
+    default="affected",
+    help="Test scope: 'affected' (only packages with patches), 'all' (all packages)",
+)
+@click.option(
+    "--test-mode",
+    "test_mode",
+    type=click.Choice(["first-only", "stop-on-success", "run-all"]),
+    default="stop-on-success",
+    help="Test mode: 'first-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
+)
 def init_cmd(
     config_yaml_path: Path,
     workdir: Path,
     python_version: str,
     uv_executable: str,
     disable_codestyle_checks: bool,
+    test_scope: str,
+    test_mode: str,
     debug: bool,
     verbose: bool,
 ):
@@ -169,6 +185,8 @@ def init_cmd(
     config.python_version = python_version
     config.uv_executable = uv_executable
     config.disable_codestyle_checks = disable_codestyle_checks
+    config.test_scope = test_scope  # type: ignore[assignment]
+    config.test_mode = test_mode  # type: ignore[assignment]
     config.verbose = verbose
     config.debug = debug
     config.save(workdir / "config.json")
@@ -286,7 +304,7 @@ def clone_cmd(
     Clone repository.git and repository.e2e (if configured) to the output directory.
     Then clone all packages specified in "tested_packages" into the packages/ subdirectory.
     If a package has patches, also clone it into the patched/ subdirectory and apply patches.
-    The patching behavior depends on the mode specified in the config (as-is, upstream, or custom).
+    The patching behavior depends on the patch_mode specified in the config (as-is, upstream, or custom).
 
     Layout of the output directory:
         clone_path/
@@ -402,7 +420,7 @@ def print_patch_summary(
     """Print a summary of package configuration and applied patches.
 
     Args:
-        config: Configuration object containing mode information
+        config: Configuration object containing patch_mode information
         package_name: Name of the package being tested
         package_config: Configuration for the tested package
         library_patches: List of dependency packages with configuration
@@ -415,7 +433,7 @@ def print_patch_summary(
     click.secho("=" * 80, fg="blue")
 
     # Print patch mode
-    mode = config.mode
+    mode = config.patch_mode
     click.secho(f"Patch mode: {mode}", fg="cyan")
 
     # Print package information

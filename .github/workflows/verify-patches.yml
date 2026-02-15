@@ -15,7 +15,7 @@ on:
                 type: boolean
                 default: false
             scope:
-                description: "Test scope: 'affected' (only packages with patches), 'all' (all packages)"
+                description: "Test scope: 'affected' (only packages with patches), 'all'"
                 required: false
                 type: choice
                 default: "affected"
@@ -145,6 +145,8 @@ jobs:
                   if [ "$DISABLE_CODESTYLE_CHECKS" == "true" ]; then
                       init_args+=("--disable-codestyle-checks")
                   fi
+                  init_args+=("--test-scope" "$TEST_SCOPE")
+                  init_args+=("--test-mode" "$TEST_MODE")
                   invenio-testrig init $YAML_CONFIG_PATH $WORKDIR "${init_args[@]}"
                   invenio-testrig collect $WORKDIR
                   invenio-testrig filter $WORKDIR

@@ -128,6 +128,7 @@ while [[ $# -gt 0 ]]; do
                 echo "Valid options: affected, all"
                 exit 1
             fi
+            INIT_OPTIONS+=(--test-scope "$TEST_SCOPE")
             shift 2
             ;;
         --mode)
@@ -138,6 +139,7 @@ while [[ $# -gt 0 ]]; do
                 echo "Valid options: first-only, stop-on-success, run-all"
                 exit 1
             fi
+            INIT_OPTIONS+=(--test-mode "$TEST_MODE")
             shift 2
             ;;
         --disable-codestyle-checks)
