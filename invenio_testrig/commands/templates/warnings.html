@@ -206,18 +206,15 @@
             </div>
         </div>
         {% else %}
-        <!-- Warnings by Log Type -->
-        {% for log_type, warnings_list in warnings_by_type.items() %}
+        <!-- All Warnings (Merged) -->
         <div class="card">
             <div class="card-header">
-                <span class="emoji-icon">{{ '🔄' if log_type == 'patched' else '📦' }}</span>
-                <span class="log-type-badge log-type-{{ log_type }}">
-                    {{ log_type.capitalize() }} Version
-                </span>
-                <span class="ms-2 text-muted">({{ warnings_list|length }} unique warning{{ 's' if warnings_list|length != 1 else '' }})</span>
+                <span class="emoji-icon">⚠️</span>
+                All Warnings
+                <span class="ms-2 text-muted">({{ warnings|length }} unique warning{{ 's' if warnings|length != 1 else '' }})</span>
             </div>
             <div class="card-body">
-                {% for warning in warnings_list %}
+                {% for warning in warnings %}
                 <div class="warning-card">
                     <div class="warning-header">
                         <div class="warning-text">{{ warning.text }}</div>
@@ -251,7 +248,6 @@
                 {% endfor %}
             </div>
         </div>
-        {% endfor %}
         {% endif %}
     </div>
 

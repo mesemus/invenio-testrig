@@ -16,41 +16,73 @@ from invenio_testrig.config import (
 )
 from invenio_testrig.types import ExecutionStatus, Progress, ReportPackageData
 
+PATCH_MODE_LABELS: dict[str, str] = {
+    "upstream-overwrite": "Upstream baseline (patches overwrite upstream)",
+    "upstream-rebase": "Upstream baseline (patches rebased on upstream)",
+    "pinned-overwrite": "Pinned baseline (patches overwrite pinned version)",
+    "pinned-rebase": "Pinned baseline (patches rebased on pinned version)",
+}
 
-def collect_warnings_by_log_type(
-    artifacts_path: Path, progress: Progress
-) -> dict[str, dict[str, dict[str, tuple[int, str]]]]:
-    """Collect warnings from all package warnings JSON files, organized by log type.
+TEST_MODE_LABELS: dict[str, str] = {
+    "patched-only": "Test patched version only",
+    "stop-on-success": "Test patched first, retry unpatched on failure",
+    "run-all": "Test both patched and unpatched versions",
+}
+
+TEST_SCOPE_LABELS: dict[str, str] = {
+    "affected": "Affected packages only",
+    "all": "All packages",
+}
+
+
+def collect_warnings(
+    config: Config,
+    artifacts_path: Path,
+    progress: Progress,
+) -> dict[str, dict[str, tuple[int, str]]]:
+    """Collect warnings from test runs, loading patched warnings for patched packages
+    and original warnings for unpatched packages.
 
     Args:
+        config: Configuration object to determine which packages are patched
         artifacts_path: Path to the artifacts directory containing package subdirectories
+        progress: Progress reporter for status updates
 
     Returns:
-        Dict mapping log_type to warning text to package data (count and artifact link).
-        Structure: {log_type: {warning_text: {package_name: (count, artifact_link)}}}
+        Dict mapping warning text to package data (count and artifact link).
+        Structure: {warning_text: {package_name: (count, artifact_link)}}
     """
-    warnings_by_type: dict[str, dict[str, dict[str, tuple[int, str]]]] = defaultdict(
-        lambda: defaultdict(dict)
-    )
+    warnings_data: dict[str, dict[str, tuple[int, str]]] = defaultdict(dict)
 
     if not artifacts_path.exists():
         return {}
 
-    # Find all warnings JSON files
-    for warnings_file in artifacts_path.glob("*/warnings_*.json"):
-        try:
-            package_name = warnings_file.parent.name
-            log_type = "patched" if "patched" in warnings_file.name else "original"
+    # Iterate through each tested package
+    for package_name, package_info in config.tested_packages.items():
+        package_dir = artifacts_path / package_name
+        if not package_dir.exists():
+            continue
 
+        # Determine which warnings file to load:
+        # - If package has patches, load warnings from patched tests only
+        # - If package has no patches, load warnings from original tests
+        has_patches = bool(package_info.patches)
+        log_type = "patched" if has_patches else "original"
+        warnings_file = package_dir / f"warnings_{log_type}.json"
+
+        if not warnings_file.exists():
+            continue
+
+        try:
             # Construct link to the simplified log file
             artifact_link = f"artifacts/{package_name}/{log_type}_log.log"
 
             with warnings_file.open("r") as f:
-                warnings_data = json.load(f)
+                warnings_json = json.load(f)
 
-            if isinstance(warnings_data, dict):
-                for warning_text, count in warnings_data.items():
-                    warnings_by_type[log_type][warning_text][package_name] = (
+            if isinstance(warnings_json, dict):
+                for warning_text, count in warnings_json.items():
+                    warnings_data[warning_text][package_name] = (
                         count,
                         artifact_link,
                     )
@@ -59,7 +91,7 @@ def collect_warnings_by_log_type(
             progress.error(f"Failed to process {warnings_file}: {e}")
             continue
 
-    return {k: dict(v) for k, v in warnings_by_type.items()}
+    return dict(warnings_data)
 
 
 def calculate_total_occurrences(package_data: dict[str, tuple[int, str]]) -> int:
@@ -79,74 +111,66 @@ def create_warnings_report(
         config: Configuration object
         artifacts_path: Path to the artifacts directory
         report_output_path: Path where the report should be saved
+        progress: Progress reporter for status updates
     """
     progress.info("Generating warnings report")
 
-    # Collect warnings from all packages
-    warnings_by_type = collect_warnings_by_log_type(artifacts_path, progress)
+    # Collect warnings from all packages (merged from patched and unpatched)
+    warnings_data = collect_warnings(config, artifacts_path, progress)
 
     # Calculate statistics
-    total_unique_warnings = sum(len(warnings) for warnings in warnings_by_type.values())
+    total_unique_warnings = len(warnings_data)
     total_packages_with_warnings: set[str] = set()
     total_warning_occurrences = 0
 
-    for log_type, warnings_data in warnings_by_type.items():
-        for warning_text, package_data in warnings_data.items():
-            total_packages_with_warnings.update(package_data.keys())
-            total_warning_occurrences += calculate_total_occurrences(package_data)
+    for warning_text, package_data in warnings_data.items():
+        total_packages_with_warnings.update(package_data.keys())
+        total_warning_occurrences += calculate_total_occurrences(package_data)
 
     progress.info(
         f"Found {total_unique_warnings} unique warning(s) from {len(total_packages_with_warnings)} package(s)"
     )
 
-    # Prepare data for template
-    warnings_by_type_sorted = {}
-    for log_type in sorted(
-        warnings_by_type.keys(), reverse=True
-    ):  # patched, then original
-        warnings_data = warnings_by_type[log_type]
+    # Sort warnings by total count (descending) then by text (ascending)
+    sorted_warnings = sorted(
+        warnings_data.items(),
+        key=lambda x: (-calculate_total_occurrences(x[1]), x[0]),
+    )
 
-        # Sort warnings by total count (descending) then by text (ascending)
-        sorted_warnings = sorted(
-            warnings_data.items(),
-            key=lambda x: (-calculate_total_occurrences(x[1]), x[0]),
-        )
-
-        warnings_list = []
-        for warning_text, package_data in sorted_warnings:
-            total_count = calculate_total_occurrences(package_data)
-            # Sort packages by count descending, build list with name, count, and link
-            package_list = [
-                {
-                    "name": pkg_name,
-                    "count": count,
-                    "link": artifact_link,
-                }
-                for pkg_name, (count, artifact_link) in sorted(
-                    package_data.items(), key=lambda x: (-x[1][0], x[0])
-                )
-            ]
-
-            warnings_list.append(
-                {
-                    "text": warning_text,
-                    "total_count": total_count,
-                    "packages": package_list,
-                }
+    # Prepare warnings list for template
+    warnings_list = []
+    for warning_text, package_data in sorted_warnings:
+        total_count = calculate_total_occurrences(package_data)
+        # Sort packages by count descending, build list with name, count, and link
+        package_list = [
+            {
+                "name": pkg_name,
+                "count": count,
+                "link": artifact_link,
+            }
+            for pkg_name, (count, artifact_link) in sorted(
+                package_data.items(), key=lambda x: (-x[1][0], x[0])
             )
+        ]
 
-        warnings_by_type_sorted[log_type] = warnings_list
+        warnings_list.append(
+            {
+                "text": warning_text,
+                "total_count": total_count,
+                "packages": package_list,
+            }
+        )
 
     jinja_context = {
         "config_name": config.name,
-        "patch_mode": config.patch_mode,
-        "test_mode": config.test_mode,
-        "test_scope": config.test_scope,
+        "patch_mode": PATCH_MODE_LABELS.get(config.patch_mode, config.patch_mode),
+        "test_mode": TEST_MODE_LABELS.get(config.test_mode, config.test_mode),
+        "test_scope": TEST_SCOPE_LABELS.get(config.test_scope, config.test_scope),
         "last_updated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "total_unique_warnings": total_unique_warnings,
         "total_packages_with_warnings": len(total_packages_with_warnings),
         "total_warning_occurrences": total_warning_occurrences,
-        "warnings_by_type": warnings_by_type_sorted,
+        "warnings": warnings_list,
     }
 
     # Render the template
@@ -241,9 +265,9 @@ def generate_report(
 
     jinja_context: dict[str, Any] = {
         "config_name": config.name,
-        "patch_mode": config.patch_mode,
-        "test_mode": config.test_mode,
-        "test_scope": config.test_scope,
+        "patch_mode": PATCH_MODE_LABELS.get(config.patch_mode, config.patch_mode),
+        "test_mode": TEST_MODE_LABELS.get(config.test_mode, config.test_mode),
+        "test_scope": TEST_SCOPE_LABELS.get(config.test_scope, config.test_scope),
         "started_at": started_at_formatted,
         "status": status,
         "status_class": status_class,
