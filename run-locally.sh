@@ -353,23 +353,28 @@ if [ "$SKIP_TESTS" = false ]; then
             PATCHED_STATUS="unknown"
         fi
         
-        # Display patched test results and determine if original tests should run
+        # Determine if original tests should run based on patched status
         TEST_ORIGINAL=false
-        if [ "$PATCHED_STATUS" = "success" ]; then
-            print_success "[$PACKAGE] Patched tests PASSED"
-            TOTAL_PASSED=$((TOTAL_PASSED + 1))
-            # Test original if --always-test-original is set
-            if [ "$ALWAYS_TEST_ORIGINAL" = true ]; then
+        if [ "$ALWAYS_TEST_ORIGINAL" = true ]; then
+            # Test if patched was not skipped (i.e., it ran - either success or failed)
+            if [ "$PATCHED_STATUS" != "skipped" ]; then
                 TEST_ORIGINAL=true
             fi
         else
-            if [ "$PATCHED_STATUS" = "skipped" ]; then
-                print_warning "[$PACKAGE] Patched tests SKIPPED - no patches to apply"
-            else
-                print_warning "[$PACKAGE] Patched tests FAILED"
+            # Test only if patched failed
+            if [ "$PATCHED_STATUS" = "failed" ]; then
+                TEST_ORIGINAL=true
             fi
-            # Test original since patched was not successful
-            TEST_ORIGINAL=true
+        fi
+        
+        # Display patched test results
+        if [ "$PATCHED_STATUS" = "success" ]; then
+            print_success "[$PACKAGE] Patched tests PASSED"
+            TOTAL_PASSED=$((TOTAL_PASSED + 1))
+        elif [ "$PATCHED_STATUS" = "skipped" ]; then
+            print_warning "[$PACKAGE] Patched tests SKIPPED - no patches to apply"
+        else
+            print_warning "[$PACKAGE] Patched tests FAILED"
         fi
         echo ""
         

@@ -9,13 +9,13 @@ on:
                 required: false
                 type: string
                 default: "3.14"
-            verbose_pytest:
-                description: "Run pytest with verbose output (-vv -s)"
+            disable_codestyle_checks:
+                description: "Disable codestyle checks (black/isort) during tests"
                 required: false
                 type: boolean
                 default: false
-            disable_codestyle_checks:
-                description: "Disable codestyle checks (black/isort) during tests"
+            always_test_unpatched:
+                description: "Always test unpatched version if patched tests ran (not skipped)"
                 required: false
                 type: boolean
                 default: false
@@ -38,13 +38,13 @@ on:
                 required: false
                 type: string
                 default: "3.14"
-            verbose_pytest:
-                description: "Run pytest with verbose output (-vv -s)"
+            disable_codestyle_checks:
+                description: "Disable codestyle checks (black/isort) during tests"
                 required: false
                 type: boolean
                 default: false
-            disable_codestyle_checks:
-                description: "Disable codestyle checks (black/isort) during tests"
+            always_test_unpatched:
+                description: "Always test unpatched version if patched tests ran (not skipped)"
                 required: false
                 type: boolean
                 default: false
@@ -70,8 +70,8 @@ on:
 env:
     PYTHONUNBUFFERED: 1
     PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
-    VERBOSE_PYTEST: ${{ inputs.verbose_pytest }}
     DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable_codestyle_checks }}
+    ALWAYS_TEST_UNPATCHED: ${{ inputs.always_test_unpatched }}
 
     # if the workflow is called from another workflow, we use the defaults
     TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
@@ -225,7 +225,7 @@ jobs:
             - name: Run unpatched tests for the package
               shell: bash
               id: run-unpatched
-              if: ${{ failure() || steps.run-patched.outputs.test_patch_status == 'skipped' }}
+              if: ${{ failure() || (env.ALWAYS_TEST_UNPATCHED == 'true' && steps.run-patched.outputs.test_patch_status != 'skipped') }}
               run: |
                   echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"
                   invenio-testrig test \
