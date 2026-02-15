@@ -87,6 +87,9 @@ env:
     REPORT_BRANCH: ${{ inputs.report-branch || 'gh-pages' }}
     REPORT_TOKEN: ${{ inputs.report-repository-token || secrets.GITHUB_TOKEN }}
 
+    # GH token needed for the API (gh commandline tool)
+    GH_TOKEN: ${{ github.token }}
+
 permissions:
     contents: write # Required for pushing reports to the repository
 
