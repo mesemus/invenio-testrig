@@ -140,10 +140,14 @@
             opacity: 0.9;
             display: inline-block;
             margin-right: 1rem;
+            font-size: 1.5rem;
+            line-height: 1;
+            vertical-align: middle;
         }
         .back-link:hover {
             opacity: 1;
-            text-decoration: underline;
+            transform: scale(1.1);
+            transition: all 0.2s ease;
         }
     </style>
 </head>
@@ -151,7 +155,8 @@
     <!-- Header -->
     <div class="header-section">
         <div class="container">
-            <h1 class="mb-3">⚠️ Warnings Report</h1>
+            <a href="index.html" class="back-link" title="Back to Main Report">⬅️</a>
+            <h1 class="mb-3 d-inline-block">⚠️ Warnings Report</h1>
             {% if config_name %}
             <p class="mb-1"><em>Configuration: {{ config_name }}</em></p>
             {% endif %}
@@ -165,10 +170,6 @@
             <p class="mb-1"><em>Test Scope: {{ test_scope }}</em></p>
             {% endif %}
             <p class="mb-3"><em>Last updated: {{ last_updated }}</em></p>
-            <div>
-                <a href="../index.html" class="back-link">← Back to Reports Index</a>
-                <a href="index.html" class="back-link">← Back to Main Report</a>
-            </div>
         </div>
     </div>
 
