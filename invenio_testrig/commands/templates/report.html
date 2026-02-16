@@ -139,14 +139,15 @@
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
-        .warnings-link {
+        .header-link {
             color: white;
             text-decoration: none;
             opacity: 0.9;
             display: inline-block;
             margin-top: 0.5rem;
+            margin-left: 1rem;
         }
-        .warnings-link:hover {
+        .header-link:hover {
             opacity: 1;
             text-decoration: underline;
         }
@@ -155,15 +156,12 @@
             text-decoration: none;
             opacity: 0.9;
             display: inline-block;
+            margin-top: 0.5rem;
             margin-right: 1rem;
-            font-size: 1.5rem;
-            line-height: 1;
-            vertical-align: middle;
         }
         .back-link:hover {
             opacity: 1;
-            transform: scale(1.1);
-            transition: all 0.2s ease;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -173,8 +171,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <a href="../index.html" class="back-link" title="Back to Reports Index">⬅️</a>
-                    <h1 class="mb-2 d-inline-block">{% if config_name %}{{ config_name }}{% else %}Invenio Bugfix Verification Results{% endif %}</h1>
+                    <h1 class="mb-2">{% if config_name %}{{ config_name }}{% else %}Invenio Bugfix Verification Results{% endif %}</h1>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="mb-2">
@@ -202,10 +199,15 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="mt-2">
-                <a href="warnings.html" class="warnings-link">⚠️ View Warnings Report →</a>
-                <a href="data.json" class="warnings-link">📊 data.json</a>
-                <a href="warnings.json" class="warnings-link">⚠️ warnings.json</a>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <a href="../index.html" class="back-link">← Back to Reports Index</a>
+                    <a href="warnings.html" class="header-link">⚠️ View Warnings Report →</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="data.json" class="header-link">📊 data.json</a>
+                    <a href="warnings.json" class="header-link">⚠️ warnings.json</a>
+                </div>
             </div>
         </div>
     </div>
