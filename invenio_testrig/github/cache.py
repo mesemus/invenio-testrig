@@ -87,22 +87,18 @@ class GitCache:
     def get_branch_commit(self, org: str, repo: str, branch: str | None = None) -> str:
         """Get the latest commit SHA for the specified branch."""
         cache_path = self._clone_repo(org, repo)
+
         if branch is None:
-            output, _ = call_executable_quietly(
-                ["git", "rev-parse", "HEAD"],
-                cwd=cache_path,
-            )
+            ref = "HEAD"
         else:
-            output, _ = call_executable_quietly(
-                [
-                    "git",
-                    "for-each-ref",
-                    f"refs/tags/{branch}",
-                    f"refs/remotes/origin/{branch}",
-                    "--format=%(objectname)",
-                ],
-                cwd=cache_path,
-            )
+            # Try branch first, fallback to tag
+            ref = branch
+
+        output, _ = call_executable_quietly(
+            ["git", "rev-parse", f"{ref}^{{}}"],
+            cwd=cache_path,
+        )
+
         return output.strip()
 
     def get_default_branch(self, org: str, repo: str) -> str:
