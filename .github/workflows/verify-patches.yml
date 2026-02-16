@@ -19,7 +19,7 @@ on:
                 required: false
                 type: boolean
                 default: false
-            scope:
+            test_scope:
                 description: "Test scope: 'affected' (only packages affected by patches), 'all'"
                 required: false
                 type: choice
@@ -27,7 +27,7 @@ on:
                 options:
                     - affected
                     - all
-            mode:
+            test_mode:
                 description: "Test selection for patched packages: 'patched-only', 'stop-on-success', 'run-all'"
                 required: false
                 type: choice
@@ -60,16 +60,16 @@ on:
                 required: false
                 type: boolean
                 default: false
-            scope:
+            test_scope:
                 description: "Test scope: 'affected' (only packages with patches), 'all' (all packages)"
                 required: false
                 type: string
-                default: "affected"
-            mode:
+                default: "all"
+            test_mode:
                 description: "Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
                 required: false
                 type: string
-                default: "stop-on-success"
+                default: "run-all"
             config_file:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
@@ -105,8 +105,8 @@ env:
     PYTHONUNBUFFERED: 1
     PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
     DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable_codestyle_checks }}
-    TEST_SCOPE: ${{ inputs.scope || 'affected' }}
-    TEST_MODE: ${{ inputs.mode || 'stop-on-success' }}
+    TEST_SCOPE: ${{ inputs.test_scope || 'affected' }}
+    TEST_MODE: ${{ inputs.test_mode || 'stop-on-success' }}
 
     # if the workflow is called from another workflow, we use the defaults
     TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
