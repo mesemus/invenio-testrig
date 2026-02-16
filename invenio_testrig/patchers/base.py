@@ -14,7 +14,7 @@ from invenio_testrig.github.api import GitApi, GitCache
 from invenio_testrig.github.types import GitReference
 
 from ..config import Config
-from ..types import TestedPackageInfo
+from ..types import Progress, TestedPackageInfo
 
 
 class Patcher:
@@ -25,18 +25,22 @@ class Patcher:
     Subclasses must implement specific patching strategies.
     """
 
-    def __init__(self, config: Config, unpatched_dir: Path, patched_dir: Path):
+    def __init__(
+        self, config: Config, unpatched_dir: Path, patched_dir: Path, progress: Progress
+    ):
         """Initialize the Patcher with configuration and directory paths.
 
         Args:
             config: Configuration object containing patch and package information
             unpatched_dir: Directory where unpatched repositories will be cloned
             patched_dir: Directory where patched repositories will be cloned
+            progress: Progress reporter for outputting status messages
         """
         self.config = config
         self.git_api = GitApi(GitCache(config.workdir_path("git_cache")))
         self.unpatched_dir = unpatched_dir
         self.patched_dir = patched_dir
+        self.progress = progress
 
     def clone(self, package: str) -> None:
         """Clone the package, applying any patches needed."""
@@ -45,6 +49,7 @@ class Patcher:
 
         unpatched_reference = self._build_unpatched_reference(name, info)
         unpatched_reference = self.git_api.resolve_reference(unpatched_reference)
+        self.progress.info(f"Cloning unpatched: {str(unpatched_reference)}")
         unpatched_reference_path = self._clone_package(
             unpatched_reference, self.unpatched_dir
         )
@@ -53,6 +58,7 @@ class Patcher:
         patched_reference_path = None
         if patched_reference:
             patched_reference = self.git_api.resolve_reference(patched_reference)
+            self.progress.info(f"Cloning patched: {str(patched_reference)}")
             patched_reference_path = self._clone_package(
                 patched_reference, self.patched_dir
             )

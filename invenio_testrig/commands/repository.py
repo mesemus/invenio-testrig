@@ -159,7 +159,7 @@ def clone_repositories(
         patched_packages_dir = clone_path / "patched"
         patched_packages_dir.mkdir(parents=True, exist_ok=True)
 
-        patcher = patcher_cls(config, packages_dir, patched_packages_dir)
+        patcher = patcher_cls(config, packages_dir, patched_packages_dir, progress)
 
         for tested_package_name in tested_packages.keys():
             progress.info(

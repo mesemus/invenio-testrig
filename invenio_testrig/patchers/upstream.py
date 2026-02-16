@@ -91,4 +91,5 @@ class UpstreamRebasePatcher(Patcher):
         # does nothing, as we already cloned the patched version
 
         for patch in package_info.patches:
+            self.progress.info(f" ... applying patch {str(patch)}")
             self.git_api.apply_reference(patched_reference_path, patch)

@@ -22,6 +22,7 @@
 #   --mode <mode>             Test execution mode (default: stop-on-success)
 #                             Options: patched-only, stop-on-success, run-all
 #   --disable-codestyle-checks Disable codestyle checks in tests
+#   --skip-patches            Skip applying patches during testing
 #   --prepare                 Only prepare (skip tests and report)
 #   --help                    Show this help message
 #
@@ -92,6 +93,7 @@ TEST_SCOPE="affected"
 TEST_MODE="stop-on-success"
 SKIP_TESTS=false
 SKIP_REPORT=false
+SKIP_PATCHES=false
 INIT_OPTIONS=(--verbose)
 
 while [[ $# -gt 0 ]]; do
@@ -147,6 +149,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --disable-codestyle-checks)
             INIT_OPTIONS+=(--disable-codestyle-checks)
+            shift
+            ;;
+        --skip-patches)
+            SKIP_PATCHES=true
             shift
             ;;
         --prepare)
@@ -369,8 +375,12 @@ if [ "$SKIP_TESTS" = false ]; then
         print_step "[$PACKAGE_INDEX/$PACKAGE_COUNT] Testing PATCHED (with patches)..."
         
         # Run the test and capture result (don't exit on failure)
-        "${INVENIO_TESTRIG_COMMAND}" test "$WORKDIR" "$PACKAGE" \
-            --apply-patches || true
+        if [ "$SKIP_PATCHES" = false ]; then
+            "${INVENIO_TESTRIG_COMMAND}" test "$WORKDIR" "$PACKAGE" \
+                --apply-patches || true
+        else
+            "${INVENIO_TESTRIG_COMMAND}" test "$WORKDIR" "$PACKAGE" || true
+        fi
         
         # Check the status from the status file
         PATCHED_STATUS_FILE="$PACKAGE_ARTIFACTS/patched_status.json"

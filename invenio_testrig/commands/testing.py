@@ -2,6 +2,7 @@
 
 import json
 import re
+import shutil
 import subprocess
 from collections import defaultdict
 from pathlib import Path
@@ -149,6 +150,12 @@ def install_package_for_testing(
     package_config = config.tested_packages[package_name]
 
     working_dir = testing_directory(config, package_name, apply_patches)
+    if working_dir.exists():
+        progress.info(
+            f"Working directory {working_dir} already exists, removing it before installation",
+            icon="⚠️",
+        )
+        shutil.rmtree(working_dir)
 
     dependencies = python_api.install_with_patches(
         repositories_root=config.workdir_path("cloned_repos"),
