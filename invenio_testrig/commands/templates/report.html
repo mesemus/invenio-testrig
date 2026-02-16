@@ -223,7 +223,7 @@
                     </div>
                     <div class="metric-card danger">
                         <div class="metric-value">{{ regression_count }}</div>
-                        <div class="metric-label">❌ &nbsp;Regressions</div>
+                        <div class="metric-label">{% if patched_packages %}❌ &nbsp;Regressions{% else %}❌ &nbsp;Tests Failing{% endif %}</div>
                     </div>
                     <div class="metric-card warning">
                         <div class="metric-value">{{ still_failing_count }}</div>
@@ -273,7 +273,7 @@
         {% if patched_packages and patched_packages|length > 0 %}
         <div class="card">
             <div class="card-header">
-                <span class="emoji-icon">🔄</span>Patched Packages Test Results
+                <span class="emoji-icon">🔄</span>Packages with Patches Applied
             </div>
             <div class="card-body">
                 {% with packages=patched_packages, show_patches=True %}
@@ -287,7 +287,7 @@
         {% if packages_with_patched_dependencies and packages_with_patched_dependencies|length > 0 %}
         <div class="card">
             <div class="card-header">
-                <span class="emoji-icon">🔄</span>Packages that depend on patched packages
+                <span class="emoji-icon">�</span>Packages Depending on Patched Packages
             </div>
             <div class="card-body">
                 {% with packages=packages_with_patched_dependencies, show_patches=True %}
@@ -301,7 +301,7 @@
         {% if packages_without_patches and packages_without_patches|length > 0 %}
         <div class="card">
             <div class="card-header">
-                <span class="emoji-icon">📦</span>Packages that do not depend on patched packages
+                <span class="emoji-icon">📦</span>{% if patched_packages %}Packages Without Patched Dependencies{% else %}All Tested Packages{% endif %}
             </div>
             <div class="card-body">
                 {% with packages=packages_without_patches, show_patches=False %}
