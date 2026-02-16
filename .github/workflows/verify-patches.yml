@@ -4,22 +4,22 @@ on:
     # the workflow can be triggered manually
     workflow_dispatch:
         inputs:
-            python_version:
+            python-version:
                 description: "Python version to use"
                 required: false
                 type: string
                 default: "3.14"
-            config_file:
+            config-file:
                 description: "Config file"
                 required: false
                 default: config.yaml
                 type: string
-            disable_codestyle_checks:
+            disable-codestyle-checks:
                 description: "Disable codestyle checks (black/isort) during tests"
                 required: false
                 type: boolean
                 default: false
-            test_scope:
+            test-scope:
                 description: "Test scope: 'affected' (only packages affected by patches), 'all'"
                 required: false
                 type: choice
@@ -27,7 +27,7 @@ on:
                 options:
                     - affected
                     - all
-            test_mode:
+            test-mode:
                 description: "Test selection for patched packages: 'patched-only', 'stop-on-success', 'run-all'"
                 required: false
                 type: choice
@@ -40,37 +40,37 @@ on:
     # or called from another workflow from another repository
     workflow_call:
         inputs:
-            testrig_repository:
+            testrig-repository:
                 description: "Repository containing invenio-testrig (owner/repo)"
                 required: false
                 default: oarepo/invenio-testrig
                 type: string
-            testrig_branch:
+            testrig-branch:
                 description: "Branch of invenio-testrig to use"
                 required: false
                 default: ng
                 type: string
-            python_version:
+            python-version:
                 description: "Python version to use"
                 required: false
                 type: string
                 default: "3.14"
-            disable_codestyle_checks:
+            disable-codestyle-checks:
                 description: "Disable codestyle checks (black/isort) during tests"
                 required: false
                 type: boolean
                 default: false
-            test_scope:
+            test-scope:
                 description: "Test scope: 'affected' (only packages with patches), 'all' (all packages)"
                 required: false
                 type: string
                 default: "all"
-            test_mode:
+            test-mode:
                 description: "Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
                 required: false
                 type: string
                 default: "run-all"
-            config_file:
+            config-file:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
                 type: string
@@ -103,18 +103,18 @@ on:
 
 env:
     PYTHONUNBUFFERED: 1
-    PYTHON_VERSION: ${{ inputs.python_version || '3.14' }}
-    DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable_codestyle_checks }}
-    TEST_SCOPE: ${{ inputs.test_scope || 'affected' }}
-    TEST_MODE: ${{ inputs.test_mode || 'stop-on-success' }}
+    PYTHON_VERSION: ${{ inputs.python-version || '3.14' }}
+    DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable-codestyle-checks }}
+    TEST_SCOPE: ${{ inputs.test-scope || 'affected' }}
+    TEST_MODE: ${{ inputs.test-mode || 'stop-on-success' }}
 
     # if the workflow is called from another workflow, we use the defaults
-    TESTRIG_REPOSITORY: ${{ inputs.testrig_repository || github.repository }}
-    TESTRIG_BRANCH: ${{ inputs.testrig_branch || github.ref_name }}
+    TESTRIG_REPOSITORY: ${{ inputs.testrig-repository || github.repository }}
+    TESTRIG_BRANCH: ${{ inputs.testrig-branch || github.ref_name }}
 
     # Path to the configuration file to use (relative to workspace root)
     # if workflow is called manually, use the default from this branch
-    YAML_CONFIG_PATH: ${{ inputs.config_file || '.pipeline/config.yaml' }}
+    YAML_CONFIG_PATH: ${{ inputs.config-file || '.pipeline/config.yaml' }}
     WORKDIR: ${{ github.workspace }}/workdir
 
     # Report repository settings - defaults to current repository and gh-pages for workflow_dispatch
