@@ -170,6 +170,10 @@ def cli():
     default=None,
     help="Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)",
 )
+@click.option(
+    "--name",
+    "name",
+)
 def init_cmd(
     config_yaml_path_or_url: str,
     workdir: Path,
@@ -180,6 +184,7 @@ def init_cmd(
     test_mode: str,
     repository_git: str | None,
     repository_e2e: str | None,
+    name: str | None,
     debug: bool,
     verbose: bool,
 ):
@@ -209,6 +214,8 @@ def init_cmd(
         config.repository.git = api.parse_reference(repository_git)
     if repository_e2e:
         config.repository.e2e = api.parse_reference(repository_e2e)
+    if name:
+        config.name = name
 
     config.save(workdir / "config.json")
 

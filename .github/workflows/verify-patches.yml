@@ -100,6 +100,10 @@ on:
                 description: "Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)"
                 required: false
                 type: string
+            name:
+                description: "Name for the configuration (used in reports)"
+                required: false
+                type: string
 
 env:
     PYTHONUNBUFFERED: 1
@@ -126,6 +130,7 @@ env:
     # Repository overrides (only available via workflow_call)
     REPOSITORY_GIT: ${{ inputs.repository || '' }}
     REPOSITORY_E2E: ${{ inputs.e2e || '' }}
+    CONFIG_NAME: ${{ inputs.name || '' }}
 
     # GH token needed for the API (gh commandline tool)
     GH_TOKEN: ${{ github.token }}
@@ -176,6 +181,9 @@ jobs:
                   fi
                   if [ -n "$REPOSITORY_E2E" ]; then
                       init_args+=("--e2e" "$REPOSITORY_E2E")
+                  fi
+                  if [ -n "$CONFIG_NAME" ]; then
+                      init_args+=("--name" "$CONFIG_NAME")
                   fi
 
                   invenio-testrig init $YAML_CONFIG_PATH $WORKDIR "${init_args[@]}"

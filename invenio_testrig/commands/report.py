@@ -295,6 +295,7 @@ def generate_report(
         "test_mode": TEST_MODE_LABELS.get(config.test_mode, config.test_mode),
         "test_scope": TEST_SCOPE_LABELS.get(config.test_scope, config.test_scope),
         "started_at": started_at_formatted,
+        "python_version": config.python_version,
         "status": status,
         "status_class": status_class,
         "status_icon": status_icon,
