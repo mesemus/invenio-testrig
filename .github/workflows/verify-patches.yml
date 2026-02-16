@@ -74,6 +74,11 @@ on:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
                 type: string
+            skip-report:
+                description: "Skip report generation and pushing to repository (for testing/debugging purposes)"
+                required: false
+                type: boolean
+                default: false
             report-repository:
                 description: "Repository to push the report to (owner/repo)"
                 required: false
@@ -113,6 +118,7 @@ env:
     WORKDIR: ${{ github.workspace }}/workdir
 
     # Report repository settings - defaults to current repository and gh-pages for workflow_dispatch
+    SKIP_REPORT: ${{ inputs.skip-report || false }}
     REPORT_REPOSITORY: ${{ inputs.report-repository || github.repository }}
     REPORT_BRANCH: ${{ inputs.report-branch || 'gh-pages' }}
     REPORT_TOKEN: ${{ inputs.report-repository-token || secrets.GITHUB_TOKEN }}
@@ -191,6 +197,7 @@ jobs:
                   echo "::endgroup::"
 
             - name: Prepare and push initial report
+              if: ${{ !inputs.skip-report }}
               id: prepare-and-push-report
               uses: ./.pipeline/.github/actions/prepare-and-push-initial-report
               with:
@@ -201,7 +208,7 @@ jobs:
                   fallback-name: ${{ github.ref_name }}
 
             - name: Add report URL to workflow summary
-              if: ${{ steps.prepare-and-push-report.outputs.report-url }}
+              if: ${{ !inputs.skip-report && steps.prepare-and-push-report.outputs.report-url }}
               shell: bash
               run: |
                   REPORT_URL="${{ steps.prepare-and-push-report.outputs.report-url }}"
@@ -300,7 +307,7 @@ jobs:
                   path: ${{ env.WORKDIR }}/artifacts
 
             - name: Regenerate and upload partial report for the package
-              if: always()
+              if: ${{ always() && !inputs.skip-report }}
               uses: ./.pipeline/.github/actions/generate-and-push-report
               with:
                   workdir: ${{ env.WORKDIR }}
@@ -316,7 +323,7 @@ jobs:
         needs:
             - prepare
             - test
-        if: always()
+        if: always() && !inputs.skip-report
         runs-on: ubuntu-latest
         steps:
             - name: Checkout the testrig repository to .pipeline
