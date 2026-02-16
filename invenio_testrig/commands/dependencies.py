@@ -155,6 +155,9 @@ def filter_packages(
                 branch=f"v{version}",
             )
         reference = git_api.resolve_reference(reference)
+        progress.info(
+            f" ... resolved reference: {str(reference)}, commit {reference.commit}"
+        )
 
         # Package matches this github config
         tested_packages[package_name] = TestedPackageInfo(
