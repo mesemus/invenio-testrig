@@ -1,5 +1,5 @@
 # Optional name for this test configuration run
-name: Zenodo RDM Verification with Zip support
+name: Invenio testrig
 
 # Patches to apply - custom repositories with fixes/features.
 # Tip: Since all packages depend on pytest-invenio, you can test all packages
