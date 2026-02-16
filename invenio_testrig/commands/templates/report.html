@@ -228,13 +228,15 @@
                         <div class="metric-value">{{ ok_count }}</div>
                         <div class="metric-label">✅ &nbsp;Tests Passing</div>
                     </div>
+                    {% if patched_packages %}
                     <div class="metric-card danger">
                         <div class="metric-value">{{ regression_count }}</div>
-                        <div class="metric-label">{% if patched_packages %}❌ &nbsp;Regressions{% else %}❌ &nbsp;Tests Failing{% endif %}</div>
+                        <div class="metric-label">❌ &nbsp;Regressions</div>
                     </div>
+                    {% endif %}
                     <div class="metric-card warning">
                         <div class="metric-value">{{ still_failing_count }}</div>
-                        <div class="metric-label">⚠️ &nbsp;Still Failing</div>
+                        <div class="metric-label">{% if patched_packages %}⚠️ &nbsp;Still Failing{% else %}⚠️ &nbsp;Tests Failing{% endif %}</div>
                     </div>
                 </div>
             </div>
