@@ -8,10 +8,6 @@ name: Zenodo RDM Verification with Zip support
 # Note: If no patches are specified (empty list or null), tests will be run for all packages
 # matching the github filters without applying any patches.
 patches:
-  - https://github.com/inveniosoftware/invenio-records-resources/pull/666
-  - https://github.com/inveniosoftware/invenio-previewer/pull/243
-  - https://github.com/inveniosoftware/invenio-rdm-records/pull/2222
-  - https://github.com/inveniosoftware/invenio-app-rdm/pull/3266
   # - https://github.com/inveniosoftware/invenio-rdm-records/pull/2250
   # - OliverGeneser/invenio-rdm-records@fix-form-label[v22.7.0]
   # Array of patches to apply. Each patch is a string and can be specified as:

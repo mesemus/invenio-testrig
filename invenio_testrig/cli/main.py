@@ -25,6 +25,7 @@ from invenio_testrig.commands.testing import (
 )
 from invenio_testrig.config import Config
 from invenio_testrig.github import GitCache
+from invenio_testrig.github.api import GitApi
 from invenio_testrig.types import Progress, TestedPackageInfo
 
 
@@ -117,9 +118,7 @@ def cli():
 
 
 @cli.command("init")
-@click.argument(
-    "config_yaml_path", type=click.Path(exists=True, path_type=Path, resolve_path=True)
-)
+@click.argument("config_yaml_path_or_url")
 @click.argument(
     "workdir",
     type=click.Path(path_type=Path, resolve_path=True),
@@ -159,14 +158,28 @@ def cli():
     default="stop-on-success",
     help="Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
 )
+@click.option(
+    "--repository",
+    "repository_git",
+    default=None,
+    help="Override repository.git configuration (e.g., 'org/repo@branch' or GitHub URL)",
+)
+@click.option(
+    "--e2e",
+    "repository_e2e",
+    default=None,
+    help="Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)",
+)
 def init_cmd(
-    config_yaml_path: Path,
+    config_yaml_path_or_url: str,
     workdir: Path,
     python_version: str,
     uv_executable: str,
     disable_codestyle_checks: bool,
     test_scope: str,
     test_mode: str,
+    repository_git: str | None,
+    repository_e2e: str | None,
     debug: bool,
     verbose: bool,
 ):
@@ -178,7 +191,7 @@ def init_cmd(
     """
     Path(workdir).mkdir(parents=True, exist_ok=True)
     config = initialize_config(
-        config_yaml_path,
+        config_yaml_path_or_url,
         workdir,
         progress,
     )
@@ -189,6 +202,14 @@ def init_cmd(
     config.test_mode = test_mode  # type: ignore[assignment]
     config.verbose = verbose
     config.debug = debug
+
+    # Override repository configurations if provided
+    api = GitApi(GitCache(workdir / "git_cache"))
+    if repository_git:
+        config.repository.git = api.parse_reference(repository_git)
+    if repository_e2e:
+        config.repository.e2e = api.parse_reference(repository_e2e)
+
     config.save(workdir / "config.json")
 
 

@@ -9,6 +9,11 @@ on:
                 required: false
                 type: string
                 default: "3.14"
+            config_file:
+                description: "Config file"
+                required: false
+                default: config.yaml
+                type: string
             disable_codestyle_checks:
                 description: "Disable codestyle checks (black/isort) during tests"
                 required: false
@@ -68,7 +73,6 @@ on:
             config_file:
                 description: "Path to the configuration file to use (relative to workspace root)"
                 required: false
-                default: config.yaml
                 type: string
             report-repository:
                 description: "Repository to push the report to (owner/repo)"
@@ -81,6 +85,14 @@ on:
                 type: string
             report-repository-token:
                 description: "GitHub token with permissions to push the report repository"
+                required: false
+                type: string
+            repository:
+                description: "Override repository.git configuration (e.g., 'org/repo@branch' or GitHub URL)"
+                required: false
+                type: string
+            e2e:
+                description: "Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)"
                 required: false
                 type: string
 
@@ -97,13 +109,17 @@ env:
 
     # Path to the configuration file to use (relative to workspace root)
     # if workflow is called manually, use the default from this branch
-    YAML_CONFIG_PATH: ${{ inputs.config_file || '.pipeline/config_test.yaml' }}
+    YAML_CONFIG_PATH: ${{ inputs.config_file || '.pipeline/config.yaml' }}
     WORKDIR: ${{ github.workspace }}/workdir
 
     # Report repository settings - defaults to current repository and gh-pages for workflow_dispatch
     REPORT_REPOSITORY: ${{ inputs.report-repository || github.repository }}
     REPORT_BRANCH: ${{ inputs.report-branch || 'gh-pages' }}
     REPORT_TOKEN: ${{ inputs.report-repository-token || secrets.GITHUB_TOKEN }}
+
+    # Repository overrides (only available via workflow_call)
+    REPOSITORY_GIT: ${{ inputs.repository || '' }}
+    REPOSITORY_E2E: ${{ inputs.e2e || '' }}
 
     # GH token needed for the API (gh commandline tool)
     GH_TOKEN: ${{ github.token }}
@@ -147,6 +163,15 @@ jobs:
                   fi
                   init_args+=("--test-scope" "$TEST_SCOPE")
                   init_args+=("--test-mode" "$TEST_MODE")
+
+                  # Add repository overrides if provided
+                  if [ -n "$REPOSITORY_GIT" ]; then
+                      init_args+=("--repository" "$REPOSITORY_GIT")
+                  fi
+                  if [ -n "$REPOSITORY_E2E" ]; then
+                      init_args+=("--e2e" "$REPOSITORY_E2E")
+                  fi
+
                   invenio-testrig init $YAML_CONFIG_PATH $WORKDIR "${init_args[@]}"
                   invenio-testrig collect $WORKDIR
                   invenio-testrig filter $WORKDIR
