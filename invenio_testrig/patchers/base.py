@@ -74,9 +74,11 @@ class Patcher:
         if unpatched_reference_path:
             self._remove_git_directory(unpatched_reference_path)
             self._fix_check_manifest(unpatched_reference_path)
+            self._fix_run_sphinx(unpatched_reference_path)
         if patched_reference_path:
             self._remove_git_directory(patched_reference_path)
             self._fix_check_manifest(patched_reference_path)
+            self._fix_run_sphinx(patched_reference_path)
 
     def _build_unpatched_reference(
         self, package_name: str, package_info: TestedPackageInfo
@@ -113,23 +115,40 @@ class Patcher:
     def _fix_check_manifest(self, path: Path) -> None:
         """Remove check-manifest commands from run-tests.sh script.
 
-        The check-manifest command fails when there are untracked files (like
+        The check_manifest command fails when there are untracked files (like
         removed .git directories), so we remove it from test scripts.
 
         Args:
             path: Path to the repository directory
         """
-        # invenio: if there is a run-tests.sh script, it might contain a check-manifest
-        # command. This command will fail if there are untracked files in the repository,
-        # so we need to remove the command.
+        self._remove_from_runtest_sh(path, "check_manifest")
+
+    def _fix_run_sphinx(self, path: Path) -> None:
+        """Remove run-sphinx commands from run-tests.sh script.
+
+        The run-sphinx command currently fails here inside tests, so we
+        remove it from test scripts.
+
+        We remove sphinx.cmd.build lines from run-tests.sh
+
+        Args:
+            path: Path to the repository directory
+        """
+        self._remove_from_runtest_sh(path, "sphinx.cmd.build")
+
+    def _remove_from_runtest_sh(self, path: Path, search_string: str) -> None:
+        """Remove lines containing search_string from run-tests.sh script.
+
+        Args:
+            path: Path to the repository directory
+            search_string: String to search for in the script, lines containing this string will be removed
+        """
         run_tests_script = path / "run-tests.sh"
         if run_tests_script.exists():
             content = run_tests_script.read_text()
-            if "check_manifest" in content:
+            if search_string in content:
                 new_content = "\n".join(
-                    line
-                    for line in content.splitlines()
-                    if "check_manifest" not in line
+                    line for line in content.splitlines() if search_string not in line
                 )
                 run_tests_script.write_text(new_content)
 
