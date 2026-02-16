@@ -179,11 +179,22 @@ def create_warnings_report(
             }
         )
 
+    # Convert started_at from ISO format to human-readable format
+    started_at_formatted = None
+    if config.started_at:
+        try:
+            started_at_dt = datetime.fromisoformat(config.started_at)
+            started_at_formatted = started_at_dt.strftime("%Y-%m-%d %H:%M:%S UTC")
+        except (ValueError, AttributeError):
+            started_at_formatted = config.started_at
+
     jinja_context = {
         "config_name": config.name,
         "patch_mode": PATCH_MODE_LABELS.get(config.patch_mode, config.patch_mode),
         "test_mode": TEST_MODE_LABELS.get(config.test_mode, config.test_mode),
         "test_scope": TEST_SCOPE_LABELS.get(config.test_scope, config.test_scope),
+        "started_at": started_at_formatted,
+        "python_version": config.python_version,
         "last_updated": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "total_unique_warnings": total_unique_warnings,
         "total_packages_with_warnings": len(total_packages_with_warnings),

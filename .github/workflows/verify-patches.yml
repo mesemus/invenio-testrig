@@ -172,6 +172,7 @@ jobs:
                   if [ "$DISABLE_CODESTYLE_CHECKS" == "true" ]; then
                       init_args+=("--disable-codestyle-checks")
                   fi
+                  init_args+=("--python" "$PYTHON_VERSION")
                   init_args+=("--test-scope" "$TEST_SCOPE")
                   init_args+=("--test-mode" "$TEST_MODE")
 
