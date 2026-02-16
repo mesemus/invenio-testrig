@@ -165,6 +165,7 @@ def _parse_github_url(url: str) -> GitReference | None:
     Also pip-installed github references:
     - https://github.com/inveniosoftware/invenio-records-resources?branch=fix-read-many#c6b973a14802e2a7f73100ab4e32cb0c36bd4672
     - https://github.com/inveniosoftware/invenio-swh?rev=v0.13.4#828a3a415cf8e725c369939832b61281c44aec40
+    For these two cases, fragments (sha commit) are not parsed because pip can use their obsolete version.
 
     Returns None if the URL is not a valid GitHub URL.
     """
@@ -185,7 +186,6 @@ def _parse_github_url(url: str) -> GitReference | None:
 
     branch: str | None = None
     pr: int | None = None
-    commit: str | None = None
 
     if parts:
         if parts[0] in ("tree", "heads"):
@@ -207,9 +207,6 @@ def _parse_github_url(url: str) -> GitReference | None:
             branch = query_dict["rev"][0]
         # there might be a commit after the # in the URL
 
-    if parsed.fragment:
-        commit = parsed.fragment
-
     # Create GitReference structure
     result = GitReference(
         org=org,
@@ -220,7 +217,7 @@ def _parse_github_url(url: str) -> GitReference | None:
         base=None,
         versions=[],
         pr_info=None,
-        commit=commit,
+        commit=None,
     )
 
     return result

@@ -51,6 +51,8 @@ class GitApi:
         Also pip-installed github references:
         - https://github.com/inveniosoftware/invenio-records-resources?branch=fix-read-many#c6b973a14802e2a7f73100ab4e32cb0c36bd4672
         - https://github.com/inveniosoftware/invenio-swh?rev=v0.13.4#828a3a415cf8e725c369939832b61281c44aec40
+        In these two cases, fragments (sha commit) are not parsed because pip can use their obsolete version.
+
 
         Args:
             reference: Git reference string to parse

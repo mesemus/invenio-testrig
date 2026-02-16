@@ -33,6 +33,9 @@
 #         ├── artifacts/            (test artifacts)
 #         └── report/               (HTML report)
 #
+# Environment Variables:
+#   INVENIO_TESTRIG_COMMAND     Path to invenio-testrig command (default: invenio-testrig)
+#
 ################################################################################
 
 set -e  # Exit on error
@@ -212,10 +215,12 @@ else
     mkdir -p "$WORKDIR"
 fi
 
+
+INVENIO_TESTRIG_COMMAND=${INVENIO_TESTRIG_COMMAND:-invenio-testrig}
+
 # Check if invenio-testrig is available
-if ! command -v invenio-testrig &> /dev/null; then
-    print_error "invenio-testrig command not found. Please install the package first."
-    echo "  Run: pip install -e ."
+if ! command -v "$INVENIO_TESTRIG_COMMAND" &> /dev/null; then
+    print_error "invenio-testrig command not found. Please install the package first or pass the INVENIO_TESTRIG_COMMAND environment variable with the correct path."
     exit 1
 fi
 
@@ -244,14 +249,14 @@ if [ "$REUSE_WORKDIR" = false ]; then
     print_header "STEP 1: Initialize Configuration"
     print_step "Converting YAML config to JSON and resolving git references..."
     
-    invenio-testrig init "$CONFIG_YAML" "$WORKDIR" "${INIT_OPTIONS[@]}"
+    "${INVENIO_TESTRIG_COMMAND}" init "$CONFIG_YAML" "$WORKDIR" "${INIT_OPTIONS[@]}"
 
     print_success "Configuration initialized: $CONFIG_JSON"
     
     # Clear cache if requested (must be after init since it needs the config)
     if [ "$KEEP_CACHE" = false ]; then
         print_step "Clearing git cache..."
-        invenio-testrig clear-cache "$WORKDIR"
+        "${INVENIO_TESTRIG_COMMAND}" clear-cache "$WORKDIR"
     else
         print_success "Keeping existing git cache (--keep-cache)"
     fi
@@ -268,7 +273,7 @@ if [ "$REUSE_WORKDIR" = false ]; then
     print_header "STEP 2: Collect Dependencies"
     print_step "Cloning main repository and collecting dependencies..."
 
-    invenio-testrig collect "$WORKDIR"
+    "${INVENIO_TESTRIG_COMMAND}" collect "$WORKDIR"
 
     print_success "Dependencies collected"
     echo ""
@@ -284,13 +289,13 @@ if [ "$REUSE_WORKDIR" = false ]; then
     print_header "STEP 3: Filter Packages"
     print_step "Filtering packages based on GitHub patterns..."
 
-    invenio-testrig filter "$WORKDIR"
+    "${INVENIO_TESTRIG_COMMAND}" filter "$WORKDIR"
 
     print_success "Packages filtered"
     echo ""
 
     print_step "Selecting patches for filtered packages..."
-    invenio-testrig select-patches "$WORKDIR"
+    "${INVENIO_TESTRIG_COMMAND}" select-patches "$WORKDIR"
     print_success "Patches selected for filtered packages"
     echo ""
 else
@@ -305,7 +310,7 @@ if [ "$REUSE_WORKDIR" = false ]; then
     print_header "STEP 4: Clone Repositories"
     print_step "Cloning all package repositories with patches..."
 
-    invenio-testrig clone "$WORKDIR"
+    "${INVENIO_TESTRIG_COMMAND}" clone "$WORKDIR"
 
     print_success "Repositories cloned to: $CLONE_PATH"
     echo ""
@@ -364,7 +369,7 @@ if [ "$SKIP_TESTS" = false ]; then
         print_step "[$PACKAGE_INDEX/$PACKAGE_COUNT] Testing PATCHED (with patches)..."
         
         # Run the test and capture result (don't exit on failure)
-        invenio-testrig test "$WORKDIR" "$PACKAGE" \
+        "${INVENIO_TESTRIG_COMMAND}" test "$WORKDIR" "$PACKAGE" \
             --apply-patches || true
         
         # Check the status from the status file
@@ -409,7 +414,7 @@ if [ "$SKIP_TESTS" = false ]; then
         if [ "$TEST_ORIGINAL" = true ]; then
             print_step "[$PACKAGE_INDEX/$PACKAGE_COUNT] Testing ORIGINAL (without patches)..."
             
-            invenio-testrig test "$WORKDIR" "$PACKAGE" || true
+            "${INVENIO_TESTRIG_COMMAND}" test "$WORKDIR" "$PACKAGE" || true
             
             # Check the status from the status file
             ORIGINAL_STATUS_FILE="$PACKAGE_ARTIFACTS/original_status.json"
@@ -467,7 +472,7 @@ if [ "$SKIP_REPORT" = false ]; then
         rm -rf "$REPORT_PATH"
     fi
 
-    invenio-testrig report "$WORKDIR" "$REPORT_PATH" --completed
+    "${INVENIO_TESTRIG_COMMAND}" report "$WORKDIR" "$REPORT_PATH" --completed
 
     print_success "Report generated: $REPORT_PATH/index.html"
     
