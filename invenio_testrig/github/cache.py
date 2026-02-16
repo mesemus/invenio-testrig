@@ -8,6 +8,7 @@ repository metadata, branch information, and pull request details.
 import json
 import multiprocessing
 import shutil
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -91,15 +92,80 @@ class GitCache:
         if branch is None:
             ref = "HEAD"
         else:
-            # Try branch first, fallback to tag
             ref = branch
 
-        output, _ = call_executable_quietly(
-            ["git", "rev-parse", f"{ref}^{{}}"],
-            cwd=cache_path,
-        )
+        # Get all remotes to try remote branches
+        try:
+            remotes_output, _ = call_executable_quietly(
+                ["git", "remote"],
+                cwd=cache_path,
+            )
+            remotes = (
+                remotes_output.strip().split("\n") if remotes_output.strip() else []
+            )
+        except subprocess.CalledProcessError:
+            remotes = []
 
-        return output.strip()
+        # Try multiple strategies to resolve to a real commit ID
+        # The ^{commit} suffix ensures we get a commit object, not an annotated tag object
+        ref_patterns = [
+            f"{ref}^{{commit}}",  # Direct ref (local branch, commit ID)
+            f"refs/tags/{ref}^{{commit}}",  # Tag (annotated or lightweight)
+            f"refs/heads/{ref}^{{commit}}",  # Explicit local branch ref
+        ]
+
+        # Add remote branch patterns for all remotes
+        for remote in remotes:
+            ref_patterns.append(f"{remote}/{ref}^{{commit}}")
+
+        for pattern in ref_patterns:
+            try:
+                output, _ = call_executable_quietly(
+                    ["git", "rev-parse", pattern],
+                    cwd=cache_path,
+                )
+                return output.strip()
+            except subprocess.CalledProcessError:
+                continue
+
+        # If all strategies failed and this was for HEAD, that's an error
+        if branch is None:
+            raise ValueError(f"Could not resolve default branch for {org}/{repo}")
+
+        # Last resort: try to find it in for-each-ref output
+        try:
+            output, _ = call_executable_quietly(
+                [
+                    "git",
+                    "for-each-ref",
+                    "--format=%(refname:short) %(objectname) %(*objectname)",
+                    "refs/heads/",
+                    "refs/tags/",
+                    "refs/remotes/",
+                ],
+                cwd=cache_path,
+            )
+            for line in output.strip().split("\n"):
+                parts = line.split()
+                if len(parts) < 2:
+                    continue
+                name = parts[0]
+                # For annotated tags, %(*objectname) gives the dereferenced commit
+                # For everything else, it's empty and we use %(objectname)
+                commit = parts[2] if len(parts) > 2 and parts[2] else parts[1]
+
+                # Match against the short name directly
+                if name == ref:
+                    return commit
+
+                # Also try matching with any remote prefix stripped (e.g., "origin/main" matches "main")
+                for remote in remotes:
+                    if name == f"{remote}/{ref}":
+                        return commit
+        except subprocess.CalledProcessError:
+            pass
+
+        raise ValueError(f"Could not resolve ref '{ref}' for {org}/{repo}")
 
     def get_default_branch(self, org: str, repo: str) -> str:
         """Get the default branch name for the specified repository."""
@@ -224,6 +290,14 @@ class GitCache:
                 f"{org}/{repo}",
                 str(repo_cache_path),
             ]
+        )
+        call_executable_quietly(
+            [
+                "git",
+                "fetch",
+                "--all",
+            ],
+            cwd=repo_cache_path,
         )
 
         return repo_cache_path
