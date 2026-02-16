@@ -6,6 +6,7 @@ showing test results for both patched and unpatched versions of packages.
 
 import json
 from collections import defaultdict
+from dataclasses import asdict, is_dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -33,6 +34,23 @@ TEST_SCOPE_LABELS: dict[str, str] = {
     "affected": "Affected packages only",
     "all": "All packages",
 }
+
+
+def to_serializable(obj: Any) -> Any:
+    if is_dataclass(obj):
+        return {k: to_serializable(v) for k, v in asdict(obj).items()}
+
+    elif isinstance(obj, datetime):
+        return obj.isoformat()
+
+    elif isinstance(obj, dict):
+        return {to_serializable(k): to_serializable(v) for k, v in obj.items()}
+
+    elif isinstance(obj, (list, tuple, set)):
+        return [to_serializable(v) for v in obj]
+
+    else:
+        return obj
 
 
 def collect_warnings(
@@ -186,6 +204,14 @@ def create_warnings_report(
     report_output_path.mkdir(parents=True, exist_ok=True)
     warnings_report_file = report_output_path / "warnings.html"
     warnings_report_file.write_text(report_content)
+
+    with (report_output_path / "warnings.json").open("w") as f:
+        json.dump(
+            to_serializable(jinja_context),
+            f,
+            default=str,
+            indent=2,
+        )
 
     progress.success(f"Warnings report written to: {warnings_report_file}")
 
@@ -348,6 +374,14 @@ def generate_report(
     report_output_path.mkdir(parents=True, exist_ok=True)
     report_file = report_output_path / "index.html"
     report_file.write_text(report_content)
+
+    with (report_output_path / "data.json").open("w") as f:
+        json.dump(
+            to_serializable(jinja_context),
+            f,
+            default=str,
+            indent=2,
+        )
 
     # Debug: Confirm report was written
     progress.info(f"Report file written to: {report_file}")

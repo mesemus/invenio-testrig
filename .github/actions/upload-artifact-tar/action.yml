@@ -7,6 +7,10 @@ inputs:
   path:
     description: 'Path to the directory or file to upload'
     required: true
+  retention-days:
+    description: 'Number of days to retain the artifact'
+    required: false
+    default: '90'
 
 runs:
   using: composite
@@ -36,3 +40,4 @@ runs:
       with:
         name: ${{ inputs.name }}
         path: ${{ steps.create_tar.outputs.tar_file }}
+        retention-days: ${{ inputs.retention-days }}

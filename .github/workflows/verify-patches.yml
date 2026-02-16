@@ -223,6 +223,7 @@ jobs:
               with:
                   name: workdir
                   path: ${{ env.WORKDIR }}
+                  retention-days: 1
 
     test:
         needs:
@@ -305,6 +306,7 @@ jobs:
               with:
                   name: test-results-${{ matrix.package }}
                   path: ${{ env.WORKDIR }}/artifacts
+                  retention-days: 1
 
             - name: Regenerate and upload partial report for the package
               if: ${{ always() && !inputs.skip-report }}
@@ -357,6 +359,14 @@ jobs:
                   completed: "true"
                   download-artifacts: "true"
                   max-retries: "5"
+
+            - name: Upload final report as artifact
+              if: always()
+              uses: actions/upload-artifact@v6
+              with:
+                  name: final-report
+                  path: ${{ runner.temp }}/generated-report
+                  retention-days: 90
 
             - name: Display report URL
               if: ${{ needs.prepare.outputs.report_url }}
