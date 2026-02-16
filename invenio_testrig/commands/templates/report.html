@@ -237,7 +237,7 @@
                         <div class="metric-label">❌ &nbsp;Regressions</div>
                     </div>
                     {% endif %}
-                    <div class="metric-card warning">
+                    <div class="metric-card {% if patched_packages %}warning{% else %}danger{% endif %}">
                         <div class="metric-value">{{ still_failing_count }}</div>
                         <div class="metric-label">{% if patched_packages %}⚠️ &nbsp;Still Failing{% else %}⚠️ &nbsp;Tests Failing{% endif %}</div>
                     </div>
