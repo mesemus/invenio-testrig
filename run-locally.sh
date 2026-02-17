@@ -34,6 +34,11 @@
 #         ├── artifacts/            (test artifacts)
 #         └── report/               (HTML report)
 #
+#       The script runs these steps:
+#       1. Setup (init, collect, filter, select-patches, clone)
+#       2. Run tests
+#       3. Generate report
+#
 # Environment Variables:
 #   INVENIO_TESTRIG_COMMAND     Path to invenio-testrig command (default: invenio-testrig)
 #
@@ -248,84 +253,35 @@ echo ""
 START_TIME=$(date +%s)
 
 ################################################################################
-# STEP 1: Initialize configuration
+# STEP 1-4: Setup (init, collect, filter, select-patches, clone)
 ################################################################################
 if [ "$REUSE_WORKDIR" = false ]; then
-    print_header "STEP 1: Initialize Configuration"
-    print_step "Converting YAML config to JSON and resolving git references..."
+    print_header "STEP 1-4: Setup"
+    print_step "Running complete setup: init, collect, filter, select-patches, clone..."
     
-    # Build init command with optional config
-    if [ -n "$CONFIG_YAML" ]; then
-        "${INVENIO_TESTRIG_COMMAND}" init "$CONFIG_YAML" --workdir "$WORKDIR" "${INIT_OPTIONS[@]}"
-    else
-        "${INVENIO_TESTRIG_COMMAND}" init --workdir "$WORKDIR" "${INIT_OPTIONS[@]}"
-    fi
-
-    print_success "Configuration initialized: $CONFIG_JSON"
-    
-    # Clear cache if requested (must be after init since it needs the config)
+    # Clear cache if requested (must be before setup)
     if [ "$KEEP_CACHE" = false ]; then
-        print_step "Clearing git cache..."
-        "${INVENIO_TESTRIG_COMMAND}" clear-cache "$WORKDIR"
+        # Only clear if workdir exists and has git_cache
+        if [ -d "$WORKDIR/git_cache" ]; then
+            print_step "Clearing git cache..."
+            rm -rf "$WORKDIR/git_cache"
+            print_success "Git cache cleared"
+        fi
     else
         print_success "Keeping existing git cache (--keep-cache)"
     fi
+    
+    # Build setup command with optional config
+    if [ -n "$CONFIG_YAML" ]; then
+        "${INVENIO_TESTRIG_COMMAND}" setup "$CONFIG_YAML" --workdir "$WORKDIR" "${INIT_OPTIONS[@]}"
+    else
+        "${INVENIO_TESTRIG_COMMAND}" setup --workdir "$WORKDIR" "${INIT_OPTIONS[@]}"
+    fi
+
+    print_success "Setup complete: $CLONE_PATH"
     echo ""
 else
-    print_warning "Skipping initialization (reusing existing workdir)"
-    echo ""
-fi
-
-################################################################################
-# STEP 2: Collect dependencies
-################################################################################
-if [ "$REUSE_WORKDIR" = false ]; then
-    print_header "STEP 2: Collect Dependencies"
-    print_step "Cloning main repository and collecting dependencies..."
-
-    "${INVENIO_TESTRIG_COMMAND}" collect "$WORKDIR"
-
-    print_success "Dependencies collected"
-    echo ""
-else
-    print_warning "Skipping dependency collection (reusing existing workdir)"
-    echo ""
-fi
-
-################################################################################
-# STEP 3: Filter packages
-################################################################################
-if [ "$REUSE_WORKDIR" = false ]; then
-    print_header "STEP 3: Filter Packages"
-    print_step "Filtering packages based on GitHub patterns..."
-
-    "${INVENIO_TESTRIG_COMMAND}" filter "$WORKDIR"
-
-    print_success "Packages filtered"
-    echo ""
-
-    print_step "Selecting patches for filtered packages..."
-    "${INVENIO_TESTRIG_COMMAND}" select-patches "$WORKDIR"
-    print_success "Patches selected for filtered packages"
-    echo ""
-else
-    print_warning "Skipping package filtering (reusing existing workdir)"
-    echo ""
-fi
-
-################################################################################
-# STEP 4: Clone repositories
-################################################################################
-if [ "$REUSE_WORKDIR" = false ]; then
-    print_header "STEP 4: Clone Repositories"
-    print_step "Cloning all package repositories with patches..."
-
-    "${INVENIO_TESTRIG_COMMAND}" clone "$WORKDIR"
-
-    print_success "Repositories cloned to: $CLONE_PATH"
-    echo ""
-else
-    print_warning "Skipping clone step (reusing existing workdir with repositories at $CLONE_PATH)"
+    print_warning "Skipping setup (reusing existing workdir with repositories at $CLONE_PATH)"
     if [ ! -d "$CLONE_PATH" ]; then
         print_error "Clone path does not exist: $CLONE_PATH"
         exit 1
@@ -334,10 +290,10 @@ else
 fi
 
 ################################################################################
-# STEP 5: Run tests
+# STEP 2: Run tests
 ################################################################################
 if [ "$SKIP_TESTS" = false ]; then
-    print_header "STEP 5: Run Tests"
+    print_header "STEP 2: Run Tests"
 
     # Extract package list from config
     print_step "Extracting package list..."
@@ -474,10 +430,10 @@ else
 fi
 
 ################################################################################
-# STEP 6: Generate report
+# STEP 3: Generate report
 ################################################################################
 if [ "$SKIP_REPORT" = false ]; then
-    print_header "STEP 6: Generate Report"
+    print_header "STEP 3: Generate Report"
     print_step "Generating test report from artifacts..."
 
     # Remove report directory if it exists

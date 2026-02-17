@@ -117,70 +117,78 @@ def cli():
     pass
 
 
+def initcmd_options(f):
+    @click.argument("config_yaml_path_or_url", required=False)
+    @click.option(
+        "--workdir",
+        type=click.Path(path_type=Path, resolve_path=True),
+        default=Path("workdir"),
+    )
+    @click.option("--verbose", is_flag=True, help="Enable verbose output")
+    @click.option("--debug", is_flag=True, help="Enable debug mode with full traceback")
+    @click.option(
+        "--python",
+        "python_version",
+        default="python3",
+        help="Python version to use for testing",
+    )
+    @click.option(
+        "--uv",
+        "uv_executable",
+        default="uv",
+        help="Path to uv executable",
+    )
+    @click.option(
+        "--disable-codestyle-checks",
+        "disable_codestyle_checks",
+        is_flag=True,
+        help="Disable codestyle checks (black, isort, pydocstyle) in test configuration",
+    )
+    @click.option("--patch-mode", help="Patch mode to use for patching packages")
+    @click.option(
+        "--patch",
+        "patches",
+        multiple=True,
+        help="Add a patch to the configuration (can be used multiple times)",
+    )
+    @click.option(
+        "--test-scope",
+        "test_scope",
+        type=click.Choice(["affected", "all"]),
+        default="affected",
+        help="Test scope: 'affected' (only packages with patches), 'all' (all packages)",
+    )
+    @click.option(
+        "--test-mode",
+        "test_mode",
+        type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
+        default="stop-on-success",
+        help="Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
+    )
+    @click.option(
+        "--repository",
+        "repository_git",
+        default=None,
+        help="Override repository.git configuration (e.g., 'org/repo@branch' or GitHub URL)",
+    )
+    @click.option(
+        "--e2e",
+        "repository_e2e",
+        default=None,
+        help="Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)",
+    )
+    @click.option(
+        "--name",
+        "name",
+    )
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
+        return f(*args, **kwargs)
+
+    return wrapper
+
+
 @cli.command("init")
-@click.argument("config_yaml_path_or_url", required=False)
-@click.option(
-    "--workdir",
-    type=click.Path(path_type=Path, resolve_path=True),
-    default=Path("workdir"),
-)
-@click.option("--verbose", is_flag=True, help="Enable verbose output")
-@click.option("--debug", is_flag=True, help="Enable debug mode with full traceback")
-@click.option(
-    "--python",
-    "python_version",
-    default="python3",
-    help="Python version to use for testing",
-)
-@click.option(
-    "--uv",
-    "uv_executable",
-    default="uv",
-    help="Path to uv executable",
-)
-@click.option(
-    "--disable-codestyle-checks",
-    "disable_codestyle_checks",
-    is_flag=True,
-    help="Disable codestyle checks (black, isort, pydocstyle) in test configuration",
-)
-@click.option("--patch-mode", help="Patch mode to use for patching packages")
-@click.option(
-    "--patch",
-    "patches",
-    multiple=True,
-    help="Add a patch to the configuration (can be used multiple times)",
-)
-@click.option(
-    "--test-scope",
-    "test_scope",
-    type=click.Choice(["affected", "all"]),
-    default="affected",
-    help="Test scope: 'affected' (only packages with patches), 'all' (all packages)",
-)
-@click.option(
-    "--test-mode",
-    "test_mode",
-    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
-    default="stop-on-success",
-    help="Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
-)
-@click.option(
-    "--repository",
-    "repository_git",
-    default=None,
-    help="Override repository.git configuration (e.g., 'org/repo@branch' or GitHub URL)",
-)
-@click.option(
-    "--e2e",
-    "repository_e2e",
-    default=None,
-    help="Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)",
-)
-@click.option(
-    "--name",
-    "name",
-)
+@initcmd_options
 def init_cmd(
     config_yaml_path_or_url: str | None,
     workdir: Path,
@@ -203,6 +211,40 @@ def init_cmd(
 
     Example: invenio-testrig init config.yaml config.json
     """
+    _init_cmd(
+        config_yaml_path_or_url,
+        workdir,
+        python_version,
+        uv_executable,
+        disable_codestyle_checks,
+        test_scope,
+        test_mode,
+        repository_git,
+        repository_e2e,
+        name,
+        debug,
+        verbose,
+        patch_mode,
+        patches,
+    )
+
+
+def _init_cmd(
+    config_yaml_path_or_url: str | None,
+    workdir: Path,
+    python_version: str,
+    uv_executable: str,
+    disable_codestyle_checks: bool,
+    test_scope: str,
+    test_mode: str,
+    repository_git: str | None,
+    repository_e2e: str | None,
+    name: str | None,
+    debug: bool,
+    verbose: bool,
+    patch_mode: str | None,
+    patches: list[str],
+):
     Path(workdir).mkdir(parents=True, exist_ok=True)
     config = initialize_config(
         config_yaml_path_or_url,
@@ -231,6 +273,108 @@ def init_cmd(
         config.patches = [api.parse_reference(patch) for patch in patches]
 
     config.save(workdir / "config.json")
+
+
+@cli.command("setup")
+@initcmd_options
+def setup_cmd(
+    config_yaml_path_or_url: str | None,
+    workdir: Path,
+    python_version: str,
+    uv_executable: str,
+    disable_codestyle_checks: bool,
+    test_scope: str,
+    test_mode: str,
+    repository_git: str | None,
+    repository_e2e: str | None,
+    name: str | None,
+    debug: bool,
+    verbose: bool,
+    patch_mode: str | None,
+    patches: list[str],
+):
+    """Complete setup: init, collect, filter, select-patches, and clone.
+
+    This command combines the following steps:
+    1. Initialize configuration (init)
+    2. Collect dependencies (collect)
+    3. Filter packages (filter)
+    4. Select patches (select-patches)
+    5. Clone repositories (clone)
+
+    This is a convenience command that runs all preparation steps before testing.
+
+    Example: invenio-testrig setup config.yaml --workdir ./workdir
+    """
+    # Step 1: Initialize
+    progress.start("Step 1/5: Initializing configuration", icon="🔧")
+    _init_cmd(
+        config_yaml_path_or_url,
+        workdir,
+        python_version,
+        uv_executable,
+        disable_codestyle_checks,
+        test_scope,
+        test_mode,
+        repository_git,
+        repository_e2e,
+        name,
+        debug,
+        verbose,
+        patch_mode,
+        patches,
+    )
+
+    # Load config for subsequent steps
+    config = Config.load(workdir / "config.json")
+
+    # Step 2: Collect dependencies
+    progress.start("Step 2/5: Collecting dependencies", icon="📦")
+    try:
+        collect_dependencies(
+            config, config.uv_executable, config.python_version, progress
+        )
+    except Exception as e:
+        if debug:
+            raise
+        progress.error(f"Error collecting dependencies: {e}")
+        raise click.Abort()
+
+    # Step 3: Filter packages
+    progress.start("Step 3/5: Filtering packages", icon="🔍")
+    try:
+        filter_packages(config, progress)
+    except Exception as e:
+        if debug:
+            raise
+        progress.error(f"Error filtering packages: {e}")
+        raise click.Abort()
+
+    # Step 4: Select patches
+    progress.start("Step 4/5: Selecting patches", icon="🏷️")
+    try:
+        select_patches(config, progress)
+    except Exception as e:
+        if debug:
+            raise
+        progress.error(f"Error selecting patches: {e}")
+        raise click.Abort()
+
+    # Step 5: Clone repositories
+    progress.start("Step 5/5: Cloning repositories", icon="📥")
+    clone_path = config.workdir_path("cloned_repos")
+    try:
+        clone_repositories(config, clone_path, progress)
+    except ValueError as e:
+        progress.error(str(e))
+        raise click.Abort()
+    except Exception as e:
+        if debug:
+            raise
+        progress.error(f"Error cloning repositories: {e}")
+        raise click.Abort()
+
+    progress.success("Setup complete! Ready for testing.", icon="🎉")
 
 
 @cli.command("collect")
