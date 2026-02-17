@@ -4,6 +4,7 @@ This module generates HTML reports from test execution artifacts,
 showing test results for both patched and unpatched versions of packages.
 """
 
+import contextlib
 import json
 from collections import defaultdict
 from dataclasses import asdict, is_dataclass
@@ -539,8 +540,17 @@ def generate_reports_index(
                 )
                 continue
 
-            # Get the last modification time
-            mtime = item.stat().st_mtime
+            # Get the last modification time from data.json
+            last_updated = report_data.get("last_updated")
+            mtime_formatted = "unknown"
+            if last_updated:
+                # Parse ISO format and convert to timestamp for sorting
+                with contextlib.suppress(ValueError, AttributeError):
+                    last_updated_dt = datetime.fromisoformat(
+                        last_updated.replace(" UTC", "+00:00")
+                    )
+                    mtime = last_updated_dt.timestamp()
+                    mtime_formatted = last_updated
 
             # Add report directory info
             report_dirs.append(
@@ -548,9 +558,7 @@ def generate_reports_index(
                     "name": item.name,
                     "path": item.name,  # Relative path from the index
                     "mtime": mtime,
-                    "mtime_formatted": datetime.fromtimestamp(mtime).strftime(
-                        "%Y-%m-%d %H:%M:%S"
-                    ),
+                    "mtime_formatted": mtime_formatted,
                     "ok_count": report_data.get("ok_count", 0),
                     "errors_count": report_data.get("regression_count", 0)
                     + report_data.get("still_failing_count", 0),
