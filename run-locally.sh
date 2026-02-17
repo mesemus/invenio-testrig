@@ -7,7 +7,7 @@
 # running all commands in the correct order with sensible defaults.
 #
 # Usage:
-#   ./run-locally.sh <config.yaml> [options]
+#   ./run-locally.sh [config.yaml] [options]
 #
 # Options:
 #   --workdir <path>          Working directory (default: ./workdir)
@@ -176,13 +176,8 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Validate required arguments
-if [ -z "$CONFIG_YAML" ]; then
-    print_error "Config YAML file is required"
-    usage
-fi
-
-if [ ! -f "$CONFIG_YAML" ]; then
+# Validate config if provided
+if [ -n "$CONFIG_YAML" ] && [ ! -f "$CONFIG_YAML" ]; then
     print_error "Config file not found: $CONFIG_YAML"
     exit 1
 fi
@@ -232,7 +227,11 @@ fi
 
 # Print configuration summary
 print_header "Configuration Summary"
-echo "Config YAML:      $CONFIG_YAML"
+if [ -n "$CONFIG_YAML" ]; then
+    echo "Config YAML:      $CONFIG_YAML"
+else
+    echo "Config YAML:      (not provided)"
+fi
 echo "Working Dir:      $WORKDIR"
 echo "Config JSON:      $CONFIG_JSON"
 echo "Clone Path:       $CLONE_PATH"
@@ -255,7 +254,12 @@ if [ "$REUSE_WORKDIR" = false ]; then
     print_header "STEP 1: Initialize Configuration"
     print_step "Converting YAML config to JSON and resolving git references..."
     
-    "${INVENIO_TESTRIG_COMMAND}" init "$CONFIG_YAML" "$WORKDIR" "${INIT_OPTIONS[@]}"
+    # Build init command with optional config
+    if [ -n "$CONFIG_YAML" ]; then
+        "${INVENIO_TESTRIG_COMMAND}" init "$CONFIG_YAML" --workdir "$WORKDIR" "${INIT_OPTIONS[@]}"
+    else
+        "${INVENIO_TESTRIG_COMMAND}" init --workdir "$WORKDIR" "${INIT_OPTIONS[@]}"
+    fi
 
     print_success "Configuration initialized: $CONFIG_JSON"
     

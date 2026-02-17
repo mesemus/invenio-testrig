@@ -125,8 +125,7 @@ env:
     TESTRIG_BRANCH: ${{ inputs.testrig-branch || github.ref_name }}
 
     # Path to the configuration file to use (relative to workspace root)
-    # if workflow is called manually, use the default from this branch
-    YAML_CONFIG_PATH: ${{ inputs.config-file || '.pipeline/config.yaml' }}
+    YAML_CONFIG_PATH: ${{ inputs.config-file || '' }}
     WORKDIR: ${{ github.workspace }}/workdir
 
     # Report repository settings - defaults to current repository and gh-pages for workflow_dispatch
@@ -206,7 +205,12 @@ jobs:
                       done
                   fi
 
-                  invenio-testrig init $YAML_CONFIG_PATH $WORKDIR "${init_args[@]}"
+                  # Add config file if provided
+                  if [ -n "$YAML_CONFIG_PATH" ]; then
+                      invenio-testrig init "$YAML_CONFIG_PATH" --workdir "$WORKDIR" "${init_args[@]}"
+                  else
+                      invenio-testrig init --workdir "$WORKDIR" "${init_args[@]}"
+                  fi
                   invenio-testrig collect $WORKDIR
                   invenio-testrig filter $WORKDIR
                   invenio-testrig select-patches $WORKDIR

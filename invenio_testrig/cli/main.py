@@ -118,11 +118,11 @@ def cli():
 
 
 @cli.command("init")
-@click.argument("config_yaml_path_or_url")
-@click.argument(
+@click.argument("config_yaml_path_or_url", required=False)
+@click.option(
     "workdir",
     type=click.Path(path_type=Path, resolve_path=True),
-    default=Path("./testrig_workdir"),
+    default=Path("workdir"),
 )
 @click.option("--verbose", is_flag=True, help="Enable verbose output")
 @click.option("--debug", is_flag=True, help="Enable debug mode with full traceback")
@@ -182,7 +182,7 @@ def cli():
     "name",
 )
 def init_cmd(
-    config_yaml_path_or_url: str,
+    config_yaml_path_or_url: str | None,
     workdir: Path,
     python_version: str,
     uv_executable: str,

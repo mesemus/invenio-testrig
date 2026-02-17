@@ -1,6 +1,7 @@
 """Initialization command implementation."""
 
 from datetime import UTC, datetime
+from importlib import resources as importlib_resources
 from pathlib import Path
 from typing import cast
 
@@ -14,7 +15,7 @@ from invenio_testrig.types import Progress
 
 
 def initialize_config(
-    config_yaml_path_or_url: str,
+    config_yaml_path_or_url: str | None,
     workdir: Path,
     progress: Progress,
 ) -> Config:
@@ -33,7 +34,11 @@ def initialize_config(
     # Read the yaml config file
     schema = GitReferenceSchema()
     git_api = GitApi(GitCache(workdir / "git_cache"))
-    if config_yaml_path_or_url.startswith(
+    if config_yaml_path_or_url is None:
+        config_data = yaml.safe_load(
+            importlib_resources.read_text("invenio_testrig", "default_config.yaml")
+        )
+    elif config_yaml_path_or_url.startswith(
         "http://"
     ) or config_yaml_path_or_url.startswith("https://"):
         # If it's a URL, fetch the content
