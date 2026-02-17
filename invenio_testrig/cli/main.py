@@ -120,7 +120,7 @@ def cli():
 @cli.command("init")
 @click.argument("config_yaml_path_or_url", required=False)
 @click.option(
-    "workdir",
+    "--workdir",
     type=click.Path(path_type=Path, resolve_path=True),
     default=Path("workdir"),
 )
