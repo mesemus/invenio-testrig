@@ -258,23 +258,29 @@ class PythonAPI:
         project_path: Path,
         packages_root: Path,
         patched_packages_root: Path,
+        install_patched_dependencies: bool,
         progress: Progress,
     ) -> list[str]:
         """Reinstall dependencies with local patches when available.
 
         Returns:
-            A list of installed dependencies (package names).
+            A list of installed patched dependencies (package names).
         """
         all_dependencies = self.get_installed_dependencies(project_path)
-        dependencies: list[str] = []
+        patched_dependencies: list[str] = []
 
         paths_to_install: list[Path] = []
         for library_package in all_dependencies.keys():
             library_path = None
+            patched = False
 
-            if (patched_packages_root / library_package).exists():
+            if (
+                install_patched_dependencies
+                and (patched_packages_root / library_package).exists()
+            ):
                 progress.info(f"Installing patched dependency '{library_package}'")
                 library_path = patched_packages_root / library_package
+                patched = True
             elif (packages_root / library_package).exists():
                 progress.info(
                     f"Installing dependency '{library_package}' from local clone"
@@ -284,11 +290,12 @@ class PythonAPI:
             # If we installed from a local library, get patch info
             if library_path:
                 paths_to_install.append(library_path)
-                dependencies.append(library_package)
+                if patched:
+                    patched_dependencies.append(library_package)
 
         self.install_external_libraries(project_path, *paths_to_install)
 
-        return dependencies
+        return patched_dependencies
 
     def install_external_libraries(
         self, project_path: Path, *library_paths: Path
@@ -329,7 +336,7 @@ class PythonAPI:
 
 
         Returns:
-            A list of installed dependencies
+            A list of installed, patched dependencies
 
         Strategy:
         1. Check if patched version of the package exists in patched_packages_root
@@ -367,17 +374,13 @@ class PythonAPI:
         self.install_project(target_dir, extras=extras)
 
         # install patched dependencies if any
-        dependencies: list[str]
-        if install_patched_dependencies:
-            dependencies = self.install_patched_dependencies(
-                project_path=target_dir,
-                packages_root=repositories_root / "packages",
-                patched_packages_root=repositories_root / "patched",
-                progress=progress,
-            )
-            # Check if any patches were applied
-        else:
-            dependencies = []
+        dependencies = self.install_patched_dependencies(
+            project_path=target_dir,
+            packages_root=repositories_root / "packages",
+            patched_packages_root=repositories_root / "patched",
+            install_patched_dependencies=install_patched_dependencies,
+            progress=progress,
+        )
 
         if freeze:
             progress.info(
