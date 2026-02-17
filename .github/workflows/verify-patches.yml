@@ -175,57 +175,46 @@ jobs:
               shell: bash
               run: |
 
-                  echo "::group::⚙️ Preparing testrig configuration"
-                  init_args=("--verbose")
+                  echo "::group::⚙️ Setting up testrig (init, collect, filter, select-patches, clone)"
+                  setup_args=("--verbose")
 
                   if [ "$DISABLE_CODESTYLE_CHECKS" == "true" ]; then
-                      init_args+=("--disable-codestyle-checks")
+                      setup_args+=("--disable-codestyle-checks")
                   fi
-                  init_args+=("--python" "$PYTHON_VERSION")
-                  init_args+=("--test-scope" "$TEST_SCOPE")
-                  init_args+=("--test-mode" "$TEST_MODE")
+                  setup_args+=("--python" "$PYTHON_VERSION")
+                  setup_args+=("--test-scope" "$TEST_SCOPE")
+                  setup_args+=("--test-mode" "$TEST_MODE")
 
                   # Add repository overrides if provided
                   if [ -n "$REPOSITORY_GIT" ]; then
-                      init_args+=("--repository" "$REPOSITORY_GIT")
+                      setup_args+=("--repository" "$REPOSITORY_GIT")
                   fi
                   if [ -n "$REPOSITORY_E2E" ]; then
-                      init_args+=("--e2e" "$REPOSITORY_E2E")
+                      setup_args+=("--e2e" "$REPOSITORY_E2E")
                   fi
                   if [ -n "$CONFIG_NAME" ]; then
-                      init_args+=("--name" "$CONFIG_NAME")
+                      setup_args+=("--name" "$CONFIG_NAME")
                   fi
                   if [ -n "$PATCH_MODE" ]; then
-                      init_args+=("--patch-mode" "$PATCH_MODE")
+                      setup_args+=("--patch-mode" "$PATCH_MODE")
                   fi
                   if [ -n "$PATCHES" ]; then
                       # Split space-separated patches and add each with --patch flag
                       for patch in $PATCHES; do
-                          init_args+=("--patch" "$patch")
+                          setup_args+=("--patch" "$patch")
                       done
                   fi
 
-                  # Add config file if provided
+                  # Run setup command with optional config file
                   if [ -n "$YAML_CONFIG_PATH" ]; then
-                      invenio-testrig init "$YAML_CONFIG_PATH" --workdir "$WORKDIR" "${init_args[@]}"
+                      invenio-testrig setup "$YAML_CONFIG_PATH" --workdir "$WORKDIR" "${setup_args[@]}"
                   else
-                      invenio-testrig init --workdir "$WORKDIR" "${init_args[@]}"
+                      invenio-testrig setup --workdir "$WORKDIR" "${setup_args[@]}"
                   fi
-                  invenio-testrig collect $WORKDIR
-                  invenio-testrig filter $WORKDIR
-                  invenio-testrig select-patches $WORKDIR
                   echo "::endgroup::"
 
                   echo "::group::⚙️📊 Generating test matrix"
                   invenio-testrig matrix $WORKDIR $GITHUB_OUTPUT
-                  echo "::endgroup::"
-
-            - name: Clone the packages and apply patches
-              id: clone-and-patch
-              shell: bash
-              run: |
-                  echo "::group::📦 Cloning and patching packages"
-                  invenio-testrig clone $WORKDIR
                   echo "::endgroup::"
 
             - name: Prepare and push initial report
