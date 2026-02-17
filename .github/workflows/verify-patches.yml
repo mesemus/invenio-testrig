@@ -117,6 +117,13 @@ on:
                 required: false
                 type: boolean
                 default: false
+            hook-libraries:
+                description: |
+                    Space-separated list of libraries to install to the invenio-testrig environment.
+                    They can contain entrypoints for hooks, which will be used during testing. 
+                    Format: "library1[extra1,extra2] library2[extra3]". File paths and github URLs are also supported.
+                required: false
+                type: string
 
 env:
     PYTHONUNBUFFERED: 1
@@ -150,6 +157,9 @@ env:
     # GH token needed for the API (gh commandline tool)
     GH_TOKEN: ${{ github.token }}
 
+    # Hooks
+    HOOK_LIBRARIES: ${{ inputs.hook-libraries || '' }}
+
 permissions:
     contents: write # Required for pushing reports to the repository
     id-token: write # Required for publishing to GitHub Pages using actions/upload-pages-artifact
@@ -175,6 +185,7 @@ jobs:
               with:
                   python-version: ${{ env.PYTHON_VERSION }}
                   testrig-directory: ${{ github.workspace }}/.pipeline
+                  hook-libraries: ${{ env.HOOK_LIBRARIES }}
 
             - name: Prepare testrig
               id: prepare
@@ -283,6 +294,7 @@ jobs:
               with:
                   python-version: ${{ env.PYTHON_VERSION }}
                   testrig-directory: ${{ github.workspace }}/.pipeline
+                  hook-libraries: ${{ env.HOOK_LIBRARIES }}
 
             - name: Run tests for the patched version of the package
               shell: bash
@@ -376,6 +388,7 @@ jobs:
               with:
                   python-version: ${{ env.PYTHON_VERSION }}
                   testrig-directory: ${{ github.workspace }}/.pipeline
+                  hook-libraries: ${{ env.HOOK_LIBRARIES }}
 
             - name: Generate and push final report
               if: ${{ env.REPORT_REPOSITORY && env.REPORT_TOKEN }}

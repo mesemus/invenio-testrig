@@ -7,6 +7,14 @@ inputs:
   testrig-directory:
     description: 'Directory where invenio-testrig is located'
     required: true
+  hook-libraries:
+    description: |
+      Space-separated list of libraries to install to the invenio-testrig environment. 
+      They can contain entrypoints for hooks, which will be used during testing. 
+      Format: "library1[extra1,extra2] library2[extra3]". 
+      File paths and github URLs are also supported.
+    required: false
+    default: ''
 runs:
   using: 'composite'
   steps:
@@ -55,7 +63,14 @@ runs:
         # create a virtualenv for the tools and install the tools
         uv venv .tools-venv --python 3.14
         source .tools-venv/bin/activate
-        uv pip install -e ${{ inputs.testrig-directory }}
+        uv pip install -e "${{ inputs.testrig-directory }}"
+
+        if [ -n "${{ inputs.hook-libraries }}" ]; then
+          echo "Installing hook libraries: ${{ inputs.hook-libraries }}"
+          # Use array to properly handle special characters while splitting on spaces
+          read -ra libs <<< "${{ inputs.hook-libraries }}"
+          uv pip install "${libs[@]}"
+        fi
 
         # create an extra directory that will contain linked tools.
         # we do not want the virtualenv bin directory to be in PATH because
