@@ -128,7 +128,8 @@
                             <tr>
                                 <th>Report Name</th>
                                 <th>Last Modified</th>
-                                <th>Actions</th>
+                                <th class="text-center">✅ OK</th>
+                                <th class="text-center">❌ Errors</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -140,13 +141,15 @@
                                     </a>
                                 </td>
                                 <td>{{ report.mtime_formatted }}</td>
-                                <td>
-                                    <a href="{{ report.path }}/index.html" class="btn btn-sm btn-primary">
-                                        View Report
-                                    </a>
-                                    <a href="{{ report.path }}/warnings.html" class="btn btn-sm btn-warning">
-                                        Warnings
-                                    </a>
+                                <td class="text-center">
+                                    <span class="badge bg-success">{{ report.ok_count }}</span>
+                                </td>
+                                <td class="text-center">
+                                    {% if report.errors_count > 0 %}
+                                    <span class="badge bg-danger">{{ report.errors_count }}</span>
+                                    {% else %}
+                                    <span class="badge bg-secondary">0</span>
+                                    {% endif %}
                                 </td>
                             </tr>
                             {% endfor %}

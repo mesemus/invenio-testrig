@@ -525,6 +525,20 @@ def generate_reports_index(
             if not index_file.exists():
                 continue
 
+            data_json_file = item / "data.json"
+            report_data = None
+            if not data_json_file.exists():
+                continue
+
+            try:
+                with data_json_file.open("r") as f:
+                    report_data = json.load(f)
+            except (json.JSONDecodeError, IOError) as e:
+                progress.warning(
+                    f"Failed to load report data from {data_json_file}: {e}"
+                )
+                continue
+
             # Get the last modification time
             mtime = item.stat().st_mtime
 
@@ -537,9 +551,11 @@ def generate_reports_index(
                     "mtime_formatted": datetime.fromtimestamp(mtime).strftime(
                         "%Y-%m-%d %H:%M:%S"
                     ),
+                    "ok_count": report_data.get("ok_count", 0),
+                    "errors_count": report_data.get("regression_count", 0)
+                    + report_data.get("still_failing_count", 0),
                 }
             )
-
     # Sort by modification time, most recent first
     report_dirs.sort(key=lambda x: float(x["mtime"]), reverse=True)
 
