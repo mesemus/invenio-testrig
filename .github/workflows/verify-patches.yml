@@ -12,7 +12,7 @@ on:
             config-file:
                 description: "Config file"
                 required: false
-                default: config.yaml
+                default: .pipeline/config.yaml
                 type: string
             disable-codestyle-checks:
                 description: "Disable codestyle checks (black/isort) during tests"
