@@ -39,7 +39,10 @@ class PythonAPI:
         self.python_version = python_version
 
     def install_project(
-        self, project_path: Path, extras: list[str] | None = None
+        self,
+        project_path: Path,
+        extras: list[str] | None = None,
+        ignore_lock: bool = False,
     ) -> None:
         """
         Create a virtual environment in the project directory and install the package.
@@ -60,6 +63,12 @@ class PythonAPI:
         project_path = project_path.resolve()
         pyproject_path = project_path / "pyproject.toml"
         lock_path = project_path / "uv.lock"
+
+        if lock_path.exists() and ignore_lock:
+            log.warning(
+                "uv.lock file exists but will be removed due to ignore_lock=True."
+            )
+            lock_path.unlink()
 
         # Strategy 1: If uv.lock exists, use uv sync --locked
         if lock_path.exists():
@@ -146,7 +155,9 @@ class PythonAPI:
             env=self.build_environment(project_path),
         )
 
-    def get_dependencies(self, project_path: Path) -> dict[str, str]:
+    def get_dependencies(
+        self, project_path: Path, ignore_lock: bool = False
+    ) -> dict[str, str]:
         """
         Get dependencies from uv.lock file or installed packages.
 
@@ -172,7 +183,7 @@ class PythonAPI:
 
         # If no lock file exists, run install_directory first
         if not lock_path.exists():
-            self.install_project(project_path)
+            self.install_project(project_path, ignore_lock=ignore_lock)
 
         # If lock file exists, extract dependencies from it
         if lock_path.exists():
