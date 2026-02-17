@@ -144,6 +144,13 @@ def cli():
     is_flag=True,
     help="Disable codestyle checks (black, isort, pydocstyle) in test configuration",
 )
+@click.option("--patch-mode", help="Patch mode to use for patching packages")
+@click.option(
+    "--patch",
+    "patches",
+    multiple=True,
+    help="Add a patch to the configuration (can be used multiple times)",
+)
 @click.option(
     "--test-scope",
     "test_scope",
@@ -187,6 +194,8 @@ def init_cmd(
     name: str | None,
     debug: bool,
     verbose: bool,
+    patch_mode: str | None,
+    patches: list[str],
 ):
     """1/ Initialize workflow by preparing configuration.
 
@@ -216,6 +225,10 @@ def init_cmd(
         config.repository.e2e = api.parse_reference(repository_e2e)
     if name:
         config.name = name
+    if patch_mode:
+        config.patch_mode = patch_mode  # type: ignore[assignment]
+    if patches:
+        config.patches = [api.parse_reference(patch) for patch in patches]
 
     config.save(workdir / "config.json")
 

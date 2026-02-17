@@ -180,22 +180,31 @@ runs:
                       fi
                   fi
                   
-                  # Clean up old reports (keep only MAX_REPORTS newest)
+                  # Compress artifacts for older reports (beyond MAX_REPORTS newest)
                   cd "$CHECKOUT_DIR"
-                  echo "Cleaning up old reports (keeping $MAX_REPORTS newest)..."
+                  echo "Compressing artifacts for older reports (keeping $MAX_REPORTS newest uncompressed)..."
                   REPORT_COUNT=$(find . -maxdepth 1 -type d ! -name '.' ! -name '.git' | wc -l)
                   if [ $REPORT_COUNT -gt $MAX_REPORTS ]; then
-                      # List directories by modification time, skip the newest MAX_REPORTS, delete the rest
+                      # List directories by modification time, skip the newest MAX_REPORTS, compress artifacts for the rest
                       find . -maxdepth 1 -type d ! -name '.' ! -name '.git' -printf '%T@ %p\n' | \
                           sort -rn | \
                           tail -n +$((MAX_REPORTS + 1)) | \
                           cut -d' ' -f2- | \
                           while read -r dir; do
-                              echo "  Removing old report: $dir"
-                              rm -rf "$dir"
-                              git add "$dir" # remove from git index
+                              # Check if artifacts directory exists and is not already compressed
+                              if [ -d "$dir/artifacts" ] && [ ! -f "$dir/artifacts.tar.gz" ]; then
+                                  echo "  Compressing artifacts in: $dir"
+                                  tar -czf "$dir/artifacts.tar.gz" -C "$dir" artifacts
+                                  rm -rf "$dir/artifacts"
+                                  git add "$dir/artifacts.tar.gz"
+                                  echo "  ✅ Compressed and removed $dir/artifacts"
+                              elif [ -f "$dir/artifacts.tar.gz" ]; then
+                                  echo "  ℹ️  Artifacts already compressed in: $dir"
+                              else
+                                  echo "  ℹ️  No artifacts to compress in: $dir"
+                              fi
                           done
-                      echo "✅ Cleaned up $((REPORT_COUNT - MAX_REPORTS)) old report(s)"
+                      echo "✅ Processed $((REPORT_COUNT - MAX_REPORTS)) old report(s)"
                   else
                       echo "  Current report count ($REPORT_COUNT) is within limit ($MAX_REPORTS)"
                   fi

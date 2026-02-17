@@ -104,6 +104,14 @@ on:
                 description: "Name for the configuration (used in reports)"
                 required: false
                 type: string
+            patch-mode:
+                description: "Patch mode to use for patching packages"
+                required: false
+                type: string
+            patches:
+                description: "Space-separated list of patches to add to the configuration"
+                required: false
+                type: string
 
 env:
     PYTHONUNBUFFERED: 1
@@ -131,6 +139,8 @@ env:
     REPOSITORY_GIT: ${{ inputs.repository || '' }}
     REPOSITORY_E2E: ${{ inputs.e2e || '' }}
     CONFIG_NAME: ${{ inputs.name || '' }}
+    PATCH_MODE: ${{ inputs.patch-mode || '' }}
+    PATCHES: ${{ inputs.patches || '' }}
 
     # GH token needed for the API (gh commandline tool)
     GH_TOKEN: ${{ github.token }}
@@ -185,6 +195,15 @@ jobs:
                   fi
                   if [ -n "$CONFIG_NAME" ]; then
                       init_args+=("--name" "$CONFIG_NAME")
+                  fi
+                  if [ -n "$PATCH_MODE" ]; then
+                      init_args+=("--patch-mode" "$PATCH_MODE")
+                  fi
+                  if [ -n "$PATCHES" ]; then
+                      # Split space-separated patches and add each with --patch flag
+                      for patch in $PATCHES; do
+                          init_args+=("--patch" "$patch")
+                      done
                   fi
 
                   invenio-testrig init $YAML_CONFIG_PATH $WORKDIR "${init_args[@]}"
