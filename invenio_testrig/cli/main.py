@@ -410,7 +410,9 @@ def test_cmd(
     click.echo("::endgroup::")
 
     # Print test configuration summary
-    print_patch_summary(config, package_name, package_config, library_patches)
+    print_patch_summary(
+        config, package_dir, package_name, package_config, library_patches
+    )
 
     # Disable codestyle checks if requested
     if config.disable_codestyle_checks:
@@ -443,6 +445,7 @@ def test_cmd(
 
 def print_patch_summary(
     config: Config,
+    package_dir: Path,
     package_name: str,
     package_config: TestedPackageInfo,
     library_patches: list[TestedPackageInfo],
@@ -499,6 +502,18 @@ def print_patch_summary(
             )
             for lib_info in unpatched_libs:
                 click.secho(f"  {lib_info.reference.package}", fg="white", dim=True)
+
+    # print the contents of setup.cfg or pyproject.toml for the package being tested
+    for candidate in ["setup.cfg", "pyproject.toml"]:
+        candidate_path = package_dir / candidate
+        if candidate_path.exists():
+            click.secho(f"\n⚙️  Configuration file: {candidate_path.name}", fg="cyan")
+            with open(candidate_path) as f:
+                for line in f:
+                    click.secho(f"  {line.rstrip()}", fg="white")
+            break
+    else:
+        click.secho("\n⚙️  No setup.cfg or pyproject.toml found", fg="white", dim=True)
 
     click.secho("=" * 80 + "\n", fg="blue")
     click.echo("::endgroup::")
