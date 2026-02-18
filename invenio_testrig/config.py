@@ -14,7 +14,7 @@ from typing import Literal, Self, cast
 import marshmallow as ma
 from marshmallow_dataclass import class_schema
 
-from .github.types import GitReference
+from .github.types import GitReference, Patch
 from .types import ExecutionStatus, TestedPackageInfo
 from .utils import extensible_dataclass
 
@@ -82,7 +82,7 @@ class Config:
     """Optional name for this test configuration run."""
     started_at: str | None = None
     """ISO datetime when the configuration was initialized."""
-    patches: list[GitReference] = field(default_factory=list)  # type: ignore[assignment]
+    patches: list[Patch] = field(default_factory=list)  # type: ignore[assignment]
     patch_mode: Literal[
         "upstream-overwrite", "upstream-rebase", "pinned-overwrite", "pinned-rebase"
     ] = "upstream-overwrite"

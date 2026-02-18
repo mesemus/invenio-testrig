@@ -48,7 +48,7 @@ on:
             testrig-branch:
                 description: "Branch of invenio-testrig to use"
                 required: false
-                default: ng
+                default: master
                 type: string
             python-version:
                 description: "Python version to use"

@@ -13,9 +13,10 @@ def parse_string_reference(reference: str) -> GitReference:
     """Parse a string reference into a GitReference.
 
     Tries GitHub URL parsing first, then falls back to custom grammar parsing.
+    Note: This does NOT parse version constraints. Use parse_version_constraints separately.
 
     Args:
-        reference: String representation of a git reference
+        reference: String representation of a git reference (without version constraints)
 
     Returns:
         Parsed GitReference structure
@@ -39,15 +40,47 @@ def parse_string_reference(reference: str) -> GitReference:
         raise ValidationError(
             f"Invalid git reference format: '{reference}'. Expected formats: "
             "org/package@branch, org/package#pr_number, "
-            "org/package@branch[base], org/package[@branch|#pr]version-range, "
-            "package_name: org/package..., or a GitHub URL "
+            "org/package@branch[base], package_name: org/package..., or a GitHub URL "
             "(https://github.com/org/repo, https://github.com/org/repo/tree/branch, "
             "https://github.com/org/repo/pull/123)"
         ) from e
 
 
+def parse_version_constraints(constraints_str: str) -> list[VersionConstraint]:
+    """Parse a version constraints string into a list of VersionConstraint objects.
+
+    Args:
+        constraints_str: String representation of version constraints (e.g., '<123,>=234')
+
+    Returns:
+        List of VersionConstraint objects
+
+    Raises:
+        ValidationError: If the constraints format is invalid
+
+    Examples:
+        >>> parse_version_constraints('<1.0.0')
+        [VersionConstraint(operator='<', version='1.0.0')]
+        >>> parse_version_constraints('>=1.0.0,<2.0.0')
+        [VersionConstraint(operator='>=', version='1.0.0'), VersionConstraint(operator='<', version='2.0.0')]
+    """
+    try:
+        tree = _version_parser.parse(
+            constraints_str
+        )  # pyright: ignore[reportUnknownMemberType]
+        result = cast(list[VersionConstraint], _version_transformer.transform(tree))  # type: ignore[misc]
+        return result
+    except lark_exceptions.LarkError as e:
+        from marshmallow import ValidationError
+
+        raise ValidationError(
+            f"Invalid version constraints format: '{constraints_str}'. "
+            "Expected format: OPERATOR VERSION (e.g., '>=1.0.0' or '>=1.0.0,<2.0.0')"
+        ) from e
+
+
 GIT_REFERENCE_GRAMMAR = r"""
-    git_reference: [package_prefix] repo_ref [base_bracket] [version_constraints]
+    git_reference: [package_prefix] repo_ref [base_bracket]
     
     package_prefix: NAME ":" WS*
     
@@ -58,14 +91,21 @@ GIT_REFERENCE_GRAMMAR = r"""
     
     base_bracket: "[" NAME "]"
     
+    NAME: /[\w\-\.]+/
+    NUMBER: /\d+/
+    
+    WS: /\s+/
+    
+    %ignore WS
+"""
+
+VERSION_CONSTRAINTS_GRAMMAR = r"""
     version_constraints: version_constraint (WS* "," WS* version_constraint)*
     
     version_constraint: OPERATOR VERSION
     
     OPERATOR: ">=" | "<=" | ">" | "<" | "==" | "!="
     VERSION: /\d+(\.\d+)*((a|alpha|b|beta|rc|c)(\.?\d+))?(\.post\d+)?(\.dev\d+)?(\+[\w\.]+)?/
-    NAME: /[\w\-\.]+/
-    NUMBER: /\d+/
     
     WS: /\s+/
     
@@ -89,7 +129,6 @@ class GitReferenceTransformer(Transformer):  # type: ignore[type-arg]
             pr=None,
             package="",
             base=None,
-            versions=[],
             pr_info=None,
             commit=None,
         )
@@ -127,16 +166,6 @@ class GitReferenceTransformer(Transformer):  # type: ignore[type-arg]
         """Transform base_bracket rule into base branch name."""
         return {"base": str(items[0])}
 
-    def version_constraints(
-        self, items: list[VersionConstraint]
-    ) -> dict[str, list[VersionConstraint]]:
-        """Transform version_constraints rule into list of version constraints."""
-        return {"versions": items}
-
-    def version_constraint(self, items: list[str]) -> VersionConstraint:
-        """Transform version_constraint rule into VersionConstraint object."""
-        return VersionConstraint(operator=str(items[0]), version=str(items[1]))
-
     def NAME(self, token: Token) -> str:
         """Extract NAME token value."""
         return token.value
@@ -144,6 +173,20 @@ class GitReferenceTransformer(Transformer):  # type: ignore[type-arg]
     def NUMBER(self, token: Token) -> str:
         """Extract NUMBER token value."""
         return token.value
+
+
+class VersionConstraintsTransformer(Transformer):  # type: ignore[type-arg]
+    """Transform parsed version constraints tree into a list of VersionConstraint objects."""
+
+    def version_constraints(
+        self, items: list[VersionConstraint]
+    ) -> list[VersionConstraint]:
+        """Transform version_constraints rule into list of version constraints."""
+        return items
+
+    def version_constraint(self, items: list[str]) -> VersionConstraint:
+        """Transform version_constraint rule into VersionConstraint object."""
+        return VersionConstraint(operator=str(items[0]), version=str(items[1]))
 
     def OPERATOR(self, token: Token) -> str:
         """Extract OPERATOR token value."""
@@ -215,7 +258,6 @@ def _parse_github_url(url: str) -> GitReference | None:
         branch=branch,
         pr=pr,
         base=None,
-        versions=[],
         pr_info=None,
         commit=None,
     )
@@ -223,6 +265,11 @@ def _parse_github_url(url: str) -> GitReference | None:
     return result
 
 
-# Initialize parser and transformer once at module level for efficiency
+# Initialize parsers and transformers once at module level for efficiency
 _parser: Lark = Lark(GIT_REFERENCE_GRAMMAR, start="git_reference", parser="lalr")
 _transformer: GitReferenceTransformer = GitReferenceTransformer()
+
+_version_parser: Lark = Lark(
+    VERSION_CONSTRAINTS_GRAMMAR, start="version_constraints", parser="lalr"
+)
+_version_transformer: VersionConstraintsTransformer = VersionConstraintsTransformer()

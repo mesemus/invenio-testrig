@@ -68,8 +68,6 @@ def collect_dependencies(
         config,
         "after_dependencies_collected",
     )
-    # Write back to the JSON file
-    config.save()
 
     progress.success(
         f"Collected {len(dependencies)} dependencies and updated {config.config_path}"
@@ -175,9 +173,6 @@ def filter_packages(
         config,
         "after_filtering_packages",
     )
-
-    # Write back to the JSON file
-    config.save()
 
     progress.success(
         f"Filtered {len(tested_packages)} packages from {len(packages_map)} "

@@ -82,7 +82,7 @@ class GitCache:
             source_org=org,
             source_repo=repo,
             source_branch=branch,
-            commits=commits,
+            commits=list(reversed(commits)),  # reverse to have oldest to newest
         )
 
     def get_branch_commit(self, org: str, repo: str, branch: str | None = None) -> str:

@@ -41,7 +41,9 @@ def select_patches(
         config.tested_packages or {}
     ).items():
         matching_patches = [
-            patch for patch in config.patches if patch.package == tested_package_name
+            patch
+            for patch in config.patches
+            if patch.applies_to(tested_package_info.reference)
         ]
 
         run_hook(
@@ -64,9 +66,6 @@ def select_patches(
         config,
         "after_selecting_patches",
     )
-
-    # Write back to the JSON file
-    config.save()
 
     progress.success(
         f"Selected {applied_patches_count} patches to apply to {applied_packages_count} packages"

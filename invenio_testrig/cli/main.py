@@ -79,13 +79,18 @@ def with_debug(func: Callable[..., Any]) -> Callable[..., Any]:
     return wrapper
 
 
+def set_verbose():
+    """Configure logging for verbose output."""
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+
+
 def with_verbose(func: Callable[..., Any]) -> Callable[..., Any]:
     """Decorator that adds verbose option and configures logging."""
 
     @functools.wraps(func)
     def wrapper(*args: Any, config: Config, **kwargs: Any) -> Any:
         if config.verbose:
-            logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+            set_verbose()
         return func(*args, config=config, **kwargs)
 
     return wrapper
@@ -219,12 +224,17 @@ def setup_cmd(
 
     Example: invenio-testrig setup config.yaml --workdir ./workdir
     """
+    if verbose:
+        set_verbose()
+
     # Step 1: Initialize
     progress.start("Step 1/5: Initializing configuration", icon="🔧")
     Path(workdir).mkdir(parents=True, exist_ok=True)
     config = initialize_config(
         config_yaml_path_or_url,
         workdir,
+        repository_git,
+        repository_e2e,
         progress,
     )
     config.python_version = python_version
@@ -237,16 +247,12 @@ def setup_cmd(
 
     # Override repository configurations if provided
     api = GitApi(GitCache(workdir / "git_cache"))
-    if repository_git:
-        config.repository.git = api.parse_reference(repository_git)
-    if repository_e2e:
-        config.repository.e2e = api.parse_reference(repository_e2e)
     if name:
         config.name = name
     if patch_mode:
         config.patch_mode = patch_mode  # type: ignore[assignment]
     if patches:
-        config.patches = [api.parse_reference(patch) for patch in patches]
+        config.patches = [api.parse_patch(patch) for patch in patches]
 
     config.save(workdir / "config.json")
 
@@ -262,6 +268,8 @@ def setup_cmd(
         progress.error(f"Error collecting dependencies: {e}")
         raise click.Abort()
 
+    config.save(workdir / "config.json")
+
     # Step 3: Filter packages
     progress.start("Step 3/5: Filtering packages", icon="🔍")
     try:
@@ -272,6 +280,8 @@ def setup_cmd(
         progress.error(f"Error filtering packages: {e}")
         raise click.Abort()
 
+    config.save(workdir / "config.json")
+
     # Step 4: Select patches
     progress.start("Step 4/5: Selecting patches", icon="🏷️")
     try:
@@ -281,6 +291,8 @@ def setup_cmd(
             raise
         progress.error(f"Error selecting patches: {e}")
         raise click.Abort()
+
+    config.save(workdir / "config.json")
 
     # Step 5: Clone repositories
     progress.start("Step 5/5: Cloning repositories", icon="📥")
@@ -295,6 +307,8 @@ def setup_cmd(
             raise
         progress.error(f"Error cloning repositories: {e}")
         raise click.Abort()
+
+    config.save(workdir / "config.json")
 
     progress.success("Setup complete! Ready for testing.", icon="🎉")
 

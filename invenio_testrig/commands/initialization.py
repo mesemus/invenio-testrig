@@ -17,6 +17,8 @@ from invenio_testrig.types import Progress
 def initialize_config(
     config_yaml_path_or_url: str | None,
     workdir: Path,
+    repository_git: str | None,
+    repository_e2e_git: str | None,
     progress: Progress,
 ) -> Config:
     """Initialize workflow by preparing configuration.
@@ -53,10 +55,15 @@ def initialize_config(
 
     # resolve all references before loading
     config_data["patches"] = [
-        schema.dump(git_api.parse_reference(x))
-        for x in (config_data.get("patches") or [])
+        schema.dump(git_api.parse_patch(x)) for x in (config_data.get("patches") or [])
     ]
     repository = config_data.get("repository", {})
+
+    if repository_git:
+        repository["git"] = repository_git
+    if repository_e2e_git:
+        repository["e2e"] = repository_e2e_git
+
     if "git" in repository and repository["git"]:
         repository["git"] = schema.dump(git_api.parse_reference(repository["git"]))
     if "e2e" in repository and repository["e2e"]:

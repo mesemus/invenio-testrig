@@ -5,6 +5,8 @@ repositories, including resolving references, fetching commits, managing
 branches and tags, and handling pull requests.
 """
 
+import logging
+import re
 import shutil
 import subprocess
 from collections.abc import Callable
@@ -15,7 +17,9 @@ import semver
 
 from ..utils import call_executable_quietly
 from .cache import GitCache
-from .types import GitReference, GitReferenceSchema, PullRequestInfo
+from .types import GitReference, GitReferenceSchema, Patch, PullRequestInfo
+
+log = logging.getLogger(__name__)
 
 
 class GitApi:
@@ -42,7 +46,7 @@ class GitApi:
         - org/package@branch
         - org/package#pr_number
         - org/package@branch[base]
-        - org/package[@branch|#pr]version-range
+        - org/package[@branch|#pr]
         - package_name: org/package...
         - https://github.com/org/repo
         - https://github.com/org/repo/tree/branch-name
@@ -74,6 +78,42 @@ class GitApi:
             parsed_reference = reference
 
         return self.resolve_reference(parsed_reference)
+
+    def parse_patch(self, patch: str | GitReference | dict[str, Any]) -> Patch:
+        """Parse a patch reference string into a Patch structure.
+
+        Patch reference is the same as GitReference, but might have an extra versions
+        (version-range) after the reference. The versions always start with '>', '<' or '='
+        and are separated by commas if there are multiple.
+        """
+        from .ref_parser import parse_version_constraints
+
+        versions_part = None
+        if isinstance(patch, str):
+            # Split the reference and the version constraints
+            matches = re.match(r"(.*?)([><=!].*)$", patch)
+            if matches:
+                patch, versions_part = matches.groups()
+
+        reference = self.parse_reference(patch)
+
+        # Parse version constraints if present
+        versions = []
+        if versions_part:
+            versions = parse_version_constraints(versions_part)
+
+        return Patch(
+            org=reference.org,
+            repo=reference.repo,
+            package=reference.package,
+            branch=reference.branch,
+            pr=reference.pr,
+            base=reference.base,
+            actual_version=reference.actual_version,
+            pr_info=reference.pr_info,
+            commit=reference.commit,
+            versions=versions,
+        )
 
     def get_commit(self, org: str, repo: str, branch_or_tag_or_commit: str) -> str:
         """Resolve any git reference to a commit SHA.
@@ -262,7 +302,7 @@ class GitApi:
             ValueError: If the reference is not a PR (no pr_info)
             subprocess.CalledProcessError: If git operations fail
         """
-        if not reference.pr or not reference.pr_info:
+        if not reference.pr_info:
             raise ValueError(
                 f"Reference must be a pull request with pr_info, got {reference}"
             )
@@ -278,7 +318,15 @@ class GitApi:
 
         # Add the fork as a remote if it's different from the base repo
         # This ensures we can fetch commits even if they're from a fork
-        remote_name = f"pr-{reference.pr}-fork"
+        if reference.pr:
+            remote_name = str(reference.pr)
+        elif pr_info.commits:
+            remote_name = pr_info.commits[-1][:7]  # use short SHA as remote name
+        else:
+            raise ValueError(
+                f"Cannot determine remote name for PR {reference}, {reference.pr_info}"
+            )
+        remote_name = f"pr-{remote_name}-fork"
         remote_url = f"https://github.com/{source_org}/{source_repo}.git"
 
         try:
@@ -304,6 +352,11 @@ class GitApi:
             ) from e
 
         # Cherry-pick each commit from the PR
+        log.info(
+            f"Applying {len(commits)} commits from PR #{reference} to {directory}..."
+        )
+        log.info("Commits to apply:")
+        log.info(f"    {'\n    '.join(commits)}")
         for commit_sha in commits:
             try:
                 call_executable_quietly(
