@@ -12,6 +12,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+import semver
+
 from ..types import Progress
 from ..utils import call_executable_quietly
 from .types import PullRequestInfo
@@ -301,6 +303,88 @@ class GitCache:
         )
 
         return repo_cache_path
+
+    def get_last_version_on_or_before_commit(
+        self, org: str, repo: str, commit: str
+    ) -> str | None:
+        """Get the latest tag version that is reachable from the given commit.
+
+        If the commit itself has a version tag, returns that tag.
+        Otherwise, returns the latest version tag before the commit.
+        """
+        cache_path = self._clone_repo(org, repo)
+        try:
+            # First, check if the commit itself has a version tag
+            output, _ = call_executable_quietly(
+                [
+                    "git",
+                    "tag",
+                    "--list",
+                    "--points-at",
+                    commit,
+                ],
+                cwd=cache_path,
+            )
+            tags_on_commit = output.strip().split("\n")
+            tags_on_commit = [tag for tag in tags_on_commit if tag.startswith("v")]
+            if tags_on_commit:
+                # Sort version tags using semver and return the highest version
+                def parse_version(tag: str) -> semver.Version:
+                    try:
+                        return semver.Version.parse(tag[1:])  # remove 'v' prefix
+                    except ValueError:
+                        # If parsing fails, return a very low version
+                        return semver.Version(0, 0, 0)
+
+                tags_on_commit.sort(key=parse_version, reverse=True)
+                return tags_on_commit[0][1:]  # remove leading 'v' from tag
+
+            # If no tag on the commit, find the last version before it
+            output, _ = call_executable_quietly(
+                [
+                    "git",
+                    "tag",
+                    "--list",
+                    "--sort=-v:refname",
+                    f"--merged={commit}^",
+                ],
+                cwd=cache_path,
+            )
+            ret = output.strip().split("\n")
+            ret = [tag for tag in ret if tag.startswith("v")]  # filter out empty lines
+            ret = [tag[1:] for tag in ret]  # remove leading 'v' from tags
+            if ret:
+                return ret[0]
+            return None
+        except subprocess.CalledProcessError:
+            return None
+
+    def get_commits_from_version(
+        self, org: str, repo: str, commit: str, previous_version: str | None = None
+    ) -> list[str]:
+        """Get the list of commits on the branch that are not in the given version.
+
+        If the previous version is not given, return all commits reachable from the given commit.
+        Otherwise, return only the commits between the previous version and the given commit,
+        in chronological order (oldest first).
+
+        If commit and the previous version are the same, return an empty list.
+        If the previous version is not an ancestor of the commit, return an empty list.
+        """
+        cache_path = self._clone_repo(org, repo)
+        try:
+            output, _ = call_executable_quietly(
+                [
+                    "git",
+                    "rev-list",
+                    "--reverse",
+                    f"{previous_version}..{commit}" if previous_version else commit,
+                ],
+                cwd=cache_path,
+            )
+            return output.strip().split("\n") if output.strip() else []
+        except subprocess.CalledProcessError:
+            return []
 
 
 def _clone_repo_worker(

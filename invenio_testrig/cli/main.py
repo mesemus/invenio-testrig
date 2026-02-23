@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Any
 
 import click
+from rich.console import Console
+from rich.table import Table
 
 from invenio_testrig.commands.dependencies import collect_dependencies, filter_packages
 from invenio_testrig.commands.initialization import initialize_config
@@ -359,28 +361,121 @@ def clear_cache_cmd(config: Config):
 
 @cli.command("test")
 @with_config
-@click.argument("package_name")
+@click.argument("package_name", required=False)
 @click.option(
     "--apply-patches",
     "apply_patches",
     is_flag=True,
     help="Reinstall dependencies from local patches",
 )
+@click.option(
+    "--all",
+    "all_packages",
+    is_flag=True,
+    help="Test all packages in config.tested_packages",
+)
 @with_verbose
 @with_debug
 def test_cmd(
     config: Config,
-    package_name: str,
+    package_name: str | None,
     apply_patches: bool,
+    all_packages: bool,
 ):
     """6/ Test the package.
 
     Arguments:
         config: Configuration object containing paths and settings
-        package_name: Name of the package to test
+        package_name: Name of the package to test (optional if --all is used)
         apply_patches: Whether to install dependencies from the patched directory
                 (if patches were applied) or from the packages directory
+        all_packages: Whether to test all packages in config.tested_packages
     """
+
+    # Validation: both --all and package_name cannot be used together
+    if all_packages and package_name:
+        progress.error("Cannot specify both --all and a package name")
+        raise click.Abort()
+
+    # Validation: at least one must be provided
+    if not all_packages and not package_name:
+        progress.error("Must specify either a package name or --all")
+        raise click.Abort()
+
+    # Test all packages
+    if all_packages:
+        test_all_packages(config, apply_patches)
+    else:
+        # Test single package
+        assert package_name is not None  # This is guaranteed by validation above
+        test_package(config, package_name, apply_patches)
+
+
+def test_all_packages(config: Config, apply_patches: bool):
+    """Test all packages in config.tested_packages.
+
+    Args:
+        config: Configuration object containing paths and settings
+        apply_patches: Whether to install dependencies from the patched directory
+    """
+    results = {}
+    has_failures = False
+
+    console = Console()
+    total_packages = len(config.tested_packages)
+
+    progress.start(f"Testing {total_packages} packages", icon="🚀")
+
+    for idx, package_name in enumerate(config.tested_packages.keys(), 1):
+        progress.start(
+            f"[{idx}/{total_packages}] Testing package '{package_name}'", icon="📦"
+        )
+
+        try:
+            test_package(config, package_name, apply_patches)
+            results[package_name] = "✅ PASSED"
+            progress.success(f"Package '{package_name}' tests passed")
+        except (click.Abort, subprocess.CalledProcessError, ValueError):
+            results[package_name] = "❌ FAILED"
+            has_failures = True
+            progress.error(f"Package '{package_name}' tests failed")
+        except Exception as e:
+            results[package_name] = f"❌ ERROR: {str(e)}"
+            has_failures = True
+            progress.error(f"Package '{package_name}' error: {str(e)}")
+
+    # Print summary table
+    console.print("\n")
+    table = Table(
+        title="Test Results Summary", show_header=True, header_style="bold magenta"
+    )
+    table.add_column("Package", style="cyan", no_wrap=True)
+    table.add_column("Status", style="green")
+
+    for package_name, status in results.items():
+        if "PASSED" in status:
+            table.add_row(package_name, f"[green]{status}[/green]")
+        else:
+            table.add_row(package_name, f"[red]{status}[/red]")
+
+    console.print(table)
+
+    # Summary statistics
+    passed = sum(1 for s in results.values() if "PASSED" in s)
+    failed = total_packages - passed
+    console.print(
+        f"\n[bold]Summary:[/bold] {passed} passed, {failed} failed out of {total_packages} total"
+    )
+
+    if has_failures:
+        raise SystemExit(1)
+
+
+def test_package(
+    config: Config,
+    package_name: str,
+    apply_patches: bool,
+):
     log_dir = config.workdir_path("artifacts") / package_name
     package_name = package_name.lower()
 

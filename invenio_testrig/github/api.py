@@ -13,8 +13,6 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any, cast
 
-import semver
-
 from ..utils import call_executable_quietly
 from .cache import GitCache
 from .types import GitReference, GitReferenceSchema, Patch, PullRequestInfo
@@ -224,6 +222,9 @@ class GitApi:
                 git_ref.branch or self.get_default_branch(git_ref.org, git_ref.repo),
             )
 
+        git_ref.actual_version = self.get_last_version_before_commit(git_ref)
+        git_ref.commits_from_version = self.get_commits_from_version(git_ref)
+
         return git_ref
 
     def last_n_tags_from_git_reference(
@@ -389,39 +390,51 @@ class GitApi:
             # If cleanup fails, it's not critical
             pass
 
-    def get_latest_release_version(self, ref: GitReference) -> str | None:
+    def get_last_version_before_commit(self, ref: GitReference) -> str | None:
         """
-        Find the latest release tag in the commit history.
+        Get the last version tag that is an ancestor of the specified commit.
 
-        Searches through repository tags to find the most recent semantic version
-        tag (vX.Y.Z with optional pre-release/build metadata) that is an ancestor
-        of the specified commit.
+        This method returns the most recent version tag that is on the commit or
+        before the specified commit in the commit history. If the latest release version
+        is the same as the current commit, it will return the version on the commit.
 
         Args:
             ref: GitReference containing repository and commit information
-
         Returns:
-            The latest version tag (e.g., "v1.2.3") found in the history, or None
-            if no version tags are found.
-
-        Raises:
-            subprocess.CalledProcessError: If git commands fail
+            The last version tag before the specified commit, or None if no such
+            version exists.
         """
-
-        def predicate(tag_name: str) -> bool:
-            # Valid semantic version tags start with 'v' followed by a version number
-            if not tag_name.startswith("v"):
-                return False
-            version_str = tag_name[1:]
-            try:
-                semver.Version.parse(version_str)
-                return True
-            except ValueError:
-                return False
-
-        matching = self.last_n_tags_from_git_reference(
-            reference=ref,
-            n=1,
-            predicate=predicate,
+        if ref.commit is None:
+            raise ValueError(
+                "GitReference must have a commit to find the last version before it."
+            )
+        return self._cache.get_last_version_on_or_before_commit(
+            ref.org, ref.repo, ref.commit
         )
-        return matching[0] if matching else None
+
+    def get_commits_from_version(self, ref: GitReference) -> list[str]:
+        """
+        Get a list of commit SHAs from the latest release version to the current commit.
+
+        If a latest release version is found, returns the list of commits that are
+        reachable from the current commit but not from the latest release tag.
+        If no release version is present, returns an empty list.
+
+        Args:
+            ref: GitReference containing repository and commit information
+        Returns:
+            List of commit SHAs from the latest release version to the current commit,
+            excluding the actual_version commit. If the actual version is the same
+            as the current commit, returns an empty list. If no release version is found,
+            returns all the commits reachable from the current commit.
+        """
+        if ref.commit is None:
+            raise ValueError(
+                "GitReference must have a commit to find commits from version."
+            )
+        return self._cache.get_commits_from_version(
+            ref.org,
+            ref.repo,
+            ref.commit,
+            f"v{ref.actual_version}" if ref.actual_version else None,
+        )

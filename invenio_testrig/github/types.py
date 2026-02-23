@@ -60,14 +60,38 @@ class GitReference:
     """
 
     org: str
+    """GitHub organization or user name."""
+
     repo: str
+    """GitHub repository name."""
+
     package: str
+    """Python package name that corresponds to this git repository."""
+
     branch: str | None = None
+    """Branch name, if specified."""
+
     pr: int | None = None
+    """Pull request number, if specified."""
+
     base: str | None = None
-    actual_version: str | None = None
+    """Base of the branch, if specified. 
+    Commits between base and branch are considered for patch applicability."""
+
     pr_info: PullRequestInfo | None = None
+    """Detailed information about the pull request, if this reference corresponds to a PR."""
+
     commit: str | None = None
+    """Specific commit SHA, if specified. This is resolved from a branch or PR reference 
+    to point to the exact commit being tested."""
+
+    actual_version: str | None = None
+    """The actual version of the package at the specified commit. 
+    This is resolved from the git reference as the latest vx.y.z tag reachable from the commit."""
+
+    commits_from_version: list[str] | None = None
+    """List of commit SHAs from the latest version tag to the specified commit, 
+    in order from oldest to newest."""
 
     def __str__(self) -> str:
         ref = f"{self.org}/{self.repo}"
