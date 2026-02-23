@@ -124,6 +124,11 @@ on:
                     Format: "library1[extra1,extra2] library2[extra3]". File paths and github URLs are also supported.
                 required: false
                 type: string
+            skip-tests:
+                description: "Skip running tests (only prepare configuration and apply patches)"
+                required: false
+                type: boolean
+                default: false
 
 env:
     PYTHONUNBUFFERED: 1
@@ -159,6 +164,9 @@ env:
 
     # Hooks
     HOOK_LIBRARIES: ${{ inputs.hook-libraries || '' }}
+
+    # Flag to skip running tests (only prepare configuration and apply patches)
+    SKIP_TESTS: ${{ inputs.skip-tests || false }}
 
 permissions:
     contents: write # Required for pushing reports to the repository
@@ -270,6 +278,7 @@ jobs:
         needs:
             - prepare
         runs-on: ubuntu-latest
+        if: ${{ !inputs.skip-tests }}
         strategy:
             matrix:
                 package: ${{ fromJson(needs.prepare.outputs.matrix_tested_packages) }}
