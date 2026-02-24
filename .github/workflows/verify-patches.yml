@@ -1,9 +1,13 @@
-name: 2. Run Verification
+name: Run testrig
 
 on:
     # the workflow can be triggered manually
     workflow_dispatch:
         inputs:
+            name:
+                description: "Test name"
+                required: false
+                type: string
             python-version:
                 description: "Python version to use"
                 required: false
@@ -36,6 +40,19 @@ on:
                     - patched-only
                     - stop-on-success
                     - run-all
+            patches:
+                description: "Space-separated list of patches"
+                required: false
+                type: string
+            patch-mode:
+                description: "Patch mode to use for patching packages"
+                required: false
+                type: choice
+                options:
+                    - upstream-overwrite
+                    - upstream-rebase
+                    - pinned-overwrite
+                    - pinned-rebase
 
     # or called from another workflow from another repository
     workflow_call:
