@@ -18,6 +18,19 @@ on:
                 required: false
                 type: boolean
                 default: false
+            patches:
+                description: "Space-separated list of patches"
+                required: false
+                type: string
+            patch-mode:
+                description: "Patch mode to use for patching packages"
+                required: false
+                type: choice
+                options:
+                    - upstream-overwrite
+                    - upstream-rebase
+                    - pinned-overwrite
+                    - pinned-rebase
             test-scope:
                 description: "Test scope: 'affected' (only packages affected by patches), 'all'"
                 required: false
@@ -35,19 +48,6 @@ on:
                     - patched-only
                     - stop-on-success
                     - run-all
-            patches:
-                description: "Space-separated list of patches"
-                required: false
-                type: string
-            patch-mode:
-                description: "Patch mode to use for patching packages"
-                required: false
-                type: choice
-                options:
-                    - upstream-overwrite
-                    - upstream-rebase
-                    - pinned-overwrite
-                    - pinned-rebase
 
     # or called from another workflow from another repository
     workflow_call:
