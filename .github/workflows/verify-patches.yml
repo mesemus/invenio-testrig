@@ -277,7 +277,7 @@ jobs:
                   echo "" >> $GITHUB_STEP_SUMMARY
                   echo "**Report URL:** [$REPORT_URL]($REPORT_URL)" >> $GITHUB_STEP_SUMMARY
                   echo "" >> $GITHUB_STEP_SUMMARY
-                  echo "The report will be updated as tests progress." >> $GITHUB_STEP_SUMMARY
+                  echo "The report will be updated after the test finishes." >> $GITHUB_STEP_SUMMARY
 
             - name: Store workdir with cloned packages as artifact
               uses: ./.pipeline/.github/actions/upload-artifact-tar
