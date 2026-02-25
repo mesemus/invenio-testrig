@@ -191,8 +191,8 @@ def cli():
     "name",
 )
 @click.option(
-    "--ignore-lock",
-    "ignore_lock",
+    "--ignore-uv-lock",
+    "ignore_uv_lock",
     is_flag=True,
     help="Ignore uv.lock file during dependency collection",
 )
@@ -211,7 +211,7 @@ def setup_cmd(
     verbose: bool,
     patch_mode: str | None,
     patches: list[str],
-    ignore_lock: bool,
+    ignore_uv_lock: bool,
 ):
     """Complete setup: init, collect, filter, select-patches, and clone.
 
@@ -262,7 +262,11 @@ def setup_cmd(
     progress.start("Step 2/5: Collecting dependencies", icon="📦")
     try:
         collect_dependencies(
-            config, config.uv_executable, config.python_version, ignore_lock, progress
+            config,
+            config.uv_executable,
+            config.python_version,
+            ignore_uv_lock,
+            progress,
         )
     except Exception as e:
         if debug:

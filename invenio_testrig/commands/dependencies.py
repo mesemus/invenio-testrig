@@ -22,7 +22,7 @@ def collect_dependencies(
     config: Config,
     uv_executable: str,
     python_version: str,
-    ignore_lock: bool,
+    ignore_uv_lock: bool,
     progress: Progress,
 ) -> None:
     """Collect dependencies/libraries for the repository.
@@ -59,7 +59,9 @@ def collect_dependencies(
             icon="📦",
         )
         python_api = PythonAPI(uv_executable, python_version)
-        dependencies = python_api.get_dependencies(repo_path, ignore_lock=ignore_lock)
+        dependencies = python_api.get_dependencies(
+            repo_path, ignore_uv_lock=ignore_uv_lock
+        )
 
     # Add dependencies to the config
     config.packages = dependencies

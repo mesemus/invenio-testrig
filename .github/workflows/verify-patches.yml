@@ -124,7 +124,7 @@ on:
                 description: "Space-separated list of patches to add to the configuration"
                 required: false
                 type: string
-            ignore-lock:
+            ignore-uv-lock:
                 description: "Ignore uv.lock files and use latest compatible versions"
                 required: false
                 type: boolean
@@ -148,7 +148,7 @@ env:
     DISABLE_CODESTYLE_CHECKS: ${{ inputs.disable-codestyle-checks }}
     TEST_SCOPE: ${{ inputs.test-scope || 'affected' }}
     TEST_MODE: ${{ inputs.test-mode || 'stop-on-success' }}
-    IGNORE_LOCK: ${{ inputs.ignore-lock || false }}
+    IGNORE_UV_LOCK: ${{ inputs.ignore-uv-lock || false }}
 
     # if the workflow is called from another workflow, we use the defaults
     TESTRIG_REPOSITORY: ${{ inputs.testrig-repository || github.repository }}
@@ -218,8 +218,8 @@ jobs:
                   if [ "$DISABLE_CODESTYLE_CHECKS" == "true" ]; then
                       setup_args+=("--disable-codestyle-checks")
                   fi
-                  if [ "$IGNORE_LOCK" == "true" ]; then
-                      setup_args+=("--ignore-lock")
+                  if [ "$IGNORE_UV_LOCK" == "true" ]; then
+                      setup_args+=("--ignore-uv-lock")
                   fi
                   setup_args+=("--python" "$PYTHON_VERSION")
                   setup_args+=("--test-scope" "$TEST_SCOPE")

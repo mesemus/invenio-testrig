@@ -22,7 +22,7 @@
 #   --mode <mode>             Test execution mode (default: stop-on-success)
 #                             Options: patched-only, stop-on-success, run-all
 #   --disable-codestyle-checks Disable codestyle checks in tests
-#   --ignore-lock             Ignore uv.lock files and use latest compatible versions
+#   --ignore-uv-lock             Ignore uv.lock files and use latest compatible versions
 #   --skip-patches            Skip applying patches during testing
 #   --prepare                 Only prepare (skip tests and report)
 #   --help                    Show this help message
@@ -157,8 +157,8 @@ while [[ $# -gt 0 ]]; do
             INIT_OPTIONS+=(--disable-codestyle-checks)
             shift
             ;;
-        --ignore-lock)
-            INIT_OPTIONS+=(--ignore-lock)
+        --ignore-uv-lock)
+            INIT_OPTIONS+=(--ignore-uv-lock)
             shift
             ;;
         --skip-patches)
