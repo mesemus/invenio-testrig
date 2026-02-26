@@ -69,7 +69,7 @@ uvx invenio-testrig setup --patch-mode <patch-mode> --patch <p1> --patch <p2> ..
 This will create a `workdir` folder in the current directory. To test a package, run:
 
 ```bash
-uvx invenio-testrig test [--apply-patches] <package-name>
+uvx invenio-testrig test [--apply-patches] workdir <package-name>
 ```
 
 If you specify the `--apply-patches` flag, the patches will be applied to the package and all libraries on which the package depends before running tests. If you don't specify it, the tests will be run without applying patches (this is useful to compare results of patched and unpatched versions).

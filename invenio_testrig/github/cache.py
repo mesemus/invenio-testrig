@@ -78,6 +78,7 @@ class GitCache:
         output, _ = call_executable_quietly(
             ["git", "rev-list", f"{base_commit}..{branch_commit}"],
             cwd=cache_path,
+            always_quiet=True,  # Don't print errors if this fails
         )
         commits = output.strip().split("\n") if output.strip() else []
         return PullRequestInfo(
@@ -324,6 +325,7 @@ class GitCache:
                     commit,
                 ],
                 cwd=cache_path,
+                always_quiet=True,  # Don't print errors if this fails
             )
             tags_on_commit = output.strip().split("\n")
             tags_on_commit = [tag for tag in tags_on_commit if tag.startswith("v")]
@@ -349,6 +351,7 @@ class GitCache:
                     f"--merged={commit}^",
                 ],
                 cwd=cache_path,
+                always_quiet=True,  # Don't print errors if this fails
             )
             ret = output.strip().split("\n")
             ret = [tag for tag in ret if tag.startswith("v")]  # filter out empty lines
@@ -381,6 +384,7 @@ class GitCache:
                     f"{previous_version}..{commit}" if previous_version else commit,
                 ],
                 cwd=cache_path,
+                always_quiet=True,  # Don't print errors if this fails
             )
             return output.strip().split("\n") if output.strip() else []
         except subprocess.CalledProcessError:

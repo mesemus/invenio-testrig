@@ -61,7 +61,9 @@ def extra_data(instance: Any) -> dict[str, Any]:
     return getattr(instance, "_extra", {})
 
 
-def call_executable_quietly(cmd: list[str], **kwargs: Any) -> tuple[str, str]:
+def call_executable_quietly(
+    cmd: list[str], always_quiet=False, **kwargs: Any
+) -> tuple[str, str]:
     """Call an executable command quietly, capturing stdout and stderr.
 
     If the command fails (non-zero exit code), print the captured output and raise an exception.
@@ -81,10 +83,11 @@ def call_executable_quietly(cmd: list[str], **kwargs: Any) -> tuple[str, str]:
     result = subprocess.run(cmd, capture_output=True, text=True, **kwargs)
 
     if result.returncode != 0:
-        log.error("Command failed: %s", " ".join(cmd))
-        log.error("CWD: %s", kwargs.get("cwd", "."))
-        log.error("%s", result.stdout)
-        log.error("%s", result.stderr)
+        if not always_quiet:
+            log.error("Command failed: %s", " ".join(cmd))
+            log.error("CWD: %s", kwargs.get("cwd", "."))
+            log.error("%s", result.stdout)
+            log.error("%s", result.stderr)
 
         raise subprocess.CalledProcessError(
             result.returncode, cmd, output=result.stdout, stderr=result.stderr
