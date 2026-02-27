@@ -85,6 +85,7 @@ runs:
 
         echo "::endgroup::"
         echo "✓ Tools virtualenv created"
+
     - name: Prepare git
       shell: bash
       run: |

@@ -86,12 +86,13 @@ GIT_REFERENCE_GRAMMAR = r"""
     
     repo_ref: NAME "/" NAME (branch_ref | pr_ref)?
     
-    branch_ref: "@" NAME
+    branch_ref: "@" BRANCH_NAME
     pr_ref: "#" NUMBER
     
     base_bracket: "[" NAME "]"
     
     NAME: /[\w\-\.]+/
+    BRANCH_NAME: /[\w\-\.\/]+/
     NUMBER: /\d+/
     
     WS: /\s+/
@@ -168,6 +169,10 @@ class GitReferenceTransformer(Transformer):  # type: ignore[type-arg]
 
     def NAME(self, token: Token) -> str:
         """Extract NAME token value."""
+        return token.value
+
+    def BRANCH_NAME(self, token: Token) -> str:
+        """Extract BRANCH_NAME token value."""
         return token.value
 
     def NUMBER(self, token: Token) -> str:
