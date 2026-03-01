@@ -1,51 +1,37 @@
 # Optional name for this test configuration run
 name: Invenio testrig
 
-# Patches to apply - custom repositories with fixes/features.
-# Tip: Since all packages depend on pytest-invenio, you can test all packages
-# by specifying a patch for pytest-invenio.
-#
-# Note: If no patches are specified (empty list or null), tests will be run for all packages
-# matching the github filters without applying any patches.
-patches:
-  # - https://github.com/inveniosoftware/invenio-rdm-records/pull/2250
-  # - OliverGeneser/invenio-rdm-records@fix-form-label[v22.7.0]
-  # Array of patches to apply. Each patch is a string and can be specified as:
-  #   - full url to branch or PR
-  #   - org/package@branch
-  #   - org/package#pr_number
-  #   - org/package@branch[base]
-  #   - org/package[@branch|#pr]version-range
-  #   - package_name:org/package...
-  #
-  # Note: If multiple patches are specified for the same package, they must be
-  # either PR numbers or include a "base" key specifying the branch from which
-  # to start cherry-picking. Otherwise, the workflow will fail.
-  #
-  # Note: The last form (package_name: org/package...) is useful when the package
-  # name differs from the repository name.
-  #
-  # Version ranges: You can conditionally apply patches based on the installed package version.
-  # The version checked is that of the BASE package (determined by the mode parameter),
-  # NOT the version of the patch. The version is found by looking at the latest vX.Y.Z
-  # tag in the git history of the base package version being patched.
-  #
-  # Examples:
-  #   - invenio-base#234>=2.0.0    (apply PR #234 only if the base invenio-base version is >=2.0.0)
-  #   - invenio-base#234>=2.0,<3.0 (apply only if base version is between v2.0 and v3.0)
-  #
-  # The "base version" depends on the mode:
-  #   - as-is mode: version of the exact branch/PR specified in the patch
-  #   - upstream mode: version of the branch configured in github.branch
-  #   - pinned mode: version of the package installed from packages_git repository
-  #
-  # Supported operators: >=, <=, >, <, ==, !=, and comma for AND conditions.
-
 # Repository configurations - where to find the original packages
 github:
   # GitHub organization containing the repositories to test. Multiple organizations
   # can be specified, and the same organization can appear multiple times with
   # different branch configurations or regex patterns.
+  - org: "CERNDocumentServer"
+    include: 
+      - "invenio-cern-sync"
+    test: 
+      - ./run-tests.sh
+    extras:
+      - tests
+      - opensearch2
+      - postgresql
+      - admin
+    freeze:
+      - setuptools<82.0.0
+
+  - org: "tu-graz-library"
+    include: 
+      - "invenio-curations"
+    test: 
+      - ./run-tests.sh
+    extras:
+      - tests
+      - opensearch2
+      - postgresql
+      - admin
+    freeze:
+      - setuptools<82.0.0
+
   - org: "inveniosoftware"
 
     # Regular expressions to filter packages for testing.
@@ -81,7 +67,7 @@ github:
       - setuptools<82.0.0
 
 # Repository to test - used for extracting dependencies and optionally running e2e tests.
-repository:
+seed_repository:
 
   # Git repository to install and test. It will be installed (using uv sync) and used to:
   #   1. Extract dependencies matching the github filters - these packages will be tested.
@@ -94,17 +80,6 @@ repository:
   #
   # e2e: oarepo/invenio-e2e@log-xhr
   e2e:
-
-# Mode for patching packages. Allowed values are:
-#
-# - upstream : 
-#       The packages gathered from the seed repository will be replaced 
-#       by the versions from the upstream repository. Patches will be applied
-#       (cherry-picked) on top of the upstream version.
-# - pinned :
-#       The exact versions of the packages installed from the seed repository will be used.
-#       Patches will be applied (cherry-picked) on top of the pinned version.
-patch_mode: pinned
 
 # Timeout for each tested package (in minutes)
 test_timeout: 90

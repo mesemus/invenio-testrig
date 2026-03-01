@@ -178,13 +178,13 @@ def cli():
     "--repository",
     "repository_git",
     default=None,
-    help="Override repository.git configuration (e.g., 'org/repo@branch' or GitHub URL)",
+    help="Override seed_repository.git configuration (e.g., 'org/repo@branch' or GitHub URL)",
 )
 @click.option(
     "--e2e",
     "repository_e2e",
     default=None,
-    help="Override repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)",
+    help="Override seed_repository.e2e configuration (e.g., 'org/repo@branch' or GitHub URL)",
 )
 @click.option(
     "--name",
@@ -247,7 +247,7 @@ def setup_cmd(
     config.verbose = verbose
     config.debug = debug
 
-    # Override repository configurations if provided
+    # Override seed_repository configurations if provided
     api = GitApi(GitCache(workdir / "git_cache"))
     if name:
         config.name = name

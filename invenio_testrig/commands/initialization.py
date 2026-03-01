@@ -57,17 +57,21 @@ def initialize_config(
     config_data["patches"] = [
         schema.dump(git_api.parse_patch(x)) for x in (config_data.get("patches") or [])
     ]
-    repository = config_data.get("repository", {})
+    seed_repository = config_data.get("seed_repository", {})
 
     if repository_git:
-        repository["git"] = repository_git
+        seed_repository["git"] = repository_git
     if repository_e2e_git:
-        repository["e2e"] = repository_e2e_git
+        seed_repository["e2e"] = repository_e2e_git
 
-    if "git" in repository and repository["git"]:
-        repository["git"] = schema.dump(git_api.parse_reference(repository["git"]))
-    if "e2e" in repository and repository["e2e"]:
-        repository["e2e"] = schema.dump(git_api.parse_reference(repository["e2e"]))
+    if "git" in seed_repository and seed_repository["git"]:
+        seed_repository["git"] = schema.dump(
+            git_api.parse_reference(seed_repository["git"])
+        )
+    if "e2e" in seed_repository and seed_repository["e2e"]:
+        seed_repository["e2e"] = schema.dump(
+            git_api.parse_reference(seed_repository["e2e"])
+        )
     config_data["hooks"] = config_data.get("hooks", {}) or {}
 
     config = cast(Config, ConfigSchema().load(config_data, unknown=ma.INCLUDE))
