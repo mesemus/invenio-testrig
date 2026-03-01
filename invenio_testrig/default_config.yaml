@@ -97,19 +97,14 @@ repository:
 
 # Mode for patching packages. Allowed values are:
 #
-# - upstream-overwrite : 
-#       Use upstream for non-patched packages
-#       For patched packages use just the patch's branch
-# - upstream-rebase : 
-#       Use upstream for non-patched packages
-#       For patched packages rebase the patch on top of the upstream.
-# - pinned-overwrite :
-#       Use the same version as installed in repository.git for non-patched packages
-#       For patched packages use just the patch's branch
-# - pinned-rebase :
-#       Use the same version as installed in repository.git for non-patched packages
-#       For patched packages rebase the patch on top of the upstream.
-patch_mode: pinned-rebase
+# - upstream : 
+#       The packages gathered from the seed repository will be replaced 
+#       by the versions from the upstream repository. Patches will be applied
+#       (cherry-picked) on top of the upstream version.
+# - pinned :
+#       The exact versions of the packages installed from the seed repository will be used.
+#       Patches will be applied (cherry-picked) on top of the pinned version.
+patch_mode: pinned
 
 # Timeout for each tested package (in minutes)
 test_timeout: 90

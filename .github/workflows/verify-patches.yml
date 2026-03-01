@@ -23,14 +23,12 @@ on:
                 required: false
                 type: string
             patch-mode:
-                description: "Patch mode to use for patching packages"
+                description: "Test upstream or pinned versions"
                 required: false
                 type: choice
                 options:
-                    - upstream-overwrite
-                    - upstream-rebase
-                    - pinned-overwrite
-                    - pinned-rebase
+                    - upstream
+                    - pinned
             test-scope:
                 description: "Test scope: 'affected' (only packages affected by patches), 'all'"
                 required: false
@@ -117,7 +115,7 @@ on:
                 required: false
                 type: string
             patch-mode:
-                description: "Patch mode to use for patching packages"
+                description: "Use 'upstream' or 'pinned' versions of packages for testing"
                 required: false
                 type: string
             patches:
@@ -168,7 +166,7 @@ env:
     REPOSITORY_GIT: ${{ inputs.repository || '' }}
     REPOSITORY_E2E: ${{ inputs.e2e || '' }}
     CONFIG_NAME: ${{ inputs.name || '' }}
-    PATCH_MODE: ${{ inputs.patch-mode || '' }}
+    PATCH_MODE: ${{ inputs.patch-mode || 'pinned' }}
     PATCHES: ${{ inputs.patches || '' }}
 
     # GH token needed for the API (gh commandline tool)

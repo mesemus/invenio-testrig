@@ -132,15 +132,12 @@ It will create a `workdir` artifact. Inside this artifact (.tar.gz) you will fin
 
 The following patch modes are supported:
 
-- `pinned-overwrite` - a single patch/branch replaces any reference to this library
-- `pinned-rebase` - the seed repository provides the version of the package. All patches are applied on top of this version (using cherry-pick).
+- `pinned` - the seed repository provides the version of the package. All patches are applied on top of this version (using cherry-pick).
+- `upstream` - use upstream versions of all packages (patched and unpatched). When patching, apply all patches on top of the upstream version (using cherry-pick).
 
-- `upstream-overwrite` - use upstream versions of all packages (patched and unpatched). When patching, replace the library with the single patch/branch
-- `upstream-rebase` - use upstream versions of all packages (patched and unpatched). When patching, apply all patches on top of the upstream version (using cherry-pick).
+The `pinned` mode is useful when you want to test your patches on top of your own repository.
 
-The first two modes are useful when you want to test your patches on top of your own repository.
-
-The second two modes are useful when you want to test your patches on top of the latest upstream versions of the packages.
+The `upstream` mode is useful when you want to test your patches on top of the latest upstream versions of the packages.
 
 ## How to reference patches
 

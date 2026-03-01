@@ -83,9 +83,7 @@ class Config:
     started_at: str | None = None
     """ISO datetime when the configuration was initialized."""
     patches: list[Patch] = field(default_factory=list)  # type: ignore[assignment]
-    patch_mode: Literal[
-        "upstream-overwrite", "upstream-rebase", "pinned-overwrite", "pinned-rebase"
-    ] = "upstream-overwrite"
+    patch_mode: Literal["upstream", "pinned"] = "upstream"
     test_timeout: int = 90  # 90 minutes
 
     # runtime information - these are populated during execution and not

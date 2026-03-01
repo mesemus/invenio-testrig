@@ -19,10 +19,8 @@ from invenio_testrig.config import (
 from invenio_testrig.types import ExecutionStatus, Progress, ReportPackageData
 
 PATCH_MODE_LABELS: dict[str, str] = {
-    "upstream-overwrite": "Upstream baseline (patches overwrite upstream, unpatched are upstream)",
-    "upstream-rebase": "Upstream baseline (patches rebased on upstream, unpatched are upstream)",
-    "pinned-overwrite": "Pinned baseline (patches overwrite pinned version, unpatched are pinned version)",
-    "pinned-rebase": "Pinned baseline (patches rebased on pinned version, unpatched are pinned version)",
+    "upstream": "Upstream baseline (patches rebased on upstream, unpatched are upstream)",
+    "pinned": "Pinned baseline (patches rebased on pinned version, unpatched are pinned version)",
 }
 
 TEST_MODE_LABELS: dict[str, str] = {

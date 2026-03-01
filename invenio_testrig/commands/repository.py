@@ -82,7 +82,7 @@ def clone_repositories(
     Clone repository.git and repository.e2e (if configured) to the output directory.
     Then clone all packages specified in "tested_packages" into the packages/ subdirectory.
     If a package has patches, also clone it into the patched/ subdirectory and apply patches.
-    The patching behavior depends on the patch_mode specified in the config (as-is, upstream, or custom).
+    The patching behavior depends on the patch_mode specified in the config (upstream, or pinned).
 
     Layout of the output directory:
         clone_path/
