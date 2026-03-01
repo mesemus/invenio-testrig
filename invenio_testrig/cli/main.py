@@ -15,6 +15,7 @@ from rich.console import Console
 from rich.table import Table
 
 from invenio_testrig.commands.dependencies import collect_dependencies, filter_packages
+from invenio_testrig.commands.github import setup_github_repository
 from invenio_testrig.commands.initialization import initialize_config
 from invenio_testrig.commands.report import (
     generate_report,
@@ -317,6 +318,79 @@ def setup_cmd(
     config.save(workdir / "config.json")
 
     progress.success("Setup complete! Ready for testing.", icon="🎉")
+
+
+@cli.command("github")
+@click.option(
+    "--target",
+    help="Target repository name (e.g., 'org/repo'). If not provided, forks to your account as 'invenio-testrig'",
+)
+@click.option(
+    "--name",
+    help="Test name (used in reports)",
+)
+@click.option(
+    "--python-version",
+    default="3.14.2",
+    help="Python version to use for testing",
+)
+@click.option(
+    "--disable-codestyle-checks",
+    is_flag=True,
+    help="Disable codestyle checks (black/isort) during tests",
+)
+@click.option(
+    "--patch-mode",
+    type=click.Choice(["upstream", "pinned"]),
+    default="pinned",
+    help="Test upstream or pinned versions",
+)
+@click.option(
+    "--test-scope",
+    type=click.Choice(["affected", "all"]),
+    default="affected",
+    help="Test scope: 'affected' (only packages affected by patches), 'all'",
+)
+@click.option(
+    "--test-mode",
+    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
+    default="stop-on-success",
+    help="Test selection for patched packages",
+)
+@click.argument("patches", nargs=-1)
+def github_cmd(
+    target: str | None,
+    name: str | None,
+    python_version: str,
+    disable_codestyle_checks: bool,
+    patch_mode: str,
+    test_scope: str,
+    test_mode: str,
+    patches: tuple[str, ...],
+):
+    """Setup GitHub repository for testing patches.
+
+    Creates or updates a fork of inveniosoftware/invenio-testrig and sets up
+    the gh-pages branch. Optionally dispatches a workflow run with the provided patches.
+
+    Examples:
+        invenio-testrig github
+        invenio-testrig github --target myorg/my-testrig
+        invenio-testrig github inveniosoftware/invenio-records-resources#123
+        invenio-testrig github org/package#456 org/another#789
+        invenio-testrig github --patch-mode upstream --test-scope all org/package#123
+    """
+    setup_github_repository(
+        target=target,
+        patches=list(patches),
+        name=name,
+        python_version=python_version,
+        disable_codestyle_checks=disable_codestyle_checks,
+        patch_mode=patch_mode,
+        test_scope=test_scope,
+        test_mode=test_mode,
+        progress=progress,
+    )
 
 
 @cli.command("matrix")
