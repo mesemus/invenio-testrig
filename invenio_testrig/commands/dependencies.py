@@ -200,7 +200,7 @@ def find_git_repository_config(config: Config, package_name: str) -> Github | No
             if re.match(pattern, package_name, re.IGNORECASE):
                 break
         else:
-            return None
+            continue
 
         # Check if package matches any exclude pattern
         if any(
