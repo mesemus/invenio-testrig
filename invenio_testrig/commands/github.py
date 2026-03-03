@@ -43,13 +43,14 @@ def setup_github_repository(
         source_repo: Source repository name in format 'org/repo'
     """
 
-    target_repo = _determine_target_repository(target, progress)
+    username = _get_current_github_username()
+    target_repo = _determine_target_repository(target, username, progress)
     repo_exists = _check_repository_exists(target_repo, progress)
 
     if repo_exists:
         _update_repository(target_repo, source_repo, progress)
     else:
-        _fork_repository(source_repo, target_repo, progress)
+        _fork_repository(source_repo, target_repo, username, progress)
 
     _ensure_gh_pages_branch(target_repo, progress)
 
@@ -71,11 +72,23 @@ def setup_github_repository(
     progress.info(f"Repository: https://github.com/{target_repo}")
 
 
-def _determine_target_repository(target: str | None, progress: Progress) -> str:
+def _get_current_github_username() -> str:
+    """Get the current GitHub username using the gh CLI."""
+    result = subprocess.run(
+        ["gh", "api", "user", "--jq", ".login"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return result.stdout.strip()
+
+
+def _determine_target_repository(target: str | None, username: str, progress: Progress):
     """Determine the target repository for forking.
 
     Args:
         target: Target repository name in format 'org/repo' or None
+        username: GitHub username of the current user
         progress: Progress reporter for status updates
 
     Returns:
@@ -90,15 +103,8 @@ def _determine_target_repository(target: str | None, progress: Progress) -> str:
         progress.info(f"Using target repository: {target}")
         return target
 
-    # Get current GitHub username
+    # Put the testrig into the user's namespace by default
     try:
-        result = subprocess.run(
-            ["gh", "api", "user", "--jq", ".login"],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-        username = result.stdout.strip()
         target_repo = f"{username}/invenio-testrig"
         progress.info(f"Will use default target: {target_repo}")
         return target_repo
@@ -212,12 +218,15 @@ def _update_repository(target_repo: str, source_repo: str, progress: Progress) -
         raise SystemExit(1)
 
 
-def _fork_repository(source_repo: str, target_repo: str, progress: Progress) -> None:
+def _fork_repository(
+    source_repo: str, target_repo: str, username: str, progress: Progress
+) -> None:
     """Fork the source repository to target.
 
     Args:
         source_repo: Source repository name in format 'org/repo'
         target_repo: Target repository name in format 'org/repo'
+        username: GitHub username of the current user
         progress: Progress reporter for status updates
 
     Raises:
@@ -228,18 +237,20 @@ def _fork_repository(source_repo: str, target_repo: str, progress: Progress) -> 
         # Extract repo name from target
         repo_org = target_repo.split("/")[0]
         repo_name = target_repo.split("/")[1]
+        fork_params = [
+            "gh",
+            "repo",
+            "fork",
+            source_repo,
+            "--fork-name",
+            repo_name,
+            "--clone=false",
+            "--default-branch-only",
+        ]
+        if repo_org != username:
+            fork_params.extend(["--org", repo_org])
         subprocess.run(
-            [
-                "gh",
-                "repo",
-                "fork",
-                source_repo,
-                "--org",
-                repo_org,
-                "--fork-name",
-                repo_name,
-                "--clone=false",
-            ],
+            fork_params,
             check=True,
             capture_output=True,
         )

@@ -121,10 +121,93 @@ def with_config(func: Callable[..., Any]) -> Callable[..., Any]:
     return click_arg(wrapper)
 
 
-@click.group()
+class InsertionOrderGroup(click.Group):
+    def list_commands(self, ctx):
+        return list(self.commands.keys())  # no sorting
+
+
+@click.group(cls=InsertionOrderGroup)
 def cli():
     """Workflow commands for testing invenio packages."""
     pass
+
+
+@cli.command("github")
+@click.option(
+    "--target",
+    help="Target repository name (e.g., 'org/repo'). If not provided, forks to your account as 'invenio-testrig'",
+)
+@click.option(
+    "--name",
+    help="Test name (used in reports)",
+)
+@click.option(
+    "--python-version",
+    default="3.14.2",
+    help="Python version to use for testing",
+)
+@click.option(
+    "--disable-codestyle-checks",
+    is_flag=True,
+    help="Disable codestyle checks (black/isort) during tests",
+)
+@click.option(
+    "--patch-mode",
+    type=click.Choice(["upstream", "pinned"]),
+    default="pinned",
+    help="Test upstream or pinned versions",
+)
+@click.option(
+    "--test-scope",
+    type=click.Choice(["affected", "all"]),
+    default="affected",
+    help="Test scope: 'affected' (only packages affected by patches), 'all'",
+)
+@click.option(
+    "--test-mode",
+    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
+    default="stop-on-success",
+    help="Test selection for patched packages",
+)
+@click.argument("patches", nargs=-1)
+def github_cmd(
+    target: str | None,
+    name: str | None,
+    python_version: str,
+    disable_codestyle_checks: bool,
+    patch_mode: str,
+    test_scope: str,
+    test_mode: str,
+    patches: tuple[str, ...],
+):
+    """Setup remote testing inside GitHub repository with optional patches.
+
+    Creates or updates a fork of inveniosoftware/invenio-testrig and sets up
+    the gh-pages branch. Optionally dispatches a workflow run with the provided patches.
+
+    Examples:
+
+    invenio-testrig github
+
+    invenio-testrig github --target myorg/my-testrig
+
+    invenio-testrig github inveniosoftware/invenio-records-resources#123
+
+    invenio-testrig github org/package#456 org/another#789
+
+    invenio-testrig github --patch-mode upstream --test-scope all org/package#123
+    """
+    setup_github_repository(
+        target=target,
+        patches=list(patches),
+        name=name,
+        python_version=python_version,
+        disable_codestyle_checks=disable_codestyle_checks,
+        patch_mode=patch_mode,
+        test_scope=test_scope,
+        test_mode=test_mode,
+        progress=progress,
+    )
 
 
 @cli.command("setup")
@@ -214,7 +297,7 @@ def setup_cmd(
     patches: list[str],
     ignore_uv_lock: bool,
 ):
-    """Complete setup: init, collect, filter, select-patches, and clone.
+    """1/ Complete local setup: init, collect, filter, select-patches, and clone.
 
     This command combines the following steps:
     1. Initialize configuration (init)
@@ -320,80 +403,7 @@ def setup_cmd(
     progress.success("Setup complete! Ready for testing.", icon="🎉")
 
 
-@cli.command("github")
-@click.option(
-    "--target",
-    help="Target repository name (e.g., 'org/repo'). If not provided, forks to your account as 'invenio-testrig'",
-)
-@click.option(
-    "--name",
-    help="Test name (used in reports)",
-)
-@click.option(
-    "--python-version",
-    default="3.14.2",
-    help="Python version to use for testing",
-)
-@click.option(
-    "--disable-codestyle-checks",
-    is_flag=True,
-    help="Disable codestyle checks (black/isort) during tests",
-)
-@click.option(
-    "--patch-mode",
-    type=click.Choice(["upstream", "pinned"]),
-    default="pinned",
-    help="Test upstream or pinned versions",
-)
-@click.option(
-    "--test-scope",
-    type=click.Choice(["affected", "all"]),
-    default="affected",
-    help="Test scope: 'affected' (only packages affected by patches), 'all'",
-)
-@click.option(
-    "--test-mode",
-    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
-    default="stop-on-success",
-    help="Test selection for patched packages",
-)
-@click.argument("patches", nargs=-1)
-def github_cmd(
-    target: str | None,
-    name: str | None,
-    python_version: str,
-    disable_codestyle_checks: bool,
-    patch_mode: str,
-    test_scope: str,
-    test_mode: str,
-    patches: tuple[str, ...],
-):
-    """Setup GitHub repository for testing patches.
-
-    Creates or updates a fork of inveniosoftware/invenio-testrig and sets up
-    the gh-pages branch. Optionally dispatches a workflow run with the provided patches.
-
-    Examples:
-        invenio-testrig github
-        invenio-testrig github --target myorg/my-testrig
-        invenio-testrig github inveniosoftware/invenio-records-resources#123
-        invenio-testrig github org/package#456 org/another#789
-        invenio-testrig github --patch-mode upstream --test-scope all org/package#123
-    """
-    setup_github_repository(
-        target=target,
-        patches=list(patches),
-        name=name,
-        python_version=python_version,
-        disable_codestyle_checks=disable_codestyle_checks,
-        patch_mode=patch_mode,
-        test_scope=test_scope,
-        test_mode=test_mode,
-        progress=progress,
-    )
-
-
-@cli.command("matrix")
+@cli.command("matrix", hidden=True)
 @with_config
 @click.argument(
     "github_output_file", type=click.Path(path_type=Path, resolve_path=True)
@@ -419,7 +429,7 @@ def matrix_cmd(config: Config, github_output_file: Path):
     )
 
 
-@cli.command("clear-cache")
+@cli.command("clear-cache", hidden=True)
 @with_config
 @with_verbose
 @with_debug
@@ -460,7 +470,7 @@ def test_cmd(
     apply_patches: bool,
     all_packages: bool,
 ):
-    """6/ Test the package.
+    """2/ Test the package locally.
 
     Arguments:
         config: Configuration object containing paths and settings
@@ -709,7 +719,7 @@ def report_cmd(
     report_output_path: Path,
     completed: bool,
 ):
-    """7/ Generate a test report based on the test artefacts.
+    """3/ Generate a test report based on the test artefacts.
 
     Reads the test status files and logs from the artefacts directory and creates
     a report summarizing the test results, applied patches, etc.
@@ -775,7 +785,7 @@ def report_cmd(
     )
 
 
-@cli.command("reports-index")
+@cli.command("reports-index", hidden=True)
 @click.argument(
     "reports_directory", type=click.Path(exists=True, path_type=Path, resolve_path=True)
 )
@@ -805,7 +815,7 @@ def reports_index_cmd(
     )
 
 
-@cli.command("archive-report")
+@cli.command("archive-report", hidden=True)
 @click.argument(
     "report_directory", type=click.Path(exists=True, path_type=Path, resolve_path=True)
 )
