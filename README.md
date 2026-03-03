@@ -8,12 +8,12 @@ It allows you to test your changes across your contribution, affected packages, 
 
 ## Warning
 
-The repository has not yet been moved to the inveniosoftware organization. Until the migration is complete, please modify the commands below:
+The repository will be moved to the inveniosoftware organization.
+After the migration is complete, please change in your installations:
 
-- Replace `inveniosoftware/invenio-testrig` with `oarepo/invenio-testrig`
-- Replace `uvx invenio-testrig` with `uvx --from git+https://github.com/oarepo/invenio-testrig invenio-testrig`
-
-These modifications will no longer be necessary after the migration to the inveniosoftware organization.
+- `oarepo/invenio-testrig` to `inveniosoftware/invenio-testrig`
+- `uvx --from git+https://github.com/oarepo/invenio-testrig invenio-testrig`
+  to `uvx invenio-testrig`
 
 ## Table of Contents
 
@@ -30,12 +30,21 @@ These modifications will no longer be necessary after the migration to the inven
 ## Prerequisites
 
 The `invenio-testrig` tool requires the `gh` and `uv` commands to be available on your system. You can install them from:
+
 - GitHub CLI: https://cli.github.com/
 - uv: https://docs.astral.sh/uv/getting-started/installation/
 
+You might find the following alias handy:
+
+```bash
+# .bashrc
+
+alias invenio-testrig="uvx --from git+https://github.com/oarepo/invenio-testrig invenio-testrig"
+```
+
 ## Usage
 
-### Task: Contributing to Invenio Packages
+### Scenario 1: Contributing to Invenio Packages
 
 When contributing to an Invenio package (e.g., `invenio-records-resources`), you need to ensure that:
 
@@ -43,36 +52,39 @@ When contributing to an Invenio package (e.g., `invenio-records-resources`), you
 - Tests pass in dependent packages (e.g., `invenio-rdm-records`)
 - Your contribution doesn't break the running repository
 
-#### Running the tests on GitHub
+Invenio-testrig will help you with that by running all tests on the GitHub.
 
-To set things up, create a fork of the `inveniosoftware/invenio-testrig` repository and add an empty `gh-pages` branch. You can do this manually or use the invenio-testrig CLI:
+#### Setting up and running the tests
+
+To set things up, create a fork of the `oarepo/invenio-testrig` repository, allow actions to be run there and add an empty `gh-pages` branch. You can do this manually or use the invenio-testrig CLI:
 
 ```bash
-uvx invenio-testrig github [--target org/repository] [org/package#pr_number]...
+invenio-testrig github [--target org/repository] [org/package#pr_number]...
 ```
 
-If you skip the `--target` argument, the repository will be forked into your GitHub account under the name `invenio-testrig`. 
+If you skip the `--target` argument, the repository will be forked into your GitHub account under the name `invenio-testrig`.
 
 If you specify a list of patches in the command, it will automatically start a workflow run with these patches. Otherwise, you can start the workflow manually from the Actions tab in GitHub and specify the patches there.
 
 The command will attempt to open a browser window with the workflow run.
 
-If the repository already exists, the command will update it to match the original `inveniosoftware/invenio-testrig` repository.
+If the repository already exists, the command will rebase it to match the original `oarepo/invenio-testrig` repository.
 
 #### Advanced Configuration
 
 In some cases, you may want a more customized configuration for your tests—for example, testing your patch not only on Invenio packages but also on your own extensions. In this case, copy the `invenio_testrig/default_config.yaml` file to `config.yaml` (in the root of the cloned repository) and customize it. See the [Config File](#config-file) section below for more details.
 
-### Task: Testing RDM Repository
+### Scenario 2: Testing RDM Repository
 
-When preparing to release a new version of your repository, you need to ensure that all frozen dependencies work together correctly and that no tests are broken.
+When preparing to release a new version of your repository, you need to ensure that all frozen dependencies work together correctly and that no tests are broken. You might also want to test that everything would be working
+correctly after you upgrade the dependencies of the repository.
 
-#### How to Set Up
+#### Setup
 
-Create a `.github/workflows/test_repository.yml` workflow file in the source code of your InvenioRDM repository:
+Create a `.github/workflows/testrig.yml` workflow file in the source code of your InvenioRDM repository:
 
 ```yaml
-name: Repository test
+name: Run on testrig
 
 on:
     workflow_dispatch:
@@ -89,7 +101,7 @@ jobs:
     verify-patches:
         uses: oarepo/invenio-testrig/.github/workflows/verify-patches.yml@master
         with:
-            name: Repository with ZIP support
+            name: My great repository
             repository: ${{ github.repository }}@${{ github.ref_name }}
             disable-codestyle-checks: true
             python-version: 3.14.2
@@ -113,25 +125,32 @@ git commit --allow-empty -m "Initialize gh-pages branch"
 git push origin gh-pages
 ```
 
-#### How to Run
+#### Running the tests
 
 To run the workflow from the command line, use the `gh` command:
 
 ```bash
-gh workflow run test_repository.yml [--ref your-branch]
+gh workflow run testrig.yml [--ref your-branch]
 ```
+
+Use the `--ref` if you want to test a different branch then the `master` (the `testrig.yml`
+file must be present on that branch).
 
 Alternatively, go to the GitHub website and run the workflow from the Actions tab.
 
-#### Advanced Configuration
+#### Advanced Configuration for Testing RDM Repositories
 
-In some cases, you may want a more customized configuration for your tests—for example, testing your patch not only on Invenio packages but also on your own extensions. In this case, copy the `invenio_testrig/default_config.yaml` file into your repository (for example, as `customized_testrig_config.yaml`) and specify the config file name in the workflow inputs.
+In some cases, you may want a more customized configuration for your tests — for example,
+testing your patch not only on Invenio packages but also on your own extensions.
+In this case, copy the `invenio_testrig/default_config.yaml` file into your repository
+(let's say as `customized_testrig_config.yaml`) and specify the config file name
+in the workflow's inputs:
 
 ```yaml
 verify-patches:
     uses: oarepo/invenio-testrig/.github/workflows/verify-patches.yml@master
     with:
-        name: Repository with ZIP support
+        name: My great repository
         config: customized_testrig_config.yaml
 ```
 
@@ -144,8 +163,9 @@ When you run invenio-testrig, it performs the following steps:
 ### 1. Cloning the Seed Repository
 
 The testrig starts by cloning a seed repository that serves as the foundation for testing. The seed repository differs depending on your use case:
-- When testing patches (contributions), it uses a plain InvenioRDM repository (by default, Zenodo)
-- When testing a repository with frozen dependencies, it uses your own repository with its locked dependencies
+
+- When testing patches (contributions), it uses a plain InvenioRDM repository
+- When testing a repository with frozen dependencies, it uses your own repository with its (locked) dependencies
 
 ### 2. Extracting the List of Packages to Test
 
@@ -158,6 +178,7 @@ Each package version is mapped back to its corresponding Git repository and tag.
 ### 4. Applying Patches
 
 If you've specified patches (e.g., pull requests or branches), the testrig applies them to the relevant packages. How patches are applied depends on the patch mode:
+
 - In `pinned` mode: patches are applied on top of the versions specified in the seed repository
 - In `upstream` mode: patches are applied on top of the latest upstream versions
 
@@ -195,6 +216,10 @@ The following formats are supported for patches and references to Git repositori
 - https://github.com/inveniosoftware/invenio-records-resources?branch=fix-read-many#c6b973a14802e2a7f73100ab4e32cb0c36bd4672
 - https://github.com/inveniosoftware/invenio-swh?rev=v0.13.4#828a3a415cf8e725c369939832b61281c44aec40
 
+If branches are used, `invenio-testrig` will try to find the commits present on the branch
+(and not on the unpatched package) and will apply these. If the application fails, the whole
+tests will fail.
+
 ## Advanced
 
 ### Config File
@@ -210,14 +235,15 @@ Configuration for the seed InvenioRDM repository used as the foundation for test
 - **git** (required) - Git reference to the seed repository in the format `org/repo@branch`. This repository is used to:
   1. Extract dependencies matching the GitHub filters—these packages will be tested
   2. Run end-to-end tests (if E2E configuration is provided)
-  
+
   Default: `zenodo/zenodo-rdm@master`
 
 - **e2e** (optional) - Git reference to a repository containing an end-to-end test library/configuration. If the seed repository doesn't have an `e2e` directory, it will be copied from this package. If not provided, only unit tests will run (no end-to-end tests).
-  
-  Example: `oarepo/invenio-e2e@log-xhr`
+
+  Example: `oarepo/invenio-e2e@master`
 
 **Example:**
+
 ```yaml
 seed_repository:
   git: zenodo/zenodo-rdm@master
@@ -235,21 +261,21 @@ List of GitHub organization configurations that define how to map tested Python 
 - **org** (required) - GitHub organization name. Package names that match the include/exclude patterns will be mapped to repositories in this organization. For example, if `org` is `inveniosoftware`, the package `invenio-records-resources` will be mapped to the repository `inveniosoftware/invenio-records-resources`.
 
 - **include** (optional) - List of regular expression patterns to filter packages for testing. Only packages matching at least one pattern will be tested.
-  
+
   Example: `["invenio-.*"]` matches all packages starting with `invenio-`
 
 - **exclude** (optional) - List of package names to exclude from testing, even if they match the include patterns. Useful for packages that are known to be incompatible or don't need testing.
-  
+
   Example: `["invenio-xrootd", "invenio-swh"]`
 
 - **test** (required) - A command with arguments to run for packages matching this configuration. Typically this is `["./run-tests.sh"]` for Invenio libraries.
 
 - **extras** (optional) - List of extras to install for tested packages matching this configuration. This is a union of extras across all packages - if an extra doesn't exist for a specific package, it will be silently ignored.
-  
+
   Example: `["tests", "opensearch2", "postgresql"]`
 
 - **freeze** (optional) - List of version constraints (in pip format) to apply when resolving dependencies for tested packages. If specified, these packages will be reinstalled with the specified version constraints before running the tests.
-  
+
   Example: `["setuptools<82.0.0"]` ensures setuptools version stays below 82.0.0
 
 **Example:**
@@ -257,12 +283,12 @@ List of GitHub organization configurations that define how to map tested Python 
 ```yaml
 github:
   - org: "inveniosoftware"
-    include: 
+    include:
       - "invenio-.*"
     exclude:
       - "invenio-xrootd"
       - "invenio-swh"
-    test: 
+    test:
       - ./run-tests.sh
     extras:
       - tests
@@ -271,7 +297,7 @@ github:
       - admin
     freeze:
       - setuptools<82.0.0
-  
+
   - org: "oarepo"
     include:
       - "oarepo-.*"
@@ -289,9 +315,9 @@ Sometimes the same prefix is used for multiple organizations. For example, the `
 ```yaml
 github:
   - org: "CERNDocumentServer"
-    include: 
+    include:
       - "invenio-cern-sync"
-    test: 
+    test:
       - ./run-tests.sh
     extras:
       - tests
@@ -314,24 +340,24 @@ If you prefer to run tests on your local machine instead of using GitHub workflo
 First, prepare the testrig with your patch(es):
 
 ```bash
-uvx invenio-testrig setup --patch-mode upstream --patch org/package#pr_number
+invenio-testrig setup --patch-mode upstream --patch org/package#pr_number
 ```
 
 This creates a `workdir` folder in the current directory. To test a package, run:
 
 ```bash
-uvx invenio-testrig test --apply-patches workdir <package-name>
+invenio-testrig test --apply-patches workdir <package-name>
 ```
 
 To compare with unpatched results, run without the `--apply-patches` flag:
 
 ```bash
-uvx invenio-testrig test workdir <package-name>
+invenio-testrig test workdir <package-name>
 ```
 
 If you need to update the setup, please remove the workdir manually and run the setup command again:
 
 ```bash
 rm -rf workdir
-uvx invenio-testrig setup ...
+invenio-testrig setup ...
 ```
