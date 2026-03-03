@@ -1,8 +1,10 @@
 """Repository cloning and patch selection command implementations."""
 
+import os
 from pathlib import Path
 
 from invenio_testrig.config import Config
+from invenio_testrig.errors import PatchApplicationError
 from invenio_testrig.github import GitApi, GitCache
 from invenio_testrig.hooks import run_hook
 from invenio_testrig.patchers import patchers_by_mode
@@ -165,7 +167,46 @@ def clone_repositories(
                 f"Cloning dependency {tested_package_name} using '{mode}' mode",
                 icon="📦",
             )
-            patcher.clone(tested_package_name)
+            try:
+                patcher.clone(tested_package_name)
+            except PatchApplicationError as e:
+                # Get original git error from exception chain
+                original_error = e.__cause__ if hasattr(e, "__cause__") else None
+
+                # Format error message for GitHub Actions
+                error_title = f"Failed to apply patch to {tested_package_name}"
+                print(f"::error title={error_title}::{e.message}")
+
+                # Print detailed error information in a collapsible group
+                print("::group::Patch Application Error Details")
+                print(f"Package: {tested_package_name}")
+                if e.patch_reference:
+                    print(f"Patch: {e.patch_reference}")
+                if e.repository_path:
+                    print(f"Repository: {e.repository_path}")
+                error_stderr = getattr(original_error, "stderr", None)
+                if error_stderr:
+                    print(f"Git error output:\n{error_stderr}")
+                print("::endgroup::")
+
+                # Also add to GitHub step summary if available
+                github_step_summary = os.environ.get("GITHUB_STEP_SUMMARY")
+                if github_step_summary:
+                    with open(github_step_summary, "a") as f:
+                        f.write("### ❌ Patch Application Failed\n\n")
+                        f.write(f"**Package:** `{tested_package_name}`\n\n")
+                        if e.patch_reference:
+                            f.write(f"**Patch:** `{e.patch_reference}`\n\n")
+                        f.write(f"**Error:** {e.message}\n\n")
+                        if error_stderr:
+                            f.write("<details>\n")
+                            f.write("<summary>Git Error Output</summary>\n\n")
+                            f.write(f"```\n{error_stderr}\n```\n\n")
+                            f.write("</details>\n\n")
+
+                # Re-raise to stop execution
+                raise
+
             run_hook(
                 config,
                 "after_cloning_dependency",

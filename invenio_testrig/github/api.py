@@ -13,6 +13,7 @@ from collections.abc import Callable
 from pathlib import Path
 from typing import Any, cast
 
+from ..errors import PatchApplicationError
 from ..utils import call_executable_quietly
 from .cache import GitCache
 from .types import GitReference, GitReferenceSchema, Patch, PullRequestInfo
@@ -347,9 +348,11 @@ class GitApi:
                 cwd=directory,
             )
         except subprocess.CalledProcessError as e:
-            error_msg = f"Failed to fetch from {remote_url}. Git error: {e.stderr}"
-            raise subprocess.CalledProcessError(
-                e.returncode, e.cmd, e.stdout, error_msg
+            error_msg = f"Failed to fetch from {remote_url}"
+            raise PatchApplicationError(
+                error_msg,
+                patch_reference=reference,
+                repository_path=directory,
             ) from e
 
         # Cherry-pick each commit from the PR
@@ -373,11 +376,11 @@ class GitApi:
                 )
             except subprocess.CalledProcessError as e:
                 # Include git error output in the exception message
-                error_msg = (
-                    f"Failed to cherry-pick commit {commit_sha}. Git error: {e.stderr}"
-                )
-                raise subprocess.CalledProcessError(
-                    e.returncode, e.cmd, e.stdout, error_msg
+                error_msg = f"Failed to cherry-pick commit {commit_sha}"
+                raise PatchApplicationError(
+                    error_msg,
+                    patch_reference=reference,
+                    repository_path=directory,
                 ) from e
 
         # Clean up: remove the temporary remote
