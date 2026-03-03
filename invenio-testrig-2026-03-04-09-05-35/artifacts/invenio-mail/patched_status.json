@@ -1,0 +1,61 @@
+{
+  "dependencies": [],
+  "package": {
+    "extras": [
+      "tests",
+      "opensearch2",
+      "s3",
+      "devs",
+      "s3fs",
+      "oaipmh",
+      "rdf",
+      "sparql",
+      "postgresql",
+      "admin"
+    ],
+    "freeze": [
+      "setuptools<82.0.0"
+    ],
+    "patched_reference": null,
+    "patches": [],
+    "reference": {
+      "actual_version": "2.3.0",
+      "base": null,
+      "branch": "v2.3.0",
+      "commit": "ef1d2b7f41642653a2c5c7813083cbbbf134256b",
+      "commits_from_version": [],
+      "org": "inveniosoftware",
+      "package": "invenio-mail",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-mail"
+    },
+    "test": [
+      "./run-tests.sh"
+    ],
+    "unpatched_reference": {
+      "actual_version": "v2.1.0",
+      "base": null,
+      "branch": null,
+      "commit": "44c157a4cadcb064c695f3e6bc11788e38fa50fb",
+      "commits_from_version": [
+        "100348fdcecfa315a1e15291fdfc971c5199c2fd",
+        "9107516cea07cd2926ccb9f8a97c86d5112aadbc",
+        "6c9cb64849e176c614235c593f3ecbbfd5a33464",
+        "0afce1a308dd68046f58e119a03b053dc335abe3",
+        "24ef09a4930318c4e4203d1e114fe76c9debf505",
+        "690ce66fa070e6f58ce56e73234a6cee8c03f133",
+        "263a82173fff02fe812498809a13f5c9fc237c53",
+        "97efec48f36f62e19d549beca6a313811bbc517a",
+        "ef1d2b7f41642653a2c5c7813083cbbbf134256b",
+        "44c157a4cadcb064c695f3e6bc11788e38fa50fb"
+      ],
+      "org": "inveniosoftware",
+      "package": "invenio-mail",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-mail"
+    }
+  },
+  "status": "skipped"
+}

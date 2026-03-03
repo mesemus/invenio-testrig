@@ -1,0 +1,1085 @@
+{
+  "config_name": "Invenio testrig",
+  "patch_mode": "Upstream baseline (patches rebased on upstream, unpatched are upstream)",
+  "test_mode": "Test patched first, retry unpatched on failure",
+  "test_scope": "All packages",
+  "started_at": "2026-03-04 09:05:07 UTC",
+  "python_version": "3.14.2",
+  "last_updated": "2026-03-04 09:28:14 UTC",
+  "total_unique_warnings": 66,
+  "total_packages_with_warnings": 26,
+  "total_warning_occurrences": 216,
+  "warnings": [
+    {
+      "text": "SAWarning: nested transaction already deassociated from connection",
+      "total_count": 53,
+      "packages": [
+        {
+          "name": "invenio-records",
+          "count": 32,
+          "link": "artifacts/invenio-records/original_log.log"
+        },
+        {
+          "name": "invenio-records-files",
+          "count": 7,
+          "link": "artifacts/invenio-records-files/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 5,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 4,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        },
+        {
+          "name": "invenio-previewer",
+          "count": 3,
+          "link": "artifacts/invenio-previewer/original_log.log"
+        },
+        {
+          "name": "invenio-records-ui",
+          "count": 1,
+          "link": "artifacts/invenio-records-ui/original_log.log"
+        },
+        {
+          "name": "invenio-stats",
+          "count": 1,
+          "link": "artifacts/invenio-stats/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PyparsingDeprecationWarning: 'oneOf' deprecated - use 'one_of'",
+      "total_count": 15,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 15,
+          "link": "artifacts/invenio-communities/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.",
+      "total_count": 12,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 2,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 2,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 2,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-previewer",
+          "count": 2,
+          "link": "artifacts/invenio-previewer/original_log.log"
+        },
+        {
+          "name": "invenio-records-files",
+          "count": 2,
+          "link": "artifacts/invenio-records-files/original_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 2,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "FutureWarning: CSRF validation will be enabled by default in the version 1.3.x",
+      "total_count": 9,
+      "packages": [
+        {
+          "name": "invenio-rest",
+          "count": 2,
+          "link": "artifacts/invenio-rest/original_log.log"
+        },
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-communities",
+          "count": 1,
+          "link": "artifacts/invenio-communities/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-records",
+          "count": 1,
+          "link": "artifacts/invenio-records/original_log.log"
+        },
+        {
+          "name": "invenio-records-permissions",
+          "count": 1,
+          "link": "artifacts/invenio-records-permissions/patched_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        },
+        {
+          "name": "invenio-stats",
+          "count": 1,
+          "link": "artifacts/invenio-stats/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.",
+      "total_count": 8,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        },
+        {
+          "name": "invenio-oauthclient",
+          "count": 1,
+          "link": "artifacts/invenio-oauthclient/original_log.log"
+        },
+        {
+          "name": "invenio-pidstore",
+          "count": 1,
+          "link": "artifacts/invenio-pidstore/original_log.log"
+        },
+        {
+          "name": "invenio-records",
+          "count": 1,
+          "link": "artifacts/invenio-records/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.",
+      "total_count": 8,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        },
+        {
+          "name": "invenio-oauthclient",
+          "count": 1,
+          "link": "artifacts/invenio-oauthclient/original_log.log"
+        },
+        {
+          "name": "invenio-pidstore",
+          "count": 1,
+          "link": "artifacts/invenio-pidstore/original_log.log"
+        },
+        {
+          "name": "invenio-records",
+          "count": 1,
+          "link": "artifacts/invenio-records/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('flask_admin')`.",
+      "total_count": 7,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        },
+        {
+          "name": "invenio-pidstore",
+          "count": 1,
+          "link": "artifacts/invenio-pidstore/original_log.log"
+        },
+        {
+          "name": "invenio-records",
+          "count": 1,
+          "link": "artifacts/invenio-records/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('flask_admin.contrib')`.",
+      "total_count": 7,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        },
+        {
+          "name": "invenio-pidstore",
+          "count": 1,
+          "link": "artifacts/invenio-pidstore/original_log.log"
+        },
+        {
+          "name": "invenio-records",
+          "count": 1,
+          "link": "artifacts/invenio-records/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: The '__version__' attribute is deprecated and will be removed in in a future version. Use feature detection or 'importlib.metadata.version(\"marshmallow\")' instead.",
+      "total_count": 6,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-previewer",
+          "count": 1,
+          "link": "artifacts/invenio-previewer/original_log.log"
+        },
+        {
+          "name": "invenio-records-files",
+          "count": 1,
+          "link": "artifacts/invenio-records-files/original_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PendingDeprecationWarning: Schema().dump().data and Schema().dump().errors as well as Schema().load().data and Schema().loads().dataattributes are deprecated in marshmallow v3.x.",
+      "total_count": 5,
+      "packages": [
+        {
+          "name": "invenio-oaiserver",
+          "count": 4,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        },
+        {
+          "name": "invenio-records-files",
+          "count": 1,
+          "link": "artifacts/invenio-records-files/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PyparsingDeprecationWarning: 'addParseAction' deprecated - use 'add_parse_action'",
+      "total_count": 5,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 5,
+          "link": "artifacts/invenio-communities/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "InsecureKeyLengthWarning: The HMAC key is 9 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.",
+      "total_count": 4,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 2,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 2,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)",
+      "total_count": 4,
+      "packages": [
+        {
+          "name": "invenio-webhooks",
+          "count": 2,
+          "link": "artifacts/invenio-webhooks/original_log.log"
+        },
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Implicit imports (e.g., 'import idutils; idutils.function;') might be removed in the next major version. Please use explicit imports (e.g., 'from idutils import function;') instead.",
+      "total_count": 3,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 1,
+          "link": "artifacts/invenio-communities/original_log.log"
+        },
+        {
+          "name": "invenio-pidstore",
+          "count": 1,
+          "link": "artifacts/invenio-pidstore/original_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Link is deprecated and will be removed in v14.0. Use `ExternalLink` for third-party links and `EndpointLink` for InvenioRDM links.",
+      "total_count": 3,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 3,
+          "link": "artifacts/invenio-communities/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces/commas for version_locations.  Consider adding path_separator=os to Alembic config.",
+      "total_count": 3,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-db",
+          "count": 1,
+          "link": "artifacts/invenio-db/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: get_user method is deprecated, user get_user_by_email/get_user_by_id",
+      "total_count": 3,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        },
+        {
+          "name": "invenio-webhooks",
+          "count": 1,
+          "link": "artifacts/invenio-webhooks/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: Set configuration variable SECRET_KEY with random string",
+      "total_count": 3,
+      "packages": [
+        {
+          "name": "invenio-app",
+          "count": 1,
+          "link": "artifacts/invenio-app/original_log.log"
+        },
+        {
+          "name": "invenio-config",
+          "count": 1,
+          "link": "artifacts/invenio-config/original_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-logging",
+          "count": 1,
+          "link": "artifacts/invenio-logging/original_log.log"
+        },
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: The patch() method is deprecated and will be removed.",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-records",
+          "count": 1,
+          "link": "artifacts/invenio-records/original_log.log"
+        },
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PytestConfigWarning: Unknown config option: pep8ignore",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-jsonschemas",
+          "count": 1,
+          "link": "artifacts/invenio-jsonschemas/original_log.log"
+        },
+        {
+          "name": "invenio-records-ui",
+          "count": 1,
+          "link": "artifacts/invenio-records-ui/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PytestDeprecationWarning: @pytest.yield_fixture is deprecated.",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-pidstore",
+          "count": 2,
+          "link": "artifacts/invenio-pidstore/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "RuntimeWarning: You are overriding the default OAuthlib \"URL encoded\" set of valid characters. Make sure that the characters defined in oauthlib.common.urlencoded are indeed limitting your needs.",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        },
+        {
+          "name": "invenio-webhooks",
+          "count": 1,
+          "link": "artifacts/invenio-webhooks/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SADeprecationWarning: The from_engine() method on Inspector is deprecated and will be removed in a future release.  Please use the sqlalchemy.inspect() function on an Engine or Connection in order to acquire an Inspector. (deprecated since: 1.4)",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SAWarning: Object of type <Client> not in session, add operation along 'User.oauth2clients' will not proceed (This warning originated from the Session 'autoflush' process, which was invoked automatically in response to a user-initiated operation. Consider using ``no_autoflush`` context manager if this warning happened while initializing objects.)",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-oauth2server",
+          "count": 2,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SAWarning: Object of type <ObjectVersion> not in session, add operation along 'Bucket.objects' will not proceed (This warning originated from the Session 'autoflush' process, which was invoked automatically in response to a user-initiated operation. Consider using ``no_autoflush`` context manager if this warning happened while initializing objects.)",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        },
+        {
+          "name": "invenio-records-files",
+          "count": 1,
+          "link": "artifacts/invenio-records-files/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: Please specify the OAISERVER_ID_PREFIX configuration.default value is: oai:runnervmnay03:",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 1,
+          "link": "artifacts/invenio-communities/original_log.log"
+        },
+        {
+          "name": "invenio-oaiserver",
+          "count": 1,
+          "link": "artifacts/invenio-oaiserver/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: autoincrement and existing_autoincrement only make sense for MySQL",
+      "total_count": 2,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        },
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: CryptContext.hash(): 'scheme' keyword is deprecated as of Passlib 1.7, and will be removed in Passlib 2.0",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: DynamicPermission is scheduled for removal.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Flags should be stored in dicts and not in tuples. The next version of WTForms will abandon support for flags in tuples.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use hash_password instead of encrypt_password.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-records-ui",
+          "count": 1,
+          "link": "artifacts/invenio-records-ui/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command allow-action-for-role instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command allow-action-for-user instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command deny-action-for-role instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command deny-action-for-user instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command remove-action-from-role instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command remove-action-from-user instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Please use the new command remove-action-global instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-access",
+          "count": 1,
+          "link": "artifacts/invenio-access/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: The cern contrib is deprecated. Please use the generic keycloak instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-oauthclient",
+          "count": 1,
+          "link": "artifacts/invenio-oauthclient/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: Using the initialization functions in flask_caching.backend is deprecated.  Use the a full path to backend classes directly.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-cache",
+          "count": 1,
+          "link": "artifacts/invenio-cache/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: current_userprofile is deprecated, use current_user instead",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-userprofiles",
+          "count": 1,
+          "link": "artifacts/invenio-userprofiles/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-oauthclient",
+          "count": 1,
+          "link": "artifacts/invenio-oauthclient/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: passing settings to invenio_aes_encrypted_email.hash() is deprecated, and won't be supported in Passlib 2.0; use 'invenio_aes_encrypted_email.using(**settings).hash(secret)' instead",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "DeprecationWarning: the method passlib.context.CryptContext.encrypt() is deprecated as of Passlib 1.7, and will be removed in Passlib 2.0, use CryptContext.hash() instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-accounts",
+          "count": 1,
+          "link": "artifacts/invenio-accounts/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "InsecureKeyLengthWarning: The HMAC key is 4 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-oauthclient",
+          "count": 1,
+          "link": "artifacts/invenio-oauthclient/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "InsecureKeyLengthWarning: The HMAC key is 6 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-oauthclient",
+          "count": 1,
+          "link": "artifacts/invenio-oauthclient/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PendingDeprecationWarning: The WSGI_PROXIES configuration is deprecated and it will be removed, use PROXYFIX_CONFIG instead",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-base",
+          "count": 1,
+          "link": "artifacts/invenio-base/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PendingDeprecationWarning: This feature is deprecated.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-logging",
+          "count": 1,
+          "link": "artifacts/invenio-logging/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PendingDeprecationWarning: Usage of model and modelview kwargs are deprecated in favor of view_class, args and kwargs.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PendingDeprecationWarning: `use_markdown=` will be deprecated in a future version of rich-click. Please use `text_markup=` instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-i18n",
+          "count": 1,
+          "link": "artifacts/invenio-i18n/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PendingDeprecationWarning: `use_rich_markup=` will be deprecated in a future version of rich-click. Please use `text_markup=` instead.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-i18n",
+          "count": 1,
+          "link": "artifacts/invenio-i18n/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PyparsingDeprecationWarning: 'enablePackrat' deprecated - use 'enable_packrat'",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 1,
+          "link": "artifacts/invenio-communities/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PyparsingDeprecationWarning: 'excludeChars' argument is deprecated, use 'exclude_chars'",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 1,
+          "link": "artifacts/invenio-communities/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "PytestCollectionWarning: cannot collect test class 'TestPermissionPolicy' because it has a __init__ constructor (from: tests/test_permissions_base.py)",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-records-permissions",
+          "count": 1,
+          "link": "artifacts/invenio-records-permissions/patched_log.log"
+        }
+      ]
+    },
+    {
+      "text": "RuntimeWarning: Results are not stored in backend and should not be retrieved when task_always_eager is enabled, unless task_store_eager_result is enabled.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-webhooks",
+          "count": 1,
+          "link": "artifacts/invenio-webhooks/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SAWarning: Object of type <Client> not in session, add operation along 'User.oauth2clients' will not proceed",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SAWarning: Object of type <Token> not in session, add operation along 'User.oauth2tokens' will not proceed",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-oauth2server",
+          "count": 1,
+          "link": "artifacts/invenio-oauth2server/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SyntaxWarning: \"\\?\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\?\"? A raw string is also an option.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "SyntaxWarning: \"is\" with 'int' literal. Did you mean \"==\"?",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-records-rest",
+          "count": 1,
+          "link": "artifacts/invenio-records-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: OpenSearch v2 mappings files not found, falling back to Elasticsearch v7 mappings for module data. Please add the missing OpenSearch os-v2 mappings.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-records-files",
+          "count": 1,
+          "link": "artifacts/invenio-records-files/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: OpenSearch v2 mappings files not found, falling back to Elasticsearch v7 mappings for module tests.records.mock_module.mappings. Please add the missing OpenSearch os-v2 mappings.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-communities",
+          "count": 1,
+          "link": "artifacts/invenio-communities/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: Test",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-base",
+          "count": 1,
+          "link": "artifacts/invenio-base/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: This streaming does not support multiple storage backends.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-files-rest",
+          "count": 1,
+          "link": "artifacts/invenio-files-rest/original_log.log"
+        }
+      ]
+    },
+    {
+      "text": "UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.",
+      "total_count": 1,
+      "packages": [
+        {
+          "name": "invenio-app",
+          "count": 1,
+          "link": "artifacts/invenio-app/original_log.log"
+        }
+      ]
+    }
+  ]
+}

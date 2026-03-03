@@ -1,0 +1,140 @@
+ postgresql Pulling 
+ postgresql Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.14.2, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original
+configfile: setup.cfg
+testpaths: docs, tests, invenio_records_ui
+plugins: invenio-4.0.0, github-actions-annotate-failures-0.4.0, isort-4.0.0, flask-1.3.0, pydocstyle-2.4.0, cov-7.0.0, black-0.6.0, pycodestyle-2.5.0
+collected 42 items
+docs/conf.py ...                                                         [  7%]
+tests/conftest.py ...                                                    [ 14%]
+tests/helpers.py ...                                                     [ 21%]
+tests/test_invenio_records_ui.py 
+                             [ 47%]
+tests/test_utils.py ...                                                  [ 54%]
+invenio_records_ui/__init__.py ...::error file=workdir/tests/invenio-records-ui/original/invenio_records_ui/__init__.py,line=11::[doctest] invenio_records_ui
+F                                      [ 64%]
+invenio_records_ui/config.py ...                                         [ 71%]
+invenio_records_ui/ext.py ...                                            [ 78%]
+invenio_records_ui/signals.py ...                                        [ 85%]
+invenio_records_ui/utils.py ...                                          [ 92%]
+invenio_records_ui/views.py ...                                          [100%]
+=================================== FAILURES ===================================
+_________________________ [doctest] invenio_records_ui _________________________
+096 Flask application context so let's push one:
+097 
+098 >>> ctx = app.app_context()
+099 >>> ctx.push()
+100 
+101 Also, for the examples to work we need to create the database and tables (note,
+102 in this example we use an in-memory SQLite database):
+103 
+104 >>> from invenio_db import db
+105 >>> db.create_all()
+UNEXPECTED EXCEPTION: TypeError("Connection() got an unexpected keyword argument 'options'")
+Traceback (most recent call last):
+  File "<doctest invenio_records_ui[20]>", line 1, in <module>
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/sql/schema.py", line 5928, in create_all
+    bind._run_ddl_visitor(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3267, in _run_ddl_visitor
+    with self.begin() as conn:
+         ~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3257, in begin
+    with self.connect() as conn:
+         ~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 514, in _do_get
+    rec = self.connection
+          ^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 1123, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 471, in connection
+    return _ConnectionRecord(self)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: Connection() got an unexpected keyword argument 'options'
+/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/invenio_records_ui/__init__.py:105: UnexpectedException
+=============================== warnings summary ===============================
+venv/lib/python3.14/site-packages/_pytest/config/__init__.py:1474
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/_pytest/config/__init__.py:1474: PytestConfigWarning: Unknown config option: pep8ignore
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+tests/test_invenio_records_ui.py::test_view
+tests/test_invenio_records_ui.py::test_signal
+tests/test_invenio_records_ui.py::test_changed_views
+tests/test_invenio_records_ui.py::test_custom_view_method
+tests/test_invenio_records_ui.py::test_permission
+tests/test_invenio_records_ui.py::test_record_export
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py:334: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+tests/test_invenio_records_ui.py::test_permission
+    warnings.warn(
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.14.2-final-0 ________________
+Name                             Stmts   Miss  Cover   Missing
+invenio_records_ui/__init__.py       4      0   100%
+invenio_records_ui/config.py         9      0   100%
+invenio_records_ui/ext.py           31      0   100%
+invenio_records_ui/signals.py        5      0   100%
+invenio_records_ui/utils.py          9      0   100%
+invenio_records_ui/views.py         75      3    96%   244, 288, 295
+TOTAL                              133      3    98%
+=========================== short test summary info ============================
+FAILED invenio_records_ui/__init__.py::invenio_records_ui
+=================== 1 failed, 41 passed, 8 warnings in 4.92s ===================
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

@@ -1,0 +1,50 @@
+{
+  "dependencies": [],
+  "package": {
+    "extras": [
+      "tests",
+      "opensearch2",
+      "s3",
+      "devs",
+      "s3fs",
+      "oaipmh",
+      "rdf",
+      "sparql",
+      "postgresql",
+      "admin"
+    ],
+    "freeze": [
+      "setuptools<82.0.0"
+    ],
+    "patched_reference": null,
+    "patches": [],
+    "reference": {
+      "actual_version": "1.2.1",
+      "base": null,
+      "branch": "v1.2.1",
+      "commit": "befa10cbea35bebe73485d8d5eaf0bebc3aafdb7",
+      "commits_from_version": [],
+      "org": "inveniosoftware",
+      "package": "invenio-records-files",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-records-files"
+    },
+    "test": [
+      "./run-tests.sh"
+    ],
+    "unpatched_reference": {
+      "actual_version": "2.0.0",
+      "base": null,
+      "branch": null,
+      "commit": "1405225ed3b5a813bbec8a68c81fd106afcee64c",
+      "commits_from_version": [],
+      "org": "inveniosoftware",
+      "package": "invenio-records-files",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-records-files"
+    }
+  },
+  "status": "failed"
+}

@@ -1,0 +1,307 @@
+ postgresql Pulling 
+ rabbitmq Pulling 
+ opensearch Pulling 
+ redis Pulling 
+ redis Pulled 
+ rabbitmq Pulled 
+ postgresql Pulled 
+ opensearch Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-rabbitmq-1  Creating
+ Container docker_services_cli-redis-1  Creating
+ Container docker_services_cli-opensearch-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-rabbitmq-1  Created
+ Container docker_services_cli-redis-1  Created
+ Container docker_services_cli-opensearch-1  Created
+ Container docker_services_cli-opensearch-1  Starting
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-redis-1  Starting
+ Container docker_services_cli-rabbitmq-1  Starting
+ Container docker_services_cli-redis-1  Started
+ Container docker_services_cli-postgresql-1  Started
+ Container docker_services_cli-rabbitmq-1  Started
+ Container docker_services_cli-opensearch-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.14.2, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original
+configfile: setup.cfg
+testpaths: docs, tests, invenio_records_rest
+plugins: invenio-4.0.0, github-actions-annotate-failures-0.4.0, isort-4.0.0, flask-1.3.0, pydocstyle-2.4.0, cov-7.0.0, black-0.6.0, pycodestyle-2.5.0
+collected 319 items
+docs/conf.py ...                                                         [  0%]
+tests/conftest.py ...                                                    [  1%]
+tests/helpers.py ...                                                     [  2%]
+tests/mock_module/__init__.py ...                                        [  3%]
+tests/mock_module/mappings/__init__.py ...                               [  4%]
+tests/mock_module/mappings/os-v1/__init__.py ...                         [  5%]
+tests/mock_module/mappings/os-v2/__init__.py ...                         [  6%]
+tests/mock_module/mappings/v7/__init__.py ...                            [  7%]
+tests/test_custom_endpoints.py 
+                                      [  8%]
+tests/test_custom_fields.py 
+                                         [ 10%]
+tests/test_error_handlers.py 
+                                         [ 10%]
+tests/test_ext.py ....                                                   [ 12%]
+tests/test_facets.py 
+                                       [ 16%]
+tests/test_index_prefixing.py 
+                                       [ 17%]
+tests/test_links.py 
+                                                 [ 18%]
+tests/test_marshmallow_contrib.py .....                                  [ 20%]
+tests/test_marshmallow_loader.py 
+                                [ 22%]
+tests/test_permissions.py 
+                                            [ 23%]
+tests/test_pid_resolver.py 
+                                           [ 24%]
+tests/test_serializer_base.py 
+                                       [ 26%]
+tests/test_serializer_citeproc.py 
+                                 [ 27%]
+tests/test_serializer_csv.py .....                                       [ 29%]
+tests/test_serializer_datacite.py ......                                 [ 31%]
+tests/test_serializer_dc.py ....                                         [ 32%]
+tests/test_serializer_json.py 
+                                      [ 34%]
+tests/test_serializer_jsonld.py ....                                     [ 35%]
+tests/test_serializer_marshmallow.py .....                               [ 36%]
+tests/test_serializer_response.py 
+                                   [ 38%]
+tests/test_sorter.py 
+                                           [ 41%]
+tests/test_utils.py 
+                                             [ 43%]
+tests/test_views_item_delete.py 
+                                   [ 45%]
+tests/test_views_item_get.py 
+                                      [ 47%]
+tests/test_views_item_patch.py 
+                                [ 50%]
+tests/test_views_item_put.py 
+                                [ 54%]
+tests/test_views_list_post.py 
+                                 [ 57%]
+tests/test_views_options.py 
+                                         [ 58%]
+tests/test_views_search.py 
+                        [ 65%]
+tests/test_views_serializers.py 
+                                     [ 66%]
+tests/test_views_suggesters.py 
+                                       [ 67%]
+invenio_records_rest/__init__.py ...::error file=workdir/tests/invenio-records-rest/original/invenio_records_rest/__init__.py,line=11::[doctest] invenio_records_rest
+F
+                                    [ 68%]
+invenio_records_rest/_compat.py ...                                      [ 69%]
+invenio_records_rest/config.py ...                                       [ 70%]
+invenio_records_rest/errors.py ...                                       [ 71%]
+invenio_records_rest/ext.py ...                                          [ 72%]
+invenio_records_rest/facets.py ...                                       [ 73%]
+invenio_records_rest/links.py ...                                        [ 74%]
+invenio_records_rest/loaders/__init__.py ...                             [ 75%]
+invenio_records_rest/loaders/marshmallow.py ...                          [ 76%]
+invenio_records_rest/proxies.py ...                                      [ 77%]
+invenio_records_rest/query.py ...                                        [ 78%]
+invenio_records_rest/schemas/__init__.py ...                             [ 79%]
+invenio_records_rest/schemas/fields/__init__.py ...                      [ 80%]
+invenio_records_rest/schemas/fields/datetime.py ...                      [ 81%]
+invenio_records_rest/schemas/fields/generated.py ...                     [ 82%]
+invenio_records_rest/schemas/fields/marshmallow_contrib.py ...           [ 83%]
+invenio_records_rest/schemas/fields/persistentidentifier.py ...          [ 84%]
+invenio_records_rest/schemas/fields/sanitizedhtml.py ...                 [ 84%]
+invenio_records_rest/schemas/fields/sanitizedunicode.py ...              [ 85%]
+invenio_records_rest/schemas/fields/trimmedstring.py ...                 [ 86%]
+invenio_records_rest/schemas/json.py ...                                 [ 87%]
+invenio_records_rest/serializers/__init__.py ...                         [ 88%]
+invenio_records_rest/serializers/base.py ...                             [ 89%]
+invenio_records_rest/serializers/citeproc.py ...                         [ 90%]
+invenio_records_rest/serializers/csv.py ...                              [ 91%]
+invenio_records_rest/serializers/datacite.py ...                         [ 92%]
+invenio_records_rest/serializers/dc.py ...                               [ 93%]
+invenio_records_rest/serializers/json.py ...                             [ 94%]
+invenio_records_rest/serializers/jsonld.py ...                           [ 95%]
+invenio_records_rest/serializers/marshmallow.py ...                      [ 96%]
+invenio_records_rest/serializers/response.py ...                         [ 97%]
+invenio_records_rest/sorter.py ...                                       [ 98%]
+invenio_records_rest/utils.py ...                                        [ 99%]
+invenio_records_rest/views.py ...                                        [100%]
+=================================== FAILURES ===================================
+________________________ [doctest] invenio_records_rest ________________________
+104 application context so let’s push one:
+105 
+106 >>> ctx = app.app_context()
+107 >>> ctx.push()
+108 
+109 Also, for the examples to work we need to create the database and tables (note
+110 that in this example we use an in-memory SQLite database):
+111 
+112 >>> from invenio_db import db
+113 >>> db.create_all()
+UNEXPECTED EXCEPTION: TypeError("Connection() got an unexpected keyword argument 'options'")
+Traceback (most recent call last):
+  File "<doctest invenio_records_rest[22]>", line 1, in <module>
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/sql/schema.py", line 5928, in create_all
+    bind._run_ddl_visitor(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3267, in _run_ddl_visitor
+    with self.begin() as conn:
+         ~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3257, in begin
+    with self.connect() as conn:
+         ~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 514, in _do_get
+    rec = self.connection
+          ^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 1123, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 471, in connection
+    return _ConnectionRecord(self)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: Connection() got an unexpected keyword argument 'options'
+/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/invenio_records_rest/__init__.py:113: UnexpectedException
+=============================== warnings summary ===============================
+venv/lib/python3.14/site-packages/webargs/compat.py:8
+    MARSHMALLOW_VERSION_INFO = tuple(LooseVersion(ma.__version__).version)  # type: tuple
+venv/lib/python3.14/site-packages/webargs/compat.py:8
+    MARSHMALLOW_VERSION_INFO = tuple(LooseVersion(ma.__version__).version)  # type: tuple
+venv/lib/python3.14/site-packages/webargs/__init__.py:13
+    __version_info__ = tuple(LooseVersion(__version__).version)
+venv/lib/python3.14/site-packages/datacite/rest_client.py:23
+    from idutils import normalize_doi
+venv/lib/python3.14/site-packages/datacite/jsonutils.py:15
+venv/lib/python3.14/site-packages/datacite/jsonutils.py:15
+    from jsonschema import RefResolver, validate
+venv/lib/python3.14/site-packages/pyld/jsonld.py:4413
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/pyld/jsonld.py:4413: SyntaxWarning: "\?" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\?"? A raw string is also an option
+    and re.match('.*[:/\?#\[\]@]$', id_)
+venv/lib/python3.14/site-packages/pyld/jsonld.py:577
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/pyld/jsonld.py:577: SyntaxWarning: "is" with 'int' literal. Did you mean "=="?
+    if len(output) is 1 and output[0] == '':
+    self.init_app(app)
+    warnings.warn(
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/invenio_records/api.py:334: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/tests/helpers.py:30: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+tests/test_index_prefixing.py::test_api_views
+tests/test_views_item_delete.py::test_valid_delete
+tests/test_views_item_delete.py::test_delete_deleted
+tests/test_views_item_delete.py::test_delete_with_sqldatabase_error
+tests/test_views_item_patch.py::test_patch_deleted[application/json-patch+json]
+tests/test_views_item_patch.py::test_patch_deleted[application/json-patch+json;charset=utf-8]
+tests/test_views_item_put.py::test_put_on_deleted[application/json]
+tests/test_views_item_put.py::test_put_on_deleted[application/json;charset=utf-8]
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/invenio_records/api.py:495: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-rest/original/.venv/lib/python3.14/site-packages/invenio_records/api.py:442: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+    warnings.warn(
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.14.2-final-0 ________________
+Name                                                          Stmts   Miss  Cover   Missing
+invenio_records_rest/__init__.py                                  4      0   100%
+invenio_records_rest/_compat.py                                  11      5    55%   22-28
+invenio_records_rest/config.py                                   29      0   100%
+invenio_records_rest/errors.py                                  105     10    90%   51, 104-106, 187-189, 255-259
+invenio_records_rest/ext.py                                      52      1    98%   112
+invenio_records_rest/facets.py                                  103     22    79%   31-55, 121, 167-170, 189-192, 240
+invenio_records_rest/links.py                                    13      0   100%
+invenio_records_rest/loaders/__init__.py                          8      0   100%
+invenio_records_rest/loaders/marshmallow.py                      45      5    89%   57, 87-89, 106
+invenio_records_rest/proxies.py                                   4      0   100%
+invenio_records_rest/query.py                                    25      3    88%   39-44
+invenio_records_rest/schemas/__init__.py                          2      0   100%
+invenio_records_rest/schemas/fields/__init__.py                   8      0   100%
+invenio_records_rest/schemas/fields/datetime.py                  11      4    64%   21-24
+invenio_records_rest/schemas/fields/generated.py                 23      7    70%   31-54
+invenio_records_rest/schemas/fields/marshmallow_contrib.py       38      7    82%   19-20, 26, 76, 135-137
+invenio_records_rest/schemas/fields/persistentidentifier.py       9      0   100%
+invenio_records_rest/schemas/fields/sanitizedhtml.py             11      0   100%
+invenio_records_rest/schemas/fields/sanitizedunicode.py          14      0   100%
+invenio_records_rest/schemas/fields/trimmedstring.py              5      0   100%
+invenio_records_rest/schemas/json.py                             61     27    56%   27-35, 68-75, 80-97, 114, 122-123
+invenio_records_rest/serializers/__init__.py                      9      0   100%
+invenio_records_rest/serializers/base.py                         36      7    81%   37, 52, 62, 84, 97, 116, 126
+invenio_records_rest/serializers/citeproc.py                     62      5    92%   33-36, 110-111
+invenio_records_rest/serializers/csv.py                          66      3    95%   54, 135, 139
+invenio_records_rest/serializers/datacite.py                     43      0   100%
+invenio_records_rest/serializers/dc.py                           15      0   100%
+invenio_records_rest/serializers/json.py                         15      0   100%
+invenio_records_rest/serializers/jsonld.py                       32      4    88%   45-48
+invenio_records_rest/serializers/marshmallow.py                  20      0   100%
+invenio_records_rest/serializers/response.py                     27      0   100%
+invenio_records_rest/sorter.py                                   49      0   100%
+invenio_records_rest/utils.py                                   100      1    99%   168
+invenio_records_rest/views.py                                   339     13    96%   114-116, 127, 291, 296, 299, 440, 718, 723, 881, 924, 961
+TOTAL                                                          1394    124    91%
+=========================== short test summary info ============================
+FAILED invenio_records_rest/__init__.py::invenio_records_rest
+================= 1 failed, 318 passed, 345 warnings in 46.79s =================
+ Container docker_services_cli-rabbitmq-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-opensearch-1  Stopping
+ Container docker_services_cli-redis-1  Stopping
+ Container docker_services_cli-redis-1  Stopped
+ Container docker_services_cli-redis-1  Removing
+ Container docker_services_cli-redis-1  Removed
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Container docker_services_cli-opensearch-1  Stopped
+ Container docker_services_cli-opensearch-1  Removing
+ Container docker_services_cli-opensearch-1  Removed
+ Container docker_services_cli-rabbitmq-1  Stopped
+ Container docker_services_cli-rabbitmq-1  Removing
+ Container docker_services_cli-rabbitmq-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed

@@ -1,0 +1,52 @@
+{
+  "dependencies": [],
+  "package": {
+    "extras": [
+      "tests",
+      "opensearch2",
+      "s3",
+      "devs",
+      "s3fs",
+      "oaipmh",
+      "rdf",
+      "sparql",
+      "postgresql",
+      "admin"
+    ],
+    "freeze": [
+      "setuptools<82.0.0"
+    ],
+    "patched_reference": null,
+    "patches": [],
+    "reference": {
+      "actual_version": "4.1.5",
+      "base": null,
+      "branch": "v4.1.5",
+      "commit": "7b8b5c62e7b30eec373ae016261148bb93c06925",
+      "commits_from_version": [],
+      "org": "inveniosoftware",
+      "package": "invenio-search-ui",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-search-ui"
+    },
+    "test": [
+      "./run-tests.sh"
+    ],
+    "unpatched_reference": {
+      "actual_version": "4.2.0",
+      "base": null,
+      "branch": null,
+      "commit": "9732ca3f7e3e8005ad744f39170143212a752c32",
+      "commits_from_version": [
+        "9732ca3f7e3e8005ad744f39170143212a752c32"
+      ],
+      "org": "inveniosoftware",
+      "package": "invenio-search-ui",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-search-ui"
+    }
+  },
+  "status": "success"
+}

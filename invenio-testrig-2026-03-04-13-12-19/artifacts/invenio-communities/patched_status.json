@@ -1,0 +1,331 @@
+{
+  "dependencies": [
+    {
+      "extras": [
+        "tests",
+        "opensearch2",
+        "s3",
+        "devs",
+        "s3fs",
+        "oaipmh",
+        "rdf",
+        "sparql",
+        "postgresql",
+        "admin"
+      ],
+      "freeze": [
+        "setuptools<82.0.0"
+      ],
+      "patched_reference": {
+        "actual_version": "23.0.0",
+        "base": null,
+        "branch": null,
+        "commit": "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99",
+        "commits_from_version": [
+          "00102b5e52d05956e881c7d04ccd245440ae5611",
+          "5cda1f3f96ce4d75ab322e75c838bf6f2a6dc7b4",
+          "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99"
+        ],
+        "org": "inveniosoftware",
+        "package": "invenio-communities",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-communities"
+      },
+      "patches": [
+        {
+          "actual_version": null,
+          "base": null,
+          "branch": null,
+          "commit": "ff0cb69f7bfdaccab827c00f65e63909707efadf",
+          "commits_from_version": null,
+          "org": "inveniosoftware",
+          "package": "invenio-communities",
+          "pr": 1355,
+          "pr_info": {
+            "commits": [
+              "1d838b33c8a5fa50b49f06b5cf0f7982d0b92873",
+              "ff0cb69f7bfdaccab827c00f65e63909707efadf"
+            ],
+            "source_branch": "invenio-contribution-sameas",
+            "source_org": "oarepo",
+            "source_repo": "invenio-communities"
+          },
+          "repo": "invenio-communities"
+        }
+      ],
+      "reference": {
+        "actual_version": "21.2.0",
+        "base": null,
+        "branch": "v21.2.0",
+        "commit": "bf38ec56c419ef8cefcc3bf427e94b679fe708c3",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-communities",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-communities"
+      },
+      "test": [
+        "./run-tests.sh"
+      ],
+      "unpatched_reference": {
+        "actual_version": "23.0.0",
+        "base": null,
+        "branch": null,
+        "commit": "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99",
+        "commits_from_version": [
+          "00102b5e52d05956e881c7d04ccd245440ae5611",
+          "5cda1f3f96ce4d75ab322e75c838bf6f2a6dc7b4",
+          "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99"
+        ],
+        "org": "inveniosoftware",
+        "package": "invenio-communities",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-communities"
+      }
+    },
+    {
+      "extras": [
+        "tests",
+        "opensearch2",
+        "s3",
+        "devs",
+        "s3fs",
+        "oaipmh",
+        "rdf",
+        "sparql",
+        "postgresql",
+        "admin"
+      ],
+      "freeze": [
+        "setuptools<82.0.0"
+      ],
+      "patched_reference": {
+        "actual_version": "2.0.1",
+        "base": null,
+        "branch": null,
+        "commit": "1319da740c347f79700f7268cf0bc0dc3456f93b",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-records-permissions",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-records-permissions"
+      },
+      "patches": [
+        {
+          "actual_version": null,
+          "base": null,
+          "branch": null,
+          "commit": "44627a4f85892b6f37259fa9cbf0dec7769aa44d",
+          "commits_from_version": null,
+          "org": "inveniosoftware",
+          "package": "invenio-records-permissions",
+          "pr": 119,
+          "pr_info": {
+            "commits": [
+              "44627a4f85892b6f37259fa9cbf0dec7769aa44d"
+            ],
+            "source_branch": "contribution-same-as-permission",
+            "source_org": "oarepo",
+            "source_repo": "invenio-records-permissions"
+          },
+          "repo": "invenio-records-permissions"
+        }
+      ],
+      "reference": {
+        "actual_version": "1.2.1",
+        "base": null,
+        "branch": "v1.2.1",
+        "commit": "41c9c6281254e4739f7e798ba3f93427b4c7866e",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-records-permissions",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-records-permissions"
+      },
+      "test": [
+        "./run-tests.sh"
+      ],
+      "unpatched_reference": {
+        "actual_version": "2.0.1",
+        "base": null,
+        "branch": null,
+        "commit": "1319da740c347f79700f7268cf0bc0dc3456f93b",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-records-permissions",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-records-permissions"
+      }
+    },
+    {
+      "extras": [
+        "tests",
+        "opensearch2",
+        "s3",
+        "devs",
+        "s3fs",
+        "oaipmh",
+        "rdf",
+        "sparql",
+        "postgresql",
+        "admin"
+      ],
+      "freeze": [
+        "setuptools<82.0.0"
+      ],
+      "patched_reference": {
+        "actual_version": "12.3.0",
+        "base": null,
+        "branch": null,
+        "commit": "547ede92542de0ec4e579dbe462616b29192e9b1",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-requests",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-requests"
+      },
+      "patches": [
+        {
+          "actual_version": null,
+          "base": null,
+          "branch": null,
+          "commit": "e83835912aa5d69c090a8f75b64dfcd207809897",
+          "commits_from_version": null,
+          "org": "inveniosoftware",
+          "package": "invenio-requests",
+          "pr": 582,
+          "pr_info": {
+            "commits": [
+              "e83835912aa5d69c090a8f75b64dfcd207809897"
+            ],
+            "source_branch": "invenio-contribution-sameas",
+            "source_org": "oarepo",
+            "source_repo": "invenio-requests"
+          },
+          "repo": "invenio-requests"
+        }
+      ],
+      "reference": {
+        "actual_version": "10.5.0",
+        "base": null,
+        "branch": "v10.5.0",
+        "commit": "f252bedebc489a2eb34bfcf1607f667317a5e7ac",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-requests",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-requests"
+      },
+      "test": [
+        "./run-tests.sh"
+      ],
+      "unpatched_reference": {
+        "actual_version": "12.3.0",
+        "base": null,
+        "branch": null,
+        "commit": "547ede92542de0ec4e579dbe462616b29192e9b1",
+        "commits_from_version": [],
+        "org": "inveniosoftware",
+        "package": "invenio-requests",
+        "pr": null,
+        "pr_info": null,
+        "repo": "invenio-requests"
+      }
+    }
+  ],
+  "package": {
+    "extras": [
+      "tests",
+      "opensearch2",
+      "s3",
+      "devs",
+      "s3fs",
+      "oaipmh",
+      "rdf",
+      "sparql",
+      "postgresql",
+      "admin"
+    ],
+    "freeze": [
+      "setuptools<82.0.0"
+    ],
+    "patched_reference": {
+      "actual_version": "23.0.0",
+      "base": null,
+      "branch": null,
+      "commit": "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99",
+      "commits_from_version": [
+        "00102b5e52d05956e881c7d04ccd245440ae5611",
+        "5cda1f3f96ce4d75ab322e75c838bf6f2a6dc7b4",
+        "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99"
+      ],
+      "org": "inveniosoftware",
+      "package": "invenio-communities",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-communities"
+    },
+    "patches": [
+      {
+        "actual_version": null,
+        "base": null,
+        "branch": null,
+        "commit": "ff0cb69f7bfdaccab827c00f65e63909707efadf",
+        "commits_from_version": null,
+        "org": "inveniosoftware",
+        "package": "invenio-communities",
+        "pr": 1355,
+        "pr_info": {
+          "commits": [
+            "1d838b33c8a5fa50b49f06b5cf0f7982d0b92873",
+            "ff0cb69f7bfdaccab827c00f65e63909707efadf"
+          ],
+          "source_branch": "invenio-contribution-sameas",
+          "source_org": "oarepo",
+          "source_repo": "invenio-communities"
+        },
+        "repo": "invenio-communities"
+      }
+    ],
+    "reference": {
+      "actual_version": "21.2.0",
+      "base": null,
+      "branch": "v21.2.0",
+      "commit": "bf38ec56c419ef8cefcc3bf427e94b679fe708c3",
+      "commits_from_version": [],
+      "org": "inveniosoftware",
+      "package": "invenio-communities",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-communities"
+    },
+    "test": [
+      "./run-tests.sh"
+    ],
+    "unpatched_reference": {
+      "actual_version": "23.0.0",
+      "base": null,
+      "branch": null,
+      "commit": "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99",
+      "commits_from_version": [
+        "00102b5e52d05956e881c7d04ccd245440ae5611",
+        "5cda1f3f96ce4d75ab322e75c838bf6f2a6dc7b4",
+        "50acf710d5c9d4a9d58fb7ef763f6af9c3dc2a99"
+      ],
+      "org": "inveniosoftware",
+      "package": "invenio-communities",
+      "pr": null,
+      "pr_info": null,
+      "repo": "invenio-communities"
+    }
+  },
+  "status": "success"
+}

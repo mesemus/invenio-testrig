@@ -1,0 +1,296 @@
+ postgresql Pulling 
+ b0a0cf830b12 Pulling fs layer 
+ dda3d8fbd5ed Pulling fs layer 
+ 283a477db7bb Pulling fs layer 
+ 91d2729fa4d5 Pulling fs layer 
+ 9739ced65621 Pulling fs layer 
+ ae3bb1b347a4 Pulling fs layer 
+ f8406d9c00ea Pulling fs layer 
+ c199bff16b05 Pulling fs layer 
+ e0d55fdb4d15 Pulling fs layer 
+ c1cb13b19080 Pulling fs layer 
+ 873532e5f8c7 Pulling fs layer 
+ 91d2729fa4d5 Waiting 
+ 9739ced65621 Waiting 
+ 050d9f8c3b1c Pulling fs layer 
+ ae3bb1b347a4 Waiting 
+ 710e142705f8 Pulling fs layer 
+ cb628c265f09 Pulling fs layer 
+ e0d55fdb4d15 Waiting 
+ c199bff16b05 Waiting 
+ c1cb13b19080 Waiting 
+ 873532e5f8c7 Waiting 
+ f8406d9c00ea Waiting 
+ 050d9f8c3b1c Waiting 
+ 710e142705f8 Waiting 
+ cb628c265f09 Waiting 
+ 283a477db7bb Downloading [>                                                  ]  46.27kB/4.533MB
+ b0a0cf830b12 Downloading [>                                                  ]  298.8kB/29.15MB
+ dda3d8fbd5ed Downloading [==============================>                    ]     720B/1.165kB
+ dda3d8fbd5ed Downloading [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Verifying Checksum 
+ dda3d8fbd5ed Download complete 
+ 283a477db7bb Download complete 
+ b0a0cf830b12 Verifying Checksum 
+ b0a0cf830b12 Download complete 
+ 91d2729fa4d5 Downloading [>                                                  ]  15.73kB/1.45MB
+ 9739ced65621 Downloading [>                                                  ]  84.11kB/8.069MB
+ b0a0cf830b12 Extracting [>                                                  ]  294.9kB/29.15MB
+ 91d2729fa4d5 Verifying Checksum 
+ 91d2729fa4d5 Download complete 
+ 9739ced65621 Download complete 
+ ae3bb1b347a4 Downloading [>                                                  ]  12.11kB/1.196MB
+ ae3bb1b347a4 Verifying Checksum 
+ ae3bb1b347a4 Download complete 
+ f8406d9c00ea Downloading [==================================================>]     116B/116B
+ f8406d9c00ea Verifying Checksum 
+ f8406d9c00ea Download complete 
+ b0a0cf830b12 Extracting [============>                                      ]  7.078MB/29.15MB
+ c199bff16b05 Downloading [===========>                                       ]     720B/3.145kB
+ c199bff16b05 Downloading [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Verifying Checksum 
+ c199bff16b05 Download complete 
+ e0d55fdb4d15 Downloading [>                                                  ]  528.2kB/109MB
+ c1cb13b19080 Downloading [===>                                               ]     687B/9.925kB
+ c1cb13b19080 Downloading [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Verifying Checksum 
+ c1cb13b19080 Download complete 
+ b0a0cf830b12 Extracting [==================>                                ]  10.91MB/29.15MB
+ 873532e5f8c7 Download complete 
+ e0d55fdb4d15 Downloading [==========>                                        ]  23.02MB/109MB
+ 050d9f8c3b1c Downloading [==================================================>]     169B/169B
+ 050d9f8c3b1c Verifying Checksum 
+ 050d9f8c3b1c Download complete 
+ b0a0cf830b12 Extracting [=============================>                     ]   17.1MB/29.15MB
+ 710e142705f8 Downloading [======>                                            ]     719B/5.421kB
+ 710e142705f8 Downloading [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Verifying Checksum 
+ 710e142705f8 Download complete 
+ e0d55fdb4d15 Downloading [=====================>                             ]  47.78MB/109MB
+ cb628c265f09 Downloading [==================================================>]     184B/184B
+ cb628c265f09 Verifying Checksum 
+ cb628c265f09 Download complete 
+ b0a0cf830b12 Extracting [=========================================>         ]  24.18MB/29.15MB
+ e0d55fdb4d15 Downloading [=================================>                 ]  71.97MB/109MB
+ b0a0cf830b12 Extracting [==========================================>        ]  24.77MB/29.15MB
+ e0d55fdb4d15 Downloading [===========================================>       ]  95.03MB/109MB
+ e0d55fdb4d15 Verifying Checksum 
+ e0d55fdb4d15 Download complete 
+ b0a0cf830b12 Extracting [================================================>  ]  28.02MB/29.15MB
+ b0a0cf830b12 Extracting [================================================>  ]  28.31MB/29.15MB
+ b0a0cf830b12 Extracting [==================================================>]  29.15MB/29.15MB
+ b0a0cf830b12 Pull complete 
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Extracting [==================================================>]  1.165kB/1.165kB
+ dda3d8fbd5ed Pull complete 
+ 283a477db7bb Extracting [>                                                  ]  65.54kB/4.533MB
+ 283a477db7bb Extracting [==================================================>]  4.533MB/4.533MB
+ 283a477db7bb Pull complete 
+ 91d2729fa4d5 Extracting [=>                                                 ]  32.77kB/1.45MB
+ 91d2729fa4d5 Extracting [==================================================>]   1.45MB/1.45MB
+ 91d2729fa4d5 Pull complete 
+ 9739ced65621 Extracting [>                                                  ]   98.3kB/8.069MB
+ 9739ced65621 Extracting [=============================>                     ]  4.719MB/8.069MB
+ 9739ced65621 Extracting [==================================================>]  8.069MB/8.069MB
+ 9739ced65621 Pull complete 
+ ae3bb1b347a4 Extracting [=>                                                 ]  32.77kB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Extracting [==================================================>]  1.196MB/1.196MB
+ ae3bb1b347a4 Pull complete 
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Extracting [==================================================>]     116B/116B
+ f8406d9c00ea Pull complete 
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Extracting [==================================================>]  3.145kB/3.145kB
+ c199bff16b05 Pull complete 
+ e0d55fdb4d15 Extracting [>                                                  ]  557.1kB/109MB
+ e0d55fdb4d15 Extracting [===>                                               ]  7.799MB/109MB
+ e0d55fdb4d15 Extracting [======>                                            ]  13.37MB/109MB
+ e0d55fdb4d15 Extracting [=========>                                         ]  20.05MB/109MB
+ e0d55fdb4d15 Extracting [============>                                      ]  26.74MB/109MB
+ e0d55fdb4d15 Extracting [================>                                  ]  36.21MB/109MB
+ e0d55fdb4d15 Extracting [====================>                              ]  45.68MB/109MB
+ e0d55fdb4d15 Extracting [========================>                          ]  52.36MB/109MB
+ e0d55fdb4d15 Extracting [===========================>                       ]  59.05MB/109MB
+ e0d55fdb4d15 Extracting [===============================>                   ]  69.07MB/109MB
+ e0d55fdb4d15 Extracting [====================================>              ]  78.54MB/109MB
+ e0d55fdb4d15 Extracting [========================================>          ]  87.46MB/109MB
+ e0d55fdb4d15 Extracting [==========================================>        ]  93.03MB/109MB
+ e0d55fdb4d15 Extracting [============================================>      ]  97.48MB/109MB
+ e0d55fdb4d15 Extracting [==============================================>    ]  101.9MB/109MB
+ e0d55fdb4d15 Extracting [================================================>  ]  104.7MB/109MB
+ e0d55fdb4d15 Extracting [=================================================> ]  107.5MB/109MB
+ e0d55fdb4d15 Extracting [==================================================>]    109MB/109MB
+ e0d55fdb4d15 Pull complete 
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Extracting [==================================================>]  9.925kB/9.925kB
+ c1cb13b19080 Pull complete 
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Extracting [==================================================>]     128B/128B
+ 873532e5f8c7 Pull complete 
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Extracting [==================================================>]     169B/169B
+ 050d9f8c3b1c Pull complete 
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Extracting [==================================================>]  5.421kB/5.421kB
+ 710e142705f8 Pull complete 
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Extracting [==================================================>]     184B/184B
+ cb628c265f09 Pull complete 
+ postgresql Pulled 
+ Network docker_services_cli_default  Creating
+ Network docker_services_cli_default  Created
+ Container docker_services_cli-postgresql-1  Creating
+ Container docker_services_cli-postgresql-1  Created
+ Container docker_services_cli-postgresql-1  Starting
+ Container docker_services_cli-postgresql-1  Started
+============================= test session starts ==============================
+platform linux -- Python 3.14.2, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original
+configfile: setup.cfg
+testpaths: docs, tests, invenio_records_ui
+plugins: invenio-4.0.0, github-actions-annotate-failures-0.4.0, isort-4.0.0, flask-1.3.0, pydocstyle-2.4.0, cov-7.0.0, black-0.6.0, pycodestyle-2.5.0
+collected 42 items
+::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/_pytest/config/__init__.py,line=1474::Unknown config option: pep8ignore%0A
+
+docs/conf.py ...                                                         [  7%]
+tests/conftest.py ...                                                    [ 14%]
+tests/helpers.py ...                                                     [ 21%]
+tests/test_invenio_records_ui.py .....::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py,line=334::nested transaction already deassociated from connection
+.::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py,line=334::nested transaction already deassociated from connection
+.::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py,line=334::nested transaction already deassociated from connection
+.::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py,line=334::nested transaction already deassociated from connection
+.::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py,line=334::nested transaction already deassociated from connection
+::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/flask_security/utils.py,line=180::Please use hash_password instead of encrypt_password.
+.::warning file=workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py,line=334::nested transaction already deassociated from connection
+.                             [ 47%]
+tests/test_utils.py ...                                                  [ 54%]
+invenio_records_ui/__init__.py ...::error file=workdir/tests/invenio-records-ui/original/invenio_records_ui/__init__.py,line=11::[doctest] invenio_records_ui
+F                                      [ 64%]
+invenio_records_ui/config.py ...                                         [ 71%]
+invenio_records_ui/ext.py ...                                            [ 78%]
+invenio_records_ui/signals.py ...                                        [ 85%]
+invenio_records_ui/utils.py ...                                          [ 92%]
+invenio_records_ui/views.py ...                                          [100%]
+
+=================================== FAILURES ===================================
+_________________________ [doctest] invenio_records_ui _________________________
+096 Flask application context so let's push one:
+097 
+098 >>> ctx = app.app_context()
+099 >>> ctx.push()
+100 
+101 Also, for the examples to work we need to create the database and tables (note,
+102 in this example we use an in-memory SQLite database):
+103 
+104 >>> from invenio_db import db
+105 >>> db.create_all()
+UNEXPECTED EXCEPTION: TypeError("Connection() got an unexpected keyword argument 'options'")
+Traceback (most recent call last):
+  File "<doctest invenio_records_ui[20]>", line 1, in <module>
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/flask_sqlalchemy/extension.py", line 900, in create_all
+    self._call_for_binds(bind_key, "create_all")
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/flask_sqlalchemy/extension.py", line 881, in _call_for_binds
+    getattr(metadata, op_name)(bind=engine)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/sql/schema.py", line 5928, in create_all
+    bind._run_ddl_visitor(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        ddl.SchemaGenerator, self, checkfirst=checkfirst, tables=tables
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3267, in _run_ddl_visitor
+    with self.begin() as conn:
+         ~~~~~~~~~~^^
+  File "/opt/hostedtoolcache/Python/3.14.2/x64/lib/python3.14/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3257, in begin
+    with self.connect() as conn:
+         ~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3293, in connect
+    return self._connection_cls(self)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/base.py", line 3317, in raw_connection
+    return self.pool.connect()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 448, in connect
+    return _ConnectionFairy._checkout(self)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 1272, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 514, in _do_get
+    rec = self.connection
+          ^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 1123, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+                                           ~~~~~~~~~^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/impl.py", line 471, in connection
+    return _ConnectionRecord(self)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 674, in __init__
+    self.__connect()
+    ~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 900, in __connect
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/pool/base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/create.py", line 667, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/sqlalchemy/engine/default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: Connection() got an unexpected keyword argument 'options'
+/home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/invenio_records_ui/__init__.py:105: UnexpectedException
+=============================== warnings summary ===============================
+.venv/lib/python3.14/site-packages/_pytest/config/__init__.py:1474
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/_pytest/config/__init__.py:1474: PytestConfigWarning: Unknown config option: pep8ignore
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_invenio_records_ui.py::test_view
+tests/test_invenio_records_ui.py::test_signal
+tests/test_invenio_records_ui.py::test_changed_views
+tests/test_invenio_records_ui.py::test_custom_view_method
+tests/test_invenio_records_ui.py::test_permission
+tests/test_invenio_records_ui.py::test_record_export
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/invenio_records/api.py:334: SAWarning: nested transaction already deassociated from connection
+    with db.session.begin_nested():
+
+tests/test_invenio_records_ui.py::test_permission
+  /home/runner/work/invenio-testrig/invenio-testrig/workdir/tests/invenio-records-ui/original/.venv/lib/python3.14/site-packages/flask_security/utils.py:180: DeprecationWarning: Please use hash_password instead of encrypt_password.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.14.2-final-0 ________________
+
+Name                             Stmts   Miss  Cover   Missing
+--------------------------------------------------------------
+invenio_records_ui/__init__.py       4      0   100%
+invenio_records_ui/config.py         9      0   100%
+invenio_records_ui/ext.py           31      0   100%
+invenio_records_ui/signals.py        5      0   100%
+invenio_records_ui/utils.py          9      0   100%
+invenio_records_ui/views.py         75      3    96%   244, 288, 295
+--------------------------------------------------------------
+TOTAL                              133      3    98%
+=========================== short test summary info ============================
+FAILED invenio_records_ui/__init__.py::invenio_records_ui
+=================== 1 failed, 41 passed, 8 warnings in 4.38s ===================
+ Container docker_services_cli-postgresql-1  Stopping
+ Container docker_services_cli-postgresql-1  Stopped
+ Container docker_services_cli-postgresql-1  Removing
+ Container docker_services_cli-postgresql-1  Removed
+ Network docker_services_cli_default  Removing
+ Network docker_services_cli_default  Removed
