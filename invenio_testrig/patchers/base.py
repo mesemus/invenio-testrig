@@ -42,7 +42,7 @@ class Patcher:
         self.patched_dir = patched_dir
         self.progress = progress
 
-    def clone(self, package: str) -> None:
+    def clone(self, package: str) -> tuple[GitReference, GitReference | None]:
         """Clone the package, applying any patches needed."""
 
         name, info = self._get_tested_package(package)
@@ -79,6 +79,8 @@ class Patcher:
             self._remove_git_directory(patched_reference_path)
             self._fix_check_manifest(patched_reference_path)
             self._fix_run_sphinx(patched_reference_path)
+
+        return (unpatched_reference, patched_reference)
 
     def _build_unpatched_reference(
         self, package_name: str, package_info: TestedPackageInfo

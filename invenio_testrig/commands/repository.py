@@ -168,7 +168,15 @@ def clone_repositories(
                 icon="📦",
             )
             try:
-                patcher.clone(tested_package_name)
+                unpatched_reference, patched_reference = patcher.clone(
+                    tested_package_name
+                )
+                tested_packages[tested_package_name].unpatched_reference = (
+                    unpatched_reference
+                )
+                tested_packages[tested_package_name].patched_reference = (
+                    patched_reference
+                )
             except PatchApplicationError as e:
                 # Get original git error from exception chain
                 original_error = e.__cause__ if hasattr(e, "__cause__") else None
@@ -221,5 +229,6 @@ def clone_repositories(
         "after_cloning_packages",
         clone_path=clone_path,
     )
+    config.save()  # Save the config with updated tested_packages info
 
     progress.success(f"Successfully cloned repositories to {clone_path}")

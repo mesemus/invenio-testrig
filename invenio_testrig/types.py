@@ -18,6 +18,8 @@ class TestedPackageInfo:
     extras: list[str]
     freeze: list[str]
     patches: list[GitReference] = field(default_factory=list)  # type: ignore[assignment]
+    unpatched_reference: GitReference | None = None
+    patched_reference: GitReference | None = None
 
 
 @dataclass
