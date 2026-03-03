@@ -38,12 +38,11 @@ on:
                     - affected
                     - all
             test-mode:
-                description: "Test selection for patched packages: 'patched-only', 'stop-on-success', 'run-all'"
+                description: "Test selection for patched packages: 'stop-on-success', 'run-all'"
                 required: false
                 type: choice
                 default: "stop-on-success"
                 options:
-                    - patched-only
                     - stop-on-success
                     - run-all
 
@@ -76,7 +75,7 @@ on:
                 type: string
                 default: "all"
             test-mode:
-                description: "Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
+                description: "Test mode: 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)"
                 required: false
                 type: string
                 default: "run-all"
@@ -348,7 +347,8 @@ jobs:
               if: |
                   ${{ 
                     env.TEST_MODE == 'run-all' || 
-                    (env.TEST_MODE == 'stop-on-success' && failure())
+                    (env.TEST_MODE == 'stop-on-success' && failure()) ||
+                    (steps.run-patched.outputs.test_patch_status == 'skipped' && env.TEST_SCOPE == 'all')
                   }}
               run: |
                   echo "::group::🧪 Running tests for the unpatched version of package ${{ matrix.package }}"

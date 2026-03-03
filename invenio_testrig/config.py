@@ -111,12 +111,10 @@ class Config:
     verbose: bool = False
     """Whether to enable verbose output with additional logging information."""
 
-    test_mode: Literal["patched-only", "stop-on-success", "run-all"] = "stop-on-success"
+    test_mode: Literal["stop-on-success", "run-all"] = "stop-on-success"
     """This setting controls when package testing (patched and unpatched version) should stop.
     
     The options are:
-    - patched-only: If patched, only test the patched version of the package and 
-                  always skip testing the unpatched version.
     - stop-on-success: If patched, test it and if the test fails, also test 
                   the unpatched version. If the test succeeds, skip testing the unpatched version.
     - run-all: Run tests for both the patched and unpatched version of the package, regardless of the test results.

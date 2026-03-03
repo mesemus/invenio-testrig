@@ -24,7 +24,6 @@ PATCH_MODE_LABELS: dict[str, str] = {
 }
 
 TEST_MODE_LABELS: dict[str, str] = {
-    "patched-only": "Test patched version only",
     "stop-on-success": "Test patched first, retry unpatched on failure",
     "run-all": "Test both patched and unpatched versions",
 }

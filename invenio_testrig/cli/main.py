@@ -154,18 +154,18 @@ def cli():
 @click.option(
     "--patch-mode",
     type=click.Choice(["upstream", "pinned"]),
-    default="pinned",
+    default="upstream",
     help="Test upstream or pinned versions",
 )
 @click.option(
     "--test-scope",
     type=click.Choice(["affected", "all"]),
-    default="affected",
+    default="all",
     help="Test scope: 'affected' (only packages affected by patches), 'all'",
 )
 @click.option(
     "--test-mode",
-    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
+    type=click.Choice(["stop-on-success", "run-all"]),
     default="stop-on-success",
     help="Test selection for patched packages",
 )
@@ -254,9 +254,9 @@ def github_cmd(
 @click.option(
     "--test-mode",
     "test_mode",
-    type=click.Choice(["patched-only", "stop-on-success", "run-all"]),
+    type=click.Choice(["stop-on-success", "run-all"]),
     default="stop-on-success",
-    help="Test mode: 'patched-only' (only test primary version), 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
+    help="Test mode: 'stop-on-success' (test original only on failure), 'run-all' (always test both versions)",
 )
 @click.option(
     "--repository",
