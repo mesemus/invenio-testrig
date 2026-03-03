@@ -39,7 +39,7 @@ def collect_dependencies(
     """
     # Read the config JSON
 
-    git_ref = config.repository.git
+    git_ref = config.seed_repository.git
     git_api = GitApi(GitCache(config.workdir_path("git_cache")))
 
     # Clone the repository to a temporary directory

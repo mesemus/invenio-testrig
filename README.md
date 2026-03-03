@@ -1,97 +1,90 @@
 # Invenio-Testrig
 
-Invenio-testrig is designed to make your fear of breaking InvenioRDM repositories with your contributions a thing of the past.
+Invenio-testrig eliminates the fear of breaking InvenioRDM repositories with your contributions.
 
-It allows you to test your changes on your contribution, affected packages and a running repository[*] in a safe and automated way, either locally or on GitHub.
+It allows you to test your changes across your contribution, affected packages, and inside a running repository[*] in a safe and automated way, either on GitHub or locally.
 
 [*] Work in progress - end-to-end testing will be integrated in the upcoming weeks.
 
-## Use cases
+## Warning
 
-### Contributor to Invenio
+The repository will be moved to the inveniosoftware organization.
+After the migration is complete, please change in your installations:
 
-- Adding a contribution to `invenio-records-resources`
-- I'll test that tests pass in this module
-- I should test that tests pass at least in `invenio-rdm-records`
-- I should test that a newly created repository works with my contribution
+- `oarepo/invenio-testrig` to `inveniosoftware/invenio-testrig`
+- `uvx --from git+https://github.com/oarepo/invenio-testrig invenio-testrig`
+  to `uvx invenio-testrig`
 
-But: other packages that depend on `invenio-records-resources` may not be tested, and my contribution may break them.
+## Table of Contents
 
-### Repository maintainer
+- [Prerequisites](#prerequisites)
+- [Usage](#usage)
+  - [Task: Contributing to Invenio Packages](#task-contributing-to-invenio-packages)
+  - [Task: Testing RDM Repository](#task-testing-rdm-repository)
+- [What Happens When Testrig is Run](#what-happens-when-testrig-is-run)
+- [How to Reference Patches](#how-to-reference-patches)
+- [Advanced](#advanced)
+  - [Config File](#config-file)
+  - [Running the Testrig Locally](#running-the-testrig-locally)
 
-- I want to release a new version of my repository (not a major release, but a minor one)
-- I have frozen all dependencies and want to be sure that all of these work together correctly and no tests are broken
+## Prerequisites
 
-### Third-party extensions (CESNET use case)
+The `invenio-testrig` tool requires the `gh` and `uv` commands to be available on your system. You can install them from:
 
-- I have my own extensions (patches) to Invenio core packages and I am keeping them in a local repository/local PyPI index
-- I want to test that my extensions work with the latest Invenio core packages (that patches can be applied and that tests pass after applying them)
+- GitHub CLI: https://cli.github.com/
+- uv: https://docs.astral.sh/uv/getting-started/installation/
 
-## Testrig principles
-
-Invenio-testrig is a tool to automate the actions described in the use cases above. It is based on the following principles:
-
-1. It can be run either on GitHub or locally on a developer's machine
-2. It is based on a configuration file (YAML) that describes the test scenarios
-
-### Config file
-
-[The config file consists](./invenio_testrig/default_config.yaml) of several parts:
-
-1. List of **patches** to apply (optional)
-2. **github url of a seed InvenioRDM repository** - a reference to a GitHub repository with an InvenioRDM-compatible repository. This repository is used to get a list of packages to test (from the dependencies of the seed repository) and this repository is optionally tested with end-to-end tests. At the moment, this is Zenodo, but we might want to change it so that we can run e2e tests.
-3. **github url of a git repository with end-to-end test framework** (optional)
-4. **Patch mode** - a mode that describes how the patches are applied on top of the package versions in the seed repository.
-5. **Test mode** - a mode that describes how the tests are executed (whether both patched and unpatched versions are tested, or only patched, etc.)
-
-When testrig is run, it will read the config file, overwrite some parts with optional user input (e.g. from GitHub workflow inputs) and then execute the test scenarios according to the config file.
-
-### What happens when testrig is run
-
-1. Clone the seed repository
-2. Get the list of packages to test from the dependencies of the seed repository (uv.lock or install & freeze)
-3. Map package versions to Git repositories and their tags
-4. Apply patches to these packages according to the patch mode and the provided list of patches
-5. Run tests according to the test mode
-6. Optionally, run end-to-end tests on the seed repository (**Work in progress**)
-7. Create an HTML report
-
-## How to run it
-
-### Local workflow
-
-At first, prepare the testrig with the following command:
+You might find the following alias handy:
 
 ```bash
-uvx invenio-testrig setup --patch-mode <patch-mode> --patch <p1> --patch <p2> ...
+# .bashrc
+
+alias invenio-testrig="uvx --from git+https://github.com/oarepo/invenio-testrig invenio-testrig"
 ```
 
-This will create a `workdir` folder in the current directory. To test a package, run:
+## Usage
+
+### Scenario 1: Contributing to Invenio Packages
+
+When contributing to an Invenio package (e.g., `invenio-records-resources`), you need to ensure that:
+
+- Tests pass in your modified module
+- Tests pass in dependent packages (e.g., `invenio-rdm-records`)
+- Your contribution doesn't break the running repository
+
+Invenio-testrig will help you with that by running all tests on the GitHub.
+
+#### Setting up and running the tests
+
+To set things up, create a fork of the `oarepo/invenio-testrig` repository, allow actions to be run there and add an empty `gh-pages` branch. You can do this manually or use the invenio-testrig CLI:
 
 ```bash
-uvx invenio-testrig test [--apply-patches] workdir <package-name>
+invenio-testrig github [--target org/repository] [org/package#pr_number]...
 ```
 
-If you specify the `--apply-patches` flag, the patches will be applied to the package and all libraries on which the package depends before running tests. If you don't specify it, the tests will be run without applying patches (this is useful to compare results of patched and unpatched versions).
+If you skip the `--target` argument, the repository will be forked into your GitHub account under the name `invenio-testrig`.
 
-### GitHub workflow - contributor
+If you specify a list of patches in the command, it will automatically start a workflow run with these patches. Otherwise, you can start the workflow manually from the Actions tab in GitHub and specify the patches there.
 
-To run your changes on a GitHub workflow-based testrig
+The command will attempt to open a browser window with the workflow run.
 
-#### You **can** run workflows in inveniosoftware/invenio-testrig repository
+If the repository already exists, the command will rebase it to match the original `oarepo/invenio-testrig` repository.
 
-Go to the Actions tab in the invenio-testrig repository and run the workflow from there. Enter your patches and additional info and start the workflow. Take a walk and after 30 minutes or so, check the results.
+#### Advanced Configuration
 
-#### You **can not** run workflows in inveniosoftware/invenio-testrig repository
+In some cases, you may want a more customized configuration for your tests—for example, testing your patch not only on Invenio packages but also on your own extensions. In this case, copy the `invenio_testrig/default_config.yaml` file to `config.yaml` (in the root of the cloned repository) and customize it. See the [Config File](#config-file) section below for more details.
 
-Fork the invenio-testrig repository, and then do the same as above. Do not forget to take a walk.
+### Scenario 2: Testing RDM Repository
 
-### GitHub workflow - repository maintainer
+When preparing to release a new version of your repository, you need to ensure that all frozen dependencies work together correctly and that no tests are broken. You might also want to test that everything would be working
+correctly after you upgrade the dependencies of the repository.
 
-Create your own `.github/workflows` workflow file and add the following content:
+#### Setup
+
+Create a `.github/workflows/testrig.yml` workflow file in the source code of your InvenioRDM repository:
 
 ```yaml
-name: Testing
+name: Run on testrig
 
 on:
     workflow_dispatch:
@@ -108,7 +101,7 @@ jobs:
     verify-patches:
         uses: oarepo/invenio-testrig/.github/workflows/verify-patches.yml@master
         with:
-            name: Repository with ZIP support
+            name: My great repository
             repository: ${{ github.repository }}@${{ github.ref_name }}
             disable-codestyle-checks: true
             python-version: 3.14.2
@@ -120,43 +113,251 @@ jobs:
             ignore-uv-lock: true
 ```
 
-Then you can run this workflow from the Actions tab in GitHub and optionally the report will be published to GitHub Pages in the selected repository and branch.
+Also, unless you specify the `skip-report` input, make sure to have a `gh-pages` branch in your repository where the report will be published. You can create it manually:
 
-### Building third-party extensions (CESNET use case)
+```bash
+cd /tmp
+gh repo clone your-org/your-repository
+cd your-repository
+git checkout --orphan gh-pages
+git rm -rf .
+git commit --allow-empty -m "Initialize gh-pages branch"
+git push origin gh-pages
+```
 
-Use a similar setup as for the repository maintainer. Specify your set of patches using the `patches: <p1> <p2> ...` input in the workflow and run the invenio-testrig workflow.
+#### Running the tests
 
-It will create a `workdir` artifact. Inside this artifact (.tar.gz) you will find a `cloned_repos/patched` subdirectory where the patched versions of the repositories are located and these are exactly what was tested. You can then package these repositories and upload them to your local PyPI index.
+To run the workflow from the command line, use the `gh` command:
 
-## Patch modes
+```bash
+gh workflow run testrig.yml [--ref your-branch]
+```
 
-The following patch modes are supported:
+Use the `--ref` if you want to test a different branch then the `master` (the `testrig.yml`
+file must be present on that branch).
 
-- `pinned` - the seed repository provides the version of the package. All patches are applied on top of this version (using cherry-pick).
-- `upstream` - use upstream versions of all packages (patched and unpatched). When patching, apply all patches on top of the upstream version (using cherry-pick).
+Alternatively, go to the GitHub website and run the workflow from the Actions tab.
 
-The `pinned` mode is useful when you want to test your patches on top of your own repository.
+#### Advanced Configuration for Testing RDM Repositories
 
-The `upstream` mode is useful when you want to test your patches on top of the latest upstream versions of the packages.
+In some cases, you may want a more customized configuration for your tests — for example,
+testing your patch not only on Invenio packages but also on your own extensions.
+In this case, copy the `invenio_testrig/default_config.yaml` file into your repository
+(let's say as `customized_testrig_config.yaml`) and specify the config file name
+in the workflow's inputs:
 
-## How to reference patches
+```yaml
+verify-patches:
+    uses: oarepo/invenio-testrig/.github/workflows/verify-patches.yml@master
+    with:
+        name: My great repository
+        config: customized_testrig_config.yaml
+```
 
-The following formats are supported for patches and reference to git repositories:
+See below for more details on the configuration file.
 
-Repositories:
+## What Happens When Testrig is Run
+
+When you run invenio-testrig, it performs the following steps:
+
+### 1. Cloning the Seed Repository
+
+The testrig starts by cloning a seed repository that serves as the foundation for testing. The seed repository differs depending on your use case:
+
+- When testing patches (contributions), it uses a plain InvenioRDM repository
+- When testing a repository with frozen dependencies, it uses your own repository with its (locked) dependencies
+
+### 2. Extracting the List of Packages to Test
+
+From the seed repository, the testrig extracts a list of all Invenio packages that need to be tested. It does this by analyzing the repository's dependencies, either from the `uv.lock` file or by installing and freezing dependencies. You can specify a flag to ignore the `uv.lock` file and always use the latest applicable versions of the packages. This is useful when testing whether your repository is still compatible with the latest dependency versions, even if the `uv.lock` file hasn't been updated yet.
+
+### 3. Mapping Packages to Git Repositories
+
+Each package version is mapped back to its corresponding Git repository and tag. This allows the testrig to clone the exact version of each package's source code that's being used.
+
+### 4. Applying Patches
+
+If you've specified patches (e.g., pull requests or branches), the testrig applies them to the relevant packages. How patches are applied depends on the patch mode:
+
+- In `pinned` mode: patches are applied on top of the versions specified in the seed repository
+- In `upstream` mode: patches are applied on top of the latest upstream versions
+
+### 5. Running Tests
+
+The testrig runs the test suite for each affected package. The test mode determines whether it runs tests for both patched and unpatched versions (for comparison) or only for patched versions.
+
+### 6. End-to-End Testing *(Work in Progress)*
+
+Optionally, the testrig can run end-to-end tests on the complete seed repository to verify that everything works together in a real application scenario.
+
+### 7. Generating the Report
+
+Finally, the testrig creates an HTML report summarizing all test results, showing which packages passed or failed, and highlighting any differences between patched and unpatched versions.
+
+## How to Reference Patches
+
+The following formats are supported for patches and references to Git repositories:
+
+**Repositories:**
 
 - org/package
 - org/package@branch
 - https://github.com/org/repo
 - https://github.com/org/repo/tree/branch-name
 
-Pull requests:
+**Pull Requests:**
 
 - org/package#pr_number
 - org/package@branch[base]
 - https://github.com/org/repo/pull/123
 
-Also pip-installed github references for repositories (not pull requests) are supported:
+**Pip-installed GitHub references** (for repositories, not pull requests) are also supported:
 
 - https://github.com/inveniosoftware/invenio-records-resources?branch=fix-read-many#c6b973a14802e2a7f73100ab4e32cb0c36bd4672
 - https://github.com/inveniosoftware/invenio-swh?rev=v0.13.4#828a3a415cf8e725c369939832b61281c44aec40
+
+If branches are used, `invenio-testrig` will try to find the commits present on the branch
+(and not on the unpatched package) and will apply these. If the application fails, the whole
+tests will fail.
+
+## Advanced
+
+### Config File
+
+The [config file](./invenio_testrig/default_config.yaml) consists of several parts:
+
+#### 1. seed_repository
+
+Configuration for the seed InvenioRDM repository used as the foundation for testing. This repository is cloned and installed (using `uv sync`) to extract dependencies and optionally run end-to-end tests.
+
+**Properties:**
+
+- **git** (required) - Git reference to the seed repository in the format `org/repo@branch`. This repository is used to:
+  1. Extract dependencies matching the GitHub filters—these packages will be tested
+  2. Run end-to-end tests (if E2E configuration is provided)
+
+  Default: `zenodo/zenodo-rdm@master`
+
+- **e2e** (optional) - Git reference to a repository containing an end-to-end test library/configuration. If the seed repository doesn't have an `e2e` directory, it will be copied from this package. If not provided, only unit tests will run (no end-to-end tests).
+
+  Example: `oarepo/invenio-e2e@master`
+
+**Example:**
+
+```yaml
+seed_repository:
+  git: zenodo/zenodo-rdm@master
+  e2e: oarepo/invenio-e2e@log-xhr
+```
+
+#### 2. github
+
+List of GitHub organization configurations that define how to map tested Python packages to their GitHub repository, which packages to test, and how to test them. Each organization configuration acts as a filter and test specification for packages found in the seed repository's dependencies.
+
+**Note:** The same organization can appear multiple times with different configurations (e.g., different branch configurations or regex patterns).
+
+**Properties for each organization entry:**
+
+- **org** (required) - GitHub organization name. Package names that match the include/exclude patterns will be mapped to repositories in this organization. For example, if `org` is `inveniosoftware`, the package `invenio-records-resources` will be mapped to the repository `inveniosoftware/invenio-records-resources`.
+
+- **include** (optional) - List of regular expression patterns to filter packages for testing. Only packages matching at least one pattern will be tested.
+
+  Example: `["invenio-.*"]` matches all packages starting with `invenio-`
+
+- **exclude** (optional) - List of package names to exclude from testing, even if they match the include patterns. Useful for packages that are known to be incompatible or don't need testing.
+
+  Example: `["invenio-xrootd", "invenio-swh"]`
+
+- **test** (required) - A command with arguments to run for packages matching this configuration. Typically this is `["./run-tests.sh"]` for Invenio libraries.
+
+- **extras** (optional) - List of extras to install for tested packages matching this configuration. This is a union of extras across all packages - if an extra doesn't exist for a specific package, it will be silently ignored.
+
+  Example: `["tests", "opensearch2", "postgresql"]`
+
+- **freeze** (optional) - List of version constraints (in pip format) to apply when resolving dependencies for tested packages. If specified, these packages will be reinstalled with the specified version constraints before running the tests.
+
+  Example: `["setuptools<82.0.0"]` ensures setuptools version stays below 82.0.0
+
+**Example:**
+
+```yaml
+github:
+  - org: "inveniosoftware"
+    include:
+      - "invenio-.*"
+    exclude:
+      - "invenio-xrootd"
+      - "invenio-swh"
+    test:
+      - ./run-tests.sh
+    extras:
+      - tests
+      - opensearch2
+      - postgresql
+      - admin
+    freeze:
+      - setuptools<82.0.0
+
+  - org: "oarepo"
+    include:
+      - "oarepo-.*"
+    test:
+      - ./run.sh
+      - test
+    extras:
+      - tests
+```
+
+##### Same Prefix for Multiple Organizations
+
+Sometimes the same prefix is used for multiple organizations. For example, the `invenio-` prefix is used for packages in both `inveniosoftware` and `CERNDocumentServer` (which has a package called `invenio-cern-sync`). In this case, specify multiple GitHub organizations and adjust the include/exclude patterns accordingly. The first matching organization will be used for each package.
+
+```yaml
+github:
+  - org: "CERNDocumentServer"
+    include:
+      - "invenio-cern-sync"
+    test:
+      - ./run-tests.sh
+    extras:
+      - tests
+      - opensearch2
+      - postgresql
+      - admin
+    freeze:
+      - setuptools<82.0.0
+
+  - org: "inveniosoftware"
+    ... original configuration here
+```
+
+This is an example; `invenio-cern-sync` and `invenio-curations` are already present in the default configuration.
+
+### Running the Testrig Locally
+
+If you prefer to run tests on your local machine instead of using GitHub workflows:
+
+First, prepare the testrig with your patch(es):
+
+```bash
+invenio-testrig setup --patch-mode upstream --patch org/package#pr_number
+```
+
+This creates a `workdir` folder in the current directory. To test a package, run:
+
+```bash
+invenio-testrig test --apply-patches workdir <package-name>
+```
+
+To compare with unpatched results, run without the `--apply-patches` flag:
+
+```bash
+invenio-testrig test workdir <package-name>
+```
+
+If you need to update the setup, please remove the workdir manually and run the setup command again:
+
+```bash
+rm -rf workdir
+invenio-testrig setup ...
+```

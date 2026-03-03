@@ -79,15 +79,15 @@ def clone_repositories(
 ) -> None:
     """Clone packages from configuration.
 
-    Clone repository.git and repository.e2e (if configured) to the output directory.
+    Clone seed_repository.git and seed_repository.e2e (if configured) to the output directory.
     Then clone all packages specified in "tested_packages" into the packages/ subdirectory.
     If a package has patches, also clone it into the patched/ subdirectory and apply patches.
     The patching behavior depends on the patch_mode specified in the config (upstream, or pinned).
 
     Layout of the output directory:
         clone_path/
-        ├── repo/                # Cloned repository.git
-        ├── invenio-e2e/         # Cloned repository.e2e (if configured)
+        ├── repo/                # Cloned seed_repository.git
+        ├── invenio-e2e/         # Cloned seed_repository.e2e (if configured)
         ├── packages/            # Cloned dependencies without patches
         |     └── package_name/     # Cloned dependency repository with pinned version
         └── patched/             # Cloned dependencies with patches applied
@@ -117,8 +117,8 @@ def clone_repositories(
     # Create output directory
     clone_path.mkdir(parents=True, exist_ok=False)
 
-    # Clone repository.git
-    repo_git = config.repository.git
+    # Clone seed_repository.git
+    repo_git = config.seed_repository.git
     repo_dir = clone_path / "repo"
     progress.start(f"Cloning {repo_git.org}/{repo_git.repo} to {repo_dir}", icon="🔄")
     git_api.clone_git_reference(repo_git, repo_dir)
@@ -130,9 +130,9 @@ def clone_repositories(
         clone_path=clone_path,
     )
 
-    # Clone repository.e2e if it exists
-    if config.repository.e2e:
-        e2e_ref = config.repository.e2e
+    # Clone seed_repository.e2e if it exists
+    if config.seed_repository.e2e:
+        e2e_ref = config.seed_repository.e2e
         e2e_dir = clone_path / "invenio-e2e"
         progress.start(f"Cloning {e2e_ref.org}/{e2e_ref.repo} to {e2e_dir}", icon="🔄")
         git_api.clone_git_reference(e2e_ref, e2e_dir)

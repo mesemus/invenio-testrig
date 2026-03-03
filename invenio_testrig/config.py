@@ -77,7 +77,7 @@ class Config:
     """
 
     github: list[Github]
-    repository: Repository
+    seed_repository: Repository
     name: str | None = None
     """Optional name for this test configuration run."""
     started_at: str | None = None

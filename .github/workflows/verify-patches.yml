@@ -247,7 +247,13 @@ jobs:
                   if [ -n "$YAML_CONFIG_PATH" ]; then
                       invenio-testrig setup "$YAML_CONFIG_PATH" --workdir "$WORKDIR" "${setup_args[@]}"
                   else
-                      invenio-testrig setup --workdir "$WORKDIR" "${setup_args[@]}"
+                      # try to find the config.yaml in the root of the git repository
+                      YAML_CONFIG_PATH="${{ github.workspace }}/.pipeline/config.yaml"
+                      if [ -n "$YAML_CONFIG_PATH" ]; then
+                          invenio-testrig setup "$YAML_CONFIG_PATH" --workdir "$WORKDIR" "${setup_args[@]}"
+                      else
+                          invenio-testrig setup --workdir "$WORKDIR" "${setup_args[@]}"
+                      fi
                   fi
                   echo "::endgroup::"
 
