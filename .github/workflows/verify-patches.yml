@@ -186,8 +186,6 @@ permissions:
 jobs:
     prepare:
         runs-on: ubuntu-latest
-        environment:
-            name: github-pages
         outputs:
             matrix_tested_packages: ${{ steps.prepare.outputs.matrix_tested_packages }}
             report_name: ${{ steps.prepare-and-push-report.outputs.report-name }}
@@ -399,8 +397,6 @@ jobs:
             - test
         if: always() && !inputs.skip-report
         runs-on: ubuntu-latest
-        environment:
-            name: github-pages
         steps:
             - name: Checkout the testrig repository to .pipeline
               uses: actions/checkout@v4

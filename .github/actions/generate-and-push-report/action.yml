@@ -269,22 +269,6 @@ runs:
 
               # Export whether we actually pushed
               echo "pushed=$PUSHED" >> $GITHUB_OUTPUT
-              
-        - name: Prepare github pages artifact
-          if: steps.push-report.outputs.pushed == 'true'
-          id: prepare-pages-artifact
-          uses: actions/upload-pages-artifact@v3
-          with:
-            path: ${{ github.workspace }}/report-repo-checkout
-            name: report-pages-artifact-${{ steps.push-report.outputs.commit-id }}
-
-        - name: Deploy to GitHub Pages
-          if: steps.push-report.outputs.pushed == 'true'
-          id: deployment
-          uses: actions/deploy-pages@v4     
-          with:
-            token: ${{ inputs.github-token }}
-            artifact_name: report-pages-artifact-${{ steps.push-report.outputs.commit-id }}
 
         - name: Clean up report repository checkout
           if: always()
