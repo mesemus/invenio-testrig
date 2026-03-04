@@ -47,12 +47,18 @@ def setup_github_repository(
     target_repo = _determine_target_repository(target, username, progress)
     repo_exists = _check_repository_exists(target_repo, progress)
 
+    is_new_fork = False
     if repo_exists:
         _update_repository(target_repo, source_repo, progress)
     else:
         _fork_repository(source_repo, target_repo, username, progress)
+        is_new_fork = True
 
     _ensure_gh_pages_branch(target_repo, progress)
+
+    # If we just created a new fork, wait for user to enable Actions and configure Pages
+    if is_new_fork:
+        _wait_for_user_to_enable_actions(target_repo, progress)
 
     workflow_url = _dispatch_workflow(
         target_repo,
@@ -443,6 +449,39 @@ def _dispatch_workflow(
         )
 
     return workflow_url
+
+
+def _wait_for_user_to_enable_actions(target_repo: str, progress: Progress) -> None:
+    """Wait for user to enable GitHub Actions and configure Pages.
+
+    Args:
+        target_repo: Repository name in format 'org/repo'
+        progress: Progress reporter for status updates
+    """
+    progress.info("")
+    progress.info(
+        "⚠️  IMPORTANT: New fork created - Actions and Pages need to be configured"
+    )
+    progress.info("")
+    progress.info("Before running the workflow, you need to:")
+    progress.info("")
+    progress.info("1. Enable GitHub Actions:")
+    progress.info(f"   → Visit: https://github.com/{target_repo}/actions")
+    progress.info("   → Click 'I understand my workflows, go ahead and enable them'")
+    progress.info("")
+    progress.info("2. Configure GitHub Pages (for viewing test reports):")
+    progress.info(f"   → Visit: https://github.com/{target_repo}/settings/pages")
+    progress.info("   → Under 'Source', select 'Deploy from a branch'")
+    progress.info("   → Select branch 'gh-pages' and folder '/ (root)'")
+    progress.info("   → Click 'Save'")
+    progress.info("")
+
+    try:
+        input("Press Enter once you have completed these steps...")
+        progress.success("Continuing with workflow dispatch...")
+    except (KeyboardInterrupt, EOFError):
+        progress.warning("\nCancelled by user.")
+        raise SystemExit(0)
 
 
 def _open_workflow_in_browser(workflow_url: str | None, progress: Progress) -> None:
