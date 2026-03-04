@@ -4,6 +4,10 @@ inputs:
   python-version:
     description: 'Python version to install'
     required: true
+  tools-python-version:
+    description: 'Python version to use for the tools virtualenv.'
+    required: false
+    default: "3.14"
   testrig-directory:
     description: 'Directory where invenio-testrig is located'
     required: true
@@ -40,7 +44,7 @@ runs:
       uses: actions/setup-python@v6
       if: ${{ !startsWith(inputs.python-version, '3.14') }}
       with:
-        python-version: 3.14
+        python-version: ${{ inputs.tools-python-version }}
 
     - name: Setup Python
       uses: actions/setup-python@v6
@@ -61,15 +65,15 @@ runs:
         cd "${{ inputs.testrig-directory }}"
 
         # create a virtualenv for the tools and install the tools
-        uv venv .tools-venv --python 3.14
+        uv venv .tools-venv --python ${{ inputs.tools-python-version }}
         source .tools-venv/bin/activate
-        uv pip install -e "${{ inputs.testrig-directory }}"
+        uv pip install --python ${{ inputs.tools-python-version }} -e "${{ inputs.testrig-directory }}"
 
         if [ -n "${{ inputs.hook-libraries }}" ]; then
           echo "Installing hook libraries: ${{ inputs.hook-libraries }}"
           # Use array to properly handle special characters while splitting on spaces
           read -ra libs <<< "${{ inputs.hook-libraries }}"
-          uv pip install "${libs[@]}"
+          uv pip install --python ${{ inputs.tools-python-version }} "${libs[@]}"
         fi
 
         # create an extra directory that will contain linked tools.
