@@ -735,6 +735,10 @@ def report_cmd(
     """
     artefacts_path = config.workdir_path("artifacts")
 
+    if config.config_path is not None:
+        # never is in reality, but the type checker doesn't know that
+        shutil.copy(config.config_path, report_output_path / "config.json")
+
     progress.start(
         f"Generating test report based on artefacts in {artefacts_path} and configuration in {config.config_path}",
         icon="📊",

@@ -6,6 +6,7 @@ specific strategies for handling unpatched and patched versions.
 """
 
 import shutil
+import subprocess
 from pathlib import Path
 
 import black
@@ -53,6 +54,7 @@ class Patcher:
         unpatched_reference_path = self._clone_package(
             unpatched_reference, self.unpatched_dir
         )
+        self._show_commit_log(unpatched_reference_path, 20)
 
         patched_reference = self._build_patched_reference(name, info)
         patched_reference_path = None
@@ -62,6 +64,7 @@ class Patcher:
             patched_reference_path = self._clone_package(
                 patched_reference, self.patched_dir
             )
+            self._show_commit_log(patched_reference_path, 20)
             self._apply_patches(patched_reference_path, name, info, patched_reference)
             self._add_patch_info(
                 patched_reference_path,
@@ -107,6 +110,34 @@ class Patcher:
     ) -> None:
         """Apply patches to the target directory. The patches are applied in order."""
         raise NotImplementedError("Subclasses must implement the _apply_patches method")
+
+    def _show_commit_log(self, path: Path, number_of_commits: int) -> None:
+        """Get and display the last N commits from a repository.
+
+        Args:
+            path: Path to the repository directory
+            number_of_commits: Number of recent commits to display
+        """
+        try:
+            result = subprocess.run(
+                [
+                    "git",
+                    "log",
+                    f"-{number_of_commits}",
+                    "--pretty=format:%h - %s (%an, %ar)",
+                ],
+                cwd=path,
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            if result.stdout:
+                self.progress.info(f"\nLast {number_of_commits} commits:")
+                for line in result.stdout.splitlines():
+                    self.progress.info(f"  {line}")
+                self.progress.info("")  # Empty line for readability
+        except subprocess.CalledProcessError as e:
+            self.progress.warning(f"Failed to get commit log: {e}")
 
     def _remove_git_directory(self, path: Path) -> None:
         """Remove a file or directory from git tracking."""
