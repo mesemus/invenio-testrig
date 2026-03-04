@@ -735,10 +735,6 @@ def report_cmd(
     """
     artefacts_path = config.workdir_path("artifacts")
 
-    if config.config_path is not None:
-        # never is in reality, but the type checker doesn't know that
-        shutil.copy(config.config_path, report_output_path / "config.json")
-
     progress.start(
         f"Generating test report based on artefacts in {artefacts_path} and configuration in {config.config_path}",
         icon="📊",
@@ -787,6 +783,12 @@ def report_cmd(
         report_output_path=report_output_path,
         progress=progress,
     )
+
+    # copy the config.json into the report directory to be preserved
+    # in machine-readable format alongside the report
+    if config.config_path is not None:
+        # never is in reality, but the type checker doesn't know that
+        shutil.copy(config.config_path, report_output_path / "config.json")
 
 
 @cli.command("reports-index", hidden=True)
