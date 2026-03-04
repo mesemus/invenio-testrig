@@ -27,6 +27,14 @@
                             <br><small><a href="{{ pkg.info.patched_reference.github_url }}" target="_blank" style="color: #6c757d;">(patched)</a></small>
                         {% endif %}
                     </span>
+                    <ul class="link-list">
+                        {% set unpatched_commits = "top_commits/" + pkg.info.reference.package + "_unpatched.json" %}
+                        {% set patched_commits = "top_commits/" + pkg.info.reference.package + "_patched.json" %}
+                        <li><a href="{{ unpatched_commits }}" target="_blank">commits (unpatched)</a></li>
+                        {% if show_patches and pkg.patched.status != "skipped" %}
+                        <li><a href="{{ patched_commits }}" target="_blank">commits (patched)</a></li>
+                        {% endif %}
+                    </ul>
                 </td>
                 {% if show_patches %}
                 <td>

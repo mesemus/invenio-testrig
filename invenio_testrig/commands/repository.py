@@ -1,5 +1,6 @@
 """Repository cloning and patch selection command implementations."""
 
+import json
 import os
 from pathlib import Path
 
@@ -159,6 +160,8 @@ def clone_repositories(
         packages_dir.mkdir(parents=True, exist_ok=True)
         patched_packages_dir = clone_path / "patched"
         patched_packages_dir.mkdir(parents=True, exist_ok=True)
+        top_commits_dir = clone_path / "top_commits"
+        top_commits_dir.mkdir(parents=True, exist_ok=True)
 
         patcher = patcher_cls(config, packages_dir, patched_packages_dir, progress)
 
@@ -177,6 +180,21 @@ def clone_repositories(
                 tested_packages[tested_package_name].patched_reference = (
                     patched_reference
                 )
+
+                # Save commit logs to JSON files
+                _save_commits(
+                    packages_dir / tested_package_name,
+                    top_commits_dir / f"{tested_package_name}_unpatched.json",
+                    git_api,
+                )
+
+                if patched_reference:
+                    _save_commits(
+                        patched_packages_dir / tested_package_name,
+                        top_commits_dir / f"{tested_package_name}_patched.json",
+                        git_api,
+                    )
+
             except PatchApplicationError as e:
                 # Get original git error from exception chain
                 original_error = e.__cause__ if hasattr(e, "__cause__") else None
@@ -232,3 +250,24 @@ def clone_repositories(
     config.save()  # Save the config with updated tested_packages info
 
     progress.success(f"Successfully cloned repositories to {clone_path}")
+
+
+def _save_commits(package_path: Path, output_json_path: Path, git_api: GitApi) -> None:
+    """Save commit log to JSON file.
+
+    Args:
+        package_path: Path to the package directory
+        output_json_path: Path where to save the JSON file
+        git_api: GitApi instance to use for getting commits
+    """
+    if package_path.exists():
+        commits = git_api.get_last_commits(package_path, 50)
+        with open(output_json_path, "w") as f:
+            json.dump(
+                [
+                    {"hash": commit_hash, "message": message}
+                    for commit_hash, message in commits
+                ],
+                f,
+                indent=2,
+            )

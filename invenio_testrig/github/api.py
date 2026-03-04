@@ -441,3 +441,40 @@ class GitApi:
             ref.commit,
             f"v{ref.actual_version}" if ref.actual_version else None,
         )
+
+    def get_last_commits(
+        self, repository_path: Path, number_of_commits: int
+    ) -> list[tuple[str, str]]:
+        """Get the last N commits from a repository.
+
+        Args:
+            repository_path: Path to the repository directory
+            number_of_commits: Number of recent commits to retrieve
+
+        Returns:
+            List of tuples containing (commit_hash, commit_message)
+        """
+        try:
+            result = subprocess.run(
+                [
+                    "git",
+                    "log",
+                    f"-{number_of_commits}",
+                    "--pretty=format:%h|%s",
+                ],
+                cwd=repository_path,
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            if not result.stdout:
+                return []
+
+            commits = []
+            for line in result.stdout.splitlines():
+                if "|" in line:
+                    hash_part, message = line.split("|", 1)
+                    commits.append((hash_part.strip(), message.strip()))
+            return commits
+        except subprocess.CalledProcessError:
+            return []

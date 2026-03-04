@@ -79,6 +79,11 @@ runs:
                   cp -r $WORKDIR/artifacts $REPORT_PATH/
               fi
               
+              # Copy top_commits to report directory if they exist
+              if [ -d "$WORKDIR/top_commits" ]; then
+                  cp -r $WORKDIR/top_commits $REPORT_PATH/
+              fi
+
               echo "::endgroup::"
               echo "::notice::✅ Report generated"
 

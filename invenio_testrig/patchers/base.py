@@ -6,7 +6,6 @@ specific strategies for handling unpatched and patched versions.
 """
 
 import shutil
-import subprocess
 from pathlib import Path
 
 import black
@@ -118,26 +117,12 @@ class Patcher:
             path: Path to the repository directory
             number_of_commits: Number of recent commits to display
         """
-        try:
-            result = subprocess.run(
-                [
-                    "git",
-                    "log",
-                    f"-{number_of_commits}",
-                    "--pretty=format:%h - %s (%an, %ar)",
-                ],
-                cwd=path,
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-            if result.stdout:
-                self.progress.info(f"\nLast {number_of_commits} commits:")
-                for line in result.stdout.splitlines():
-                    self.progress.info(f"  {line}")
-                self.progress.info("")  # Empty line for readability
-        except subprocess.CalledProcessError as e:
-            self.progress.warning(f"Failed to get commit log: {e}")
+        commits = self.git_api.get_last_commits(path, number_of_commits)
+        if commits:
+            self.progress.info(f"\nLast {number_of_commits} commits:")
+            for commit_hash, commit_message in commits:
+                self.progress.info(f"  {commit_hash} - {commit_message}")
+            self.progress.info("")  # Empty line for readability
 
     def _remove_git_directory(self, path: Path) -> None:
         """Remove a file or directory from git tracking."""
